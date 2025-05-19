@@ -29,7 +29,7 @@ type BreakpointKey = keyof typeof breakpoints
 // Saved positions from testing
 const savedPositions = {
     mobileLow: { x: 0.0, y: 35.7 },
-    mobile: { x: -80.0, y: 28.3 },
+    mobile: { x: -80.0, y: 25.3 },
     tablet: { x: 23.7, y: 35.2 },
     desktopHD: { x: 35.1, y: 20.0 },
     desktopRetina: { x: 47.3, y: 18.0 }
@@ -58,7 +58,7 @@ const logoList = [
     { filename: 'producrers.png', alt: 'Producers Logo' },
     { filename: 'sidleyjones.png', alt: 'Sidley Jones Logo' },
     { filename: 'tafirel.svg', alt: 'Tafirel Logo' },
-    { filename: 'ufilms.svg', alt: 'U Films Logo' }
+    { filename: 'ufilms.png', alt: 'U Films Logo' }
 ]
 
 export default function HeroSection() {
@@ -73,14 +73,7 @@ export default function HeroSection() {
     const getLogoPath = (logoName: string) => {
         const currentTheme = theme === 'system' ? systemTheme : theme
         const themeFolder = currentTheme === 'dark' ? 'dark' : 'light'
-        
-        // Handle special case for ufilms: use .png in dark mode
-        let fileName = logoName
-        if (logoName === 'ufilms.svg' && currentTheme === 'dark') {
-            fileName = 'ufilms.png'
-        }
-        
-        return `/logos/${themeFolder}/${fileName}`
+        return `/logos/${themeFolder}/${logoName}`
     }
     
     // Ensure component is mounted before showing theme-dependent content
@@ -153,7 +146,7 @@ export default function HeroSection() {
                                                 alt="Estela Logo"
                                                 width={200}
                                                 height={80}
-                                                className="h-auto w-48"
+                                                className={`h-auto ${isMobile ? 'w-24' : 'w-48'}`}
                                             />
                                         )}
                                     </div>
@@ -178,37 +171,38 @@ export default function HeroSection() {
                         <div className="flex flex-col items-center md:flex-row">
                             <div className="md:max-w-44 md:border-r md:pr-6">
                                 <p className="text-end text-sm">
-                                    {mounted && isLoaded ? t('companies.title') : 'Powering the best teams'}
+                                    {mounted && isLoaded ? t('companies.title') : 'Providing knowledge to the best teams'}
                                 </p>
                             </div>
-                            <div className="relative py-6 md:w-[calc(100%-11rem)]">
+                            <div className="relative py-6 md:w-[calc(100%-11rem)] overflow-hidden">
                                 <InfiniteSlider
                                     speedOnHover={currentBreakpoint === 'mobile' || currentBreakpoint === 'mobileLow' ? 50 : 30}
                                     speed={currentBreakpoint === 'mobile' || currentBreakpoint === 'mobileLow' ? 80 : 50}
                                     gap={48}
-                                    className="md:gap-28 transform-gpu">
+                                    className="transform-gpu">
                                     {logoList.map((logo, index) => (
                                         <div key={index} className="flex items-center h-8 sm:h-10 md:h-12">
                                             <img
-                                                className="h-full w-auto object-contain"
+                                                className="h-full w-auto object-contain transform-gpu"
                                                 src={mounted ? getLogoPath(logo.filename) : `/logos/light/${logo.filename}`}
                                                 alt={logo.alt}
+                                                loading="lazy"
                                             />
                                         </div>
                                     ))}
                                 </InfiniteSlider>
 
-                                <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
-                                <div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-20"></div>
                                 <ProgressiveBlur
-                                    className="pointer-events-none absolute left-0 top-0 h-full w-20"
+                                    className="pointer-events-none absolute left-0 top-0 h-full w-16 md:w-20"
                                     direction="left"
-                                    blurIntensity={1}
+                                    blurIntensity={0.8}
+                                    blurLayers={6}
                                 />
                                 <ProgressiveBlur
-                                    className="pointer-events-none absolute right-0 top-0 h-full w-20"
+                                    className="pointer-events-none absolute right-0 top-0 h-full w-16 md:w-20"
                                     direction="right"
-                                    blurIntensity={1}
+                                    blurIntensity={0.8}
+                                    blurLayers={6}
                                 />
                             </div>
                         </div>
