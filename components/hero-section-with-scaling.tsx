@@ -5,34 +5,27 @@ import Link from 'next/link'
 import Script from 'next/script'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-// import { HeroHeader } from './header'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
-import ContactButton from '@/components/contact-button'
-import { ThemeToggle } from '@/components/theme-toggle'
-import { LanguageToggle } from '@/components/language-toggle'
 import { useTheme } from 'next-themes'
-import { useLanguage } from '@/lib/language-context'
 import { useIsMobile } from '@/hooks/use-mobile'
 
-// Breakpoint definitions matching our saved positions
-const breakpoints = {
-    mobileLow: { name: 'Mobile Low', minWidth: 0, maxWidth: 374 },
-    mobile: { name: 'Mobile', minWidth: 375, maxWidth: 767 },
-    tablet: { name: 'Tablet', minWidth: 768, maxWidth: 1279 },
-    desktopHD: { name: 'Desktop HD', minWidth: 1280, maxWidth: 1919 },
-    desktopRetina: { name: 'Desktop Retina', minWidth: 1920, maxWidth: Infinity }
-} as const
-
-type BreakpointKey = keyof typeof breakpoints
-
-// Saved positions from testing
+// Your calibrated positions
 const savedPositions = {
-    mobileLow: { x: 0.0, y: 35.7 },
-    mobile: { x: -80.0, y: 28.3 },
-    tablet: { x: 23.7, y: 35.2 },
-    desktopHD: { x: 35.1, y: 20.0 },
-    desktopRetina: { x: 47.3, y: 18.0 }
+    mobileLow: { x: 50, y: 50 },
+    mobile: { x: 46.6, y: 30.5 },
+    tablet: { x: 67.3, y: 35.9 },
+    desktopHD: { x: 72, y: 19.7 },
+    desktopRetina: { x: 72, y: 19.1 }
+}
+
+// Scale factors for the effect at different breakpoints
+const scaleFactors = {
+    mobileLow: 0.3,
+    mobile: 0.4,
+    tablet: 0.6,
+    desktopHD: 0.85,
+    desktopRetina: 1
 }
 
 // Complete list of all logos
@@ -61,11 +54,21 @@ const logoList = [
     { filename: 'ufilms.svg', alt: 'U Films Logo' }
 ]
 
-export default function HeroSection() {
+const breakpoints = {
+    mobileLow: { name: 'Mobile Low', minWidth: 0, maxWidth: 374 },
+    mobile: { name: 'Mobile', minWidth: 375, maxWidth: 767 },
+    tablet: { name: 'Tablet', minWidth: 768, maxWidth: 1279 },
+    desktopHD: { name: 'Desktop HD', minWidth: 1280, maxWidth: 1919 },
+    desktopRetina: { name: 'Desktop Retina', minWidth: 1920, maxWidth: Infinity }
+} as const
+
+type BreakpointKey = keyof typeof breakpoints
+
+export default function HeroSectionWithScaling() {
     const [currentBreakpoint, setCurrentBreakpoint] = useState<BreakpointKey>('desktopHD')
     const [effectPosition, setEffectPosition] = useState(savedPositions.desktopHD)
+    const [effectScale, setEffectScale] = useState(scaleFactors.desktopHD)
     const { theme, systemTheme } = useTheme()
-    const { t, isLoaded } = useLanguage()
     const [mounted, setMounted] = useState(false)
     const isMobile = useIsMobile()
     
@@ -105,6 +108,7 @@ export default function HeroSection() {
             const bp = detectBreakpoint()
             setCurrentBreakpoint(bp)
             setEffectPosition(savedPositions[bp])
+            setEffectScale(scaleFactors[bp])
         }
         
         handleResize() // Initial detection
@@ -115,14 +119,7 @@ export default function HeroSection() {
 
     return (
         <>
-            {/* <HeroHeader /> */}
             <main className="overflow-x-hidden">
-                {/* Theme and language toggles in top right */}
-                <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
-                    <LanguageToggle />
-                    <ThemeToggle />
-                </div>
-                
                 <section className="hero-background relative">
                     {/* Unicorn Studio effect positioned based on breakpoint */}
                     <div 
@@ -133,12 +130,13 @@ export default function HeroSection() {
                             position: 'absolute',
                             left: `${effectPosition.x}%`,
                             top: `${effectPosition.y}%`,
-                            transform: 'translate(-50%, -50%)',
+                            transform: `translate(-50%, -50%) scale(${effectScale})`,
                             mixBlendMode: 'screen',
                             pointerEvents: 'none',
-                            zIndex: 1
+                            zIndex: 1,
+                            transition: 'all 0.3s ease-out'
                         }}
-                        className={currentBreakpoint === 'desktopRetina' ? 'unicorn-mask-fade-retina' : 'unicorn-mask-fade'}
+                        className="unicorn-mask-fade"
                     />
                     
                     <div className="pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-44 relative z-10">
@@ -147,44 +145,45 @@ export default function HeroSection() {
                                 <div className="mx-auto max-w-lg text-left lg:mx-0 lg:w-full">
                                     {/* Estela Logo at the top */}
                                     <div className="mb-8 flex justify-start">
-                                        {mounted && (
-                                            <Image
-                                                src={theme === 'dark' ? "/pick!blanco_alpha.png" : "/pick!zul_alpha.png"}
-                                                alt="Estela Logo"
-                                                width={200}
-                                                height={80}
-                                                className="h-auto w-48"
-                                            />
-                                        )}
+                                        <Image
+                                            src="/pick!zul_alpha.png"
+                                            alt="Estela Logo"
+                                            width={200}
+                                            height={80}
+                                            className="h-auto w-48"
+                                        />
                                     </div>
                                     
-                                    <h1 className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl min-h-[1.2em]">
-                                        {mounted && isLoaded ? t('hero.title') : 'When technology meets wisdom'}
-                                    </h1>
-                                    <p className="mt-8 max-w-2xl text-pretty text-lg min-h-[2.4em]">
-                                        {mounted && isLoaded ? t('hero.subtitle') : 'Guiding businesses through technological transformations with the perfect balance of trusted expertise and innovative insight.'}
-                                    </p>
+                                    <h1 className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">When technology meets wisdom</h1>
+                                    <p className="mt-8 max-w-2xl text-pretty text-lg">Highly customizable components for building modern websites and applications that look and feel the way you mean it.</p>
 
                                     <div className="mt-12 flex justify-start">
-                                        <ContactButton />
+                                        <Button
+                                            asChild
+                                            size="lg"
+                                            variant="default"
+                                            className="px-5 text-base">
+                                            <Link href="#link">
+                                                <span className="text-nowrap">Contact Us</span>
+                                            </Link>
+                                        </Button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+                
                 <section className="bg-background pb-16 md:pb-32">
                     <div className="group relative m-auto max-w-6xl px-6">
                         <div className="flex flex-col items-center md:flex-row">
                             <div className="md:max-w-44 md:border-r md:pr-6">
-                                <p className="text-end text-sm">
-                                    {mounted && isLoaded ? t('companies.title') : 'Powering the best teams'}
-                                </p>
+                                <p className="text-end text-sm">Powering the best teams</p>
                             </div>
                             <div className="relative py-6 md:w-[calc(100%-11rem)]">
                                 <InfiniteSlider
-                                    speedOnHover={currentBreakpoint === 'mobile' || currentBreakpoint === 'mobileLow' ? 50 : 30}
-                                    speed={currentBreakpoint === 'mobile' || currentBreakpoint === 'mobileLow' ? 80 : 50}
+                                    speedOnHover={isMobile ? 50 : 30}
+                                    speed={isMobile ? 80 : 50}
                                     gap={48}
                                     className="md:gap-28 transform-gpu">
                                     {logoList.map((logo, index) => (

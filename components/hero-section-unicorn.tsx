@@ -1,18 +1,69 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import Script from 'next/script'
+import { useTheme } from 'next-themes'
+import { useIsMobile } from '@/hooks/use-mobile'
+
+// Complete list of all logos
+const logoList = [
+    { filename: 'aparato.svg', alt: 'Aparato Logo' },
+    { filename: 'cce.png', alt: 'CCE Logo' },
+    { filename: 'diagnostico.png', alt: 'Diagnóstico Logo' },
+    { filename: 'dominio.png', alt: 'Dominio Logo' },
+    { filename: 'lamayor.png', alt: 'La Mayor Logo' },
+    { filename: 'oriental.svg', alt: 'Oriental Logo' },
+    { filename: 'sodre.svg', alt: 'SODRE Logo' },
+    { filename: 'verne.png', alt: 'Verne Logo' },
+    { filename: 'avisa.png', alt: 'Avisa Logo' },
+    { filename: 'box.png', alt: 'Box Logo' },
+    { filename: 'cimarron.png', alt: 'Cimarron Logo' },
+    { filename: 'donobldulio.png', alt: 'Don Obldulio Logo' },
+    { filename: 'dsr360.png', alt: 'DSR360 Logo' },
+    { filename: 'fullcat.png', alt: 'FullCat Logo' },
+    { filename: 'mueca.svg', alt: 'Mueca Logo' },
+    { filename: 'olivera.png', alt: 'Olivera Logo' },
+    { filename: 'orben.png', alt: 'Orben Logo' },
+    { filename: 'plataforma.png', alt: 'Plataforma Logo' },
+    { filename: 'producrers.png', alt: 'Producers Logo' },
+    { filename: 'sidleyjones.png', alt: 'Sidley Jones Logo' },
+    { filename: 'tafirel.svg', alt: 'Tafirel Logo' },
+    { filename: 'ufilms.svg', alt: 'U Films Logo' }
+]
 
 export default function HeroSectionWithUnicorn() {
+  const { theme, systemTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  const isMobile = useIsMobile()
+  
+  // Function to get the correct logo path based on theme
+  const getLogoPath = (logoName: string) => {
+    const currentTheme = theme === 'system' ? systemTheme : theme
+    const themeFolder = currentTheme === 'dark' ? 'dark' : 'light'
+    
+    // Handle special case for ufilms: use .png in dark mode
+    let fileName = logoName
+    if (logoName === 'ufilms.svg' && currentTheme === 'dark') {
+      fileName = 'ufilms.png'
+    }
+    
+    return `/logos/${themeFolder}/${fileName}`
+  }
+  
+  // Ensure component is mounted before showing theme-dependent content
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  
   return (
     <>
       <main className="overflow-x-hidden">
-        <section className="bg-[#d7dadd] hero-background relative">
+        <section className="hero-background relative">
           {/* Unicorn Studio effect fullscreen */}
           <div 
             data-us-project="aTdZ2iREcvCidTnZebRS" 
@@ -25,13 +76,14 @@ export default function HeroSectionWithUnicorn() {
               pointerEvents: 'none',
               zIndex: 1
             }}
+            className="unicorn-mask-fade"
           />
 
           <div className="pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-44 relative">
             <div className="relative mx-auto max-w-6xl px-6 z-10">
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                <div className="mx-auto max-w-lg text-center lg:mx-0 lg:w-full lg:text-left">
-                  <div className="mb-8 flex justify-center lg:justify-start">
+                <div className="mx-auto max-w-lg text-left lg:mx-0 lg:w-full">
+                  <div className="mb-8 flex justify-start">
                     <Image
                       src="/pick!zul_alpha.png"
                       alt="Estela Logo"
@@ -48,7 +100,7 @@ export default function HeroSectionWithUnicorn() {
                     Highly customizable components for building modern websites and applications that look and feel the way you mean it.
                   </p>
 
-                  <div className="mt-12 flex justify-center lg:justify-start">
+                  <div className="mt-12 flex justify-start">
                     <Button
                       asChild
                       size="lg"
@@ -74,82 +126,20 @@ export default function HeroSectionWithUnicorn() {
               </div>
               <div className="relative py-6 md:w-[calc(100%-11rem)]">
                 <InfiniteSlider
-                  speedOnHover={20}
-                  speed={40}
-                  gap={112}
+                  speedOnHover={isMobile ? 50 : 30}
+                  speed={isMobile ? 80 : 50}
+                  gap={48}
+                  className="md:gap-28 transform-gpu"
                 >
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-5 w-fit dark:invert"
-                      src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                      alt="Nvidia Logo"
-                      height="20"
-                      width="auto"
-                    />
-                  </div>
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-4 w-fit dark:invert"
-                      src="https://html.tailus.io/blocks/customers/column.svg"
-                      alt="Column Logo"
-                      height="16"
-                      width="auto"
-                    />
-                  </div>
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-4 w-fit dark:invert"
-                      src="https://html.tailus.io/blocks/customers/github.svg"
-                      alt="GitHub Logo"
-                      height="16"
-                      width="auto"
-                    />
-                  </div>
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-5 w-fit dark:invert"
-                      src="https://html.tailus.io/blocks/customers/nike.svg"
-                      alt="Nike Logo"
-                      height="20"
-                      width="auto"
-                    />
-                  </div>
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-5 w-fit dark:invert"
-                      src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                      alt="Lemon Squeezy Logo"
-                      height="20"
-                      width="auto"
-                    />
-                  </div>
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-4 w-fit dark:invert"
-                      src="https://html.tailus.io/blocks/customers/laravel.svg"
-                      alt="Laravel Logo"
-                      height="16"
-                      width="auto"
-                    />
-                  </div>
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-7 w-fit dark:invert"
-                      src="https://html.tailus.io/blocks/customers/lilly.svg"
-                      alt="Lilly Logo"
-                      height="28"
-                      width="auto"
-                    />
-                  </div>
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-6 w-fit dark:invert"
-                      src="https://html.tailus.io/blocks/customers/openai.svg"
-                      alt="OpenAI Logo"
-                      height="24"
-                      width="auto"
-                    />
-                  </div>
+                  {logoList.map((logo, index) => (
+                    <div key={index} className="flex items-center h-8 sm:h-10 md:h-12">
+                      <img
+                        className="h-full w-auto object-contain"
+                        src={mounted ? getLogoPath(logo.filename) : `/logos/light/${logo.filename}`}
+                        alt={logo.alt}
+                      />
+                    </div>
+                  ))}
                 </InfiniteSlider>
 
                 <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
@@ -176,6 +166,18 @@ export default function HeroSectionWithUnicorn() {
         dangerouslySetInnerHTML={{
           __html: `
             !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.20/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+            
+            // Hide Unicorn Studio badge
+            setInterval(function() {
+              const badges = document.querySelectorAll('a[href*="unicorn"], div[style*="Made with"]');
+              badges.forEach(badge => {
+                if (badge.style.position === 'fixed' || badge.innerText.includes('Unicorn')) {
+                  badge.style.display = 'none';
+                  badge.style.visibility = 'hidden';
+                  badge.remove();
+                }
+              });
+            }, 100);
           `,
         }}
       />
