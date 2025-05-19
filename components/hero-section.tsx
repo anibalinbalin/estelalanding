@@ -28,8 +28,8 @@ type BreakpointKey = keyof typeof breakpoints
 
 // Saved positions from testing
 const savedPositions = {
-    mobileLow: { x: 0.0, y: 35.7 },
-    mobile: { x: -80.0, y: 25.3 },
+    mobileLow: { x: -65.0, y: 35.7 }, // Moved right by 15%
+    mobile: { x: -65.0, y: 25.3 }, // Moved right by 15%,
     tablet: { x: 23.7, y: 35.2 },
     desktopHD: { x: 35.1, y: 20.0 },
     desktopRetina: { x: 47.3, y: 18.0 }
@@ -151,12 +151,14 @@ export default function HeroSection() {
                                         )}
                                     </div>
                                     
-                                    <h1 className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl min-h-[1.2em]">
-                                        {mounted && isLoaded ? t('hero.title') : 'When technology meets wisdom'}
-                                    </h1>
-                                    <p className="mt-8 max-w-2xl text-pretty text-lg min-h-[2.4em]">
-                                        {mounted && isLoaded ? t('hero.subtitle') : 'Guiding businesses through technological transformations with the perfect balance of trusted expertise and innovative insight.'}
-                                    </p>
+                                    <div className="w-[60%] sm:w-[60%] md:w-[70%] lg:w-full">
+                                        <h1 className="mt-8 text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl min-h-[1.2em]">
+                                            {mounted && isLoaded ? t('hero.title') : 'When technology meets wisdom'}
+                                        </h1>
+                                        <p className="mt-8 text-pretty text-lg min-h-[2.4em]">
+                                            {mounted && isLoaded ? t('hero.subtitle') : 'Guiding businesses through technological transformations with the perfect balance of trusted expertise and innovative insight.'}
+                                        </p>
+                                    </div>
 
                                     <div className="mt-12 flex justify-start">
                                         <ContactButton />

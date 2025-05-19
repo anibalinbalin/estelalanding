@@ -24,8 +24,8 @@ type BreakpointKey = keyof typeof breakpoints
 
 // Your calibrated positions
 const savedPositions = {
-    mobileLow: { x: 50, y: 50 },
-    mobile: { x: 50, y: 50 },
+    mobileLow: { x: 65, y: 50 }, // Moved right by 15%
+    mobile: { x: 65, y: 50 }, // Moved right by 15%,
     tablet: { x: 32.36677115987461, y: 36.40124095139607 },
     desktopHD: { x: 44.49515116942385, y: 19.1129883843717 },
     desktopRetina: { x: 49.41116231438812, y: 17.890382626680452 }
@@ -148,8 +148,10 @@ export default function HeroSectionFinal() {
                                         />
                                     </div>
                                     
-                                    <h1 className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">When technology meets wisdom</h1>
-                                    <p className="mt-8 max-w-2xl text-pretty text-lg">Highly customizable components for building modern websites and applications that look and feel the way you mean it.</p>
+                                    <div className="w-[60%] sm:w-[60%] md:w-[70%] lg:w-full">
+                                        <h1 className="mt-8 text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">When technology meets wisdom</h1>
+                                        <p className="mt-8 text-pretty text-lg">Highly customizable components for building modern websites and applications that look and feel the way you mean it.</p>
+                                    </div>
 
                                     <div className="mt-12 flex justify-start">
                                         <Button

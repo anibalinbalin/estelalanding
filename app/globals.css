@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* Font is now applied via className in layout.tsx */
 
 @layer utilities {
   .text-balance {
@@ -94,37 +92,250 @@ body {
 }
 
 @layer utilities {
-  /* Hero background with responsive images */
+  /* Hero background with responsive images - light theme */
+  :root {
+    --hero-bg-mobile-low: url('/hermes/hermes_mobile_low.png');
+    --hero-bg-mobile: url('/hermes/hermes_mobile.png');
+    --hero-bg-tablet: url('/hermes/hermes_tablet.png');
+    --hero-bg-desktop-hd: url('/hermes/hermes_desktop_hd.png');
+    --hero-bg-desktop-retina: url('/hermes/hermes_desktop_retina.png');
+  }
+  
+  /* Hero background with responsive images - dark theme */
+  :root.dark {
+    --hero-bg-mobile-low: url('/hermes/hermes_mobile_low_night.png');
+    --hero-bg-mobile: url('/hermes/hermes_mobile_night.png');
+    --hero-bg-tablet: url('/hermes/hermes_tablet_night.png');
+    --hero-bg-desktop-hd: url('/hermes/hermes_desktop_hd_night.png');
+    --hero-bg-desktop-retina: url('/hermes/hermes_desktop_retina_night.png');
+  }
+  
   .hero-background {
-    @apply bg-cover bg-center bg-no-repeat;
-    background-image: url('/hermes/hermes_mobile_low.png');
+    @apply bg-cover bg-no-repeat;
+    background-position: 95% center; /* Shifted 35% to the right for mobile */
+    background-image: var(--hero-bg-mobile-low);
+    background-color: #d7dadd; /* Light mode background */
+  }
+  
+  :root.dark .hero-background {
+    background-color: #1a1a1a; /* Dark mode background */
   }
   
   /* Mobile regular */
   @media (min-width: 375px) {
     .hero-background {
-      background-image: url('/hermes/hermes_mobile.png');
+      background-image: var(--hero-bg-mobile);
+      background-position: 95% center; /* Maintain 35% right shift for mobile */
     }
   }
   
   /* Tablet */
   @media (min-width: 768px) {
     .hero-background {
-      background-image: url('/hermes/hermes_tablet.png');
+      background-image: var(--hero-bg-tablet);
+      background-position: right center; /* Reset to original position for tablet and above */
     }
   }
   
   /* Desktop HD */
   @media (min-width: 1280px) {
     .hero-background {
-      background-image: url('/hermes/hermes_desktop_hd.png');
+      background-image: var(--hero-bg-desktop-hd);
+      background-position: right center;
     }
   }
   
   /* Desktop Retina */
   @media (min-width: 1920px) {
     .hero-background {
-      background-image: url('/hermes/hermes_desktop_retina.png');
+      background-image: var(--hero-bg-desktop-retina);
+      background-position: right center;
     }
+  }
+  
+  /* Custom animation keyframes for light rings */
+  @keyframes ping {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    75%, 100% {
+      transform: translate(-50%, -50%) scale(2);
+      opacity: 0;
+    }
+  }
+}
+
+/* Hide Unicorn Studio badge/watermark */
+.unicorn-studio-badge,
+.us-badge,
+.unicorn-watermark,
+[data-us-badge],
+[data-unicorn-badge],
+[data-unicorn-watermark],
+[data-us-watermark],
+.us-watermark,
+.us-branding,
+[class*="unicorn-badge"],
+[class*="us-badge"],
+[class*="watermark"],
+[id*="unicorn-badge"],
+[id*="us-badge"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Target Unicorn Studio elements by container */
+[data-us-project] > div:last-child,
+[data-us-project] > a:last-child,
+[data-us-project] > span:last-child {
+  position: fixed !important;
+  bottom: -9999px !important;
+  right: -9999px !important;
+  display: none !important;
+}
+
+/* Gradient mask for Unicorn effect bottom edge */
+.unicorn-mask-fade {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 50%,
+    rgba(0, 0, 0, 0.65) 67%,
+    rgba(0, 0, 0, 0.35) 81%,
+    rgba(0, 0, 0, 0) 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 50%,
+    rgba(0, 0, 0, 0.65) 67%,
+    rgba(0, 0, 0, 0.35) 81%,
+    rgba(0, 0, 0, 0) 92%,
+    transparent 100%
+  );
+}
+
+/* Container with gradient mask */
+.unicorn-container-masked {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 75%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 75%,
+    transparent 100%
+  );
+}
+
+/* Special class for desktop retina - applies bottom fade values to both edges */
+@media (min-width: 1920px) {
+  .unicorn-mask-fade-retina {
+    -webkit-mask-image: 
+      linear-gradient(
+        to bottom,
+        black 0%,
+        black 50%,
+        rgba(0, 0, 0, 0.65) 67%,
+        rgba(0, 0, 0, 0.35) 81%,
+        rgba(0, 0, 0, 0) 92%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0) 8%,
+        rgba(0, 0, 0, 0.35) 19%,
+        rgba(0, 0, 0, 0.65) 33%,
+        black 50%,
+        black 100%
+      );
+    mask-image: 
+      linear-gradient(
+        to bottom,
+        black 0%,
+        black 50%,
+        rgba(0, 0, 0, 0.65) 67%,
+        rgba(0, 0, 0, 0.35) 81%,
+        rgba(0, 0, 0, 0) 92%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0) 8%,
+        rgba(0, 0, 0, 0.35) 19%,
+        rgba(0, 0, 0, 0.65) 33%,
+        black 50%,
+        black 100%
+      );
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+  }
+}
+
+/* Additional selectors for common badge patterns */
+div[style*="Made with"],
+a[href*="unicornstudio"],
+a[href*="unicorn-studio"],
+.us-attribution,
+.unicorn-attribution,
+/* More aggressive targeting */
+body > div:last-child > a[href*="unicorn"],
+body > a[href*="unicorn"]:last-child,
+div[style*="position: fixed"][style*="bottom"],
+a[style*="position: fixed"][style*="bottom"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Mobile performance optimizations for InfiniteSlider */
+@media (max-width: 767px) {
+  /* Force hardware acceleration for better mobile performance */
+  .infinite-slider,
+  .infinite-slider > *,
+  [class*="infinite-slider"] {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+  
+  /* Optimize image rendering for mobile */
+  .infinite-slider img,
+  [class*="infinite-slider"] img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+  }
+  
+  /* Reduce visual complexity on mobile */
+  .progressive-blur {
+    display: none;
+  }
+  
+  /* Simplify gradients on mobile */
+  .bg-linear-to-r,
+  .bg-linear-to-l {
+    background: rgba(0, 0, 0, 0.05);
   }
 }

@@ -65,7 +65,7 @@ export default function HeroSectionWithUnicorn() {
               height: '100vh',
               position: 'absolute',
               top: 0,
-              left: 0,
+              left: isMobile ? '15%' : 0, // Move right by 15% on mobile,
               pointerEvents: 'none',
               zIndex: 1
             }}
@@ -86,12 +86,14 @@ export default function HeroSectionWithUnicorn() {
                     />
                   </div>
                   
-                  <h1 className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">
-                    When technology meets wisdom
-                  </h1>
-                  <p className="mt-8 max-w-2xl text-pretty text-lg">
-                    Highly customizable components for building modern websites and applications that look and feel the way you mean it.
-                  </p>
+                  <div className="w-[60%] sm:w-[60%] md:w-[70%] lg:w-full">
+                    <h1 className="mt-8 text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">
+                      When technology meets wisdom
+                    </h1>
+                    <p className="mt-8 text-pretty text-lg">
+                      Highly customizable components for building modern websites and applications that look and feel the way you mean it.
+                    </p>
+                  </div>
 
                   <div className="mt-12 flex justify-start">
                     <Button

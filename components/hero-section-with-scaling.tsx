@@ -12,8 +12,8 @@ import { useIsMobile } from '@/hooks/use-mobile'
 
 // Your calibrated positions
 const savedPositions = {
-    mobileLow: { x: 50, y: 50 },
-    mobile: { x: 46.6, y: 30.5 },
+    mobileLow: { x: 65, y: 50 }, // Moved right by 15%
+    mobile: { x: 61.6, y: 30.5 }, // Moved right by 15%,
     tablet: { x: 67.3, y: 35.9 },
     desktopHD: { x: 72, y: 19.7 },
     desktopRetina: { x: 72, y: 19.1 }
@@ -147,8 +147,10 @@ export default function HeroSectionWithScaling() {
                                         />
                                     </div>
                                     
-                                    <h1 className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">When technology meets wisdom</h1>
-                                    <p className="mt-8 max-w-2xl text-pretty text-lg">Highly customizable components for building modern websites and applications that look and feel the way you mean it.</p>
+                                    <div className="w-[60%] sm:w-[60%] md:w-[70%] lg:w-full">
+                                        <h1 className="mt-8 text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">When technology meets wisdom</h1>
+                                        <p className="mt-8 text-pretty text-lg">Highly customizable components for building modern websites and applications that look and feel the way you mean it.</p>
+                                    </div>
 
                                     <div className="mt-12 flex justify-start">
                                         <Button
