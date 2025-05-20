@@ -112,7 +112,7 @@
   
   .hero-background {
     @apply bg-cover bg-no-repeat;
-    background-position: 130% center; /* Dramatically shifted to the right for mobile */
+    background-position: -30% center; /* Dramatically shifted to the left for mobile */
     background-image: var(--hero-bg-mobile-low);
     background-color: #d7dadd; /* Light mode background */
   }
@@ -125,7 +125,7 @@
   @media (min-width: 375px) {
     .hero-background {
       background-image: var(--hero-bg-mobile);
-      background-position: 130% center; /* Dramatic right shift for mobile */
+      background-position: -30% center; /* Dramatic left shift for mobile */
     }
   }
   
@@ -305,7 +305,7 @@ a[style*="position: fixed"][style*="bottom"] {
 @media (max-width: 767px) {
   /* Add additional class for mobile hero background */
   .mobile-hero-bg {
-    background-position: 150% center !important; /* Force extreme rightward shift */
+    background-position: -50% center !important; /* Force extreme leftward shift */
   }
 }
 
