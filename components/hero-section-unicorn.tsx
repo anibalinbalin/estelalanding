@@ -65,7 +65,7 @@ export default function HeroSectionWithUnicorn() {
               height: '100vh',
               position: 'absolute',
               top: 0,
-              left: isMobile ? '-50%' : 0, // Move left by 50% on mobile to ensure text is on plain background,
+              left: isMobile ? '-55%' : 0, // Move left by 55% on mobile to ensure text is on plain background,
               pointerEvents: 'none',
               zIndex: 1
             }}
