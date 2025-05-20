@@ -113,7 +113,7 @@ export default function HeroSectionWithScaling() {
     return (
         <>
             <main className="overflow-x-hidden">
-                <section className="hero-background relative">
+                <section className={`hero-background relative ${isMobile ? 'mobile-hero-bg' : ''}`}>
                     {/* Unicorn Studio effect positioned based on breakpoint */}
                     <div 
                         data-us-project="3nh1j6pbHTPEnBpAb48a" 

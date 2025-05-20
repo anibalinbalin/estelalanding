@@ -56,7 +56,7 @@ export default function HeroSectionWithUnicorn() {
   return (
     <>
       <main className="overflow-x-hidden">
-        <section className="hero-background relative">
+        <section className={`hero-background relative ${isMobile ? 'mobile-hero-bg' : ''}`}>
           {/* Unicorn Studio effect fullscreen */}
           <div 
             data-us-project="aTdZ2iREcvCidTnZebRS" 
@@ -65,7 +65,7 @@ export default function HeroSectionWithUnicorn() {
               height: '100vh',
               position: 'absolute',
               top: 0,
-              left: isMobile ? '15%' : 0, // Move right by 15% on mobile,
+              left: isMobile ? '50%' : 0, // Move right by 50% on mobile to ensure text is on plain background,
               pointerEvents: 'none',
               zIndex: 1
             }}

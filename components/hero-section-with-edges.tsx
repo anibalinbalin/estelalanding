@@ -106,7 +106,7 @@ export default function HeroSectionWithEdges() {
             <EdgeGradientControls />
             
             <main className="overflow-x-hidden">
-                <section className="hero-background relative">
+                <section className={`hero-background relative ${isMobile ? 'mobile-hero-bg' : ''}`}>
                     {/* Container with left edge fade */}
                     <div className="absolute inset-0 unicorn-left-edge-fade">
                         {/* Unicorn Studio effect with bottom fade */}

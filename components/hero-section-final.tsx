@@ -115,7 +115,7 @@ export default function HeroSectionFinal() {
             </Button>
             
             <main className="overflow-x-hidden">
-                <section className="hero-background relative">
+                <section className={`hero-background relative ${isMobile ? 'mobile-hero-bg' : ''}`}>
                     {/* Unicorn Studio effect with both edge fades and screen blend mode */}
                     <div 
                         data-us-project="3nh1j6pbHTPEnBpAb48a" 

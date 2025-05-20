@@ -112,7 +112,7 @@
   
   .hero-background {
     @apply bg-cover bg-no-repeat;
-    background-position: 95% center; /* Shifted 35% to the right for mobile */
+    background-position: 130% center; /* Dramatically shifted to the right for mobile */
     background-image: var(--hero-bg-mobile-low);
     background-color: #d7dadd; /* Light mode background */
   }
@@ -125,7 +125,7 @@
   @media (min-width: 375px) {
     .hero-background {
       background-image: var(--hero-bg-mobile);
-      background-position: 95% center; /* Maintain 35% right shift for mobile */
+      background-position: 130% center; /* Dramatic right shift for mobile */
     }
   }
   
@@ -299,6 +299,14 @@ a[style*="position: fixed"][style*="bottom"] {
   width: 0 !important;
   height: 0 !important;
   overflow: hidden !important;
+}
+
+/* Mobile background positioning fix - move statue right */
+@media (max-width: 767px) {
+  /* Add additional class for mobile hero background */
+  .mobile-hero-bg {
+    background-position: 150% center !important; /* Force extreme rightward shift */
+  }
 }
 
 /* Mobile performance optimizations for InfiniteSlider */
