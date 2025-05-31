@@ -160,3 +160,12 @@ All major section headers should use the consistent color scheme:
   2. Maintains `w-full py-20 lg:py-40` for proper vertical spacing
   3. Now matches the horizontal padding pattern used in other sections
   4. Ensures consistent horizontal spacing across all major sections
+
+## Hero Section Container Consistency
+- Updated hero section to match container structure of other sections
+- File: `components/ui/animated-hero.tsx`
+- Changes:
+  1. Changed from `mx-auto max-w-6xl px-6` to `container mx-auto px-5 sm:px-10`
+  2. Now matches the exact same margin and padding structure as all other sections
+  3. Ensures consistent text alignment and spacing throughout the page
+  4. Hero content now aligns perfectly with sections below

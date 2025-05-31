@@ -40,7 +40,7 @@ function Hero() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 mx-auto max-w-6xl px-6">
+      <div className="relative z-10 container mx-auto px-5 sm:px-10">
         <div className="flex min-h-screen items-center py-24">
           <div className="w-full">
             {/* Hero Content */}
