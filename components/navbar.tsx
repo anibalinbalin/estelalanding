@@ -15,10 +15,73 @@ import {
 } from "@/components/ui/navigation-menu"
 import { ToolbarSwitcher } from "@/components/ui/toolbar-switcher"
 
+// ASCII art data for services
+const serviceArt = {
+  infrastructure: `    ┌────────────────────────────────────┐
+    │     ┌─────┐     ┌─────┐           │
+    │     │ ███ │────►│ ███ │           │
+    │     └─────┘     └─────┘           │
+    │         │         │                │
+    │    ┌────┴────────┴────┐           │
+    │    │  ███████████████  │          │
+    │    └───────────────────┘          │
+    └────────────────────────────────────┘`,
+  security: `    ╔═══════════════════════════╗
+    ║  ┌───┐  ┌───┐  ┌───┐    ║
+    ║  │ 🔒│  │ 🔒│  │ 🔒│    ║
+    ║  └───┘  └───┘  └───┘    ║
+    ║      PROTECTED           ║
+    ╚═══════════════════════════╝`,
+  development: `    < / >  { }  [ ]  ( )
+    ─────────────────────
+    const solution = async () => {
+      await transform(business);
+    }`,
+  consulting: `      24/7
+    ┌─────┐
+    │ YOU │◄──── 2hrs ────►│ US │
+    └─────┘
+      365`,
+  specifications: `    ┌─ REQUIREMENTS ────────────┐
+    │ ✓ Performance targets     │
+    │ ✓ Security standards      │
+    │ ✓ Integration points      │
+    │ ✓ Compliance rules        │
+    └───────────────────────────┘`
+}
+
+const serviceDescriptions = {
+  default: {
+    title: "Our Services",
+    subtitle: "Technology solutions designed for your business needs."
+  },
+  infrastructure: {
+    title: "Infrastructure & Networks",
+    subtitle: "The foundation of everything digital. We build networks that never make you think about networks."
+  },
+  security: {
+    title: "Cloud & Security", 
+    subtitle: "Protection isn't paranoia. It's preparation. We secure your data, your premises, and your peace of mind."
+  },
+  development: {
+    title: "Development & AI",
+    subtitle: "Custom solutions for unique challenges. We build the tools your business needs to thrive."
+  },
+  consulting: {
+    title: "Consulting & Support",
+    subtitle: "Your technology partner, not just another vendor. From strategic planning to daily support."
+  },
+  specifications: {
+    title: "Technical Specifications",
+    subtitle: "Detailed technical documentation and requirements analysis for complex implementations."
+  }
+}
+
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
-  const { theme, resolvedTheme } = useTheme()
+  const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
+  const [hoveredService, setHoveredService] = React.useState<string>('default')
   
   // Only show theme-dependent content after mounting
   React.useEffect(() => {
@@ -28,7 +91,7 @@ export function Navbar() {
   const logoSrc = mounted && resolvedTheme === "dark" ? "/logos/logo_blanco.png" : "/logos/logo_original.png"
 
   return (
-    <nav className="relative z-10 w-full">
+    <nav className="relative z-50 w-full">
       <div className="flex h-20 items-center px-5 sm:px-10">
         <div className="relative w-full">
           <div className="flex w-full items-center justify-between list-none m-auto p-0 max-w-[1200px]">
@@ -66,7 +129,86 @@ export function Navbar() {
                 <NavigationMenuList>
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="oxide-nav-trigger">
-                      Product
+                      Services
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent 
+                      onMouseLeave={() => setHoveredService('default')}
+                    >
+                      <ul className="grid gap-3 p-6 services-menu-content lg:grid-cols-[320px_1fr]">
+                        <li className="row-span-3">
+                          <NavigationMenuLink asChild>
+                            <a
+                              className="flex select-none flex-col justify-between rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md h-[320px] w-[320px] service-content-area"
+                              href="/services"
+                            >
+                              <div className="space-y-4 h-full flex flex-col">
+                                <div className="mb-2 text-lg font-medium min-h-[2.5rem] flex items-center">
+                                  {serviceDescriptions[hoveredService as keyof typeof serviceDescriptions].title}
+                                </div>
+                                <p className="text-sm leading-tight text-muted-foreground flex-shrink-0 min-h-[3rem]">
+                                  {serviceDescriptions[hoveredService as keyof typeof serviceDescriptions].subtitle}
+                                </p>
+                                <div className="mt-4 p-3 bg-background/50 rounded border flex-1 min-h-[140px] flex items-center justify-center">
+                                  {hoveredService !== 'default' ? (
+                                    <pre className="navigation-ascii-art">
+                                      {serviceArt[hoveredService as keyof typeof serviceArt]}
+                                    </pre>
+                                  ) : (
+                                    <div className="text-center text-muted-foreground/60 text-sm">
+                                      Hover over a service to see preview
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                        <ServiceListItem 
+                          href="/services/infrastructure" 
+                          title="Infrastructure"
+                          serviceKey="infrastructure"
+                          onHover={setHoveredService}
+                        >
+                          Robust and scalable infrastructure solutions.
+                        </ServiceListItem>
+                        <ServiceListItem 
+                          href="/services/security" 
+                          title="Security"
+                          serviceKey="security"
+                          onHover={setHoveredService}
+                        >
+                          Comprehensive security and protection services.
+                        </ServiceListItem>
+                        <ServiceListItem 
+                          href="/services/development" 
+                          title="Development"
+                          serviceKey="development"
+                          onHover={setHoveredService}
+                        >
+                          Custom software development and solutions.
+                        </ServiceListItem>
+                        <ServiceListItem 
+                          href="/services/consulting" 
+                          title="Consulting"
+                          serviceKey="consulting"
+                          onHover={setHoveredService}
+                        >
+                          Expert technology consulting and guidance.
+                        </ServiceListItem>
+                        <ServiceListItem 
+                          href="/services/specifications" 
+                          title="Specifications"
+                          serviceKey="specifications"
+                          onHover={setHoveredService}
+                        >
+                          Detailed technical specifications and requirements.
+                        </ServiceListItem>
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="oxide-nav-trigger">
+                      Method
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -74,52 +216,31 @@ export function Navbar() {
                           <NavigationMenuLink asChild>
                             <a
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                              href="/"
+                              href="/method"
                             >
                               <div className="mb-2 mt-4 text-lg font-medium">
-                                Our Platform
+                                The Estela Method
                               </div>
                               <p className="text-sm leading-tight text-muted-foreground">
-                                Build modern applications with cutting-edge technology.
+                                Our proven approach to technology transformation.
                               </p>
                             </a>
                           </NavigationMenuLink>
                         </li>
-                        <ListItem href="/features" title="Features">
-                          Explore our comprehensive feature set.
+                        <ListItem href="/method/introduction" title="Introduction">
+                          Learn about our methodology and approach.
                         </ListItem>
-                        <ListItem href="/solutions" title="Solutions">
-                          Industry-specific solutions for your needs.
+                        <ListItem href="/method/principles" title="Principles">
+                          The core principles that guide our work.
                         </ListItem>
-                        <ListItem href="/pricing" title="Pricing">
-                          Simple, transparent pricing plans.
+                        <ListItem href="/method/implementation" title="Implementation">
+                          How we implement solutions for clients.
                         </ListItem>
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger className="oxide-nav-trigger">
-                      Resources
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                        <ListItem href="/docs" title="Documentation">
-                          Comprehensive guides and API references.
+                        <ListItem href="/method/practices" title="Practices">
+                          Best practices and proven methodologies.
                         </ListItem>
-                        <ListItem href="/tutorials" title="Tutorials">
-                          Step-by-step tutorials to get started.
-                        </ListItem>
-                        <ListItem href="/community" title="Community">
-                          Join our vibrant developer community.
-                        </ListItem>
-                        <ListItem href="/support" title="Support">
-                          Get help when you need it.
-                        </ListItem>
-                        <ListItem href="/changelog" title="Changelog">
-                          See what's new and improved.
-                        </ListItem>
-                        <ListItem href="/roadmap" title="Roadmap">
-                          Discover what's coming next.
+                        <ListItem href="/method/philosophy" title="Philosophy">
+                          Our philosophy on technology and business.
                         </ListItem>
                       </ul>
                     </NavigationMenuContent>
@@ -129,47 +250,32 @@ export function Navbar() {
                       Company
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                        <ListItem href="/about" title="About">
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        <ListItem href="/company/about" title="About">
                           Learn about our mission and values.
                         </ListItem>
-                        <ListItem href="/blog" title="Blog">
-                          Latest news and insights.
+                        <ListItem href="/company/work" title="Work">
+                          See our portfolio and case studies.
                         </ListItem>
-                        <ListItem href="/press" title="Press">
+                        <ListItem href="/company/team" title="Team">
+                          Meet the people behind Estela.
+                        </ListItem>
+                        <ListItem href="/company/partners" title="Partners">
+                          Our trusted technology partners.
+                        </ListItem>
+                        <ListItem href="/company/blog" title="Blog">
+                          Latest insights and thoughts.
+                        </ListItem>
+                        <ListItem href="/company/press" title="Press">
                           Media resources and press releases.
-                        </ListItem>
-                        <ListItem href="/partners" title="Partners">
-                          Our ecosystem of partners.
-                        </ListItem>
-                        <ListItem href="/contact" title="Contact">
-                          Get in touch with our team.
-                        </ListItem>
-                        <ListItem href="/legal" title="Legal">
-                          Terms, privacy, and policies.
-                        </ListItem>
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger className="oxide-nav-trigger">
-                      Podcasts
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-3 p-4">
-                        <ListItem href="/podcasts/oxide-friends" title="Oxide and Friends">
-                          Weekly discussions about technology and computing.
-                        </ListItem>
-                        <ListItem href="/podcasts/on-the-metal" title="On the Metal">
-                          Tales from the hardware and software frontier.
                         </ListItem>
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild>
-                      <Link href="/blog" className="oxide-nav-link">
-                        Blog
+                      <Link href="/contact" className="oxide-nav-link">
+                        Contact
                       </Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
@@ -196,16 +302,16 @@ export function Navbar() {
         <div className="lg:hidden border-t">
           <div className="px-5 sm:px-10">
             <Link
-              href="/product"
+              href="/services"
               className="oxide-nav-link-mobile"
             >
-              Product
+              Services
             </Link>
             <Link
-              href="/resources"
+              href="/method"
               className="oxide-nav-link-mobile"
             >
-              Resources
+              Method
             </Link>
             <Link
               href="/company"
@@ -214,23 +320,17 @@ export function Navbar() {
               Company
             </Link>
             <Link
-              href="/podcasts"
+              href="/contact"
               className="oxide-nav-link-mobile"
             >
-              Podcasts
-            </Link>
-            <Link
-              href="/blog"
-              className="oxide-nav-link-mobile"
-            >
-              Blog
+              Contact
             </Link>
             <div className="py-4">
               <Link 
                 href="/contact" 
                 className="oxide-nav-button oxide-nav-button-outline w-full text-center"
               >
-                Contact us
+                Get Started
               </Link>
             </div>
           </div>
@@ -265,3 +365,34 @@ const ListItem = React.forwardRef<
   )
 })
 ListItem.displayName = "ListItem"
+
+// Special ListItem for Services with hover functionality
+const ServiceListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a"> & {
+    serviceKey: string
+    onHover: (service: string) => void
+  }
+>(({ className, title, children, serviceKey, onHover, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          onMouseEnter={() => onHover(serviceKey)}
+          {...props}
+        >
+          <div className="oxide-submenu-title">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ServiceListItem.displayName = "ServiceListItem"
