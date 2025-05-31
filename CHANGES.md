@@ -169,3 +169,26 @@ All major section headers should use the consistent color scheme:
   2. Now matches the exact same margin and padding structure as all other sections
   3. Ensures consistent text alignment and spacing throughout the page
   4. Hero content now aligns perfectly with sections below
+
+## Storage Section Addition
+- Added comprehensive storage section with distributed block storage information
+- Files: `components/storage-section.tsx`, `app/page.tsx`
+- Changes:
+  1. Created new StorageSection component with extensive storage content including:
+     - Header with storage icon and title
+     - Main content section with external images from oxide.computer
+     - Feature grid (scale up, snapshots, mixed workloads)
+     - Multiple content sections (On-Demand Snapshots, Powered by OpenZFS, Proactive Data Protection)
+     - Hardware/Software co-design features
+     - CTA section with "Try it now" and "Contact us" buttons
+     - Specifications table with detailed storage specs
+  2. Added bilingual support (English/Spanish) for all content
+  3. Implemented consistent patterns:
+     - Theme detection with `mounted` state to prevent hydration issues
+     - Standard color scheme: `#d7d8d9` (dark mode) / `#08090a` (light mode)
+     - Container structure: `container mx-auto px-5 sm:px-10`
+     - Vertical spacing: `py-20 lg:py-40`
+  4. Used external images from oxide.computer (temporary placeholders)
+  5. Updated Next.js config to allow images from oxide-computer.imgix.net domain
+  6. Integrated component into main page after DeveloperVelocitySection
+  7. Follows established component architecture with proper TypeScript types

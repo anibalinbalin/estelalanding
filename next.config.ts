@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/img/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'oxide-computer.imgix.net',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };
