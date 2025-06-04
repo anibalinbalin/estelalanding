@@ -17,37 +17,34 @@ import { ToolbarSwitcher } from "@/components/ui/toolbar-switcher"
 
 // ASCII art data for services
 const serviceArt = {
-  infrastructure: `    ┌────────────────────────────────────┐
-    │     ┌─────┐     ┌─────┐           │
-    │     │ ███ │────►│ ███ │           │
-    │     └─────┘     └─────┘           │
-    │         │         │                │
-    │    ┌────┴────────┴────┐           │
-    │    │  ███████████████  │          │
-    │    └───────────────────┘          │
-    └────────────────────────────────────┘`,
-  security: `    ╔═══════════════════════════╗
-    ║  ┌───┐  ┌───┐  ┌───┐    ║
-    ║  │ 🔒│  │ 🔒│  │ 🔒│    ║
-    ║  └───┘  └───┘  └───┘    ║
-    ║      PROTECTED           ║
-    ╚═══════════════════════════╝`,
-  development: `    < / >  { }  [ ]  ( )
-    ─────────────────────
-    const solution = async () => {
-      await transform(business);
-    }`,
-  consulting: `      24/7
-    ┌─────┐
-    │ YOU │◄──── 2hrs ────►│ US │
-    └─────┘
-      365`,
-  specifications: `    ┌─ REQUIREMENTS ────────────┐
-    │ ✓ Performance targets     │
-    │ ✓ Security standards      │
-    │ ✓ Integration points      │
-    │ ✓ Compliance rules        │
-    └───────────────────────────┘`
+  infrastructure: `┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐
+│ A ├─┤ B ├─┤ C ├─┤ D ├─┤ E │
+└─┬─┘ └─┬─┘ └─┬─┘ └─┬─┘ └─┬─┘
+  │     │     │     │     │
+┌─┴─┐ ┌─┴─┐ ┌─┴─┐ ┌─┴─┐ ┌─┴─┐
+│ F ├─┤ G ├─┤ H ├─┤ I ├─┤ J │
+└───┘ └───┘ └───┘ └───┘ └───┘`,
+  security: `●───●───●───●───●───●───●
+│ ╲ │ ╱ │ ╲ │ ╱ │ ╲ │ ╱ │
+●───●───●───●───●───●───●
+│ ╱ │ ╲ │ ╱ │ ╲ │ ╱ │ ╲ │
+●───●───●───●───●───●───●`,
+  development: `01001 { } 10110 [ ] 01101
+11010 code 01001 AI 10011
+00101 → → → → → → → 11000
+10110 solution() 01001010`,
+  consulting: `◇─◇─◇─◇─◇─◇─◇
+ ╱ ╲ ╱ ╲ ╱ ╲ ╱ ╲ ╱
+◇───◇───◇───◇───◇
+ ╲ ╱ ╲ ╱ ╲ ╱ ╲ ╱ ╲
+  ◇─◇─◇─◇─◇─◇─◇`,
+  specifications: `┌──┬──┬──┬──┬──┬──┬──┬──┬──┬──┐
+│██│  │██│  │██│  │██│  │██│  │
+├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤
+│  │██│  │██│  │██│  │██│  │██│
+├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤
+│██│  │██│  │██│  │██│  │██│  │
+└──┴──┴──┴──┴──┴──┴──┴──┴──┴──┘`
 }
 
 const serviceDescriptions = {
@@ -93,6 +90,7 @@ export function Navbar() {
   return (
     <nav className="relative z-50 w-full">
       <div className="flex h-20 items-center px-5 sm:px-10">
+        <div className="h-[1px] w-full border-b border-border absolute bottom-0"></div>
         <div className="relative w-full">
           <div className="flex w-full items-center justify-between list-none m-auto p-0 max-w-[1200px]">
             {/* Left section: Mobile menu button + Logo */}
@@ -251,10 +249,10 @@ export function Navbar() {
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                        <ListItem href="/company/about" title="About">
+                        <ListItem href="/about" title="About">
                           Learn about our mission and values.
                         </ListItem>
-                        <ListItem href="/company/work" title="Work">
+                        <ListItem href="/work" title="Work">
                           See our portfolio and case studies.
                         </ListItem>
                         <ListItem href="/company/team" title="Team">
@@ -262,12 +260,6 @@ export function Navbar() {
                         </ListItem>
                         <ListItem href="/company/partners" title="Partners">
                           Our trusted technology partners.
-                        </ListItem>
-                        <ListItem href="/company/blog" title="Blog">
-                          Latest insights and thoughts.
-                        </ListItem>
-                        <ListItem href="/company/press" title="Press">
-                          Media resources and press releases.
                         </ListItem>
                       </ul>
                     </NavigationMenuContent>

@@ -3,19 +3,25 @@
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 
+interface UnicornStudioType {
+  init: (config?: { scale?: number; dpi?: number; fps?: number }) => Promise<Array<{
+    element: HTMLElement;
+    destroy: () => void;
+    contains?: (element: HTMLElement | null) => boolean;
+  }>>;
+  isInitialized?: boolean;
+}
+
 declare global {
   interface Window {
-    UnicornStudio: {
-      init?: () => void;
-      destroy?: () => void;
-      isInitialized?: boolean;
-    };
+    UnicornStudio?: UnicornStudioType;
   }
 }
 
 export function UnicornBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { theme, resolvedTheme } = useTheme();
+  const sceneRef = useRef<{ destroy: () => void } | null>(null);
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   // Set mounted state
@@ -24,44 +30,92 @@ export function UnicornBackground() {
   }, []);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!mounted || !containerRef.current) return;
 
-    const loadUnicornStudio = () => {
-      if (!window.UnicornStudio) {
-        window.UnicornStudio = { isInitialized: false };
-        const script = document.createElement("script");
-        script.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.25/dist/unicornStudio.umd.js";
-        script.onload = () => {
-          if (!window.UnicornStudio.isInitialized) {
-            window.UnicornStudio.init();
-            window.UnicornStudio.isInitialized = true;
-          }
-        };
-        (document.head || document.body).appendChild(script);
-      } else if (window.UnicornStudio.isInitialized) {
-        // Re-initialize if already loaded
-        window.UnicornStudio.init();
+    const initializeScript = (callback: () => void) => {
+      const version = '1.4.25';
+
+      const existingScript = document.querySelector(
+        'script[src^="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js"]'
+      );
+
+      if (existingScript) {
+        if (window.UnicornStudio) {
+          callback();
+        } else {
+          existingScript.addEventListener('load', callback);
+        }
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = `https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v${version}/dist/unicornStudio.umd.js`;
+      script.async = true;
+
+      script.onload = () => {
+        callback();
+      };
+
+      document.body.appendChild(script);
+    };
+
+    const initializeScene = async () => {
+      if (!containerRef.current || !window.UnicornStudio) return;
+
+      // Clean up previous scene
+      if (sceneRef.current?.destroy) {
+        sceneRef.current.destroy();
+        sceneRef.current = null;
+      }
+
+      // Initialize with configuration
+      const scenes = await window.UnicornStudio.init({
+        scale: 1,
+        dpi: 1.5,
+        fps: 30, // Lower FPS for background animation
+      });
+
+      // Find our scene
+      const ourScene = scenes.find(
+        (scene) =>
+          scene.element === containerRef.current ||
+          scene.element.contains(containerRef.current)
+      );
+
+      if (ourScene) {
+        sceneRef.current = ourScene;
       }
     };
 
-    loadUnicornStudio();
+    initializeScript(() => {
+      void initializeScene();
+    });
 
     // Cleanup function
     return () => {
-      if (window.UnicornStudio && window.UnicornStudio.destroy) {
-        window.UnicornStudio.destroy();
+      if (sceneRef.current?.destroy) {
+        sceneRef.current.destroy();
+        sceneRef.current = null;
       }
     };
-  }, [theme]);
+  }, [mounted, resolvedTheme]);
 
-  // Light theme project ID: hzCHR7pkfaINHqE3pmvN
-  // Dark theme project ID: 7oGZViIlL09cikCTRaRM
-  const projectId = mounted && resolvedTheme === "dark" ? "7oGZViIlL09cikCTRaRM" : "hzCHR7pkfaINHqE3pmvN";
+  // Updated project IDs with production mode
+  // Light theme project ID: x32OzaamtEMBurgclZfn
+  // Dark theme project ID: v0bejveYheJ4JoKnNQwP
+  const projectId = resolvedTheme === "dark" ? "v0bejveYheJ4JoKnNQwP" : "x32OzaamtEMBurgclZfn";
+
+  if (!mounted) {
+    return <div className="absolute inset-0 w-full h-full -z-10" />;
+  }
 
   return (
     <div 
       ref={containerRef}
-      data-us-project={projectId}
+      data-us-project={`${projectId}?production=true`}
+      data-us-scale="1"
+      data-us-dpi="1.5"
+      data-us-fps="30"
       className="absolute inset-0 w-full h-full -z-10"
       style={{ minHeight: "900px" }}
     />

@@ -471,14 +471,14 @@ export const StorageSection = () => {
             </div>
             <div className="flex flex-col gap-2 text-center">
               <Link 
-                href="/remote-access" 
-                className="inline-flex items-center justify-center h-8 px-3 text-green-600 bg-green-100 rounded text-xs font-mono uppercase tracking-wider shadow hover:bg-green-200 transition-colors"
+                href="/method" 
+                className="oxide-nav-button oxide-nav-button-primary"
               >
                 {t.tryButton}
               </Link>
               <Link 
                 href="/contact" 
-                className="inline-flex items-center justify-center h-8 px-3 text-muted-foreground border border-current rounded text-xs font-mono uppercase tracking-wider hover:bg-accent transition-colors"
+                className="oxide-nav-button oxide-nav-button-outline"
               >
                 {t.contactButton}
               </Link>
@@ -820,17 +820,9 @@ export const StorageSection = () => {
                     <div className="px-6 py-4 flex items-center justify-end min-[800px]:col-span-12">
                       <button 
                         type="submit" 
-                        className="px-3 items-center cursor-pointer bg-none uppercase font-normal leading-4 tracking-wider m-0 p-0 inline-flex h-8 justify-center align-top relative hover:opacity-80"
-                        style={{
-                          backgroundColor: 'var(--surface-accent-secondary-p3)',
-                          fontFamily: 'GT_America_Mono, monospace',
-                          fontSize: '.75rem',
-                          color: 'var(--content-accent-p3)',
-                          borderRadius: 'var(--border-radius)',
-                          boxShadow: 'var(--elevation-1)'
-                        }}
+                        className="oxide-nav-button oxide-nav-button-primary"
                       >
-                        <span className="items-center flex">Submit</span>
+                        Submit
                       </button>
                     </div>
                   </div>

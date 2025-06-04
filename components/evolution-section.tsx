@@ -459,8 +459,7 @@ export const EvolutionSection = () => {
                 <div className="mt-6 px-6 sm:px-8">
                   <Link 
                     href="/transform" 
-                    className="inline-flex items-center justify-center h-[40px] px-[20px] text-[14px] border border-border bg-transparent text-foreground rounded-[8px] hover:bg-accent transition-all duration-[150ms]"
-                    style={{ fontWeight: 510 }}
+                    className="oxide-nav-button oxide-nav-button-outline"
                   >
                     Transform Your Infrastructure
                     <ArrowRight className="w-4 h-4 ml-2" />

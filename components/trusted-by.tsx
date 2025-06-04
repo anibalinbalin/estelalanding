@@ -15,7 +15,7 @@ export const TrustedBy = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const { language } = useLanguage();
-  const { theme, resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   
   // Only show theme-dependent content after mounting

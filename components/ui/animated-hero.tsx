@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 import { useLanguage } from "@/components/language-provider";
 
 function Hero() {
-  const { theme, resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const { language } = useLanguage();
   const [mounted, setMounted] = useState(false);
   
@@ -74,14 +74,12 @@ function Hero() {
             {/* CTA Buttons */}
             <div className="mt-8 flex gap-4 flex-col sm:flex-row">
               <button 
-                className="inline-flex items-center justify-center h-[40px] px-[20px] text-[14px] bg-foreground text-background rounded-[8px] hover:opacity-90 transition-all duration-[150ms]"
-                style={{ fontWeight: 510 }}
+                className="oxide-nav-button oxide-nav-button-primary"
               >
                 {t.signUp} <MoveRight className="w-4 h-4 ml-2" />
               </button>
               <button 
-                className="inline-flex items-center justify-center h-[40px] px-[20px] text-[14px] border border-border bg-transparent text-foreground rounded-[8px] hover:bg-accent transition-all duration-[150ms]"
-                style={{ fontWeight: 510 }}
+                className="oxide-nav-button oxide-nav-button-outline"
               >
                 {t.call} <PhoneCall className="w-4 h-4 ml-2" />
               </button>
