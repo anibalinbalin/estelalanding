@@ -82,11 +82,20 @@ export function MethodImplementation() {
           </div>
           
           <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-            <span style={{ 
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              backgroundColor: '#1a2224',
+              color: '#fff',
               fontSize: '1.125rem', 
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)'
-            }}>3</span>
+              fontFamily: 'GT_America_Mono, monospace'
+            }}>
+              3
+            </div>
           </div>
           
           <h1 style={{
@@ -130,8 +139,8 @@ export function MethodImplementation() {
             overflow: 'hidden'
           }}>
             <Waves
-              lineColor="rgba(215, 216, 217, 0.6)"
-              backgroundColor="transparent"
+              lineColor="#444"
+              backgroundColor="#F0EEE6"
               waveSpeedX={0}
               waveSpeedY={0}
               waveAmpX={0}

@@ -5,7 +5,7 @@ import Link from 'next/link'
 export function MethodSection() {
   // Linear's exact styles adapted for Estela
   const pageStyles = {
-    backgroundColor: 'rgb(8, 9, 10)',
+    backgroundColor: '#090f11',
     color: 'rgb(215, 216, 217)',
     minHeight: '100vh'
   }

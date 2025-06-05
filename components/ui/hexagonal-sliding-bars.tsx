@@ -139,12 +139,12 @@ const HexagonalSlidingBars = () => {
       const cycleTime = timeRef.current % (Math.PI * 6); // Much longer cycle for 6 second hold
 
       let easingFactor;
-      if (cycleTime < Math.PI * 0.3) {
-        // Initial random pattern
+      if (cycleTime < Math.PI * 0.25) {
+        // Initial random pattern (increased to 0.25 for more delay)
         easingFactor = 0;
-      } else if (cycleTime < Math.PI * 0.6) {
-        // Transition to hexagon
-        const transitionProgress = (cycleTime - Math.PI * 0.3) / (Math.PI * 0.3);
+      } else if (cycleTime < Math.PI * 0.65) {
+        // Transition to hexagon (now 0.25 to 0.65 for slower formation)
+        const transitionProgress = (cycleTime - Math.PI * 0.25) / (Math.PI * 0.4);
         easingFactor = transitionProgress;
       } else if (cycleTime < Math.PI * 5.1) {
         // Hold hexagon shape for much longer (about 6 seconds)

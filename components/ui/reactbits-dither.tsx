@@ -120,7 +120,8 @@ void main() {
     f -= 0.5 * effect;
   }
   
-  vec3 col = mix(vec3(0.0), waveColor, f);
+  vec3 backgroundColor = vec3(0.267, 0.267, 0.267); // #444 in RGB
+  vec3 col = mix(backgroundColor, waveColor, f);
   col = dither(vUv, col, 4.0);
   
   gl_FragColor = vec4(col, 1.0);

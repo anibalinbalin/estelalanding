@@ -84,6 +84,17 @@ const InteractiveLinesGrid: React.FC<InteractiveLinesGridProps> = ({
       const cellWidth = canvas.width / cols
       const cellHeight = canvas.height / rows
 
+      // Determine dot position
+      let dotX, dotY
+      if (isMouseOver) {
+        dotX = mousePos.x
+        dotY = mousePos.y
+      } else {
+        // Default position: top right corner with some padding
+        dotX = canvas.width - 30
+        dotY = 30
+      }
+
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
           const x = col * cellWidth + cellWidth / 2
@@ -97,6 +108,9 @@ const InteractiveLinesGrid: React.FC<InteractiveLinesGridProps> = ({
             const distance = getDistanceToMouse(x, y, mousePos.x, mousePos.y)
             const maxDistance = Math.min(canvas.width, canvas.height) / 2
             opacity = Math.max(0.3, 1 - (distance / maxDistance))
+          } else {
+            // Create a radial pattern pointing to the dot position
+            angle = getAngleToMouse(x, y, dotX, dotY)
           }
 
           ctx.save()
@@ -114,6 +128,17 @@ const InteractiveLinesGrid: React.FC<InteractiveLinesGridProps> = ({
 
           ctx.restore()
         }
+      }
+
+      // Draw the dot if showDot is true
+      if (showDot) {
+        ctx.save()
+        ctx.globalAlpha = 1
+        ctx.beginPath()
+        ctx.arc(dotX, dotY, dotSize / 2, 0, Math.PI * 2)
+        ctx.fillStyle = isMouseOver ? finalHoverColor : finalColor
+        ctx.fill()
+        ctx.restore()
       }
     }
 
@@ -134,7 +159,7 @@ const InteractiveLinesGrid: React.FC<InteractiveLinesGridProps> = ({
         cancelAnimationFrame(animationRef.current)
       }
     }
-  }, [cols, rows, lineLength, lineWidth, finalColor, finalHoverColor, isMouseOver, mousePos])
+  }, [cols, rows, lineLength, lineWidth, finalColor, finalHoverColor, isMouseOver, mousePos, showDot, dotSize])
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = wrapperRef.current?.getBoundingClientRect()

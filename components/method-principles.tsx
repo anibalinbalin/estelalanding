@@ -71,11 +71,20 @@ export function MethodPrinciples() {
           </div>
           
           <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-            <span style={{ 
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              backgroundColor: '#1a2224',
+              color: '#fff',
               fontSize: '1.125rem', 
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)'
-            }}>2</span>
+              fontFamily: 'GT_America_Mono, monospace'
+            }}>
+              2
+            </div>
           </div>
           
           <h1 style={{
@@ -97,31 +106,43 @@ export function MethodPrinciples() {
             marginBottom: '48px'
           }} />
 
-          <div style={{ marginBottom: '48px' }}>
+          <p style={{
+            fontSize: '19px',
+            fontWeight: '400',
+            lineHeight: '30.4px',
+            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+            color: 'var(--content-secondary-p3)',
+            marginBottom: '48px'
+          }}>
+            The fundamental beliefs that guide every decision we make.
+          </p>
+
+          <div style={{
+            position: 'relative',
+            height: '300px',
+            width: '100%',
+            borderRadius: '8px',
+            border: '1px solid var(--border)',
+            overflow: 'hidden',
+            backgroundColor: '#F0EEE6',
+            marginBottom: '48px'
+          }}>
             <InteractiveLinesGrid 
               cols={30}
               rows={10}
-              height={200}
+              height={300}
               lineLength={16}
               lineWidth={1.2}
               showDot={true}
               dotSize={7}
-              backgroundColor="#090f11"
+              backgroundColor="#F0EEE6"
+              color="#444"
+              hoverColor="#000"
               style={{
-                marginBottom: '32px',
-                borderRadius: '8px'
+                width: '100%',
+                height: '100%'
               }}
             />
-            
-            <p style={{
-              fontSize: '19px',
-              fontWeight: '400',
-              lineHeight: '30.4px',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'var(--content-secondary-p3)'
-            }}>
-              The fundamental beliefs that guide every decision we make.
-            </p>
           </div>
         </div>
 
