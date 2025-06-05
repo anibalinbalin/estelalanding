@@ -5,9 +5,10 @@ import Link from 'next/link'
 export function MethodSection() {
   // Linear's exact styles adapted for Estela
   const pageStyles = {
-    backgroundColor: '#090f11',
-    color: 'rgb(215, 216, 217)',
-    minHeight: '100vh'
+    backgroundColor: 'var(--background)',
+    color: 'var(--foreground)',
+    minHeight: '100vh',
+    overflowX: 'hidden'
   }
 
   const heroTitleStyle = {
@@ -16,7 +17,7 @@ export function MethodSection() {
     fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
     lineHeight: '3.625rem',
     letterSpacing: 'normal',
-    color: 'rgb(215, 216, 217)',
+    color: 'var(--foreground)',
     margin: 0,
     marginBottom: '24px'
   }
@@ -27,7 +28,7 @@ export function MethodSection() {
     fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
     lineHeight: '1.75rem',
     letterSpacing: 'normal',
-    color: 'rgb(215, 216, 217)',
+    color: 'var(--foreground)',
     marginBottom: '24px'
   }
 
@@ -36,7 +37,7 @@ export function MethodSection() {
     fontWeight: '400',
     lineHeight: '1.5rem',
     fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(126, 131, 133)',
+    color: 'var(--content-secondary-p3)',
     marginTop: '16px',
     maxWidth: '640px',
     margin: '0 auto'
@@ -44,7 +45,7 @@ export function MethodSection() {
 
   const dividerStyle = {
     height: '1px',
-    backgroundColor: 'rgba(247, 248, 248, 0.08)',
+    backgroundColor: 'var(--border)',
     margin: '72px 0'
   }
 
@@ -59,7 +60,7 @@ export function MethodSection() {
     textTransform: 'uppercase' as const,
     fontWeight: '400',
     fontFamily: 'GT_America_Mono, monospace',
-    color: 'rgb(215, 216, 217)',
+    color: 'var(--foreground)',
     marginBottom: '0px'
   }
 
@@ -89,7 +90,7 @@ export function MethodSection() {
     letterSpacing: '0.05em',
     textTransform: 'uppercase',
     fontFamily: 'GT_America_Mono, monospace',
-    color: 'rgb(126, 131, 133)',
+    color: 'var(--content-secondary-p3)',
     marginBottom: '24px'
   }
 
@@ -144,7 +145,7 @@ export function MethodSection() {
                     fontWeight: '400',
                     lineHeight: '1.6',
                     fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                    color: 'rgba(247, 248, 248, 0.65)',
+                    color: 'var(--content-secondary-p3)',
                     textDecoration: 'none',
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -152,10 +153,10 @@ export function MethodSection() {
                     transition: 'color 0.1s ease'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = 'rgb(215, 216, 217)'
+                    e.currentTarget.style.color = 'var(--foreground)'
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = 'rgba(215, 216, 217, 0.65)'
+                    e.currentTarget.style.color = 'var(--content-secondary-p3)'
                   }}
                 >
                   <span>The Art of Translation</span>
@@ -188,7 +189,7 @@ export function MethodSection() {
                       fontWeight: '400',
                       lineHeight: '1.6',
                       fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                      color: 'rgb(126, 131, 133)',
+                      color: 'var(--content-secondary-p3)',
                       textDecoration: 'none',
                       display: 'flex',
                       justifyContent: 'space-between',
@@ -196,10 +197,10 @@ export function MethodSection() {
                       transition: 'color 0.1s ease'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = 'rgb(215, 216, 217)'
+                      e.currentTarget.style.color = 'var(--foreground)'
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'rgb(126, 131, 133)'
+                      e.currentTarget.style.color = 'var(--content-secondary-p3)'
                     }}
                   >
                     <span>{item.title}</span>
@@ -232,7 +233,7 @@ export function MethodSection() {
                       fontWeight: '400',
                       lineHeight: '1.6',
                       fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                      color: 'rgb(126, 131, 133)',
+                      color: 'var(--content-secondary-p3)',
                       textDecoration: 'none',
                       display: 'flex',
                       justifyContent: 'space-between',
@@ -240,10 +241,10 @@ export function MethodSection() {
                       transition: 'color 0.1s ease'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = 'rgb(215, 216, 217)'
+                      e.currentTarget.style.color = 'var(--foreground)'
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'rgb(126, 131, 133)'
+                      e.currentTarget.style.color = 'var(--content-secondary-p3)'
                     }}
                   >
                     <span>{item.title}</span>
@@ -277,7 +278,7 @@ export function MethodSection() {
                       fontWeight: '400',
                       lineHeight: '1.6',
                       fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                      color: 'rgb(126, 131, 133)',
+                      color: 'var(--content-secondary-p3)',
                       textDecoration: 'none',
                       display: 'flex',
                       justifyContent: 'space-between',
@@ -285,10 +286,10 @@ export function MethodSection() {
                       transition: 'color 0.1s ease'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = 'rgb(215, 216, 217)'
+                      e.currentTarget.style.color = 'var(--foreground)'
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'rgb(126, 131, 133)'
+                      e.currentTarget.style.color = 'var(--content-secondary-p3)'
                     }}
                   >
                     <span>{item.title}</span>
@@ -321,7 +322,7 @@ export function MethodSection() {
                       fontWeight: '400',
                       lineHeight: '1.6',
                       fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                      color: 'rgb(126, 131, 133)',
+                      color: 'var(--content-secondary-p3)',
                       textDecoration: 'none',
                       display: 'flex',
                       justifyContent: 'space-between',
@@ -329,10 +330,10 @@ export function MethodSection() {
                       transition: 'color 0.1s ease'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = 'rgb(215, 216, 217)'
+                      e.currentTarget.style.color = 'var(--foreground)'
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'rgb(126, 131, 133)'
+                      e.currentTarget.style.color = 'var(--content-secondary-p3)'
                     }}
                   >
                     <span>{item.title}</span>

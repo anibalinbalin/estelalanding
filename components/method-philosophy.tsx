@@ -7,7 +7,8 @@ export function MethodPhilosophy() {
   const pageStyles = {
     backgroundColor: 'var(--background)',
     color: 'var(--foreground)',
-    minHeight: '100vh'
+    minHeight: '100vh',
+    overflowX: 'hidden'
   }
 
   const badgeStyle = {
@@ -444,7 +445,7 @@ export function MethodPhilosophy() {
         <div style={dividerStyle} />
 
         {/* Navigation */}
-        <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <Link 
             href="/method/practices"
             style={{

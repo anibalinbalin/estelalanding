@@ -124,7 +124,8 @@ export function MethodPractices() {
       backgroundColor: 'var(--background)',
       color: 'var(--foreground)',
       minHeight: '100vh',
-      fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif'
+      fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+      overflowX: 'hidden'
     }}>
       <div style={{
         maxWidth: '680px',
@@ -359,7 +360,7 @@ export function MethodPractices() {
           marginBottom: '48px'
         }} />
 
-        <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <Link 
             href="/method/implementation"
             style={{

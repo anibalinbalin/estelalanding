@@ -9,7 +9,8 @@ export function MethodIntroduction() {
   const pageStyles = {
     backgroundColor: 'var(--background)',
     color: 'var(--foreground)',
-    minHeight: '100vh'
+    minHeight: '100vh',
+    overflowX: 'hidden'
   }
 
   const badgeStyle = {
@@ -110,7 +111,8 @@ export function MethodIntroduction() {
           height: '300px',
           width: '100%',
           overflow: 'hidden',
-          backgroundColor: '#444'
+          backgroundColor: '#444',
+          boxSizing: 'border-box'
         }}>
           <ReactbitsDither
             waveColor={[0.941, 0.933, 0.902]}
@@ -403,7 +405,7 @@ export function MethodIntroduction() {
         <div style={dividerStyle} />
 
         {/* Navigation */}
-        <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <Link 
             href="/method"
             style={{

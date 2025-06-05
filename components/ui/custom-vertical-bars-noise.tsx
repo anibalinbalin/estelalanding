@@ -55,8 +55,9 @@ const CustomVerticalBarsNoise = () => {
     if (!ctx) return;
     
     // Set canvas size to match container
-    canvas.width = 680;
-    canvas.height = 300;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
     
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mousedown', handleMouseDown);
