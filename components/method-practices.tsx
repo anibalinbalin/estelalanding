@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import LetterGlitch from '@/components/ui/letter-glitch'
+import CustomVerticalBarsNoise from '@/components/ui/custom-vertical-bars-noise'
 
 export function MethodPractices() {
   const practices = [
@@ -183,7 +183,7 @@ export function MethodPractices() {
             Daily operational excellence through proven methods and consistent execution.
           </p>
 
-          {/* Letter Glitch Effect */}
+          {/* Custom Vertical Bars Noise Effect */}
           <div style={{ 
             position: 'relative',
             marginBottom: '48px',
@@ -193,13 +193,7 @@ export function MethodPractices() {
             width: '100%',
             overflow: 'hidden'
           }}>
-            <LetterGlitch
-              glitchColors={["#090f11", "#333333", "#666666", "#999999", "#cccccc", "#d7d8d9"]}
-              glitchSpeed={80}
-              centerVignette={false}
-              outerVignette={false}
-              smooth={true}
-            />
+            <CustomVerticalBarsNoise />
           </div>
         </div>
 
