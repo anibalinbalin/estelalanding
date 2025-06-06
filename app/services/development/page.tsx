@@ -31,31 +31,21 @@ export default function DevelopmentPage() {
           <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] items-center gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
             <div className="col-span-12 min-[600px]:col-span-11 min-[800px]:col-span-6 min-[1000px]:col-span-5 pr-0 min-[800px]:pr-10 min-[1000px]:pr-0 mb-4 min-[800px]:mb-0">
               <h2 className="mb-4 text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
-                Web Application Development
+                Custom Development
               </h2>
               <div>
                 <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                  Modern stack architecture with Next.js, React, and Tailwind CSS. From browser to database, we build scalable web applications that perform.
+                  Next.js applications, Process automation, AI integration, Digital transformation. Modern solutions that transform how you work, not just digitize old problems.
                 </p>
               </div>
             </div>
             <div className="relative overflow-hidden border bg-[var(--surface-tertiary-p3)] border-[var(--stroke-secondary-p3)] col-span-12 min-[800px]:col-start-[7] min-[1000px]:col-start-[8] min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
-              <div className="p-6 text-[var(--content-secondary-p3)] font-mono text-sm">
-                <div className="mb-4 text-[var(--content-raise-p3)] font-sans font-medium">Modern Stack Architecture</div>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-[var(--content-accent-p3)] rounded"></div>
-                    <span>Browser / Mobile</span>
-                  </div>
-                  <div className="flex items-center gap-2 ml-4">
-                    <div className="w-2 h-2 bg-[var(--content-tertiary-p3)] rounded"></div>
-                    <span>Next.js SSR</span>
-                  </div>
-                  <div className="flex items-center gap-2 ml-8">
-                    <div className="w-2 h-2 bg-[var(--content-tertiary-p3)] rounded"></div>
-                    <span>React + Tailwind</span>
-                  </div>
-                </div>
+              <div className="w-full h-full flex items-center justify-center p-6">
+                <img 
+                  src="/img/ascii-art_3.svg" 
+                  alt="Custom Development"
+                  className="w-full h-auto max-h-[400px] object-contain"
+                />
               </div>
             </div>
           </div>

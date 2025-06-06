@@ -22,34 +22,34 @@ export const DeveloperVelocitySection = () => {
         {
           title: "Networks & Servers",
           subtitle: "VMware virtualization, UniFi networking, Synology storage, Structured cabling. From 10Gb backbone to redundant power, we build foundations that don't fail.",
-          image1: "https://oxide.computer/img/home/developer-public-cloud-1.svg",
-          image2: "https://oxide.computer/img/home/developer-public-cloud-2.svg",
-          image1Width: 361,
-          image1Height: 274,
-          image2Width: 279,
-          image2Height: 62,
+          image1: "/img/ascii-art.svg",
+          image2: "/img/ascii-art.svg",
+          image1Width: 620,
+          image1Height: 600,
+          image2Width: 620,
+          image2Height: 600,
           image2Style: "bottom-0 left-0 w-[77.3%]"
         },
         {
           title: "Complete Protection",
           subtitle: "SentinelOne XDR, UniFi Protect cameras, Backup & recovery, Compliance ready. Multi-layered defense that protects what matters most to your business.",
-          image1: "https://oxide.computer/img/home/developer-api-1.svg",
-          image2: "https://oxide.computer/img/home/developer-api-2.svg",
-          image1Width: 290,
-          image1Height: 290,
-          image2Width: 290,
-          image2Height: 214,
+          image1: "/img/ascii-art_2.svg",
+          image2: "/img/ascii-art_2.svg",
+          image1Width: 620,
+          image1Height: 600,
+          image2Width: 620,
+          image2Height: 600,
           image2Style: "bottom-0 w-full"
         },
         {
           title: "Custom Development",
           subtitle: "Next.js applications, Process automation, AI integration, Digital transformation. Modern solutions that transform how you work, not just digitize old problems.",
-          image1: "https://oxide.computer/img/home/developer-tools-1.svg",
-          image2: "https://oxide.computer/img/home/developer-tools-2.svg",
-          image1Width: 358,
-          image1Height: 318,
-          image2Width: 239,
-          image2Height: 174,
+          image1: "/img/ascii-art_3.svg",
+          image2: "/img/ascii-art_3.svg",
+          image1Width: 620,
+          image1Height: 600,
+          image2Width: 620,
+          image2Height: 600,
           image2Style: "right-0 top-0 w-[66.76%]"
         }
       ]
@@ -61,34 +61,34 @@ export const DeveloperVelocitySection = () => {
         {
           title: "Redes y Servidores",
           subtitle: "Virtualización VMware, redes UniFi, almacenamiento Synology, cableado estructurado. Desde backbone de 10Gb hasta energía redundante, construimos fundamentos que no fallan.",
-          image1: "https://oxide.computer/img/home/developer-public-cloud-1.svg",
-          image2: "https://oxide.computer/img/home/developer-public-cloud-2.svg",
-          image1Width: 361,
-          image1Height: 274,
-          image2Width: 279,
-          image2Height: 62,
+          image1: "/img/ascii-art.svg",
+          image2: "/img/ascii-art.svg",
+          image1Width: 620,
+          image1Height: 600,
+          image2Width: 620,
+          image2Height: 600,
           image2Style: "bottom-0 left-0 w-[77.3%]"
         },
         {
           title: "Protección Completa",
           subtitle: "SentinelOne XDR, cámaras UniFi Protect, respaldo y recuperación, listo para cumplimiento. Defensa multicapa que protege lo que más importa a tu negocio.",
-          image1: "https://oxide.computer/img/home/developer-api-1.svg",
-          image2: "https://oxide.computer/img/home/developer-api-2.svg",
-          image1Width: 290,
-          image1Height: 290,
-          image2Width: 290,
-          image2Height: 214,
+          image1: "/img/ascii-art_2.svg",
+          image2: "/img/ascii-art_2.svg",
+          image1Width: 620,
+          image1Height: 600,
+          image2Width: 620,
+          image2Height: 600,
           image2Style: "bottom-0 w-full"
         },
         {
           title: "Desarrollo Personalizado",
           subtitle: "Aplicaciones Next.js, automatización de procesos, integración de IA, transformación digital. Soluciones modernas que transforman cómo trabajas, no solo digitalizan problemas antiguos.",
-          image1: "https://oxide.computer/img/home/developer-tools-1.svg",
-          image2: "https://oxide.computer/img/home/developer-tools-2.svg",
-          image1Width: 358,
-          image1Height: 318,
-          image2Width: 239,
-          image2Height: 174,
+          image1: "/img/ascii-art_3.svg",
+          image2: "/img/ascii-art_3.svg",
+          image1Width: 620,
+          image1Height: 600,
+          image2Width: 620,
+          image2Height: 600,
           image2Style: "right-0 top-0 w-[66.76%]"
         }
       ]
@@ -100,6 +100,23 @@ export const DeveloperVelocitySection = () => {
   return (
     <section className="w-full py-20 lg:py-40">
       <div className="container mx-auto px-5 sm:px-10">
+        {/* Unicorn Studio Effect */}
+        <div className="mb-12 lg:mb-20 flex justify-center">
+          <div 
+            data-us-project="bJ8ClYm9Acq6hsxeaXbl"
+            data-us-scale="1"
+            data-us-dpi="1.5"
+            data-us-fps="30"
+            className="w-full max-w-6xl"
+            style={{ 
+              width: '1440px',
+              height: '900px',
+              maxWidth: '100%',
+              aspectRatio: '1440/900'
+            }}
+          />
+        </div>
+        
           <h2 
             className="text-balance m-0 mb-4 sm:mb-6 text-center sm:text-left text-2xl sm:text-4xl lg:text-5xl font-normal"
             style={{
@@ -128,7 +145,7 @@ export const DeveloperVelocitySection = () => {
                 key={index}
                 className={`
                   flex flex-col items-center py-10 
-                  ${index === 0 ? 'lg:pr-8' : index === 1 ? 'lg:px-8 lg:border-l lg:border-r' : 'lg:pl-8'} 
+                  ${index === 0 ? 'lg:px-4' : index === 1 ? 'lg:px-4 lg:border-l lg:border-r' : 'lg:px-4'} 
                   ${index < t.features.length - 1 ? 'border-b lg:border-b-0' : ''} 
                   border-border lg:justify-between
                   max-lg:gap-10 max-lg:p-12 max-lg:border-l max-lg:border-r max-lg:grid max-lg:grid-cols-12
@@ -141,13 +158,6 @@ export const DeveloperVelocitySection = () => {
                     height={feature.image1Height}
                     alt=""
                     className="w-full max-w-full h-auto block"
-                  />
-                  <Image
-                    src={feature.image2}
-                    width={feature.image2Width}
-                    height={feature.image2Height}
-                    alt=""
-                    className={`max-w-full h-auto block absolute ${feature.image2Style} shadow-lg`}
                   />
                 </div>
                 
