@@ -29,18 +29,9 @@ export const ImplementationAsciiArt: React.FC<ImplementationAsciiArtProps> = ({
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    // Get computed CSS variables with fallbacks
-    const computedStyles = getComputedStyle(document.documentElement)
-    let backgroundColor = computedStyles.getPropertyValue('--background').trim()
-    let foregroundColor = computedStyles.getPropertyValue('--foreground').trim()
-    
-    // Handle HSL format and provide fallbacks
-    if (!backgroundColor || backgroundColor.startsWith('hsl')) {
-      backgroundColor = document.documentElement.classList.contains('dark') ? '#0a0a0a' : '#ffffff'
-    }
-    if (!foregroundColor || foregroundColor.startsWith('hsl')) {
-      foregroundColor = document.documentElement.classList.contains('dark') ? '#fafafa' : '#0a0a0a'
-    }
+    // Custom color scheme
+    const backgroundColor = '#3d3019'
+    const foregroundColor = '#f5b944'
 
     let time = 0
     let animationFrameId: number | null = null

@@ -256,6 +256,17 @@ html, body {
   animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
+/* Fix navigation menu viewport clipping */
+[data-slot="navigation-menu-viewport"] {
+  overflow: visible !important;
+  z-index: 9999 !important;
+}
+
+/* Ensure navigation menu wrapper has proper z-index */
+[data-radix-navigation-menu-viewport] {
+  z-index: 9999 !important;
+}
+
 /* Oxide nav button styles */
 .oxide-nav-button {
   font-family: 'GT_America_Mono', monospace;

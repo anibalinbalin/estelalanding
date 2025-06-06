@@ -111,11 +111,11 @@ export function MethodIntroduction() {
           height: '300px',
           width: '100%',
           overflow: 'hidden',
-          backgroundColor: '#444',
+          backgroundColor: '#3d3019',
           boxSizing: 'border-box'
         }}>
           <ReactbitsDither
-            waveColor={[0.941, 0.933, 0.902]}
+            waveColor={[0.961, 0.725, 0.267]}
             disableAnimation={false}
             enableMouseInteraction={true}
             mouseRadius={0.3}

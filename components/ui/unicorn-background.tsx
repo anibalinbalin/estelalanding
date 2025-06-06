@@ -68,6 +68,14 @@ export function UnicornBackground() {
         sceneRef.current = null;
       }
 
+      // Clear the container to ensure fresh initialization
+      if (containerRef.current) {
+        containerRef.current.innerHTML = '';
+      }
+
+      // Small delay to ensure cleanup is complete
+      await new Promise(resolve => setTimeout(resolve, 100));
+
       // Initialize with configuration
       const scenes = await window.UnicornStudio.init({
         scale: 1,
@@ -111,6 +119,7 @@ export function UnicornBackground() {
 
   return (
     <div 
+      key={resolvedTheme} // Force re-render when theme changes
       ref={containerRef}
       data-us-project={`${projectId}?production=true`}
       data-us-scale="1"

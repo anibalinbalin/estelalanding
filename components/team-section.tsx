@@ -340,8 +340,10 @@ export function TeamSection() {
                 </div>
                 <div>
                   <span>LinkedIn: </span>
-                  <Link 
+                  <a 
                     href={`https://linkedin.com${member.linkedin}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{
                       color: 'rgb(126, 131, 133)',
                       textDecoration: 'none',
@@ -351,7 +353,7 @@ export function TeamSection() {
                     onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(126, 131, 133)'}
                   >
                     {member.linkedin}
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

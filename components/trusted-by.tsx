@@ -99,13 +99,13 @@ export const TrustedBy = () => {
                       key={index}
                     >
                       <div className="flex rounded-md items-center justify-center p-6">
-                        <div className="relative w-24 h-24 lg:w-28 lg:h-28">
+                        <div className="relative w-30 h-30 lg:w-35 lg:h-35">
                           <Image
                             src={`/company_logos/logos/black/${logo.file}.${extension}`}
                             alt={logo.name}
                             fill
                             className={`object-contain ${mounted && resolvedTheme === 'dark' ? 'invert' : ''} opacity-60 hover:opacity-100 transition-opacity`}
-                            sizes="(max-width: 640px) 96px, 112px"
+                            sizes="(max-width: 640px) 120px, 140px"
                             onError={() => {
                               console.error(`Failed to load logo: ${logo.file}.${extension}`);
                             }}

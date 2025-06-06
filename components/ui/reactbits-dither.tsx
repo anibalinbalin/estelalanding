@@ -120,7 +120,7 @@ void main() {
     f -= 0.5 * effect;
   }
   
-  vec3 backgroundColor = vec3(0.267, 0.267, 0.267); // #444 in RGB
+  vec3 backgroundColor = vec3(0.239, 0.188, 0.098); // #3d3019 in RGB
   vec3 col = mix(backgroundColor, waveColor, f);
   col = dither(vUv, col, 4.0);
   

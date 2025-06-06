@@ -4,6 +4,8 @@ import { useLanguage } from "@/components/language-provider";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { MoveRight } from "lucide-react";
 
 export const DeveloperVelocitySection = () => {
   const { language } = useLanguage();
@@ -28,7 +30,9 @@ export const DeveloperVelocitySection = () => {
           image1Height: 600,
           image2Width: 620,
           image2Height: 600,
-          image2Style: "bottom-0 left-0 w-[77.3%]"
+          image2Style: "bottom-0 left-0 w-[77.3%]",
+          ctaText: "Explore Infrastructure",
+          ctaLink: "/services/infrastructure"
         },
         {
           title: "Complete Protection",
@@ -39,7 +43,9 @@ export const DeveloperVelocitySection = () => {
           image1Height: 600,
           image2Width: 620,
           image2Height: 600,
-          image2Style: "bottom-0 w-full"
+          image2Style: "bottom-0 w-full",
+          ctaText: "Learn About Security",
+          ctaLink: "/services/security"
         },
         {
           title: "Custom Development",
@@ -50,7 +56,9 @@ export const DeveloperVelocitySection = () => {
           image1Height: 600,
           image2Width: 620,
           image2Height: 600,
-          image2Style: "right-0 top-0 w-[66.76%]"
+          image2Style: "right-0 top-0 w-[66.76%]",
+          ctaText: "View Development",
+          ctaLink: "/services/development"
         }
       ]
     },
@@ -67,7 +75,9 @@ export const DeveloperVelocitySection = () => {
           image1Height: 600,
           image2Width: 620,
           image2Height: 600,
-          image2Style: "bottom-0 left-0 w-[77.3%]"
+          image2Style: "bottom-0 left-0 w-[77.3%]",
+          ctaText: "Explorar Infraestructura",
+          ctaLink: "/services/infrastructure"
         },
         {
           title: "Protección Completa",
@@ -78,7 +88,9 @@ export const DeveloperVelocitySection = () => {
           image1Height: 600,
           image2Width: 620,
           image2Height: 600,
-          image2Style: "bottom-0 w-full"
+          image2Style: "bottom-0 w-full",
+          ctaText: "Conocer Seguridad",
+          ctaLink: "/services/security"
         },
         {
           title: "Desarrollo Personalizado",
@@ -89,7 +101,9 @@ export const DeveloperVelocitySection = () => {
           image1Height: 600,
           image2Width: 620,
           image2Height: 600,
-          image2Style: "right-0 top-0 w-[66.76%]"
+          image2Style: "right-0 top-0 w-[66.76%]",
+          ctaText: "Ver Desarrollo",
+          ctaLink: "/services/development"
         }
       ]
     }
@@ -100,22 +114,6 @@ export const DeveloperVelocitySection = () => {
   return (
     <section className="w-full py-20 lg:py-40">
       <div className="container mx-auto px-5 sm:px-10">
-        {/* Unicorn Studio Effect */}
-        <div className="mb-12 lg:mb-20 flex justify-center">
-          <div 
-            data-us-project="bJ8ClYm9Acq6hsxeaXbl"
-            data-us-scale="1"
-            data-us-dpi="1.5"
-            data-us-fps="30"
-            className="w-full max-w-6xl"
-            style={{ 
-              width: '1440px',
-              height: '900px',
-              maxWidth: '100%',
-              aspectRatio: '1440/900'
-            }}
-          />
-        </div>
         
           <h2 
             className="text-balance m-0 mb-4 sm:mb-6 text-center sm:text-left text-2xl sm:text-4xl lg:text-5xl font-normal"
@@ -161,14 +159,22 @@ export const DeveloperVelocitySection = () => {
                   />
                 </div>
                 
-                <h3 
-                  className="text-balance m-0 text-lg font-normal leading-7 tracking-wide text-muted-foreground lg:col-span-6 col-start-8 col-span-5 max-sm:w-full"
-                  style={{
-                    fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif'
-                  }}
-                >
-                  <span className="text-foreground">{feature.title}</span> {feature.subtitle}
-                </h3>
+                <div className="flex flex-col lg:col-span-6 col-start-8 col-span-5 max-sm:w-full">
+                  <h3 
+                    className="text-balance m-0 text-lg font-normal leading-7 tracking-wide text-muted-foreground mb-6"
+                    style={{
+                      fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif'
+                    }}
+                  >
+                    <span className="text-foreground">{feature.title}</span> {feature.subtitle}
+                  </h3>
+                  <Link 
+                    href={feature.ctaLink}
+                    className="oxide-nav-button oxide-nav-button-primary inline-flex items-center self-start mt-auto"
+                  >
+                    {feature.ctaText} <MoveRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>

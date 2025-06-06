@@ -188,7 +188,8 @@ export const EvolutionSection = () => {
 
   const t = content[language];
 
-  // ASCII Art remains the same across languages
+  // COMMENTED OUT: ASCII Art for conventional rack
+  /*
   const asciiArt = `+----------------+.            
 |'.              | '.          
 |  '+----------------+         
@@ -222,8 +223,10 @@ export const EvolutionSection = () => {
 +---|--+.  |                   
  '. |    '.|                   
    '+------+                   `;
+  */
 
-  // New Estela ASCII Art
+  // COMMENTED OUT: Estela ASCII Art
+  /*
   const estelaAsciiArt = `    THE ESTELA APPROACH
     
     +=====================+
@@ -249,6 +252,7 @@ export const EvolutionSection = () => {
     STATUS: OPERATIONAL
     UPTIME: 99.97%
     RESPONSE: 2 HOURS`;
+  */
 
   const TextWithHighlight = ({ text, highlight }: { text: string; highlight: string | null }) => {
     if (!highlight) return <>{text}</>;
@@ -265,7 +269,8 @@ export const EvolutionSection = () => {
 
   return (
     <div className="w-full">
-      {/* Section Headline */}
+      {/* COMMENTED OUT: Evolution of Integration Section */}
+      {/* 
       <div className="container mx-auto px-5 sm:px-10">
         <h2 
           className="text-balance m-0 mb-6 sm:mb-10 lg:mb-14 text-center sm:text-left lg:pr-6"
@@ -283,7 +288,6 @@ export const EvolutionSection = () => {
       </div>
       
       <div className="container mx-auto grid grid-cols-12 gap-6 lg:gap-8">
-        {/* ASCII Art Column - Desktop Only */}
         <div className="relative hidden lg:block lg:col-span-6 lg:pl-16 my-12 lg:my-11 lg:mb-32">
           <div className="text-xs uppercase tracking-wider text-muted-foreground" style={{ fontFamily: 'GT America Mono, monospace' }}>
             {t.figureLabel}
@@ -299,10 +303,8 @@ export const EvolutionSection = () => {
           </div>
         </div>
 
-        {/* Content Column */}
         <div className="relative col-span-12 lg:col-span-6 border-l border-r border-border lg:ml-[-1.5rem]">
           <div>
-            {/* Section Header */}
             <div className="py-3 flex items-center justify-between gap-2 bg-background sticky top-16 z-10 mb-10 border-t border-b border-border px-6 sm:px-8">
               <h2 className="text-xs uppercase tracking-wider text-foreground" style={{ fontFamily: 'GT America Mono, monospace' }}>
                 {t.sectionTitle}
@@ -312,7 +314,6 @@ export const EvolutionSection = () => {
               </svg>
             </div>
 
-            {/* Content Points */}
             <div className="space-y-6 lg:space-y-8">
               {t.points.map((point, index) => (
                 <div key={index} className={`max-w-[30rem] transition-opacity duration-200 ${index > 3 ? 'opacity-40' : 'opacity-100'}`}>
@@ -330,7 +331,6 @@ export const EvolutionSection = () => {
                 </div>
               ))}
 
-              {/* Mobile ASCII Art */}
               <div className="lg:hidden mx-6 sm:mx-8">
                 <div className="text-xs uppercase tracking-wider text-muted-foreground" style={{ fontFamily: 'GT America Mono, monospace' }}>
                   {t.figureLabel}
@@ -344,7 +344,6 @@ export const EvolutionSection = () => {
                 </div>
               </div>
 
-              {/* Negative Points */}
               {t.negativePoints.map((point, index) => (
                 <div key={`neg-${index}`} className="max-w-[30rem] transition-opacity duration-200 opacity-40">
                   <div className="mt-3 px-6 sm:px-8">
@@ -365,9 +364,7 @@ export const EvolutionSection = () => {
         </div>
       </div>
 
-      {/* Second Section - The Estela Approach */}
       <div className="container mx-auto grid grid-cols-12 gap-6 lg:gap-8 mt-16">
-        {/* ASCII Art Column - Desktop Only */}
         <div className="relative hidden lg:block lg:col-span-6 lg:pl-16 my-12 lg:my-11 lg:mb-32">
           <div className="text-xs uppercase tracking-wider text-muted-foreground" style={{ fontFamily: 'GT America Mono, monospace' }}>
             {t.figureLabel2}
@@ -383,10 +380,8 @@ export const EvolutionSection = () => {
           </div>
         </div>
 
-        {/* Content Column */}
         <div className="relative col-span-12 lg:col-span-6 border-l border-r border-border lg:ml-[-1.5rem]">
           <div>
-            {/* Section Header */}
             <div className="py-3 flex items-center justify-between gap-2 bg-background sticky top-16 z-10 mb-10 border-t border-b border-border px-6 sm:px-8">
               <h2 className="text-xs uppercase tracking-wider text-foreground" style={{ fontFamily: 'GT America Mono, monospace' }}>
                 {t.sectionTitle2}
@@ -396,7 +391,6 @@ export const EvolutionSection = () => {
               </svg>
             </div>
 
-            {/* Content Points */}
             <div className="space-y-6 lg:space-y-8">
               {t.points2.map((point, index) => (
                 <div key={index} className="max-w-[30rem] transition-opacity duration-200 opacity-100">
@@ -414,7 +408,6 @@ export const EvolutionSection = () => {
                 </div>
               ))}
 
-              {/* Mobile ASCII Art */}
               <div className="lg:hidden mx-6 sm:mx-8">
                 <div className="text-xs uppercase tracking-wider text-muted-foreground" style={{ fontFamily: 'GT America Mono, monospace' }}>
                   {t.figureLabel2}
@@ -428,7 +421,6 @@ export const EvolutionSection = () => {
                 </div>
               </div>
 
-              {/* Positive Points */}
               {t.positivePoints.map((point, index) => (
                 <div key={`pos-${index}`} className="max-w-[30rem] transition-opacity duration-200 opacity-100">
                   <div className="mt-3 px-6 sm:px-8">
@@ -445,7 +437,6 @@ export const EvolutionSection = () => {
                 </div>
               ))}
 
-              {/* Final Text */}
               <div className="max-w-[30rem] transition-opacity duration-200 opacity-100">
                 <div className="mt-3 px-6 sm:px-8">
                   <p className="text-base sm:text-lg text-muted-foreground" style={{ fontFamily: 'SuisseIntl, sans-serif', fontWeight: 400 }}>
@@ -454,7 +445,6 @@ export const EvolutionSection = () => {
                 </div>
               </div>
 
-              {/* CTA Button */}
               <div className="max-w-[30rem] transition-opacity duration-200 opacity-100">
                 <div className="mt-6 px-6 sm:px-8">
                   <Link 
@@ -470,6 +460,7 @@ export const EvolutionSection = () => {
           </div>
         </div>
       </div>
+      */}
     </div>
   );
 };

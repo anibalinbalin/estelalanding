@@ -146,16 +146,16 @@ export const DevelopmentAsciiArt: React.FC<DevelopmentAsciiArtProps> = ({
 
   if (!isVisible) return null
 
-  // Get theme colors
-  const isDark = document.documentElement.classList.contains('dark')
-  const textColor = isDark ? '#ffffff' : '#0a0a0a'
+  // Custom color scheme
+  const textColor = '#f5b944'
+  const backgroundColor = '#3d3019'
 
   return (
     <div
       className={`ascii-container ${className}`}
       style={{ 
         margin: 0,
-        background: 'transparent',
+        background: backgroundColor,
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
