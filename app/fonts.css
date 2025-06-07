@@ -1,0 +1,31 @@
+@font-face { 
+  font-family: 'GT America Mono';
+  src: url('/font/GT-America-Mono-Regular-OCC.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face { 
+  font-family: 'SuisseIntl';
+  src: url('/font/SuisseIntl-Light-WebS.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face { 
+  font-family: 'SuisseIntl';
+  src: url('/font/SuisseIntl-Regular-WebS.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face { 
+  font-family: 'SuisseIntl';
+  src: url('/font/SuisseIntl-Medium-WebS.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
