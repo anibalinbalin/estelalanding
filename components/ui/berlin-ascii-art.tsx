@@ -29,7 +29,7 @@ export const BerlinAsciiArt: React.FC<BerlinAsciiArtProps> = ({
     if (!ctx) return
 
     // Custom color scheme
-    const backgroundColor = '#3d3019'
+    const backgroundColor = '#3b301c'
     const foregroundColor = '#f5b944'
     
 

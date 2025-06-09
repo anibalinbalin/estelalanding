@@ -6,6 +6,9 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
+import { BerlinAsciiArt } from "@/components/ui/berlin-ascii-art";
+import { AsciiWaveAnimation } from "@/components/ui/ascii-wave-animation";
+import { DevelopmentAsciiArt } from "@/components/ui/development-ascii-art";
 
 export const DeveloperVelocitySection = () => {
   const { language } = useLanguage();
@@ -112,7 +115,7 @@ export const DeveloperVelocitySection = () => {
   const t = content[language];
 
   return (
-    <section className="w-full section-spacing">
+    <section className="w-full mt-28 sm:mt-[11.25rem] mb-4">
       <div className="container mx-auto px-5 sm:px-10">
         
           <h2 
@@ -149,14 +152,40 @@ export const DeveloperVelocitySection = () => {
                   max-lg:gap-10 max-lg:p-12 max-lg:border-l max-lg:border-r max-lg:grid max-lg:grid-cols-12
                 `}
               >
-                <div className="w-full relative max-w-[400px] lg:mb-16 col-span-6 lg:col-span-6 col-start-1">
-                  <Image
-                    src={feature.image1}
-                    width={feature.image1Width}
-                    height={feature.image1Height}
-                    alt=""
-                    className="w-full max-w-full h-auto block"
-                  />
+                <div className="w-full relative max-w-[400px] lg:mb-20 col-span-6 lg:col-span-6 col-start-1">
+                  <div className="p-3 rounded-lg" style={{ backgroundColor: '#3b301c' }}>
+                    {index === 0 ? (
+                      <div 
+                        className="w-full rounded overflow-hidden"
+                        style={{ 
+                          aspectRatio: '620/600',
+                          height: 'auto'
+                        }}
+                      >
+                        <BerlinAsciiArt isVisible={true} />
+                      </div>
+                    ) : index === 1 ? (
+                      <div 
+                        className="w-full rounded overflow-hidden"
+                        style={{ 
+                          aspectRatio: '620/600',
+                          height: 'auto'
+                        }}
+                      >
+                        <AsciiWaveAnimation isVisible={true} />
+                      </div>
+                    ) : (
+                      <div 
+                        className="w-full rounded overflow-hidden"
+                        style={{ 
+                          aspectRatio: '620/600',
+                          height: 'auto'
+                        }}
+                      >
+                        <DevelopmentAsciiArt isVisible={true} />
+                      </div>
+                    )}
+                  </div>
                 </div>
                 
                 <div className="flex flex-col lg:col-span-6 col-start-8 col-span-5 max-sm:w-full">

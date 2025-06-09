@@ -5,6 +5,9 @@ import Image from 'next/image'
 import { useLanguage } from "@/components/language-provider";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { AsciiWaveAnimation } from "@/components/ui/ascii-wave-animation";
+import { DevelopmentAsciiArt } from "@/components/ui/development-ascii-art";
+import { NetworksServersAsciiArt } from "@/components/ui/networks-servers-ascii-art";
 
 export default function Features() {
     const { language } = useLanguage();
@@ -120,13 +123,8 @@ export default function Features() {
                             </p>
                         </CardHeader>
                         <CardContent className="px-6 pb-6 md:px-8 md:pb-8">
-                            <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border bg-muted/20">
-                                <Image
-                                    src={t.features[0].image}
-                                    alt="Networks & Servers illustration"
-                                    fill
-                                    className="object-contain p-4"
-                                />
+                            <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                                <NetworksServersAsciiArt isVisible={true} />
                             </div>
                         </CardContent>
                     </Card>
@@ -149,13 +147,8 @@ export default function Features() {
                             </h3>
                         </CardHeader>
                         <CardContent className="px-6 pb-6">
-                            <div className="relative aspect-square overflow-hidden rounded-lg border border-border bg-muted/20 mb-4">
-                                <Image
-                                    src={t.features[1].image}
-                                    alt="Complete Protection illustration"
-                                    fill
-                                    className="object-contain p-3"
-                                />
+                            <div className="relative aspect-square overflow-hidden rounded-lg mb-4" style={{ backgroundColor: '#3b301c', padding: '12px' }}>
+                                <AsciiWaveAnimation isVisible={true} />
                             </div>
                             <p 
                                 style={{
@@ -190,13 +183,8 @@ export default function Features() {
                             </h3>
                         </CardHeader>
                         <CardContent className="px-6 pb-6">
-                            <div className="relative aspect-square overflow-hidden rounded-lg border border-border bg-muted/20 mb-4">
-                                <Image
-                                    src={t.features[2].image}
-                                    alt="Custom Development illustration"
-                                    fill
-                                    className="object-contain p-3"
-                                />
+                            <div className="relative aspect-square overflow-hidden rounded-lg mb-4" style={{ backgroundColor: '#3b301c', padding: '12px' }}>
+                                <DevelopmentAsciiArt isVisible={true} />
                             </div>
                             <p 
                                 style={{
