@@ -26,37 +26,6 @@ import { ConsultingAsciiArt } from "@/components/ui/consulting-ascii-art"
 import { SpecificationsAsciiArt } from "@/components/ui/specifications-ascii-art"
 import { useLanguage } from "@/components/language-provider"
 
-// ASCII art data for services
-const serviceArt = {
-  infrastructure: `┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐
-│ A ├─┤ B ├─┤ C ├─┤ D ├─┤ E │
-└─┬─┘ └─┬─┘ └─┬─┘ └─┬─┘ └─┬─┘
-  │     │     │     │     │
-┌─┴─┐ ┌─┴─┐ ┌─┴─┐ ┌─┴─┐ ┌─┴─┐
-│ F ├─┤ G ├─┤ H ├─┤ I ├─┤ J │
-└───┘ └───┘ └───┘ └───┘ └───┘`,
-  security: `●───●───●───●───●───●───●
-│ ╲ │ ╱ │ ╲ │ ╱ │ ╲ │ ╱ │
-●───●───●───●───●───●───●
-│ ╱ │ ╲ │ ╱ │ ╲ │ ╱ │ ╲ │
-●───●───●───●───●───●───●`,
-  development: `01001 { } 10110 [ ] 01101
-11010 code 01001 AI 10011
-00101 → → → → → → → 11000
-10110 solution() 01001010`,
-  consulting: `◇─◇─◇─◇─◇─◇─◇
- ╱ ╲ ╱ ╲ ╱ ╲ ╱ ╲ ╱
-◇───◇───◇───◇───◇
- ╲ ╱ ╲ ╱ ╲ ╱ ╲ ╱ ╲
-  ◇─◇─◇─◇─◇─◇─◇`,
-  specifications: `┌──┬──┬──┬──┬──┬──┬──┬──┬──┬──┐
-│██│  │██│  │██│  │██│  │██│  │
-├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤
-│  │██│  │██│  │██│  │██│  │██│
-├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤
-│██│  │██│  │██│  │██│  │██│  │
-└──┴──┴──┴──┴──┴──┴──┴──┴──┴──┘`
-}
 
 const content = {
   en: {
@@ -317,39 +286,33 @@ export function Navbar() {
                         <li className="row-span-5">
                           <NavigationMenuLink asChild>
                             <a
-                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md min-h-[300px] relative overflow-hidden"
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted no-underline outline-none focus:shadow-md min-h-[300px] relative overflow-hidden p-3"
                               href="/services"
                               onMouseEnter={(e) => e.stopPropagation()}
                               onMouseLeave={(e) => e.stopPropagation()}
                             >
                               {showInfrastructureArt ? (
-                                <div className="absolute inset-0">
+                                <div className="absolute inset-0 bg-[#3b301c] p-3">
                                   <InfrastructureAsciiArt isVisible={showInfrastructureArt} />
                                 </div>
                               ) : showSecurityArt ? (
-                                <div className="absolute inset-0">
+                                <div className="absolute inset-0 bg-[#3b301c] p-3">
                                   <SecurityAsciiArt isVisible={showSecurityArt} />
                                 </div>
                               ) : showDevelopmentArt ? (
-                                <div className="absolute inset-0">
+                                <div className="absolute inset-0 bg-[#3b301c] p-3">
                                   <DevelopmentAsciiArt isVisible={showDevelopmentArt} />
                                 </div>
                               ) : showConsultingArt ? (
-                                <div className="absolute inset-0">
+                                <div className="absolute inset-0 bg-[#3b301c] p-3">
                                   <ConsultingAsciiArt isVisible={showConsultingArt} />
                                 </div>
                               ) : showSpecificationsArt ? (
-                                <div className="absolute inset-0">
+                                <div className="absolute inset-0 bg-[#3b301c] p-3">
                                   <SpecificationsAsciiArt isVisible={showSpecificationsArt} />
                                 </div>
-                              ) : hoveredService !== 'default' ? (
-                                <div className="absolute inset-0 flex items-center justify-center p-6">
-                                  <pre className="navigation-ascii-art">
-                                    {serviceArt[hoveredService as keyof typeof serviceArt]}
-                                  </pre>
-                                </div>
                               ) : (
-                                <div className="relative z-10">
+                                <div className="relative z-10 p-3">
                                   <div className="mb-2 mt-4 text-lg font-medium">
                                     {t.services.default.title}
                                   </div>

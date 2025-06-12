@@ -430,12 +430,15 @@ html, body {
   letter-spacing: 0;
   white-space: pre;
   overflow-x: auto;
-  color: hsl(var(--muted-foreground));
+  color: #f5b944;
+  background-color: #3b301c;
   margin: 0 auto;
   display: block;
   text-align: center;
-  opacity: 0.8;
+  opacity: 1;
   width: fit-content;
+  padding: 12px;
+  border-radius: 6px;
 }
 
 /* Services menu enhanced layout */
@@ -537,17 +540,22 @@ html, body {
   background: linear-gradient(180deg, #080f11, #080f1100);
 }
 
-/* Standardized Section Spacing */
+/* Standardized Section Spacing - Based on Oxide testwork spacing */
 .section-spacing {
-  padding-top: 200px;
+  padding-top: 112px; /* mt-28 = 7rem = 112px */
   padding-bottom: 66px;
 }
 
-/* Responsive breakpoints will be added later */
-@media (max-width: 768px) {
+/* sm breakpoint and up (640px+) */
+@media (min-width: 640px) {
   .section-spacing {
-    /* Mobile spacing will be defined later */
-    padding-top: 200px;
-    padding-bottom: 66px;
+    padding-top: 180px; /* sm:mt-[11.25rem] = 11.25rem = 180px */
+  }
+}
+
+/* lg breakpoint and up (1024px+) */
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding-bottom: 176px; /* lg:mb-44 = 11rem = 176px */
   }
 }
