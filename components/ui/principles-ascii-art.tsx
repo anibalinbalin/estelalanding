@@ -99,7 +99,7 @@ export const PrinciplesAsciiArt: React.FC<PrinciplesAsciiArtProps> = ({
       // Draw grid
       for (let y = 0; y < GRID_SIZE; y++) {
         for (let x = 0; x < GRID_SIZE; x++) {
-          let value = currentPattern(x, y, t)
+          const value = currentPattern(x, y, t)
           
           let char = ' '
           if (value > 0.8) {

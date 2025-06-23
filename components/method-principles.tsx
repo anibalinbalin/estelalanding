@@ -10,7 +10,7 @@ export function MethodPrinciples() {
       title: 'Small Teams, Deep Impact',
       content: [
         'We stay at 5 people. Not because we can\'t grow, but because we shouldn\'t. Research proves it. Experience confirms it.',
-        'Your project gets senior engineers, not interns. Direct communication, not telephone games.'
+        'You partner directly with our senior team, guaranteeing undiluted expertise and clear, purposeful communication.'
       ]
     },
     {
@@ -50,7 +50,7 @@ export function MethodPrinciples() {
       color: 'var(--foreground)',
       minHeight: '100vh',
       fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-      overflowX: 'hidden'
+      overflowX: 'hidden' as const
     }}>
       <div style={{
         maxWidth: '680px',
@@ -63,7 +63,7 @@ export function MethodPrinciples() {
             fontWeight: '400',
             lineHeight: '1.5rem',
             letterSpacing: '0.05em',
-            textTransform: 'uppercase',
+            textTransform: 'uppercase' as const,
             fontFamily: 'GT_America_Mono, monospace',
             color: 'var(--content-secondary-p3)',
             marginBottom: '24px'
@@ -266,7 +266,7 @@ export function MethodPrinciples() {
             color: 'var(--foreground)',
             marginBottom: '16px'
           }}>
-            Consistent excellence.
+            The mark of applied wisdom.
           </p>
         </section>
 

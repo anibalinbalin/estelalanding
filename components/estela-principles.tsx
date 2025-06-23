@@ -15,9 +15,9 @@ export function EstelaPrinciples() {
 
   useEffect(() => {
     if (mounted) {
-      document.documentElement.style.setProperty('--ascii-xs-font-size', '7.5px');
+      document.documentElement.style.setProperty('--ascii-xs-font-size', '8.5px');
       document.documentElement.style.setProperty('--tw-aspect-h', '11');
-      document.documentElement.style.setProperty('--tw-aspect-w', '11');
+      document.documentElement.style.setProperty('--tw-aspect-w', '13');
       
       document.documentElement.style.setProperty('--content-raise-p3', 'color(display-p3 .8431 .8471 .851)');
       document.documentElement.style.setProperty('--content-secondary-p3', 'color(display-p3 .6314 .6431 .6471)');
@@ -30,7 +30,7 @@ export function EstelaPrinciples() {
 
   return (
     <section 
-      className="section-spacing"
+      className="mt-28 sm:mt-[11.25rem] mb-4"
       style={{ 
         backgroundColor: mounted && resolvedTheme === 'dark' ? 'rgb(8, 15, 17)' : '#ffffff',
         color: mounted && resolvedTheme === 'dark' ? 'var(--content-default-p3)' : '#08090a'
@@ -56,7 +56,7 @@ export function EstelaPrinciples() {
                 color: mounted && resolvedTheme === 'dark' ? 'var(--content-secondary-p3)' : '#6c757d'
               }}
             >
-              they are the soul of why we&apos;ve stayed small, why our clients stay with us, and why we still answer our own phones after 13 years.
+              they are the soul of why we&apos;ve chosen depth over scale, why our clients stay with us, and why we remain personally invested after 13 years.
             </div>
           </div>
         </div>
@@ -66,8 +66,7 @@ export function EstelaPrinciples() {
             <div 
               className="w-[100%] mb-4 rounded-[var(--border-radius-lg)] border p-3"
               style={{ 
-                backgroundColor: '#3b301c',
-                borderColor: mounted && resolvedTheme === 'dark' ? 'var(--stroke-default-p3)' : '#e9ecef'
+                backgroundColor: '#3b301c'
               }}
             >
               <AnimatedServerArt />
@@ -88,9 +87,9 @@ export function EstelaPrinciples() {
                 color: mounted && resolvedTheme === 'dark' ? 'var(--content-secondary-p3)' : '#6c757d'
               }}
             >
-              We tell clients when they don&apos;t need new hardware. We admit when we&apos;re not the right fit. We share bad news quickly and honestly.
+              We tell clients when they don&apos;t need new hardware. We admit when we&apos;re not the right fit. We lead with transparency in every conversation.
 
-              If this means losing a sale, so be it. Trust is worth more than any contract.
+              This approach creates relationships built on trust.
             </p>
           </div>
         </div>
@@ -100,8 +99,7 @@ export function EstelaPrinciples() {
             <div 
               className="w-[100%] mb-4 rounded-[var(--border-radius-lg)] border p-3"
               style={{ 
-                backgroundColor: '#3b301c',
-                borderColor: mounted && resolvedTheme === 'dark' ? 'var(--stroke-default-p3)' : '#e9ecef'
+                backgroundColor: '#3b301c'
               }}
             >
               <AnimatedUUIDEstelaArt />
@@ -122,7 +120,7 @@ export function EstelaPrinciples() {
                 color: mounted && resolvedTheme === 'dark' ? 'var(--content-secondary-p3)' : '#6c757d'
               }}
             >
-              We&apos;ve turned down million-dollar projects that didn&apos;t align with our values. We&apos;ve spent weekends helping clients who couldn&apos;t afford emergency rates. Because relationships outlast transactions.
+              We choose clients who share our values. We respond to emergencies as part of our commitment, not as an opportunity. Because relationships outlast transactions.
             </p>
           </div>
         </div>

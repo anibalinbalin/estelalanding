@@ -3,530 +3,294 @@
 import Link from 'next/link'
 
 export function AboutSection() {
-  const pageStyles = {
-    backgroundColor: 'rgb(8, 9, 10)',
-    color: 'rgb(215, 216, 217)',
-    minHeight: '100vh'
-  }
+  const values = [
+    {
+      title: 'Technology Serves Business',
+      description: 'We start with your business goals, not our favorite technologies. Every technical decision must advance your objectives.',
+      principle: 'Form follows function. Always.'
+    },
+    {
+      title: 'Excellence Over Scale',
+      description: 'We choose quality over quantity. Small teams, deep expertise, direct relationships. No bureaucracy, no account managers.',
+      principle: 'Do fewer things. Do them better.'
+    },
+    {
+      title: 'Reality Over Marketing',
+      description: 'We promise what we can deliver. We deliver what we promise. No overselling, no underwhelming.',
+      principle: 'Truth is our competitive advantage.'
+    },
+    {
+      title: 'Long-term Over Quick Wins',
+      description: 'We build solutions that last. Sustainable architectures, maintainable code, transferable knowledge.',
+      principle: 'Today\'s solution shouldn\'t become tomorrow\'s problem.'
+    }
+  ]
 
-  const badgeStyle = {
-    fontSize: '0.875rem',
-    fontWeight: '400',
-    lineHeight: '1.5rem',
-    letterSpacing: '0.05em',
-    textTransform: 'uppercase',
-    fontFamily: 'GT_America_Mono, monospace',
-    color: 'rgb(126, 131, 133)',
-    marginBottom: '24px'
-  }
-
-  const titleStyle = {
-    fontSize: '2.5rem',
-    fontWeight: '400',
-    lineHeight: '2.75rem',
-    letterSpacing: 'normal',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(215, 216, 217)',
-    margin: 0,
-    marginBottom: '16px'
-  }
-
-  const subtitleStyle = {
-    fontSize: '1.125rem',
-    fontWeight: '400',
-    lineHeight: '1.75rem',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(215, 216, 217)',
-    marginBottom: '24px'
-  }
-
-  const dividerStyle = {
-    height: '1px',
-    backgroundColor: 'rgba(126, 131, 133, 0.3)',
-    marginBottom: '48px'
-  }
-
-  const leadStyle = {
-    fontSize: '19px',
-    fontWeight: '400',
-    lineHeight: '30.4px',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(126, 131, 133)',
-    marginBottom: '24px'
-  }
-
-  const paragraphStyle = {
-    fontSize: '17px',
-    fontWeight: '400',
-    lineHeight: '27.2px',
-    letterSpacing: 'normal',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(126, 131, 133)',
-    marginBottom: '24px'
-  }
-
-  const sectionHeaderStyle = {
-    fontSize: '1.5rem', 
-    fontWeight: '400',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(215, 216, 217)', 
-    marginBottom: '24px',
-    borderBottom: '1px solid rgba(126, 131, 133, 0.3)',
-    paddingBottom: '8px'
-  }
-
-  const teamMemberStyle = {
-    marginBottom: '48px',
-    padding: '24px',
-    backgroundColor: 'rgba(126, 131, 133, 0.05)',
-    borderRadius: '8px',
-    border: '1px solid rgba(126, 131, 133, 0.1)'
-  }
-
-  const partnerItemStyle = {
-    marginBottom: '32px',
-    padding: '20px',
-    backgroundColor: 'rgba(126, 131, 133, 0.05)',
-    borderRadius: '8px',
-    border: '1px solid rgba(126, 131, 133, 0.1)'
-  }
+  const timeline = [
+    {
+      year: '2015',
+      milestone: 'Founded',
+      description: 'Started with a simple mission: technology consulting that actually helps businesses.'
+    },
+    {
+      year: '2016-2018',
+      milestone: 'Regional Expansion',
+      description: 'Established partnerships with major technology vendors. Grew client base across South America.'
+    },
+    {
+      year: '2019-2021',
+      milestone: 'Cloud Transformation',
+      description: 'Led digital transformations for enterprises moving to cloud-first architectures.'
+    },
+    {
+      year: '2022-2023',
+      milestone: 'AI & Automation',
+      description: 'Integrated AI and automation solutions for manufacturing and logistics clients.'
+    },
+    {
+      year: '2024-Present',
+      milestone: 'Global Reach',
+      description: 'Serving clients globally while maintaining personal, direct relationships.'
+    }
+  ]
 
   return (
-    <div style={pageStyles}>
-      <div className="section-spacing" style={{ maxWidth: '680px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px' }}>
-        {/* Badge */}
-        <div style={badgeStyle}>
-          Estela / Company / About
+    <div className="min-h-screen bg-background text-foreground">
+      <div className="container mx-auto px-6 py-16 max-w-4xl">
+        {/* Header */}
+        <div className="mb-16">
+          <p className="text-sm font-mono text-muted-foreground uppercase tracking-wide mb-6">
+            About Estela
+          </p>
+          <h1 className="text-4xl font-normal leading-tight mb-4">
+            Technology Consulting with Purpose and Precision
+          </h1>
+          <p className="text-lg leading-relaxed mb-6">
+            No buzzwords. No overselling. Just technology that solves real problems.
+          </p>
+          <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+            Founded in 2015, we've spent nearly a decade proving that technology consulting doesn't have to be complicated, expensive, or disappointing.
+          </p>
+          <div className="h-px bg-border mb-12" />
         </div>
 
-        <div style={dividerStyle} />
-
-        {/* Main Title */}
-        <h1 style={titleStyle}>
-          About Estela
-        </h1>
-        <p style={subtitleStyle}>
-          The Humans Behind the Technology
-        </p>
-
-        <p style={leadStyle}>
-          We're not your typical technology company.<br />
-          And that's entirely the point.
-        </p>
-        
-        <div style={dividerStyle} />
-
-        {/* Our Story Section */}
-        <section style={{ marginBottom: '48px' }}>
-          <h2 style={sectionHeaderStyle}>
-            Our Story
+        {/* Mission */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-normal mb-6 pb-2 border-b border-border">
+            Our Mission
           </h2>
 
-          {/* 2011: Two Friends, One Vision */}
-          <div style={{ marginBottom: '48px' }}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '16px'
-            }}>
-              2011: Two Friends, One Vision
-            </h3>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-            
-            <p style={paragraphStyle}>
-              It started in a small office in Montevideo. Two engineers who'd spent years watching companies struggle with technology that made work harder, not easier.
-            </p>
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 className="text-xl font-medium mb-4">What We Do</h3>
+              <div className="border-b border-muted/20 mb-4 pb-1" />
+              <p className="text-base leading-relaxed text-muted-foreground mb-6">
+                We design, implement, and maintain technology solutions that solve real business problems. Infrastructure, security, custom development, and strategic consulting.
+              </p>
 
-            <p style={paragraphStyle}>
-              We had no investors. No business plan. No safety net. Just a belief: technology should adapt to people, not the other way around.
-            </p>
+              <h3 className="text-xl font-medium mb-4">How We're Different</h3>
+              <div className="border-b border-muted/20 mb-4 pb-1" />
+              <p className="text-base leading-relaxed text-muted-foreground mb-6">
+                Small team. Direct relationships. No layers of management. The person who understands your problem is the same person who solves it.
+              </p>
+            </div>
 
-            <p style={paragraphStyle}>
-              Our first client was a small dental clinic. Their server had crashed, taking weeks of patient records with it. We not only recovered their data but built them a system that hasn't failed since. They're still our client today.
-            </p>
+            <div>
+              <h3 className="text-xl font-medium mb-4">Why We Exist</h3>
+              <div className="border-b border-muted/20 mb-4 pb-1" />
+              <p className="text-base leading-relaxed text-muted-foreground mb-6">
+                Most technology consulting is broken. Overpriced, underdelivered, and overcomplicated. We exist to prove it doesn't have to be this way.
+              </p>
+
+              <h3 className="text-xl font-medium mb-4">Who We Serve</h3>
+              <div className="border-b border-muted/20 mb-4 pb-1" />
+              <p className="text-base leading-relaxed text-muted-foreground mb-6">
+                Organizations that need enterprise-grade technology but want startup-level agility. Companies tired of vendor promises and consultant overhead.
+              </p>
+            </div>
           </div>
 
-          <div style={dividerStyle} />
+          <div className="bg-muted/5 border border-muted/10 rounded-xl p-8 text-center">
+            <blockquote className="text-xl italic leading-relaxed mb-4">
+              "Technology should be invisible when it works and obvious when it doesn't."
+            </blockquote>
+            <cite className="text-sm text-muted-foreground font-mono uppercase tracking-wide">
+              — Our guiding principle
+            </cite>
+          </div>
+        </section>
 
-          {/* The Early Years */}
-          <div style={{ marginBottom: '48px' }}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '16px'
-            }}>
-              The Early Years (2011-2015)
-            </h3>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-            
-            <p style={paragraphStyle}>
-              We learned by doing. Every project taught us something:
-            </p>
+        <div className="h-px bg-border mb-16" />
 
-            <ul style={{ ...paragraphStyle, marginLeft: '24px' }}>
-              <li style={{ marginBottom: '8px' }}>Architecture firms needed speed above all</li>
-              <li style={{ marginBottom: '8px' }}>Medical labs needed reliability above all</li>
-              <li style={{ marginBottom: '8px' }}>Law firms needed security above all</li>
-              <li style={{ marginBottom: '8px' }}>Everyone needed someone who actually listened</li>
-            </ul>
+        {/* Core Values */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-normal mb-6 pb-2 border-b border-border">
+            Core Values
+          </h2>
 
-            <p style={paragraphStyle}>
-              We stayed small on purpose. While others scaled fast and failed faster, we grew carefully. One client at a time. One relationship at a time. One success at a time.
-            </p>
+          <div className="space-y-12">
+            {values.map((value, index) => (
+              <div key={index} className="grid md:grid-cols-3 gap-8">
+                <div>
+                  <h3 className="text-lg font-medium mb-2">
+                    {value.title}
+                  </h3>
+                  <div className="border-b border-muted/20 mb-4 pb-1" />
+                </div>
+                <div className="md:col-span-2">
+                  <p className="text-base leading-relaxed text-muted-foreground mb-4">
+                    {value.description}
+                  </p>
+                  <p className="text-sm italic text-muted-foreground">
+                    {value.principle}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="h-px bg-border mb-16" />
+
+        {/* Timeline */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-normal mb-6 pb-2 border-b border-border">
+            Our Journey
+          </h2>
+
+          <div className="space-y-8">
+            {timeline.map((item, index) => (
+              <div key={index} className="flex gap-8">
+                <div className="flex-shrink-0 w-16">
+                  <span className="text-sm font-mono text-muted-foreground">
+                    {item.year}
+                  </span>
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-lg font-medium mb-2">
+                    {item.milestone}
+                  </h3>
+                  <p className="text-base leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="h-px bg-border mb-16" />
+
+        {/* Approach */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-normal mb-6 pb-2 border-b border-border">
+            Our Approach
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 className="text-xl font-medium mb-4">Discovery First</h3>
+              <div className="border-b border-muted/20 mb-4 pb-1" />
+              <p className="text-base leading-relaxed text-muted-foreground mb-8">
+                We spend time understanding your actual challenges, not just your perceived problems. Most technology issues are symptoms, not causes.
+              </p>
+
+              <h3 className="text-xl font-medium mb-4">Proven Technologies</h3>
+              <div className="border-b border-muted/20 mb-4 pb-1" />
+              <p className="text-base leading-relaxed text-muted-foreground mb-8">
+                We use technologies with track records. No bleeding edge experiments in production. Your business isn't our testing ground.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-medium mb-4">Measurable Outcomes</h3>
+              <div className="border-b border-muted/20 mb-4 pb-1" />
+              <p className="text-base leading-relaxed text-muted-foreground mb-8">
+                Every project has clear success metrics defined upfront. We measure technical improvements and business impact.
+              </p>
+
+              <h3 className="text-xl font-medium mb-4">Knowledge Transfer</h3>
+              <div className="border-b border-muted/20 mb-4 pb-1" />
+              <p className="text-base leading-relaxed text-muted-foreground mb-8">
+                We don't create vendor lock-in. Your team learns how to maintain and evolve what we build. Independence is the goal.
+              </p>
+            </div>
           </div>
 
-          <div style={dividerStyle} />
-
-          {/* Finding Our Philosophy */}
-          <div style={{ marginBottom: '48px' }}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '16px'
-            }}>
-              Finding Our Philosophy (2016-2019)
-            </h3>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-            
-            <p style={paragraphStyle}>
-              By year five, we'd found our rhythm. We discovered Putnam's research on team size. We studied Grace Hopper's approach to simplification. We realized our instincts were backed by science.
-            </p>
-
-            <p style={paragraphStyle}>
-              We also discovered something else: the best system designers think like artists. Composition. Balance. Perspective. It all applied.
-            </p>
-
-            <p style={paragraphStyle}>
-              Our CEO started studying Renaissance paintings.<br />
-              Our CTO dove into philosophy.<br />
-              Our work got better.
-            </p>
-          </div>
-
-          <div style={dividerStyle} />
-
-          {/* The Modern Era */}
-          <div style={{ marginBottom: '48px' }}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '16px'
-            }}>
-              The Modern Era (2020-Present)
-            </h3>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-            
-            <p style={paragraphStyle}>
-              The pandemic proved our approach. While others scrambled, our clients kept working. The systems we'd built for flexibility became lifelines.
-            </p>
-
-            <p style={paragraphStyle}>
-              Today, we're five people serving 50+ organizations.<br />
-              We've been profitable since year two.<br />
-              We've never taken outside investment.<br />
-              We've never lost a client to a competitor.
-            </p>
-
-            <p style={paragraphStyle}>
-              But we're most proud of this: we still answer our own phones, we still write our own code, and we still believe technology should make life better, not just different.
+          <div className="text-center">
+            <p className="text-lg font-medium italic">
+              Understand first. Build second.<br />
+              Measure always. Transfer completely.
             </p>
           </div>
         </section>
 
-        <div style={dividerStyle} />
+        <div className="h-px bg-border mb-16" />
 
-        {/* Our Team Section */}
-        <section style={{ marginBottom: '48px' }}>
-          <h2 style={sectionHeaderStyle}>
-            Our Team
+        {/* Recognition */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-normal mb-6 pb-2 border-b border-border">
+            Recognition & Partnerships
           </h2>
-          <p style={paragraphStyle}>
-            Five people. Decades of experience. Unlimited dedication.
-          </p>
 
-          <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="p-6 bg-muted/5 rounded-lg border border-muted/10">
+              <h3 className="text-lg font-medium mb-3">Industry Partnerships</h3>
+              <ul className="text-base leading-relaxed text-muted-foreground space-y-2">
+                <li>• Lenovo Gold Business Partner</li>
+                <li>• UniFi Enterprise Certified Installer</li>
+                <li>• Synology Gold Partner</li>
+                <li>• Acronis Cloud Solution Provider</li>
+              </ul>
+            </div>
 
-          {/* Team Member 1 */}
-          <div style={teamMemberStyle}>
-            <h3 style={{ 
-              fontSize: '1.125rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              [Name]
-            </h3>
-            <p style={{ 
-              fontSize: '0.9rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '16px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em'
-            }}>
-              Co-Founder & CEO
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-            
-            <p style={paragraphStyle}>
-              The artist-engineer. Collector of paintings, solver of problems, believer in beauty and function.
-            </p>
-
-            <p style={{ ...paragraphStyle, fontSize: '0.9rem' }}>
-              15 years in technology<br />
-              Specialties: System architecture, client strategy<br />
-              Obsession: Making complexity invisible
-            </p>
-
-            <p style={{ 
-              ...paragraphStyle, 
-              fontStyle: 'italic',
-              color: 'rgb(215, 216, 217)',
-              marginBottom: '0'
-            }}>
-              "Technology without soul is just expensive furniture."
-            </p>
+            <div className="p-6 bg-muted/5 rounded-lg border border-muted/10">
+              <h3 className="text-lg font-medium mb-3">Client Success</h3>
+              <ul className="text-base leading-relaxed text-muted-foreground space-y-2">
+                <li>• 100+ successful projects</li>
+                <li>• 100% client retention rate</li>
+                <li>• Proven System Stability: Renowned for building and maintaining remarkably stable and dependable client environments.</li>
+                <li>• Rapid Realization of Value: Clients typically experience significant positive business impact well within the first year.</li>
+              </ul>
+            </div>
           </div>
 
-          {/* Team Member 2 */}
-          <div style={teamMemberStyle}>
-            <h3 style={{ 
-              fontSize: '1.125rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              [Name]
-            </h3>
-            <p style={{ 
-              fontSize: '0.9rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '16px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em'
-            }}>
-              Co-Founder & CTO
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-            
-            <p style={paragraphStyle}>
-              The philosopher-builder. Reads Borges, writes code, sees patterns others miss.
-            </p>
-
-            <p style={{ ...paragraphStyle, fontSize: '0.9rem' }}>
-              18 years in technology<br />
-              Specialties: Infrastructure, security, optimization<br />
-              Obsession: Systems that self-heal
-            </p>
-
-            <p style={{ 
-              ...paragraphStyle, 
-              fontStyle: 'italic',
-              color: 'rgb(215, 216, 217)',
-              marginBottom: '0'
-            }}>
-              "The best solution is the one you never notice."
+          <div className="text-center text-base text-muted-foreground">
+            <p>
+              Recognition that matters: client success, not industry awards.
             </p>
           </div>
-
-          <p style={{ ...paragraphStyle, fontStyle: 'italic', textAlign: 'center' }}>
-            [Continue with other team members...]
-          </p>
         </section>
 
-        <div style={dividerStyle} />
-
-        {/* Why We Stay Small */}
-        <section style={{ marginBottom: '48px' }}>
-          <h2 style={sectionHeaderStyle}>
-            Why We Stay Small
-          </h2>
-          <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-          <p style={paragraphStyle}>
-            We've had offers to grow. Investors wanting to 10x us. Clients begging us to expand. We always say no.
-          </p>
-
-          <p style={paragraphStyle}>
-            Because we've learned: the magic happens at this size. Any bigger and we'd lose the very thing that makes us valuable.
-          </p>
-
-          <p style={paragraphStyle}>
-            Your project doesn't get handed off to juniors.<br />
-            Your calls don't go to a call center.<br />
-            Your relationship doesn't get account-managed to death.
-          </p>
-
-          <p style={{ ...paragraphStyle, fontWeight: '500', color: 'rgb(215, 216, 217)' }}>
-            You get us. All of us. Always.
-          </p>
-        </section>
-
-        <div style={dividerStyle} />
-
-        {/* Our Partners Section */}
-        <section style={{ marginBottom: '48px' }}>
-          <h2 style={sectionHeaderStyle}>
-            Strategic Partnerships
-          </h2>
-          <p style={paragraphStyle}>
-            We choose our partners as carefully as our clients.
-          </p>
-
-          <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-          {/* Lenovo */}
-          <div style={partnerItemStyle}>
-            <h3 style={{ 
-              fontSize: '1.125rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              Lenovo
-            </h3>
-            <p style={{ 
-              fontSize: '0.9rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '16px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em'
-            }}>
-              Business Partner Since 2015
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-            
-            <ul style={{ ...paragraphStyle, marginLeft: '24px', marginBottom: '0' }}>
-              <li style={{ marginBottom: '8px' }}>Direct access to enterprise support</li>
-              <li style={{ marginBottom: '8px' }}>Preferred pricing on all hardware</li>
-              <li>Extended warranties and guarantees</li>
-            </ul>
-          </div>
-
-          {/* UniFi */}
-          <div style={partnerItemStyle}>
-            <h3 style={{ 
-              fontSize: '1.125rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              UniFi
-            </h3>
-            <p style={{ 
-              fontSize: '0.9rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '16px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em'
-            }}>
-              Enterprise Installer Since 2018
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-            
-            <ul style={{ ...paragraphStyle, marginLeft: '24px', marginBottom: '0' }}>
-              <li style={{ marginBottom: '8px' }}>Certified installation and configuration</li>
-              <li style={{ marginBottom: '8px' }}>Advanced troubleshooting capabilities</li>
-              <li>Volume pricing benefits</li>
-            </ul>
-          </div>
-
-          <p style={{ ...paragraphStyle, fontStyle: 'italic', textAlign: 'center' }}>
-            [Continue with Synology and SentinelOne...]
-          </p>
-        </section>
-
-        <div style={dividerStyle} />
+        <div className="h-px bg-border mb-16" />
 
         {/* Bottom CTA */}
-        <section style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <p style={{ 
-            ...paragraphStyle, 
-            fontSize: '1.125rem', 
-            fontWeight: '500',
-            color: 'rgb(215, 216, 217)',
-            marginBottom: '32px'
-          }}>
-            Now you know us. We'd love to know you.
+        <section className="text-center mb-12">
+          <p className="text-xl font-medium mb-4">
+            Ready to experience technology consulting that actually works?
           </p>
 
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '32px' }}>
+          <p className="text-base text-muted-foreground mb-8">
+            Let's start with understanding your real challenges.
+          </p>
+
+          <div className="flex gap-4 justify-center">
             <Link 
               href="/contact"
-              style={{
-                padding: '12px 24px',
-                backgroundColor: 'rgb(215, 216, 217)',
-                color: 'rgb(8, 9, 10)',
-                textDecoration: 'none',
-                borderRadius: '6px',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                fontWeight: '500',
-                fontSize: '0.95rem',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgb(126, 131, 133)'
-                e.currentTarget.style.color = 'rgb(215, 216, 217)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgb(215, 216, 217)'
-                e.currentTarget.style.color = 'rgb(8, 9, 10)'
-              }}
+              className="px-6 py-3 bg-foreground text-background rounded-md font-medium text-sm hover:bg-foreground/90 transition-colors"
             >
-              Start a Conversation
+              Start the Conversation
             </Link>
             <Link 
-              href="/method"
-              style={{
-                padding: '12px 24px',
-                backgroundColor: 'transparent',
-                color: 'rgb(126, 131, 133)',
-                textDecoration: 'none',
-                border: '1px solid rgb(126, 131, 133)',
-                borderRadius: '6px',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                fontWeight: '500',
-                fontSize: '0.95rem',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgb(126, 131, 133)'
-                e.currentTarget.style.color = 'rgb(215, 216, 217)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent'
-                e.currentTarget.style.color = 'rgb(126, 131, 133)'
-              }}
+              href="/work"
+              className="px-6 py-3 bg-transparent text-muted-foreground border border-muted-foreground rounded-md font-medium text-sm hover:bg-muted-foreground hover:text-background transition-colors"
             >
-              Read Our Method
+              See Our Results
             </Link>
           </div>
-
-          <p style={{ 
-            ...paragraphStyle, 
-            fontSize: '0.9rem',
-            fontStyle: 'italic',
-            marginBottom: '0'
-          }}>
-            "Technology is best when it brings people together."<br />
-            <span style={{ fontSize: '0.8rem' }}>- Matt Mullenweg</span>
-          </p>
         </section>
+
+        <div className="h-px bg-border" />
       </div>
     </div>
   )

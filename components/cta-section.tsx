@@ -4,7 +4,7 @@ import { Link } from "next-view-transitions";
 
 export const CTASection = () => {
   return (
-    <section className="w-full section-spacing">
+    <section className="w-full mt-28 sm:mt-[11.25rem] mb-4">
       <div className="container mx-auto px-5 sm:px-10">
         <div className="relative m-auto max-w-[1200px] my-4 min-[900px]:my-12">
           <div className="flex absolute top-[-8rem] bottom-[-8rem] left-0 right-0 z-0 justify-between">
@@ -50,7 +50,7 @@ export const CTASection = () => {
             <div>
               <h2 className="oxide-cta-title text-balance m-0 text-lg min-[500px]:text-[1.5625rem] min-[900px]:text-4xl font-normal leading-[1.625rem] min-[500px]:leading-8 min-[900px]:leading-[2.625rem] tracking-wide min-[500px]:tracking-wide min-[900px]:tracking-normal max-[399px]:text-center">
                 Small Over Scale<br />
-                <span className="oxide-cta-subtitle">We are 5 people by choice, not circumstance.</span>
+                <span className="oxide-cta-subtitle">We are 6 people by choice, not circumstance.</span>
               </h2>
             </div>
             <div className="flex flex-col gap-2 text-center">

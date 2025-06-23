@@ -1,0 +1,46 @@
+/* Hero intro animations */
+@keyframes heroFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hero title animation */
+.hero-title {
+  animation: heroFadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+  opacity: 0;
+}
+
+/* Hero subtitle animation */
+.hero-subtitle {
+  animation: heroFadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s forwards;
+  opacity: 0;
+}
+
+/* Hero CTA button animation */
+.hero-cta {
+  animation: heroFadeInLeft 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s forwards;
+  opacity: 0;
+}
+
+/* Background animation */
+.hero-background {
+  animation: heroFadeInUp 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+}

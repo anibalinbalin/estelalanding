@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function TestPrinciplesPage() {
-  const { resolvedTheme } = useTheme();
+  const { } = useTheme();
   const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
@@ -56,7 +56,7 @@ export default function TestPrinciplesPage() {
                 fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif'
               }}
             >
-              they are the soul of why we've stayed small, why our clients stay with us, and why we still answer our own phones after 13 years.
+              they are the soul of why we&apos;ve chosen depth over scale, why our clients stay with us, and why we remain personally invested after 13 years.
             </div>
           </div>
         </div>
@@ -158,9 +158,9 @@ export default function TestPrinciplesPage() {
                 fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif'
               }}
             >
-              We tell clients when they don't need new hardware. We admit when we're not the right fit. We share bad news quickly and honestly.
+              We tell clients when they don&apos;t need new hardware. We admit when we&apos;re not the right fit. We lead with transparency in every conversation.
 
-              If this means losing a sale, so be it. Trust is worth more than any contract.
+              This approach creates relationships built on trust.
             </p>
           </div>
         </div>
@@ -245,7 +245,7 @@ export default function TestPrinciplesPage() {
                 fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif'
               }}
             >
-              We've turned down million-dollar projects that didn't align with our values. We've spent weekends helping clients who couldn't afford emergency rates. Because relationships outlast transactions.
+              We choose clients who share our values. We respond to emergencies as part of our commitment, not as an opportunity. Because relationships outlast transactions.
             </p>
           </div>
         </div>

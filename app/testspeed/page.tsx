@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function TestSpeedPage() {
-  const { resolvedTheme } = useTheme();
+  const { } = useTheme();
   const [mounted, setMounted] = useState(false);
   
   useEffect(() => {

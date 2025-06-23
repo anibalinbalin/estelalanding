@@ -12,7 +12,7 @@ export const UnicornOdysseus = () => {
   }, []);
 
   return (
-    <section className="w-full section-spacing">
+    <section className="w-full mt-28 sm:mt-[11.25rem] mb-4">
       <div className="container mx-auto px-5 sm:px-10">
         {/* Odiseo Effect */}
         <div className="mb-12 lg:mb-20 flex justify-center">

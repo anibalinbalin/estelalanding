@@ -25,7 +25,7 @@ export function MethodSection() {
     backgroundColor: 'var(--background)',
     color: 'var(--foreground)',
     minHeight: '100vh',
-    overflowX: 'hidden'
+    overflowX: 'hidden' as const
   }
 
   const heroTitleStyle = {
@@ -105,7 +105,7 @@ export function MethodSection() {
     fontWeight: '400',
     lineHeight: '1.5rem',
     letterSpacing: '0.05em',
-    textTransform: 'uppercase',
+    textTransform: 'uppercase' as const,
     fontFamily: 'GT_America_Mono, monospace',
     color: 'var(--content-secondary-p3)',
     marginBottom: '24px'

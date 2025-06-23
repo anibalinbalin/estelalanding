@@ -45,22 +45,19 @@ export const InfrastructureAsciiArt: React.FC<InfrastructureAsciiArtProps> = ({
     
     let value = 0
     
-    // Calculate distance to nearest node
+    // Calculate distance to nearest node and add pulse effect
     let minNodeDist = Infinity
-    let nearestNode = null
     nodePositions.forEach(node => {
       const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2)
       if (dist < minNodeDist) {
         minNodeDist = dist
-        nearestNode = node
+        // Node pulse effect
+        if (dist < 2.5) {
+          const pulse = Math.sin(t * 0.8 + node.x * 0.1 + node.y * 0.1)
+          value += pulse * 1.8
+        }
       }
     })
-    
-    // Node pulse effect
-    if (minNodeDist < 2.5 && nearestNode) {
-      const pulse = Math.sin(t * 0.8 + nearestNode.x * 0.1 + nearestNode.y * 0.1)
-      value += pulse * 1.8
-    }
     
     // Horizontal connections (top row)
     if (y >= 5 && y <= 7) {
@@ -116,7 +113,7 @@ export const InfrastructureAsciiArt: React.FC<InfrastructureAsciiArtProps> = ({
     
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
-        let value = networkPattern(x, y, t)
+        const value = networkPattern(x, y, t)
         
         // Clean monochrome characters
         if (value > 1.8) {

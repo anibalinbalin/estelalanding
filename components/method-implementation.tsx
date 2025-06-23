@@ -61,7 +61,7 @@ export function MethodImplementation() {
       color: 'var(--foreground)',
       minHeight: '100vh',
       fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-      overflowX: 'hidden'
+      overflowX: 'hidden' as const
     }}>
       <div style={{
         maxWidth: '680px',
@@ -74,7 +74,7 @@ export function MethodImplementation() {
             fontWeight: '400',
             lineHeight: '1.5rem',
             letterSpacing: '0.05em',
-            textTransform: 'uppercase',
+            textTransform: 'uppercase' as const,
             fontFamily: 'GT_America_Mono, monospace',
             color: 'var(--content-secondary-p3)',
             marginBottom: '24px'
@@ -212,7 +212,7 @@ export function MethodImplementation() {
                 fontSize: '0.875rem',
                 fontFamily: 'GT_America_Mono, monospace',
                 color: 'var(--content-secondary-p3)',
-                textTransform: 'uppercase',
+                textTransform: 'uppercase' as const,
                 letterSpacing: '0.05em',
                 marginBottom: '24px'
               }}>
@@ -256,7 +256,7 @@ export function MethodImplementation() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '24px'
           }}>
-            From 5-person startups to 200-person organizations. From simple network upgrades 
+            From 5-person companies to 100-person organizations. From simple network upgrades 
             to complete digital transformations. Every project teaches us something new.
           </p>
           

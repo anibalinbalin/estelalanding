@@ -105,7 +105,7 @@ export const ConsultingAsciiArt: React.FC<ConsultingAsciiArtProps> = ({
     
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
-        let value = latticePattern(x, y, t)
+        const value = latticePattern(x, y, t)
         
         if (value > 1.6) {
           result += '█'

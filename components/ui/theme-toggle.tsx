@@ -1,7 +1,7 @@
 "use client"
 
 import { useId } from "react"
-import { MoonIcon, SunIcon, Languages } from "lucide-react"
+import { MoonIcon, SunIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Switch } from "@/components/ui/switch"
@@ -27,7 +27,7 @@ export function ThemeToggle() {
         aria-controls={id}
         onClick={() => setTheme("light")}
       >
-        <SunIcon size={16} aria-hidden="true" />
+        <MoonIcon size={16} aria-hidden="true" />
       </span>
       <Switch
         id={id}
@@ -42,14 +42,8 @@ export function ThemeToggle() {
         aria-controls={id}
         onClick={() => setTheme("dark")}
       >
-        <MoonIcon size={16} aria-hidden="true" />
+        <SunIcon size={16} aria-hidden="true" />
       </span>
-      <button
-        className="ml-3 p-1 hover:text-foreground text-muted-foreground transition-colors"
-        aria-label="Change language"
-      >
-        <Languages size={16} />
-      </button>
     </div>
   )
 }

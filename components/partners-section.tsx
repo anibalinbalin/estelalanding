@@ -3,86 +3,6 @@
 import Link from 'next/link'
 
 export function PartnersSection() {
-  const pageStyles = {
-    backgroundColor: 'rgb(8, 9, 10)',
-    color: 'rgb(215, 216, 217)',
-    minHeight: '100vh'
-  }
-
-  const badgeStyle = {
-    fontSize: '0.875rem',
-    fontWeight: '400',
-    lineHeight: '1.5rem',
-    letterSpacing: '0.05em',
-    textTransform: 'uppercase',
-    fontFamily: 'GT_America_Mono, monospace',
-    color: 'rgb(126, 131, 133)',
-    marginBottom: '24px'
-  }
-
-  const titleStyle = {
-    fontSize: '2.5rem',
-    fontWeight: '400',
-    lineHeight: '2.75rem',
-    letterSpacing: 'normal',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(215, 216, 217)',
-    margin: 0,
-    marginBottom: '16px'
-  }
-
-  const subtitleStyle = {
-    fontSize: '1.125rem',
-    fontWeight: '400',
-    lineHeight: '1.75rem',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(215, 216, 217)',
-    marginBottom: '24px'
-  }
-
-  const leadStyle = {
-    fontSize: '19px',
-    fontWeight: '400',
-    lineHeight: '30.4px',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(126, 131, 133)',
-    marginBottom: '24px'
-  }
-
-  const dividerStyle = {
-    height: '1px',
-    backgroundColor: 'rgba(126, 131, 133, 0.3)',
-    marginBottom: '48px'
-  }
-
-  const sectionHeaderStyle = {
-    fontSize: '1.5rem', 
-    fontWeight: '400',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(215, 216, 217)', 
-    marginBottom: '24px',
-    borderBottom: '1px solid rgba(126, 131, 133, 0.3)',
-    paddingBottom: '8px'
-  }
-
-  const partnerCardStyle = {
-    marginBottom: '64px',
-    padding: '32px',
-    backgroundColor: 'rgba(126, 131, 133, 0.05)',
-    borderRadius: '12px',
-    border: '1px solid rgba(126, 131, 133, 0.1)'
-  }
-
-  const paragraphStyle = {
-    fontSize: '17px',
-    fontWeight: '400',
-    lineHeight: '27.2px',
-    letterSpacing: 'normal',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(126, 131, 133)',
-    marginBottom: '24px'
-  }
-
   const partners = [
     {
       name: 'Lenovo',
@@ -147,228 +67,151 @@ export function PartnersSection() {
       partnership: 'Gold Partner Since 2016',
       description: 'Storage that scales. Solutions that last. Support that actually supports.',
       level: 'Gold Partner',
-      coverage: 'LATAM Region',
-      specializations: 'Enterprise NAS, Surveillance, Backup',
+      coverage: 'Uruguay & Regional',
+      specializations: 'NAS, Backup, Surveillance, Active Directory',
       benefits: [
-        'Expert NAS deployment and optimization',
-        'Advanced training and certifications',
-        'Beta access to new features',
-        'Priority technical support',
-        'Extended warranty options',
-        'On-site spare availability'
+        'Premier technical support access',
+        'Advanced replacement service',
+        'Volume licensing discounts',
+        'Direct engineering contact',
+        'Beta program participation',
+        'Migration assistance included'
       ],
       solutions: [
-        'FlashStation all-flash arrays',
-        'RackStation enterprise NAS',
+        'DiskStation enterprise NAS',
+        'RackStation rackmount units',
         'Surveillance Station systems',
-        'Active Backup solutions'
+        'Active Backup for Business'
       ],
       metrics: [
-        '2PB+ total storage deployed',
-        '99.999% data availability',
-        '30-minute average recovery',
-        'Zero data loss incidents'
+        '300+ storage systems deployed',
+        '99.99% uptime achieved',
+        'Zero data loss incidents',
+        'Full disaster recovery capability'
       ],
-      portal: 'Access Synology Partner Resources →'
+      portal: 'Visit Synology Partner Portal →'
     },
     {
-      name: 'SentinelOne',
-      partnership: 'Certified Partner Since 2019',
-      description: 'AI-powered protection that actually works. Stops threats before they start.',
-      level: 'Gold MSSP Partner',
-      coverage: 'Uruguay & Region',
-      specializations: 'XDR, Endpoint Protection, Threat Hunting',
+      name: 'Acronis',
+      partnership: 'Cloud Partner Since 2017',
+      description: 'Backup and security that actually works when you need it most.',
+      level: 'Cloud Solution Provider',
+      coverage: 'Global Coverage',
+      specializations: 'Cyber Backup, Disaster Recovery, Cyber Protection',
       benefits: [
-        'Next-generation endpoint protection',
-        '24/7 automated threat response',
-        'Certified deployment expertise',
-        'Direct escalation channels',
-        'Managed detection services',
-        'Incident response support'
+        'White-label cloud services',
+        'Advanced threat protection',
+        'Guaranteed recovery times',
+        'Compliance assistance',
+        'Multi-tenant management',
+        '24/7 monitoring included'
       ],
       solutions: [
-        'Singularity XDR platform',
-        'Ranger network discovery',
-        'Vigilance MDR services',
-        'Cloud workload protection'
+        'Acronis Cyber Backup',
+        'Acronis Cyber Protect',
+        'Disaster Recovery as a Service',
+        'Cyber Security services'
       ],
       metrics: [
-        '5000+ endpoints protected',
-        '100% ransomware prevention',
-        '<1ms threat detection',
-        'Zero breaches since 2019'
+        '10TB+ data under protection',
+        '15-minute recovery point objectives',
+        'Zero ransomware successes',
+        '100% compliance audits passed'
       ],
-      portal: 'View SentinelOne Dashboard →'
+      portal: 'Visit Acronis Partner Portal →'
     }
   ]
 
   return (
-    <div style={pageStyles}>
-      <div className="section-spacing" style={{ maxWidth: '680px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px' }}>
-        {/* Badge */}
-        <div style={badgeStyle}>
-          Estela / Company / Partners
+    <div className="min-h-screen bg-background text-foreground">
+      <div className="container mx-auto px-6 py-16 max-w-4xl">
+        {/* Header */}
+        <div className="mb-16">
+          <p className="text-sm font-mono text-muted-foreground uppercase tracking-wide mb-6">
+            Technology Partners
+          </p>
+          <h1 className="text-4xl font-normal leading-tight mb-4">
+            Our Strategic Partners
+          </h1>
+          <p className="text-lg leading-relaxed mb-6">
+            Partnerships built on trust, tested in production
+          </p>
+          <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+            Four strategic partnerships. Nine years of proven excellence. Zero compromises.
+          </p>
+          <div className="h-px bg-border mb-12" />
         </div>
 
-        <div style={dividerStyle} />
-
-        {/* Main Title */}
-        <h1 style={titleStyle}>
-          Strategic Partnerships
-        </h1>
-        <p style={subtitleStyle}>
-          We choose our partners as carefully as our clients.
-        </p>
-
-        <p style={leadStyle}>
-          Quality over quantity. Always.
-        </p>
-        
-        <div style={dividerStyle} />
-
-        {/* Partner Details */}
-        <section style={{ marginBottom: '64px' }}>
-          <h2 style={sectionHeaderStyle}>
-            Partner Details
+        {/* Partners */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-normal mb-6 pb-2 border-b border-border">
+            Our Partners
           </h2>
 
           {partners.map((partner, index) => (
-            <div key={index} style={partnerCardStyle}>
-              <h3 style={{ 
-                fontSize: '1.5rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '8px'
-              }}>
+            <div key={index} className="mb-16 p-8 bg-muted/5 rounded-xl border border-muted/10">
+              <h3 className="text-xl font-medium mb-4">
                 {partner.name}
               </h3>
-              <p style={{ 
-                fontSize: '1rem',
-                fontFamily: 'GT_America_Mono, monospace',
-                color: 'rgb(126, 131, 133)',
-                marginBottom: '24px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
+              <p className="text-sm font-mono text-muted-foreground uppercase tracking-wide mb-6">
                 {partner.partnership}
               </p>
-              <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
+              <div className="border-b border-muted/20 mb-6 pb-2" />
 
               {/* Logo placeholder */}
-              <div style={{
-                padding: '32px',
-                backgroundColor: 'rgba(126, 131, 133, 0.1)',
-                borderRadius: '8px',
-                border: '1px solid rgba(126, 131, 133, 0.2)',
-                textAlign: 'center',
-                marginBottom: '32px',
-                fontSize: '0.9rem',
-                fontFamily: 'GT_America_Mono, monospace',
-                color: 'rgb(126, 131, 133)'
-              }}>
+              <div className="p-8 bg-muted/10 rounded-lg border border-muted/20 text-center mb-8 text-sm font-mono text-muted-foreground">
                 [{partner.name} Logo]
               </div>
 
               {/* Why Partner */}
-              <div style={{ marginBottom: '32px' }}>
-                <h4 style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: '500',
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  color: 'rgb(215, 216, 217)', 
-                  marginBottom: '16px'
-                }}>
+              <div className="mb-8">
+                <h4 className="text-lg font-medium mb-4">
                   Why {partner.name}:
                 </h4>
-                <p style={{ 
-                  ...paragraphStyle,
-                  fontSize: '1.125rem',
-                  color: 'rgb(215, 216, 217)',
-                  fontStyle: 'italic'
-                }}>
+                <p className="text-lg italic leading-relaxed">
                   {partner.description}
                 </p>
               </div>
 
               {/* Partnership Details */}
-              <div style={{ marginBottom: '32px' }}>
-                <div style={{ marginBottom: '16px' }}>
-                  <span style={{ 
-                    fontSize: '0.9rem',
-                    fontFamily: 'GT_America_Mono, monospace',
-                    color: 'rgb(126, 131, 133)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em'
-                  }}>
+              <div className="mb-8">
+                <div className="mb-4">
+                  <span className="text-sm font-mono text-muted-foreground uppercase tracking-wide">
                     Partnership Level:
                   </span>
-                  <span style={{ 
-                    fontSize: '0.9rem',
-                    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                    color: 'rgb(215, 216, 217)',
-                    marginLeft: '8px'
-                  }}>
+                  <span className="text-sm ml-2">
                     {partner.level}
                   </span>
                 </div>
 
-                <div style={{ marginBottom: '16px' }}>
-                  <span style={{ 
-                    fontSize: '0.9rem',
-                    fontFamily: 'GT_America_Mono, monospace',
-                    color: 'rgb(126, 131, 133)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em'
-                  }}>
+                <div className="mb-4">
+                  <span className="text-sm font-mono text-muted-foreground uppercase tracking-wide">
                     Coverage:
                   </span>
-                  <span style={{ 
-                    fontSize: '0.9rem',
-                    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                    color: 'rgb(215, 216, 217)',
-                    marginLeft: '8px'
-                  }}>
+                  <span className="text-sm ml-2">
                     {partner.coverage}
                   </span>
                 </div>
 
-                <div style={{ marginBottom: '24px' }}>
-                  <span style={{ 
-                    fontSize: '0.9rem',
-                    fontFamily: 'GT_America_Mono, monospace',
-                    color: 'rgb(126, 131, 133)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em'
-                  }}>
+                <div className="mb-6">
+                  <span className="text-sm font-mono text-muted-foreground uppercase tracking-wide">
                     Specializations:
                   </span>
-                  <span style={{ 
-                    fontSize: '0.9rem',
-                    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                    color: 'rgb(215, 216, 217)',
-                    marginLeft: '8px'
-                  }}>
+                  <span className="text-sm ml-2">
                     {partner.specializations}
                   </span>
                 </div>
               </div>
 
               {/* What This Means for You */}
-              <div style={{ marginBottom: '32px' }}>
-                <h4 style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: '500',
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  color: 'rgb(215, 216, 217)', 
-                  marginBottom: '16px'
-                }}>
+              <div className="mb-8">
+                <h4 className="text-lg font-medium mb-4">
                   What This Means for You:
                 </h4>
-                <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-                <ul style={{ ...paragraphStyle, marginLeft: '24px' }}>
+                <div className="border-b border-muted/20 mb-4 pb-1" />
+                <ul className="text-base leading-relaxed text-muted-foreground ml-6">
                   {partner.benefits.map((benefit, i) => (
-                    <li key={i} style={{ marginBottom: '8px' }}>
+                    <li key={i} className="mb-2">
                       ✓ {benefit}
                     </li>
                   ))}
@@ -376,19 +219,13 @@ export function PartnersSection() {
               </div>
 
               {/* Key Solutions */}
-              <div style={{ marginBottom: '32px' }}>
-                <h4 style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: '500',
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  color: 'rgb(215, 216, 217)', 
-                  marginBottom: '16px'
-                }}>
+              <div className="mb-8">
+                <h4 className="text-lg font-medium mb-4">
                   Key Solutions We Deploy:
                 </h4>
-                <ul style={{ ...paragraphStyle, marginLeft: '24px' }}>
+                <ul className="text-base leading-relaxed text-muted-foreground ml-6">
                   {partner.solutions.map((solution, i) => (
-                    <li key={i} style={{ marginBottom: '8px' }}>
+                    <li key={i} className="mb-2">
                       - {solution}
                     </li>
                   ))}
@@ -396,19 +233,13 @@ export function PartnersSection() {
               </div>
 
               {/* Success Metrics */}
-              <div style={{ marginBottom: '32px' }}>
-                <h4 style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: '500',
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  color: 'rgb(215, 216, 217)', 
-                  marginBottom: '16px'
-                }}>
+              <div className="mb-8">
+                <h4 className="text-lg font-medium mb-4">
                   Success Metrics:
                 </h4>
-                <ul style={{ ...paragraphStyle, marginLeft: '24px' }}>
+                <ul className="text-base leading-relaxed text-muted-foreground ml-6">
                   {partner.metrics.map((metric, i) => (
-                    <li key={i} style={{ marginBottom: '8px' }}>
+                    <li key={i} className="mb-2">
                       - {metric}
                     </li>
                   ))}
@@ -418,17 +249,7 @@ export function PartnersSection() {
               {/* Portal Link */}
               <Link 
                 href="#"
-                style={{
-                  color: 'rgb(126, 131, 133)',
-                  textDecoration: 'none',
-                  fontSize: '0.95rem',
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  transition: 'color 0.2s',
-                  display: 'inline-block',
-                  padding: '8px 0'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(215, 216, 217)'}
-                onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(126, 131, 133)'}
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm inline-block py-2"
               >
                 [{partner.portal}]
               </Link>
@@ -436,188 +257,104 @@ export function PartnersSection() {
           ))}
         </section>
 
-        <div style={dividerStyle} />
+        <div className="h-px bg-border mb-16" />
 
         {/* Partnership Philosophy */}
-        <section style={{ marginBottom: '64px' }}>
-          <h2 style={sectionHeaderStyle}>
+        <section className="mb-16">
+          <h2 className="text-2xl font-normal mb-6 pb-2 border-b border-border">
             Partnership Philosophy
           </h2>
 
-          <div style={{ marginBottom: '48px' }}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '16px'
-            }}>
+          <div className="mb-12">
+            <h3 className="text-xl font-medium mb-4">
               Our Partnership Philosophy
             </h3>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '32px', paddingBottom: '8px' }}></div>
+            <div className="border-b border-muted/20 mb-8 pb-2" />
 
             {/* Philosophy Sections */}
-            <div style={{ marginLeft: '24px' }}>
-              <div style={{ marginBottom: '32px' }}>
-                <h4 style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: '500',
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  color: 'rgb(215, 216, 217)', 
-                  marginBottom: '8px'
-                }}>
+            <div className="ml-6">
+              <div className="mb-8">
+                <h4 className="text-lg font-medium mb-2">
                   We Don't Chase Certifications
                 </h4>
-                <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-                <p style={paragraphStyle}>
+                <div className="border-b border-muted/20 mb-4 pb-1" />
+                <p className="text-base leading-relaxed text-muted-foreground mb-6">
                   We earn partnerships through real-world excellence. Every partner relationship is tested in production before we formalize it.
                 </p>
               </div>
 
-              <div style={{ marginBottom: '32px' }}>
-                <h4 style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: '500',
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  color: 'rgb(215, 216, 217)', 
-                  marginBottom: '8px'
-                }}>
+              <div className="mb-8">
+                <h4 className="text-lg font-medium mb-2">
                   Direct Relationships Matter
                 </h4>
-                <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-                <p style={paragraphStyle}>
+                <div className="border-b border-muted/20 mb-4 pb-1" />
+                <p className="text-base leading-relaxed text-muted-foreground mb-6">
                   When you have a problem, we don't open tickets. We call our contacts. Real people who know us and prioritize your needs.
                 </p>
               </div>
 
-              <div style={{ marginBottom: '32px' }}>
-                <h4 style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: '500',
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  color: 'rgb(215, 216, 217)', 
-                  marginBottom: '8px'
-                }}>
+              <div className="mb-8">
+                <h4 className="text-lg font-medium mb-2">
                   Quality Over Quantity
                 </h4>
-                <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-                <p style={paragraphStyle}>
+                <div className="border-b border-muted/20 mb-4 pb-1" />
+                <p className="text-base leading-relaxed text-muted-foreground mb-6">
                   Four strategic partners. That's it. Each one best-in-class. Each one proven. No compromises.
                 </p>
               </div>
 
-              <div style={{ marginBottom: '32px' }}>
-                <h4 style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: '500',
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  color: 'rgb(215, 216, 217)', 
-                  marginBottom: '8px'
-                }}>
+              <div className="mb-8">
+                <h4 className="text-lg font-medium mb-2">
                   Your Advantage
                 </h4>
-                <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-                <ul style={{ ...paragraphStyle, marginLeft: '24px' }}>
-                  <li style={{ marginBottom: '8px' }}>✓ Enterprise pricing on day one</li>
-                  <li style={{ marginBottom: '8px' }}>✓ Priority support always</li>
-                  <li style={{ marginBottom: '8px' }}>✓ Beta access to innovations</li>
-                  <li style={{ marginBottom: '8px' }}>✓ Direct vendor escalation</li>
-                  <li style={{ marginBottom: '8px' }}>✓ Extended warranties</li>
+                <div className="border-b border-muted/20 mb-4 pb-1" />
+                <ul className="text-base leading-relaxed text-muted-foreground ml-6">
+                  <li className="mb-2">✓ Enterprise pricing on day one</li>
+                  <li className="mb-2">✓ Priority support always</li>
+                  <li className="mb-2">✓ Beta access to innovations</li>
+                  <li className="mb-2">✓ Direct vendor escalation</li>
+                  <li className="mb-2">✓ Extended warranties</li>
                   <li>✓ Local spare parts</li>
                 </ul>
               </div>
             </div>
 
-            <p style={{ 
-              ...paragraphStyle, 
-              fontSize: '1.125rem',
-              fontWeight: '500',
-              color: 'rgb(215, 216, 217)',
-              textAlign: 'center',
-              fontStyle: 'italic'
-            }}>
+            <p className="text-lg font-medium text-center italic">
               These aren't just logos on our website.<br />
               They're promises to you.
             </p>
           </div>
         </section>
 
-        <div style={dividerStyle} />
+        <div className="h-px bg-border mb-16" />
 
         {/* Bottom CTA */}
-        <section style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <p style={{ 
-            ...paragraphStyle, 
-            fontSize: '1.25rem', 
-            fontWeight: '500',
-            color: 'rgb(215, 216, 217)',
-            marginBottom: '16px'
-          }}>
+        <section className="text-center mb-12">
+          <p className="text-xl font-medium mb-4">
             Want enterprise-grade solutions with startup agility?
           </p>
 
-          <p style={{ 
-            ...paragraphStyle, 
-            fontSize: '1rem',
-            marginBottom: '32px'
-          }}>
+          <p className="text-base text-muted-foreground mb-8">
             Our partnerships make it possible.
           </p>
 
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+          <div className="flex gap-4 justify-center">
             <Link 
               href="/contact"
-              style={{
-                padding: '12px 24px',
-                backgroundColor: 'rgb(215, 216, 217)',
-                color: 'rgb(8, 9, 10)',
-                textDecoration: 'none',
-                borderRadius: '6px',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                fontWeight: '500',
-                fontSize: '0.95rem',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgb(126, 131, 133)'
-                e.currentTarget.style.color = 'rgb(215, 216, 217)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgb(215, 216, 217)'
-                e.currentTarget.style.color = 'rgb(8, 9, 10)'
-              }}
+              className="px-6 py-3 bg-foreground text-background rounded-md font-medium text-sm hover:bg-foreground/90 transition-colors"
             >
               Start Your Project
             </Link>
             <Link 
               href="/services/specifications"
-              style={{
-                padding: '12px 24px',
-                backgroundColor: 'transparent',
-                color: 'rgb(126, 131, 133)',
-                textDecoration: 'none',
-                border: '1px solid rgb(126, 131, 133)',
-                borderRadius: '6px',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                fontWeight: '500',
-                fontSize: '0.95rem',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgb(126, 131, 133)'
-                e.currentTarget.style.color = 'rgb(215, 216, 217)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent'
-                e.currentTarget.style.color = 'rgb(126, 131, 133)'
-              }}
+              className="px-6 py-3 bg-transparent text-muted-foreground border border-muted-foreground rounded-md font-medium text-sm hover:bg-muted-foreground hover:text-background transition-colors"
             >
               View Technical Specifications
             </Link>
           </div>
         </section>
 
-        <div style={dividerStyle} />
+        <div className="h-px bg-border" />
       </div>
     </div>
   )

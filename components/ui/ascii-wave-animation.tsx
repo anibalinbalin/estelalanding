@@ -9,11 +9,11 @@ interface AsciiWaveAnimationProps {
 
 export function AsciiWaveAnimation({ isVisible = true, className = '' }: AsciiWaveAnimationProps) {
   const canvasRef = useRef<HTMLDivElement>(null)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number>(0)
   const [frame, setFrame] = useState(0)
 
   const pattern = ' .–=▂▄▆█'
-  const speed = 0.1
+  const speed = 0.05
   const amplitude = 10
 
   const getGridDimensions = () => {

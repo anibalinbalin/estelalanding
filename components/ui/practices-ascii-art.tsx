@@ -64,7 +64,7 @@ export const PracticesAsciiArt: React.FC<PracticesAsciiArtProps> = ({
       // Draw grid
       for (let y = 0; y < GRID_SIZE; y++) {
         for (let x = 0; x < GRID_SIZE; x++) {
-          let value = undergroundPattern(x, y, t);
+          const value = undergroundPattern(x, y, t);
           
           let char = ' '
           // Berlin-specific characters: concrete, steel, graffiti

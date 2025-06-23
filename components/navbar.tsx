@@ -288,7 +288,16 @@ export function Navbar() {
                             <a
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted no-underline outline-none focus:shadow-md min-h-[300px] relative overflow-hidden p-3"
                               href="/services"
-                              onMouseEnter={(e) => e.stopPropagation()}
+                              onMouseEnter={(e) => {
+                                e.stopPropagation()
+                                // Reset all ASCII art states when hovering over default area
+                                setShowInfrastructureArt(false)
+                                setShowSecurityArt(false)
+                                setShowDevelopmentArt(false)
+                                setShowConsultingArt(false)
+                                setShowSpecificationsArt(false)
+                                setHoveredService('default')
+                              }}
                               onMouseLeave={(e) => e.stopPropagation()}
                             >
                               {showInfrastructureArt ? (

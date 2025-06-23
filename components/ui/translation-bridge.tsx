@@ -15,7 +15,7 @@ export function TranslationBridge({
   className = '' 
 }: TranslationBridgeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationFrameRef = useRef<number>()
+  const animationFrameRef = useRef<number>(0)
   const [mousePos, setMousePos] = useState({ x: -1, y: -1 })
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)

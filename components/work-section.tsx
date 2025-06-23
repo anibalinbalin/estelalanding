@@ -3,955 +3,321 @@
 import Link from 'next/link'
 
 export function WorkSection() {
-  const pageStyles = {
-    backgroundColor: 'rgb(8, 9, 10)',
-    color: 'rgb(215, 216, 217)',
-    minHeight: '100vh'
-  }
-
-  const badgeStyle = {
-    fontSize: '0.875rem',
-    fontWeight: '400',
-    lineHeight: '1.5rem',
-    letterSpacing: '0.05em',
-    textTransform: 'uppercase',
-    fontFamily: 'GT_America_Mono, monospace',
-    color: 'rgb(126, 131, 133)',
-    marginBottom: '24px'
-  }
-
-  const titleStyle = {
-    fontSize: '2.5rem',
-    fontWeight: '400',
-    lineHeight: '2.75rem',
-    letterSpacing: 'normal',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(215, 216, 217)',
-    margin: 0,
-    marginBottom: '16px'
-  }
-
-  const subtitleStyle = {
-    fontSize: '1.125rem',
-    fontWeight: '400',
-    lineHeight: '1.75rem',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(215, 216, 217)',
-    marginBottom: '24px'
-  }
-
-  const dividerStyle = {
-    height: '1px',
-    backgroundColor: 'rgba(126, 131, 133, 0.3)',
-    marginBottom: '48px'
-  }
-
-  const leadStyle = {
-    fontSize: '19px',
-    fontWeight: '400',
-    lineHeight: '30.4px',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(126, 131, 133)',
-    marginBottom: '24px'
-  }
-
-  const paragraphStyle = {
-    fontSize: '17px',
-    fontWeight: '400',
-    lineHeight: '27.2px',
-    letterSpacing: 'normal',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(126, 131, 133)',
-    marginBottom: '24px'
-  }
-
-  const sectionHeaderStyle = {
-    fontSize: '1.5rem', 
-    fontWeight: '400',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(215, 216, 217)', 
-    marginBottom: '24px',
-    borderBottom: '1px solid rgba(126, 131, 133, 0.3)',
-    paddingBottom: '8px'
-  }
-
-  const caseStudyStyle = {
-    marginBottom: '64px',
-    padding: '32px',
-    backgroundColor: 'rgba(126, 131, 133, 0.05)',
-    borderRadius: '12px',
-    border: '1px solid rgba(126, 131, 133, 0.1)'
-  }
-
-  const metricsTableStyle = {
-    width: '100%',
-    borderCollapse: 'collapse' as const,
-    marginBottom: '24px',
-    fontFamily: 'GT_America_Mono, monospace',
-    fontSize: '0.9rem'
-  }
-
-  const cellStyle = {
-    padding: '16px',
-    textAlign: 'center' as const,
-    borderRight: '1px solid rgba(126, 131, 133, 0.2)',
-    borderBottom: '1px solid rgba(126, 131, 133, 0.2)'
-  }
-
-  const progressBarStyle = {
-    width: '100%',
-    height: '24px',
-    backgroundColor: 'rgba(126, 131, 133, 0.2)',
-    borderRadius: '4px',
-    marginBottom: '8px',
-    overflow: 'hidden' as const
-  }
+  const projects = [
+    {
+      id: 'hospital-network',
+      title: 'Hospital Network Infrastructure',
+      client: 'Regional Hospital System',
+      year: '2023',
+      category: 'Infrastructure',
+      duration: '6 months',
+      challenge: 'Complete network overhaul for a 300-bed hospital with zero downtime requirements.',
+      solution: 'Phased deployment of redundant infrastructure with automated failover systems.',
+      technologies: ['Lenovo ThinkSystem', 'UniFi Enterprise', 'Synology NAS', 'Acronis Backup'],
+      results: [
+        '99.99% uptime achieved',
+        'Zero patient data loss',
+        '40% reduction in IT incidents',
+        'HIPAA compliance certified'
+      ],
+      testimonial: "They didn't just upgrade our network. They gave us peace of mind."
+    },
+    {
+      id: 'manufacturing-iot',
+      title: 'Smart Manufacturing Platform',
+      client: 'Industrial Manufacturing Corp',
+      year: '2023',
+      category: 'Development',
+      duration: '8 months',
+      challenge: 'Legacy manufacturing systems needed real-time monitoring and predictive maintenance.',
+      solution: 'Custom IoT platform with machine learning for predictive analytics.',
+      technologies: ['Edge Computing', 'Time Series DB', 'Machine Learning', 'Real-time Dashboard'],
+      results: [
+        '30% reduction in downtime',
+        '$2M saved in prevented failures',
+        'Real-time visibility across 50+ machines',
+        'ROI achieved in 6 months'
+      ],
+      testimonial: "We can now predict machine failures before they happen. It's changed everything."
+    },
+    {
+      id: 'finance-security',
+      title: 'Financial Services Security',
+      client: 'Regional Credit Union',
+      year: '2022',
+      category: 'Security',
+      duration: '4 months',
+      challenge: 'Cybersecurity overhaul for banking compliance and threat protection.',
+      solution: 'Multi-layered security architecture with 24/7 monitoring and incident response.',
+      technologies: ['Next-Gen Firewall', 'SIEM', 'Endpoint Protection', 'Security Training'],
+      results: [
+        'Zero security incidents since deployment',
+        'SOC 2 Type II compliance achieved',
+        '100% staff security training completion',
+        'Automated threat detection and response'
+      ],
+      testimonial: "Our customers sleep better knowing their data is protected by Estela's security."
+    },
+    {
+      id: 'logistics-cloud',
+      title: 'Cloud Migration & Modernization',
+      client: 'Logistics & Distribution',
+      year: '2022',
+      category: 'Consulting',
+      duration: '5 months',
+      challenge: 'Migrate legacy ERP and warehouse systems to cloud with zero business disruption.',
+      solution: 'Hybrid cloud strategy with gradual migration and parallel system operation.',
+      technologies: ['AWS', 'Kubernetes', 'Microservices', 'API Gateway'],
+      results: [
+        '60% reduction in infrastructure costs',
+        '10x faster deployment cycles',
+        '99.9% system availability',
+        'Global access for remote teams'
+      ],
+      testimonial: "The migration was seamless. Our team didn't miss a beat."
+    }
+  ]
 
   return (
-    <div style={pageStyles}>
-      <div className="section-spacing" style={{ maxWidth: '680px', margin: '0 auto', paddingLeft: '32px', paddingRight: '32px' }}>
-        {/* Badge */}
-        <div style={badgeStyle}>
-          Estela / Company / Work
+    <div className="min-h-screen bg-background text-foreground">
+      <div className="container mx-auto px-6 py-16 max-w-4xl">
+        {/* Header */}
+        <div className="mb-16">
+          <p className="text-sm font-mono text-muted-foreground uppercase tracking-wide mb-6">
+            Our Work
+          </p>
+          <h1 className="text-4xl font-normal leading-tight mb-4">
+            Recent Projects
+          </h1>
+          <p className="text-lg leading-relaxed mb-6">
+            Real solutions. Real results. Real impact.
+          </p>
+          <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+            Every project tells a story of transformation. Here are some recent chapters.
+          </p>
+          <div className="h-px bg-border mb-12" />
         </div>
 
-        <div style={dividerStyle} />
+        {/* Projects */}
+        <section className="mb-16">
+          {projects.map((project, index) => (
+            <div key={project.id} className="mb-16">
+              {/* Project Header */}
+              <div className="mb-8">
+                <div className="flex flex-wrap items-center gap-4 mb-4">
+                  <span className="text-sm font-mono text-muted-foreground uppercase tracking-wide">
+                    {project.category} • {project.year}
+                  </span>
+                  <span className="text-sm text-muted-foreground">
+                    {project.duration}
+                  </span>
+                </div>
+                <h2 className="text-2xl font-medium mb-2">
+                  {project.title}
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  {project.client}
+                </p>
+                <div className="border-b border-muted/20 mt-6 mb-8" />
+              </div>
 
-        {/* Main Title */}
-        <h1 style={titleStyle}>
-          Our Work
-        </h1>
-        <p style={subtitleStyle}>
-          13 years. 50+ organizations. Zero failures.
-        </p>
+              {/* Project Details Grid */}
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                {/* Left Column */}
+                <div>
+                  <div className="mb-6">
+                    <h3 className="text-lg font-medium mb-3">The Challenge</h3>
+                    <p className="text-base leading-relaxed text-muted-foreground">
+                      {project.challenge}
+                    </p>
+                  </div>
 
-        <p style={leadStyle}>
-          Every project tells a story of transformation.
-        </p>
-        
-        <div style={dividerStyle} />
+                  <div className="mb-6">
+                    <h3 className="text-lg font-medium mb-3">Our Solution</h3>
+                    <p className="text-base leading-relaxed text-muted-foreground">
+                      {project.solution}
+                    </p>
+                  </div>
+                </div>
 
-        {/* Featured Case Studies */}
-        <section style={{ marginBottom: '64px' }}>
-          <h2 style={sectionHeaderStyle}>
-            Featured Case Studies
+                {/* Right Column */}
+                <div>
+                  <div className="mb-6">
+                    <h3 className="text-lg font-medium mb-3">Technologies Used</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, i) => (
+                        <span key={i} className="text-sm px-3 py-1 bg-muted/10 border border-muted/20 rounded-md text-muted-foreground">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <h3 className="text-lg font-medium mb-3">Key Results</h3>
+                    <ul className="text-base leading-relaxed text-muted-foreground">
+                      {project.results.map((result, i) => (
+                        <li key={i} className="mb-2">
+                          ✓ {result}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial */}
+              <div className="bg-muted/5 border border-muted/10 rounded-xl p-6 mb-8">
+                <blockquote className="text-lg italic leading-relaxed">
+                  &ldquo;{project.testimonial}&rdquo;
+                </blockquote>
+                <cite className="text-sm text-muted-foreground font-mono uppercase tracking-wide mt-4 block">
+                  — {project.client}
+                </cite>
+              </div>
+
+              {index < projects.length - 1 && (
+                <div className="h-px bg-border mt-12" />
+              )}
+            </div>
+          ))}
+        </section>
+
+        <div className="h-px bg-border mb-16" />
+
+        {/* Approach Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-normal mb-6 pb-2 border-b border-border">
+            Our Approach
           </h2>
 
-          {/* Healthcare Case Study */}
-          <div style={caseStudyStyle}>
-            <h3 style={{ 
-              fontSize: '1.5rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              Healthcare Institution
-            </h3>
-            <p style={{ 
-              fontSize: '1.125rem',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)',
-              marginBottom: '24px'
-            }}>
-              From Chaos to Compliance
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 className="text-xl font-medium mb-4">Discovery First</h3>
+              <div className="border-b border-muted/20 mb-4 pb-1" />
+              <p className="text-base leading-relaxed text-muted-foreground mb-6">
+                We don&apos;t start with solutions. We start with understanding. Every project begins with deep discovery to understand your real challenges, not just symptoms.
+              </p>
+
+              <h3 className="text-xl font-medium mb-4">Build for Tomorrow</h3>
+              <div className="border-b border-muted/20 mb-4 pb-1" />
+              <p className="text-base leading-relaxed text-muted-foreground mb-6">
+                Quick fixes create bigger problems. We architect solutions that scale with your growth and adapt to future needs.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-medium mb-4">Test Everything</h3>
+              <div className="border-b border-muted/20 mb-4 pb-1" />
+              <p className="text-base leading-relaxed text-muted-foreground mb-6">
+                Production is not a testing environment. We validate every component in controlled environments before deployment.
+              </p>
+
+              <h3 className="text-xl font-medium mb-4">Measure Impact</h3>
+              <div className="border-b border-muted/20 mb-4 pb-1" />
+              <p className="text-base leading-relaxed text-muted-foreground mb-6">
+                Technology without measurable business impact is just expensive. We define success metrics before we start and track them after deployment.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg font-medium italic">
+              Every project is a partnership.<br />
+              Every outcome is measured.<br />
+              Every solution is built to last.
             </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <div style={{ marginBottom: '24px', fontSize: '0.9rem', color: 'rgb(126, 131, 133)' }}>
-              <p><strong>Industry:</strong> Medical Laboratory</p>
-              <p><strong>Size:</strong> 200+ employees, 3 locations</p>
-              <p><strong>Timeline:</strong> 12 weeks</p>
-            </div>
-
-            {/* The Challenge */}
-            <div style={{ marginBottom: '32px' }}>
-              <h4 style={{ 
-                fontSize: '1.125rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '16px'
-              }}>
-                The Challenge:
-              </h4>
-              <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-              <ul style={{ ...paragraphStyle, marginLeft: '24px' }}>
-                <li style={{ marginBottom: '8px' }}>Failing compliance audits</li>
-                <li style={{ marginBottom: '8px' }}>15-year-old server infrastructure</li>
-                <li style={{ marginBottom: '8px' }}>No disaster recovery plan</li>
-                <li style={{ marginBottom: '8px' }}>Daily system crashes</li>
-                <li>Patient data at risk</li>
-              </ul>
-            </div>
-
-            {/* Our Solution */}
-            <div style={{ marginBottom: '32px' }}>
-              <h4 style={{ 
-                fontSize: '1.125rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '16px'
-              }}>
-                Our Solution:
-              </h4>
-              <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-              <ul style={{ ...paragraphStyle, marginLeft: '24px' }}>
-                <li style={{ marginBottom: '8px' }}>Full infrastructure virtualization (VMware)</li>
-                <li style={{ marginBottom: '8px' }}>Synology NAS with real-time replication</li>
-                <li style={{ marginBottom: '8px' }}>SentinelOne endpoint protection</li>
-                <li style={{ marginBottom: '8px' }}>Automated backup system (3-2-1 strategy)</li>
-                <li>24/7 monitoring implementation</li>
-              </ul>
-            </div>
-
-            {/* The Results */}
-            <div style={{ marginBottom: '32px' }}>
-              <h4 style={{ 
-                fontSize: '1.125rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '16px'
-              }}>
-                The Results:
-              </h4>
-              <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-              
-              <table style={metricsTableStyle}>
-                <tbody>
-                  <tr>
-                    <td style={{ ...cellStyle, borderLeft: '1px solid rgba(126, 131, 133, 0.2)' }}>
-                      <div style={{ fontWeight: 'bold', color: 'rgb(215, 216, 217)', marginBottom: '4px' }}>100%</div>
-                      <div style={{ fontSize: '0.8rem' }}>Compliance<br />Audit Score</div>
-                    </td>
-                    <td style={cellStyle}>
-                      <div style={{ fontWeight: 'bold', color: 'rgb(215, 216, 217)', marginBottom: '4px' }}>Zero Downtime</div>
-                      <div style={{ fontSize: '0.8rem' }}>in 2 Years<br />Achieved</div>
-                    </td>
-                    <td style={{ ...cellStyle, borderRight: 'none' }}>
-                      <div style={{ fontWeight: 'bold', color: 'rgb(215, 216, 217)', marginBottom: '4px' }}>45 seconds</div>
-                      <div style={{ fontSize: '0.8rem' }}>Recovery Time<br />Objective</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style={{ ...cellStyle, borderLeft: '1px solid rgba(126, 131, 133, 0.2)', borderBottom: 'none' }}>
-                      <div style={{ fontWeight: 'bold', color: 'rgb(215, 216, 217)', marginBottom: '4px' }}>80%</div>
-                      <div style={{ fontSize: '0.8rem' }}>Faster<br />Processing</div>
-                    </td>
-                    <td style={{ ...cellStyle, borderBottom: 'none' }}>
-                      <div style={{ fontWeight: 'bold', color: 'rgb(215, 216, 217)', marginBottom: '4px' }}>$200K</div>
-                      <div style={{ fontSize: '0.8rem' }}>Annual Cost<br />Savings</div>
-                    </td>
-                    <td style={{ ...cellStyle, borderRight: 'none', borderBottom: 'none' }}>
-                      <div style={{ fontWeight: 'bold', color: 'rgb(215, 216, 217)', marginBottom: '4px' }}>3 Minutes</div>
-                      <div style={{ fontSize: '0.8rem' }}>Data Restore<br />Capability</div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            {/* Client Quote */}
-            <div style={{ marginBottom: '24px' }}>
-              <h4 style={{ 
-                fontSize: '1.125rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '16px'
-              }}>
-                Client Quote:
-              </h4>
-              <blockquote style={{ 
-                ...paragraphStyle,
-                fontStyle: 'italic',
-                marginLeft: '24px',
-                borderLeft: '3px solid rgba(126, 131, 133, 0.3)',
-                paddingLeft: '24px',
-                color: 'rgb(215, 216, 217)'
-              }}>
-                "Estela didn't just fix our IT. They transformed how we deliver patient care. Our systems are now as reliable as our commitment to health."
-                <footer style={{ marginTop: '8px', fontSize: '0.9rem', color: 'rgb(126, 131, 133)' }}>
-                  - Laboratory Director
-                </footer>
-              </blockquote>
-            </div>
-
-            <Link 
-              href="/case-studies/healthcare"
-              style={{
-                color: 'rgb(126, 131, 133)',
-                textDecoration: 'none',
-                fontSize: '0.95rem',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                transition: 'color 0.2s'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(215, 216, 217)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(126, 131, 133)'}
-            >
-              [View Full Case Study →]
-            </Link>
-          </div>
-
-          <div style={dividerStyle} />
-
-          {/* Architecture Case Study */}
-          <div style={caseStudyStyle}>
-            <h3 style={{ 
-              fontSize: '1.5rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              Architecture Firm
-            </h3>
-            <p style={{ 
-              fontSize: '1.125rem',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)',
-              marginBottom: '24px'
-            }}>
-              Designing Without Delays
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <div style={{ marginBottom: '24px', fontSize: '0.9rem', color: 'rgb(126, 131, 133)' }}>
-              <p><strong>Industry:</strong> Architecture & Design</p>
-              <p><strong>Size:</strong> 50 architects, 3 offices</p>
-              <p><strong>Timeline:</strong> 8 weeks</p>
-            </div>
-
-            {/* The Challenge */}
-            <div style={{ marginBottom: '32px' }}>
-              <h4 style={{ 
-                fontSize: '1.125rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '16px'
-              }}>
-                The Challenge:
-              </h4>
-              <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-              <ul style={{ ...paragraphStyle, marginLeft: '24px' }}>
-                <li style={{ marginBottom: '8px' }}>4K CAD files taking 20+ minutes to open</li>
-                <li style={{ marginBottom: '8px' }}>Remote offices constantly disconnected</li>
-                <li style={{ marginBottom: '8px' }}>10TB of unorganized project files</li>
-                <li style={{ marginBottom: '8px' }}>Version control nightmares</li>
-                <li>Freelancers couldn't access systems</li>
-              </ul>
-            </div>
-
-            {/* Our Solution */}
-            <div style={{ marginBottom: '32px' }}>
-              <h4 style={{ 
-                fontSize: '1.125rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '16px'
-              }}>
-                Our Solution:
-              </h4>
-              <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-              <ul style={{ ...paragraphStyle, marginLeft: '24px' }}>
-                <li style={{ marginBottom: '8px' }}>10Gb fiber backbone throughout building</li>
-                <li style={{ marginBottom: '8px' }}>UniFi Dream Machine Pro setup</li>
-                <li style={{ marginBottom: '8px' }}>Synology DS3622xs+ with NVMe cache</li>
-                <li style={{ marginBottom: '8px' }}>Site-to-site VPN for all offices</li>
-                <li>Secure freelancer access portal</li>
-              </ul>
-            </div>
-
-            {/* The Results */}
-            <div style={{ marginBottom: '32px' }}>
-              <h4 style={{ 
-                fontSize: '1.125rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '16px'
-              }}>
-                The Results:
-              </h4>
-              <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '16px', paddingBottom: '4px' }}></div>
-              
-              <table style={metricsTableStyle}>
-                <tbody>
-                  <tr>
-                    <td style={{ ...cellStyle, borderLeft: '1px solid rgba(126, 131, 133, 0.2)' }}>
-                      <div style={{ fontWeight: 'bold', color: 'rgb(215, 216, 217)', marginBottom: '4px' }}>30 seconds</div>
-                      <div style={{ fontSize: '0.8rem' }}>File Access<br />(was 20 min)</div>
-                    </td>
-                    <td style={cellStyle}>
-                      <div style={{ fontWeight: 'bold', color: 'rgb(215, 216, 217)', marginBottom: '4px' }}>99.99%</div>
-                      <div style={{ fontSize: '0.8rem' }}>Uptime<br />All Offices</div>
-                    </td>
-                    <td style={{ ...cellStyle, borderRight: 'none' }}>
-                      <div style={{ fontWeight: 'bold', color: 'rgb(215, 216, 217)', marginBottom: '4px' }}>5x</div>
-                      <div style={{ fontSize: '0.8rem' }}>Faster Work<br />Delivery</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style={{ ...cellStyle, borderLeft: '1px solid rgba(126, 131, 133, 0.2)', borderBottom: 'none' }}>
-                      <div style={{ fontWeight: 'bold', color: 'rgb(215, 216, 217)', marginBottom: '4px' }}>Seamless</div>
-                      <div style={{ fontSize: '0.8rem' }}>Remote<br />Collaboration</div>
-                    </td>
-                    <td style={{ ...cellStyle, borderBottom: 'none' }}>
-                      <div style={{ fontWeight: 'bold', color: 'rgb(215, 216, 217)', marginBottom: '4px' }}>40%</div>
-                      <div style={{ fontSize: '0.8rem' }}>Productivity<br />Increase</div>
-                    </td>
-                    <td style={{ ...cellStyle, borderRight: 'none', borderBottom: 'none' }}>
-                      <div style={{ fontWeight: 'bold', color: 'rgb(215, 216, 217)', marginBottom: '4px' }}>Perfect</div>
-                      <div style={{ fontSize: '0.8rem' }}>Version<br />Control</div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            {/* Client Quote */}
-            <div style={{ marginBottom: '24px' }}>
-              <h4 style={{ 
-                fontSize: '1.125rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '16px'
-              }}>
-                Client Quote:
-              </h4>
-              <blockquote style={{ 
-                ...paragraphStyle,
-                fontStyle: 'italic',
-                marginLeft: '24px',
-                borderLeft: '3px solid rgba(126, 131, 133, 0.3)',
-                paddingLeft: '24px',
-                color: 'rgb(215, 216, 217)'
-              }}>
-                "We went from waiting for files to waiting for nothing. Estela gave us infrastructure that moves at the speed of creativity."
-                <footer style={{ marginTop: '8px', fontSize: '0.9rem', color: 'rgb(126, 131, 133)' }}>
-                  - Principal Architect
-                </footer>
-              </blockquote>
-            </div>
-
-            <Link 
-              href="/case-studies/architecture"
-              style={{
-                color: 'rgb(126, 131, 133)',
-                textDecoration: 'none',
-                fontSize: '0.95rem',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                transition: 'color 0.2s'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(215, 216, 217)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(126, 131, 133)'}
-            >
-              [View Full Case Study →]
-            </Link>
           </div>
         </section>
 
-        <div style={dividerStyle} />
+        <div className="h-px bg-border mb-16" />
 
-        {/* Industries Overview */}
-        <section style={{ marginBottom: '64px' }}>
-          <h2 style={sectionHeaderStyle}>
-            Industries We Transform
+        {/* Process Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-normal mb-6 pb-2 border-b border-border">
+            How We Work
           </h2>
-          <p style={paragraphStyle}>
-            Every sector. Unique challenges. Proven solutions.
-          </p>
 
-          <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '32px', paddingBottom: '8px' }}></div>
-
-          {/* Industries Grid */}
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '24px',
-            marginBottom: '32px'
-          }}>
-            {/* Healthcare & Medical */}
-            <div style={{ 
-              padding: '20px',
-              backgroundColor: 'rgba(126, 131, 133, 0.05)',
-              borderRadius: '8px',
-              border: '1px solid rgba(126, 131, 133, 0.1)'
-            }}>
-              <h3 style={{ 
-                fontSize: '1rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '12px',
-                textAlign: 'center'
-              }}>
-                Healthcare<br />& Medical
-              </h3>
-              <ul style={{ 
-                fontSize: '0.9rem',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(126, 131, 133)',
-                listStyle: 'none',
-                padding: 0,
-                marginBottom: '16px'
-              }}>
-                <li>• Hospitals</li>
-                <li>• Laboratories</li>
-                <li>• Dental</li>
-                <li>• Research</li>
-              </ul>
-              <div style={{ 
-                fontSize: '0.8rem',
-                fontFamily: 'GT_America_Mono, monospace',
-                color: 'rgb(126, 131, 133)',
-                textAlign: 'center'
-              }}>
-                HIPAA Ready<br />24/7 Uptime<br />Data Security
+          <div className="space-y-8">
+            <div className="flex gap-6">
+              <div className="flex-shrink-0 w-10 h-10 bg-[#1a2224] rounded-full flex items-center justify-center text-sm font-mono text-white">
+                1
+              </div>
+              <div>
+                <h3 className="text-lg font-medium mb-2">Discovery & Analysis</h3>
+                <p className="text-base leading-relaxed text-muted-foreground">
+                  2-3 weeks of deep discovery. We map your current state, understand your goals, and identify the real challenges behind the symptoms.
+                </p>
               </div>
             </div>
 
-            {/* Creative & Media */}
-            <div style={{ 
-              padding: '20px',
-              backgroundColor: 'rgba(126, 131, 133, 0.05)',
-              borderRadius: '8px',
-              border: '1px solid rgba(126, 131, 133, 0.1)'
-            }}>
-              <h3 style={{ 
-                fontSize: '1rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '12px',
-                textAlign: 'center'
-              }}>
-                Creative<br />& Media
-              </h3>
-              <ul style={{ 
-                fontSize: '0.9rem',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(126, 131, 133)',
-                listStyle: 'none',
-                padding: 0,
-                marginBottom: '16px'
-              }}>
-                <li>• Production</li>
-                <li>• Ad Agencies</li>
-                <li>• Photography</li>
-                <li>• Post-Prod</li>
-              </ul>
-              <div style={{ 
-                fontSize: '0.8rem',
-                fontFamily: 'GT_America_Mono, monospace',
-                color: 'rgb(126, 131, 133)',
-                textAlign: 'center'
-              }}>
-                8K Workflows<br />Real-time<br />Massive Storage
+            <div className="flex gap-6">
+              <div className="flex-shrink-0 w-10 h-10 bg-[#1a2224] rounded-full flex items-center justify-center text-sm font-mono text-white">
+                2
+              </div>
+              <div>
+                <h3 className="text-lg font-medium mb-2">Architecture & Planning</h3>
+                <p className="text-base leading-relaxed text-muted-foreground">
+                  Detailed technical specifications, phased implementation plan, and risk mitigation strategies. No surprises, no scope creep.
+                </p>
               </div>
             </div>
 
-            {/* Professional Services */}
-            <div style={{ 
-              padding: '20px',
-              backgroundColor: 'rgba(126, 131, 133, 0.05)',
-              borderRadius: '8px',
-              border: '1px solid rgba(126, 131, 133, 0.1)'
-            }}>
-              <h3 style={{ 
-                fontSize: '1rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '12px',
-                textAlign: 'center'
-              }}>
-                Professional<br />Services
-              </h3>
-              <ul style={{ 
-                fontSize: '0.9rem',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(126, 131, 133)',
-                listStyle: 'none',
-                padding: 0,
-                marginBottom: '16px'
-              }}>
-                <li>• Law Firms</li>
-                <li>• Accounting</li>
-                <li>• Consulting</li>
-                <li>• Financial</li>
-              </ul>
-              <div style={{ 
-                fontSize: '0.8rem',
-                fontFamily: 'GT_America_Mono, monospace',
-                color: 'rgb(126, 131, 133)',
-                textAlign: 'center'
-              }}>
-                Compliance<br />Document Mgmt<br />Audit Trails
+            <div className="flex gap-6">
+              <div className="flex-shrink-0 w-10 h-10 bg-[#1a2224] rounded-full flex items-center justify-center text-sm font-mono text-white">
+                3
               </div>
-            </div>
-          </div>
-
-          {/* Second Row */}
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '24px',
-            marginBottom: '32px'
-          }}>
-            {/* Architecture & Engineering */}
-            <div style={{ 
-              padding: '20px',
-              backgroundColor: 'rgba(126, 131, 133, 0.05)',
-              borderRadius: '8px',
-              border: '1px solid rgba(126, 131, 133, 0.1)'
-            }}>
-              <h3 style={{ 
-                fontSize: '1rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '12px',
-                textAlign: 'center'
-              }}>
-                Architecture<br />& Engineering
-              </h3>
-              <ul style={{ 
-                fontSize: '0.9rem',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(126, 131, 133)',
-                listStyle: 'none',
-                padding: 0,
-                marginBottom: '16px'
-              }}>
-                <li>• Architecture</li>
-                <li>• Engineering</li>
-                <li>• Construction</li>
-                <li>• Planning</li>
-              </ul>
-              <div style={{ 
-                fontSize: '0.8rem',
-                fontFamily: 'GT_America_Mono, monospace',
-                color: 'rgb(126, 131, 133)',
-                textAlign: 'center'
-              }}>
-                CAD Optimized<br />Multi-site<br />Large Files
+              <div>
+                <h3 className="text-lg font-medium mb-2">Staged Implementation</h3>
+                <p className="text-base leading-relaxed text-muted-foreground">
+                  Phased rollout with continuous validation. Each phase is tested and validated before moving to the next.
+                </p>
               </div>
             </div>
 
-            {/* Government & Diplomatic */}
-            <div style={{ 
-              padding: '20px',
-              backgroundColor: 'rgba(126, 131, 133, 0.05)',
-              borderRadius: '8px',
-              border: '1px solid rgba(126, 131, 133, 0.1)'
-            }}>
-              <h3 style={{ 
-                fontSize: '1rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '12px',
-                textAlign: 'center'
-              }}>
-                Government &<br />Diplomatic
-              </h3>
-              <ul style={{ 
-                fontSize: '0.9rem',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(126, 131, 133)',
-                listStyle: 'none',
-                padding: 0,
-                marginBottom: '16px'
-              }}>
-                <li>• Embassies</li>
-                <li>• Agencies</li>
-                <li>• NGOs</li>
-                <li>• International</li>
-              </ul>
-              <div style={{ 
-                fontSize: '0.8rem',
-                fontFamily: 'GT_America_Mono, monospace',
-                color: 'rgb(126, 131, 133)',
-                textAlign: 'center'
-              }}>
-                High Security<br />Global Connect<br />Multi-language
+            <div className="flex gap-6">
+              <div className="flex-shrink-0 w-10 h-10 bg-[#1a2224] rounded-full flex items-center justify-center text-sm font-mono text-white">
+                4
               </div>
-            </div>
-
-            {/* Research & Education */}
-            <div style={{ 
-              padding: '20px',
-              backgroundColor: 'rgba(126, 131, 133, 0.05)',
-              borderRadius: '8px',
-              border: '1px solid rgba(126, 131, 133, 0.1)'
-            }}>
-              <h3 style={{ 
-                fontSize: '1rem', 
-                fontWeight: '500',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(215, 216, 217)', 
-                marginBottom: '12px',
-                textAlign: 'center'
-              }}>
-                Research &<br />Education
-              </h3>
-              <ul style={{ 
-                fontSize: '0.9rem',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'rgb(126, 131, 133)',
-                listStyle: 'none',
-                padding: 0,
-                marginBottom: '16px'
-              }}>
-                <li>• Laboratories</li>
-                <li>• Centers</li>
-                <li>• Schools</li>
-                <li>• Training</li>
-              </ul>
-              <div style={{ 
-                fontSize: '0.8rem',
-                fontFamily: 'GT_America_Mono, monospace',
-                color: 'rgb(126, 131, 133)',
-                textAlign: 'center'
-              }}>
-                Data Integrity<br />Collaboration<br />Remote Access
+              <div>
+                <h3 className="text-lg font-medium mb-2">Validation & Handover</h3>
+                <p className="text-base leading-relaxed text-muted-foreground">
+                  Comprehensive testing, team training, and documentation. We don&apos;t leave until you&apos;re confident and capable.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        <div style={dividerStyle} />
-
-        {/* Success Metrics */}
-        <section style={{ marginBottom: '64px' }}>
-          <h2 style={sectionHeaderStyle}>
-            Impact by the Numbers
-          </h2>
-          <p style={paragraphStyle}>
-            Real results. Verified metrics. Consistent delivery.
-          </p>
-
-          <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '32px', paddingBottom: '8px' }}></div>
-
-          {/* Overall Performance */}
-          <div style={{ marginBottom: '48px' }}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '24px'
-            }}>
-              Overall Performance
-            </h3>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            {/* Client Satisfaction */}
-            <div style={{ marginBottom: '24px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                <span style={{ ...paragraphStyle, marginBottom: 0 }}>Client Satisfaction</span>
-                <span style={{ ...paragraphStyle, marginBottom: 0, fontWeight: '500', color: 'rgb(215, 216, 217)' }}>100%</span>
-              </div>
-              <div style={progressBarStyle}>
-                <div style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  backgroundColor: 'rgb(126, 131, 133)'
-                }}></div>
-              </div>
-            </div>
-
-            {/* System Uptime */}
-            <div style={{ marginBottom: '24px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                <span style={{ ...paragraphStyle, marginBottom: 0 }}>System Uptime</span>
-                <span style={{ ...paragraphStyle, marginBottom: 0, fontWeight: '500', color: 'rgb(215, 216, 217)' }}>99.97%</span>
-              </div>
-              <div style={progressBarStyle}>
-                <div style={{ 
-                  width: '99.97%', 
-                  height: '100%', 
-                  backgroundColor: 'rgb(126, 131, 133)'
-                }}></div>
-              </div>
-            </div>
-
-            {/* Response Time */}
-            <div style={{ marginBottom: '24px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                <span style={{ ...paragraphStyle, marginBottom: 0 }}>Response Time</span>
-                <span style={{ ...paragraphStyle, marginBottom: 0, fontWeight: '500', color: 'rgb(215, 216, 217)' }}>2 hrs</span>
-              </div>
-              <div style={progressBarStyle}>
-                <div style={{ 
-                  width: '25%', 
-                  height: '100%', 
-                  backgroundColor: 'rgb(126, 131, 133)'
-                }}></div>
-              </div>
-              <div style={{ fontSize: '0.85rem', color: 'rgb(126, 131, 133)', marginTop: '4px' }}>
-                Industry Average: 24 hrs
-              </div>
-            </div>
-          </div>
-
-          {/* Financial Impact */}
-          <div style={{ marginBottom: '48px' }}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '24px'
-            }}>
-              Financial Impact
-            </h3>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-              gap: '24px'
-            }}>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '2rem', fontWeight: '500', color: 'rgb(215, 216, 217)', marginBottom: '8px' }}>35%</div>
-                <div style={{ fontSize: '0.9rem', color: 'rgb(126, 131, 133)' }}>Average IT Cost Reduction</div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '2rem', fontWeight: '500', color: 'rgb(215, 216, 217)', marginBottom: '8px' }}>6 months</div>
-                <div style={{ fontSize: '0.9rem', color: 'rgb(126, 131, 133)' }}>ROI Timeline</div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '2rem', fontWeight: '500', color: 'rgb(215, 216, 217)', marginBottom: '8px' }}>$2.5M+</div>
-                <div style={{ fontSize: '0.9rem', color: 'rgb(126, 131, 133)' }}>Total Client Savings</div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '2rem', fontWeight: '500', color: 'rgb(215, 216, 217)', marginBottom: '8px' }}>92%</div>
-                <div style={{ fontSize: '0.9rem', color: 'rgb(126, 131, 133)' }}>Budget Accuracy</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Productivity Gains */}
-          <div style={{ marginBottom: '48px' }}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '24px'
-            }}>
-              Productivity Gains
-            </h3>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-              gap: '24px'
-            }}>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '2rem', fontWeight: '500', color: 'rgb(215, 216, 217)', marginBottom: '8px' }}>73%</div>
-                <div style={{ fontSize: '0.9rem', color: 'rgb(126, 131, 133)' }}>Faster file access</div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '2rem', fontWeight: '500', color: 'rgb(215, 216, 217)', marginBottom: '8px' }}>5x</div>
-                <div style={{ fontSize: '0.9rem', color: 'rgb(126, 131, 133)' }}>Reduction in IT tickets</div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '2rem', fontWeight: '500', color: 'rgb(215, 216, 217)', marginBottom: '8px' }}>40%</div>
-                <div style={{ fontSize: '0.9rem', color: 'rgb(126, 131, 133)' }}>Increase in team productivity</div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '2rem', fontWeight: '500', color: 'rgb(215, 216, 217)', marginBottom: '8px' }}>10 hrs/week</div>
-                <div style={{ fontSize: '0.9rem', color: 'rgb(126, 131, 133)' }}>saved per employee</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <div style={dividerStyle} />
+        <div className="h-px bg-border mb-16" />
 
         {/* Bottom CTA */}
-        <section style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <p style={{ 
-            ...paragraphStyle, 
-            fontSize: '1.25rem', 
-            fontWeight: '500',
-            color: 'rgb(215, 216, 217)',
-            marginBottom: '16px'
-          }}>
-            Ready to join these success stories?
+        <section className="text-center mb-12">
+          <p className="text-xl font-medium mb-4">
+            Ready to start your transformation?
           </p>
 
-          <p style={{ 
-            ...paragraphStyle, 
-            fontSize: '1rem',
-            marginBottom: '32px'
-          }}>
-            Every transformation starts with a conversation.
+          <p className="text-base text-muted-foreground mb-8">
+            Every great project starts with a conversation.
           </p>
 
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+          <div className="flex gap-4 justify-center">
             <Link 
               href="/contact"
-              style={{
-                padding: '12px 24px',
-                backgroundColor: 'rgb(215, 216, 217)',
-                color: 'rgb(8, 9, 10)',
-                textDecoration: 'none',
-                borderRadius: '6px',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                fontWeight: '500',
-                fontSize: '0.95rem',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgb(126, 131, 133)'
-                e.currentTarget.style.color = 'rgb(215, 216, 217)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgb(215, 216, 217)'
-                e.currentTarget.style.color = 'rgb(8, 9, 10)'
-              }}
+              className="px-6 py-3 bg-foreground text-background rounded-md font-medium text-sm hover:bg-foreground/90 transition-colors"
             >
               Start Your Project
             </Link>
             <Link 
-              href="/case-studies.pdf"
-              style={{
-                padding: '12px 24px',
-                backgroundColor: 'transparent',
-                color: 'rgb(126, 131, 133)',
-                textDecoration: 'none',
-                border: '1px solid rgb(126, 131, 133)',
-                borderRadius: '6px',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                fontWeight: '500',
-                fontSize: '0.95rem',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgb(126, 131, 133)'
-                e.currentTarget.style.color = 'rgb(215, 216, 217)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent'
-                e.currentTarget.style.color = 'rgb(126, 131, 133)'
-              }}
+              href="/services"
+              className="px-6 py-3 bg-transparent text-muted-foreground border border-muted-foreground rounded-md font-medium text-sm hover:bg-muted-foreground hover:text-background transition-colors"
             >
-              Download Case Studies PDF
+              View Our Services
             </Link>
           </div>
         </section>
 
-        <div style={dividerStyle} />
+        <div className="h-px bg-border" />
       </div>
     </div>
   )

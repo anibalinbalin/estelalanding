@@ -48,6 +48,21 @@ html, body {
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-accent: var(--sidebar-accent);
+
+  /* Oxide Computer Design System Variables */
+  --base-neutral-900-p3: color(display-p3 .8431 .8471 .851);
+  --base-neutral-700-p3: color(display-p3 .6314 .6431 .6471);
+  --base-neutral-600-p3: color(display-p3 .4941 .5137 .5216);
+  --base-neutral-200-p3: color(display-p3 .1098 .1333 .1451);
+  --base-neutral-50-p3: color(display-p3 .0627 .0863 .0941);
+  --base-neutral-0-p3: color(display-p3 .0314 .0588 .0667);
+  
+  --surface-default-p3: var(--base-neutral-0-p3);
+  --surface-raise-p3: var(--base-neutral-50-p3);
+  --content-raise-p3: var(--base-neutral-900-p3);
+  --content-secondary-p3: var(--base-neutral-700-p3);
+  --content-tertiary-p3: var(--base-neutral-600-p3);
+  --stroke-secondary-p3: var(--base-neutral-200-p3);
   --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
@@ -132,6 +147,7 @@ html, body {
   
   /* Oxide-style colors */
   --content-secondary-p3: #666666;
+  --stroke-default-p3: #2d3335;
   
   /* Oxide Computer CSS Variables - Light Mode */
   --base-neutral-900-rgb: 0, 0, 0;
@@ -193,6 +209,7 @@ html, body {
   
   /* Oxide-style colors */
   --content-secondary-p3: #999999;
+  --stroke-default-p3: #2d3335;
   
   /* Oxide Computer CSS Variables - Dark Mode */
   --content-raise-p3: #d7d8d9;
@@ -203,6 +220,22 @@ html, body {
   --surface-accent-secondary-hover-p3: color(display-p3 .1098 .2157 .1804);
   --surface-hover-p3: color(display-p3 .1098 .1333 .1451);
   --stroke-secondary-p3: color(display-p3 .1098 .1333 .1451);
+  
+  /* Additional Oxide-specific CSS variables from css.txt */
+  --base-green-300: rgb(28, 55, 46);
+  --content-accent-secondary-p3: color(display-p3 .1255 .6392 .4235);
+  --content-accent-tertiary-p3: color(display-p3 .1373 .5412 .3686);
+  --content-inverse-p3: color(display-p3 .0314 .0588 .0667);
+  --stroke-accent-tertiary-p3: color(display-p3 .2353 .2627 .4);
+  --stroke-accent-quaternary-p3: color(display-p3 .1765 .1882 .2824);
+  --surface-accent-p3: color(display-p3 .2824 .8353 .5922);
+  --surface-default-p3: color(display-p3 .0314 .0588 .0667);
+  --surface-secondary-p3: color(display-p3 .0784 .1059 .1137);
+  --border-radius-sm: .125rem;
+  --tw-backdrop-blur: blur(12px);
+  --tw-space-y-reverse: 0;
+  --tw-aspect-h: 7;
+  --tw-aspect-w: 12;
 }
 
 @layer base {

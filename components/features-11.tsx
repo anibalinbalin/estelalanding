@@ -94,7 +94,7 @@ export default function Features() {
                 {/* Bento Grid */}
                 <div className="grid gap-3 sm:grid-cols-6">
                     {/* Networks & Servers - Large card */}
-                    <Card className="group overflow-hidden sm:col-span-4 sm:row-span-2 border-border bg-card">
+                    <Card className="group overflow-hidden sm:col-span-4 sm:row-span-2 bg-card" style={{ borderColor: '#1c2224' }}>
                         <CardHeader className="p-6 md:p-8">
                             <h3 
                                 className="mb-3"
@@ -123,14 +123,14 @@ export default function Features() {
                             </p>
                         </CardHeader>
                         <CardContent className="px-6 pb-6 md:px-8 md:pb-8">
-                            <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                            <div className="relative aspect-[4/3] overflow-hidden rounded-lg" style={{ backgroundColor: '#3b301c', padding: '12px' }}>
                                 <NetworksServersAsciiArt isVisible={true} />
                             </div>
                         </CardContent>
                     </Card>
 
                     {/* Complete Protection - Medium card */}
-                    <Card className="group overflow-hidden sm:col-span-2 border-border bg-card">
+                    <Card className="group overflow-hidden sm:col-span-2 bg-card" style={{ borderColor: '#1c2224' }}>
                         <CardHeader className="p-6">
                             <h3 
                                 className="mb-2"
@@ -166,7 +166,7 @@ export default function Features() {
                     </Card>
 
                     {/* Custom Development - Medium card */}
-                    <Card className="group overflow-hidden sm:col-span-2 border-border bg-card">
+                    <Card className="group overflow-hidden sm:col-span-2 bg-card" style={{ borderColor: '#1c2224' }}>
                         <CardHeader className="p-6">
                             <h3 
                                 className="mb-2"

@@ -15,7 +15,7 @@ export function SimpleDither({
   speed = 0.5
 }: SimpleDitherProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number>(0)
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })

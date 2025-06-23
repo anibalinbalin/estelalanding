@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unknown-property */
+ 
 "use client"
 
 import React, { useRef, useState, useEffect, useMemo } from "react";
@@ -162,18 +162,18 @@ const RetroEffect = wrapEffect(
   RetroEffectImpl
 ) as React.ForwardRefExoticComponent<React.RefAttributes<RetroEffectImpl>>;
 
-interface WaveUniforms {
-  [key: string]: THREE.Uniform<any>;
-  time: THREE.Uniform<number>;
-  resolution: THREE.Uniform<THREE.Vector2>;
-  waveSpeed: THREE.Uniform<number>;
-  waveFrequency: THREE.Uniform<number>;
-  waveAmplitude: THREE.Uniform<number>;
-  waveColor: THREE.Uniform<THREE.Color>;
-  mousePos: THREE.Uniform<THREE.Vector2>;
-  enableMouseInteraction: THREE.Uniform<number>;
-  mouseRadius: THREE.Uniform<number>;
-}
+// interface WaveUniforms {
+//   [key: string]: THREE.Uniform<any>;
+//   time: THREE.Uniform<number>;
+//   resolution: THREE.Uniform<THREE.Vector2>;
+//   waveSpeed: THREE.Uniform<number>;
+//   waveFrequency: THREE.Uniform<number>;
+//   waveAmplitude: THREE.Uniform<number>;
+//   waveColor: THREE.Uniform<THREE.Color>;
+//   mousePos: THREE.Uniform<THREE.Vector2>;
+//   enableMouseInteraction: THREE.Uniform<number>;
+//   mouseRadius: THREE.Uniform<number>;
+// }
 
 interface DitheredWavesProps {
   waveSpeed: number;

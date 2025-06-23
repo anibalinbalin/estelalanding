@@ -51,22 +51,19 @@ export const SecurityAsciiArt: React.FC<SecurityAsciiArtProps> = ({
     
     let value = 0
     
-    // Calculate distance to nearest node
+    // Calculate distance to nearest node and add pulse effect
     let minNodeDist = Infinity
-    let nearestNode = null
     nodePositions.forEach(node => {
       const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2)
       if (dist < minNodeDist) {
         minNodeDist = dist
-        nearestNode = node
+        // Node pulse effect
+        if (dist < 1.5) {
+          const pulse = Math.sin(t * 0.7 + node.id * 0.3)
+          value += pulse * 2.2
+        }
       }
     })
-    
-    // Node pulse effect
-    if (minNodeDist < 1.5 && nearestNode) {
-      const pulse = Math.sin(t * 0.7 + nearestNode.id * 0.3)
-      value += pulse * 2.2
-    }
     
     // Horizontal connections
     for (let row = 0; row < 3; row++) {
@@ -152,7 +149,7 @@ export const SecurityAsciiArt: React.FC<SecurityAsciiArtProps> = ({
     
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
-        let value = meshPattern(x, y, t)
+        const value = meshPattern(x, y, t)
         
         // Mesh-appropriate characters
         if (value > 2.0) {

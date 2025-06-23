@@ -8,7 +8,7 @@ export function MethodPractices() {
     {
       number: '4.1',
       title: 'The 24-Hour Rule',
-      intro: 'Every critical issue gets a response within 24 hours. Not an auto-reply. A real person who knows your system.',
+      intro: 'Our Rapid Response Pledge',
       description: [
         'This rule emerged from a simple observation: most IT problems compound with time. A small network hiccup becomes a cascade failure. A single corrupted file becomes data loss. A confused user becomes a frustrated team.'
       ],
@@ -16,21 +16,21 @@ export function MethodPractices() {
         title: 'How It Works:',
         items: [
           'All critical issues tracked from first contact',
-          'Dedicated engineer assigned within 2 hours',
+          'Your issue is immediately addressed by one of our core experts',
           'Initial diagnosis and action plan within 24 hours',
           'Clear communication throughout resolution',
           'Post-incident review for prevention'
         ]
       },
       conclusion: [
-        'The rule isn\'t about fixing everything in 24 hours—some problems require more time. It\'s about ensuring you\'re never left wondering, never abandoned with a ticket number, never told to "try turning it off and on again" when your business is at stake.',
-        'Real response. Real people. Real solutions.'
+        'Critical issues demand immediate attention. Our pledge is a swift, personal response—typically within minutes or hours, not days. You\'ll connect directly with a core team member who understands your setup.',
+        '...you\'re never just a ticket in a queue, nor are you met with generic troubleshooting when critical systems are down.'
       ]
     },
     {
       number: '4.2',
       title: 'Documentation as Art',
-      intro: 'We create documentation you\'ll actually read. Visual. Clear. Useful. No 500-page PDFs gathering dust.',
+      intro: 'We believe documentation should illuminate, not intimidate. Ours is designed for clarity and immediate use—visual, practical, and always accessible.',
       description: [
         'Traditional IT documentation fails because it\'s written for auditors, not users. It prioritizes completeness over clarity, compliance over comprehension.'
       ],
@@ -60,7 +60,7 @@ export function MethodPractices() {
       subsection: {
         title: 'Our Weekly Routine:',
         items: [
-          'Automated system health reports every Monday',
+          'Automated system health reports every morning',
           '15-minute review call every Wednesday',
           'Proactive optimization recommendations',
           'Trend analysis and capacity planning',
@@ -90,14 +90,14 @@ export function MethodPractices() {
         ]
       },
       conclusion: [
-        'When you have a Synology NAS issue, we don\'t open a ticket—we call our engineer at Synology. When UniFi releases a firmware update, we\'ve already tested it in our lab. When SentinelOne detects a threat, we have direct access to their threat intelligence team.',
+        'When a vendor-specific issue arises—be it with Synology, UniFi, or SentinelOne—our established partnerships mean we navigate their support channels with an insider\'s efficiency. We leverage direct contacts and deep product knowledge to accelerate resolution, often pre-testing critical updates in our environment to ensure stability for yours. Our aim is always to shield you from complexity and expedite solutions.',
         'These relationships took years to build. They save you hours every time something goes wrong.'
       ]
     },
     {
       number: '4.5',
       title: 'Knowledge Transfer',
-      intro: 'We don\'t create dependency. We create capability. Your team learns to fish, not just eat.',
+      intro: 'Our goal is to build your team\'s capability, not create reliance.',
       description: [
         'Many IT companies profit from client ignorance. The less you know, the more you need them. We believe the opposite: the more capable you become, the more valuable our partnership.'
       ],
@@ -113,7 +113,7 @@ export function MethodPractices() {
       },
       conclusion: [
         'We teach your team to handle routine tasks confidently. Change a user password. Add a network printer. Restore a deleted file. Review security logs. These aren\'t complex tasks—they\'re just unfamiliar ones.',
-        'The goal isn\'t to replace us. It\'s to free us both to focus on what matters: strategic improvements, not routine maintenance. When your team handles the basics, we can focus on advancing your infrastructure.',
+        'Our philosophy is built on empowerment. We believe that the more capable your team becomes with everyday tasks, the more valuable and strategic our partnership evolves.',
         'True partnership means growing together.'
       ]
     }
@@ -125,7 +125,7 @@ export function MethodPractices() {
       color: 'var(--foreground)',
       minHeight: '100vh',
       fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-      overflowX: 'hidden'
+      overflowX: 'hidden' as const
     }}>
       <div style={{
         maxWidth: '680px',
@@ -138,7 +138,7 @@ export function MethodPractices() {
             fontWeight: '400',
             lineHeight: '1.5rem',
             letterSpacing: '0.05em',
-            textTransform: 'uppercase',
+            textTransform: 'uppercase' as const,
             fontFamily: 'GT_America_Mono, monospace',
             color: 'var(--content-secondary-p3)',
             marginBottom: '24px'

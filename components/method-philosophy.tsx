@@ -8,7 +8,7 @@ export function MethodPhilosophy() {
     backgroundColor: 'var(--background)',
     color: 'var(--foreground)',
     minHeight: '100vh',
-    overflowX: 'hidden'
+    overflowX: 'hidden' as const
   }
 
   const badgeStyle = {
@@ -16,7 +16,7 @@ export function MethodPhilosophy() {
     fontWeight: '400',
     lineHeight: '1.5rem',
     letterSpacing: '0.05em',
-    textTransform: 'uppercase',
+    textTransform: 'uppercase' as const,
     fontFamily: 'GT_America_Mono, monospace',
     color: 'var(--content-secondary-p3)',
     marginBottom: '24px'
@@ -157,9 +157,8 @@ export function MethodPhilosophy() {
           </div>
           
           <p style={paragraphStyle}>
-            We apply this principle to every system we design: Network topology with hexagonal redundancy. 
-            Storage arrays with six-way replication. Security layers that overlap without gaps. 
-            Team structure where everyone connects.
+            We apply this principle to every system we design, aiming for inherent resilience through interconnected support, 
+            efficient load distribution, and scalability without single points of failure—much like a honeycomb adapts and endures.
           </p>
           
           <p style={paragraphStyle}>
@@ -189,7 +188,7 @@ export function MethodPhilosophy() {
           </h2>
           
           <p style={paragraphStyle}>
-            Grace Hopper simplified computing for humans. Odysseus defeated giants with a small, smart team. 
+            Grace Hopper simplified computing for humans. Euclid built vast truths from fundamental axioms. 
             We apply timeless principles to modern problems.
           </p>
           
@@ -214,23 +213,23 @@ export function MethodPhilosophy() {
 
             <div style={{ marginBottom: '16px' }}>
               <h3 style={{ ...paragraphStyle, fontWeight: '500', color: 'var(--foreground)', marginBottom: '8px' }}>
-                From Odysseus
+                From Euclid
               </h3>
               <p style={paragraphStyle}>
-                Small teams can defeat giants through cleverness, not force. 
-                The Trojan Horse wasn&apos;t about having more soldiers—it was about solving problems differently. 
-                We don&apos;t outspend large IT companies. We outthink them.
+                He demonstrated how vast geometric truths could be built from a few fundamental axioms and logical deduction. 
+                We believe enduring technology is similarly built—on sound first principles and clear, rational design, 
+                creating systems that are both complex and comprehensible.
               </p>
             </div>
 
             <div style={{ marginBottom: '16px' }}>
               <h3 style={{ ...paragraphStyle, fontWeight: '500', color: 'var(--foreground)', marginBottom: '8px' }}>
-                From Leonardo da Vinci
+                From the Bauhaus Movement
               </h3>
               <p style={paragraphStyle}>
-                Art and engineering are the same discipline viewed from different angles. 
-                His notebooks show no separation between beauty and function. Neither do our systems. 
-                Clean cable management isn&apos;t just aesthetic—it&apos;s diagnostic. Elegant code isn&apos;t just pretty—it&apos;s maintainable.
+                They sought a radical unity of art, craft, and technology, believing that even everyday objects should be designed 
+                with both functional integrity and aesthetic clarity. We see our systems through a similar lens—where elegant design 
+                serves practical purpose, and robust function possesses its own inherent beauty.
               </p>
             </div>
           </div>
@@ -283,7 +282,7 @@ export function MethodPhilosophy() {
               </h3>
               <p style={paragraphStyle}>
                 Artists know that colors affect each other—red looks different next to blue than next to orange. 
-                Systems have the same interdependence. A fast SSD impacts more than just storage. 
+                Systems have the same interdependence. A fast NVME impacts more than just storage. 
                 Quality switches improve more than just networking.
               </p>
             </div>

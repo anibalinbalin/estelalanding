@@ -10,7 +10,7 @@ export function MethodIntroduction() {
     backgroundColor: 'var(--background)',
     color: 'var(--foreground)',
     minHeight: '100vh',
-    overflowX: 'hidden'
+    overflowX: 'hidden' as const
   }
 
   const badgeStyle = {
@@ -18,7 +18,7 @@ export function MethodIntroduction() {
     fontWeight: '400',
     lineHeight: '1.5rem',
     letterSpacing: '0.05em',
-    textTransform: 'uppercase',
+    textTransform: 'uppercase' as const,
     fontFamily: 'GT_America_Mono, monospace',
     color: 'var(--content-secondary-p3)',
     marginBottom: '24px'
@@ -98,8 +98,8 @@ export function MethodIntroduction() {
 
         {/* Chapter Content Lead */}
         <p style={leadStyle}>
-          Like Hermes translating between gods and mortals,
-          we translate between technology and humanity.
+          The art of true interpretation lies in making the complex clear.
+          This is our practice: we translate the intricate world of technology into human-centric solutions.
         </p>
 
         {/* Dither Wave Effect */}
@@ -271,7 +271,7 @@ export function MethodIntroduction() {
           </h2>
 
           <p style={paragraphStyle}>
-            The Estela Method isn't about following trends or implementing the latest tools. It's about understanding what actually matters: your people, your work, your growth.
+            Our method isn't about following trends or implementing the latest tools. It's about understanding what actually matters: your people, your work, your growth.
           </p>
 
           <p style={paragraphStyle}>
@@ -288,7 +288,7 @@ export function MethodIntroduction() {
             <li style={{ marginBottom: '12px' }}>
               <strong>Countless hours of listening</strong><br />
               <span style={{ color: 'var(--content-secondary-p3)', fontSize: '0.9rem' }}>
-                Before we speak technology, we learn your language
+                Before we speak technology, we think alongside you
               </span>
             </li>
             <li style={{ marginBottom: '12px' }}>
@@ -372,7 +372,7 @@ export function MethodIntroduction() {
           </p>
 
           <p style={paragraphStyle}>
-            Our <strong>Philosophy</strong> that connects Renaissance art to modern infrastructure.
+            Our <strong>Philosophy</strong> that connects art to modern infrastructure.
           </p>
 
           <p style={paragraphStyle}>
@@ -391,7 +391,7 @@ export function MethodIntroduction() {
             color: 'var(--foreground)',
             marginBottom: '8px'
           }}>
-            Welcome to the Estela Method.
+            Welcome to the Estela method.
           </p>
           <p style={{ 
             ...paragraphStyle, 

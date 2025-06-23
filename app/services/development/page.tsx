@@ -1,3 +1,6 @@
+import DevelopmentAsciiArt from '@/components/ui/development-ascii-art';
+import Link from 'next/link';
+
 export default function DevelopmentPage() {
   return (
     <main className="mt-10 min-[1100px]:mt-24">
@@ -39,51 +42,41 @@ export default function DevelopmentPage() {
                 </p>
               </div>
             </div>
-            <div className="relative overflow-hidden border bg-[var(--surface-tertiary-p3)] border-[var(--stroke-secondary-p3)] col-span-12 min-[800px]:col-start-[7] min-[1000px]:col-start-[8] min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
-              <div className="w-full h-full flex items-center justify-center p-6">
-                <img 
-                  src="/img/ascii-art_3.svg" 
-                  alt="Custom Development"
-                  className="w-full h-auto max-h-[400px] object-contain"
-                />
+            <div className="relative overflow-hidden border border-[var(--stroke-secondary-p3)] col-span-12 min-[800px]:col-start-[7] min-[1000px]:col-start-[8] min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg" style={{ backgroundColor: '#3b301c', padding: '12px' }}>
+              <div className="w-full h-full flex items-center justify-center">
+                <DevelopmentAsciiArt isVisible={true} />
               </div>
             </div>
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="w-[100%] px-5 min-[600px]:px-10 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(5rem_*_var(--tw-space-y-reverse))] min-[1000px]:mb-[calc(9rem_*_var(--tw-space-y-reverse))]">
-          <div className="relative m-auto max-w-[1200px] my-4 min-[900px]:my-12">
-            <div className="relative flex items-center justify-between gap-4 border p-4 bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-2)] min-[600px]:px-10 py-6 min-[600px]:py-8 rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-lg)] max-[399px]:flex-col">
-              <div>
-                <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-lg min-[500px]:text-[1.5625rem] min-[900px]:text-4xl font-normal min-[500px]:font-normal min-[900px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[500px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.625rem] min-[500px]:leading-8 min-[900px]:leading-[2.625rem] tracking-wide min-[500px]:tracking-wide min-[900px]:tracking-normal max-[399px]:text-center">
-                  Every business has unique challenges.
-                  <br />
-                  <span className="text-[var(--content-secondary-p3)]">Let&apos;s build solutions that fit yours perfectly.</span>
-                </h2>
-              </div>
-              <div className="flex flex-col gap-2 text-center">
-                <a 
+        {/* Divider */}
+        <div className="w-full px-5 min-[600px]:px-10 my-20">
+          <div className="m-auto max-w-[1200px]">
+            <div className="h-[1px] w-full border-b border-border"></div>
+          </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="w-full px-5 min-[600px]:px-10 mb-20">
+          <div className="m-auto max-w-[1200px]">
+            <div className="text-center">
+              <h2 className="text-3xl min-[1000px]:text-4xl font-medium mb-8 text-foreground">
+                Ready to transform your business with custom development?
+              </h2>
+              
+              <div className="flex flex-col min-[600px]:flex-row gap-4 justify-center mb-8">
+                <Link 
                   href="/contact" 
-                  className="px-3 items-center text-[var(--content-accent-p3)] inline-flex h-8 justify-center rounded-[var(--border-radius)] align-top font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider uppercase shadow-[var(--elevation-1)] relative bg-[var(--surface-accent-secondary-p3)] hover:bg-[var(--surface-accent-secondary-hover-p3)]"
+                  className="oxide-nav-button oxide-nav-button-primary"
                 >
-                  Start a Project
-                </a>
-                <a 
-                  href="/portfolio" 
-                  className="px-3 items-center text-[var(--content-secondary-p3)] inline-flex h-8 justify-center rounded-[var(--border-radius)] align-top font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider uppercase shadow-[var(--elevation-1)] relative hover:bg-[var(--surface-hover-p3)]"
-                >
-                  See Our Portfolio
-                </a>
+                  Get Started
+                </Link>
               </div>
-            </div>
-            <div className="text-center mt-6">
-              <p className="text-[var(--content-secondary-p3)]">
-                Let&apos;s talk: <a href="mailto:hola@este.la" className="text-[var(--content-accent-p3)] hover:text-[var(--content-accent-secondary-p3)]">hola@este.la</a>
-              </p>
             </div>
           </div>
         </div>
+
       </div>
     </main>
   );

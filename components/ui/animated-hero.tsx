@@ -6,14 +6,18 @@ import { UnicornBackground } from "@/components/ui/unicorn-background";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/components/language-provider";
 import Link from "next/link";
+import './hero-animations.css';
 
 function Hero() {
-  const { resolvedTheme } = useTheme();
+  const { } = useTheme();
   const { language } = useLanguage();
-  const [mounted, setMounted] = useState(false);
+  const [, setMounted] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
   
   useEffect(() => {
     setMounted(true);
+    // Trigger animations after component mounts
+    setIsAnimated(true);
   }, []);
   
   const content = {
@@ -34,7 +38,7 @@ function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden">
       {/* Background Effect */}
-      <div className="absolute inset-0 -z-10">
+      <div className={`absolute inset-0 -z-10 ${isAnimated ? 'hero-background' : 'opacity-0'}`}>
         <UnicornBackground />
       </div>
 
@@ -44,7 +48,7 @@ function Hero() {
           <div className="w-full">
             {/* Hero Content */}
             <h1 
-              className="text-[65px] leading-[65px] tracking-normal text-foreground"
+              className={`text-[65px] leading-[65px] tracking-normal text-foreground ${isAnimated ? 'hero-title' : 'opacity-0'}`}
               style={{ 
                 fontFamily: 'SuisseIntl, -apple-system, "system-ui", Helvetica, Arial, sans-serif',
                 fontWeight: 400
@@ -59,7 +63,7 @@ function Hero() {
             </h1>
 
             <p 
-              className="mt-6 text-[24px] leading-[34px] tracking-normal max-w-2xl"
+              className={`mt-6 text-[24px] leading-[34px] tracking-normal max-w-2xl ${isAnimated ? 'hero-subtitle' : 'opacity-0'}`}
               style={{ 
                 fontFamily: 'SuisseIntl, -apple-system, "system-ui", Helvetica, Arial, sans-serif',
                 fontWeight: 400,
@@ -70,7 +74,7 @@ function Hero() {
             </p>
             
             {/* CTA Button */}
-            <div className="mt-8">
+            <div className={`mt-8 ${isAnimated ? 'hero-cta' : 'opacity-0'}`}>
               <Link 
                 href="/method"
                 className="oxide-nav-button oxide-nav-button-primary inline-flex items-center"

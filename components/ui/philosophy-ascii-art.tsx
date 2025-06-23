@@ -66,7 +66,7 @@ export const PhilosophyAsciiArt: React.FC<PhilosophyAsciiArtProps> = ({
       // Draw grid
       for (let y = 0; y < GRID_SIZE; y++) {
         for (let x = 0; x < GRID_SIZE; x++) {
-          let value = brutalismPattern(x, y, t);
+          const value = brutalismPattern(x, y, t);
           
           let char = ' '
           // Berlin-specific characters: concrete, steel, graffiti

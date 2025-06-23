@@ -1,5 +1,164 @@
-import { ContactSection } from '@/components/contact-section'
+'use client'
+
+import Link from 'next/link'
 
 export default function ContactPage() {
-  return <ContactSection />
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <div className="container mx-auto px-6 py-16">
+        <div className="mx-auto grid max-w-6xl grid-cols-12 gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
+          <div className="col-span-12 min-[800px]:col-span-10 min-[1100px]:col-span-6 flex flex-col justify-between border-b pb-4 text-left border-b-border">
+            <div>
+              <div className="text-4xl min-[1000px]:text-5xl font-normal leading-tight min-[1000px]:leading-[110%] tracking-normal">
+                <div className="text-foreground min-[1100px]:mt-6">Contact us</div>
+                <div className="text-muted-foreground">Get in touch</div>
+              </div>
+              <div className="mx-auto min-[600px]:mx-0 mb-8 mt-4 max-w-96 text-lg leading-relaxed tracking-wide text-muted-foreground">
+                <p className="m-0">
+                  Ready to transform your technology infrastructure? Reach out here to learn more or skip to{' '}
+                  <Link href="/work" className="text-foreground hover:text-foreground/80 underline underline-offset-4">
+                    exploring our work
+                  </Link>{' '}
+                  and case studies.
+                </p>
+                <div className="flex flex-col gap-1 pt-3 mt-2 mb-2">
+                  <li className="flex items-baseline">
+                    <svg width="12" height="12" className="block align-middle mr-2 shrink-0 text-[#f5b944]">
+                      <circle cx="6" cy="6" r="2" fill="currentColor" />
+                    </svg>
+                    <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
+                      Learn more about our services
+                    </div>
+                  </li>
+                  <li className="flex items-baseline">
+                    <svg width="12" height="12" className="block align-middle mr-2 shrink-0 text-[#f5b944]">
+                      <circle cx="6" cy="6" r="2" fill="currentColor" />
+                    </svg>
+                    <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
+                      Get personalized technology assessment
+                    </div>
+                  </li>
+                  <li className="flex items-baseline">
+                    <svg width="12" height="12" className="block align-middle mr-2 shrink-0 text-[#f5b944]">
+                      <circle cx="6" cy="6" r="2" fill="currentColor" />
+                    </svg>
+                    <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
+                      Discuss your project requirements
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div className="hidden min-[1100px]:block text-muted-foreground min-[600px]:text-base min-[600px]:leading-6 min-[600px]:tracking-wide">
+              Contact us directly at{' '}
+              <Link href="mailto:hello@estela.tech" className="text-foreground hover:text-foreground/80 underline underline-offset-4">
+                hello@estela.tech
+              </Link>
+            </div>
+          </div>
+          <div className="col-span-12 min-[800px]:col-span-10 min-[1100px]:col-span-6">
+            <div className="rounded-lg border bg-muted/5 border-border">
+              <div className="w-full">
+                <form>
+                  <div className="flex flex-col">
+                    <div className="flex min-[800px]:grid min-[800px]:grid-cols-12 flex-col border-border gap-x-4 gap-y-6 border-b p-6">
+                      <div className="col-span-12 relative">
+                        <div className="mb-2">
+                          <label className="flex items-center text-sm leading-tight tracking-wider text-muted-foreground">
+                            Your name
+                          </label>
+                        </div>
+                        <div className="flex border items-center rounded border-border hover:border-muted-foreground transition-colors">
+                          <input
+                            name="name"
+                            placeholder="Jane Smith"
+                            className="px-3 py-3 rounded w-full bg-background text-sm leading-tight tracking-wider text-foreground border-none outline-none focus:ring-0"
+                          />
+                        </div>
+                      </div>
+                      <div className="col-span-12 relative">
+                        <div className="mb-2">
+                          <label className="flex items-center text-sm leading-tight tracking-wider text-muted-foreground">
+                            Your work email
+                          </label>
+                        </div>
+                        <div className="flex border items-center rounded border-border hover:border-muted-foreground transition-colors">
+                          <input
+                            name="email"
+                            type="email"
+                            placeholder="jane@company.com"
+                            className="px-3 py-3 rounded w-full bg-background text-sm leading-tight tracking-wider text-foreground border-none outline-none focus:ring-0"
+                          />
+                        </div>
+                      </div>
+                      <div className="col-span-12 relative">
+                        <div className="mb-2">
+                          <label className="flex items-center text-sm leading-tight tracking-wider text-muted-foreground">
+                            Company name
+                          </label>
+                        </div>
+                        <div className="flex border items-center rounded border-border hover:border-muted-foreground transition-colors">
+                          <input
+                            name="companyName"
+                            type="text"
+                            placeholder="Your Company"
+                            className="px-3 py-3 rounded w-full bg-background text-sm leading-tight tracking-wider text-foreground border-none outline-none focus:ring-0"
+                          />
+                        </div>
+                      </div>
+                      <div className="col-span-12 relative">
+                        <div className="mb-2">
+                          <label className="flex items-center text-sm leading-tight tracking-wider text-muted-foreground">
+                            How did you hear about us?
+                          </label>
+                        </div>
+                        <div className="flex border items-center rounded border-border hover:border-muted-foreground transition-colors">
+                          <input
+                            name="discoverySource"
+                            type="text"
+                            placeholder="Google, referral, etc."
+                            className="px-3 py-3 rounded w-full bg-background text-sm leading-tight tracking-wider text-foreground border-none outline-none focus:ring-0"
+                          />
+                        </div>
+                      </div>
+                      <div className="border-b w-full col-span-12 border-b-border"></div>
+                      <div className="col-span-12 relative">
+                        <div className="mb-2">
+                          <label className="flex items-center text-sm leading-tight tracking-wider text-muted-foreground">
+                            Project details
+                          </label>
+                        </div>
+                        <div className="flex border items-center rounded border-border hover:border-muted-foreground transition-colors">
+                          <textarea
+                            name="notes"
+                            placeholder="Tell us about your project, timeline, and any specific requirements..."
+                            rows={4}
+                            className="px-3 py-3 rounded w-full bg-background resize-y text-sm leading-tight tracking-wider text-foreground border-none outline-none focus:ring-0"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="px-6 py-4 flex items-center justify-end min-[800px]:col-span-12">
+                      <button
+                        type="submit"
+                        className="px-6 py-2 items-center cursor-pointer bg-foreground text-background rounded font-medium text-sm hover:bg-foreground/90 transition-colors"
+                      >
+                        <span className="items-center flex">Submit</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-12 text-muted-foreground text-base leading-6 tracking-wide min-[1100px]:hidden">
+            Contact us directly at{' '}
+            <Link href="mailto:hello@estela.tech" className="text-foreground hover:text-foreground/80 underline underline-offset-4">
+              hello@estela.tech
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }

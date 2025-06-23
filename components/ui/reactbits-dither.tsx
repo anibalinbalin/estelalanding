@@ -1,9 +1,9 @@
-/* eslint-disable react/no-unknown-property */
+ 
 "use client"
 
 import React, { useRef, useState, useEffect, useMemo } from "react";
 import { Canvas, useFrame, useThree, ThreeEvent } from "@react-three/fiber";
-import { EffectComposer } from "@react-three/postprocessing";
+// import { EffectComposer } from "@react-three/postprocessing";
 import * as THREE from "three";
 
 const waveVertexShader = `

@@ -14,7 +14,7 @@ export function ServiceSpecificationsSection() {
     fontWeight: '400',
     lineHeight: '1.5rem',
     letterSpacing: '0.05em',
-    textTransform: 'uppercase',
+    textTransform: 'uppercase' as const,
     fontFamily: 'GT_America_Mono, monospace',
     color: 'rgb(126, 131, 133)',
     marginBottom: '24px'
@@ -147,7 +147,7 @@ export function ServiceSpecificationsSection() {
               fontFamily: 'GT_America_Mono, monospace',
               color: 'rgb(126, 131, 133)',
               marginBottom: '24px',
-              textTransform: 'uppercase',
+              textTransform: 'uppercase' as const,
               letterSpacing: '0.05em'
             }}>
               Standard Compute Node
@@ -204,7 +204,7 @@ export function ServiceSpecificationsSection() {
               fontFamily: 'GT_America_Mono, monospace',
               color: 'rgb(126, 131, 133)',
               marginBottom: '24px',
-              textTransform: 'uppercase',
+              textTransform: 'uppercase' as const,
               letterSpacing: '0.05em'
             }}>
               Virtualization Platform
@@ -312,7 +312,7 @@ export function ServiceSpecificationsSection() {
               fontFamily: 'GT_America_Mono, monospace',
               color: 'rgb(126, 131, 133)',
               marginBottom: '24px',
-              textTransform: 'uppercase',
+              textTransform: 'uppercase' as const,
               letterSpacing: '0.05em'
             }}>
               Enterprise Flash Arrays
@@ -373,7 +373,7 @@ export function ServiceSpecificationsSection() {
               fontFamily: 'GT_America_Mono, monospace',
               color: 'rgb(126, 131, 133)',
               marginBottom: '24px',
-              textTransform: 'uppercase',
+              textTransform: 'uppercase' as const,
               letterSpacing: '0.05em'
             }}>
               Hybrid Storage Arrays
@@ -430,7 +430,7 @@ export function ServiceSpecificationsSection() {
               fontFamily: 'GT_America_Mono, monospace',
               color: 'rgb(126, 131, 133)',
               marginBottom: '24px',
-              textTransform: 'uppercase',
+              textTransform: 'uppercase' as const,
               letterSpacing: '0.05em'
             }}>
               Backup & Archive
@@ -488,7 +488,7 @@ export function ServiceSpecificationsSection() {
               fontFamily: 'GT_America_Mono, monospace',
               color: 'rgb(126, 131, 133)',
               marginBottom: '24px',
-              textTransform: 'uppercase',
+              textTransform: 'uppercase' as const,
               letterSpacing: '0.05em'
             }}>
               Core Routing & Security
@@ -537,7 +537,7 @@ export function ServiceSpecificationsSection() {
               fontFamily: 'GT_America_Mono, monospace',
               color: 'rgb(126, 131, 133)',
               marginBottom: '24px',
-              textTransform: 'uppercase',
+              textTransform: 'uppercase' as const,
               letterSpacing: '0.05em'
             }}>
               Core Switching
@@ -586,7 +586,7 @@ export function ServiceSpecificationsSection() {
               fontFamily: 'GT_America_Mono, monospace',
               color: 'rgb(126, 131, 133)',
               marginBottom: '24px',
-              textTransform: 'uppercase',
+              textTransform: 'uppercase' as const,
               letterSpacing: '0.05em'
             }}>
               Wireless Infrastructure
@@ -648,7 +648,7 @@ export function ServiceSpecificationsSection() {
               fontFamily: 'GT_America_Mono, monospace',
               color: 'rgb(126, 131, 133)',
               marginBottom: '24px',
-              textTransform: 'uppercase',
+              textTransform: 'uppercase' as const,
               letterSpacing: '0.05em'
             }}>
               Endpoint Protection
@@ -697,7 +697,7 @@ export function ServiceSpecificationsSection() {
               fontFamily: 'GT_America_Mono, monospace',
               color: 'rgb(126, 131, 133)',
               marginBottom: '24px',
-              textTransform: 'uppercase',
+              textTransform: 'uppercase' as const,
               letterSpacing: '0.05em'
             }}>
               Video Surveillance
