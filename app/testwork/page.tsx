@@ -748,7 +748,7 @@ export default function TestWorkPage() {
                 borderColor: 'var(--stroke-default-p3)'
               }}
             >
-              <img src="https://oxide.computer/img/logo_eclipse.svg" width="340" height="193" className="w-full max-w-full block align-middle h-auto md:h-auto" alt="Eclipse logo"/>
+              <div className="w-full h-24 bg-gradient-to-r from-orange-400 to-orange-600 rounded flex items-center justify-center text-white font-bold">Eclipse</div>
             </div>
             <div className="col-span-6 md:col-span-4 rounded-[var(--border-radius-lg)] sm:rounded-[var(--border-radius-xl)] border"
               style={{
@@ -756,7 +756,7 @@ export default function TestWorkPage() {
                 borderColor: 'var(--stroke-default-p3)'
               }}
             >
-              <img src="https://oxide.computer/img/logo_riot.svg" width="340" height="193" className="w-full max-w-full block align-middle h-auto md:h-auto" alt="Riot logo"/>
+              <div className="w-full h-24 bg-gradient-to-r from-red-500 to-red-700 rounded flex items-center justify-center text-white font-bold">Riot</div>
             </div>
             <div className="col-span-6 md:col-span-4 rounded-[var(--border-radius-lg)] sm:rounded-[var(--border-radius-xl)] border"
               style={{
@@ -764,7 +764,7 @@ export default function TestWorkPage() {
                 borderColor: 'var(--stroke-default-p3)'
               }}
             >
-              <img src="https://oxide.computer/img/logo_rally_ventures.svg" width="340" height="193" className="w-full max-w-full block align-middle h-auto md:h-auto" alt="Rally Ventures logo"/>
+              <div className="w-full h-24 bg-gradient-to-r from-blue-500 to-blue-700 rounded flex items-center justify-center text-white font-bold">Rally Ventures</div>
             </div>
             <div className="col-span-6 md:col-start-3 md:col-span-4 rounded-[var(--border-radius-lg)] sm:rounded-[var(--border-radius-xl)] border"
               style={{
@@ -772,7 +772,7 @@ export default function TestWorkPage() {
                 borderColor: 'var(--stroke-default-p3)'
               }}
             >
-              <img src="https://oxide.computer/img/logo_intel_capital.svg" width="340" height="193" className="w-full max-w-full block align-middle h-auto md:h-auto" alt="Intel Capital logo"/>
+              <div className="w-full h-24 bg-gradient-to-r from-blue-600 to-blue-800 rounded flex items-center justify-center text-white font-bold">Intel Capital</div>
             </div>
             <div className="col-start-4 col-span-6 md:col-span-4 rounded-[var(--border-radius-lg)] sm:rounded-[var(--border-radius-xl)] border"
               style={{
@@ -780,7 +780,7 @@ export default function TestWorkPage() {
                 borderColor: 'var(--stroke-default-p3)'
               }}
             >
-              <img src="https://oxide.computer/img/logo_counterpart_ventures.svg" width="340" height="193" className="w-full max-w-full block align-middle h-auto md:h-auto" alt="Counterpart Ventures logo"/>
+              <div className="w-full h-24 bg-gradient-to-r from-green-500 to-green-700 rounded flex items-center justify-center text-white font-bold">Counterpart Ventures</div>
             </div>
           </div>
         </div>

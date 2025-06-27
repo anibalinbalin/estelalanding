@@ -140,8 +140,8 @@ export function MethodImplementation() {
             overflow: 'hidden'
           }}>
             <Waves
-              lineColor="#444"
-              backgroundColor="#F0EEE6"
+              lineColor="#f5b944"
+              backgroundColor="#3d3019"
               waveSpeedX={0}
               waveSpeedY={0}
               waveAmpX={0}

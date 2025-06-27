@@ -26,34 +26,6 @@ export function AboutSection() {
     }
   ]
 
-  const timeline = [
-    {
-      year: '2015',
-      milestone: 'Founded',
-      description: 'Started with a simple mission: technology consulting that actually helps businesses.'
-    },
-    {
-      year: '2016-2018',
-      milestone: 'Regional Expansion',
-      description: 'Established partnerships with major technology vendors. Grew client base across South America.'
-    },
-    {
-      year: '2019-2021',
-      milestone: 'Cloud Transformation',
-      description: 'Led digital transformations for enterprises moving to cloud-first architectures.'
-    },
-    {
-      year: '2022-2023',
-      milestone: 'AI & Automation',
-      description: 'Integrated AI and automation solutions for manufacturing and logistics clients.'
-    },
-    {
-      year: '2024-Present',
-      milestone: 'Global Reach',
-      description: 'Serving clients globally while maintaining personal, direct relationships.'
-    }
-  ]
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="container mx-auto px-6 py-16 max-w-4xl">
@@ -152,35 +124,6 @@ export function AboutSection() {
 
         <div className="h-px bg-border mb-16" />
 
-        {/* Timeline */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-normal mb-6 pb-2 border-b border-border">
-            Our Journey
-          </h2>
-
-          <div className="space-y-8">
-            {timeline.map((item, index) => (
-              <div key={index} className="flex gap-8">
-                <div className="flex-shrink-0 w-16">
-                  <span className="text-sm font-mono text-muted-foreground">
-                    {item.year}
-                  </span>
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-lg font-medium mb-2">
-                    {item.milestone}
-                  </h3>
-                  <p className="text-base leading-relaxed text-muted-foreground">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <div className="h-px bg-border mb-16" />
-
         {/* Approach */}
         <section className="mb-16">
           <h2 className="text-2xl font-normal mb-6 pb-2 border-b border-border">
@@ -262,35 +205,6 @@ export function AboutSection() {
           </div>
         </section>
 
-        <div className="h-px bg-border mb-16" />
-
-        {/* Bottom CTA */}
-        <section className="text-center mb-12">
-          <p className="text-xl font-medium mb-4">
-            Ready to experience technology consulting that actually works?
-          </p>
-
-          <p className="text-base text-muted-foreground mb-8">
-            Let's start with understanding your real challenges.
-          </p>
-
-          <div className="flex gap-4 justify-center">
-            <Link 
-              href="/contact"
-              className="px-6 py-3 bg-foreground text-background rounded-md font-medium text-sm hover:bg-foreground/90 transition-colors"
-            >
-              Start the Conversation
-            </Link>
-            <Link 
-              href="/work"
-              className="px-6 py-3 bg-transparent text-muted-foreground border border-muted-foreground rounded-md font-medium text-sm hover:bg-muted-foreground hover:text-background transition-colors"
-            >
-              See Our Results
-            </Link>
-          </div>
-        </section>
-
-        <div className="h-px bg-border" />
       </div>
     </div>
   )

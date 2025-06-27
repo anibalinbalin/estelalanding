@@ -115,7 +115,7 @@ export function HandsSection() {
               <img
                 width="453"
                 height="905"
-                src="https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/679e7b21-28fd-4def-1ef3-6a51f1657000/f=auto,dpr=2,q=95,fit=scale-down,metadata=none"
+                src="/img/hand.avif"
                 className="text-transparent shrink-0 m-0 p-0 border-0 text-[inherit] font-[inherit] [font-weight:inherit] leading-[inherit] align-baseline max-w-[100%] box-border sm:h-[100%] h-auto sm:w-[905px] w-80 max-[640px]:translate-y-[193px]"
               />
             </div>

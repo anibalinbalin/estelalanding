@@ -162,14 +162,14 @@ const HexagonalSlidingBars = () => {
         ? 4 * easingFactor * easingFactor * easingFactor 
         : 1 - Math.pow(-2 * easingFactor + 2, 3) / 2;
 
-      ctx.fillStyle = '#F0EEE6';
+      ctx.fillStyle = '#3d3019';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       for (let i = 0; i < numLines; i++) {
         const x = i * lineSpacing + lineSpacing / 2;
 
         ctx.beginPath();
-        ctx.strokeStyle = '#444';
+        ctx.strokeStyle = '#f5b944';
         ctx.lineWidth = 1;
         ctx.moveTo(x, 0);
         ctx.lineTo(x, canvas.height);
@@ -192,7 +192,7 @@ const HexagonalSlidingBars = () => {
           const width = bar1.width + (bar2.width - bar1.width) * smoothEasing;
 
           if (height > 0.1 && width > 0.1) {
-            ctx.fillStyle = '#5E5D59';
+            ctx.fillStyle = '#f5b944';
             ctx.fillRect(x - width/2, y - height/2, width, height);
           }
         }

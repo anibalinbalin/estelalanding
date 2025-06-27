@@ -271,7 +271,7 @@ export const StorageSection = () => {
             }}
           >
             <Image 
-              src="https://oxide.computer/img/oxide-storage-openzfs.svg" 
+              src="/img/oxide-storage-create-snapshot.svg" 
               width={516} 
               height={371} 
               alt="OpenZFS storage visualization"
@@ -332,7 +332,7 @@ export const StorageSection = () => {
             }}
           >
             <Image 
-              src="https://oxide.computer/img/oxide-storage-errors.svg" 
+              src="/img/oxide-storage-create-snapshot.svg" 
               width={426} 
               height={512} 
               alt="Storage errors visualization"

@@ -82,11 +82,20 @@ export function MethodIntroduction() {
 
         {/* Section Number */}
         <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-          <span style={{ 
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '40px',
+            height: '40px',
+            borderRadius: '50%',
+            backgroundColor: '#1a2224',
+            color: '#fff',
             fontSize: '1.125rem', 
-            fontFamily: 'GT_America_Mono, monospace',
-            color: 'rgb(126, 131, 133)'
-          }}>1.1</span>
+            fontFamily: 'GT_America_Mono, monospace'
+          }}>
+            1
+          </div>
         </div>
 
         {/* Title */}

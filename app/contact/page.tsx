@@ -51,8 +51,8 @@ export default function ContactPage() {
             </div>
             <div className="hidden min-[1100px]:block text-muted-foreground min-[600px]:text-base min-[600px]:leading-6 min-[600px]:tracking-wide">
               Contact us directly at{' '}
-              <Link href="mailto:hello@estela.tech" className="text-foreground hover:text-foreground/80 underline underline-offset-4">
-                hello@estela.tech
+              <Link href="mailto:hola@este.la" className="text-foreground hover:text-foreground/80 underline underline-offset-4">
+                hola@este.la
               </Link>
             </div>
           </div>
@@ -153,8 +153,8 @@ export default function ContactPage() {
           </div>
           <div className="col-span-12 text-muted-foreground text-base leading-6 tracking-wide min-[1100px]:hidden">
             Contact us directly at{' '}
-            <Link href="mailto:hello@estela.tech" className="text-foreground hover:text-foreground/80 underline underline-offset-4">
-              hello@estela.tech
+            <Link href="mailto:hola@este.la" className="text-foreground hover:text-foreground/80 underline underline-offset-4">
+              hola@este.la
             </Link>
           </div>
         </div>

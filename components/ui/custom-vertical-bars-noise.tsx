@@ -73,11 +73,11 @@ const CustomVerticalBarsNoise = () => {
       );
       
       if (mouseRef.current.isPressed) {
-        bgGradient.addColorStop(0, '#F5F3EB');
-        bgGradient.addColorStop(1, '#E8E6DE');
+        bgGradient.addColorStop(0, '#4a3a20');
+        bgGradient.addColorStop(1, '#3d3019');
       } else {
-        bgGradient.addColorStop(0, '#F0EEE6');
-        bgGradient.addColorStop(1, '#F0EEE6');
+        bgGradient.addColorStop(0, '#3d3019');
+        bgGradient.addColorStop(1, '#3d3019');
       }
       
       ctx.fillStyle = bgGradient;
@@ -94,7 +94,7 @@ const CustomVerticalBarsNoise = () => {
           Math.max(0.2, 1 - lineDistFromMouse / 200) : 0.4;
         
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(68, 68, 68, ${lineAlpha})`;
+        ctx.strokeStyle = `rgba(245, 185, 68, ${lineAlpha})`;
         ctx.lineWidth = mouseRef.current.isPressed && lineDistFromMouse < 50 ? 2 : 1;
         ctx.moveTo(0, y);
         ctx.lineTo(canvas.width, y);
@@ -125,7 +125,7 @@ const CustomVerticalBarsNoise = () => {
             const alpha = mouseRef.current.isPressed ? 
               Math.min(1, 0.6 + mouseProximity * 0.4) : 1;
             
-            ctx.fillStyle = `rgba(0, 0, 0, ${alpha})`;
+            ctx.fillStyle = `rgba(245, 185, 68, ${alpha})`;
             ctx.fillRect(animatedX - barWidth/2, y - barHeight/2, barWidth, barHeight);
           }
         }

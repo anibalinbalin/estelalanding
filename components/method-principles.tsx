@@ -125,7 +125,7 @@ export function MethodPrinciples() {
             borderRadius: '8px',
             border: '1px solid var(--border)',
             overflow: 'hidden',
-            backgroundColor: '#F0EEE6',
+            backgroundColor: '#3d3019',
             marginBottom: '48px'
           }}>
             <InteractiveLinesGrid 
@@ -136,9 +136,9 @@ export function MethodPrinciples() {
               lineWidth={1.2}
               showDot={true}
               dotSize={7}
-              backgroundColor="#F0EEE6"
-              color="#444"
-              hoverColor="#000"
+              backgroundColor="#3d3019"
+              color="#f5b944"
+              hoverColor="#f5b944"
               style={{
                 width: '100%',
                 height: '100%'

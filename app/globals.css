@@ -146,25 +146,29 @@ html, body {
   --sidebar-ring: rgba(0, 0, 0, 0.5);
   
   /* Oxide-style colors */
-  --content-secondary-p3: #666666;
-  --stroke-default-p3: #2d3335;
+  --content-secondary-p3: #6e757c;
+  --content-tertiary-light-p3: #666666;
+  --stroke-default-p3: #e5e5e5;
   
   /* Oxide Computer CSS Variables - Light Mode */
   --base-neutral-900-rgb: 0, 0, 0;
   --base-neutral-900-p3: color(display-p3 0 0 0);
   --base-neutral-900: rgb(var(--base-neutral-900-rgb));
-  --content-raise-p3: #000000;
+  --content-raise-p3: #08090a;
   --content-default-p3: #333333;
   --content-accent-p3: #059669;
+  --surface-default-p3: #ffffff;
   --surface-raise-p3: #f9fafb;
   --surface-accent-secondary-p3: #dcfce7;
   --surface-accent-secondary-hover-p3: #bbf7d0;
   --surface-hover-p3: #f3f4f6;
   --stroke-secondary-p3: rgba(0, 0, 0, 0.1);
-  --elevation-1: 0px 1px 2px #00000099;
-  --elevation-2: 0px 2.188px 4.625px #00000021, 0px 10px 13px #00000033, 0px 25.313px 34.875px #00000045, 0px 50px 80px #00000066;
+  --elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  --elevation-2: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
   --border-radius: .1875rem;
   --border-radius-lg: .375rem;
+  --tw-aspect-h: 7;
+  --tw-aspect-w: 12;
 }
 
 .dark {
@@ -209,6 +213,7 @@ html, body {
   
   /* Oxide-style colors */
   --content-secondary-p3: #999999;
+  --content-tertiary-light-p3: #d7d8d9;
   --stroke-default-p3: #2d3335;
   
   /* Oxide Computer CSS Variables - Dark Mode */

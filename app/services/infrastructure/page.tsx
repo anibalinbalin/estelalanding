@@ -1,10 +1,22 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 
 const InfrastructurePage = () => {
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Use resolvedTheme for more reliable theme detection
+  const currentTheme = mounted ? (resolvedTheme || theme) : 'dark';
   return (
     <>
       <div className="sticky top-0 z-20">
-    <div className="pointerEvents-[none] absolute top-0 right-0 bottom-0 left-0 border-b bg-[#080f11d9] backdrop-[var(--tw-backdrop-sepia)] backdrop-[var(--tw-backdrop-saturate)] backdrop-[var(--tw-backdrop-opacity)] backdrop-[var(--tw-backdrop-invert)] backdrop-[var(--tw-backdrop-hue-rotate)] backdrop-[var(--tw-backdrop-grayscale)] backdrop-[var(--tw-backdrop-contrast)] backdrop-[var(--tw-backdrop-brightness)] backdrop-[var(--tw-backdrop-blur)] transition-opacity ease-[cubic-bezier(.4,0,.2,1)] duration-[.15s] border-b-[var(--stroke-secondary-p3)]"></div>
+    <div className="pointerEvents-[none] absolute top-0 right-0 bottom-0 left-0 border-b bg-[var(--background)]/85 backdrop-[var(--tw-backdrop-sepia)] backdrop-[var(--tw-backdrop-saturate)] backdrop-[var(--tw-backdrop-opacity)] backdrop-[var(--tw-backdrop-invert)] backdrop-[var(--tw-backdrop-hue-rotate)] backdrop-[var(--tw-backdrop-grayscale)] backdrop-[var(--tw-backdrop-contrast)] backdrop-[var(--tw-backdrop-brightness)] backdrop-[var(--tw-backdrop-blur)] transition-opacity ease-[cubic-bezier(.4,0,.2,1)] duration-[.15s] border-b-[var(--stroke-secondary-p3)]"></div>
     <nav dir="ltr" className="w-[100%]">
         <div className="absolute left-0 right-0 top-[54px] flex shrink items-center justify-center transition-transform ease-[cubic-bezier(.4,0,.2,1)] duration-[.1s]"></div>
     </nav>
@@ -39,14 +51,14 @@ const InfrastructurePage = () => {
                                 <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
                                 <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
                             </div>
-                            <div className="hidden min-[900px]:block h-20 min-[900px]:h-32 w-[100%] pointerEvents-[none] absolute left-0 right-0 bottom-0 z-0 bg-[linear-gradient(0deg,#080f11,#080f1100)]"></div>
+                            <div className="hidden min-[900px]:block h-20 min-[900px]:h-32 w-[100%] pointerEvents-[none] absolute left-0 right-0 bottom-0 z-0 bg-[linear-gradient(0deg,var(--background),transparent)]"></div>
                         </div>
                         <div className="relative gap-6 border-[var(--stroke-default-p3)] flex flex-col col-span-12 border-l border-r min-[900px]:border-r-[0px] min-[900px]:py-52">
                             <div>
                                 <div className="flex min-[900px]:grid min-[900px]:grid-cols-[repeat(12,minmax(0,1fr))] flex-col items-center">
                                     <div className="relative z-10 col-span-5 block min-[900px]:ml-[-1.5rem]"><a href="/product/compute" className="flex items-center text-inherit [text-decoration:inherit] transition-opacity ease-[cubic-bezier(.4,0,.2,1)] duration-[.2s]">
                                             <div className="bg-[var(--surface-default-p3)] p-3 hidden min-[900px]:block">
-                                                <div className="rounded-[var(--border-radius)] p-1 text-[var(--content-accent-p3)] bg-[var(--surface-accent-secondary-p3)] hover:bg-[var(--surface-accent-secondary-hover-p3)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
+                                                <div className={`rounded-[var(--border-radius)] p-1 text-[var(--content-accent-p3)] ${currentTheme === 'light' ? 'bg-[#e5e5e5] hover:bg-[#d5d5d5]' : 'bg-[var(--surface-accent-secondary-p3)] hover:bg-[var(--surface-accent-secondary-hover-p3)]'}`}><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#cpu-16"></use>
                                                     </svg></div>
                                             </div>
@@ -78,23 +90,23 @@ const InfrastructurePage = () => {
                                     <div className="mx-auto w-[100%] z-0 pb-8 col-start-[2] min-[900px]:col-start-[7] col-span-10 min-[900px]:col-span-6">
                                         <div className="grid flex-col relative grid-cols-[repeat(12,minmax(0,1fr))] gap-4">
                                             <div className="flex z-0 items-center col-span-12 bg-[var(--surface-default-p3)] relative pb-[calc(var(--tw-aspect-h)_/_var(--tw-aspect-w)_*_100%)] justify-center overflow-hidden rounded-[var(--border-radius-lg)] border border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-2)]">
-                                                <div className="flex items-center justify-center absolute h-[100%] w-[100%] top-0 right-0 bottom-0 left-0"><img src="https://oxide.computer/img/home/plus-bg.svg" className="z-0 max-w-[100%] h-auto block align-middle absolute left-2 right-2 w-[calc(100%_-_1rem)]" alt=""/>
-                                                    <div className="flex items-center justify-center relative w-[100%] h-[100%]"><img src="/img/oxide-gimlet-front.png" width="1600" height="797" className="relative max-w-[100%] h-auto block align-middle w-3/4 filter-[shadow(0px 50px 80px rgba(0,0,0,.4)] 25.313px 34.875px rgba(0,0,0,.27)] 10px 13px rgba(0,0,0,.2)] 2.188px 4.625px rgba(0,0,0,.13)]" alt=""/><noscript>
+                                                <div className="flex items-center justify-center absolute h-[100%] w-[100%] top-0 right-0 bottom-0 left-0"><img src="/img/plus-bg.svg" className={`z-0 max-w-[100%] h-auto block align-middle absolute left-2 right-2 w-[calc(100%_-_1rem)] ${currentTheme === 'light' ? 'opacity-10 grayscale brightness-100' : 'opacity-20 brightness-150 contrast-50'}`} alt=""/>
+                                                    <div className="flex items-center justify-center relative w-[100%] h-[100%]"><img src="/img/oxide-gimlet-front.png" width="1600" height="797" className="relative max-w-[100%] h-auto block align-middle w-3/4" alt=""/><noscript>
                                                             <div className="absolute inset-0 flex h-full w-full items-center justify-center"><img className="img-elevation-2 relative w-[75%] h-auto" src="/img/oxide-gimlet-front.png" width="1600" height="797" alt="2/3 view of the Oxide server sled" /></div>
                                                         </noscript></div>
                                                 </div>
                                             </div>
-                                            <div className="col-span-12 z-10 rounded-[var(--border-radius)] border font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider bg-[#060f11] border-[#1c2225] shadow-[var(--elevation-2)]">
-                                                <div className="grid grid-cols-[repeat(12,minmax(0,1fr))] border-[#1c2225] text-[var(--content-accent-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[900px]:font-normal leading-4 min-[900px]:leading-[1.125rem] text-[.75rem] min-[900px]:text-[.875rem] tracking-wider min-[900px]:tracking-wider">
-                                                    <div className="px-3 py-3 border-r col-span-3 border-[#1c2225] text-[#f5b944]">nas-primary</div>
-                                                    <div className="px-3 py-3 border-r col-span-3 text-[#f5b944] border-[#1c2225]"><span className="text-[#f5b944]">12TB</span> / <span className="text-[#f5b944]">RAID-6</span></div>
-                                                    <div className="px-3 py-3 border-r col-span-3 border-[#1c2225] text-[#f5b944]">Synology-RS</div>
+                                            <div className={`col-span-12 z-10 rounded-[var(--border-radius)] border font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider shadow-[var(--elevation-2)] ${currentTheme === 'light' ? 'bg-[#ffffff] border-[#e4e5e4]' : 'bg-[#060f11] border-[#1c2225]'}`}>
+                                                <div className={`grid grid-cols-[repeat(12,minmax(0,1fr))] text-[var(--content-accent-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[900px]:font-normal leading-4 min-[900px]:leading-[1.125rem] text-[.75rem] min-[900px]:text-[.875rem] tracking-wider min-[900px]:tracking-wider ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>
+                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>nas-primary</div>
+                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}><span className="text-[#f5b944]">12TB</span> / <span className="text-[#f5b944]">RAID-6</span></div>
+                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>Synology-RS</div>
                                                     <div className="px-3 py-3 flex col-span-3 gap-2 text-[#f5b944]"><span className="px-[3px] items-center inline-flex h-4 whitespace-nowrap rounded-[var(--border-radius-sm)] uppercase font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] text-[#f5b943] bg-[#574829]"><span>ONLINE</span></span> <span>90d 2h</span></div>
                                                 </div>
-                                                <div className="grid grid-cols-[repeat(12,minmax(0,1fr))] border-[#1c2225] text-[var(--content-accent-p3)] border-t border-t-[#1c2225] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[900px]:font-normal leading-4 min-[900px]:leading-[1.125rem] text-[.75rem] min-[900px]:text-[.875rem] tracking-wider min-[900px]:tracking-wider">
-                                                    <div className="px-3 py-3 border-r col-span-3 border-[#1c2225] text-[#f5b944]">server</div>
-                                                    <div className="px-3 py-3 border-r col-span-3 text-[#f5b944] border-[#1c2225]"><span className="text-[#f5b944]">24TB</span> / <span className="text-[#f5b944]">RAID-10</span></div>
-                                                    <div className="px-3 py-3 border-r col-span-3 border-[#1c2225] text-[#f5b944]">COLOSUS</div>
+                                                <div className={`grid grid-cols-[repeat(12,minmax(0,1fr))] text-[var(--content-accent-p3)] border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[900px]:font-normal leading-4 min-[900px]:leading-[1.125rem] text-[.75rem] min-[900px]:text-[.875rem] tracking-wider min-[900px]:tracking-wider ${currentTheme === 'light' ? 'border-[#e4e5e4] border-t-[#e4e5e4]' : 'border-[#1c2225] border-t-[#1c2225]'}`}>
+                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>server</div>
+                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}><span className="text-[#f5b944]">24TB</span> / <span className="text-[#f5b944]">RAID-10</span></div>
+                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>COLOSUS</div>
                                                     <div className="px-3 py-3 flex col-span-3 gap-2 text-[#f5b944]"><span className="px-[3px] items-center inline-flex h-4 whitespace-nowrap rounded-[var(--border-radius-sm)] uppercase font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] text-[#f5b943] bg-[#574829]"><span>ONLINE</span></span> <span>6m 14d</span></div>
                                                 </div>
                                             </div>
@@ -106,7 +118,7 @@ const InfrastructurePage = () => {
                                 <div className="flex min-[900px]:grid min-[900px]:grid-cols-[repeat(12,minmax(0,1fr))] flex-col items-center">
                                     <div className="relative z-10 col-span-5 block min-[900px]:ml-[-1.5rem]"><a href="/product/storage" className="flex items-center text-inherit [text-decoration:inherit] transition-opacity ease-[cubic-bezier(.4,0,.2,1)] duration-[.2s]">
                                             <div className="bg-[var(--surface-default-p3)] p-3 hidden min-[900px]:block">
-                                                <div className="rounded-[var(--border-radius)] p-1 text-[var(--content-accent-p3)] bg-[var(--surface-accent-secondary-p3)] hover:bg-[var(--surface-accent-secondary-hover-p3)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
+                                                <div className={`rounded-[var(--border-radius)] p-1 text-[var(--content-accent-p3)] ${currentTheme === 'light' ? 'bg-[#e5e5e5] hover:bg-[#d5d5d5]' : 'bg-[var(--surface-accent-secondary-p3)] hover:bg-[var(--surface-accent-secondary-hover-p3)]'}`}><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#storage-16"></use>
                                                     </svg></div>
                                             </div>
@@ -131,7 +143,7 @@ const InfrastructurePage = () => {
                                     </div>
                                     <div className="mx-auto w-[100%] z-0 pb-8 col-start-[2] min-[900px]:col-start-[7] col-span-10 min-[900px]:col-span-6">
                                         <div className="grid grid-cols-[repeat(12,minmax(0,1fr))]">
-                                            <div className="flex relative bg-[var(--surface-default-p3)] justify-end rounded-[var(--border-radius-lg)] border border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-2)] col-span-12 min-[600px]:col-span-9"><img src="/img/oxide-storage-create-snapshot.svg" width="395" height="320" className="max-w-[100%] h-auto block align-middle w-[88.89%] filter-[shadow(0px 50px 80px rgba(0,0,0,.4)] 25.313px 34.875px rgba(0,0,0,.27)] 10px 13px rgba(0,0,0,.2)] 2.188px 4.625px rgba(0,0,0,.13)]" alt=""/></div>
+                                            <div className="flex relative bg-[var(--surface-default-p3)] justify-end rounded-[var(--border-radius-lg)] border border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-2)] col-span-12 min-[600px]:col-span-9"><img src={currentTheme === 'light' ? '/img/oxide-storage-create-snapshot1_light.png' : '/img/oxide-storage-create-snapshot.svg'} width="395" height="320" className="max-w-[100%] h-auto block align-middle w-[88.89%]" alt=""/></div>
                                             <div className="z-10 col-start-[8] col-span-5 mt-[-40%] rounded-[var(--border-radius)] border font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-2)] hidden min-[600px]:block">
                                                 <div className="px-3 py-2.5 border-b border-[var(--stroke-secondary-p3)]">Activate monitoring</div>
                                                 <div className="px-3 py-2.5 border-b border-[var(--stroke-secondary-p3)]">Export configuration</div>
@@ -146,7 +158,7 @@ const InfrastructurePage = () => {
                                 <div className="flex min-[900px]:grid min-[900px]:grid-cols-[repeat(12,minmax(0,1fr))] flex-col items-center">
                                     <div className="relative z-10 col-span-5 block min-[900px]:ml-[-1.5rem]"><a href="/product/networking" className="flex items-center text-inherit [text-decoration:inherit] transition-opacity ease-[cubic-bezier(.4,0,.2,1)] duration-[.2s]">
                                             <div className="bg-[var(--surface-default-p3)] p-3 hidden min-[900px]:block">
-                                                <div className="rounded-[var(--border-radius)] p-1 text-[var(--content-accent-p3)] bg-[var(--surface-accent-secondary-p3)] hover:bg-[var(--surface-accent-secondary-hover-p3)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
+                                                <div className={`rounded-[var(--border-radius)] p-1 text-[var(--content-accent-p3)] ${currentTheme === 'light' ? 'bg-[#e5e5e5] hover:bg-[#d5d5d5]' : 'bg-[var(--surface-accent-secondary-p3)] hover:bg-[var(--surface-accent-secondary-hover-p3)]'}`}><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#networking-16"></use>
                                                     </svg></div>
                                             </div>
@@ -175,14 +187,14 @@ const InfrastructurePage = () => {
                                     <div className="mx-auto w-[100%] z-0 pb-8 col-start-[2] min-[900px]:col-start-[7] col-span-10 min-[900px]:col-span-6">
                                         <div className="relative grid grid-cols-[repeat(12,minmax(0,1fr))] z-10">
                                             <div className="z-0 col-span-11 flex items-center bg-[var(--surface-default-p3)] relative pb-[calc(var(--tw-aspect-h)_/_var(--tw-aspect-w)_*_100%)] justify-center overflow-hidden rounded-[var(--border-radius-lg)] border border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-2)]">
-                                                <div className="flex items-center justify-center absolute h-[100%] w-[100%] top-0 right-0 bottom-0 left-0"><img src="https://oxide.computer/img/home/plus-bg.svg" className="z-0 max-w-[100%] h-auto block align-middle absolute left-2 right-2 w-[calc(100%_-_1rem)]" alt="" />
-                                                    <div className="flex items-center justify-center relative w-[100%] h-[100%]"><img src="/img/oxide-rack.png" width="1600" height="797" className="relative max-w-[100%] h-auto block align-middle w-[51%] filter-[shadow(0px 50px 80px rgba(0,0,0,.4)] 25.313px 34.875px rgba(0,0,0,.27)] 10px 13px rgba(0,0,0,.2)] 2.188px 4.625px rgba(0,0,0,.13)]" alt="" /><noscript>
-                                                            <div className="absolute inset-0 flex h-full w-full items-center justify-center"><img className="img-elevation-2 relative w-[51%] h-auto" src="/img/oxide-rack.png" width="1600" height="797" alt="2/3 view of the Oxide network switch" /></div>
+                                                <div className="flex items-center justify-center absolute h-[100%] w-[100%] top-0 right-0 bottom-0 left-0"><img src="/img/plus-bg.svg" className={`z-0 max-w-[100%] h-auto block align-middle absolute left-2 right-2 w-[calc(100%_-_1rem)] ${currentTheme === 'light' ? 'opacity-10 grayscale brightness-100' : 'opacity-20 brightness-150 contrast-50'}`} alt="" />
+                                                    <div className="flex items-center justify-center relative w-[100%] h-[100%]"><img src={currentTheme === 'light' ? '/img/oxide-rack_light.png' : '/img/oxide-rack.png'} width="1600" height="797" className="relative max-w-[100%] h-auto block align-middle w-[51%] filter-[shadow(0px 50px 80px rgba(0,0,0,.4)] 25.313px 34.875px rgba(0,0,0,.27)] 10px 13px rgba(0,0,0,.2)] 2.188px 4.625px rgba(0,0,0,.13)]" alt="" /><noscript>
+                                                            <div className="absolute inset-0 flex h-full w-full items-center justify-center"><img className="img-elevation-2 relative w-[51%] h-auto" src={currentTheme === 'light' ? '/img/oxide-rack_light.png' : '/img/oxide-rack.png'} width="1600" height="797" alt="2/3 view of the Oxide network switch" /></div>
                                                         </noscript></div>
                                                 </div>
                                             </div>
-                                            <div className="z-10 w-[100%] flex items-center h-14 gap-2 rounded-[var(--border-radius)] border p-1 text-[var(--content-accent-p3)] bg-[#060f11] border-[#1c2225] shadow-[var(--elevation-1)] col-span-11 min-[600px]:col-span-6 mt-[-12px] min-[600px]:mt-[-32px]">
-                                                <div className="px-2 flex items-center h-[100%] justify-center rounded-sm bg-[#1c2225]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
+                                            <div className={`z-10 w-[100%] flex items-center h-14 gap-2 rounded-[var(--border-radius)] border p-1 text-[var(--content-accent-p3)] shadow-[var(--elevation-1)] col-span-11 min-[600px]:col-span-6 mt-[-12px] min-[600px]:mt-[-32px] ${currentTheme === 'light' ? 'bg-[#ffffff] border-[#e4e5e4]' : 'bg-[#060f11] border-[#1c2225]'}`}>
+                                                <div className={`px-2 flex items-center h-[100%] justify-center rounded-sm ${currentTheme === 'light' ? 'bg-[#e5e5e5]' : 'bg-[#1c2225]'}`}><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#firewall-16"></use>
                                                     </svg></div>
                                                 <div className="flex flex-col">
@@ -194,7 +206,7 @@ const InfrastructurePage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="pointerEvents-[none] absolute left-[-1px] bottom-0 z-0 w-[1px] bg-[linear-gradient(0deg,#080f11,#080f1100)] hidden min-[900px]:block h-20 min-[900px]:h-32 min-[900px]:mt-[calc(10rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[900px]:mb-[calc(10rem_*_var(--tw-space-y-reverse))]"></div>
+                            <div className="pointerEvents-[none] absolute left-[-1px] bottom-0 z-0 w-[1px] bg-[linear-gradient(0deg,var(--background),transparent)] hidden min-[900px]:block h-20 min-[900px]:h-32 min-[900px]:mt-[calc(10rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[900px]:mb-[calc(10rem_*_var(--tw-space-y-reverse))]"></div>
                         </div>
                     </div>
                 </div>

@@ -38,7 +38,7 @@ export const TestNumbersSection = () => {
                 </div>
               </div>
             </div>
-            <h3 className="text-balance textWrapStyle-[balance] m-0 mb-2 text-[var(--content-raise-p3)] text-[.875rem] min-[800px]:text-base font-medium min-[800px]:font-medium font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.125rem] min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">100% Client Retention</h3>
+            <h3 className="text-balance textWrapStyle-[balance] m-0 mb-2 text-[var(--content-tertiary-light-p3)] text-[.875rem] min-[800px]:text-base font-medium min-[800px]:font-medium font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.125rem] min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">100% Client Retention</h3>
             <p className="m-0 mb-4 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-4 min-[800px]:leading-[1.125rem] text-[.75rem] min-[800px]:text-[.875rem] tracking-wider min-[800px]:tracking-wider">Every client who partners with us, stays with us. This reflects the lasting value and unwavering trust we build together, making your success our long-term commitment.</p>
           </div>
           <div className="col-span-6 min-[1000px]:col-span-3">
@@ -57,12 +57,12 @@ export const TestNumbersSection = () => {
                 </div>
               </div>
             </div>
-            <h3 className="text-balance textWrapStyle-[balance] m-0 mb-2 text-[var(--content-raise-p3)] text-[.875rem] min-[800px]:text-base font-medium min-[800px]:font-medium font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.125rem] min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">7+ Years Average Relationship</h3>
+            <h3 className="text-balance textWrapStyle-[balance] m-0 mb-2 text-[var(--content-tertiary-light-p3)] text-[.875rem] min-[800px]:text-base font-medium min-[800px]:font-medium font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.125rem] min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">7+ Years Average Relationship</h3>
             <p className="m-0 mb-4 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-4 min-[800px]:leading-[1.125rem] text-[.75rem] min-[800px]:text-[.875rem] tracking-wider min-[800px]:tracking-wider">We cultivate deep, long-term partnerships, allowing us to intimately understand and evolve with your business needs for over seven years on average.</p>
           </div>
           <div className="col-span-6 min-[1000px]:col-span-3">
             <div className="w-[100%] mb-4 rounded-[var(--border-radius-lg)] border" style={{ backgroundColor: '#3b301c', padding: '12px' }}>
-              <div className="relative pb-[calc(var(--tw-aspect-h)_/_var(--tw-aspect-w)_*_100%)]">
+              <div className="relative aspect-square">
                 <div className="absolute h-[100%] w-[100%] top-0 right-0 bottom-0 left-0 flex items-center justify-center">
                   <img 
                     src="/img/numbers_3.png" 
@@ -76,12 +76,12 @@ export const TestNumbersSection = () => {
                 </div>
               </div>
             </div>
-            <h3 className="text-balance textWrapStyle-[balance] m-0 mb-2 text-[var(--content-raise-p3)] text-[.875rem] min-[800px]:text-base font-medium min-[800px]:font-medium font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.125rem] min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">13+ Years Core Team Cohesion</h3>
+            <h3 className="text-balance textWrapStyle-[balance] m-0 mb-2 text-[var(--content-tertiary-light-p3)] text-[.875rem] min-[800px]:text-base font-medium min-[800px]:font-medium font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.125rem] min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">13+ Years Core Team Cohesion</h3>
             <p className="m-0 mb-4 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-4 min-[800px]:leading-[1.125rem] text-[.75rem] min-[800px]:text-[.875rem] tracking-wider min-[800px]:tracking-wider">Our founding-led core team brings over a decade of unified vision and consistent senior expertise directly to your projects, ensuring quality and accountability.</p>
           </div>
           <div className="col-span-6 min-[1000px]:col-span-3">
             <div className="w-[100%] mb-4 rounded-[var(--border-radius-lg)] border" style={{ backgroundColor: '#3b301c', padding: '12px' }}>
-              <div className="relative pb-[calc(var(--tw-aspect-h)_/_var(--tw-aspect-w)_*_100%)]">
+              <div className="relative aspect-square">
                 <div className="absolute h-[100%] w-[100%] top-0 right-0 bottom-0 left-0 flex items-center justify-center">
                   <img 
                     src="/img/numbers_4.png" 
@@ -95,7 +95,7 @@ export const TestNumbersSection = () => {
                 </div>
               </div>
             </div>
-            <h3 className="text-balance textWrapStyle-[balance] m-0 mb-2 text-[var(--content-raise-p3)] text-[.875rem] min-[800px]:text-base font-medium min-[800px]:font-medium font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.125rem] min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">Dedicated to Ideal Partnerships</h3>
+            <h3 className="text-balance textWrapStyle-[balance] m-0 mb-2 text-[var(--content-tertiary-light-p3)] text-[.875rem] min-[800px]:text-base font-medium min-[800px]:font-medium font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.125rem] min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">Dedicated to Ideal Partnerships</h3>
             <p className="m-0 mb-4 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-4 min-[800px]:leading-[1.125rem] text-[.75rem] min-[800px]:text-[.875rem] tracking-wider min-[800px]:tracking-wider">We deliberately focus our deep expertise where we can create maximum impact, ensuring every partnership is set up for profound and transformative success.</p>
           </div>
         </div>

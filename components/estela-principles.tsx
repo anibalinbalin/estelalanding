@@ -111,7 +111,7 @@ export function EstelaPrinciples() {
                 color: mounted && resolvedTheme === 'dark' ? 'var(--content-raise-p3)' : '#08090a'
               }}
             >
-              People Over Profit
+              Clients First, Always
             </h3>
             <p 
               className="text-base"

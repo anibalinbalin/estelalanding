@@ -1,889 +1,575 @@
 'use client'
 
-import Link from 'next/link'
+
 
 export function ServiceSpecificationsSection() {
-  const pageStyles = {
-    backgroundColor: 'rgb(8, 9, 10)',
-    color: 'rgb(215, 216, 217)',
-    minHeight: '100vh'
-  }
-
-  const badgeStyle = {
-    fontSize: '0.875rem',
-    fontWeight: '400',
-    lineHeight: '1.5rem',
-    letterSpacing: '0.05em',
-    textTransform: 'uppercase' as const,
-    fontFamily: 'GT_America_Mono, monospace',
-    color: 'rgb(126, 131, 133)',
-    marginBottom: '24px'
-  }
-
-  const titleStyle = {
-    fontSize: '2.5rem',
-    fontWeight: '400',
-    lineHeight: '2.75rem',
-    letterSpacing: 'normal',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(215, 216, 217)',
-    margin: 0,
-    marginBottom: '16px'
-  }
-
-  const subtitleStyle = {
-    fontSize: '1.125rem',
-    fontWeight: '400',
-    lineHeight: '1.75rem',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(215, 216, 217)',
-    marginBottom: '24px'
-  }
-
-  const dividerStyle = {
-    height: '1px',
-    backgroundColor: 'rgba(126, 131, 133, 0.3)',
-    marginBottom: '48px'
-  }
-
-  const sectionHeaderStyle = {
-    fontSize: '1.5rem', 
-    fontWeight: '400',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(215, 216, 217)', 
-    marginBottom: '24px',
-    borderBottom: '1px solid rgba(126, 131, 133, 0.3)',
-    paddingBottom: '8px'
-  }
-
-  const specCardStyle = {
-    marginBottom: '32px',
-    padding: '24px',
-    backgroundColor: 'rgba(126, 131, 133, 0.05)',
-    borderRadius: '12px',
-    border: '1px solid rgba(126, 131, 133, 0.1)'
-  }
-
-  const specTableStyle = {
-    width: '100%',
-    borderCollapse: 'collapse' as const,
-    marginBottom: '24px',
-    fontFamily: 'GT_America_Mono, monospace',
-    fontSize: '0.9rem'
-  }
-
-  const tableHeaderStyle = {
-    padding: '12px 16px',
-    textAlign: 'left' as const,
-    borderBottom: '2px solid rgba(126, 131, 133, 0.3)',
-    backgroundColor: 'rgba(126, 131, 133, 0.1)',
-    color: 'rgb(215, 216, 217)',
-    fontWeight: '500'
-  }
-
-  const tableCellStyle = {
-    padding: '12px 16px',
-    borderBottom: '1px solid rgba(126, 131, 133, 0.2)',
-    borderRight: '1px solid rgba(126, 131, 133, 0.2)',
-    color: 'rgb(126, 131, 133)'
-  }
-
-  const tableValueStyle = {
-    padding: '12px 16px',
-    borderBottom: '1px solid rgba(126, 131, 133, 0.2)',
-    color: 'rgb(215, 216, 217)',
-    fontWeight: '500'
-  }
-
-  const paragraphStyle = {
-    fontSize: '17px',
-    fontWeight: '400',
-    lineHeight: '27.2px',
-    letterSpacing: 'normal',
-    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    color: 'rgb(126, 131, 133)',
-    marginBottom: '24px'
-  }
-
   return (
-    <div style={pageStyles}>
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '120px 32px' }}>
-        {/* Badge */}
-        <div style={badgeStyle}>
-          Estela / Services / Specifications
-        </div>
-
-        <div style={dividerStyle} />
-
-        {/* Main Title */}
-        <h1 style={titleStyle}>
-          Technical Specifications
-        </h1>
-        <p style={subtitleStyle}>
-          Hardware and software specifications for our standard deployments.
-        </p>
-        
-        <div style={dividerStyle} />
-
-        {/* Compute Infrastructure */}
-        <section style={{ marginBottom: '64px' }}>
-          <h2 style={sectionHeaderStyle}>
-            Compute Infrastructure
-          </h2>
-
-          {/* Standard Compute Node */}
-          <div style={specCardStyle}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              Lenovo ThinkSystem SR650 V3
-            </h3>
-            <p style={{ 
-              fontSize: '1rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '24px',
-              textTransform: 'uppercase' as const,
-              letterSpacing: '0.05em'
-            }}>
-              Standard Compute Node
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <table style={specTableStyle}>
-              <tbody>
-                <tr>
-                  <td style={tableCellStyle}>Processor</td>
-                  <td style={tableValueStyle}>2x AMD EPYC 9354 (32 cores each)</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Total Cores</td>
-                  <td style={tableValueStyle}>64 physical / 128 threads</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Memory</td>
-                  <td style={tableValueStyle}>512GB - 2TB DDR5-4800 ECC</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Storage Bays</td>
-                  <td style={tableValueStyle}>8x 2.5" NVMe U.2</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Network</td>
-                  <td style={tableValueStyle}>4x 25GbE + 2x 100GbE SFP28</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Power Supply</td>
-                  <td style={tableValueStyle}>Redundant 1100W Platinum PSUs</td>
-                </tr>
-                <tr>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Form Factor</td>
-                  <td style={{ ...tableValueStyle, borderBottom: 'none' }}>2U Rack Mount</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          {/* Virtualization Platform */}
-          <div style={specCardStyle}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              VMware vSphere 8.0
-            </h3>
-            <p style={{ 
-              fontSize: '1rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '24px',
-              textTransform: 'uppercase' as const,
-              letterSpacing: '0.05em'
-            }}>
-              Virtualization Platform
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <table style={specTableStyle}>
-              <tbody>
-                <tr>
-                  <td style={tableCellStyle}>Hypervisor</td>
-                  <td style={tableValueStyle}>ESXi 8.0 Update 2</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Management</td>
-                  <td style={tableValueStyle}>vCenter Server 8.0</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Features</td>
-                  <td style={tableValueStyle}>vMotion, DRS, HA, vSAN</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Max VMs/Host</td>
-                  <td style={tableValueStyle}>1,024</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Max vCPU/VM</td>
-                  <td style={tableValueStyle}>768</td>
-                </tr>
-                <tr>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Max RAM/VM</td>
-                  <td style={{ ...tableValueStyle, borderBottom: 'none' }}>24TB</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          {/* Cluster Configurations */}
-          <div style={specCardStyle}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '24px'
-            }}>
-              Cluster Configurations
-            </h3>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <table style={specTableStyle}>
-              <thead>
-                <tr>
-                  <th style={tableHeaderStyle}>Configuration</th>
-                  <th style={tableHeaderStyle}>Nodes</th>
-                  <th style={{ ...tableHeaderStyle, borderRight: 'none' }}>Total Resources</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style={tableCellStyle}>Starter</td>
-                  <td style={tableCellStyle}>3 nodes</td>
-                  <td style={{ ...tableValueStyle, borderRight: 'none' }}>192 cores / 1.5TB</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Standard</td>
-                  <td style={tableCellStyle}>5 nodes</td>
-                  <td style={{ ...tableValueStyle, borderRight: 'none' }}>320 cores / 2.5TB</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Enterprise</td>
-                  <td style={tableCellStyle}>8 nodes</td>
-                  <td style={{ ...tableValueStyle, borderRight: 'none' }}>512 cores / 4TB</td>
-                </tr>
-                <tr>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Custom</td>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Up to 32</td>
-                  <td style={{ ...tableValueStyle, borderRight: 'none', borderBottom: 'none' }}>As required</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <div style={dividerStyle} />
-
-        {/* Storage Systems */}
-        <section style={{ marginBottom: '64px' }}>
-          <h2 style={sectionHeaderStyle}>
-            Storage Systems
-          </h2>
-
-          {/* Enterprise Flash Arrays */}
-          <div style={specCardStyle}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              Synology FS6400 FlashStation
-            </h3>
-            <p style={{ 
-              fontSize: '1rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '24px',
-              textTransform: 'uppercase' as const,
-              letterSpacing: '0.05em'
-            }}>
-              Enterprise Flash Arrays
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <table style={specTableStyle}>
-              <tbody>
-                <tr>
-                  <td style={tableCellStyle}>Drive Bays</td>
-                  <td style={tableValueStyle}>24x 2.5" NVMe SSD</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Max Capacity</td>
-                  <td style={tableValueStyle}>384TB (24x 16TB)</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Memory</td>
-                  <td style={tableValueStyle}>32GB DDR4 ECC (exp. 512GB)</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Cache</td>
-                  <td style={tableValueStyle}>Up to 1TB NVMe read/write</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Network</td>
-                  <td style={tableValueStyle}>4x 25GbE + 2x 10GbE</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Protocols</td>
-                  <td style={tableValueStyle}>SMB, AFP, NFS, iSCSI, FTP</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>RAID Support</td>
-                  <td style={tableValueStyle}>SHR, Basic, JBOD, 0, 1, 5, 6, 10</td>
-                </tr>
-                <tr>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Performance</td>
-                  <td style={{ ...tableValueStyle, borderBottom: 'none' }}>650K+ IOPS / 10GB/s throughput</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          {/* Hybrid Storage */}
-          <div style={specCardStyle}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              Synology SA3610 ActiveProtect
-            </h3>
-            <p style={{ 
-              fontSize: '1rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '24px',
-              textTransform: 'uppercase' as const,
-              letterSpacing: '0.05em'
-            }}>
-              Hybrid Storage Arrays
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <table style={specTableStyle}>
-              <tbody>
-                <tr>
-                  <td style={tableCellStyle}>Drive Bays</td>
-                  <td style={tableValueStyle}>12x 3.5" SATA/SAS</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Max Capacity</td>
-                  <td style={tableValueStyle}>240TB (12x 20TB)</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Memory</td>
-                  <td style={tableValueStyle}>16GB DDR4 ECC (exp. 64GB)</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Cache Slots</td>
-                  <td style={tableValueStyle}>2x M.2 NVMe (up to 960GB each)</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Network</td>
-                  <td style={tableValueStyle}>4x 10GbE RJ45</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Expansion</td>
-                  <td style={tableValueStyle}>Up to 2x RX1217 (36 bays total)</td>
-                </tr>
-                <tr>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Performance</td>
-                  <td style={{ ...tableValueStyle, borderBottom: 'none' }}>226K IOPS / 5.5GB/s sequential</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          {/* Backup & Archive */}
-          <div style={specCardStyle}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              Synology RS2423+ RackStation
-            </h3>
-            <p style={{ 
-              fontSize: '1rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '24px',
-              textTransform: 'uppercase' as const,
-              letterSpacing: '0.05em'
-            }}>
-              Backup & Archive
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <table style={specTableStyle}>
-              <tbody>
-                <tr>
-                  <td style={tableCellStyle}>Drive Bays</td>
-                  <td style={tableValueStyle}>12x 3.5"/2.5" SATA</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Max Capacity</td>
-                  <td style={tableValueStyle}>240TB (12x 20TB)</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Memory</td>
-                  <td style={tableValueStyle}>8GB DDR4 (exp. 32GB)</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Network</td>
-                  <td style={tableValueStyle}>4x 1GbE RJ45</td>
-                </tr>
-                <tr>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Features</td>
-                  <td style={{ ...tableValueStyle, borderBottom: 'none' }}>Active Backup, Snapshots, Cloud Sync, Encryption</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <div style={dividerStyle} />
-
-        {/* Network Infrastructure */}
-        <section style={{ marginBottom: '64px' }}>
-          <h2 style={sectionHeaderStyle}>
-            Network Infrastructure
-          </h2>
-
-          {/* Core Routing */}
-          <div style={specCardStyle}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              UniFi Dream Machine Special Edition
-            </h3>
-            <p style={{ 
-              fontSize: '1rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '24px',
-              textTransform: 'uppercase' as const,
-              letterSpacing: '0.05em'
-            }}>
-              Core Routing & Security
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <table style={specTableStyle}>
-              <tbody>
-                <tr>
-                  <td style={tableCellStyle}>Throughput</td>
-                  <td style={tableValueStyle}>10 Gbps IDS/IPS</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>WAN Ports</td>
-                  <td style={tableValueStyle}>2x 10G SFP+ / 1x 2.5GbE RJ45</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>LAN Ports</td>
-                  <td style={tableValueStyle}>8x GbE RJ45 with PoE+</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Storage</td>
-                  <td style={tableValueStyle}>128GB SSD + HDD bay</td>
-                </tr>
-                <tr>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Features</td>
-                  <td style={{ ...tableValueStyle, borderBottom: 'none' }}>Firewall, VPN, VLAN (4096), Traffic Analytics</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          {/* Core Switching */}
-          <div style={specCardStyle}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              UniFi Switch Pro 48 PoE
-            </h3>
-            <p style={{ 
-              fontSize: '1rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '24px',
-              textTransform: 'uppercase' as const,
-              letterSpacing: '0.05em'
-            }}>
-              Core Switching
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <table style={specTableStyle}>
-              <tbody>
-                <tr>
-                  <td style={tableCellStyle}>Ports</td>
-                  <td style={tableValueStyle}>48x GbE RJ45 PoE+</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>SFP+ Ports</td>
-                  <td style={tableValueStyle}>4x 10G SFP+</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>PoE Budget</td>
-                  <td style={tableValueStyle}>600W (IEEE 802.3at/af/bt)</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Switching</td>
-                  <td style={tableValueStyle}>176 Gbps non-blocking</td>
-                </tr>
-                <tr>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Features</td>
-                  <td style={{ ...tableValueStyle, borderBottom: 'none' }}>Layer 3 routing, Link aggregation, Port isolation</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          {/* Wireless */}
-          <div style={specCardStyle}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              UniFi U7 Pro WiFi 7
-            </h3>
-            <p style={{ 
-              fontSize: '1rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '24px',
-              textTransform: 'uppercase' as const,
-              letterSpacing: '0.05em'
-            }}>
-              Wireless Infrastructure
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <table style={specTableStyle}>
-              <tbody>
-                <tr>
-                  <td style={tableCellStyle}>Standards</td>
-                  <td style={tableValueStyle}>WiFi 7 (802.11be)</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Bands</td>
-                  <td style={tableValueStyle}>Tri-band 2.4/5/6 GHz</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Throughput</td>
-                  <td style={tableValueStyle}>11.5 Gbps aggregate</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Clients</td>
-                  <td style={tableValueStyle}>300+ concurrent</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Coverage</td>
-                  <td style={tableValueStyle}>6,000 sq ft</td>
-                </tr>
-                <tr>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Features</td>
-                  <td style={{ ...tableValueStyle, borderBottom: 'none' }}>Band steering, Guest portal, VLAN per SSID, AI optimization</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <div style={dividerStyle} />
-
-        {/* Security & Monitoring */}
-        <section style={{ marginBottom: '64px' }}>
-          <h2 style={sectionHeaderStyle}>
-            Security & Monitoring
-          </h2>
-
-          {/* Endpoint Protection */}
-          <div style={specCardStyle}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              SentinelOne Singularity Platform
-            </h3>
-            <p style={{ 
-              fontSize: '1rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '24px',
-              textTransform: 'uppercase' as const,
-              letterSpacing: '0.05em'
-            }}>
-              Endpoint Protection
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <table style={specTableStyle}>
-              <tbody>
-                <tr>
-                  <td style={tableCellStyle}>Protection</td>
-                  <td style={tableValueStyle}>AI-powered XDR</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Detection</td>
-                  <td style={tableValueStyle}>&lt; 1ms threat identification</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Response</td>
-                  <td style={tableValueStyle}>Automated remediation</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Coverage</td>
-                  <td style={tableValueStyle}>Windows, macOS, Linux, Cloud</td>
-                </tr>
-                <tr>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Features</td>
-                  <td style={{ ...tableValueStyle, borderBottom: 'none' }}>Behavioral AI, EDR + EPP, Storyline™, 1-click rollback</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          {/* Video Surveillance */}
-          <div style={specCardStyle}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '500',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              color: 'rgb(215, 216, 217)', 
-              marginBottom: '8px'
-            }}>
-              UniFi Protect AI Camera Systems
-            </h3>
-            <p style={{ 
-              fontSize: '1rem',
-              fontFamily: 'GT_America_Mono, monospace',
-              color: 'rgb(126, 131, 133)',
-              marginBottom: '24px',
-              textTransform: 'uppercase' as const,
-              letterSpacing: '0.05em'
-            }}>
-              Video Surveillance
-            </p>
-            <div style={{ borderBottom: '1px solid rgba(126, 131, 133, 0.2)', marginBottom: '24px', paddingBottom: '8px' }}></div>
-
-            <table style={specTableStyle}>
-              <tbody>
-                <tr>
-                  <td style={tableCellStyle}>AI Cameras</td>
-                  <td style={tableValueStyle}>G5 Pro with Smart Detection</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Resolution</td>
-                  <td style={tableValueStyle}>4K (3840 x 2160) @ 30fps</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Detection</td>
-                  <td style={tableValueStyle}>Person, Vehicle, License plate, Package</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Storage</td>
-                  <td style={tableValueStyle}>Local NVR + cloud backup</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Retention</td>
-                  <td style={tableValueStyle}>30-90 days continuous</td>
-                </tr>
-                <tr>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Features</td>
-                  <td style={{ ...tableValueStyle, borderBottom: 'none' }}>Smart motion zones, Privacy masking, Event notifications</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <div style={dividerStyle} />
-
-        {/* Service Level Agreements */}
-        <section style={{ marginBottom: '64px' }}>
-          <h2 style={sectionHeaderStyle}>
-            Service Level Agreements
-          </h2>
-
-          <div style={specCardStyle}>
-            <table style={specTableStyle}>
-              <thead>
-                <tr>
-                  <th style={tableHeaderStyle}>Service Level</th>
-                  <th style={tableHeaderStyle}>Essential</th>
-                  <th style={tableHeaderStyle}>Professional</th>
-                  <th style={{ ...tableHeaderStyle, borderRight: 'none' }}>Enterprise</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style={tableCellStyle}>Availability</td>
-                  <td style={tableCellStyle}>99.5%</td>
-                  <td style={tableCellStyle}>99.9%</td>
-                  <td style={{ ...tableValueStyle, borderRight: 'none' }}>99.99%</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Response Time</td>
-                  <td style={tableCellStyle}>24 hours</td>
-                  <td style={tableCellStyle}>4 hours</td>
-                  <td style={{ ...tableValueStyle, borderRight: 'none' }}>1 hour</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Resolution Time</td>
-                  <td style={tableCellStyle}>48 hours</td>
-                  <td style={tableCellStyle}>24 hours</td>
-                  <td style={{ ...tableValueStyle, borderRight: 'none' }}>4 hours</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Support Hours</td>
-                  <td style={tableCellStyle}>Business</td>
-                  <td style={tableCellStyle}>Extended</td>
-                  <td style={{ ...tableValueStyle, borderRight: 'none' }}>24/7/365</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>On-site Visits</td>
-                  <td style={tableCellStyle}>As needed</td>
-                  <td style={tableCellStyle}>Monthly</td>
-                  <td style={{ ...tableValueStyle, borderRight: 'none' }}>Weekly</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Health Checks</td>
-                  <td style={tableCellStyle}>Quarterly</td>
-                  <td style={tableCellStyle}>Monthly</td>
-                  <td style={{ ...tableValueStyle, borderRight: 'none' }}>Weekly</td>
-                </tr>
-                <tr>
-                  <td style={tableCellStyle}>Updates</td>
-                  <td style={tableCellStyle}>Quarterly</td>
-                  <td style={tableCellStyle}>Monthly</td>
-                  <td style={{ ...tableValueStyle, borderRight: 'none' }}>Immediate</td>
-                </tr>
-                <tr>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Dedicated Eng.</td>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>No</td>
-                  <td style={{ ...tableCellStyle, borderBottom: 'none' }}>Shared</td>
-                  <td style={{ ...tableValueStyle, borderRight: 'none', borderBottom: 'none' }}>Yes</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <div style={dividerStyle} />
-
-        {/* Bottom CTA */}
-        <section style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <p style={{ 
-            ...paragraphStyle, 
-            fontSize: '1.25rem', 
-            fontWeight: '500',
-            color: 'rgb(215, 216, 217)',
-            marginBottom: '16px'
-          }}>
-            Need a custom configuration?
-          </p>
-
-          <p style={{ 
-            ...paragraphStyle, 
-            fontSize: '1rem',
-            marginBottom: '32px'
-          }}>
-            Every organization is unique. Let's design the perfect infrastructure for your specific needs.
-          </p>
-
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
-            <Link 
-              href="/contact"
-              style={{
-                padding: '12px 24px',
-                backgroundColor: 'rgb(215, 216, 217)',
-                color: 'rgb(8, 9, 10)',
-                textDecoration: 'none',
-                borderRadius: '6px',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                fontWeight: '500',
-                fontSize: '0.95rem',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgb(126, 131, 133)'
-                e.currentTarget.style.color = 'rgb(215, 216, 217)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgb(215, 216, 217)'
-                e.currentTarget.style.color = 'rgb(8, 9, 10)'
-              }}
-            >
-              Request Custom Specs
-            </Link>
-            <Link 
-              href="/specifications.pdf"
-              style={{
-                padding: '12px 24px',
-                backgroundColor: 'transparent',
-                color: 'rgb(126, 131, 133)',
-                textDecoration: 'none',
-                border: '1px solid rgb(126, 131, 133)',
-                borderRadius: '6px',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                fontWeight: '500',
-                fontSize: '0.95rem',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgb(126, 131, 133)'
-                e.currentTarget.style.color = 'rgb(215, 216, 217)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent'
-                e.currentTarget.style.color = 'rgb(126, 131, 133)'
-              }}
-            >
-              Download Spec Sheet PDF
-            </Link>
-          </div>
-        </section>
-
-        <div style={dividerStyle} />
+    <>
+      <div className="sticky top-0 z-20">
+        <div className="pointerEvents-[none] absolute top-0 right-0 bottom-0 left-0 border-b bg-[#080f11d9] backdrop-[var(--tw-backdrop-sepia)] backdrop-[var(--tw-backdrop-saturate)] backdrop-[var(--tw-backdrop-opacity)] backdrop-[var(--tw-backdrop-invert)] backdrop-[var(--tw-backdrop-hue-rotate)] backdrop-[var(--tw-backdrop-grayscale)] backdrop-[var(--tw-backdrop-contrast)] backdrop-[var(--tw-backdrop-brightness)] backdrop-[var(--tw-backdrop-blur)] transition-opacity ease-[cubic-bezier(.4,0,.2,1)] duration-[.15s] border-b-[var(--stroke-secondary-p3)]"></div>
+        <nav dir="ltr" className="w-[100%]">
+          <div className="absolute left-0 right-0 top-[54px] flex shrink items-center justify-center transition-transform ease-[cubic-bezier(.4,0,.2,1)] duration-[.1s]"></div>
+        </nav>
       </div>
-    </div>
+      <main className="mt-0">
+        <div className="flex flex-col gap-20 min-[600px]:gap-28 min-[900px]:gap-48">
+          <section>
+            <div className="border-b border-b-[var(--stroke-default-p3)]"></div>
+          </section>
+          <section>
+            <div className="w-[100%] px-5 min-[600px]:px-10">
+              <div className="m-auto max-w-[1200px]">
+                <h1 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[600px]:text-4xl min-[1000px]:text-[3.125rem] font-normal min-[600px]:font-normal min-[1000px]:font-normal mb-6 min-[600px]:mb-10 min-[1000px]:mb-14 text-center min-[600px]:text-left font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[600px]:leading-[2.625rem] min-[1000px]:leading-[110%] tracking-wide min-[600px]:tracking-normal min-[1000px]:tracking-normal min-[800px]:pr-6">
+                  Technical Specifications
+                  <br />
+                  <span style={{color: 'color(display-p3 0.4941 0.5137 0.5216)', fontSize: '36px', lineHeight: '42px', fontWeight: '400', fontStyle: 'normal'}}>
+                    Hardware and software specifications for our standard deployments.
+                  </span>
+                </h1>
+              </div>
+            </div>
+            <div className="relative border-t border-[var(--stroke-default-p3)] border-b min-[900px]:border-b-[0px]">
+              {/* Compute Infrastructure */}
+              <div className="w-[100%] px-5 min-[600px]:px-10 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))]">
+                <div className="m-auto max-w-[1200px]">
+                  <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
+                    Compute Infrastructure
+                  </h2>
+                </div>
+              </div>
+
+              {/* Standard Compute Node */}
+              <div className="mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[7rem]">
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="m-auto max-w-[1200px]">
+                    <h2 className="text-balance textWrapStyle-[balance] m-0 mb-4 text-[#7e8385] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">Specifications</h2>
+                  </div>
+                </div>
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="py-8 m-auto max-w-[1200px] border bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-1)] rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Processor</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">2x AMD EPYC 9354 (32 cores each)</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Total Cores</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">64 physical / 128 threads</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Memory</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">512GB - 2TB DDR5-4800 ECC</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Storage Bays</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">8x 2.5" NVMe U.2</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Network</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">4x 25GbE + 2x 100GbE SFP28</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Power Supply</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Redundant 1100W Platinum PSUs</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Form Factor</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">2U Rack Mount</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Virtualization Platform */}
+              <div className="mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[7rem]">
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="m-auto max-w-[1200px]">
+                    <h2 className="text-balance textWrapStyle-[balance] m-0 mb-4 text-[#7e8385] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">VMware vSphere 8.0</h2>
+                  </div>
+                </div>
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="py-8 m-auto max-w-[1200px] border bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-1)] rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Hypervisor</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">ESXi 8.0 Update 2</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Management</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">vCenter Server 8.0</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Features</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">vMotion, DRS, HA, vSAN</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Max VMs/Host</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">1,024</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Max vCPU/VM</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">768</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Max RAM/VM</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">24TB</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{
+                height: '1px',
+                backgroundColor: 'rgba(126, 131, 133, 0.3)',
+                marginBottom: '48px'
+              }} />
+
+              {/* Storage Systems */}
+              <div className="w-[100%] px-5 min-[600px]:px-10 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))]">
+                <div className="m-auto max-w-[1200px]">
+                  <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
+                    Storage Systems
+                  </h2>
+                </div>
+              </div>
+
+              {/* Enterprise Flash Arrays */}
+              <div className="mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[7rem]">
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="m-auto max-w-[1200px]">
+                    <h2 className="text-balance textWrapStyle-[balance] m-0 mb-4 text-[#7e8385] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">Synology FS6400 FlashStation</h2>
+                  </div>
+                </div>
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="py-8 m-auto max-w-[1200px] border bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-1)] rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Drive Bays</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">24x 2.5" NVMe SSD</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Max Capacity</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">384TB (24x 16TB)</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Memory</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">32GB DDR4 ECC (exp. 512GB)</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Cache</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Up to 1TB NVMe read/write</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Network</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">4x 25GbE + 2x 10GbE</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Protocols</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">SMB, AFP, NFS, iSCSI, FTP</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">RAID Support</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">SHR, Basic, JBOD, 0, 1, 5, 6, 10</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Performance</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">650K+ IOPS / 10GB/s throughput</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hybrid Storage */}
+              <div className="mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[7rem]">
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="m-auto max-w-[1200px]">
+                    <h2 className="text-balance textWrapStyle-[balance] m-0 mb-4 text-[#7e8385] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">Synology SA3610 ActiveProtect</h2>
+                  </div>
+                </div>
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="py-8 m-auto max-w-[1200px] border bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-1)] rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Drive Bays</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">12x 3.5" SATA/SAS</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Max Capacity</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">240TB (12x 20TB)</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Memory</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">16GB DDR4 ECC (exp. 64GB)</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Cache Slots</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">2x M.2 NVMe (up to 960GB each)</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Network</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">4x 10GbE RJ45</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Expansion</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Up to 2x RX1217 (36 bays total)</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Performance</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">226K IOPS / 5.5GB/s sequential</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Backup & Archive */}
+              <div className="mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[7rem]">
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="m-auto max-w-[1200px]">
+                    <h2 className="text-balance textWrapStyle-[balance] m-0 mb-4 text-[#7e8385] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">Synology RS2423+ RackStation</h2>
+                  </div>
+                </div>
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="py-8 m-auto max-w-[1200px] border bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-1)] rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Drive Bays</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">12x 3.5"/2.5" SATA</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Max Capacity</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">240TB (12x 20TB)</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Memory</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">8GB DDR4 (exp. 32GB)</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Network</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">4x 1GbE RJ45</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Features</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Active Backup, Snapshots, Cloud Sync, Encryption</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{
+                height: '1px',
+                backgroundColor: 'rgba(126, 131, 133, 0.3)',
+                marginBottom: '48px'
+              }} />
+
+              {/* Network Infrastructure */}
+              <div className="w-[100%] px-5 min-[600px]:px-10 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))]">
+                <div className="m-auto max-w-[1200px]">
+                  <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
+                    Network Infrastructure
+                  </h2>
+                </div>
+              </div>
+
+              {/* Core Routing */}
+              <div className="mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[7rem]">
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="m-auto max-w-[1200px]">
+                    <h2 className="text-balance textWrapStyle-[balance] m-0 mb-4 text-[#7e8385] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">UniFi Dream Machine Special Edition</h2>
+                  </div>
+                </div>
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="py-8 m-auto max-w-[1200px] border bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-1)] rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Throughput</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">10 Gbps IDS/IPS</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">WAN Ports</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">2x 10G SFP+ / 1x 2.5GbE RJ45</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">LAN Ports</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">8x GbE RJ45 with PoE+</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Storage</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">128GB SSD + HDD bay</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Features</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Firewall, VPN, VLAN (4096), Traffic Analytics</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Core Switching */}
+              <div className="mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[7rem]">
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="m-auto max-w-[1200px]">
+                    <h2 className="text-balance textWrapStyle-[balance] m-0 mb-4 text-[#7e8385] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">UniFi Switch Pro 48 PoE</h2>
+                  </div>
+                </div>
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="py-8 m-auto max-w-[1200px] border bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-1)] rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Ports</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">48x GbE RJ45 PoE+</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">SFP+ Ports</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">4x 10G SFP+</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">PoE Budget</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">600W (IEEE 802.3at/af/bt)</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Switching</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">176 Gbps non-blocking</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Features</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Layer 3 routing, Link aggregation, Port isolation</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Wireless */}
+              <div className="mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[7rem]">
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="m-auto max-w-[1200px]">
+                    <h2 className="text-balance textWrapStyle-[balance] m-0 mb-4 text-[#7e8385] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">UniFi U7 Pro WiFi 7</h2>
+                  </div>
+                </div>
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="py-8 m-auto max-w-[1200px] border bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-1)] rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Standards</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">WiFi 7 (802.11be)</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Bands</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Tri-band 2.4/5/6 GHz</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Throughput</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">11.5 Gbps aggregate</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Clients</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">300+ concurrent</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Coverage</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">6,000 sq ft</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Features</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Band steering, Guest portal, VLAN per SSID, AI optimization</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{
+                height: '1px',
+                backgroundColor: 'rgba(126, 131, 133, 0.3)',
+                marginBottom: '48px'
+              }} />
+
+              {/* Security & Monitoring */}
+              <div className="w-[100%] px-5 min-[600px]:px-10 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))]">
+                <div className="m-auto max-w-[1200px]">
+                  <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
+                    Security & Monitoring
+                  </h2>
+                </div>
+              </div>
+
+              {/* Endpoint Protection */}
+              <div className="mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[7rem]">
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="m-auto max-w-[1200px]">
+                    <h2 className="text-balance textWrapStyle-[balance] m-0 mb-4 text-[#7e8385] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">SentinelOne Singularity Platform</h2>
+                  </div>
+                </div>
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="py-8 m-auto max-w-[1200px] border bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-1)] rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Protection</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">AI-powered XDR</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Detection</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">&lt; 1ms threat identification</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Response</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Automated remediation</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Coverage</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Windows, macOS, Linux, Cloud</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Features</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Behavioral AI, EDR + EPP, Storyline™, 1-click rollback</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Video Surveillance */}
+              <div className="mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[7rem]">
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="m-auto max-w-[1200px]">
+                    <h2 className="text-balance textWrapStyle-[balance] m-0 mb-4 text-[#7e8385] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">UniFi Protect AI Camera Systems</h2>
+                  </div>
+                </div>
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="py-8 m-auto max-w-[1200px] border bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-1)] rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">AI Cameras</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">G5 Pro with Smart Detection</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Resolution</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">4K (3840 x 2160) @ 30fps</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Detection</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Person, Vehicle, License plate, Package</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Storage</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Local NVR + cloud backup</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Retention</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">30-90 days continuous</div>
+                    </div>
+                    <div className="my-3 w-[100%] h-[1px] border-b border-b-[var(--stroke-secondary-p3)]"></div>
+                    <div className="px-4 min-[600px]:px-6 my-4 min-[600px]:my-0 min-[600px]:flex items-baseline">
+                      <div className="pl-0 basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.625rem] text-lg tracking-wide text-[var(--content-secondary-p3)]">Features</div>
+                      <div className="basis-1/2 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] containerType-[inline-size] min-[600px]:!pl-0">Smart motion zones, Privacy masking, Event notifications</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{
+                height: '1px',
+                backgroundColor: 'rgba(126, 131, 133, 0.3)',
+                marginBottom: '48px'
+              }} />
+
+
+
+              {/* Bottom CTA */}
+              <div className="mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(5rem_*_var(--tw-space-y-reverse))] min-[1000px]:mb-[calc(9rem_*_var(--tw-space-y-reverse))]">
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="relative m-auto max-w-[1200px] my-4 min-[900px]:my-12">
+                    <div className="absolute top-[-8rem] bottom-[-8rem] left-0 right-0 z-0 flex justify-between">
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="h-[100%] w-[1px] bg-[var(--surface-secondary-p3)]"></div>
+                      <div className="absolute z-0 top-0 right-0 bottom-0 left-0">
+                        <div className="absolute w-[100%] bottom-0 h-24 bg-[linear-gradient(0deg,var(--background),transparent)]"></div>
+                        <div className="absolute w-[100%] top-0 h-24 [transform:translate(var(--tw-translate-x)_var(--tw-translate-y)_rotate(var(--tw-rotate)_skew(var(--tw-skew-x)_skewY(var(--tw-skew-y)_scaleX(var(--tw-scale-x)_scaleY(var(--tw-scale-y)] bg-[linear-gradient(0deg,var(--background),transparent)]"></div>
+                      </div>
+                    </div>
+                    <div className="relative flex items-center justify-between gap-4 border p-4 bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-2)] min-[600px]:px-10 py-6 min-[600px]:py-8 rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-lg)]">
+                      <div>
+                        <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-lg min-[500px]:text-[1.5625rem] min-[900px]:text-4xl font-normal min-[500px]:font-normal min-[900px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[500px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.625rem] min-[500px]:leading-8 min-[900px]:leading-[2.625rem] tracking-wide min-[500px]:tracking-wide min-[900px]:tracking-normal">
+                          Hardware That Scales With You
+                        </h2>
+                      </div>
+                      <div className="flex flex-col gap-2 text-center">
+                        <a href="/contact" className="px-3 items-center text-[var(--content-secondary-p3)] [text-decoration:inherit] inline-flex h-8 justify-center rounded-[var(--border-radius)] align-top font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider uppercase [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] shadow-[var(--elevation-1)] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:rounded-[var(--border-radius)] after:border after:border-current after:opacity-100 after:text-[var(--base-neutral-300)] hover:bg-[var(--surface-hover-p3)]">
+                          CONTACT
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </>
   )
 }

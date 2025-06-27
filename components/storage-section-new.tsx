@@ -283,7 +283,7 @@ export const StorageSectionNew = () => {
           </div>
           <div className="relative col-start-1 overflow-hidden border bg-card border-border col-span-12 min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg min-[600px]:rounded-xl">
             <Image
-              src="https://oxide.computer/img/oxide-storage-openzfs.svg"
+              src="/img/oxide-storage-create-snapshot.svg"
               width={516}
               height={371}
               alt="OpenZFS storage diagram"
@@ -317,7 +317,7 @@ export const StorageSectionNew = () => {
           </div>
           <div className="relative overflow-hidden border border-border col-span-12 min-[800px]:col-start-7 min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg min-[600px]:rounded-xl">
             <Image
-              src="https://oxide.computer/img/oxide-storage-errors.svg"
+              src="/img/oxide-storage-create-snapshot.svg"
               width={426}
               height={512}
               alt="Storage error monitoring visualization"
