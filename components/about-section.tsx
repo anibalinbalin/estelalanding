@@ -34,13 +34,13 @@ export function AboutSection() {
           <p className="text-sm font-mono text-muted-foreground uppercase tracking-wide mb-6">
             About Estela
           </p>
-          <h1 className="text-4xl font-normal leading-tight mb-4">
+          <h1 className="text-4xl font-normal leading-tight mb-2">
             Technology Consulting with Purpose and Precision
           </h1>
-          <p className="text-lg leading-relaxed mb-6">
+          <p className="text-lg leading-relaxed mb-4 min-[700px]:mb-6">
             No buzzwords. No overselling. Just technology that solves real problems.
           </p>
-          <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          <p className="text-lg leading-relaxed text-muted-foreground mb-4 min-[700px]:mb-6">
             Founded in 2015, we've spent nearly a decade proving that technology consulting doesn't have to be complicated, expensive, or disappointing.
           </p>
           <div className="h-px bg-border mb-12" />

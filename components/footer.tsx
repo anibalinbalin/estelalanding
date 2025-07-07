@@ -17,6 +17,7 @@ export const Footer = () => {
   }, []);
 
   const logoSrc = mounted && resolvedTheme === "dark" ? "/logos/logo_blanco.png" : "/logos/logo_original.png";
+  const borderColor = mounted && resolvedTheme === "dark" ? "#1c2225" : "#e5e5e5";
 
   const content = {
     en: {
@@ -61,8 +62,8 @@ export const Footer = () => {
         company: {
           title: "Company",
           items: [
-            { title: "About", href: "/about" },
-            { title: "Work", href: "/work" },
+            { title: "About", href: "/company/about" },
+            { title: "Work", href: "/company/work" },
             { title: "Team", href: "/company/team" },
             { title: "Partners", href: "/company/partners" },
             { title: "Contact", href: "/contact" }
@@ -112,8 +113,8 @@ export const Footer = () => {
         company: {
           title: "Empresa",
           items: [
-            { title: "Acerca de", href: "/about" },
-            { title: "Trabajo", href: "/work" },
+            { title: "Acerca de", href: "/company/about" },
+            { title: "Trabajo", href: "/company/work" },
             { title: "Equipo", href: "/company/team" },
             { title: "Socios", href: "/company/partners" },
             { title: "Contacto", href: "/contact" }
@@ -126,39 +127,50 @@ export const Footer = () => {
   const t = content[language];
 
   return (
-    <div className="m-auto max-w-[1200px] py-10 grid grid-cols-12 gap-6 min-[600px]:gap-6 min-[1000px]:gap-8 px-5 min-[600px]:px-10 mt-28 border-t" style={{ borderTopColor: 'var(--stroke-secondary-p3)' }}>
+    <div 
+      className="m-auto max-w-[1200px] py-10 grid grid-cols-12 gap-6 min-[600px]:gap-6 min-[1000px]:gap-8 px-5 min-[600px]:px-10 mt-28 border-t" 
+      style={{ 
+        '--footer-border-color': borderColor,
+        borderTopColor: 'var(--footer-border-color)'
+      } as React.CSSProperties}
+    >
         
         {/* Company Info Section */}
         <div className="col-span-12 min-[800px]:col-span-6 mb-8">
-          <div className="flex gap-8 flex-col items-start">
-            <div className="flex gap-2 flex-col">
-              <div className="mb-2">
-                <Link href="/" className="flex items-center">
-                  <Image
-                    src={logoSrc}
-                    alt="Estela Logo"
-                    width={317}
-                    height={91}
-                    className="h-[6.6rem] w-auto"
-                  />
-                </Link>
-              </div>
-              <p 
-                className="text-lg max-w-lg leading-relaxed tracking-tight text-left"
-                style={{
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  color: 'var(--content-secondary-p3)'
-                }}
-              >
-                {t.description}
-              </p>
-            </div>
-            
-            <div 
-              className="flex flex-col text-sm max-w-lg leading-relaxed tracking-tight text-left"
+          {/* Logo Section */}
+          <div className="mb-8">
+            <Link href="/" className="flex items-center">
+              <Image
+                src={logoSrc}
+                alt="Estela Logo"
+                width={317}
+                height={91}
+                className="h-[5.61rem] sm:h-[6.6rem] w-auto"
+              />
+            </Link>
+          </div>
+          
+          {/* Content aligned with navigation headers */}
+          <div className="flex flex-col gap-8">
+            {/* Description - aligned with nav headers */}
+            <p 
+              className="text-lg max-w-lg leading-relaxed tracking-tight text-left"
               style={{
                 fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'var(--content-secondary-p3)'
+                color: 'var(--content-secondary-p3)',
+                marginTop: '-0.125rem' // Fine-tune alignment with nav headers
+              }}
+            >
+              {t.description}
+            </p>
+            
+            {/* Address and Contact */}            <div
+              style={{
+                color: 'var(--content-secondary-p3)',
+                fontFamily: 'GT_America_Mono, monospace',
+                fontFeatureSettings: '"ss02" on, "ss03" on, "ss09" on, "ss06" on, "ss07" on, "ss08" on, "calt" off',
+                fontSize: '14px',
+                lineHeight: '18px'
               }}
             >
               <Link 
@@ -285,10 +297,10 @@ export const Footer = () => {
 
         {/* Partners Section */}
         <div 
-          className="col-span-12 border-t border-b"
-          style={{ borderTopColor: 'var(--stroke-secondary-p3)', borderBottomColor: 'var(--stroke-secondary-p3)' }}
+          className="col-span-12"
+          style={{ borderTopColor: 'var(--footer-border-color)', borderBottomColor: 'var(--footer-border-color)' }}
         >
-          <div className="py-4 text-center">
+          <div className="text-center">
             <p 
               className="text-sm font-normal leading-[1.125rem] tracking-wider"
               style={{
@@ -313,8 +325,8 @@ export const Footer = () => {
 
         {/* Copyright Section */}
         <div 
-          className="col-span-12 border-t border-b"
-          style={{ borderTopColor: 'var(--stroke-secondary-p3)', borderBottomColor: 'var(--stroke-secondary-p3)' }}
+          className="col-span-12 border-t"
+          style={{ borderTopColor: 'var(--footer-border-color)', borderBottomColor: 'var(--footer-border-color)' }}
         >
           <div className="py-4 text-center">
             <p 

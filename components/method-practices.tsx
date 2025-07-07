@@ -2,8 +2,12 @@
 
 import { Link } from 'next-view-transitions'
 import CustomVerticalBarsNoise from '@/components/ui/custom-vertical-bars-noise'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
+import { useTheme } from 'next-themes'
 
 export function MethodPractices() {
+  const { resolvedTheme } = useTheme()
+  
   const practices = [
     {
       number: '4.1',
@@ -133,18 +137,13 @@ export function MethodPractices() {
         padding: '120px 32px'
       }}>
         <div style={{ marginBottom: '32px' }}>
-          <div style={{
-            fontSize: '0.875rem',
-            fontWeight: '400',
-            lineHeight: '1.5rem',
-            letterSpacing: '0.05em',
-            textTransform: 'uppercase' as const,
-            fontFamily: 'GT_America_Mono, monospace',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '24px'
-          }}>
-            Estela / Method / Practices
-          </div>
+          <Breadcrumb 
+            items={[
+              { label: 'Estela', href: '/' },
+              { label: 'Method', href: '/method' },
+              { label: 'Practices' }
+            ]} 
+          />
           
           <div style={{ textAlign: 'center', marginBottom: '24px' }}>
             <div style={{
@@ -154,7 +153,7 @@ export function MethodPractices() {
               width: '40px',
               height: '40px',
               borderRadius: '50%',
-              backgroundColor: '#1a2224',
+              backgroundColor: 'var(--step-indicator-p3)',
               color: '#fff',
               fontSize: '1.125rem', 
               fontFamily: 'GT_America_Mono, monospace'
@@ -178,7 +177,6 @@ export function MethodPractices() {
           
           <div style={{
             height: '1px',
-            backgroundColor: 'var(--border)',
             marginBottom: '48px'
           }} />
 
@@ -198,19 +196,22 @@ export function MethodPractices() {
             position: 'relative',
             marginBottom: '48px',
             borderRadius: '8px',
-            border: '1px solid var(--border)',
+            border: resolvedTheme === 'light' ? '1px solid #d5d5d5' : '1px solid var(--border)',
             height: '300px',
             width: '100%',
             overflow: 'hidden'
           }}>
-            <CustomVerticalBarsNoise />
+            <CustomVerticalBarsNoise 
+              backgroundColor={resolvedTheme === 'light' ? '#f5f5f5' : '#3d3019'}
+              pressedBackgroundColor={resolvedTheme === 'light' ? '#e0e0e0' : '#4a3a20'}
+              lineColor={resolvedTheme === 'light' ? { r: 102, g: 102, b: 102 } : { r: 245, g: 185, b: 68 }}
+            />
           </div>
         </div>
 
         <div style={{
           height: '1px',
-          backgroundColor: 'var(--border)',
-          marginBottom: '48px'
+            marginBottom: '48px'
         }} />
 
         {practices.map((practice, index) => (
@@ -307,8 +308,7 @@ export function MethodPractices() {
             {index < practices.length - 1 && (
               <div style={{
                 height: '1px',
-                backgroundColor: 'var(--border)',
-                marginBottom: '48px'
+            marginBottom: '48px'
               }} />
             )}
           </div>
@@ -316,8 +316,7 @@ export function MethodPractices() {
         
         <div style={{
           height: '1px',
-          backgroundColor: 'var(--border)',
-          marginBottom: '48px'
+            marginBottom: '48px'
         }} />
 
         <section style={{ textAlign: 'center', marginBottom: '48px' }}>
@@ -350,14 +349,13 @@ export function MethodPractices() {
             color: 'var(--foreground)',
             marginBottom: '16px'
           }}>
-            Making technology work for people.
+
           </p>
         </section>
 
         <div style={{
           height: '1px',
-          backgroundColor: 'var(--border)',
-          marginBottom: '48px'
+            marginBottom: '48px'
         }} />
 
         <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>

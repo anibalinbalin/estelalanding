@@ -33,7 +33,7 @@ export function NetworksServersAsciiArt({ isVisible = true, className = '' }: Ne
     for (let y = 0; y < height; y++) {
       grid[y] = []
       for (let x = 0; x < width; x++) {
-        grid[y][x] = { char: ' ', color: '#f5b944' }
+        grid[y][x] = { char: ' ', color: 'var(--ascii-foreground-p3)' }
       }
     }
     
@@ -42,7 +42,7 @@ export function NetworksServersAsciiArt({ isVisible = true, className = '' }: Ne
       if (x >= 0 && x < width && y >= 0 && y < height) {
         grid[y][x] = {
           char,
-          color: useContrastColor ? '#ebba5a' : '#f5b944'
+          color: useContrastColor ? 'var(--ascii-foreground-p3)' : 'var(--ascii-foreground-p3)'
         }
       }
     }
@@ -215,7 +215,7 @@ export function NetworksServersAsciiArt({ isVisible = true, className = '' }: Ne
         justifyContent: 'center',
         alignItems: 'center',
         overflow: 'hidden',
-        color: '#f5b944'
+        color: 'var(--ascii-foreground-p3)'
       }}
     >
       <div

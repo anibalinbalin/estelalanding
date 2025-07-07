@@ -191,12 +191,14 @@ export function ContactSection() {
                   />
                 </div>
                 
-                <button
-                  type="submit"
-                  className="w-full bg-[var(--content-accent-p3)] text-white py-3 px-6 rounded-lg font-medium hover:bg-[var(--content-accent-secondary-p3)] transition-colors"
-                >
-                  Submit
-                </button>
+                <div className="flex flex-col gap-2 text-center">
+                  <button
+                    type="submit"
+                    className="px-3 items-center text-[var(--content-secondary-p3)] [text-decoration:inherit] inline-flex h-8 justify-center rounded-[var(--border-radius)] align-top font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider uppercase [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] shadow-[var(--elevation-1)] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:rounded-[var(--border-radius)] after:border after:border-current after:opacity-100 after:text-[var(--stroke-secondary-p3)] hover:bg-[var(--surface-hover-p3)] w-full"
+                  >
+                    SUBMIT
+                  </button>
+                </div>
               </form>
             </div>
             
@@ -385,7 +387,7 @@ export function ContactSection() {
                 <a href="/method" className="bg-[var(--surface-tertiary-p3)] border border-[var(--stroke-default-p3)] text-[var(--content-raise-p3)] py-3 px-6 rounded-lg font-medium hover:bg-[var(--surface-secondary-p3)] transition-colors">
                   Read Our Method
                 </a>
-                <a href="/work" className="bg-[var(--surface-tertiary-p3)] border border-[var(--stroke-default-p3)] text-[var(--content-raise-p3)] py-3 px-6 rounded-lg font-medium hover:bg-[var(--surface-secondary-p3)] transition-colors">
+                <a href="/company/work" className="bg-[var(--surface-tertiary-p3)] border border-[var(--stroke-default-p3)] text-[var(--content-raise-p3)] py-3 px-6 rounded-lg font-medium hover:bg-[var(--surface-secondary-p3)] transition-colors">
                   View Our Work
                 </a>
                 <a href="/company/team" className="bg-[var(--surface-tertiary-p3)] border border-[var(--stroke-default-p3)] text-[var(--content-raise-p3)] py-3 px-6 rounded-lg font-medium hover:bg-[var(--surface-secondary-p3)] transition-colors">

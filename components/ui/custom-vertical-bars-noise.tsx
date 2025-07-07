@@ -2,7 +2,17 @@
 
 import { useEffect, useRef, useCallback } from 'react';
 
-const CustomVerticalBarsNoise = () => {
+interface CustomVerticalBarsNoiseProps {
+  backgroundColor?: string;
+  pressedBackgroundColor?: string;
+  lineColor?: { r: number; g: number; b: number };
+}
+
+const CustomVerticalBarsNoise = ({ 
+  backgroundColor = '#3d3019',
+  pressedBackgroundColor = '#4a3a20',
+  lineColor = { r: 245, g: 185, b: 68 }
+}: CustomVerticalBarsNoiseProps = {}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const timeRef = useRef(0);
   const animationFrameId = useRef<number | null>(null);
@@ -73,11 +83,11 @@ const CustomVerticalBarsNoise = () => {
       );
       
       if (mouseRef.current.isPressed) {
-        bgGradient.addColorStop(0, '#4a3a20');
-        bgGradient.addColorStop(1, '#3d3019');
+        bgGradient.addColorStop(0, pressedBackgroundColor);
+        bgGradient.addColorStop(1, backgroundColor);
       } else {
-        bgGradient.addColorStop(0, '#3d3019');
-        bgGradient.addColorStop(1, '#3d3019');
+        bgGradient.addColorStop(0, backgroundColor);
+        bgGradient.addColorStop(1, backgroundColor);
       }
       
       ctx.fillStyle = bgGradient;
@@ -94,7 +104,7 @@ const CustomVerticalBarsNoise = () => {
           Math.max(0.2, 1 - lineDistFromMouse / 200) : 0.4;
         
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(245, 185, 68, ${lineAlpha})`;
+        ctx.strokeStyle = `rgba(${lineColor.r}, ${lineColor.g}, ${lineColor.b}, ${lineAlpha})`;
         ctx.lineWidth = mouseRef.current.isPressed && lineDistFromMouse < 50 ? 2 : 1;
         ctx.moveTo(0, y);
         ctx.lineTo(canvas.width, y);
@@ -125,7 +135,7 @@ const CustomVerticalBarsNoise = () => {
             const alpha = mouseRef.current.isPressed ? 
               Math.min(1, 0.6 + mouseProximity * 0.4) : 1;
             
-            ctx.fillStyle = `rgba(245, 185, 68, ${alpha})`;
+            ctx.fillStyle = `rgba(${lineColor.r}, ${lineColor.g}, ${lineColor.b}, ${alpha})`;
             ctx.fillRect(animatedX - barWidth/2, y - barHeight/2, barWidth, barHeight);
           }
         }
@@ -150,7 +160,7 @@ const CustomVerticalBarsNoise = () => {
       canvas.removeEventListener('mouseleave', handleMouseLeave);
       timeRef.current = 0;
     };
-  }, [handleMouseMove, handleMouseDown, handleMouseUp, handleMouseLeave]);
+  }, [handleMouseMove, handleMouseDown, handleMouseUp, handleMouseLeave, backgroundColor, pressedBackgroundColor, lineColor]);
 
   return (
     <canvas 

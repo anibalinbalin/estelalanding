@@ -49,13 +49,13 @@ export function TeamSection() {
           <p className="text-sm font-mono text-muted-foreground uppercase tracking-wide mb-6">
             Our Team
           </p>
-          <h1 className="text-4xl font-normal leading-tight mb-4">
+          <h1 className="text-4xl font-normal leading-tight mb-2">
             The People Behind Estela
           </h1>
-          <p className="text-lg leading-relaxed mb-6">
+          <p className="text-lg leading-relaxed mb-4 min-[700px]:mb-6">
             Experience. Expertise. Excellence.
           </p>
-          <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+          <p className="text-lg leading-relaxed text-muted-foreground mb-4 min-[700px]:mb-6">
             Small team. Big experience. Global reach.
           </p>
           <div className="h-px bg-border mb-12" />
@@ -279,7 +279,7 @@ export function TeamSection() {
               Start a Conversation
             </Link>
             <Link 
-              href="/work"
+              href="/company/work"
               className="px-6 py-3 bg-transparent text-muted-foreground border border-muted-foreground rounded-md font-medium text-sm hover:bg-muted-foreground hover:text-background transition-colors"
             >
               See Our Work

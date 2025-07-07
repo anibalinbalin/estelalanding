@@ -18,7 +18,7 @@ export const TrustedBy = () => {
       title: "Trusted by market leaders"
     },
     es: {
-      title: "Confianza de líderes del mercado"
+      title: "Guiando a los referentes en su área"
     }
   };
 
@@ -44,7 +44,14 @@ export const TrustedBy = () => {
             </h3>
           </div>
           <div className="flex justify-center">
-            <LogoCarousel columnCount={4} />
+            {/* Mobile: 2 columns */}
+            <div className="block sm:hidden">
+              <LogoCarousel columnCount={2} />
+            </div>
+            {/* Desktop: 4 columns */}
+            <div className="hidden sm:block">
+              <LogoCarousel columnCount={4} />
+            </div>
           </div>
         </div>
       </div>

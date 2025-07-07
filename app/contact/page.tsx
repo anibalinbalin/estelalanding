@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { Footer } from '@/components/footer'
 
 export default function ContactPage() {
   return (
@@ -16,7 +17,7 @@ export default function ContactPage() {
               <div className="mx-auto min-[600px]:mx-0 mb-8 mt-4 max-w-96 text-lg leading-relaxed tracking-wide text-muted-foreground">
                 <p className="m-0">
                   Ready to transform your technology infrastructure? Reach out here to learn more or skip to{' '}
-                  <Link href="/work" className="text-foreground hover:text-foreground/80 underline underline-offset-4">
+                  <Link href="/company/work" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] hover:text-[#08178c]">
                     exploring our work
                   </Link>{' '}
                   and case studies.
@@ -51,7 +52,7 @@ export default function ContactPage() {
             </div>
             <div className="hidden min-[1100px]:block text-muted-foreground min-[600px]:text-base min-[600px]:leading-6 min-[600px]:tracking-wide">
               Contact us directly at{' '}
-              <Link href="mailto:hola@este.la" className="text-foreground hover:text-foreground/80 underline underline-offset-4">
+              <Link href="mailto:hola@este.la" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] hover:text-[#08178c]">
                 hola@este.la
               </Link>
             </div>
@@ -139,12 +140,14 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div className="px-6 py-4 flex items-center justify-end min-[800px]:col-span-12">
-                      <button
-                        type="submit"
-                        className="px-6 py-2 items-center cursor-pointer bg-foreground text-background rounded font-medium text-sm hover:bg-foreground/90 transition-colors"
-                      >
-                        <span className="items-center flex">Submit</span>
-                      </button>
+                      <div className="flex flex-col gap-2 text-center">
+                        <button
+                          type="submit"
+                          className="px-3 items-center text-[var(--content-secondary-p3)] [text-decoration:inherit] inline-flex h-8 justify-center rounded-[var(--border-radius)] align-top font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider uppercase [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] shadow-[var(--elevation-1)] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:rounded-[var(--border-radius)] after:border after:border-current after:opacity-100 after:text-[var(--stroke-secondary-p3)] hover:bg-[var(--surface-hover-p3)]"
+                        >
+                          SUBMIT
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </form>
@@ -153,12 +156,37 @@ export default function ContactPage() {
           </div>
           <div className="col-span-12 text-muted-foreground text-base leading-6 tracking-wide min-[1100px]:hidden">
             Contact us directly at{' '}
-            <Link href="mailto:hola@este.la" className="text-foreground hover:text-foreground/80 underline underline-offset-4">
+            <Link href="mailto:hola@este.la" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] hover:text-[#08178c]">
               hola@este.la
             </Link>
           </div>
         </div>
       </div>
+      
+      {/* Use the project's Footer component instead of inline footer */}
+      <Footer />
+      
+      {/* Keep the tracking elements exactly as they were */}
+      <noscript>
+        <img 
+          height="1" 
+          width="1" 
+          style={{display: "none"}} 
+          alt="" 
+          src="https://px.ads.linkedin.com/collect/?pid=6206948&fmt=gif" 
+        />
+      </noscript>
+      <div className="top-[336px] left-[979px] h-0 w-0"></div>
+      <div className="top-[336px] left-[1460px] h-0 w-0"></div>
+      <div className="top-[659px] left-[979px] h-0 w-0"></div>
+      <div className="top-[336px] left-[977px] h-0 w-0"></div>
+      <div></div>
+      <div className="top-[-2px] left-0 h-0 w-0"></div>
+      <div className="top-[-4px] left-[-4px] h-0 w-0"></div>
+      <div className="top-[-4px] left-[-4px] h-0 w-0"></div>
+      <div className="top-[-2px] left-[-2px] h-0 w-0"></div>
+      <div className="top-0 left-0 absolute"></div>
+      <canvas width="70" height="70" className="left-[1610px] top-0 block align-middle"></canvas>
     </div>
   )
 }

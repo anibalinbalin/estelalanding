@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { ThemeImage } from '@/components/ui/theme-image';
+import { Footer } from '@/components/footer';
 
 const SecurityPage = () => {
   const { theme, resolvedTheme } = useTheme();
@@ -17,7 +18,7 @@ const SecurityPage = () => {
   return (
     <>
       <div className="sticky top-0 z-20">
-        <div className="pointerEvents-[none] absolute top-0 right-0 bottom-0 left-0 border-b bg-[var(--background)]/85 backdrop-[var(--tw-backdrop-sepia)] backdrop-[var(--tw-backdrop-saturate)] backdrop-[var(--tw-backdrop-opacity)] backdrop-[var(--tw-backdrop-invert)] backdrop-[var(--tw-backdrop-hue-rotate)] backdrop-[var(--tw-backdrop-grayscale)] backdrop-[var(--tw-backdrop-contrast)] backdrop-[var(--tw-backdrop-brightness)] backdrop-[var(--tw-backdrop-blur)] transition-opacity ease-[cubic-bezier(.4,0,.2,1)] duration-[.15s] border-b-[var(--stroke-secondary-p3)]"></div>
+        <div className="pointerEvents-[none] absolute top-0 right-0 bottom-0 left-0 border-b bg-[var(--background)]/85 backdrop-[var(--tw-backdrop-sepia)] backdrop-[var(--tw-backdrop-saturate)] backdrop-[var(--tw-backdrop-opacity)] backdrop-[var(--tw-backdrop-invert)] backdrop-[var(--tw-backdrop-hue-rotate)] backdrop-[var(--tw-backdrop-grayscale)] backdrop-[var(--tw-backdrop-contrast)] backdrop-[var(--tw-backdrop-brightness)] backdrop-[var(--tw-backdrop-blur)] transition-opacity ease-[cubic-bezier(.4,0,.2,1)] duration-[.15s] border-b-[var(--border)]"></div>
         <nav dir="ltr" className="w-[100%]">
             <div className="absolute left-0 right-0 top-[54px] flex shrink items-center justify-center transition-transform ease-[cubic-bezier(.4,0,.2,1)] duration-[.1s]"></div>
         </nav>
@@ -27,23 +28,23 @@ const SecurityPage = () => {
           <section>
               <div className="border-b border-b-[var(--stroke-default-p3)]"></div>
           </section>
-          <section>
+          <section className="pt-12 sm:pt-0">
             <div className="w-[100%] px-5 min-[600px]:px-10">
               <div className="m-auto max-w-[1200px]">
-                <h1 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[600px]:text-4xl min-[1000px]:text-[3.125rem] font-normal min-[600px]:font-normal min-[1000px]:font-normal mb-6 min-[600px]:mb-10 min-[1000px]:mb-14 text-center min-[600px]:text-left font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[600px]:leading-[2.625rem] min-[1000px]:leading-[110%] tracking-wide min-[600px]:tracking-normal min-[1000px]:tracking-normal min-[800px]:pr-6">
+                <h1 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[600px]:text-4xl min-[1000px]:text-[3.125rem] font-normal min-[600px]:font-normal min-[1000px]:font-normal mb-12 min-[600px]:mb-10 min-[1000px]:mb-14 text-center min-[600px]:text-left font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[600px]:leading-[2.625rem] min-[1000px]:leading-[110%] tracking-wide min-[600px]:tracking-normal min-[1000px]:tracking-normal min-[800px]:pr-6">
                   Managed Security & Data Protection
                   <br />
-                  <span style={{color: 'color(display-p3 0.4941 0.5137 0.5216)', fontSize: '36px', lineHeight: '42px', fontWeight: '400', fontStyle: 'normal'}}>
+                  <span className="text-[20px] min-[600px]:text-[25px] min-[1000px]:text-[36px] leading-[30px] min-[600px]:leading-[32px] min-[1000px]:leading-[42px] font-normal" style={{color: 'color(display-p3 0.4941 0.5137 0.5216)', fontStyle: 'normal'}}>
                     Enterprise-Grade Protection Without the Enterprise Complexity
                   </span>
                 </h1>
               </div>
             </div>
-            <div className="relative border-t border-[var(--stroke-default-p3)] border-b min-[900px]:border-b-[0px]">
+            <div className="relative border-t border-[var(--stroke-default-p3)] border-b min-[900px]:border-b-[0px] mb-16 sm:mb-0">
               <div className="w-[100%] px-5 min-[600px]:px-10">
                 <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] items-center gap-6 min-[600px]:gap-6 min-[1000px]:gap-8 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))]">
                   <div className="col-span-12 min-[600px]:col-span-11 min-[1000px]:col-span-5 pr-0 min-[800px]:pr-10 min-[1000px]:pr-0 mb-4">
-                    <h2 className="mb-4 text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
+                    <h2 className="mb-6 min-[600px]:mb-4 text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
                       Complete Business Protection
                     </h2>
                     <div>
@@ -97,7 +98,7 @@ const SecurityPage = () => {
               <div>
                 <div className="w-[100%] px-5 min-[600px]:px-10">
                   <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
-                    <div className="col-span-4 !items-center text-center flex flex-col min-[1000px]:px-12">
+                    <div className="col-span-12 min-[600px]:col-span-4 !items-center text-center flex flex-col min-[1000px]:px-12">
                       <div className={`mb-3 rounded-[var(--border-radius)] p-2 ${currentTheme === 'light' ? 'bg-[#e5e5e6]' : 'bg-[#3d3019]'}`}>
                         <svg width="24" height="24" className={`block align-middle ${currentTheme === 'light' ? 'text-[#ecbb5a]' : 'text-[#ebbb5a]'}`}>
                           <use href="/assets/sprite-Dt029LRi.svg#router-24"></use>
@@ -112,7 +113,7 @@ const SecurityPage = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="col-span-4 !items-center text-center flex flex-col min-[1000px]:px-12">
+                    <div className="col-span-12 min-[600px]:col-span-4 !items-center text-center flex flex-col min-[1000px]:px-12">
                       <div className={`mb-3 rounded-[var(--border-radius)] p-2 ${currentTheme === 'light' ? 'bg-[#e5e5e6]' : 'bg-[#3d3019]'}`}>
                         <svg width="24" height="24" className={`block align-middle ${currentTheme === 'light' ? 'text-[#ecbb5a]' : 'text-[#ebbb5a]'}`}>
                           <use href="/assets/sprite-Dt029LRi.svg#networking-24"></use>
@@ -127,7 +128,7 @@ const SecurityPage = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="col-span-4 !items-center text-center flex flex-col min-[1000px]:px-12">
+                    <div className="col-span-12 min-[600px]:col-span-4 !items-center text-center flex flex-col min-[1000px]:px-12">
                       <div className={`mb-3 rounded-[var(--border-radius)] p-2 ${currentTheme === 'light' ? 'bg-[#e5e5e6]' : 'bg-[#3d3019]'}`}>
                         <svg width="24" height="24" className={`block align-middle ${currentTheme === 'light' ? 'text-[#ecbb5a]' : 'text-[#ebbb5a]'}`}>
                           <use href="/assets/sprite-Dt029LRi.svg#terminal-24"></use>
@@ -144,11 +145,7 @@ const SecurityPage = () => {
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div className="my-6 min-[800px]:my-10">
-                    <div className="h-[1px] w-[100%] border-b border-[var(--stroke-default-p3)]"></div>
-                  </div>
-                </div>
+
               </div>
             </div>
             <div className="w-[100%] px-5 min-[600px]:px-10 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(5rem_*_var(--tw-space-y-reverse))] min-[1000px]:mb-[calc(9rem_*_var(--tw-space-y-reverse))]">
@@ -297,6 +294,23 @@ const SecurityPage = () => {
                     </p>
                   </div>
                 </div>
+                <div className="relative overflow-hidden border bg-[var(--surface-tertiary-p3)] border-[var(--stroke-secondary-p3)] col-span-12 min-[800px]:col-start-[7] min-[1000px]:col-start-[8] min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg">
+                  <div className="relative items-center w-[100%] flex h-[100%] justify-center">
+                    <ThemeImage 
+                      darkSrc="/img/cloud-computer-storage.svg"
+                      lightSrc="/img/cloud-computer-storage_light.svg"
+                      width={247} 
+                      height={140} 
+                      className="w-[100%] max-w-[100%] h-auto block align-middle" 
+                      alt="Cloud computer storage visualization" 
+                    />
+                    <noscript>
+                      <div className="absolute inset-0 flex h-full w-full items-center justify-center">
+                        <img className="w-full h-auto" src="/img/cloud-computer-storage.svg" width="247" height="140" alt="Cloud computer storage visualization" />
+                      </div>
+                    </noscript>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(5rem_*_var(--tw-space-y-reverse))] min-[1000px]:mb-[calc(9rem_*_var(--tw-space-y-reverse))]">
@@ -345,7 +359,7 @@ const SecurityPage = () => {
                       </h2>
                     </div>
                     <div className="flex flex-col gap-2 text-center">
-                      <a href="/contact" className="px-3 items-center text-[var(--content-secondary-p3)] [text-decoration:inherit] inline-flex h-8 justify-center rounded-[var(--border-radius)] align-top font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider uppercase [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] shadow-[var(--elevation-1)] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:rounded-[var(--border-radius)] after:border after:border-current after:opacity-100 after:text-[var(--base-neutral-300)] hover:bg-[var(--surface-hover-p3)]">
+                      <a href="/contact" className="px-3 items-center text-[var(--content-secondary-p3)] [text-decoration:inherit] inline-flex h-8 justify-center rounded-[var(--border-radius)] align-top font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider uppercase [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] shadow-[var(--elevation-1)] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:rounded-[var(--border-radius)] after:border after:border-current after:opacity-100 after:text-[var(--stroke-secondary-p3)] hover:bg-[var(--surface-hover-p3)]">
                         CONTACT
                       </a>
                     </div>
@@ -356,20 +370,31 @@ const SecurityPage = () => {
           </section>
         </div>
       </main>
+      
+      {/* Use the project's Footer component instead of inline footer */}
+      <Footer />
+      
+      {/* Keep the tracking elements exactly as they were */}
       <noscript>
-        <img height="1" width="1" style={{display:"none"}} alt="" src="https://px.ads.linkedin.com/collect/?pid=6206948&fmt=gif" />
+        <img 
+          height="1" 
+          width="1" 
+          style={{display: "none"}} 
+          alt="" 
+          src="https://px.ads.linkedin.com/collect/?pid=6206948&fmt=gif" 
+        />
       </noscript>
+      <div className="top-[336px] left-[979px] h-0 w-0"></div>
+      <div className="top-[336px] left-[1460px] h-0 w-0"></div>
+      <div className="top-[659px] left-[979px] h-0 w-0"></div>
+      <div className="top-[336px] left-[977px] h-0 w-0"></div>
       <div></div>
-      <div className="top-[438px] left-[834px] h-0 w-0"></div>
-      <div className="top-[438px] left-[1313px] h-0 w-0"></div>
-      <div className="top-[937px] left-[834px] h-0 w-0"></div>
-      <div className="top-[438px] left-[832px] h-0 w-0"></div>
       <div className="top-[-2px] left-0 h-0 w-0"></div>
       <div className="top-[-4px] left-[-4px] h-0 w-0"></div>
       <div className="top-[-4px] left-[-4px] h-0 w-0"></div>
       <div className="top-[-2px] left-[-2px] h-0 w-0"></div>
       <div className="top-0 left-0 absolute"></div>
-      <canvas width="70" height="70" className="left-[1319px] top-[60px] block align-middle"></canvas>
+      <canvas width="70" height="70" className="left-[1610px] top-0 block align-middle"></canvas>
     </>
   );
 };

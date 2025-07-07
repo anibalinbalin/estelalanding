@@ -73,8 +73,8 @@ export function AsciiWaveAnimation({ isVisible = true, className = '' }: AsciiWa
     <div 
       className={`w-full h-full ${className}`}
       style={{
-        backgroundColor: '#3b301c',
-        color: '#f5b944',
+        backgroundColor: 'transparent',
+        color: 'var(--ascii-foreground-p3)',
         fontFamily: '"Courier New", monospace',
         fontSize: '10px',
         lineHeight: '1',

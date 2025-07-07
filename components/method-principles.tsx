@@ -2,8 +2,12 @@
 
 import { Link } from 'next-view-transitions'
 import InteractiveLinesGrid from '@/components/ui/interactive-lines-grid'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
+import { useTheme } from 'next-themes'
 
 export function MethodPrinciples() {
+  const { resolvedTheme } = useTheme()
+  
   const principles = [
     {
       number: '2.1',
@@ -58,18 +62,13 @@ export function MethodPrinciples() {
         padding: '120px 32px'
       }}>
         <div style={{ marginBottom: '32px' }}>
-          <div style={{
-            fontSize: '0.875rem',
-            fontWeight: '400',
-            lineHeight: '1.5rem',
-            letterSpacing: '0.05em',
-            textTransform: 'uppercase' as const,
-            fontFamily: 'GT_America_Mono, monospace',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '24px'
-          }}>
-            Estela / Method / Principles
-          </div>
+          <Breadcrumb 
+            items={[
+              { label: 'Estela', href: '/' },
+              { label: 'Method', href: '/method' },
+              { label: 'Principles' }
+            ]} 
+          />
           
           <div style={{ textAlign: 'center', marginBottom: '24px' }}>
             <div style={{
@@ -103,7 +102,6 @@ export function MethodPrinciples() {
           
           <div style={{
             height: '1px',
-            backgroundColor: 'var(--border)',
             marginBottom: '48px'
           }} />
 
@@ -123,9 +121,9 @@ export function MethodPrinciples() {
             height: '300px',
             width: '100%',
             borderRadius: '8px',
-            border: '1px solid var(--border)',
+            border: resolvedTheme === 'light' ? '1px solid #d5d5d5' : '1px solid var(--border)',
             overflow: 'hidden',
-            backgroundColor: '#3d3019',
+            backgroundColor: resolvedTheme === 'light' ? '#f5f5f5' : '#3d3019',
             marginBottom: '48px'
           }}>
             <InteractiveLinesGrid 
@@ -136,9 +134,9 @@ export function MethodPrinciples() {
               lineWidth={1.2}
               showDot={true}
               dotSize={7}
-              backgroundColor="#3d3019"
-              color="#f5b944"
-              hoverColor="#f5b944"
+              backgroundColor={resolvedTheme === 'light' ? '#f5f5f5' : '#3d3019'}
+              color={resolvedTheme === 'light' ? '#666666' : '#f5b944'}
+              hoverColor={resolvedTheme === 'light' ? '#666666' : '#f5b944'}
               style={{
                 width: '100%',
                 height: '100%'
@@ -149,8 +147,7 @@ export function MethodPrinciples() {
 
         <div style={{
           height: '1px',
-          backgroundColor: 'var(--border)',
-          marginBottom: '48px'
+            marginBottom: '48px'
         }} />
 
         {principles.map((principle, index) => (
@@ -188,8 +185,7 @@ export function MethodPrinciples() {
             {index < principles.length - 1 && (
               <div style={{
                 height: '1px',
-                backgroundColor: 'var(--border)',
-                marginBottom: '48px'
+            marginBottom: '48px'
               }} />
             )}
           </div>
@@ -197,8 +193,7 @@ export function MethodPrinciples() {
         
         <div style={{
           height: '1px',
-          backgroundColor: 'var(--border)',
-          marginBottom: '48px'
+            marginBottom: '48px'
         }} />
 
         <section style={{ textAlign: 'center', marginBottom: '48px' }}>
@@ -261,7 +256,7 @@ export function MethodPrinciples() {
           </p>
           
           <p style={{
-            fontSize: '1.5rem',
+            fontSize: '1.125rem',
             fontWeight: '500',
             color: 'var(--foreground)',
             marginBottom: '16px'
@@ -272,8 +267,7 @@ export function MethodPrinciples() {
 
         <div style={{
           height: '1px',
-          backgroundColor: 'var(--border)',
-          marginBottom: '48px'
+            marginBottom: '48px'
         }} />
 
         <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>

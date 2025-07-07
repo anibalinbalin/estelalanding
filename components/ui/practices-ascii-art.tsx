@@ -26,9 +26,18 @@ export const PracticesAsciiArt: React.FC<PracticesAsciiArtProps> = ({
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    // Custom color scheme
-    const backgroundColor = '#3d3019'
-    const foregroundColor = '#f5b944'
+    // Helper function to get computed CSS variable values for canvas
+    const getCSSVariable = (variable: string): string => {
+      try {
+        return getComputedStyle(document.documentElement).getPropertyValue(variable).trim()
+      } catch {
+        return ''
+      }
+    }
+
+    // Custom color scheme using CSS variables
+    const backgroundColor = getCSSVariable('--ascii-background-alt-p3') || '#3d3019'
+    const foregroundColor = getCSSVariable('--ascii-foreground-p3') || '#f5b944'
 
     let time = 0
     let animationFrameId: number | null = null

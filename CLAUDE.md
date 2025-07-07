@@ -59,3 +59,17 @@ The `/components` directory contains custom components including:
 8. If you have a doubt about something, ask me first. Do not go alone if you not at certain of what I mean in the promnt.
 9. You have mcp servers at your disposal. If the case is that we are stuck after two iterations please consider using the mcp servers to aid you.
 10. always check documentation if you no are 100% confident on how to approach a problem. You have context7 mcp server for that.
+
+## Handling Large Search Results
+
+When using serena MCP tools (like `search_for_pattern`) and you encounter errors like "The answer is too long (X characters)", automatically switch to using the Gemini CLI:
+
+```bash
+# When serena search fails due to size limits, use Gemini instead
+gemini -p "@./ Search for your-pattern across the entire codebase"
+
+# For specific directories
+gemini -p "@components/ @app/ Find pattern usage in specific areas"
+```
+
+This leverages Gemini's massive context window to handle searches that exceed serena's character limits.

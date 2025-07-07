@@ -53,8 +53,9 @@ export function ToolbarSwitcher() {
         <Languages
           className={cn(
             'relative z-10 h-4 w-4',
-            language === 'es' ? 'text-foreground' : 'text-muted-foreground'
+            language === 'es' ? 'text-foreground' : ''
           )}
+          style={language === 'en' ? { color: '#9b9fa3' } : {}}
         />
       </button>
 
@@ -72,7 +73,11 @@ export function ToolbarSwitcher() {
           aria-controls={id}
           onClick={() => setTheme("light")}
         >
-          <MoonIcon className="h-4 w-4" aria-hidden="true" />
+          <MoonIcon 
+            className="h-4 w-4" 
+            aria-hidden="true" 
+            style={{ color: '#9b9fa3' }}
+          />
         </span>
         <Switch
           id={id}

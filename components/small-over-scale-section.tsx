@@ -27,21 +27,21 @@ export const SmallOverScaleSection = () => {
       contactButton: "Meet Our Team"
     },
     es: {
-      coDesignTitle: "Pequeños por Elección",
+      coDesignTitle: "Estudiamos el arte del Renacimiento porque el diseño de sistemas requiere visión integral",
       coDesignFeatures: [
-        "Somos 5 personas por elección, no por circunstancia. Hemos tenido ofertas para crecer 10x. Dijimos que no.",
+        "Leemos filosofía porque la tecnología requiere contexto humano.",
         "Porque hemos aprendido: la magia sucede en este tamaño. Tu proyecto no se transfiere.",
         "Tu relación no se 'gestiona.' Nos tienes a nosotros. A todos nosotros. Siempre."
       ],
-      tryButton: "Lee El Método Completo de Estela",
-      contactButton: "Conoce Nuestro Equipo"
+      tryButton: "Lee el Método Estela completo",
+      contactButton: "Conocé a nuestro equipo"
     }
   };
 
   const t = content[language];
 
   return (
-    <section className="w-full mt-28 sm:mt-[11.25rem] mb-4">
+    <section className="w-full mt-28 sm:mt-[11.25rem] mb-4 relative z-10 bg-[var(--background-primary)] sm:bg-transparent">
       <div className="container mx-auto px-5 sm:px-10">
         <div className="relative m-auto max-w-[1200px] my-4 min-[900px]:my-12">
           <div className="flex absolute top-[-8rem] bottom-[-8rem] left-0 right-0 z-0 justify-between">

@@ -35,11 +35,11 @@ export function HandsSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-24 sm:py-32">
+    <section ref={sectionRef} className="pt-8 pb-0 sm:py-32">
       <div className="pl-[var(--page-padding-left)] pr-[var(--page-padding-right)] max-w-[var(--page-max-width)] w-[100%] mx-auto box-border">
         <div className="mx-[-50vw] pointer-events-none relative w-[100vw] left-[50%] right-[50%] box-border">
           <div className="h-[453px] w-[100%] mx-auto mb-0 mt-0 max-w-[100%] relative flex box-border before:content-[''] before:block before:w-[51vw] before:shrink-0 after:content-[''] after:absolute after:top-0 after:right-0 after:bottom-0 after:bg-[linear-gradient(270deg,var(--color-bg-primary)_0,transparent_100%)] sm:after:w-1/2 after:w-[10%] max-[1400px]:overflow-hidden">
-            <div className={`hands-container ${isAnimated ? 'animate' : ''} absolute left-[50%] top-[50%] flex w-[635px] max-h-[355px] h-[100%] flex-wrap box-border sm:-translate-y-[25%] sm:-translate-x-[103%] scale-[.84] -translate-y-[26%] -translate-x-[95%]`}>
+            <div className={`hands-container ${isAnimated ? 'animate' : ''} absolute left-[50%] top-[50%] flex w-[635px] max-h-[355px] h-[100%] flex-wrap box-border sm:-translate-y-[25%] sm:-translate-x-[103%] scale-[.84] -translate-y-[40%] -translate-x-[95%]`}>
               {/* Hand SVGs */}
               {[
                 { left: 40, top: 0, rotate: 116.3 },
@@ -116,7 +116,7 @@ export function HandsSection() {
                 width="453"
                 height="905"
                 src="/img/hand.avif"
-                className="text-transparent shrink-0 m-0 p-0 border-0 text-[inherit] font-[inherit] [font-weight:inherit] leading-[inherit] align-baseline max-w-[100%] box-border sm:h-[100%] h-auto sm:w-[905px] w-80 max-[640px]:translate-y-[193px]"
+                className="text-transparent shrink-0 m-0 p-0 border-0 text-[inherit] font-[inherit] [font-weight:inherit] leading-[inherit] align-baseline max-w-[100%] box-border sm:h-[100%] h-auto sm:w-[905px] w-80 max-[640px]:translate-y-[50px]"
               />
             </div>
           </div>

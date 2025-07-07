@@ -28,8 +28,8 @@ function Hero() {
     },
     es: {
       title: "Cuando la tecnología\ny el conocimiento convergen",
-      subtitle: "Guiando a las empresas a través de transformaciones tecnológicas con el equilibrio perfecto entre experiencia confiable e innovación.",
-      contact: "Descubre Nuestro Enfoque"
+      subtitle: "Guiamos a las empresas en su evolución tecnológica con soluciones ancladas en la experiencia y orientadas a la innovación.",
+      contact: "Nuestro Enfoque"
     }
   };
   
@@ -48,7 +48,7 @@ function Hero() {
           <div className="w-full">
             {/* Hero Content */}
             <h1 
-              className={`text-[65px] leading-[65px] tracking-normal text-foreground ${isAnimated ? 'hero-title' : 'opacity-0'}`}
+              className={`text-[36px] leading-[42px] sm:text-[65px] sm:leading-[65px] tracking-normal text-foreground ${isAnimated ? 'hero-title' : 'opacity-0'}`}
               style={{ 
                 fontFamily: 'SuisseIntl, -apple-system, "system-ui", Helvetica, Arial, sans-serif',
                 fontWeight: 400
@@ -63,18 +63,17 @@ function Hero() {
             </h1>
 
             <p 
-              className={`mt-6 text-[24px] leading-[34px] tracking-normal max-w-2xl ${isAnimated ? 'hero-subtitle' : 'opacity-0'}`}
+              className={`mt-2 min-[500px]:mt-4 text-[16px] leading-[24px] sm:text-[24px] sm:leading-[34px] tracking-normal w-1/2 sm:w-full max-w-2xl text-foreground sm:text-[#999999] ${isAnimated ? 'hero-subtitle' : 'opacity-0'}`}
               style={{ 
                 fontFamily: 'SuisseIntl, -apple-system, "system-ui", Helvetica, Arial, sans-serif',
-                fontWeight: 400,
-                color: 'rgb(153, 153, 153)'
+                fontWeight: 400
               }}
             >
               {t.subtitle}
             </p>
             
             {/* CTA Button */}
-            <div className={`mt-8 ${isAnimated ? 'hero-cta' : 'opacity-0'}`}>
+            <div className={`mt-6 min-[700px]:mt-10 ${isAnimated ? 'hero-cta' : 'opacity-0'}`}>
               <Link 
                 href="/method"
                 className="oxide-nav-button oxide-nav-button-primary inline-flex items-center"

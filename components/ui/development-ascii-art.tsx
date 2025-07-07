@@ -118,8 +118,8 @@ const DevelopmentAsciiArt: React.FC<DevelopmentAsciiArtProps> = ({
     <div
       className={`w-full h-full ${className}`}
       style={{
-        backgroundColor: '#3b301c',
-        color: '#f5b944',
+        backgroundColor: 'transparent',
+        color: 'var(--ascii-foreground-p3)',
         fontFamily: '"Courier New", monospace',
         fontSize: '8px',
         lineHeight: '1.1',

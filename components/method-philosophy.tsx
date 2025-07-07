@@ -2,8 +2,12 @@
 
 import { Link } from 'next-view-transitions'
 import HexagonalSlidingBars from '@/components/ui/hexagonal-sliding-bars'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
+import { useTheme } from 'next-themes'
 
 export function MethodPhilosophy() {
+  const { resolvedTheme } = useTheme()
+  
   const pageStyles = {
     backgroundColor: 'var(--background)',
     color: 'var(--foreground)',
@@ -35,7 +39,6 @@ export function MethodPhilosophy() {
 
   const dividerStyle = {
     height: '1px',
-    backgroundColor: 'var(--border)',
     marginBottom: '48px'
   }
 
@@ -62,9 +65,13 @@ export function MethodPhilosophy() {
     <div style={pageStyles}>
       <div style={{ maxWidth: '680px', margin: '0 auto', padding: '120px 32px' }}>
         {/* Breadcrumb */}
-        <div style={badgeStyle}>
-          Estela / Method / Philosophy
-        </div>
+        <Breadcrumb 
+          items={[
+            { label: 'Estela', href: '/' },
+            { label: 'Method', href: '/method' },
+            { label: 'Philosophy' }
+          ]} 
+        />
 
         <div style={dividerStyle} />
 
@@ -77,7 +84,7 @@ export function MethodPhilosophy() {
             width: '40px',
             height: '40px',
             borderRadius: '50%',
-            backgroundColor: '#1a2224',
+            backgroundColor: 'var(--step-indicator-p3)',
             color: '#fff',
             fontSize: '1.125rem', 
             fontFamily: 'GT_America_Mono, monospace'
@@ -103,7 +110,7 @@ export function MethodPhilosophy() {
           position: 'relative',
           marginBottom: '48px',
           borderRadius: '8px',
-          border: '1px solid var(--border)',
+          border: resolvedTheme === 'light' ? '1px solid #d5d5d5' : '1px solid var(--border)',
           height: '300px',
           width: '100%',
           overflow: 'hidden',
@@ -111,7 +118,12 @@ export function MethodPhilosophy() {
           justifyContent: 'center',
           alignItems: 'center'
         }}>
-          <HexagonalSlidingBars />
+          <HexagonalSlidingBars 
+            backgroundColor={resolvedTheme === 'light' ? '#f5f5f5' : '#3d3019'}
+            lineColor={resolvedTheme === 'light' ? '#666666' : '#f5b944'}
+            fillColor={resolvedTheme === 'light' ? '#666666' : '#f5b944'}
+            containerBackgroundColor={resolvedTheme === 'light' ? '#f5f5f5' : '#F0EEE6'}
+          />
         </div>
 
         <div style={dividerStyle} />
@@ -424,7 +436,7 @@ export function MethodPhilosophy() {
             color: 'var(--foreground)',
             marginBottom: '16px'
           }}>
-            Technology with soul.
+
           </p>
 
           <div style={dividerStyle} />

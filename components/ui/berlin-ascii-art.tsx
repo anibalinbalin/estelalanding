@@ -28,9 +28,18 @@ export const BerlinAsciiArt: React.FC<BerlinAsciiArtProps> = ({
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    // Custom color scheme
-    const backgroundColor = '#3b301c'
-    const foregroundColor = '#f5b944'
+    // Helper function to get computed CSS variable values for canvas
+    const getCSSVariable = (variable: string): string => {
+      try {
+        return getComputedStyle(document.documentElement).getPropertyValue(variable).trim()
+      } catch {
+        return ''
+      }
+    }
+
+    // Custom color scheme using CSS variables
+    const backgroundColor = getCSSVariable('--ascii-background-alt-p3') || '#3d3019'
+    const foregroundColor = getCSSVariable('--ascii-foreground-p3') || '#f5b944'
     
 
     let time = 0
@@ -45,9 +54,7 @@ export const BerlinAsciiArt: React.FC<BerlinAsciiArtProps> = ({
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       
-      // Fill background
-      ctx.fillStyle = backgroundColor
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      // Background is now transparent - no fill needed
       
       // Set text style
       ctx.font = `${cellSize}px monospace`

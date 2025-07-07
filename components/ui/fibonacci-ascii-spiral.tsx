@@ -1,8 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 
 const FibonacciASCIISpiral = () => {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const [asciiPattern, setAsciiPattern] = useState('');
   const [isHovered, setIsHovered] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    setMounted(true);
+    setWindowWidth(window.innerWidth);
+    
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     let time = 0;
@@ -11,8 +27,11 @@ const FibonacciASCIISpiral = () => {
 
     const generateASCIIPattern = (rectangleCount: number) => {
       let pattern = '';
-      const rows = 25;
-      const cols = 60;
+      // Responsive dimensions: smaller on mobile, full size on desktop
+      const isMobile = windowWidth < 640;
+      const isTablet = windowWidth >= 640 && windowWidth < 900;
+      const rows = isMobile ? 15 : isTablet ? 20 : 25;
+      const cols = isMobile ? 30 : isTablet ? 45 : 60;
       
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
@@ -60,26 +79,28 @@ const FibonacciASCIISpiral = () => {
         cancelAnimationFrame(animationFrameId);
       }
     };
-  }, [isHovered]);
+  }, [isHovered, windowWidth]);
+
+  if (!mounted) return null;
 
   return (
     <div className="flex items-center justify-center w-full h-full p-3">
       <div 
         className="w-full h-full rounded border p-3" 
         style={{
-          backgroundColor: '#39301f'
+          backgroundColor: mounted && resolvedTheme === 'dark' ? '#39301f' : '#f6f6f6'
         }}
       >
         <div 
           className="w-full h-full rounded"
           style={{
-            backgroundColor: '#39301f'
+            backgroundColor: mounted && resolvedTheme === 'dark' ? '#39301f' : '#f6f6f6'
           }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           <pre 
-            className="font-mono text-xs leading-tight whitespace-pre overflow-x-auto text-center w-full h-full flex items-center justify-center m-0 p-3" 
+            className="font-mono text-[10px] sm:text-xs leading-tight whitespace-pre overflow-x-auto text-center w-full h-full flex items-center justify-center m-0 p-3" 
             style={{
               color: 'color(display-p3 0.92 0.73 0.35)',
               fontFamily: 'GT_America_Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation_Mono, Courier_New, monospace',

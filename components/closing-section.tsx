@@ -1,22 +1,53 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useLanguage } from "@/components/language-provider";
+
 export const ClosingSection = () => {
+  const { language } = useLanguage();
+  const [windowWidth, setWindowWidth] = useState(0);
+  
+  const content = {
+    en: {
+      text: <>The Cyclops likely had layers of management. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>Odysseus had a tight crew and a clear objective.</span> We believe in the latter. No getting lost in the crowd, no diluted responsibility. When you work with Estela, you get *us* – six minds directly invested in your success. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>It's not about outmuscling the problem; it's about outthinking it,</span> with the focused intensity only a truly cohesive team can provide.</>
+    },
+    es: {
+      text: <>Las empresas con varios pisos maniobran con inercia de buque carguero. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>Nosotros elegimos una embarcación ágil con tripulación selecta.</span> Sin perderse en jerarquías. Sin diluir responsabilidades. Cuando trabajas con Estela, trabajas con nosotros – seis mentes dedicadas a resolver. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>No se trata de abrumar con recursos. Se trata de precisión estratégica,</span> la ventaja que solo un equipo cohesionado puede entregar.</>
+    }
+  };
+  
+  const t = content[language];
+  
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <section className="w-full mt-0 mb-4">
+    <section 
+      className="w-full sm:mt-0 pt-6 sm:pt-0 mb-32 sm:mb-4 relative z-[2]"
+      style={{ 
+        marginTop: windowWidth < 640 ? 'calc(var(--spacing) * -60)' : undefined 
+      }}
+    >
       <div className="container mx-auto px-5 sm:px-10">
         <div className="flex flex-col col-span-12 items-center text-center">
           <p 
-            className="w-[100%] m-0 text-balance max-w-[900px] font-normal"
+            className="w-[100%] m-0 pb-8 sm:pb-0 text-balance max-w-[900px] font-normal text-[20px] leading-[30px] sm:text-[25px] sm:leading-[32px]"
             style={{
               fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
               fontStyle: 'normal',
               fontWeight: '400',
-              color: 'color(display-p3 0.4941 0.5137 0.5216)',
-              fontSize: '25px',
-              lineHeight: '32px'
+              color: 'color(display-p3 0.4941 0.5137 0.5216)'
             }}
           >
-            The Cyclops likely had layers of management. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>Odysseus had a tight crew and a clear objective.</span> We believe in the latter. No getting lost in the crowd, no diluted responsibility. When you work with Estela, you get *us* – six minds directly invested in your success. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>It's not about outmuscling the problem; it's about outthinking it,</span> with the focused intensity only a truly cohesive team can provide.
+            {t.text}
           </p>
         </div>
       </div>

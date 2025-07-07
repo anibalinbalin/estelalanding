@@ -110,7 +110,7 @@ export const StorageSectionNew = () => {
             className="text-4xl lg:text-5xl font-normal text-center"
             style={{
               fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-              color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a',
+              color: 'var(--content-raise-p3)',
               lineHeight: '1.2'
             }}
           >
@@ -156,7 +156,7 @@ export const StorageSectionNew = () => {
               className="mb-4 text-balance m-0 text-[1.5625rem] min-[1000px]:text-4xl font-normal leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal"
               style={{
                 fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-                color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a'
+                color: 'var(--content-raise-p3)'
               }}
             >
               {t.subtitle}
@@ -216,7 +216,7 @@ export const StorageSectionNew = () => {
               className="text-balance m-0 mt-24 text-center text-[1.5625rem] min-[1000px]:text-4xl font-normal leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal"
               style={{
                 fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-                color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a'
+                color: 'var(--content-raise-p3)'
               }}
             >
               {t.sectionsTitle} <br className="hidden min-[800px]:block"/>
@@ -234,7 +234,7 @@ export const StorageSectionNew = () => {
               className="mb-4 text-balance m-0 text-[1.5625rem] min-[1000px]:text-4xl font-normal leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal"
               style={{
                 fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-                color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a'
+                color: 'var(--content-raise-p3)'
               }}
             >
               {t.onDemandTitle}
@@ -270,7 +270,7 @@ export const StorageSectionNew = () => {
               className="mb-4 text-balance m-0 text-[1.5625rem] min-[1000px]:text-4xl font-normal leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal"
               style={{
                 fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-                color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a'
+                color: 'var(--content-raise-p3)'
               }}
             >
               {t.openZfsTitle}
@@ -301,7 +301,7 @@ export const StorageSectionNew = () => {
               className="mb-4 text-balance m-0 text-[1.5625rem] min-[1000px]:text-4xl font-normal leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal"
               style={{
                 fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-                color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a'
+                color: 'var(--content-raise-p3)'
               }}
             >
               {t.protectionTitle}
@@ -335,7 +335,7 @@ export const StorageSectionNew = () => {
               className="text-balance m-0 mb-4 text-[1.5625rem] min-[1000px]:text-4xl font-normal leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal"
               style={{
                 fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-                color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a'
+                color: 'var(--content-raise-p3)'
               }}
             >
               {t.coDesignTitle}
@@ -385,7 +385,7 @@ export const StorageSectionNew = () => {
                 className="text-balance m-0 text-lg min-[500px]:text-[1.5625rem] min-[900px]:text-4xl font-normal leading-[1.625rem] min-[500px]:leading-8 min-[900px]:leading-[2.625rem] tracking-wide min-[500px]:tracking-wide min-[900px]:tracking-normal max-[399px]:text-center"
                 style={{
                   fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-                  color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a'
+                  color: 'var(--content-raise-p3)'
                 }}
               >
                 {t.ctaTitle}<br/>
@@ -418,7 +418,7 @@ export const StorageSectionNew = () => {
               className="text-balance m-0 mb-12 text-[1.5625rem] min-[1000px]:text-4xl font-normal leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal"
               style={{
                 fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-                color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a'
+                color: 'var(--content-raise-p3)'
               }}
             >
               {t.specsTitle}

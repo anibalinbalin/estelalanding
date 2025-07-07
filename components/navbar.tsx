@@ -3,6 +3,7 @@
 import * as React from "react"
 import { Link } from "next-view-transitions"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { useTheme } from "next-themes"
 import {
@@ -206,8 +207,12 @@ const content = {
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false)
+  const [mobileMethodOpen, setMobileMethodOpen] = React.useState(false)
+  const [mobileCompanyOpen, setMobileCompanyOpen] = React.useState(false)
   const { resolvedTheme } = useTheme()
   const { language } = useLanguage()
+  const pathname = usePathname()
   const [mounted, setMounted] = React.useState(false)
   const [hoveredService, setHoveredService] = React.useState<string>('default')
   const [hoveredMethodItem, setHoveredMethodItem] = React.useState<string>('')
@@ -231,9 +236,9 @@ export function Navbar() {
   const t = content[language]
 
   return (
-    <nav className="relative z-50 w-full">
-      <div className="flex h-20 items-center px-5 sm:px-10">
-        <div className="h-[1px] w-full border-b border-border absolute bottom-0"></div>
+    <nav className={`relative z-50 w-full ${pathname?.startsWith('/services') ? '' : 'border-b'}`}>
+      <div className="flex h-14 sm:h-16 lg:h-20 items-center px-5 sm:px-10">
+
         <div className="relative w-full">
           <div className="flex w-full items-center justify-between list-none m-auto p-0 max-w-[1200px]">
             {/* Left section: Mobile menu button + Logo */}
@@ -242,7 +247,15 @@ export function Navbar() {
               <button
                 type="button"
                 className="flex lg:hidden items-center cursor-pointer bg-transparent normal-case h-7 w-7 flex-col justify-center rounded border border-border"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                onClick={() => {
+                  setMobileMenuOpen(!mobileMenuOpen)
+                  // Reset submenu states when closing
+                  if (mobileMenuOpen) {
+                    setMobileServicesOpen(false)
+                    setMobileMethodOpen(false)
+                    setMobileCompanyOpen(false)
+                  }
+                }}
               >
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="block align-middle text-muted-foreground">
                   <path fillRule="evenodd" clipRule="evenodd" d="M11 2.66667C11 2.29848 10.7015 2 10.3333 2H1.66667C1.29848 2 1 2.29848 1 2.66667V2.66667C1 3.03486 1.29848 3.33333 1.66667 3.33333H10.3333C10.7015 3.33333 11 3.03486 11 2.66667V2.66667ZM1 5.92C1 5.54997 1.29997 5.25 1.67 5.25H10.33C10.7 5.25 11 5.54997 11 5.92V6.08C11 6.45003 10.7 6.75 10.33 6.75H1.67C1.29997 6.75 1 6.45003 1 6.08V5.92ZM1 9.33333C1 8.96514 1.29848 8.66667 1.66667 8.66667H10.3333C10.7015 8.66667 11 8.96514 11 9.33333V9.33333C11 9.70152 10.7015 10 10.3333 10H1.66667C1.29848 10 1 9.70152 1 9.33333V9.33333Z" fill="currentColor"></path>
@@ -252,7 +265,7 @@ export function Navbar() {
               {/* Logo - left aligned */}
               <Link 
                 href="/" 
-                className="flex items-center h-[70px] justify-start"
+                className="flex items-center h-[58px] sm:h-[69px] lg:h-[80px] justify-start"
               >
                 <Image
                   src={logoSrc}
@@ -301,23 +314,23 @@ export function Navbar() {
                               onMouseLeave={(e) => e.stopPropagation()}
                             >
                               {showInfrastructureArt ? (
-                                <div className="absolute inset-0 bg-[#3b301c] p-3">
+                                <div className="absolute inset-0">
                                   <InfrastructureAsciiArt isVisible={showInfrastructureArt} />
                                 </div>
                               ) : showSecurityArt ? (
-                                <div className="absolute inset-0 bg-[#3b301c] p-3">
+                                <div className="absolute inset-0">
                                   <SecurityAsciiArt isVisible={showSecurityArt} />
                                 </div>
                               ) : showDevelopmentArt ? (
-                                <div className="absolute inset-0 bg-[#3b301c] p-3">
+                                <div className="absolute inset-0">
                                   <DevelopmentAsciiArt isVisible={showDevelopmentArt} />
                                 </div>
                               ) : showConsultingArt ? (
-                                <div className="absolute inset-0 bg-[#3b301c] p-3">
+                                <div className="absolute inset-0">
                                   <ConsultingAsciiArt isVisible={showConsultingArt} />
                                 </div>
                               ) : showSpecificationsArt ? (
-                                <div className="absolute inset-0 bg-[#3b301c] p-3">
+                                <div className="absolute inset-0">
                                   <SpecificationsAsciiArt isVisible={showSpecificationsArt} />
                                 </div>
                               ) : (
@@ -404,36 +417,52 @@ export function Navbar() {
                               onMouseEnter={(e) => e.stopPropagation()}
                               onMouseLeave={(e) => e.stopPropagation()}
                             >
-                              {showBerlinArt ? (
-                                <div className="absolute inset-0">
-                                  <BerlinAsciiArt isVisible={showBerlinArt} />
-                                </div>
-                              ) : showPrinciplesArt ? (
-                                <div className="absolute inset-0">
-                                  <PrinciplesAsciiArt isVisible={showPrinciplesArt} />
-                                </div>
-                              ) : showImplementationArt ? (
-                                <div className="absolute inset-0">
-                                  <ImplementationAsciiArt isVisible={showImplementationArt} />
-                                </div>
-                              ) : showPracticesArt ? (
-                                <div className="absolute inset-0">
-                                  <PracticesAsciiArt isVisible={showPracticesArt} />
-                                </div>
-                              ) : showPhilosophyArt ? (
-                                <div className="absolute inset-0">
-                                  <PhilosophyAsciiArt isVisible={showPhilosophyArt} />
-                                </div>
-                              ) : (
+                              {(() => {
+
+                                if (showBerlinArt) {
+                                  return (
+                                    <div className="absolute inset-0">
+                                      <BerlinAsciiArt isVisible={showBerlinArt} />
+                                    </div>
+                                  )
+                                } else if (showPrinciplesArt) {
+                                  return (
+                                    <div className="absolute inset-0">
+                                      <PrinciplesAsciiArt isVisible={showPrinciplesArt} />
+                                    </div>
+                                  )
+                                } else if (showImplementationArt) {
+                                  return (
+                                    <div className="absolute inset-0">
+                                      <ImplementationAsciiArt isVisible={showImplementationArt} />
+                                    </div>
+                                  )
+                                } else if (showPracticesArt) {
+                                  return (
+                                    <div className="absolute inset-0">
+                                      <PracticesAsciiArt isVisible={showPracticesArt} />
+                                    </div>
+                                  )
+                                } else if (showPhilosophyArt) {
+                                  return (
+                                    <div className="absolute inset-0">
+                                      <PhilosophyAsciiArt isVisible={showPhilosophyArt} />
+                                    </div>
+                                  )
+                                } else {
+                                  return (
                                 <div className="relative z-10">
                                   <div className="mb-2 mt-4 text-lg font-medium">
                                     {t.method.default.title}
                                   </div>
                                   <p className="text-sm leading-tight text-muted-foreground">
-                                    {t.method.default.subtitle}
+                                        {t.method.default.subtitle}
                                   </p>
                                 </div>
-                              )}
+                                  )
+                                }
+                                return null
+                              })()} 
                             </a>
                           </NavigationMenuLink>
                         </li>
@@ -511,10 +540,10 @@ export function Navbar() {
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                        <ListItem href="/about" title={t.company.about.title}>
+                        <ListItem href="/company/about" title={t.company.about.title}>
                           {t.company.about.subtitle}
                         </ListItem>
-                        <ListItem href="/work" title={t.company.work.title}>
+                        <ListItem href="/company/work" title={t.company.work.title}>
                           {t.company.work.subtitle}
                         </ListItem>
                         <ListItem href="/company/team" title={t.company.team.title}>
@@ -538,13 +567,7 @@ export function Navbar() {
             </div>
 
             {/* Right side CTAs */}
-            <div className="items-center justify-end gap-3 hidden lg:flex">
-              <Link 
-                href="/contact" 
-                className="oxide-nav-button oxide-nav-button-outline"
-              >
-                {t.cta.contact}
-              </Link>
+            <div className="items-center justify-end gap-3 flex">
               <ToolbarSwitcher />
             </div>
           </div>
@@ -554,39 +577,200 @@ export function Navbar() {
       {/* Mobile menu panel */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t">
-          <div className="px-5 sm:px-10">
-            <Link
-              href="/services"
-              className="oxide-nav-link-mobile"
-            >
-              {t.nav.services}
-            </Link>
-            <Link
-              href="/method"
-              className="oxide-nav-link-mobile"
-            >
-              {t.nav.method}
-            </Link>
-            <Link
-              href="/company"
-              className="oxide-nav-link-mobile"
-            >
-              {t.nav.company}
-            </Link>
+          <div>
+            {/* Services menu */}
+            <div className="text-left">
+              <div>
+                <h3 className="text-balance m-0 text-inherit font-inherit">
+                  <button 
+                    type="button" 
+                    className="py-5 text-left items-center flex w-full cursor-pointer bg-transparent uppercase font-mono text-xs font-normal leading-4 tracking-wider text-muted-foreground m-0 p-0 justify-between border-b hover:opacity-80 px-5 sm:px-10"
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  >
+                    <span className="w-3/4">{t.nav.services}</span>
+                    <span className={cn(
+                      "text-muted-foreground transform transition-all duration-150 ease-[cubic-bezier(.4,0,.2,1)]",
+                      mobileServicesOpen && "rotate-90"
+                    )}>
+                      <svg width="12" height="12" className="block align-middle">
+                        <path d="M4.5 3L7.5 6L4.5 9" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                  </button>
+                </h3>
+                {mobileServicesOpen && (
+                  <div className="overflow-hidden">
+                    <div className="pl-5 sm:pl-10">
+                      <Link
+                        href="/services/infrastructure"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.services.infrastructure.title}
+                      </Link>
+                      <Link
+                        href="/services/security"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.services.security.title}
+                      </Link>
+                      <Link
+                        href="/services/development"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.services.development.title}
+                      </Link>
+                      <Link
+                        href="/services/consulting"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.services.consulting.title}
+                      </Link>
+                      <Link
+                        href="/services/specifications"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors border-b"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.services.specifications.title}
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Method menu */}
+            <div className="text-left">
+              <div>
+                <h3 className="text-balance m-0 text-inherit font-inherit">
+                  <button 
+                    type="button" 
+                    className="py-5 text-left items-center flex w-full cursor-pointer bg-transparent uppercase font-mono text-xs font-normal leading-4 tracking-wider text-muted-foreground m-0 p-0 justify-between border-b hover:opacity-80 px-5 sm:px-10"
+                    onClick={() => setMobileMethodOpen(!mobileMethodOpen)}
+                  >
+                    <span className="w-3/4">{t.nav.method}</span>
+                    <span className={cn(
+                      "text-muted-foreground transform transition-all duration-150 ease-[cubic-bezier(.4,0,.2,1)]",
+                      mobileMethodOpen && "rotate-90"
+                    )}>
+                      <svg width="12" height="12" className="block align-middle">
+                        <path d="M4.5 3L7.5 6L4.5 9" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                  </button>
+                </h3>
+                {mobileMethodOpen && (
+                  <div className="overflow-hidden">
+                    <div className="pl-5 sm:pl-10">
+                      <Link
+                        href="/method/introduction"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.method.introduction.title}
+                      </Link>
+                      <Link
+                        href="/method/principles"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.method.principles.title}
+                      </Link>
+                      <Link
+                        href="/method/implementation"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.method.implementation.title}
+                      </Link>
+                      <Link
+                        href="/method/practices"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.method.practices.title}
+                      </Link>
+                      <Link
+                        href="/method/philosophy"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors border-b"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.method.philosophy.title}
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Company menu */}
+            <div className="text-left">
+              <div>
+                <h3 className="text-balance m-0 text-inherit font-inherit">
+                  <button 
+                    type="button" 
+                    className="py-5 text-left items-center flex w-full cursor-pointer bg-transparent uppercase font-mono text-xs font-normal leading-4 tracking-wider text-muted-foreground m-0 p-0 justify-between border-b hover:opacity-80 px-5 sm:px-10"
+                    onClick={() => setMobileCompanyOpen(!mobileCompanyOpen)}
+                  >
+                    <span className="w-3/4">{t.nav.company}</span>
+                    <span className={cn(
+                      "text-muted-foreground transform transition-all duration-150 ease-[cubic-bezier(.4,0,.2,1)]",
+                      mobileCompanyOpen && "rotate-90"
+                    )}>
+                      <svg width="12" height="12" className="block align-middle">
+                        <path d="M4.5 3L7.5 6L4.5 9" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                  </button>
+                </h3>
+                {mobileCompanyOpen && (
+                  <div className="overflow-hidden">
+                    <div className="pl-5 sm:pl-10">
+                      <Link
+                        href="/company/about"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.company.about.title}
+                      </Link>
+                      <Link
+                        href="/company/work"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.company.work.title}
+                      </Link>
+                      <Link
+                        href="/company/team"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.company.team.title}
+                      </Link>
+                      <Link
+                        href="/company/partners"
+                        className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors border-b"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t.company.partners.title}
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Contact link */}
             <Link
               href="/contact"
-              className="oxide-nav-link-mobile"
+              className="block py-5 px-5 sm:px-10 text-left uppercase font-mono text-xs font-normal leading-4 tracking-wider text-muted-foreground hover:opacity-80 border-b"
+              onClick={() => setMobileMenuOpen(false)}
             >
               {t.nav.contact}
             </Link>
-            <div className="py-4">
-              <Link 
-                href="/contact" 
-                className="oxide-nav-button oxide-nav-button-outline w-full text-center"
-              >
-                {t.cta.getStarted}
-              </Link>
-            </div>
           </div>
         </div>
       )}
@@ -714,27 +898,37 @@ const MethodListItem = React.forwardRef<
           )}
           onMouseEnter={(e) => {
             e.stopPropagation()
+
             onHover(methodKey)
             if (methodKey === 'introduction') {
+
               onShowArt(true)
             } else if (methodKey === 'principles' && onShowPrinciplesArt) {
+
               onShowPrinciplesArt(true)
             } else if (methodKey === 'implementation' && onShowImplementationArt) {
+
               onShowImplementationArt(true)
             } else if (methodKey === 'practices' && onShowPracticesArt) {
+
               onShowPracticesArt(true)
             } else if (methodKey === 'philosophy' && onShowPhilosophyArt) {
+
               onShowPhilosophyArt(true)
             }
           }}
           onMouseLeave={(e) => {
             e.stopPropagation()
+
             onHover('')
             if (methodKey === 'introduction') {
+
               onShowArt(false)
             } else if (methodKey === 'principles' && onShowPrinciplesArt) {
+
               onShowPrinciplesArt(false)
             } else if (methodKey === 'implementation' && onShowImplementationArt) {
+
               onShowImplementationArt(false)
             } else if (methodKey === 'practices' && onShowPracticesArt) {
               onShowPracticesArt(false)

@@ -67,7 +67,7 @@ export const DeveloperVelocitySection = () => {
     },
     es: {
       title: "Soluciones Tecnológicas Completas",
-      subtitle: "Diseñamos, implementamos y mantenemos la infraestructura que impulsa las organizaciones modernas. Un socio. Responsabilidad total.",
+      subtitle: "Diseñamos, implementamos y mantenemos la infraestructura que hace avanzar a las empresas más modernas. Un socio estratégico. Compromiso absoluto.",
       features: [
         {
           title: "Redes y Servidores",
@@ -84,7 +84,7 @@ export const DeveloperVelocitySection = () => {
         },
         {
           title: "Protección Completa",
-          subtitle: "SentinelOne XDR, cámaras UniFi Protect, respaldo y recuperación, listo para cumplimiento. Defensa multicapa que protege lo que más importa a tu negocio.",
+          subtitle: "SentinelOne XDR, cámaras UniFi Protect, almacenamiento duplicado en infraestructura Synology y redundancia y recuperación.",
           image1: "/img/ascii-art_2.svg",
           image2: "/img/ascii-art_2.svg",
           image1Width: 620,
@@ -97,7 +97,7 @@ export const DeveloperVelocitySection = () => {
         },
         {
           title: "Desarrollo Personalizado",
-          subtitle: "Aplicaciones Next.js, automatización de procesos, integración de IA, transformación digital. Soluciones modernas que transforman cómo trabajas, no solo digitalizan problemas antiguos.",
+          subtitle: "Aplicaciones Next.js, automatización de procesos, integración de IA. Soluciones modernas que transforman la forma de trabajar.",
           image1: "/img/ascii-art_3.svg",
           image2: "/img/ascii-art_3.svg",
           image1Width: 620,
@@ -116,7 +116,7 @@ export const DeveloperVelocitySection = () => {
 
   return (
     <section className="w-full mt-28 sm:mt-[11.25rem] mb-4">
-      <div className="container mx-auto px-5 sm:px-10">
+      <div className="container mx-auto px-4 sm:px-10">
         
           <h2 
             className="text-balance m-0 mb-4 sm:mb-6 text-center sm:text-left text-2xl sm:text-4xl lg:text-5xl font-normal"
@@ -149,11 +149,16 @@ export const DeveloperVelocitySection = () => {
                   ${index === 0 ? 'lg:px-4' : index === 1 ? 'lg:px-4 lg:border-l lg:border-r' : 'lg:px-4'} 
                   ${index < t.features.length - 1 ? 'border-b lg:border-b-0' : ''} 
                   border-border lg:justify-between
-                  max-lg:gap-10 max-lg:p-12 max-lg:border-l max-lg:border-r max-lg:grid max-lg:grid-cols-12
+                  max-lg:gap-6 max-lg:p-6 sm:max-lg:p-8 max-lg:border-l max-lg:border-r max-lg:flex max-lg:flex-col
                 `}
               >
-                <div className="w-full relative max-w-[400px] lg:mb-20 col-span-6 lg:col-span-6 col-start-1">
-                  <div className="p-3 rounded-lg" style={{ backgroundColor: '#3b301c' }}>
+                <div className="w-full relative max-w-[400px] lg:mb-20">
+                  <div 
+                    className={`p-3 rounded-lg ${mounted && resolvedTheme === 'dark' ? '' : 'bg-gradient-to-b from-muted/50 to-muted'}`}
+                    style={{ 
+                      backgroundColor: mounted && resolvedTheme === 'dark' ? '#3b301c' : undefined 
+                    }}
+                  >
                     {index === 0 ? (
                       <div 
                         className="w-full rounded overflow-hidden"
@@ -188,9 +193,9 @@ export const DeveloperVelocitySection = () => {
                   </div>
                 </div>
                 
-                <div className="flex flex-col lg:col-span-6 col-start-8 col-span-5 max-sm:w-full">
+                <div className="flex flex-col max-sm:w-full">
                   <h3 
-                    className="text-balance m-0 text-lg font-normal leading-7 tracking-wide text-muted-foreground mb-6"
+                    className="text-balance m-0 text-base sm:text-lg font-normal leading-6 sm:leading-7 tracking-wide text-muted-foreground mb-6"
                     style={{
                       fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif'
                     }}

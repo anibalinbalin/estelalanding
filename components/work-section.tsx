@@ -86,7 +86,7 @@ export function WorkSection() {
           <p className="text-sm font-mono text-muted-foreground uppercase tracking-wide mb-6">
             Our Work
           </p>
-          <h1 className="text-4xl font-normal leading-tight mb-4">
+          <h1 className="text-4xl font-normal leading-tight mb-2">
             Recent Projects
           </h1>
           <p className="text-lg leading-relaxed mb-6">
@@ -240,7 +240,7 @@ export function WorkSection() {
 
           <div className="space-y-8">
             <div className="flex gap-6">
-              <div className="flex-shrink-0 w-10 h-10 bg-[#1a2224] rounded-full flex items-center justify-center text-sm font-mono text-white">
+              <div className="flex-shrink-0 w-10 h-10 bg-[var(--step-indicator-p3)] rounded-full flex items-center justify-center text-sm font-mono text-white">
                 1
               </div>
               <div>
@@ -252,7 +252,7 @@ export function WorkSection() {
             </div>
 
             <div className="flex gap-6">
-              <div className="flex-shrink-0 w-10 h-10 bg-[#1a2224] rounded-full flex items-center justify-center text-sm font-mono text-white">
+              <div className="flex-shrink-0 w-10 h-10 bg-[var(--step-indicator-p3)] rounded-full flex items-center justify-center text-sm font-mono text-white">
                 2
               </div>
               <div>
@@ -264,7 +264,7 @@ export function WorkSection() {
             </div>
 
             <div className="flex gap-6">
-              <div className="flex-shrink-0 w-10 h-10 bg-[#1a2224] rounded-full flex items-center justify-center text-sm font-mono text-white">
+              <div className="flex-shrink-0 w-10 h-10 bg-[var(--step-indicator-p3)] rounded-full flex items-center justify-center text-sm font-mono text-white">
                 3
               </div>
               <div>
@@ -276,7 +276,7 @@ export function WorkSection() {
             </div>
 
             <div className="flex gap-6">
-              <div className="flex-shrink-0 w-10 h-10 bg-[#1a2224] rounded-full flex items-center justify-center text-sm font-mono text-white">
+              <div className="flex-shrink-0 w-10 h-10 bg-[var(--step-indicator-p3)] rounded-full flex items-center justify-center text-sm font-mono text-white">
                 4
               </div>
               <div>

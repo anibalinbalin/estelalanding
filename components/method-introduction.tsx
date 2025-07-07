@@ -2,10 +2,20 @@
 
 import { Link } from 'next-view-transitions'
 import dynamic from 'next/dynamic'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
+import { useTheme } from 'next-themes'
+import { useState, useEffect } from 'react'
 
 const ReactbitsDither = dynamic(() => import('@/components/ui/reactbits-dither'), { ssr: false })
 
 export function MethodIntroduction() {
+  const { resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  
   const pageStyles = {
     backgroundColor: 'var(--background)',
     color: 'var(--foreground)',
@@ -37,7 +47,6 @@ export function MethodIntroduction() {
 
   const dividerStyle = {
     height: '1px',
-    backgroundColor: 'var(--border)',
     marginBottom: '48px'
   }
 
@@ -74,11 +83,13 @@ export function MethodIntroduction() {
     <div style={pageStyles}>
       <div style={{ maxWidth: '680px', margin: '0 auto', padding: '120px 32px' }}>
         {/* Breadcrumb */}
-        <div style={badgeStyle}>
-          Estela / Method / Introduction
-        </div>
-
-        <div style={dividerStyle} />
+        <Breadcrumb 
+          items={[
+            { label: 'Estela', href: '/' },
+            { label: 'Method', href: '/method' },
+            { label: 'Introduction' }
+          ]} 
+        />
 
         {/* Section Number */}
         <div style={{ textAlign: 'center', marginBottom: '24px' }}>
@@ -89,7 +100,7 @@ export function MethodIntroduction() {
             width: '40px',
             height: '40px',
             borderRadius: '50%',
-            backgroundColor: '#1a2224',
+            backgroundColor: 'var(--step-indicator-p3)',
             color: '#fff',
             fontSize: '1.125rem', 
             fontFamily: 'GT_America_Mono, monospace'
@@ -116,15 +127,15 @@ export function MethodIntroduction() {
           position: 'relative',
           marginBottom: '48px',
           borderRadius: '8px',
-          border: '1px solid var(--border)',
+          border: mounted && resolvedTheme === 'light' ? '1px solid #d5d5d5' : '1px solid var(--border)',
           height: '300px',
           width: '100%',
           overflow: 'hidden',
-          backgroundColor: '#3d3019',
+          backgroundColor: 'var(--ascii-background-alt-p3)',
           boxSizing: 'border-box'
         }}>
           <ReactbitsDither
-            waveColor={[0.961, 0.725, 0.267]}
+            waveColor={mounted && resolvedTheme === 'light' ? [0.6, 0.6, 0.6] : [0.961, 0.725, 0.267]}
             disableAnimation={false}
             enableMouseInteraction={true}
             mouseRadius={0.3}
@@ -386,28 +397,6 @@ export function MethodIntroduction() {
 
           <p style={paragraphStyle}>
             Each element reflects our core belief: <strong>technology should adapt to people, not the other way around.</strong>
-          </p>
-        </section>
-
-        <div style={dividerStyle} />
-
-        {/* Closing Statement */}
-        <section style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <p style={{ 
-            ...paragraphStyle, 
-            fontSize: '1.125rem', 
-            fontWeight: '500',
-            color: 'var(--foreground)',
-            marginBottom: '8px'
-          }}>
-            Welcome to the Estela method.
-          </p>
-          <p style={{ 
-            ...paragraphStyle, 
-            fontSize: '1rem',
-            fontStyle: 'italic'
-          }}>
-            Where technology speaks human.
           </p>
         </section>
 

@@ -1,6 +1,18 @@
 import React, { useEffect, useRef } from 'react';
 
-const HexagonalSlidingBars = () => {
+interface HexagonalSlidingBarsProps {
+  backgroundColor?: string;
+  lineColor?: string;
+  fillColor?: string;
+  containerBackgroundColor?: string;
+}
+
+const HexagonalSlidingBars = ({ 
+  backgroundColor = '#3d3019',
+  lineColor = '#f5b944',
+  fillColor = '#f5b944',
+  containerBackgroundColor = '#F0EEE6'
+}: HexagonalSlidingBarsProps = {}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const timeRef = useRef(0);
   const animationFrameId = useRef<number | null>(null);
@@ -162,14 +174,14 @@ const HexagonalSlidingBars = () => {
         ? 4 * easingFactor * easingFactor * easingFactor 
         : 1 - Math.pow(-2 * easingFactor + 2, 3) / 2;
 
-      ctx.fillStyle = '#3d3019';
+      ctx.fillStyle = backgroundColor;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       for (let i = 0; i < numLines; i++) {
         const x = i * lineSpacing + lineSpacing / 2;
 
         ctx.beginPath();
-        ctx.strokeStyle = '#f5b944';
+        ctx.strokeStyle = lineColor;
         ctx.lineWidth = 1;
         ctx.moveTo(x, 0);
         ctx.lineTo(x, canvas.height);
@@ -192,7 +204,7 @@ const HexagonalSlidingBars = () => {
           const width = bar1.width + (bar2.width - bar1.width) * smoothEasing;
 
           if (height > 0.1 && width > 0.1) {
-            ctx.fillStyle = '#f5b944';
+            ctx.fillStyle = fillColor;
             ctx.fillRect(x - width/2, y - height/2, width, height);
           }
         }
@@ -214,10 +226,10 @@ const HexagonalSlidingBars = () => {
       timeRef.current = 0;
       animationFrameId.current = null;
     };
-  }, []);
+  }, [backgroundColor, lineColor, fillColor]);
 
   return (
-    <div style={{ width: '100%', height: '100%', backgroundColor: '#F0EEE6' }}>
+    <div style={{ width: '100%', height: '100%', backgroundColor: containerBackgroundColor }}>
       <canvas ref={canvasRef} style={{ display: 'block', width: '100%', height: '100%' }} />
     </div>
   );

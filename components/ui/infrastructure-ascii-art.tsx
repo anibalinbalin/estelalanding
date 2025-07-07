@@ -151,9 +151,9 @@ export const InfrastructureAsciiArt: React.FC<InfrastructureAsciiArtProps> = ({
 
   if (!isVisible) return null
 
-  // Custom color scheme
-  const textColor = '#f5b944'
-  const backgroundColor = '#3d3019'
+  // Custom color scheme using CSS variables
+  const textColor = 'var(--ascii-foreground-p3)'
+  const backgroundColor = 'var(--ascii-background-alt-p3)'
 
   return (
     <div

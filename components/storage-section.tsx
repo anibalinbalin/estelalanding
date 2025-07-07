@@ -117,7 +117,7 @@ export const StorageSection = () => {
             className="text-4xl lg:text-5xl font-normal text-center"
             style={{
               fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-              color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a',
+              color: 'var(--content-raise-p3)',
               lineHeight: '1.2'
             }}
           >
@@ -164,7 +164,7 @@ export const StorageSection = () => {
               className="text-2xl lg:text-4xl font-normal mb-4"
               style={{
                 fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-                color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a'
+                color: 'var(--content-raise-p3)'
               }}
             >
               {t.subtitle}
@@ -205,7 +205,7 @@ export const StorageSection = () => {
               className="mb-4 text-balance m-0 text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal"
               style={{
                 fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-                color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a'
+                color: 'var(--content-raise-p3)'
               }}
             >
               {t.onDemandTitle}
@@ -377,7 +377,7 @@ export const StorageSection = () => {
             className="text-2xl lg:text-4xl font-normal"
             style={{
               fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-              color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a'
+              color: 'var(--content-raise-p3)'
             }}
           >
             {t.sectionsTitle} <br className="hidden lg:block"/>
@@ -395,7 +395,7 @@ export const StorageSection = () => {
                 className="text-lg sm:text-2xl lg:text-4xl font-normal max-sm:text-center"
                 style={{
                   fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-                  color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a'
+                  color: 'var(--content-raise-p3)'
                 }}
               >
                 {t.ctaTitle}<br/>
@@ -427,7 +427,7 @@ export const StorageSection = () => {
             className="text-2xl lg:text-4xl font-normal"
             style={{
               fontFamily: 'SuisseIntl, -apple-system, system-ui, Helvetica, Arial, sans-serif',
-              color: mounted && resolvedTheme === 'dark' ? '#d7d8d9' : '#08090a'
+              color: 'var(--content-raise-p3)'
             }}
           >
             {t.specsTitle}
