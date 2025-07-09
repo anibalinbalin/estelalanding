@@ -77,8 +77,8 @@ const SecurityPage = () => {
                   <div className="relative overflow-hidden border bg-[var(--surface-tertiary-p3)] border-[var(--stroke-secondary-p3)] col-span-12 min-[800px]:col-start-[7] min-[1000px]:col-start-[8] min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg">
                     <div className="relative items-center w-[100%] flex h-[100%] justify-center">
                       <ThemeImage 
-                        darkSrc="/img/oxide-compute-instance-create.png"
-                        lightSrc="/img/oxide-compute-instance-create_light.png"
+                        darkSrc="/img/estela-compute-instance-create.png"
+                        lightSrc="/img/estela-compute-instance-create_light.png"
                         width={427} 
                         height={444} 
                         className="w-[100%] max-w-[100%] h-auto block align-middle" 
@@ -86,7 +86,7 @@ const SecurityPage = () => {
                       />
                       <noscript>
                         <div className="absolute inset-0 flex h-full w-full items-center justify-center">
-                          <img className="w-full h-auto" src="/img/oxide-compute-instance-create.png" width="427" height="444" alt="Snapshot of the instance create form, a hardware configuration and distro are selected" />
+                          <img className="w-full h-auto" src="/img/estela-compute-instance-create.png" width="427" height="444" alt="Snapshot of the instance create form, a hardware configuration and distro are selected" />
                         </div>
                       </noscript>
                     </div>
@@ -153,14 +153,14 @@ const SecurityPage = () => {
                 <div className="col-span-6 min-[800px]:col-span-3 mb-4">
                   <div>
                     <div className="relative overflow-hidden border border-[var(--stroke-default-p3)] rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
-                      <img src="/img/oxide-compute-terraform-config_colosus.svg" width="245" height="245" className="w-[100%] max-w-[100%] h-auto block align-middle" alt="" />
+                      <img src="/img/estela-compute-terraform-config_colosus.svg" width="245" height="245" className="w-[100%] max-w-[100%] h-auto block align-middle" alt="" />
                     </div>
                   </div>
                 </div>
                 <div className="col-span-6 min-[800px]:col-span-3 mb-4">
                   <div>
                     <div className="relative overflow-hidden border bg-[var(--surface-tertiary-p3)] border-[var(--stroke-default-p3)] rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)]">
-                      <img src="/img/oxide-compute-terraform-init.svg" width="245" height="245" className="w-[100%] max-w-[100%] h-auto block align-middle" alt="" />
+                      <img src="/img/estela-compute-terraform-init.svg" width="245" height="245" className="w-[100%] max-w-[100%] h-auto block align-middle" alt="" />
                     </div>
                   </div>
                 </div>
@@ -242,8 +242,8 @@ const SecurityPage = () => {
                 <div className="relative overflow-hidden border bg-[var(--surface-tertiary-p3)] border-[var(--stroke-secondary-p3)] col-span-12 min-[800px]:col-start-[7] min-[1000px]:col-start-[8] min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg">
                   <div className="relative items-center w-[100%] flex h-[100%] justify-center">
                     <ThemeImage 
-                      darkSrc="/img/oxide-storage-errors.svg"
-                      lightSrc="/img/oxide-storage-errors_light.svg"
+                      darkSrc="/img/estela-storage-errors.svg"
+                      lightSrc="/img/estela-storage-errors_light.svg"
                       width={516} 
                       height={343} 
                       className="w-[100%] max-w-[100%] h-auto block align-middle" 
@@ -251,7 +251,7 @@ const SecurityPage = () => {
                     />
                     <noscript>
                       <div className="absolute inset-0 flex h-full w-full items-center justify-center">
-                        <img className="w-full h-auto" src="/img/oxide-storage-errors.svg" width="516" height="343" alt="Storage errors visualization" />
+                        <img className="w-full h-auto" src="/img/estela-storage-errors.svg" width="516" height="343" alt="Storage errors visualization" />
                       </div>
                     </noscript>
                   </div>
@@ -272,8 +272,8 @@ const SecurityPage = () => {
                 </div>
                 <div className="relative col-start-[1] overflow-hidden border bg-[var(--surface-tertiary-p3)] border-[var(--stroke-secondary-p3)] col-span-12 min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg">
                   <ThemeImage 
-                    darkSrc="/img/oxide-cloud_backup.png"
-                    lightSrc="/img/oxide-cloud_backup_light.png"
+                    darkSrc="/img/estela-cloud_backup.png"
+                    lightSrc="/img/estela-cloud_backup_light.png"
                     width={430} 
                     height={309} 
                     className="w-[100%] max-w-[100%] h-auto block align-middle" 

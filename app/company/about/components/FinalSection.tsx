@@ -1,7 +1,26 @@
+'use client'
+
 import React from 'react';
 import { ValuesGrid } from './ValuesGrid';
+import { useLanguage } from '@/components/language-provider';
 
 export const FinalSection = () => {
+  const { language } = useLanguage();
+  
+  const content = {
+    en: {
+      ourValues: 'Our Values',
+      valuesIntro: 'Unlike principles, values indicate relative importance: they are objectives rather than constraints, and can come into tension with one another.',
+      valuesWarning: 'Indeed, many of these values can become pathological when taken to an illogical extreme; absolute adherence to a particular value should never trump prudence.'
+    },
+    es: {
+      ourValues: 'Nuestros Valores',
+      valuesIntro: 'A diferencia de los principios, los valores indican una importancia relativa: son objetivos más que restricciones, y pueden entrar en tensión entre sí.',
+      valuesWarning: 'De hecho, muchos de estos valores pueden volverse patológicos si se llevan a un extremo ilógico; la adhesión absoluta a un valor en particular nunca debe sobreponerse a la prudencia.'
+    }
+  };
+  
+  const t = content[language] || content.en;
   return (
     <>
       {/* Second Image Section */}
@@ -60,13 +79,13 @@ export const FinalSection = () => {
           <div className="grid col-span-12 min-[600px]:col-start-[2] min-[1000px]:col-start-[4] min-[600px]:col-span-10 min-[1000px]:col-span-7">
             <div className="min-[1000px]:col-start-[2] min-[1000px]:col-span-5">
               <h2 className="text-balance textWrapStyle-[balance] m-0 text-[#7d8384] dark:text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
-                Our Values
+                {t.ourValues}
               </h2>
               <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                Unlike principles, values indicate relative importance: they are objectives rather than constraints, and can come into tension with one another.
+                {t.valuesIntro}
               </p>
               <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                Indeed, many of these values can become pathological when taken to an illogical extreme; absolute adherence to a particular value should never trump prudence.
+                {t.valuesWarning}
               </p>
             </div>
           </div>

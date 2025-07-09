@@ -51,7 +51,7 @@ export default function Features() {
                 },
                 {
                     title: "Protección Completa",
-                    subtitle: "SentinelOne XDR, cámaras UniFi Protect, almacenamiento duplicado en infraestructura Synology y redundancia y recuperación.",
+                    subtitle: "SentinelOne XDR, cámaras UniFi Protect, almacenamiento duplicado en infraestructura Synology: redundancia y recuperación.",
                     image: "/img/ascii-art_2.svg"
                 },
                 {

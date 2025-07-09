@@ -234,6 +234,16 @@ export function Navbar() {
   
   const logoSrc = mounted && resolvedTheme === "dark" ? "/logos/logo_blanco.png" : "/logos/logo_original.png"
   const t = content[language]
+  
+  // Helper function to get the correct path based on language
+  const getLocalizedPath = (path: string) => {
+    if (language === 'es' && !path.startsWith('/es')) {
+      return `/es${path}`
+    } else if (language === 'en' && path.startsWith('/es')) {
+      return path.replace('/es', '')
+    }
+    return path
+  }
 
   return (
     <nav className={`relative z-50 w-full ${pathname?.startsWith('/services') ? '' : 'border-b'}`}>
@@ -264,7 +274,7 @@ export function Navbar() {
 
               {/* Logo - left aligned */}
               <Link 
-                href="/" 
+                href={language === 'es' ? '/es' : '/'} 
                 className="flex items-center h-[58px] sm:h-[69px] lg:h-[80px] justify-start"
               >
                 <Image
@@ -282,7 +292,7 @@ export function Navbar() {
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="oxide-nav-trigger">
+                    <NavigationMenuTrigger className="estela-nav-trigger">
                       {t.nav.services}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent 
@@ -300,7 +310,7 @@ export function Navbar() {
                           <NavigationMenuLink asChild>
                             <a
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted no-underline outline-none focus:shadow-md min-h-[300px] relative overflow-hidden p-3"
-                              href="/services"
+                              href={getLocalizedPath("/services")}
                               onMouseEnter={(e) => {
                                 e.stopPropagation()
                                 // Reset all ASCII art states when hovering over default area
@@ -347,7 +357,7 @@ export function Navbar() {
                           </NavigationMenuLink>
                         </li>
                         <ServiceListItem 
-                          href="/services/infrastructure" 
+                          href={getLocalizedPath("/services/infrastructure")} 
                           title={t.services.infrastructure.title}
                           serviceKey="infrastructure"
                           onHover={setHoveredService}
@@ -356,7 +366,7 @@ export function Navbar() {
                           {t.services.infrastructure.subtitle}
                         </ServiceListItem>
                         <ServiceListItem 
-                          href="/services/security" 
+                          href={getLocalizedPath("/services/security")} 
                           title={t.services.security.title}
                           serviceKey="security"
                           onHover={setHoveredService}
@@ -365,7 +375,7 @@ export function Navbar() {
                           {t.services.security.subtitle}
                         </ServiceListItem>
                         <ServiceListItem 
-                          href="/services/development" 
+                          href={getLocalizedPath("/services/development")} 
                           title={t.services.development.title}
                           serviceKey="development"
                           onHover={setHoveredService}
@@ -374,7 +384,7 @@ export function Navbar() {
                           {t.services.development.subtitle}
                         </ServiceListItem>
                         <ServiceListItem 
-                          href="/services/consulting" 
+                          href={getLocalizedPath("/services/consulting")} 
                           title={t.services.consulting.title}
                           serviceKey="consulting"
                           onHover={setHoveredService}
@@ -383,7 +393,7 @@ export function Navbar() {
                           {t.services.consulting.subtitle}
                         </ServiceListItem>
                         <ServiceListItem 
-                          href="/services/specifications" 
+                          href={getLocalizedPath("/services/specifications")} 
                           title={t.services.specifications.title}
                           serviceKey="specifications"
                           onHover={setHoveredService}
@@ -395,7 +405,7 @@ export function Navbar() {
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="oxide-nav-trigger">
+                    <NavigationMenuTrigger className="estela-nav-trigger">
                       {t.nav.method}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent 
@@ -413,7 +423,7 @@ export function Navbar() {
                           <NavigationMenuLink asChild>
                             <a
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md min-h-[300px] relative overflow-hidden"
-                              href="/method"
+                              href={getLocalizedPath("/method")}
                               onMouseEnter={(e) => e.stopPropagation()}
                               onMouseLeave={(e) => e.stopPropagation()}
                             >
@@ -467,7 +477,7 @@ export function Navbar() {
                           </NavigationMenuLink>
                         </li>
                         <MethodListItem 
-                          href="/method/introduction" 
+                          href={getLocalizedPath("/method/introduction")} 
                           title={t.method.introduction.title}
                           methodKey="introduction"
                           onHover={setHoveredMethodItem}
@@ -480,7 +490,7 @@ export function Navbar() {
                           {t.method.introduction.subtitle}
                         </MethodListItem>
                         <MethodListItem 
-                          href="/method/principles" 
+                          href={getLocalizedPath("/method/principles")} 
                           title={t.method.principles.title}
                           methodKey="principles"
                           onHover={setHoveredMethodItem}
@@ -493,7 +503,7 @@ export function Navbar() {
                           {t.method.principles.subtitle}
                         </MethodListItem>
                         <MethodListItem 
-                          href="/method/implementation" 
+                          href={getLocalizedPath("/method/implementation")} 
                           title={t.method.implementation.title}
                           methodKey="implementation"
                           onHover={setHoveredMethodItem}
@@ -506,7 +516,7 @@ export function Navbar() {
                           {t.method.implementation.subtitle}
                         </MethodListItem>
                         <MethodListItem 
-                          href="/method/practices" 
+                          href={getLocalizedPath("/method/practices")} 
                           title={t.method.practices.title}
                           methodKey="practices"
                           onHover={setHoveredMethodItem}
@@ -519,7 +529,7 @@ export function Navbar() {
                           {t.method.practices.subtitle}
                         </MethodListItem>
                         <MethodListItem 
-                          href="/method/philosophy" 
+                          href={getLocalizedPath("/method/philosophy")} 
                           title={t.method.philosophy.title}
                           methodKey="philosophy"
                           onHover={setHoveredMethodItem}
@@ -535,21 +545,21 @@ export function Navbar() {
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="oxide-nav-trigger">
+                    <NavigationMenuTrigger className="estela-nav-trigger">
                       {t.nav.company}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                        <ListItem href="/company/about" title={t.company.about.title}>
+                        <ListItem href={getLocalizedPath("/company/about")} title={t.company.about.title}>
                           {t.company.about.subtitle}
                         </ListItem>
-                        <ListItem href="/company/work" title={t.company.work.title}>
+                        <ListItem href={getLocalizedPath("/company/work")} title={t.company.work.title}>
                           {t.company.work.subtitle}
                         </ListItem>
-                        <ListItem href="/company/team" title={t.company.team.title}>
+                        <ListItem href={getLocalizedPath("/company/team")} title={t.company.team.title}>
                           {t.company.team.subtitle}
                         </ListItem>
-                        <ListItem href="/company/partners" title={t.company.partners.title}>
+                        <ListItem href={getLocalizedPath("/company/partners")} title={t.company.partners.title}>
                           {t.company.partners.subtitle}
                         </ListItem>
                       </ul>
@@ -557,7 +567,7 @@ export function Navbar() {
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild>
-                      <Link href="/contact" className="oxide-nav-link">
+                      <Link href={getLocalizedPath("/contact")} className="estela-nav-link">
                         {t.nav.contact}
                       </Link>
                     </NavigationMenuLink>
@@ -602,35 +612,35 @@ export function Navbar() {
                   <div className="overflow-hidden">
                     <div className="pl-5 sm:pl-10">
                       <Link
-                        href="/services/infrastructure"
+                        href={getLocalizedPath("/services/infrastructure")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t.services.infrastructure.title}
                       </Link>
                       <Link
-                        href="/services/security"
+                        href={getLocalizedPath("/services/security")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t.services.security.title}
                       </Link>
                       <Link
-                        href="/services/development"
+                        href={getLocalizedPath("/services/development")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t.services.development.title}
                       </Link>
                       <Link
-                        href="/services/consulting"
+                        href={getLocalizedPath("/services/consulting")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t.services.consulting.title}
                       </Link>
                       <Link
-                        href="/services/specifications"
+                        href={getLocalizedPath("/services/specifications")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors border-b"
                         onClick={() => setMobileMenuOpen(false)}
                       >
@@ -666,35 +676,35 @@ export function Navbar() {
                   <div className="overflow-hidden">
                     <div className="pl-5 sm:pl-10">
                       <Link
-                        href="/method/introduction"
+                        href={getLocalizedPath("/method/introduction")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t.method.introduction.title}
                       </Link>
                       <Link
-                        href="/method/principles"
+                        href={getLocalizedPath("/method/principles")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t.method.principles.title}
                       </Link>
                       <Link
-                        href="/method/implementation"
+                        href={getLocalizedPath("/method/implementation")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t.method.implementation.title}
                       </Link>
                       <Link
-                        href="/method/practices"
+                        href={getLocalizedPath("/method/practices")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t.method.practices.title}
                       </Link>
                       <Link
-                        href="/method/philosophy"
+                        href={getLocalizedPath("/method/philosophy")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors border-b"
                         onClick={() => setMobileMenuOpen(false)}
                       >
@@ -730,28 +740,28 @@ export function Navbar() {
                   <div className="overflow-hidden">
                     <div className="pl-5 sm:pl-10">
                       <Link
-                        href="/company/about"
+                        href={getLocalizedPath("/company/about")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t.company.about.title}
                       </Link>
                       <Link
-                        href="/company/work"
+                        href={getLocalizedPath("/company/work")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t.company.work.title}
                       </Link>
                       <Link
-                        href="/company/team"
+                        href={getLocalizedPath("/company/team")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {t.company.team.title}
                       </Link>
                       <Link
-                        href="/company/partners"
+                        href={getLocalizedPath("/company/partners")}
                         className="block py-3 pr-5 sm:pr-10 text-sm text-muted-foreground hover:text-foreground transition-colors border-b"
                         onClick={() => setMobileMenuOpen(false)}
                       >
@@ -765,7 +775,7 @@ export function Navbar() {
 
             {/* Contact link */}
             <Link
-              href="/contact"
+              href={getLocalizedPath("/contact")}
               className="block py-5 px-5 sm:px-10 text-left uppercase font-mono text-xs font-normal leading-4 tracking-wider text-muted-foreground hover:opacity-80 border-b"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -793,7 +803,7 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="oxide-submenu-title">{title}</div>
+          <div className="estela-submenu-title">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
@@ -863,7 +873,7 @@ const ServiceListItem = React.forwardRef<
           }}
           {...props}
         >
-          <div className="oxide-submenu-title">{title}</div>
+          <div className="estela-submenu-title">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
@@ -938,7 +948,7 @@ const MethodListItem = React.forwardRef<
           }}
           {...props}
         >
-          <div className="oxide-submenu-title">{title}</div>
+          <div className="estela-submenu-title">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>

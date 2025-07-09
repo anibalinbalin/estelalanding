@@ -1,34 +1,34 @@
 @font-face { 
   font-family:GT America Mono;
-  src:url(https://oxide.computer/fonts/GT-America-Mono-Regular-OCC.woff2) format("woff2"),url(https://oxide.computer/fonts/GT-America-Mono-Regular-OCC.woff) format("woff");
+  src:url(/font/GT-America-Mono-Regular-OCC.woff2) format("woff2"),url(/font/GT-America-Mono-Regular-OCC.woff) format("woff");
   font-style:normal;
   font-weight:400;
   font-display:swap;
 } 
 @font-face { 
   font-family:SuisseIntl;
-  src:url(https://oxide.computer/fonts/SuisseIntl-Light-WebS.woff2) format("woff2"),url(https://oxide.computer/fonts/SuisseIntl-Light-WebS.woff) format("woff");
+  src:url(/font/SuisseIntl-Light-WebS.woff2) format("woff2"),url(/font/SuisseIntl-Light-WebS.woff) format("woff");
   font-style:normal;
   font-weight:300;
   font-display:swap;
 } 
 @font-face { 
   font-family:SuisseIntl;
-  src:url(https://oxide.computer/fonts/SuisseIntl-Regular-WebS.woff2) format("woff2"),url(https://oxide.computer/fonts/SuisseIntl-Regular-WebS.woff) format("woff");
+  src:url(/font/SuisseIntl-Regular-WebS.woff2) format("woff2"),url(/font/SuisseIntl-Regular-WebS.woff) format("woff");
   font-style:normal;
   font-weight:400;
   font-display:swap;
 } 
 @font-face { 
   font-family:SuisseIntl;
-  src:url(https://oxide.computer/fonts/SuisseIntl-RegularItalic-WebS.woff2) format("woff2"),url(https://oxide.computer/fonts/SuisseIntl-RegularItalic-WebS.woff) format("woff");
+  src:url(/font/SuisseIntl-RegularItalic-WebS.woff2) format("woff2"),url(/font/SuisseIntl-RegularItalic-WebS.woff) format("woff");
   font-style:italic;
   font-weight:400;
   font-display:swap;
 } 
 @font-face { 
   font-family:SuisseIntl;
-  src:url(https://oxide.computer/fonts/SuisseIntl-Medium-WebS.woff2) format("woff2"),url(https://oxide.computer/fonts/SuisseIntl-Medium-WebS.woff) format("woff");
+  src:url(/font/SuisseIntl-Medium-WebS.woff2) format("woff2"),url(/font/SuisseIntl-Medium-WebS.woff) format("woff");
   font-style:normal;
   font-weight:500;
   font-display:swap;

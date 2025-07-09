@@ -84,7 +84,7 @@ export const DeveloperVelocitySection = () => {
         },
         {
           title: "Protección Completa",
-          subtitle: "SentinelOne XDR, cámaras UniFi Protect, almacenamiento duplicado en infraestructura Synology y redundancia y recuperación.",
+          subtitle: "SentinelOne XDR, cámaras UniFi Protect, almacenamiento duplicado en infraestructura Synology: redundancia y recuperación.",
           image1: "/img/ascii-art_2.svg",
           image2: "/img/ascii-art_2.svg",
           image1Width: 620,
@@ -204,7 +204,7 @@ export const DeveloperVelocitySection = () => {
                   </h3>
                   <Link 
                     href={feature.ctaLink}
-                    className="oxide-nav-button oxide-nav-button-primary inline-flex items-center self-start mt-auto"
+                    className="estela-nav-button estela-nav-button-primary inline-flex items-center self-start mt-auto"
                   >
                     {feature.ctaText} <MoveRight className="ml-2 h-4 w-4" />
                   </Link>

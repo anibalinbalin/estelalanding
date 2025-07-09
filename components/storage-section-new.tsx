@@ -30,12 +30,12 @@ export const StorageSectionNew = () => {
       sectionsTitle: "Resilient and Reliable Storage",
       sectionsSubtitle: "with Built-in Snapshot Management",
       onDemandTitle: "On-Demand Snapshots",
-      onDemandDesc1: "Oxide offers users instantaneous, point-in-time virtual disk snapshots to use for recovery and off-rack backup.",
+      onDemandDesc1: "Estela offers users instantaneous, point-in-time virtual disk snapshots to use for recovery and off-rack backup.",
       onDemandDesc2: "Snapshots are committed immediately then streamed to newly allocated regions. This provides consistent snapshots with easy-to-understand storage accounting.",
       openZfsTitle: "Powered by OpenZFS",
-      openZfsDesc: "The storage service uses OpenZFS for all data storage. This marries Oxide's distributed data storage and multi-node failure resiliency with the dependability and efficiency OpenZFS has earned in its 20 years of running demanding workloads.",
+      openZfsDesc: "The storage service uses OpenZFS for all data storage. This marries Estela's distributed data storage and multi-node failure resiliency with the dependability and efficiency OpenZFS has earned in its 20 years of running demanding workloads.",
       protectionTitle: "Proactive Data Protection", 
-      protectionDesc1: "The Oxide control plane monitors performance metrics as another early signal of component failure. As sleds and SSDs are rotated in and out, the Oxide control plane migrates storage regions to ensure the appropriate redundancy.",
+      protectionDesc1: "The Estela control plane monitors performance metrics as another early signal of component failure. As sleds and SSDs are rotated in and out, the Estela control plane migrates storage regions to ensure the appropriate redundancy.",
       protectionDesc2: "OpenZFS checksums and scrubs all data for early failure detection. Virtual disks constantly validate the integrity of your data, correcting failures as soon as they are discovered.",
       coDesignTitle: "Hardware and Software Co-Design",
       coDesignFeatures: [
@@ -68,12 +68,12 @@ export const StorageSectionNew = () => {
       sectionsTitle: "Almacenamiento Resiliente y Confiable",
       sectionsSubtitle: "con Gestión de Instantáneas Integrada",
       onDemandTitle: "Instantáneas Bajo Demanda",
-      onDemandDesc1: "Oxide ofrece a los usuarios instantáneas instantáneas de discos virtuales punto en el tiempo para usar en recuperación y respaldo fuera del rack.",
+      onDemandDesc1: "Estela ofrece a los usuarios instantáneas instantáneas de discos virtuales punto en el tiempo para usar en recuperación y respaldo fuera del rack.",
       onDemandDesc2: "Las instantáneas se confirman inmediatamente y luego se transmiten a las regiones recién asignadas. Esto proporciona instantáneas consistentes con contabilidad de almacenamiento fácil de entender.",
       openZfsTitle: "Impulsado por OpenZFS",
-      openZfsDesc: "El servicio de almacenamiento utiliza OpenZFS para todo el almacenamiento de datos. Esto une el almacenamiento de datos distribuido de Oxide y la resistencia a fallas de múltiples nodos con la confiabilidad y eficiencia que OpenZFS ha ganado en sus 20 años ejecutando cargas de trabajo exigentes.",
+      openZfsDesc: "El servicio de almacenamiento utiliza OpenZFS para todo el almacenamiento de datos. Esto une el almacenamiento de datos distribuido de Estela y la resistencia a fallas de múltiples nodos con la confiabilidad y eficiencia que OpenZFS ha ganado en sus 20 años ejecutando cargas de trabajo exigentes.",
       protectionTitle: "Protección Proactiva de Datos",
-      protectionDesc1: "El plano de control de Oxide monitorea las métricas de rendimiento como otra señal temprana de falla de componentes. A medida que se rotan los sleds y SSD, el plano de control de Oxide migra las regiones de almacenamiento para garantizar la redundancia apropiada.",
+      protectionDesc1: "El plano de control de Estela monitorea las métricas de rendimiento como otra señal temprana de falla de componentes. A medida que se rotan los sleds y SSD, el plano de control de Estela migra las regiones de almacenamiento para garantizar la redundancia apropiada.",
       protectionDesc2: "OpenZFS hace checksums y depura todos los datos para la detección temprana de fallas. Los discos virtuales validan constantemente la integridad de sus datos, corrigiendo fallas tan pronto como se descubren.",
       coDesignTitle: "Co-Diseño de Hardware y Software",
       coDesignFeatures: [
@@ -131,7 +131,7 @@ export const StorageSectionNew = () => {
             <div className="relative col-span-5 overflow-hidden border bg-card border-border rounded-lg min-[600px]:rounded-xl">
               <div className="relative items-center w-full flex h-full justify-center">
                 <Image
-                  src="https://oxide-computer.imgix.net/oxide-storage-create-disk.png?w=430&dpr=2&fm=webp"
+                  src="/assets/estela-storage-create-disk.webp"
                   width={430}
                   height={437}
                   alt="A pane with a form to create a new disk"
@@ -142,7 +142,7 @@ export const StorageSectionNew = () => {
             <div className="relative col-start-4 col-span-3 hidden min-[800px]:block">
               <div className="relative items-center w-full flex h-full justify-center">
                 <Image
-                  src="https://oxide-computer.imgix.net/oxide-storage-create-disk-dropdown.png?w=259&dpr=2&fm=webp"
+                  src="/assets/estela-storage-create-disk-dropdown.webp"
                   width={259}
                   height={166}
                   alt="Dropdown showing a selection of disk actions"
@@ -251,7 +251,7 @@ export const StorageSectionNew = () => {
           <div className="relative overflow-hidden border bg-card border-border col-span-12 min-[800px]:col-start-7 min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg min-[600px]:rounded-xl">
             <div className="relative items-center w-full flex h-full justify-center">
               <Image
-                src="https://oxide-computer.imgix.net/oxide-storage-create-snapshot.png?w=516&dpr=2&fm=webp"
+                src="/assets/estela-storage-create-snapshot.webp"
                 width={516}
                 height={374}
                 alt="A pane showing a disk, a dropdown is visible with one item highlighted – Create snapshot from disk"
@@ -283,7 +283,7 @@ export const StorageSectionNew = () => {
           </div>
           <div className="relative col-start-1 overflow-hidden border bg-card border-border col-span-12 min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg min-[600px]:rounded-xl">
             <Image
-              src="/img/oxide-storage-create-snapshot.svg"
+              src="/img/estela-storage-create-snapshot.svg"
               width={516}
               height={371}
               alt="OpenZFS storage diagram"
@@ -317,7 +317,7 @@ export const StorageSectionNew = () => {
           </div>
           <div className="relative overflow-hidden border border-border col-span-12 min-[800px]:col-start-7 min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg min-[600px]:rounded-xl">
             <Image
-              src="/img/oxide-storage-create-snapshot.svg"
+              src="/img/estela-storage-create-snapshot.svg"
               width={426}
               height={512}
               alt="Storage error monitoring visualization"

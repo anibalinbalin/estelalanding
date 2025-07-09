@@ -63,17 +63,17 @@ export const CTASection = () => {
               <div className="absolute w-[100%] top-0 h-24 cta-gradient-top"></div>
             </div>
           </div>
-          <div className="oxide-cta-card relative flex items-center justify-between border p-4 shadow-[var(--elevation-2)] min-[600px]:px-10 py-6 min-[600px]:py-8 gap-4 min-[600px]:gap-6 rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-lg)] max-[399px]:flex-col">
+          <div className="estela-cta-card relative flex items-center justify-between border p-4 shadow-[var(--elevation-2)] min-[600px]:px-10 py-6 min-[600px]:py-8 gap-4 min-[600px]:gap-6 rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-lg)] max-[399px]:flex-col">
             <div>
-              <h2 className="oxide-cta-title text-balance m-0 text-lg min-[500px]:text-[1.5625rem] min-[900px]:text-4xl font-normal leading-[1.625rem] min-[500px]:leading-8 min-[900px]:leading-[2.625rem] tracking-wide min-[500px]:tracking-wide min-[900px]:tracking-normal max-[399px]:text-center">
+              <h2 className="estela-cta-title text-balance m-0 text-lg min-[500px]:text-[1.5625rem] min-[900px]:text-4xl font-normal leading-[1.625rem] min-[500px]:leading-8 min-[900px]:leading-[2.625rem] tracking-wide min-[500px]:tracking-wide min-[900px]:tracking-normal max-[399px]:text-center">
                 {t.title}<br />
-                <span className="oxide-cta-subtitle">{t.subtitle}</span>
+                <span className="estela-cta-subtitle">{t.subtitle}</span>
               </h2>
             </div>
             <div className="flex flex-col gap-2 text-center">
               <Link 
                 href="/method/philosophy" 
-                className="oxide-nav-button oxide-nav-button-primary"
+                className="estela-nav-button estela-nav-button-primary"
               >
                 {t.button}
               </Link>

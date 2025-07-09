@@ -4,49 +4,132 @@ import { Link } from 'next-view-transitions'
 import InteractiveLinesGrid from '@/components/ui/interactive-lines-grid'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { useTheme } from 'next-themes'
+import { useLanguage } from '@/components/language-provider'
 
 export function MethodPrinciples() {
   const { resolvedTheme } = useTheme()
-  
-  const principles = [
-    {
-      number: '2.1',
-      title: 'Small Teams, Deep Impact',
-      content: [
-        'We stay at 5 people. Not because we can\'t grow, but because we shouldn\'t. Research proves it. Experience confirms it.',
-        'You partner directly with our senior team, guaranteeing undiluted expertise and clear, purposeful communication.'
-      ]
+  const { language } = useLanguage()
+
+  const content = {
+    en: {
+      title: 'Core Principles',
+      subtitle: 'The fundamental beliefs that guide every decision we make.',
+      principles: [
+        {
+          number: '2.1',
+          title: 'Small Teams, Deep Impact',
+          content: [
+            'We stay at 5 people. Not because we can\'t grow, but because we shouldn\'t. Research proves it. Experience confirms it.',
+            'You partner directly with our senior team, guaranteeing undiluted expertise and clear, purposeful communication.'
+          ]
+        },
+        {
+          number: '2.2',
+          title: 'Technology Serves People',
+          content: [
+            'We don\'t implement technology for technology\'s sake. Every cable, every configuration, every line of code must improve someone\'s day.',
+            'If it doesn\'t make work easier, we don\'t build it.'
+          ]
+        },
+        {
+          number: '2.3',
+          title: 'Built to Last, Designed to Evolve',
+          content: [
+            'We build foundations that can grow with you. Not Band-Aids. Not quick fixes. Real solutions that work today and adapt tomorrow.'
+          ]
+        },
+        {
+          number: '2.4',
+          title: 'Radical Transparency',
+          content: [
+            'No black boxes. No vendor lock-in. No mysteries. You understand what we build, how it works, and how to maintain it.'
+          ]
+        },
+        {
+          number: '2.5',
+          title: 'The Beauty of Simplicity',
+          content: [
+            'Like a well-composed painting, the best systems have nothing extra. Every element has purpose. Complexity is the enemy of reliability.'
+          ]
+        }
+      ],
+      closing: {
+        intro: 'These principles aren\'t abstract concepts.',
+        intro2: 'They\'re the foundation of every decision we make.',
+        description: 'From the size of our team to the choice of technologies. From how we communicate to how we structure our code. These principles guide everything.',
+        lines: [
+          'Principles without practice are just words.',
+          'Practice without principles is just habit.',
+          'Together, they create something more:',
+          'The mark of applied wisdom.'
+        ]
+      },
+      navigation: {
+        back: '← Back to Introduction',
+        next: 'Next: Implementation →'
+      }
     },
-    {
-      number: '2.2',
-      title: 'Technology Serves People',
-      content: [
-        'We don\'t implement technology for technology\'s sake. Every cable, every configuration, every line of code must improve someone\'s day.',
-        'If it doesn\'t make work easier, we don\'t build it.'
-      ]
-    },
-    {
-      number: '2.3',
-      title: 'Built to Last, Designed to Evolve',
-      content: [
-        'We build foundations that can grow with you. Not Band-Aids. Not quick fixes. Real solutions that work today and adapt tomorrow.'
-      ]
-    },
-    {
-      number: '2.4',
-      title: 'Radical Transparency',
-      content: [
-        'No black boxes. No vendor lock-in. No mysteries. You understand what we build, how it works, and how to maintain it.'
-      ]
-    },
-    {
-      number: '2.5',
-      title: 'The Beauty of Simplicity',
-      content: [
-        'Like a well-composed painting, the best systems have nothing extra. Every element has purpose. Complexity is the enemy of reliability.'
-      ]
+    es: {
+      title: 'Principios Fundamentales',
+      subtitle: 'Las convicciones fundamentales que guían cada decisión que tomamos.',
+      principles: [
+        {
+          number: '2.1',
+          title: 'Equipos Pequeños, Impacto Profundo',
+          content: [
+            'Nos mantenemos en 5 personas. No porque no podamos crecer, sino porque no debemos. La investigación lo demuestra. La experiencia lo confirma.',
+            'Usted trabaja directamente con nuestro equipo principal, garantizando un conocimiento experto sin intermediarios y una comunicación clara y con propósito.'
+          ]
+        },
+        {
+          number: '2.2',
+          title: 'La Tecnología al Servicio de las Personas',
+          content: [
+            'No implementamos tecnología por la tecnología en sí misma. Cada cable, cada configuración y cada línea de código debe tener como fin facilitar el trabajo de una persona.',
+            'Si no simplifica el trabajo, no lo construimos.'
+          ]
+        },
+        {
+          number: '2.3',
+          title: 'Construido para Durar, Diseñado para Evolucionar',
+          content: [
+            'Construimos cimientos que pueden crecer con usted. No son curitas. No son soluciones rápidas. Son soluciones reales que funcionan hoy y se adaptan al mañana.'
+          ]
+        },
+        {
+          number: '2.4',
+          title: 'Transparencia Radical',
+          content: [
+            'Sin cajas negras. Sin dependencia de un proveedor. Sin misterios. Usted entiende lo que construimos, cómo funciona y cómo mantenerlo.'
+          ]
+        },
+        {
+          number: '2.5',
+          title: 'La Belleza de la Simplicidad',
+          content: [
+            'Al igual que una pintura bien compuesta, los mejores sistemas no tienen nada superfluo. Cada elemento tiene un propósito. La complejidad es enemiga de la confiabilidad.'
+          ]
+        }
+      ],
+      closing: {
+        intro: 'Estos principios no son conceptos abstractos.',
+        intro2: 'Son la base de cada decisión que tomamos.',
+        description: 'Desde el tamaño de nuestro equipo hasta la elección de las tecnologías. Desde cómo nos comunicamos hasta cómo estructuramos nuestro código. Estos principios lo guían todo.',
+        lines: [
+          'Principios sin práctica son solo palabras.',
+          'La práctica sin principios es solo costumbre.',
+          'Juntos, crean algo más:',
+          'El sello de la sabiduría aplicada.'
+        ]
+      },
+      navigation: {
+        back: '← Volver a la Introducción',
+        next: 'Siguiente: Implementación →'
+      }
     }
-  ]
+  }
+
+  const t = content[language] || content.en
 
   return (
     <div style={{
@@ -64,9 +147,9 @@ export function MethodPrinciples() {
         <div style={{ marginBottom: '32px' }}>
           <Breadcrumb 
             items={[
-              { label: 'Estela', href: '/' },
-              { label: 'Method', href: '/method' },
-              { label: 'Principles' }
+              { label: 'Estela', href: language === 'es' ? '/es' : '/' },
+              { label: language === 'es' ? 'Método' : 'Method', href: language === 'es' ? '/es/method' : '/method' },
+              { label: language === 'es' ? 'Principios' : 'Principles' }
             ]} 
           />
           
@@ -97,7 +180,7 @@ export function MethodPrinciples() {
             margin: 0,
             marginBottom: '24px'
           }}>
-            Core Principles
+            {t.title}
           </h1>
           
           <div style={{
@@ -113,7 +196,7 @@ export function MethodPrinciples() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '48px'
           }}>
-            The fundamental beliefs that guide every decision we make.
+            {t.subtitle}
           </p>
 
           <div style={{
@@ -150,7 +233,7 @@ export function MethodPrinciples() {
             marginBottom: '48px'
         }} />
 
-        {principles.map((principle, index) => (
+        {t.principles.map((principle, index) => (
           <div key={`principle-${index}`} style={{ marginBottom: '48px' }}>
             <div style={{ marginBottom: '24px' }}>
               <h2 style={{ 
@@ -182,7 +265,7 @@ export function MethodPrinciples() {
               ))}
             </div>
             
-            {index < principles.length - 1 && (
+            {index < t.principles.length - 1 && (
               <div style={{
                 height: '1px',
             marginBottom: '48px'
@@ -203,8 +286,8 @@ export function MethodPrinciples() {
             color: 'var(--foreground)',
             marginBottom: '16px'
           }}>
-            These principles aren't abstract concepts.<br />
-            They're the foundation of every decision we make.
+            {t.closing.intro}<br />
+            {t.closing.intro2}
           </p>
           
           <p style={{
@@ -216,8 +299,7 @@ export function MethodPrinciples() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '24px'
           }}>
-            From the size of our team to the choice of technologies. From how we communicate 
-            to how we structure our code. These principles guide everything.
+            {t.closing.description}
           </p>
           
           <p style={{
@@ -229,7 +311,7 @@ export function MethodPrinciples() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '24px'
           }}>
-            Principles without practice are just words.
+            {t.closing.lines[0]}
           </p>
           <p style={{
             fontSize: '17px',
@@ -240,7 +322,7 @@ export function MethodPrinciples() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '24px'
           }}>
-            Practice without principles is just habit.
+            {t.closing.lines[1]}
           </p>
           
           <p style={{
@@ -252,7 +334,7 @@ export function MethodPrinciples() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '24px'
           }}>
-            Together, they create something more:
+            {t.closing.lines[2]}
           </p>
           
           <p style={{
@@ -261,7 +343,7 @@ export function MethodPrinciples() {
             color: 'var(--foreground)',
             marginBottom: '16px'
           }}>
-            The mark of applied wisdom.
+            {t.closing.lines[3]}
           </p>
         </section>
 
@@ -272,7 +354,7 @@ export function MethodPrinciples() {
 
         <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <Link 
-            href="/method/introduction"
+            href={language === 'es' ? '/es/method/introduction' : '/method/introduction'}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -286,10 +368,10 @@ export function MethodPrinciples() {
             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--foreground)'}
             onMouseLeave={(e) => e.currentTarget.style.color = 'var(--content-secondary-p3)'}
           >
-            ← Back to Introduction
+            {t.navigation.back}
           </Link>
           <Link 
-            href="/method/implementation"
+            href={language === 'es' ? '/es/method/implementation' : '/method/implementation'}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -303,7 +385,7 @@ export function MethodPrinciples() {
             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--foreground)'}
             onMouseLeave={(e) => e.currentTarget.style.color = 'var(--content-secondary-p3)'}
           >
-            Next: Implementation →
+            {t.navigation.next}
           </Link>
         </div>
       </div>

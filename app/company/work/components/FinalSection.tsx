@@ -1,10 +1,10 @@
 import React from 'react';
-import { ValuesGrid } from './ValuesGrid';
 
 export const FinalSection = () => {
   return (
     <>
-      {/* Second Image Section */}
+      {/* Second Image Section - Commented out oxide-principles images */}
+      {/*
       <div className="w-[100%] px-5 min-[600px]:px-10">
         <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] my-16 min-[800px]:my-[7.5rem] gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
           <div className="col-span-7">
@@ -53,28 +53,8 @@ export const FinalSection = () => {
           </div>
         </div>
       </div>
+      */}
 
-      {/* Our Values Introduction */}
-      <div className="w-[100%] px-5 min-[600px]:px-10">
-        <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] max-[800px]:mb-2 max-[800px]:mt-8 min-[800px]:my-8 gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
-          <div className="grid col-span-12 min-[600px]:col-start-[2] min-[1000px]:col-start-[4] min-[600px]:col-span-10 min-[1000px]:col-span-7">
-            <div className="min-[1000px]:col-start-[2] min-[1000px]:col-span-5">
-              <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
-                Our Values
-              </h2>
-              <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                Unlike principles, values indicate relative importance: they are objectives rather than constraints, and can come into tension with one another.
-              </p>
-              <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                Indeed, many of these values can become pathological when taken to an illogical extreme; absolute adherence to a particular value should never trump prudence.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Values Grid - Complete implementation with all values */}
-      <ValuesGrid />
     </>
   );
 };

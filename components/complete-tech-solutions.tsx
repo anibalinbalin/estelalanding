@@ -449,7 +449,7 @@ export const CompleteTechSolutions = () => {
                 <div className="mt-6 px-6 sm:px-8">
                   <Link 
                     href="/transform" 
-                    className="oxide-nav-button oxide-nav-button-outline"
+                    className="estela-nav-button estela-nav-button-outline"
                   >
                     Transform Your Infrastructure
                     <ArrowRight className="w-4 h-4 ml-2" />

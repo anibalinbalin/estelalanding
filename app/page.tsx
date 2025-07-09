@@ -45,7 +45,7 @@ export default function Home() {
           <div className="m-auto max-w-[1200px] flex justify-end">
             <a 
               href="/contact" 
-              className="oxide-nav-button oxide-nav-button-outline text-lg px-8 py-4"
+              className="estela-nav-button estela-nav-button-outline text-lg px-8 py-4"
             >
               {t.contactButton}
             </a>

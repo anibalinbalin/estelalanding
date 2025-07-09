@@ -6,6 +6,7 @@ import { useTheme } from "next-themes"
 import { useLanguage } from "@/components/language-provider"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { useRouter, usePathname } from "next/navigation"
 
 import { Switch } from "@/components/ui/switch"
 
@@ -14,6 +15,8 @@ export function ToolbarSwitcher() {
   const { theme, setTheme } = useTheme()
   const { language, setLanguage } = useLanguage()
   const [mounted, setMounted] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
   
   const isDark = theme === "dark"
 
@@ -31,7 +34,23 @@ export function ToolbarSwitcher() {
   }
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'es' : 'en')
+    const newLanguage = language === 'en' ? 'es' : 'en'
+    setLanguage(newLanguage)
+    
+    // Redirect to the appropriate language version of the current page
+    if (pathname) {
+      let newPath = pathname
+      if (newLanguage === 'es' && !pathname.startsWith('/es')) {
+        newPath = `/es${pathname}`
+      } else if (newLanguage === 'en' && pathname.startsWith('/es')) {
+        newPath = pathname.replace('/es', '')
+      }
+      
+      // Only navigate if the path changed
+      if (newPath !== pathname) {
+        router.push(newPath)
+      }
+    }
   }
 
   return (

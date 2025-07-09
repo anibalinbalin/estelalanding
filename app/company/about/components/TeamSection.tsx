@@ -1,9 +1,28 @@
+'use client'
+
 import React, { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
+import { useLanguage } from '@/components/language-provider';
 
 export const TeamSection = () => {
   const { theme, resolvedTheme } = useTheme();
+  const { language } = useLanguage();
   const [mounted, setMounted] = useState(false);
+  
+  const content = {
+    en: {
+      ourPrinciples: 'Our Principles',
+      principlesIntro: 'Principles are fundamental, universal truths that transcend time, geography, culture and context.',
+      principlesConstraints: 'These principles are not aspirations, they are constraints; we expect them to be the marrow of all Estela employees and adhered to under all conditions.'
+    },
+    es: {
+      ourPrinciples: 'Nuestros Principios',
+      principlesIntro: 'Los principios son verdades fundamentales y universales que trascienden el tiempo, la geografía, la cultura y el contexto.',
+      principlesConstraints: 'Estos principios no son aspiraciones, son restricciones; esperamos que sean la médula de todos los empleados de Estela y que se respeten en toda circunstancia.'
+    }
+  };
+  
+  const t = content[language] || content.en;
 
   useEffect(() => {
     setMounted(true);
@@ -25,13 +44,13 @@ export const TeamSection = () => {
                   ? 'text-[#7d8384]' 
                   : 'text-[var(--content-raise-p3)]'
               }`}>
-                Our Principles
+                {t.ourPrinciples}
               </h2>
               <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                Principles are fundamental, universal truths that transcend time, geography, culture and context.
+                {t.principlesIntro}
               </p>
               <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                These principles are not aspirations, they are constraints; we expect them to be the marrow of all Oxide employees and adhered to under all conditions.
+                {t.principlesConstraints}
               </p>
             </div>
           </div>

@@ -316,7 +316,7 @@ export function ContactSection() {
                   <p className="text-[var(--content-raise-p3)] font-medium">Estela Technology Solutions</p>
                   <p>[Street Address]</p>
                   <p>[Neighborhood]</p>
-                  <p>Montevideo, Uruguay</p>
+                  <p>Montevideo, Punta del Este, Uruguay</p>
                   <p>CP XXXXX</p>
                 </div>
                 

@@ -3,6 +3,8 @@ import React from 'react';
 export const ImagesSection = () => {
   return (
     <div className="w-[100%] px-5 min-[600px]:px-10">
+      {/* Commented out oxide-principles images - to be replaced with new images */}
+      {/*
       <div className="m-auto mt-14 grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] mb-12 min-[800px]:mb-[7.5rem] gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
         <div className="col-span-7">
           <div className="w-[100%] h-[100%] relative flex items-center justify-center">
@@ -73,6 +75,7 @@ export const ImagesSection = () => {
           </div>
         </div>
       </div>
+      */}
     </div>
   );
 };

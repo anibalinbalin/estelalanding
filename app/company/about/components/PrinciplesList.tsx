@@ -1,5 +1,94 @@
+'use client'
+
 import React, { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
+import { useLanguage } from '@/components/language-provider';
+
+const getMissionItems = (language: string) => {
+  const content = {
+    en: [
+      {
+        title: "What We Do",
+        description: "We design, implement, and maintain technology solutions that solve real business problems. Infrastructure, security, custom development, and strategic consulting."
+      },
+      {
+        title: "How We're Different",
+        description: "Small team. Direct relationships. No layers of management. The person who understands your problem is the same person who solves it."
+      },
+      {
+        title: "Why We Exist",
+        description: "Most technology consulting is broken. Overpriced, underdelivered, and overcomplicated. We exist to prove it doesn't have to be this way."
+      },
+      {
+        title: "Who We Serve",
+        description: "Organizations that need enterprise-grade technology but want startup-level agility. Companies tired of vendor promises and consultant overhead."
+      }
+    ],
+    es: [
+      {
+        title: "Qué Hacemos",
+        description: "Diseñamos, implementamos y mantenemos soluciones tecnológicas que resuelven problemas empresariales reales. Infraestructura, seguridad, desarrollo a medida y consultoría estratégica."
+      },
+      {
+        title: "En Qué Nos Diferenciamos",
+        description: "Un equipo pequeño. Relaciones directas. Sin capas de gestión. La persona que entiende su problema es la misma que lo resuelve."
+      },
+      {
+        title: "Por Qué Existimos",
+        description: "La mayoría de la consultoría tecnológica no funciona. Es demasiado cara, no cumple lo que promete y es excesivamente complicada. Existimos para demostrar que no tiene por qué ser así."
+      },
+      {
+        title: "A Quiénes Servimos",
+        description: "A organizaciones que necesitan tecnología de nivel empresarial pero desean la agilidad de una startup. A empresas cansadas de las promesas de los proveedores y de los costos de los consultores."
+      }
+    ]
+  };
+  
+  return content[language] || content.en;
+};
+
+const getPrincipleItems = (language: string) => {
+  const content = {
+    en: [
+      {
+        title: "Technology Serves Business",
+        description: "We start with your business goals, not our favorite technologies. Every technical decision must advance your objectives. Form follows function. Always."
+      },
+      {
+        title: "Excellence Over Scale",
+        description: "We choose quality over quantity. Small teams, deep expertise, direct relationships. No bureaucracy, no account managers. Do fewer things. Do them better."
+      },
+      {
+        title: "Reality Over Marketing",
+        description: "We promise what we can deliver. We deliver what we promise. No overselling, no underwhelming. We believe in being forthright, even when that's difficult. Truth is our competitive advantage."
+      },
+      {
+        title: "Long-term Over Quick Wins",
+        description: "We build solutions that last. Sustainable architectures, maintainable code, transferable knowledge. Today's solution shouldn't become tomorrow's problem."
+      }
+    ],
+    es: [
+      {
+        title: "La Tecnología al Servicio del Negocio",
+        description: "Empezamos con sus objetivos de negocio, no con nuestras tecnologías favoritas. Cada decisión técnica debe impulsar sus objetivos. La forma sigue a la función. Siempre."
+      },
+      {
+        title: "Excelencia sobre Escala",
+        description: "Elegimos la calidad sobre la cantidad. Equipos pequeños, profundo conocimiento, relaciones directas. Sin burocracia, sin gerentes de cuenta. Hacer menos cosas. Hacerlas mejor."
+      },
+      {
+        title: "Realidad sobre Marketing",
+        description: "Prometemos lo que podemos cumplir. Cumplimos lo que prometemos. Sin promesas exageradas, sin resultados decepcionantes. Creemos en ser directos, incluso cuando es difícil. La verdad es nuestra ventaja competitiva."
+      },
+      {
+        title: "Largo Plazo sobre Victorias Rápidas",
+        description: "Construimos soluciones que perduran. Arquitecturas sostenibles, código mantenible, conocimiento transferible. La solución de hoy no debe convertirse en el problema de mañana."
+      }
+    ]
+  };
+  
+  return content[language] || content.en;
+};
 
 const missionItems = [
   {
@@ -126,6 +215,7 @@ const PrincipleItem = ({ icon, title, description, isLast = false, currentTheme 
 
 export const MissionList = () => {
   const { theme, resolvedTheme } = useTheme();
+  const { language } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -134,19 +224,35 @@ export const MissionList = () => {
 
   // Use resolvedTheme if available, otherwise fall back to theme, then default to 'dark'
   const currentTheme = mounted ? (resolvedTheme || theme || 'dark') : 'dark';
+  
+  const translatedItems = getMissionItems(language);
+  const missionIcons = [
+    <svg width="24" height="24" className="h-6 w-6 block align-middle">
+      <use href="/assets/sprite-Dt029LRi.svg#action-24"></use>
+    </svg>,
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 block align-middle">
+      <path fillRule="evenodd" clipRule="evenodd" d="M8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15ZM6 7C6.55228 7 7 6.55228 7 6C7 5.44772 6.55228 5 6 5C5.44771 5 5 5.44772 5 6C5 6.55228 5.44771 7 6 7ZM11.5216 9.89856C11.7545 9.46738 11.3966 9 10.9065 9H5.0935C4.60343 9 4.24546 9.46738 4.47841 9.89856C5.15444 11.1499 6.47795 12 8.00001 12C9.52207 12 10.8456 11.1499 11.5216 9.89856ZM11 6C11 6.55228 10.5523 7 10 7C9.44771 7 9 6.55228 9 6C9 5.44772 9.44771 5 10 5C10.5523 5 11 5.44772 11 6Z" fill="currentColor"></path>
+    </svg>,
+    <svg width="24" height="24" className="h-6 w-6 block align-middle">
+      <use href="/assets/sprite-Dt029LRi.svg#prohibited-24"></use>
+    </svg>,
+    <svg width="24" height="24" className="h-6 w-6 block align-middle">
+      <use href="/assets/sprite-Dt029LRi.svg#heart-24"></use>
+    </svg>
+  ];
 
   return (
     <div className="w-[100%] px-5 min-[600px]:px-10">
       <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
         <div className="col-span-12 min-[600px]:col-start-[2] min-[1000px]:col-start-[3] min-[600px]:col-span-10 min-[1000px]:col-span-8">
           <div>
-            {missionItems.map((item, index) => (
+            {translatedItems.map((item, index) => (
               <PrincipleItem
                 key={index}
-                icon={item.icon}
+                icon={missionIcons[index]}
                 title={item.title}
                 description={item.description}
-                isLast={item.isLast}
+                isLast={index === translatedItems.length - 1}
                 currentTheme={currentTheme}
               />
             ))}
@@ -159,6 +265,7 @@ export const MissionList = () => {
 
 export const PrinciplesList = () => {
   const { theme, resolvedTheme } = useTheme();
+  const { language } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -167,19 +274,35 @@ export const PrinciplesList = () => {
 
   // Use resolvedTheme if available, otherwise fall back to theme, then default to 'dark'
   const currentTheme = mounted ? (resolvedTheme || theme || 'dark') : 'dark';
+  
+  const translatedPrinciples = getPrincipleItems(language);
+  const principleIcons = [
+    <svg width="24" height="24" className="h-6 w-6 block align-middle">
+      <use href="/assets/sprite-Dt029LRi.svg#security-24"></use>
+    </svg>,
+    <svg width="24" height="24" className="h-6 w-6 block align-middle">
+      <use href="/assets/sprite-Dt029LRi.svg#chat-24"></use>
+    </svg>,
+    <svg width="24" height="24" className="h-6 w-6 block align-middle">
+      <use href="/assets/sprite-Dt029LRi.svg#person-24"></use>
+    </svg>,
+    <svg width="24" height="24" className="h-6 w-6 block align-middle">
+      <use href="/assets/sprite-Dt029LRi.svg#servers-24"></use>
+    </svg>
+  ];
 
   return (
     <div className="w-[100%] px-5 min-[600px]:px-10">
       <div className="m-auto mb-16 grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
         <div className="col-span-12 min-[600px]:col-start-[2] min-[1000px]:col-start-[3] min-[600px]:col-span-10 min-[1000px]:col-span-8">
           <div>
-            {principleItems.map((item, index) => (
+            {translatedPrinciples.map((item, index) => (
               <PrincipleItem
                 key={index}
-                icon={item.icon}
+                icon={principleIcons[index]}
                 title={item.title}
                 description={item.description}
-                isLast={item.isLast}
+                isLast={index === translatedPrinciples.length - 1}
                 currentTheme={currentTheme}
               />
             ))}

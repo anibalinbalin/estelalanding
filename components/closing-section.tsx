@@ -12,7 +12,7 @@ export const ClosingSection = () => {
       text: <>The Cyclops likely had layers of management. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>Odysseus had a tight crew and a clear objective.</span> We believe in the latter. No getting lost in the crowd, no diluted responsibility. When you work with Estela, you get *us* – six minds directly invested in your success. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>It's not about outmuscling the problem; it's about outthinking it,</span> with the focused intensity only a truly cohesive team can provide.</>
     },
     es: {
-      text: <>Las empresas con varios pisos maniobran con inercia de buque carguero. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>Nosotros elegimos una embarcación ágil con tripulación selecta.</span> Sin perderse en jerarquías. Sin diluir responsabilidades. Cuando trabajas con Estela, trabajas con nosotros – seis mentes dedicadas a resolver. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>No se trata de abrumar con recursos. Se trata de precisión estratégica,</span> la ventaja que solo un equipo cohesionado puede entregar.</>
+      text: <>Polifemo tenía el tamaño y los recursos. Odiseo tenía ingenio y pocos hombres. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>Elegimos el segundo camino.</span> Sin capas gerenciales que entorpezcan. Sin responsabilidades repartidas en departamentos. En Estela somos nosotros – seis personas enfocadas en resolver. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>La solución no está en ser más grandes, está en pensar mejor</span> con un equipo que trabaja en sincronía.</>
     }
   };
   

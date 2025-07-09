@@ -68,12 +68,12 @@ export const StorageSection = () => {
       sectionsTitle: "Almacenamiento Resiliente y Confiable",
       sectionsSubtitle: "con Gestión de Instantáneas Integrada",
       onDemandTitle: "Instantáneas Bajo Demanda",
-      onDemandDesc1: "Oxide ofrece a los usuarios instantáneas instantáneas de discos virtuales punto en el tiempo para usar en recuperación y respaldo fuera del rack.",
+      onDemandDesc1: "Estela ofrece a los usuarios instantáneas instantáneas de discos virtuales punto en el tiempo para usar en recuperación y respaldo fuera del rack.",
       onDemandDesc2: "Las instantáneas se confirman inmediatamente y luego se transmiten a las regiones recién asignadas. Esto proporciona instantáneas consistentes con contabilidad de almacenamiento fácil de entender.",
       openZfsTitle: "Impulsado por OpenZFS",
-      openZfsDesc: "El servicio de almacenamiento utiliza OpenZFS para todo el almacenamiento de datos. Esto une el almacenamiento de datos distribuido de Oxide y la resistencia a fallas de múltiples nodos con la confiabilidad y eficiencia que OpenZFS ha ganado en sus 20 años ejecutando cargas de trabajo exigentes.",
+      openZfsDesc: "El servicio de almacenamiento utiliza OpenZFS para todo el almacenamiento de datos. Esto une el almacenamiento de datos distribuido de Estela y la resistencia a fallas de múltiples nodos con la confiabilidad y eficiencia que OpenZFS ha ganado en sus 20 años ejecutando cargas de trabajo exigentes.",
       protectionTitle: "Protección Proactiva de Datos",
-      protectionDesc1: "El plano de control de Oxide monitorea las métricas de rendimiento como otra señal temprana de falla de componentes. A medida que se rotan los sleds y SSD, el plano de control de Oxide migra las regiones de almacenamiento para garantizar la redundancia apropiada.",
+      protectionDesc1: "El plano de control de Estela monitorea las métricas de rendimiento como otra señal temprana de falla de componentes. A medida que se rotan los sleds y SSD, el plano de control de Estela migra las regiones de almacenamiento para garantizar la redundancia apropiada.",
       protectionDesc2: "OpenZFS hace checksums y depura todos los datos para la detección temprana de fallas. Los discos virtuales validan constantemente la integridad de sus datos, corrigiendo fallas tan pronto como se descubren.",
       coDesignTitle: "Co-Diseño de Hardware y Software",
       coDesignFeatures: [
@@ -139,7 +139,7 @@ export const StorageSection = () => {
             <div className="relative">
               <div className="relative overflow-hidden border border-border bg-card rounded-lg">
                 <Image
-                  src="https://oxide-computer.imgix.net/oxide-storage-create-disk.png?w=430&dpr=2&fm=webp"
+                  src="/assets/estela-storage-create-disk.webp"
                   width={430}
                   height={437}
                   alt="Storage create disk interface"
@@ -148,7 +148,7 @@ export const StorageSection = () => {
               </div>
               <div className="absolute bottom-[-54px] right-0 lg:block hidden">
                 <Image
-                  src="https://oxide-computer.imgix.net/oxide-storage-create-disk-dropdown.png?w=259&dpr=2&fm=webp"
+                  src="/assets/estela-storage-create-disk-dropdown.webp"
                   width={259}
                   height={166}
                   alt="Storage dropdown menu"
@@ -228,7 +228,7 @@ export const StorageSection = () => {
           <div className="relative overflow-hidden border bg-card border-border col-span-12 min-[800px]:col-start-[7] min-[1000px]:col-start-[8] min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg min-[600px]:rounded-xl">
             <div className="relative items-center w-[100%] flex h-[100%] justify-center">
               <Image
-                src="https://oxide-computer.imgix.net/oxide-storage-create-snapshot.png?w=516&dpr=2&fm=webp"
+                src="/assets/estela-storage-create-snapshot.webp"
                 width={516}
                 height={374}
                 alt="A pane showing a disk, a dropdown is visible with one item highlighted – Create snapshot from disk"
@@ -271,7 +271,7 @@ export const StorageSection = () => {
             }}
           >
             <Image 
-              src="/img/oxide-storage-create-snapshot.svg" 
+              src="/img/estela-storage-create-snapshot.svg" 
               width={516} 
               height={371} 
               alt="OpenZFS storage visualization"
@@ -332,7 +332,7 @@ export const StorageSection = () => {
             }}
           >
             <Image 
-              src="/img/oxide-storage-create-snapshot.svg" 
+              src="/img/estela-storage-create-snapshot.svg" 
               width={426} 
               height={512} 
               alt="Storage errors visualization"
@@ -345,11 +345,11 @@ export const StorageSection = () => {
 
         {/* Small Over Scale Section */}
         <div className="container mx-auto px-5 sm:px-10 mb-20 lg:mb-36">
-          <div className="oxide-cta-card relative flex items-center justify-between border p-4 min-[600px]:px-10 py-6 min-[600px]:py-8 gap-4 min-[600px]:gap-6 rounded-lg min-[600px]:rounded-lg max-[399px]:flex-col">
+          <div className="estela-cta-card relative flex items-center justify-between border p-4 min-[600px]:px-10 py-6 min-[600px]:py-8 gap-4 min-[600px]:gap-6 rounded-lg min-[600px]:rounded-lg max-[399px]:flex-col">
             <div>
-              <h2 className="oxide-cta-title text-balance m-0 text-lg min-[500px]:text-[1.5625rem] min-[900px]:text-4xl font-normal leading-[1.625rem] min-[500px]:leading-8 min-[900px]:leading-[2.625rem] tracking-wide min-[500px]:tracking-wide min-[900px]:tracking-normal max-[399px]:text-center">
+              <h2 className="estela-cta-title text-balance m-0 text-lg min-[500px]:text-[1.5625rem] min-[900px]:text-4xl font-normal leading-[1.625rem] min-[500px]:leading-8 min-[900px]:leading-[2.625rem] tracking-wide min-[500px]:tracking-wide min-[900px]:tracking-normal max-[399px]:text-center">
                 {t.coDesignTitle}<br/>
-                <span className="oxide-cta-subtitle">
+                <span className="estela-cta-subtitle">
                   {t.coDesignFeatures[0]}
                 </span>
               </h2>
@@ -357,13 +357,13 @@ export const StorageSection = () => {
             <div className="flex flex-col gap-2 text-center">
               <Link 
                 href="/method" 
-                className="oxide-button-primary px-3 items-center inline-flex h-8 justify-center rounded align-top font-normal leading-4 text-[.75rem] tracking-wider uppercase shadow-sm relative no-underline transition-colors"
+                className="estela-button-primary px-3 items-center inline-flex h-8 justify-center rounded align-top font-normal leading-4 text-[.75rem] tracking-wider uppercase shadow-sm relative no-underline transition-colors"
               >
                 {t.tryButton}
               </Link>
               <Link 
                 href="/contact" 
-                className="oxide-button-secondary px-3 items-center inline-flex h-8 justify-center rounded align-top font-normal leading-4 text-[.75rem] tracking-wider uppercase shadow-sm relative no-underline transition-colors"
+                className="estela-button-secondary px-3 items-center inline-flex h-8 justify-center rounded align-top font-normal leading-4 text-[.75rem] tracking-wider uppercase shadow-sm relative no-underline transition-colors"
               >
                 {t.contactButton}
               </Link>
@@ -405,13 +405,13 @@ export const StorageSection = () => {
             <div className="flex flex-col gap-2 text-center">
               <Link 
                 href="/method" 
-                className="oxide-nav-button oxide-nav-button-primary"
+                className="estela-nav-button estela-nav-button-primary"
               >
                 {t.tryButton}
               </Link>
               <Link 
                 href="/contact" 
-                className="oxide-nav-button oxide-nav-button-outline"
+                className="estela-nav-button estela-nav-button-outline"
               >
                 {t.contactButton}
               </Link>
@@ -500,7 +500,7 @@ export const StorageSection = () => {
                   >
                     running your own demo silo
                   </a>
-                  {' '}on an Oxide rack.
+                  {' '}on an Estela rack.
                 </p>
                 <div className="flex flex-col gap-1 pt-3 mt-[calc(.5rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(.5rem_*_var(--tw-space-y-reverse))]">
                   <li className="flex items-baseline">
@@ -557,14 +557,14 @@ export const StorageSection = () => {
             >
               Contact us directly at{' '}
               <a 
-                href="mailto:sales@oxide.computer" 
+                href="mailto:hola@este.la" 
                 className="hover:opacity-80"
                 style={{ 
                   color: 'var(--content-accent-secondary-p3)',
                   textDecoration: 'inherit'
                 }}
               >
-                sales@oxide.computer
+                hola@este.la
               </a>
             </div>
           </div>
@@ -738,7 +738,7 @@ export const StorageSection = () => {
                           }}
                         >
                           <textarea 
-                            placeholder="Anything else you'd like to share with the Oxide team?" 
+                            placeholder="Anything else you'd like to share with the Estela team?" 
                             className="px-3 py-[.6875rem] w-[100%] resize-vertical font-normal leading-[1.125rem] text-[.875rem] tracking-wider m-0 p-0 border-none !outline-offset-[1px]"
                             style={{
                               borderRadius: 'var(--border-radius)',
@@ -753,7 +753,7 @@ export const StorageSection = () => {
                     <div className="px-6 py-4 flex items-center justify-end min-[800px]:col-span-12">
                       <button 
                         type="submit" 
-                        className="oxide-nav-button oxide-nav-button-primary"
+                        className="estela-nav-button estela-nav-button-primary"
                       >
                         Submit
                       </button>
@@ -772,14 +772,14 @@ export const StorageSection = () => {
           >
             Contact us directly at{' '}
             <a 
-              href="mailto:sales@oxide.computer" 
+              href="mailto:hola@este.la" 
               className="hover:opacity-80"
               style={{ 
                 color: 'var(--content-accent-secondary-p3)',
                 textDecoration: 'inherit'
               }}
             >
-              sales@oxide.computer
+              hola@este.la
             </a>
           </div>
         </div>

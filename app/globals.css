@@ -279,11 +279,11 @@ html, body {
 }
 
 /* Oxide-style navbar */
-.oxide-nav {
+.estela-nav {
   font-family: 'GT America Mono', monospace;
 }
 
-.oxide-nav-trigger {
+.estela-nav-trigger {
   font-family: 'GT America Mono', monospace !important;
   font-size: 0.75rem !important;
   font-weight: 400 !important;
@@ -302,19 +302,19 @@ html, body {
   gap: 0.375rem;
 }
 
-.oxide-nav-trigger:hover {
+.estela-nav-trigger:hover {
   background-color: var(--accent) !important;
   color: var(--foreground) !important;
   border-color: var(--border) !important;
 }
 
-.oxide-nav-trigger[data-state="open"] {
+.estela-nav-trigger[data-state="open"] {
   background-color: var(--accent) !important;
   color: var(--foreground) !important;
   border-color: var(--border) !important;
 }
 
-.oxide-nav-link {
+.estela-nav-link {
   font-family: 'GT America Mono', monospace;
   font-size: 0.75rem;
   font-weight: 400;
@@ -331,22 +331,22 @@ html, body {
   gap: 0.375rem;
 }
 
-.oxide-nav-link:hover {
+.estela-nav-link:hover {
   background-color: var(--accent);
   color: var(--foreground);
   border-color: var(--border);
 }
 
 /* Remove dropdown arrow rotation */
-.oxide-nav-trigger svg {
+.estela-nav-trigger svg {
   transition: none;
 }
 
-.oxide-nav-trigger[data-state="open"] svg {
+.estela-nav-trigger[data-state="open"] svg {
   transform: none;
 }
 
-.oxide-cta-button {
+.estela-cta-button {
   font-family: 'GT America Mono', monospace;
   font-size: 0.75rem;
   font-weight: 400;
@@ -381,7 +381,7 @@ html, body {
 }
 
 /* Oxide nav button styles */
-.oxide-nav-button {
+.estela-nav-button {
   font-family: 'GT_America_Mono', monospace;
   font-feature-settings: "ss02" on, "ss03" on, "ss09" on, "ss06" on, "ss07" on, "ss08" on, "calt" off;
   font-size: 0.75rem;
@@ -400,7 +400,7 @@ html, body {
   position: relative;
 }
 
-.oxide-nav-button::after {
+.estela-nav-button::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -412,36 +412,36 @@ html, body {
   opacity: 0.1;
 }
 
-.oxide-nav-button-outline {
+.estela-nav-button-outline {
   color: hsl(var(--muted-foreground));
   background: transparent;
 }
 
-.oxide-nav-button-outline::after {
+.estela-nav-button-outline::after {
   opacity: 1;
   border-color: hsl(var(--border));
 }
 
-.oxide-nav-button-outline:hover {
+.estela-nav-button-outline:hover {
   background: hsl(var(--accent));
 }
 
-.oxide-nav-button-primary {
+.estela-nav-button-primary {
   color: hsl(var(--primary-foreground));
   background: hsl(var(--primary));
 }
 
-.oxide-nav-button-primary::after {
+.estela-nav-button-primary::after {
   opacity: 1;
   border-color: hsl(var(--primary));
 }
 
-.oxide-nav-button-primary:hover {
+.estela-nav-button-primary:hover {
   background: hsl(var(--primary) / 0.9);
 }
 
 /* Mobile nav link styles */
-.oxide-nav-link-mobile {
+.estela-nav-link-mobile {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -463,12 +463,12 @@ html, body {
   transition: opacity 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.oxide-nav-link-mobile:hover {
+.estela-nav-link-mobile:hover {
   opacity: 0.8;
 }
 
 /* Submenu item title styling */
-.oxide-submenu-title {
+.estela-submenu-title {
   font-family: 'GT_America_Mono', monospace;
   font-feature-settings: "ss02" on, "ss03" on, "ss09" on, "ss06" on, "ss07" on, "ss08" on, "calt" off;
   font-size: 0.875rem;
@@ -509,36 +509,36 @@ html, body {
 }
 
 /* Oxide CTA Card Styling */
-.oxide-cta-card {
+.estela-cta-card {
   background-color: #f9fafb;
   border-color: rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 }
 
-.dark .oxide-cta-card {
+.dark .estela-cta-card {
   background-color: #101518;
   border-color: #2d333b;
   box-shadow: 0px 2.188px 4.625px #00000021, 0px 10px 13px #00000033, 0px 25.313px 34.875px #00000045, 0px 50px 80px #00000066;
 }
 
-.oxide-cta-title {
+.estela-cta-title {
   font-family: 'SuisseIntl', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   color: #1b1b1b;
 }
 
-.dark .oxide-cta-title {
+.dark .estela-cta-title {
   color: #d7d8d9;
 }
 
-.oxide-cta-subtitle {
+.estela-cta-subtitle {
   color: #6e757c;
 }
 
-.dark .oxide-cta-subtitle {
+.dark .estela-cta-subtitle {
   color: #999999;
 }
 
-.oxide-button-primary {
+.estela-button-primary {
   font-family: 'GT America Mono', monospace;
   color: #059669;
   background-color: #dcfce7;
@@ -546,20 +546,20 @@ html, body {
   border-opacity: 0.1;
 }
 
-.dark .oxide-button-primary {
+.dark .estela-button-primary {
   color: #48d597;
   background-color: #1a2e23;
 }
 
-.oxide-button-primary:hover {
+.estela-button-primary:hover {
   background-color: #bbf7d0;
 }
 
-.dark .oxide-button-primary:hover {
+.dark .estela-button-primary:hover {
   background-color: #22543d;
 }
 
-.oxide-button-secondary {
+.estela-button-secondary {
   font-family: 'GT America Mono', monospace;
   color: #6e757c;
   background-color: transparent;
@@ -567,15 +567,15 @@ html, body {
   border-opacity: 1;
 }
 
-.dark .oxide-button-secondary {
+.dark .estela-button-secondary {
   color: #999999;
 }
 
-.oxide-button-secondary:hover {
+.estela-button-secondary:hover {
   background-color: #f3f4f6;
 }
 
-.dark .oxide-button-secondary:hover {
+.dark .estela-button-secondary:hover {
   background-color: #1f2937;
 }
 

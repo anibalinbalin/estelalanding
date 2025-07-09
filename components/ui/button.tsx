@@ -5,14 +5,14 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "oxide-nav-button",
+  "estela-nav-button",
   {
     variants: {
       variant: {
-        default: "oxide-nav-button-primary",
+        default: "estela-nav-button-primary",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "oxide-nav-button-outline",
+        outline: "estela-nav-button-outline",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-secondary hover:text-foreground",

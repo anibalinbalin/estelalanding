@@ -21,7 +21,7 @@ export function EstelaSpeed() {
     },
     es: {
       title: "Profundidad, No Velocidad",
-      description: "La velocidad es fácil. La excelencia requiere tiempo. Cada instalación cuenta su propia historia. Cada sistema se explica solo. Nuestro trabajo habla por nosotros, incluso en nuestra ausencia."
+      description: "La velocidad es fácil. Nosotros preferimos hacerlo una sola vez. Cada instalación cuenta su propia historia. Cada sistema se explica solo. Nuestro trabajo habla por nosotros, incluso en nuestra ausencia."
     }
   };
 

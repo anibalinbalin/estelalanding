@@ -26,7 +26,7 @@ export const Footer = () => {
       address: {
         line1: "Estela Technology Solutions",
         line2: "21 de Setiembre, 3015. 802",
-        line3: "Montevideo, Uruguay",
+        line3: "Montevideo, Punta del Este, Uruguay",
         line4: "South America"
       },
       contact: {
@@ -77,7 +77,7 @@ export const Footer = () => {
       address: {
         line1: "Estela Technology Solutions",
         line2: "21 de Setiembre, 3015. 802",
-        line3: "Montevideo, Uruguay",
+        line3: "Montevideo, Punta del Este, Uruguay",
         line4: "Sudamérica"
       },
       contact: {
