@@ -18,13 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en" suppressHydrationWarning>
+      <html suppressHydrationWarning>
         <body
           className="antialiased bg-background text-foreground"
         >
           <ThemeProvider
             attribute="class"
-            defaultTheme="light"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >

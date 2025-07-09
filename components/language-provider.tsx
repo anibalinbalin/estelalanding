@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useContext, useState, useEffect } from 'react'
+import { detectBrowserLanguage } from '@/lib/language-detection'
 
 type Language = 'en' | 'es'
 
@@ -29,10 +30,12 @@ export function LanguageProvider({
   const [language, setLanguage] = useState<Language>(defaultLanguage)
 
   useEffect(() => {
-    const storedLanguage = localStorage.getItem('language') as Language
-    if (storedLanguage) {
-      setLanguage(storedLanguage)
-    }
+    // Use browser language detection
+    const detectedLanguage = detectBrowserLanguage(defaultLanguage)
+    setLanguage(detectedLanguage)
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = detectedLanguage
   }, [])
 
   const value = {
@@ -40,6 +43,8 @@ export function LanguageProvider({
     setLanguage: (newLanguage: Language) => {
       localStorage.setItem('language', newLanguage)
       setLanguage(newLanguage)
+      // Update HTML lang attribute
+      document.documentElement.lang = newLanguage
     },
   }
 
