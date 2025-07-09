@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { useLanguage } from '@/components/language-provider';
 
-const getMissionItems = (language: string) => {
+const getMissionItems = (language: 'en' | 'es') => {
   const content = {
     en: [
       {
@@ -47,7 +47,7 @@ const getMissionItems = (language: string) => {
   return content[language] || content.en;
 };
 
-const getPrincipleItems = (language: string) => {
+const getPrincipleItems = (language: 'en' | 'es') => {
   const content = {
     en: [
       {

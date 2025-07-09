@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { useLanguage } from '@/components/language-provider';
 
-const getValuesData = (language: string) => {
+const getValuesData = (language: 'en' | 'es') => {
   const content = {
     en: [
       {
