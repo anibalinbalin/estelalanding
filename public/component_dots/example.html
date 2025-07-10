@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Lines Grid - Examples</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #111;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .example {
+            margin-bottom: 40px;
+        }
+        
+        .example h2 {
+            margin-bottom: 10px;
+            color: #888;
+        }
+        
+        .grid-container {
+            height: 200px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Lines Grid Examples</h1>
+    
+    <div class="example">
+        <h2>Default Configuration</h2>
+        <div id="example1" class="grid-container"></div>
+    </div>
+    
+    <div class="example">
+        <h2>Dense Grid with Blue Theme</h2>
+        <div id="example2" class="grid-container"></div>
+    </div>
+    
+    <div class="example">
+        <h2>Sparse Grid without Dot</h2>
+        <div id="example3" class="grid-container"></div>
+    </div>
+    
+    <div class="example">
+        <h2>Long Lines with Custom Colors</h2>
+        <div id="example4" class="grid-container"></div>
+    </div>
+
+    <script src="InteractiveLinesGrid.js"></script>
+    <script>
+        // Example 1: Default configuration
+        const grid1 = new InteractiveLinesGrid('#example1');
+        
+        // Example 2: Dense grid with blue theme
+        const grid2 = new InteractiveLinesGrid('#example2', {
+            cols: 40,
+            rows: 12,
+            lineLength: 15,
+            lineWidth: 1,
+            color: '#1e3a8a',
+            hoverColor: '#60a5fa',
+            backgroundColor: '#0f172a'
+        });
+        
+        // Example 3: Sparse grid without dot
+        const grid3 = new InteractiveLinesGrid('#example3', {
+            cols: 15,
+            rows: 5,
+            lineLength: 30,
+            lineWidth: 2,
+            showDot: false,
+            color: '#333',
+            hoverColor: '#888',
+            backgroundColor: '#000'
+        });
+        
+        // Example 4: Long lines with custom colors
+        const grid4 = new InteractiveLinesGrid('#example4', {
+            cols: 20,
+            rows: 6,
+            lineLength: 40,
+            lineWidth: 1.5,
+            color: '#4a044e',
+            hoverColor: '#f97316',
+            backgroundColor: '#1a1a1a',
+            dotSize: 12
+        });
+    </script>
+</body>
+</html>

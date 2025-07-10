@@ -1,0 +1,52 @@
+/* Intro animation for hands coming from left */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Intro animation for phone image coming from right */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animations to elements */
+.hands-container {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hands-container.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.phone-image-container {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: 0.2s;
+}
+
+.phone-image-container.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Smooth easing for natural movement */
+.intro-animation {
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}

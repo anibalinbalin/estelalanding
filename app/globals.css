@@ -1,0 +1,617 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Font declarations from Oxide Computer design */
+@font-face { 
+  font-family: "GT America Mono";
+  src: url(/font/GT-America-Mono-Regular-OCC.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+} 
+@font-face { 
+  font-family: SuisseIntl;
+  src: url(/font/SuisseIntl-Light-WebS.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+} 
+@font-face { 
+  font-family: SuisseIntl;
+  src: url(/font/SuisseIntl-Regular-WebS.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+} 
+@font-face { 
+  font-family: SuisseIntl;
+  src: url(/font/SuisseIntl-Medium-WebS.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'SuisseIntl', sans-serif;
+  --font-mono: 'GT_America_Mono', monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+
+  /* Oxide Computer Design System Variables */
+  --base-neutral-900-p3: color(display-p3 .8431 .8471 .851);
+  --base-neutral-700-p3: color(display-p3 .6314 .6431 .6471);
+  --base-neutral-600-p3: color(display-p3 .4941 .5137 .5216);
+  --base-neutral-200-p3: color(display-p3 .1098 .1333 .1451);
+  --base-neutral-50-p3: color(display-p3 .0627 .0863 .0941);
+  --base-neutral-0-p3: color(display-p3 .0314 .0588 .0667);
+  
+  --surface-default-p3: var(--base-neutral-0-p3);
+  --surface-raise-p3: var(--base-neutral-50-p3);
+  --content-raise-p3: var(--base-neutral-900-p3);
+  --content-secondary-p3: var(--base-neutral-700-p3);
+  --content-tertiary-p3: var(--base-neutral-600-p3);
+  --stroke-secondary-p3: var(--base-neutral-200-p3);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-spektr-cyan-50: oklch(0.6 0.15 200);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  /* Linear-inspired variables */
+  --radius: 0.5rem;
+  --transition-base: 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Typography */
+  --font-weight-normal: 400;
+  --font-weight-medium: 510;
+  --font-weight-semibold: 590;
+  
+  /* Linear color system - Light mode */
+  --background: #ffffff;
+  --foreground: #1b1b1b;
+  --card: #ffffff;
+  --card-foreground: #1b1b1b;
+  --popover: #ffffff;
+  --popover-foreground: #1b1b1b;
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #1b1b1b;
+  --muted: #f5f5f5;
+  --muted-foreground: #6e757c;
+  --accent: rgba(0, 0, 0, 0.04);
+  --accent-foreground: #1b1b1b;
+  --destructive: #dc2626;
+  --border: rgba(0, 0, 0, 0.08);
+  --input: rgba(0, 0, 0, 0.08);
+  --ring: rgba(0, 0, 0, 0.5);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.04);
+  
+  /* Keep existing chart colors */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1b1b1b;
+  --sidebar-primary: #000000;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: rgba(0, 0, 0, 0.04);
+  --sidebar-accent-foreground: #1b1b1b;
+  --sidebar-border: rgba(0, 0, 0, 0.08);
+  --sidebar-ring: rgba(0, 0, 0, 0.5);
+  
+  /* Oxide-style colors */
+  --content-secondary-p3: #6e757c;
+  --content-tertiary-light-p3: #6e757c;
+  --stroke-default-p3: #e5e5e5;
+  --step-indicator-p3: #6e757c;
+  
+  /* ASCII Animation Colors */
+  --ascii-background-p3: #3b301c;
+  --ascii-background-alt-p3: #e5e5e6;
+  --ascii-foreground-p3: #f5b944;
+  --ascii-xs-font-size: 7.5px;
+  --ascii-aspect-h: 3;
+  --ascii-aspect-w: 15;
+  
+  /* Oxide Computer CSS Variables - Light Mode */
+  --base-neutral-900-rgb: 0, 0, 0;
+  --base-neutral-900-p3: color(display-p3 0 0 0);
+  --base-neutral-900: rgb(var(--base-neutral-900-rgb));
+  --content-raise-p3: #1b1b1b;
+  --content-default-p3: #333333;
+  --content-accent-p3: #059669;
+  --surface-default-p3: #ffffff;
+  --surface-raise-p3: #f9fafb;
+  --surface-accent-secondary-p3: #dcfce7;
+  --surface-accent-secondary-hover-p3: #bbf7d0;
+  --surface-hover-p3: #f3f4f6;
+  --stroke-secondary-p3: rgba(0, 0, 0, 0.1);
+  --elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  --elevation-2: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+  --border-radius: .1875rem;
+  --border-radius-lg: .375rem;
+  --tw-aspect-h: 10;
+  --tw-aspect-w: 15;
+}
+
+.dark {
+  --background: #080f11;
+  --foreground: #d7d8d9;
+  --card: #0a0a0a;
+  --card-foreground: #d7d8d9;
+  --popover: #0a0a0a;
+  --popover-foreground: #d7d8d9;
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #d7d8d9;
+  --muted: #1a1a1a;
+  --muted-foreground: #999999;
+  --accent: rgba(255, 255, 255, 0.04);
+  --accent-foreground: #d7d8d9;
+  --destructive: #dc2626;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: rgba(255, 255, 255, 0.5);
+  
+  /* Dark mode shadows (none for Linear) */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  
+  /* Dark mode chart colors */
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #d7d8d9;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: rgba(255, 255, 255, 0.04);
+  --sidebar-accent-foreground: #d7d8d9;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: rgba(255, 255, 255, 0.5);
+  
+  /* Oxide-style colors */
+  --content-secondary-p3: #999999;
+  --content-tertiary-light-p3: #d7d8d9;
+  --stroke-default-p3: #2d3335;
+  --step-indicator-p3: #1a2224;
+  
+  /* ASCII Animation Colors - Dark Mode */
+  --ascii-background-p3: #3b301c;
+  --ascii-background-alt-p3: #3d3019;
+  --ascii-foreground-p3: #f5b944;
+  --ascii-xs-font-size: 7.5px;
+  --ascii-aspect-h: 3;
+  --ascii-aspect-w: 15;
+  
+  /* Oxide Computer CSS Variables - Dark Mode */
+  --content-raise-p3: #d7d8d9;
+  --content-default-p3: color(display-p3 .7216 .7333 .7373);
+  --content-accent-p3: color(display-p3 .2824 .8353 .5922);
+  --surface-raise-p3: color(display-p3 .0627 .0863 .0941);
+  --surface-accent-secondary-p3: color(display-p3 .0863 .1373 .1333);
+  --surface-accent-secondary-hover-p3: color(display-p3 .1098 .2157 .1804);
+  --surface-hover-p3: color(display-p3 .1098 .1333 .1451);
+  --stroke-secondary-p3: color(display-p3 .1098 .1333 .1451);
+  
+  /* Additional Oxide-specific CSS variables from css.txt */
+  --base-green-300: rgb(28, 55, 46);
+  --content-accent-secondary-p3: color(display-p3 .1255 .6392 .4235);
+  --content-accent-tertiary-p3: color(display-p3 .1373 .5412 .3686);
+  --content-inverse-p3: color(display-p3 .0314 .0588 .0667);
+  --stroke-accent-tertiary-p3: color(display-p3 .2353 .2627 .4);
+  --stroke-accent-quaternary-p3: color(display-p3 .1765 .1882 .2824);
+  --surface-accent-p3: color(display-p3 .2824 .8353 .5922);
+  --surface-default-p3: color(display-p3 .0314 .0588 .0667);
+  --surface-secondary-p3: color(display-p3 .0784 .1059 .1137);
+  --border-radius-sm: .125rem;
+  --tw-backdrop-blur: blur(12px);
+  --tw-space-y-reverse: 0;
+  --tw-aspect-h: 10;
+  --tw-aspect-w: 15;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'SuisseIntl', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: rgb(102, 102, 102);
+    font-feature-settings: "cv01", "ss03";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Oxide-style navbar */
+.estela-nav {
+  font-family: 'GT America Mono', monospace;
+}
+
+.estela-nav-trigger {
+  font-family: 'GT America Mono', monospace !important;
+  font-size: 0.75rem !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  padding: 0.375rem 0.75rem !important;
+  border: 1px solid transparent !important;
+  border-radius: 0.25rem !important;
+  transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  color: var(--content-secondary-p3) !important;
+  background: transparent !important;
+  height: auto !important;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.estela-nav-trigger:hover {
+  background-color: var(--accent) !important;
+  color: var(--foreground) !important;
+  border-color: var(--border) !important;
+}
+
+.estela-nav-trigger[data-state="open"] {
+  background-color: var(--accent) !important;
+  color: var(--foreground) !important;
+  border-color: var(--border) !important;
+}
+
+.estela-nav-link {
+  font-family: 'GT America Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: var(--content-secondary-p3);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.estela-nav-link:hover {
+  background-color: var(--accent);
+  color: var(--foreground);
+  border-color: var(--border);
+}
+
+/* Remove dropdown arrow rotation */
+.estela-nav-trigger svg {
+  transition: none;
+}
+
+.estela-nav-trigger[data-state="open"] svg {
+  transform: none;
+}
+
+.estela-cta-button {
+  font-family: 'GT America Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.375rem 1rem;
+  height: auto;
+  border-radius: 0.25rem;
+  transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Navigation menu content styling */
+[data-radix-popper-content-wrapper] {
+  margin-top: 0.5rem !important;
+}
+
+/* Remove default navigation menu animations */
+.NavigationMenuContent {
+  animation-duration: 150ms !important;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* Fix navigation menu viewport clipping */
+[data-slot="navigation-menu-viewport"] {
+  overflow: visible !important;
+  z-index: 9999 !important;
+}
+
+/* Ensure navigation menu wrapper has proper z-index */
+[data-radix-navigation-menu-viewport] {
+  z-index: 9999 !important;
+}
+
+/* Oxide nav button styles */
+.estela-nav-button {
+  font-family: 'GT_America_Mono', monospace;
+  font-feature-settings: "ss02" on, "ss03" on, "ss09" on, "ss06" on, "ss07" on, "ss08" on, "calt" off;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.375rem 0.75rem;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 0.1875rem;
+  text-decoration: none;
+  transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+.estela-nav-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  border-radius: 0.125rem;
+  border: 1px solid currentColor;
+  opacity: 0.1;
+}
+
+.estela-nav-button-outline {
+  color: hsl(var(--muted-foreground));
+  background: transparent;
+}
+
+.estela-nav-button-outline::after {
+  opacity: 1;
+  border-color: hsl(var(--border));
+}
+
+.estela-nav-button-outline:hover {
+  background: hsl(var(--accent));
+}
+
+.estela-nav-button-primary {
+  color: hsl(var(--primary-foreground));
+  background: hsl(var(--primary));
+}
+
+.estela-nav-button-primary::after {
+  opacity: 1;
+  border-color: hsl(var(--primary));
+}
+
+.estela-nav-button-primary:hover {
+  background: hsl(var(--primary) / 0.9);
+}
+
+/* Mobile nav link styles */
+.estela-nav-link-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  font-family: 'GT_America_Mono', monospace;
+  font-feature-settings: "ss02" on, "ss03" on, "ss09" on, "ss06" on, "ss07" on, "ss08" on, "calt" off;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  padding: 1.25rem 0;
+  text-align: left;
+  border-bottom: 1px solid hsl(var(--border));
+  text-decoration: none;
+  transition: opacity 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.estela-nav-link-mobile:hover {
+  opacity: 0.8;
+}
+
+/* Submenu item title styling */
+.estela-submenu-title {
+  font-family: 'GT_America_Mono', monospace;
+  font-feature-settings: "ss02" on, "ss03" on, "ss09" on, "ss06" on, "ss07" on, "ss08" on, "calt" off;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ASCII art styling for navigation menu */
+.navigation-ascii-art {
+  font-family: 'GT_America_Mono', monospace;
+  font-feature-settings: "ss02" on, "ss03" on, "ss09" on, "ss06" on, "ss07" on, "ss08" on, "calt" off;
+  font-size: 0.65rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+  white-space: pre;
+  overflow-x: auto;
+  color: #f5b944;
+  background-color: #3b301c;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  opacity: 1;
+  width: fit-content;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+/* Services menu enhanced layout */
+.services-menu-content {
+  min-width: 600px;
+  max-width: 700px;
+}
+
+/* Smooth transitions for service content */
+.service-content-area {
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Oxide CTA Card Styling */
+.estela-cta-card {
+  background-color: #f9fafb;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+}
+
+.dark .estela-cta-card {
+  background-color: #101518;
+  border-color: #2d333b;
+  box-shadow: 0px 2.188px 4.625px #00000021, 0px 10px 13px #00000033, 0px 25.313px 34.875px #00000045, 0px 50px 80px #00000066;
+}
+
+.estela-cta-title {
+  font-family: 'SuisseIntl', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  color: #1b1b1b;
+}
+
+.dark .estela-cta-title {
+  color: #d7d8d9;
+}
+
+.estela-cta-subtitle {
+  color: #6e757c;
+}
+
+.dark .estela-cta-subtitle {
+  color: #999999;
+}
+
+.estela-button-primary {
+  font-family: 'GT America Mono', monospace;
+  color: #059669;
+  background-color: #dcfce7;
+  border: 1px solid currentColor;
+  border-opacity: 0.1;
+}
+
+.dark .estela-button-primary {
+  color: #48d597;
+  background-color: #1a2e23;
+}
+
+.estela-button-primary:hover {
+  background-color: #bbf7d0;
+}
+
+.dark .estela-button-primary:hover {
+  background-color: #22543d;
+}
+
+.estela-button-secondary {
+  font-family: 'GT America Mono', monospace;
+  color: #6e757c;
+  background-color: transparent;
+  border: 1px solid currentColor;
+  border-opacity: 1;
+}
+
+.dark .estela-button-secondary {
+  color: #999999;
+}
+
+.estela-button-secondary:hover {
+  background-color: #f3f4f6;
+}
+
+.dark .estela-button-secondary:hover {
+  background-color: #1f2937;
+}
+
+/* CTA Gradient Overlays */
+.cta-gradient-bottom {
+  background: linear-gradient(0deg, #ffffff, #ffffff00);
+}
+
+.dark .cta-gradient-bottom {
+  background: linear-gradient(0deg, #080f11, #080f1100);
+}
+
+.cta-gradient-top {
+  background: linear-gradient(180deg, #ffffff, #ffffff00);
+}
+
+.dark .cta-gradient-top {
+  background: linear-gradient(180deg, #080f11, #080f1100);
+}
+
+/* Standardized Section Spacing - Based on Oxide testwork spacing */
+.section-spacing {
+  padding-top: 112px; /* mt-28 = 7rem = 112px */
+  padding-bottom: 66px;
+}
+
+/* sm breakpoint and up (640px+) */
+@media (min-width: 640px) {
+  .section-spacing {
+    padding-top: 180px; /* sm:mt-[11.25rem] = 11.25rem = 180px */
+  }
+}
+
+/* lg breakpoint and up (1024px+) */
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding-bottom: 176px; /* lg:mb-44 = 11rem = 176px */
+  }
+}
