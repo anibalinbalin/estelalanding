@@ -235,36 +235,38 @@ export function MethodPractices() {
               ))}
             </div>
             
-            <div style={{ marginBottom: '24px' }}>
-              <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
-                <div style={{ marginBottom: '16px' }}>
-                  <h3 style={{
-                    fontSize: '17px',
-                    fontWeight: '500',
-                    color: 'var(--foreground)',
-                    marginBottom: '8px',
-                    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif'
-                  }}>
-                    {practice.subsection.title}
-                  </h3>
-                  <ul style={{
-                    fontSize: '17px',
-                    fontWeight: '400',
-                    lineHeight: '27.2px',
-                    letterSpacing: 'normal',
-                    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                    color: 'var(--content-secondary-p3)',
-                    marginLeft: '16px',
-                    listStyle: 'none',
-                    padding: '0'
-                  }}>
-                    {practice.subsection.items.map((item, i) => (
-                      <li key={`item-${i}`} style={{ marginBottom: '8px' }}>• {item}</li>
-                    ))}
-                  </ul>
+            {practice.subsection && (
+              <div style={{ marginBottom: '24px' }}>
+                <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
+                  <div style={{ marginBottom: '16px' }}>
+                    <h3 style={{
+                      fontSize: '17px',
+                      fontWeight: '500',
+                      color: 'var(--foreground)',
+                      marginBottom: '8px',
+                      fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif'
+                    }}>
+                      {practice.subsection.title}
+                    </h3>
+                    <ul style={{
+                      fontSize: '17px',
+                      fontWeight: '400',
+                      lineHeight: '27.2px',
+                      letterSpacing: 'normal',
+                      fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+                      color: 'var(--content-secondary-p3)',
+                      marginLeft: '16px',
+                      listStyle: 'none',
+                      padding: '0'
+                    }}>
+                      {practice.subsection.items.map((item, i) => (
+                        <li key={`item-${i}`} style={{ marginBottom: '8px' }}>• {item}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
             
             <div style={{ marginBottom: '24px' }}>
               {practice.conclusion.map((paragraph, i) => (
