@@ -183,6 +183,15 @@ export function MethodIntroduction() {
             }
           ]
         },
+        whatThisMeans: {
+          title: 'Lo Que Esto Significa para Usted',
+          paragraphs: [
+            "Cuando trabaja con Estela, no está contratando proveedores de tecnología que casualmente trabajan con empresas. Está eligiendo traductores que aseguran que la tecnología sirva a su misión.",
+            "No sólo instalamos servidores. Creamos infraestructura que acelera su trabajo.",
+            "No sólo configuramos redes. Conectamos personas y posibilidades.",
+            "No sólo brindamos soporte. Nos aseguramos de que nunca se pierda en la traducción."
+          ]
+        },
         journeyAhead: {
           title: 'El camino por delante',
           intro: "En los próximos capítulos, exploraremos cómo esta filosofía de traducción da forma a todo lo que hacemos:",
