@@ -67,7 +67,7 @@ const getValuesData = (language: 'en' | 'es') => {
       },
       {
         title: "Curiosidad",
-        description: "Somos aprendices de por vida, sin miedo a aprender algo nuevo, ya sea una nueva tecnología intimidante, un comportamiento desconcertante del sistema o un caso de uso novedoso de un cliente."
+        description: "Somos aprendices, siempre hay algo nuevo, dia a dia, sin miedo a aprender algo nuevo, ya sea una nueva tecnología intimidante o un problema desconcertante."
       },
       {
         title: "Diversidad",
@@ -75,11 +75,11 @@ const getValuesData = (language: 'en' | 'es') => {
       },
       {
         title: "Empatía",
-        description: "Los ingenieros sirven para ofrecer utilidad a otros; para hacerlo eficazmente, debemos ser capaces de ver el mundo a través de los ojos de los demás. La empatía no solo informa nuestra ingeniería, sino que guía nuestras interacciones con colegas, comunidades y clientes: tratamos a los demás como nos gustaría que nos trataran a nosotros."
+        description: "Servimos para ofrecer utilidad a otros; para hacerlo eficazmente, debemos ser capaces de ver el mundo a través de los ojos de los demás. La empatía no solo informa nuestra ingeniería, sino que guía nuestras interacciones con colegas, comunidades y clientes: tratamos a los demás como nos gustaría que nos trataran a nosotros."
       },
       {
         title: "Humor",
-        description: "Aunque nos dedicamos a un negocio serio, no nos tomamos a nosotros mismos demasiado en serio. Disfrutamos de la compañía de nuestros colegas y no podemos imaginar un día sin reír, aunque ocasionalmente sea con la boca llena."
+        description: "Aunque nos dedicamos en un ambiente serio, siempre hay una pizca de humor. Disfrutamos de la compañía de nuestros cliente."
       },
       {
         title: "Optimismo",
@@ -98,8 +98,8 @@ const getValuesData = (language: 'en' | 'es') => {
         description: "Los sistemas informáticos deben ser correctos por encima de todo, y debemos ser disciplinados y minuciosos en nuestro enfoque. Insistimos en llegar a la raíz de las cosas y no nos satisface simplemente abordar sus síntomas."
       },
       {
-        title: "Trabajo en Equipo",
-        description: "Aunque nuestro trabajo puede ser individual, nuestra misión no lo es: abrazamos la desordenada interdependencia de las personas que trabajan juntas en un esfuerzo común. Cuidamos activamente de nuestros equipos: ofreciendo aliento cuando se necesita y verdades difíciles cuando son necesarias."
+        title: "Trabajo en equipo",
+        description: "Aunque nuestro trabajo puede ser individual, nuestra misión no lo es: abrazamos la desordenada interdependencia de las personas que trabajan juntas en un esfuerzo común. Cuidamos activamente de nosotros mismos: ofreciendo ayuda cuando se necesita y verdades que muchas veces son difíciles."
       },
       {
         title: "Versatilidad",

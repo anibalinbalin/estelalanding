@@ -27,7 +27,7 @@ export const SmallOverScaleSection = () => {
       contactButton: "Meet Our Team"
     },
     es: {
-      coDesignTitle: "Estudiamos el arte del Renacimiento porque el diseño de sistemas requiere visión integral",
+      coDesignTitle: "Estudiamos el arte del renacimiento porque el diseño de sistemas requiere visión integral",
       coDesignFeatures: [
         "Leemos filosofía porque la tecnología requiere contexto humano.",
         "Porque hemos aprendido: la magia sucede en este tamaño. Tu proyecto no se transfiere.",

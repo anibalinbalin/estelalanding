@@ -14,10 +14,10 @@ export const ContentSection = () => {
       broken: 'Most technology consulting is broken. Overpriced, underdelivered, and overcomplicated. We exist to prove it doesn\'t have to be this way.'
     },
     es: {
-      ourMission: 'Nuestra Misión',
+      ourMission: 'Nuestra misión',
       missionQuote: '"La tecnología debe ser invisible cuando funciona y evidente cuando no."',
-      founded: 'Fundada en 2015, hemos dedicado casi una década a demostrar que la consultoría tecnológica no tiene por qué ser complicada, costosa o decepcionante.',
-      broken: 'La mayoría de la consultoría tecnológica no funciona. Es demasiado cara, no cumple lo que promete y es excesivamente complicada. Existimos para demostrar que no tiene por qué ser así.'
+      founded: 'Fundada en 2015, hemos dedicado casi una década a demostrar que la consultoría tecnológica no tiene por qué ser complicada, árida.',
+      broken: ''
     }
   }
   
@@ -36,9 +36,11 @@ export const ContentSection = () => {
             <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
               {t.founded}
             </p>
-            <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-              {t.broken}
-            </p>
+            {t.broken && (
+              <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
+                {t.broken}
+              </p>
+            )}
           </div>
         </div>
       </div>

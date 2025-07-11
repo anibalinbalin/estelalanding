@@ -1,0 +1,35 @@
+on /es/services/specifications
+
+
+Especificaciones de hardware y software para nuestras implementaciones estándar.
+por
+Especificaciones de hardware recientes.
+
+Infraestructura de Cómputo
+por
+Workstation
+
+
+this table Especificaciones
+Procesador
+2x AMD EPYC 9354 (32 núcleos cada uno)
+Total de Núcleos
+64 físicos / 128 hilos
+Memoria
+512GB - 2TB DDR5-4800 ECC
+Bahías de Almacenamiento
+8x 2.5" NVMe U.2
+Red
+4x 25GbE + 2x 100GbE SFP28
+Fuente de Alimentación
+Fuentes redundantes de 1100W Platinum
+Factor de Forma
+2U Rack Mount
+
+ditch that and use the english version of that table please
+
+
+Hardware That Scales With You
+por
+Hardware que escala con la empresa
+CONTACTO

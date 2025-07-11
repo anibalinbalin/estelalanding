@@ -12,8 +12,8 @@ export const HeroSection = () => {
       text2: 'No buzzwords. No overselling. Just technology that solves real problems.'
     },
     es: {
-      text1: 'Consultoría Tecnológica con Propósito y Precisión.',
-      text2: 'Sin palabras de moda. Sin promesas exageradas. Solo tecnología que resuelve problemas reales.'
+      text1: 'Consultoría tecnológica con propósito.',
+      text2: 'Tecnología que resuelve problemas.'
     }
   }
   

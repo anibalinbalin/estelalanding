@@ -43,8 +43,8 @@ export function EstelaPrinciples() {
       title: "En Estela, nuestros principios son lo que nos definen",
       subtitle: "Son el eje de por qué hemos elegido la profundidad sobre la escala, por qué nuestros clientes permanecen con nosotros, y por qué seguimos personalmente comprometidos con cada proyecto.",
       principle1: {
-        title: "Una visión amplia",
-        description: "Pensamos como parte de su equipo, no como externos. Diseñamos soluciones precisas, no paquetes predefinidos. Su tranquilidad tecnológica es nuestra prioridad. Esta visión transforma cada proyecto."
+        title: "Una visión completa",
+        description: "Pensamos como parte de su equipo, no como externos. Diseñamos soluciones precisas, no paquetes predefinidos. La tranquilidad tecnológica es nuestra prioridad. Esta visión transforma cada proyecto."
       },
       principle2: {
         title: "Socios, No Clientes",

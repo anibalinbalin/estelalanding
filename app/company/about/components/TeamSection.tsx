@@ -16,9 +16,9 @@ export const TeamSection = () => {
       principlesConstraints: 'These principles are not aspirations, they are constraints; we expect them to be the marrow of all Estela employees and adhered to under all conditions.'
     },
     es: {
-      ourPrinciples: 'Nuestros Principios',
-      principlesIntro: 'Los principios son verdades fundamentales y universales que trascienden el tiempo, la geografía, la cultura y el contexto.',
-      principlesConstraints: 'Estos principios no son aspiraciones, son restricciones; esperamos que sean la médula de todos los empleados de Estela y que se respeten en toda circunstancia.'
+      ourPrinciples: 'Nuestros principios',
+      principlesIntro: 'Muchas empresas tienen _valores_ definidos en una pared. Nosotros tenemos principios que definen nuestro trabajo.',
+      principlesConstraints: 'No son sugerencias. No son un ideal, son nuestro estándar operativo. Son la columna vertebral de Estela, y esperamos que cada uno de nosotros actúe en consecuencia, siempre.'
     }
   };
   

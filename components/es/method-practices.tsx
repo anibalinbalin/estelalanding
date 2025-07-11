@@ -11,115 +11,92 @@ export function MethodPractices() {
   const practices = [
     {
       number: '4.1',
-      title: 'La Regla de las 24 Horas',
-      intro: 'Nuestro Compromiso de Respuesta Rápida',
+      title: 'La regla de las 24 horas',
+      intro: 'Nuestro compromiso de respuesta rápida',
       description: [
-        'Esta regla surgió de una observación simple: la mayoría de los problemas de TI se agravan con el tiempo. Un pequeño fallo en la red se convierte en un fallo en cascada. Un único archivo corrupto se convierte en una pérdida de datos. Un usuario confundido se convierte en un equipo frustrado.'
+        'Esta regla surgió de una observación simple: la mayoría de los problemas de TI se agravan con el tiempo. Un fallo que parece smple se convierte con el tiempo en problemas mas complejos.'
       ],
       subsection: {
-        title: 'Cómo Funciona:',
+        title: 'Cómo funciona:',
         items: [
-          'Todos los incidentes críticos se registran desde el primer contacto.',
-          'Su problema es atendido de inmediato por uno de nuestros expertos principales.',
-          'Diagnóstico inicial y plan de acción en menos de 24 horas.',
-          'Comunicación clara durante todo el proceso de resolución.',
+          'Todos los incidentes se abordan al momento.',
+          'Comunicación durante todo el proceso.',
           'Revisión posterior al incidente para la prevención.'
         ]
       },
       conclusion: [
-        'Los problemas críticos exigen atención inmediata. Nuestro compromiso es una respuesta rápida y personal, generalmente en minutos u horas, no en días. Usted se conectará directamente con un miembro de nuestro equipo principal que entiende su sistema.',
-        '...usted nunca es solo un ticket en una cola, ni se enfrenta a un diagnóstico genérico cuando los sistemas críticos fallan.'
+        'Los problemas exigen atención. Nuestro compromiso es una respuesta rápida y personal, generalmente al momento y no en días. Usted se conecta directamente con un miembro de nuestro equipo que entiende la empresa.',
+        'El cliente nunca es solo un ticket en una cola.'
       ]
     },
     {
       number: '4.2',
-      title: 'La Documentación como un Arte',
-      intro: 'Creemos que la documentación debe iluminar, no intimidar. La nuestra está diseñada para ser clara y de uso inmediato: es visual, práctica y siempre accesible.',
+      title: 'La Documentación',
+      intro: 'Creemos que la documentación debe informar. La nuestra está diseñada para ser clara y de uso inmediato: es visual, práctica y siempre accesible.',
       description: [
-        'La documentación de TI tradicional fracasa porque está escrita para auditores, no para usuarios. Prioriza lo exhaustivo sobre lo claro, el cumplimiento sobre la comprensión.'
+        'La documentación de TI tradicional es árida porque está escrita para otros de la misma rama.'
       ],
       subsection: {
-        title: 'Nuestro Enfoque:',
+        title: 'Nuestra manera:',
         items: [
           'Diagramas visuales que muestran, no solo describen.',
           'Guías de referencia rápida para tareas diarias.',
-          'Tutoriales en video para procedimientos complejos.',
-          'Base de conocimiento consultable, no carpetas.',
           'Actualizaciones periódicas basadas en preguntas reales.'
         ]
       },
       conclusion: [
-        'Cada documento responde a tres preguntas: 1. ¿Qué hace esto? 2. ¿Cómo lo uso? 3. ¿Qué hago si algo sale mal?',
-        'Hemos aprendido que la mejor documentación no es la más completa, sino la más comprensible. No se trata de cubrir cada edge case; se trata de asegurar que su equipo pueda manejar los casos que realmente ocurren.',
-        'La documentación debe empoderar, no abrumar.'
+        'Cada documento responde a tres preguntas: 1. ¿Qué hace esto? 2. ¿Cómo lo uso? 3. ¿Qué hago si algo no funciona?',
+        'Hemos aprendido que la mejor documentación no es la más completa, sino la más comprensible. No se trata de cubrir cada caso extremo; se trata de asegurar que la empresa pueda manejar los casos que realmente ocurren.',
+        'La documentación debe empoderar a los usuarios, no abrumar.'
       ]
     },
     {
       number: '4.3',
-      title: 'El Pulso Semanal',
-      intro: 'Revisiones cortas y regulares mantienen los sistemas en buen estado. 15 minutos pueden prevenir 15 horas de inactividad.',
+      title: 'Revisiones',
+      intro: 'Revisiones cortas y regulares mantienen los sistemas en buen estado. 30 minutos pueden prevenir muchas horas de inactividad.',
       description: [
-        'La mayoría de los desastres de TI dan señales sutiles antes de volverse críticos. Un disco funcionando al 90% de su capacidad. El uso de la memoria aumentando gradualmente. Los tiempos de respuesta incrementándose poco a poco. El Pulso Semanal detecta esas señales.'
+        'La mayoría de los eventos de TI dan señales sutiles antes de volverse un problema mas grave.'
       ],
       subsection: {
-        title: 'Nuestra Rutina Semanal:',
+        title: 'Nuestra rutina semanal:',
         items: [
-          'Informes automatizados del estado del sistema cada mañana.',
-          'Llamada de revisión de 15 minutos cada miércoles.',
+          'Informes automatizados.',
           'Recomendaciones proactivas de optimización.',
           'Análisis de tendencias y planificación de capacidad.',
           'Planes de acción claros con prioridades.'
         ]
       },
       conclusion: [
-        'No se trata de crear reuniones ni de generar informes. Se trata de mantener un ritmo de atención que evita que los problemas pequeños se magnifiquen. Como un médico que revisa los signos vitales, monitoreamos lo que importa e intervenimos antes de que los síntomas se conviertan en emergencias.',
-        'Los mejores problemas son aquellos que nunca ocurren.'
+        'No se trata de crear reuniones ni de generar informes. Se trata de mantener un ritmo de atención que evita que los problemas se magnifiquen.'
       ]
     },
     {
       number: '4.4',
-      title: 'Relaciones con Proveedores',
-      intro: 'Mantenemos relaciones directas con Lenovo, UniFi, Synology y SentinelOne. Sus problemas se convierten en nuestros problemas. Sin evasivas.',
+      title: 'Relaciones con proveedores',
+      intro: 'Mantenemos relaciones directas con Lenovo, UniFi, Synology, SentinelOne, y Wasabi.',
       description: [
-        'El modelo tradicional de proveedores crea un triángulo de frustración: usted llama a su empresa de TI, ellos llaman al proveedor y el proveedor culpa a otro. Pasan las horas. Pasan los días. Nada se resuelve.'
+        'El modelo tradicional de proveedores crea un triángulo de frustración: Cliente -> empresa de TI -> contactan al proveedor -> proveedor indica el problema es el cliente. Este es un proceso de dias o semanas.'
       ],
       subsection: {
-        title: 'Nuestro Enfoque Directo:',
+        title: 'Nuestro enfoque:',
         items: [
-          'Contactos designados en cada empresa asociada.',
-          'Vías de escalamiento directo para problemas críticos.',
-          'Sesiones informativas técnicas sobre nuevos productos.',
-          'Acceso a versiones beta para pruebas y validación.',
-          'Tiempos de respuesta garantizados en los acuerdos con socios.'
+          'Contactos designados en cada empresa.',
+          'Vías de escalamiento directo para problemas.',
+          'Los responsables de las garantias los provee primero Estela.'
         ]
       },
       conclusion: [
-        'Cuando surge un problema específico de un proveedor —sea con Synology, UniFi o SentinelOne—, nuestras alianzas nos permiten navegar sus canales de soporte con la eficiencia de quien conoce el sistema desde adentro. Aprovechamos los contactos directos y un profundo conocimiento del producto para acelerar la resolución, a menudo probando actualizaciones críticas en nuestro propio entorno para garantizar la estabilidad en el suyo. Nuestro objetivo es siempre protegerlo de la complejidad y agilizar las soluciones.',
-        'Estas relaciones tomaron años en construirse. Le ahorran horas cada vez que algo sale mal.'
+        'Cuando surge un problema específico de un proveedor la primera linea de respuesta es Estela. Nuestro objetivo es siempre protegerlo de la complejidad y agilizar las soluciones.'
       ]
     },
     {
       number: '4.5',
-      title: 'Transferencia de Conocimiento',
+      title: 'Transferencia de conocimiento',
       intro: 'Nuestro objetivo es desarrollar la capacidad de su equipo, no crear dependencia.',
       description: [
-        'Muchas empresas de TI se benefician de la ignorancia del cliente. Cuanto menos sabe usted, más los necesita. Creemos lo contrario: cuanto más capaz se vuelve su equipo, más valiosa es nuestra alianza.'
+        'Creemos que las empresas deben entender que hay detrás de su infraestrcutura: cuanto más capaz se vuelve su equipo, más sólida es nuestra alianza.'
       ],
-      subsection: {
-        title: 'Cómo Transferimos el Conocimiento:',
-        items: [
-          'Capacitación práctica durante la implementación.',
-          'Sesiones de formación durante el almuerzo.',
-          'Materiales de referencia rápida para su equipo.',
-          'Procedimientos de escalamiento claramente definidos.',
-          'Evaluaciones anuales de capacidades.'
-        ]
-      },
-      conclusion: [
-        'Enseñamos a su equipo a gestionar con confianza las tareas rutinarias: cambiar la contraseña de un usuario, agregar una impresora de red, restaurar un archivo eliminado, revisar los registros de seguridad. No son tareas complejas, solo poco familiares.',
-        'Nuestra filosofía se basa en el empoderamiento. Creemos que cuanto más capaz se vuelve su equipo con las tareas cotidianas, más valiosa y estratégica se vuelve nuestra alianza.',
-        'Una verdadera alianza significa crecer juntos.'
-      ]
+      conclusion: []
     }
   ]
 
@@ -172,7 +149,7 @@ export function MethodPractices() {
             margin: 0,
             marginBottom: '24px'
           }}>
-            Nuestras Prácticas
+            Nuestras prácticas
           </h1>
           
           <div style={{
@@ -188,7 +165,7 @@ export function MethodPractices() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '48px'
           }}>
-            Excelencia operativa diaria mediante métodos probados y una ejecución consistente.
+            Nuestros métodos probados y una ejecución consistente.
           </p>
 
           {/* Custom Vertical Bars Noise Effect */}
