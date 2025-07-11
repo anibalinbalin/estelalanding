@@ -95,14 +95,14 @@ export function MethodPhilosophyEs() {
 
         {/* Title */}
         <h1 style={titleStyle}>
-          Nuestra Filosofía
+          Nuestra filosofía
         </h1>
         
         <div style={dividerStyle} />
 
         {/* Chapter Content Lead */}
         <p style={leadStyle}>
-          El pensamiento de fondo que da forma a todo lo que construimos.
+          Nuestros ideales de fondo que da forma a todo lo que construimos.
         </p>
 
         {/* Hexagonal Sliding Bars Animation */}
@@ -139,21 +139,30 @@ export function MethodPhilosophyEs() {
             borderBottom: '1px solid var(--border)',
             paddingBottom: '8px'
           }}>
-            5.1 El Principio del Hexágono
+            5.1 El Hexágono
           </h2>
           
           <p style={paragraphStyle}>
-            La forma más eficiente de la naturaleza. Máxima resistencia, mínimo material. Así es como construimos nuestros sistemas.
+            Somos 6 integrantes. El hexágono tiene 6 lados. ¿Casualidad? Seguramente. Es una metáfora muy buena como para no destacarla.
           </p>
           
           <p style={paragraphStyle}>
-            Si lo pensamos, la naturaleza optimiza para la eficiencia, y su forma predilecta para la resistencia y la solidez es el hexágono. Es la estructura que ofrece máxima solidez utilizando la menor cantidad de recursos posible.
-            Nosotros aplicamos esa misma lógica: un equipo compacto y sólido, sin partes de más, donde cada miembro está interconectado y sostiene al resto. Quizás el universo sí sabe lo que hace.
+            Si lo pensamos, la naturaleza optimiza para la eficiencia, y su forma predilecta para la resistencia y la solidez es el hexágono. Algunas veces es el triángulo. Pero aquí es el hexágono. Es la estructura que ofrece máxima solidez utilizando la menor cantidad de recursos posible.
+          </p>
+
+          <p style={paragraphStyle}>
+            Nosotros aplicamos esa misma lógica: un equipo sólido, sin partes de más, donde cada miembro está interconectado y sostiene al resto.
           </p>
           
           <p style={paragraphStyle}>
-            El hexágono nos enseña una lección importante del diseño: la fortaleza no viene de la rigidez, sino de las conexiones entre sí. 
-            Cada elemento que construimos sostiene a sus vecinos. Si uno se quita, los demás compensan. Si uno se añade, el conjunto se vuelve más sólido.
+            El hexágono nos enseña una lección importante del diseño: la fortaleza no viene de la rigidez, sino de las conexiones entre sí.
+          </p>
+
+          <p style={paragraphStyle}>
+            Cada elemento que construimos sostiene a sus vecinos. Si uno no está disponible, los demás compensan. Si uno se agrega, el conjunto recupera su solidez anterior.
+          </p>
+
+          <p style={paragraphStyle}>
             Porque la buena tecnología, como un buen equipo, se define por la solidez de sus vínculos.
           </p>
         </section>
@@ -175,12 +184,12 @@ export function MethodPhilosophyEs() {
           </h2>
           
           <p style={paragraphStyle}>
-            Grace Hopper simplificó la computación para los humanos. Euclides construyó grandes verdades a partir de axiomas fundamentales. 
-            Nosotros aplicamos principios atemporales a problemas modernos.
+            Grace Hopper simplificó la computación para todos. Euclides construyó grandes verdades a partir de axiomas fundamentales. 
+            Nosotros aplicamos principios atemporales a problemas modernos. ¿Estamos en la misma jerarquía que Grace Hopper o Euclides? No. Pero tomamos lo mejor de ambos.
           </p>
           
           <p style={paragraphStyle}>
-            La tecnología cambia pero no así la naturaleza humana. Los desafíos que enfrentamos hoy —complejidad, escala, integración— no son nuevos. 
+            La tecnología cambia y evoluciona dia a dia, pero no así nosotros. Los desafíos que enfrentamos hoy —complejidad, escala, integración— no son nuevos. 
             Son problemas desde siempre.
           </p>
           
@@ -193,8 +202,8 @@ export function MethodPhilosophyEs() {
                 &quot;La frase más peligrosa del idioma es &apos;siempre lo hicimos así&apos;.&quot;
               </p>
               <p style={paragraphStyle}>
-                Ella inventó el compiler porque estaba cansada de escribir el mismo código repetidamente. 
-                Nosotros automatizamos no porque sea una tendencia de AI, sino porque la repetición es una perdida de tiempo y es en definitiva el potencial que se puede aplicar a otro trabajo.
+                Ella inventó el compiler porque estaba cansada de escribir el mismo código todo el tiempo. 
+                Nosotros automatizamos no porque AI esta de moda, sino porque la repetición es una perdida de tiempo y es en definitiva el potencial que se puede aplicar a otro trabajo.
               </p>
             </div>
 
@@ -222,7 +231,7 @@ export function MethodPhilosophyEs() {
           </div>
           
           <p style={paragraphStyle}>
-            Las innovaciones siempre surgieron de la conexión de ideas que parecían no tener relación. Nosotros lo hacemos así.
+            Las innovaciones siempre surgieron de la conexión de ideas que parecían no tener relación.
           </p>
         </section>
 

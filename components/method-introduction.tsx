@@ -116,15 +116,15 @@ export function MethodIntroduction() {
       }
     },
     es: {
-      title: 'El Arte de la Traducción',
+      title: 'El Arte de la traducción',
       lead: 'El arte de la verdadera interpretación radica en volver claro lo complejo. Ese es nuestro quehacer: traducimos el intrincado mundo de la tecnología en soluciones centradas en las personas.',
       sections: {
         lostArt: {
-          title: 'Un Arte Perdido',
+          title: 'Un Arte perdido',
           paragraphs: [
-            "En la mitología griega, Hermes sirvió como mensajero entre el monte Olimpo y los mortales. No se limitaba a llevar mensajes; traducía el significado entre espacios que no podían entenderse.",
+            "En la mitología griega, Hermes sirvió como mensajero entre el monte Olimpo y los mortales que vivian debajo. No se limitaba a llevar mensajes; traducía el significado entre espacios que no podían entenderse.",
             "El panorama tecnológico actual padece la misma división. De un lado: servidores, protocolos, frameworks y un sinfín de acrónimos. Del otro: personas que intentan gestionar sus empresas, atender a sus clientes y marcar una diferencia.",
-            "La mayoría de las empresas de TI se enfocan en hablar el idioma de la tecnología. Ofrecen sistemas técnicamente correctos, pero pero se enfocan oncentran en el 'qué' funciona, olvidando el 'cómo' se siente al usarlo.",
+            "La mayoría de las empresas de TI se enfocan en hablar el idioma de la tecnología. Ofrecen sistemas técnicamente correctos, pero se concentran en el \"qué\" funciona, olvidando el \"cómo\" se siente al usarlo.",
             "Nosotros elegimos un camino diferente."
           ]
         },
@@ -132,45 +132,45 @@ export function MethodIntroduction() {
           title: 'El imperativo de la traducción',
           paragraphs: [
             "Después de 13 años construyendo sistemas, hemos aprendido que la mejor infraestructura es invisible. No se anuncia con complejidad ni exige atención a través de sus fallas. Simplemente funciona.",
-            "Esa invisibilidad no es accidental. Es el resultado de un esfuerzo continuo entre lo que la tecnología puede hacer y lo que las personas realmente necesitan.",
-            "Pensemos en la un editor que necesita compartir archivos de Premiere. Esta persona no tiene interés en las configuraciones RAID o qué sucede por detrás. Le importa abrir archivos rápidamente y cumplir con los plazos que tiene.",
-            "O el laboratorio médico que debe mantener un funcionamiento constante. Necesitan sistemas que nunca fallen cuando hay estudios que deben ser entregados.",
-            "Traducir significa entender ambos lenguajes con fluidez —el de la tecnología y el de la necesidad humana— para luego construir puentes entre ellos."
+            "Esa invisibilidad no es accidental. Es el resultado de un esfuerzo continuo entre lo que la tecnología puede hacer y lo que las empresas realmente necesitan.",
+            "Pensemos en un editor que necesita compartir archivos de Premiere. Esta persona no tiene interés en las configuraciones RAID o qué sucede por detrás. Le importa abrir archivos rápidamente y cumplir con los plazos que tiene.",
+            "O el laboratorio médico que debe mantener un funcionamiento constante. Necesita una infraestructura que nunca falle cuando hay estudios que deben ser entregados.",
+            "Traducir significa entender ambos lenguajes con fluidez —el de la tecnología y el de la necesidad— para luego construir puentes entre ellos."
           ]
         },
         philosophy: {
-          title: 'Nuestra Filosofía de Traducción',
+          title: 'Nuestra filosofía de traducción',
           intro: 'Practicamos la traducción en todos los niveles:',
           items: [
             {
               title: 'De lo técnico a lo práctico',
-              description: 'Transformamos "una red troncal de fibra de 10Gb con agregación de enlaces" en "sus archivos se abren en segundos, no en minutos".'
+              description: 'Transformamos "una red de 10Gb con bonding" en "los archivos abren más rápido".'
             },
             {
               title: 'De lo complejo a lo simple',
-              description: 'Convertimos intrincados diagramas de red en beneficios claros: "trabaje desde cualquier lugar, de forma segura".'
+              description: 'Convertimos diagramas de red en beneficios claros: "A partir de hoy pueden trabajar desde sus casas con la misma capa de seguridad que localmente."'
             },
             {
               title: 'Del problema a la solución',
-              description: 'Traducimos "Una maquina sigue fallando" en "así es como nos aseguramos de que eso no vuelva a suceder".'
+              description: 'Traducimos "Una máquina sigue fallando" en "así es como nos aseguramos de que eso no vuelva a pasar".'
             },
             {
               title: 'Del presente al futuro',
-              description: 'Interpretamos las limitaciones actuales como las capacidades del mañana, construyendo sistemas que crecen con usted.'
+              description: 'Interpretamos las limitaciones actuales como las capacidades del mañana, construyendo sistemas que crecen con la empresa.'
             }
           ]
         },
         methodEmerges: {
-          title: 'Así Emerge Nuestro Método',
-          intro: "Nuestro método no se trata de seguir tendencias o implementar las últimas herramientas. Se trata de entender lo que realmente importa: su gente, su trabajo, su crecimiento.",
+          title: 'El genesis de cómo trabajamos',
+          intro: "Nuestro método no se trata de seguir tendencias o simplemente implementar las últimas herramientas. Se trata de entender lo que realmente importa, tal como un slogán politico: la gente, su trabajo, su crecimiento.",
           listIntro: 'Este método surgió de:',
           items: [
             {
               title: 'Más de 50 implementaciones exitosas',
-              description: 'Cada una nos enseñó algo nuevo sobre la traducción.'
+              description: 'Cada una nos enseñó algo nuevo.'
             },
             {
-              title: 'Incontables horas de escucha',
+              title: 'Escuchar.',
               description: 'Antes de hablar de tecnología, pensamos a su lado.'
             },
             {

@@ -10,7 +10,7 @@ export const ContentSection = () => {
               Nuestra misión
             </h2>
             <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-              Estela es un equipo de expertos dedicados, estructurado intencionalmente para un impacto directo y una colaboración profunda. Creemos que las verdaderas soluciones surgen cuando profesionales experientes trabajan en conjunto, libres de las jerarquías tradicionales y enfocados puramente en el desafío en cuestión. No es solo nuestra forma de trabajar; es quiénes somos.
+              Estela es un equipo de expertos dedicados, estructurado intencionalmente para un trato directo y una colaboración profunda. Creemos que las verdaderas soluciones surgen cuando profesionales trabajan en conjunto, libres de las jerarquías tradicionales y enfocados puramente en el desafío en cuestión. No es solo nuestra forma de trabajar; es quiénes somos.
             </p>
           </div>
         </div>

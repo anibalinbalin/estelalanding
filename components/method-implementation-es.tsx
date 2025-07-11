@@ -12,35 +12,35 @@ export function MethodImplementationEs() {
     {
       number: '3.1',
       title: 'Comprensión',
-      intro: 'No empezamos con las soluciones. Empezamos con las preguntas.',
+      intro: 'No comenzamos con las soluciones. Empezamos con las preguntas.',
       content: [
         'Acompañamos a su equipo durante una jornada.',
         'Mapeamos sus flujos de trabajo reales (no los ideales).',
         'Identificamos los puntos críticos y las oportunidades.',
         'Documentamos todo el proceso.'
       ],
-      time: 'Duración: 1-2 semanas'
+      time: 'Duración: 1-2 días'
     },
     {
       number: '3.2',
       title: 'Arquitectura',
-      intro: 'Diseñamos el sistema que se ajusta a su realidad.',
+      intro: 'Diseñamos el sistema que se ajusta a la realidad.',
       content: [
         'Creamos planos detallados del sistema.',
         'Planificamos para hoy y para el futuro.',
-        'Elegimos herramientas que se integran entre sí.',
-        'Diseñamos en función del nivel de conocimiento de su equipo.'
+        'Elegimos equipos y herramientas que se integran entre sí.',
+        'Diseñamos y migramos en función del nivel de conocimiento de la empresa.'
       ],
       time: 'Duración: 1-2 semanas'
     },
     {
       number: '3.3',
       title: 'Implementación',
-      intro: 'Construimos sin afectar lo que ya funciona.',
+      intro: 'Avanzamos sin afectar lo que ya funciona.',
       content: [
-        'Implementaciones por etapas, sin cambios abruptos.',
-        'Probamos con usuarios reales, no con escenarios teóricos.',
-        'Documentamos a medida que construimos.',
+        'Implementaciones por etapas.',
+        'Probamos con los usuarios.',
+        'Documentamos a medida que avanzamos.',
         'Capacitamos sobre la marcha.'
       ],
       time: 'Duración: 2-8 semanas (según el alcance del proyecto)'
@@ -108,7 +108,7 @@ export function MethodImplementationEs() {
             margin: 0,
             marginBottom: '24px'
           }}>
-            Cómo Trabajamos
+            Cómo trabajamos
           </h1>
           
           <div style={{
@@ -124,7 +124,7 @@ export function MethodImplementationEs() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '48px'
           }}>
-            Nuestra metodología probada para convertir problemas complejos en soluciones simples.
+            Nuestra metodología para convertir problemas complejos en soluciones simples.
           </p>
 
           {/* Waves Effect */}
@@ -231,78 +231,6 @@ export function MethodImplementationEs() {
             marginBottom: '48px'
         }} />
 
-        <section style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <p style={{ 
-            fontSize: '1.125rem', 
-            fontWeight: '500',
-            color: 'var(--foreground)',
-            marginBottom: '16px'
-          }}>
-            Esta metodología no es teórica.<br />
-            Ha sido perfeccionada a lo largo de 13 años de proyectos reales.
-          </p>
-          
-          <p style={{
-            fontSize: '17px',
-            fontWeight: '400',
-            lineHeight: '27.2px',
-            letterSpacing: 'normal',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '24px'
-          }}>
-            Desde empresas de 5 personas hasta organizaciones de 100. Desde simples actualizaciones 
-            de red hasta transformaciones digitales completas. Cada proyecto nos enseña algo nuevo.
-          </p>
-          
-          <p style={{
-            fontSize: '17px',
-            fontWeight: '400',
-            lineHeight: '27.2px',
-            letterSpacing: 'normal',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '24px'
-          }}>
-            Las fases son flexibles, no rígidas.
-          </p>
-          <p style={{
-            fontSize: '17px',
-            fontWeight: '400',
-            lineHeight: '27.2px',
-            letterSpacing: 'normal',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '24px'
-          }}>
-            Los plazos se adaptan a su realidad.
-          </p>
-          <p style={{
-            fontSize: '17px',
-            fontWeight: '400',
-            lineHeight: '27.2px',
-            letterSpacing: 'normal',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '24px'
-          }}>
-            El resultado es siempre el mismo:
-          </p>
-          
-          <p style={{
-            fontSize: '1.5rem',
-            fontWeight: '500',
-            color: 'var(--foreground)',
-            marginBottom: '16px'
-          }}>
-            Tecnología que simplemente funciona.
-          </p>
-        </section>
-
-        <div style={{
-          height: '1px',
-            marginBottom: '48px'
-        }} />
 
         <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <Link 

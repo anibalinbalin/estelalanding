@@ -17,7 +17,7 @@ export const TeamSection = () => {
     },
     es: {
       ourPrinciples: 'Nuestros principios',
-      principlesIntro: 'Muchas empresas tienen _valores_ definidos en una pared. Nosotros tenemos principios que definen nuestro trabajo.',
+      principlesIntro: 'Muchas empresas tienen valores definidos en una pared. Nosotros tenemos principios que definen nuestro trabajo.',
       principlesConstraints: 'No son sugerencias. No son un ideal, son nuestro estándar operativo. Son la columna vertebral de Estela, y esperamos que cada uno de nosotros actúe en consecuencia, siempre.'
     }
   };

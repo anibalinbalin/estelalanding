@@ -14,7 +14,7 @@ export function MethodPractices() {
       title: 'La regla de las 24 horas',
       intro: 'Nuestro compromiso de respuesta rápida',
       description: [
-        'Esta regla surgió de una observación simple: la mayoría de los problemas de TI se agravan con el tiempo. Un fallo que parece smple se convierte con el tiempo en problemas mas complejos.'
+        'Esta regla surgió de una observación simple: la mayoría de los problemas de TI se agravan con el tiempo. Un problema que parece a todas luces simple se convierte con el tiempo en problemas mas complejos.'
       ],
       subsection: {
         title: 'Cómo funciona:',
@@ -25,16 +25,15 @@ export function MethodPractices() {
         ]
       },
       conclusion: [
-        'Los problemas exigen atención. Nuestro compromiso es una respuesta rápida y personal, generalmente al momento y no en días. Usted se conecta directamente con un miembro de nuestro equipo que entiende la empresa.',
-        'El cliente nunca es solo un ticket en una cola.'
+        'Los problemas exigen atención. Nuestro compromiso es una respuesta rápida y personal, generalmente al momento y no en días. El vinculo del cliente es siempre con alguien directo de Estela que conoce además la empresa.'
       ]
     },
     {
       number: '4.2',
-      title: 'La Documentación',
+      title: 'Documentación',
       intro: 'Creemos que la documentación debe informar. La nuestra está diseñada para ser clara y de uso inmediato: es visual, práctica y siempre accesible.',
       description: [
-        'La documentación de TI tradicional es árida porque está escrita para otros de la misma rama.'
+        'La documentación tecnica es inexorablemente árida porque está escrita para lectores del mismo sector. Para alguien ajeno a este grupo es una lectura dificil.'
       ],
       subsection: {
         title: 'Nuestra manera:',
@@ -45,7 +44,7 @@ export function MethodPractices() {
         ]
       },
       conclusion: [
-        'Cada documento responde a tres preguntas: 1. ¿Qué hace esto? 2. ¿Cómo lo uso? 3. ¿Qué hago si algo no funciona?',
+        'Cada documento responde a tres preguntas: 1. ¿Qué hace esto? 2. ¿Cómo lo uso? 3. ¿Qué hago si algo no funciona?.',
         'Hemos aprendido que la mejor documentación no es la más completa, sino la más comprensible. No se trata de cubrir cada caso extremo; se trata de asegurar que la empresa pueda manejar los casos que realmente ocurren.',
         'La documentación debe empoderar a los usuarios, no abrumar.'
       ]
@@ -53,7 +52,7 @@ export function MethodPractices() {
     {
       number: '4.3',
       title: 'Revisiones',
-      intro: 'Revisiones cortas y regulares mantienen los sistemas en buen estado. 30 minutos pueden prevenir muchas horas de inactividad.',
+      intro: 'Revisiones cortas y periodicas mantienen la infraestructura en buen estado. Treinta minutos pueden prevenir muchas horas de problemas.',
       description: [
         'La mayoría de los eventos de TI dan señales sutiles antes de volverse un problema mas grave.'
       ],
@@ -62,7 +61,7 @@ export function MethodPractices() {
         items: [
           'Informes automatizados.',
           'Recomendaciones proactivas de optimización.',
-          'Análisis de tendencias y planificación de capacidad.',
+          'Planificación de capacidad.',
           'Planes de acción claros con prioridades.'
         ]
       },
@@ -78,7 +77,7 @@ export function MethodPractices() {
         'El modelo tradicional de proveedores crea un triángulo de frustración: Cliente -> empresa de TI -> contactan al proveedor -> proveedor indica el problema es el cliente. Este es un proceso de dias o semanas.'
       ],
       subsection: {
-        title: 'Nuestro enfoque:',
+        title: 'Cómo resolvemos nosotros:',
         items: [
           'Contactos designados en cada empresa.',
           'Vías de escalamiento directo para problemas.',
@@ -293,45 +292,6 @@ export function MethodPractices() {
           </div>
         ))}
         
-        <div style={{
-          height: '1px',
-            marginBottom: '48px'
-        }} />
-
-        <section style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <p style={{ 
-            fontSize: '1.125rem', 
-            fontWeight: '500',
-            color: 'var(--foreground)',
-            marginBottom: '16px'
-          }}>
-            Estas prácticas no son reglas impuestas desde arriba.
-          </p>
-          
-          <p style={{
-            fontSize: '17px',
-            fontWeight: '400',
-            lineHeight: '27.2px',
-            letterSpacing: 'normal',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '24px'
-          }}>
-            Son lecciones aprendidas a lo largo de 13 años de servicio. Cada una existe porque resuelve un problema real. 
-            Cada una evoluciona a medida que aprendemos mejores maneras. Cada una se enfoca en un objetivo simple:
-          </p>
-          
-          <p style={{
-            fontSize: '1.5rem',
-            fontWeight: '500',
-            fontStyle: 'italic',
-            color: 'var(--foreground)',
-            marginBottom: '16px'
-          }}>
-
-          </p>
-        </section>
-
         <div style={{
           height: '1px',
             marginBottom: '48px'

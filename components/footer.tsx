@@ -16,6 +16,16 @@ export const Footer = () => {
     setMounted(true);
   }, []);
 
+  // Helper function to get the correct path based on language
+  const getLocalizedPath = (path: string) => {
+    if (language === 'es' && !path.startsWith('/es')) {
+      return `/es${path}`
+    } else if (language === 'en' && path.startsWith('/es')) {
+      return path.replace('/es', '')
+    }
+    return path
+  }
+
   const logoSrc = mounted && resolvedTheme === "dark" ? "/logos/logo_blanco.png" : "/logos/logo_original.png";
   const borderColor = mounted && resolvedTheme === "dark" ? "#1c2225" : "#e5e5e5";
 
@@ -52,6 +62,7 @@ export const Footer = () => {
         method: {
           title: "Method",
           items: [
+            { title: "Index", href: "/method" },
             { title: "Introduction", href: "/method/introduction" },
             { title: "Principles", href: "/method/principles" },
             { title: "Implementation", href: "/method/implementation" },
@@ -93,31 +104,32 @@ export const Footer = () => {
         services: {
           title: "Servicios",
           items: [
-            { title: "Infraestructura", href: "/services/infrastructure" },
-            { title: "Seguridad", href: "/services/security" },
-            { title: "Desarrollo", href: "/services/development" },
-            { title: "Consultoría", href: "/services/consulting" },
-            { title: "Especificaciones", href: "/services/specifications" }
+            { title: "Infraestructura", href: "/es/services/infrastructure" },
+            { title: "Seguridad", href: "/es/services/security" },
+            { title: "Desarrollo", href: "/es/services/development" },
+            { title: "Consultoría", href: "/es/services/consulting" },
+            { title: "Especificaciones", href: "/es/services/specifications" }
           ]
         },
         method: {
           title: "Método",
           items: [
-            { title: "Introducción", href: "/method/introduction" },
-            { title: "Principios", href: "/method/principles" },
-            { title: "Implementación", href: "/method/implementation" },
-            { title: "Prácticas", href: "/method/practices" },
-            { title: "Filosofía", href: "/method/philosophy" }
+            { title: "Índice", href: "/es/method" },
+            { title: "Introducción", href: "/es/method/introduction" },
+            { title: "Principios", href: "/es/method/principles" },
+            { title: "Implementación", href: "/es/method/implementation" },
+            { title: "Prácticas", href: "/es/method/practices" },
+            { title: "Filosofía", href: "/es/method/philosophy" }
           ]
         },
         company: {
           title: "Empresa",
           items: [
-            { title: "Acerca de", href: "/company/about" },
-            { title: "Trabajo", href: "/company/work" },
-            { title: "Equipo", href: "/company/team" },
-            { title: "Socios", href: "/company/partners" },
-            { title: "Contacto", href: "/contact" }
+            { title: "Acerca de", href: "/es/company/about" },
+            { title: "Trabajo", href: "/es/company/work" },
+            { title: "Equipo", href: "/es/company/team" },
+            { title: "Socios", href: "/es/company/partners" },
+            { title: "Contacto", href: "/es/contact" }
           ]
         }
       }
@@ -139,7 +151,7 @@ export const Footer = () => {
         <div className="col-span-12 min-[800px]:col-span-6 mb-8">
           {/* Logo Section */}
           <div className="mb-8">
-            <Link href="/" className="flex items-center">
+            <Link href={getLocalizedPath("/")} className="flex items-center">
               <Image
                 src={logoSrc}
                 alt="Estela Logo"
@@ -217,7 +229,7 @@ export const Footer = () => {
               {t.sections.services.items.map((item) => (
                 <li key={item.title}>
                   <Link 
-                    href={item.href}
+                    href={getLocalizedPath(item.href)}
                     className="my-0 inline-block font-normal leading-[1.125rem] text-[.875rem] tracking-wider hover:text-[var(--content-raise-p3)] transition-colors"
                     style={{
                       fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
@@ -248,7 +260,7 @@ export const Footer = () => {
               {t.sections.method.items.map((item) => (
                 <li key={item.title}>
                   <Link 
-                    href={item.href}
+                    href={getLocalizedPath(item.href)}
                     className="my-0 inline-block font-normal leading-[1.125rem] text-[.875rem] tracking-wider hover:text-[var(--content-raise-p3)] transition-colors"
                     style={{
                       fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
@@ -279,7 +291,7 @@ export const Footer = () => {
               {t.sections.company.items.map((item) => (
                 <li key={item.title}>
                   <Link 
-                    href={item.href}
+                    href={getLocalizedPath(item.href)}
                     className="my-0 inline-block font-normal leading-[1.125rem] text-[.875rem] tracking-wider hover:text-[var(--content-raise-p3)] transition-colors"
                     style={{
                       fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
