@@ -26,6 +26,7 @@ import { DevelopmentAsciiArt } from "@/components/ui/development-ascii-art"
 import { ConsultingAsciiArt } from "@/components/ui/consulting-ascii-art"
 import { SpecificationsAsciiArt } from "@/components/ui/specifications-ascii-art"
 import { useLanguage } from "@/components/language-provider"
+import './navbar-animations.css'
 
 
 const content = {
@@ -214,6 +215,7 @@ export function Navbar() {
   const { language } = useLanguage()
   const pathname = usePathname()
   const [mounted, setMounted] = React.useState(false)
+  const [isAnimated, setIsAnimated] = React.useState(false)
   const [hoveredService, setHoveredService] = React.useState<string>('default')
   const [hoveredMethodItem, setHoveredMethodItem] = React.useState<string>('')
   const [showBerlinArt, setShowBerlinArt] = React.useState(false)
@@ -230,6 +232,8 @@ export function Navbar() {
   // Only show theme-dependent content after mounting
   React.useEffect(() => {
     setMounted(true)
+    // Trigger animations after component mounts
+    setIsAnimated(true)
   }, [])
   
   const logoSrc = mounted && resolvedTheme === "dark" ? "/logos/logo_blanco.png" : "/logos/logo_original.png"
@@ -246,7 +250,7 @@ export function Navbar() {
   }
 
   return (
-    <nav className={`relative z-50 w-full ${pathname?.startsWith('/services') ? '' : 'border-b'}`}>
+    <nav className={`relative z-50 w-full ${pathname?.startsWith('/services') ? '' : 'border-b'} ${isAnimated ? 'navbar-animated' : 'opacity-0'}`}>
       <div className="flex h-14 sm:h-16 lg:h-20 items-center px-5 sm:px-10">
 
         <div className="relative w-full">
@@ -275,7 +279,7 @@ export function Navbar() {
               {/* Logo - left aligned */}
               <Link 
                 href={language === 'es' ? '/es' : '/'} 
-                className="flex items-center h-[58px] sm:h-[69px] lg:h-[80px] justify-start"
+                className={`flex items-center h-[58px] sm:h-[69px] lg:h-[80px] justify-start ${isAnimated ? 'navbar-logo' : 'opacity-0'}`}
               >
                 <Image
                   src={logoSrc}
@@ -288,7 +292,7 @@ export function Navbar() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="items-center leading-none hidden lg:flex gap-1">
+            <div className={`items-center leading-none hidden lg:flex gap-1 ${isAnimated ? 'navbar-nav-items' : 'opacity-0'}`}>
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
@@ -577,7 +581,7 @@ export function Navbar() {
             </div>
 
             {/* Right side CTAs */}
-            <div className="items-center justify-end gap-3 flex">
+            <div className={`items-center justify-end gap-3 flex ${isAnimated ? 'navbar-toolbar' : 'opacity-0'}`}>
               <ToolbarSwitcher />
             </div>
           </div>
