@@ -1,25 +1,8 @@
 'use client'
 
 import { Link } from 'next-view-transitions'
-import { useState, useEffect } from 'react'
-import { BerlinAsciiArt } from '@/components/ui/berlin-ascii-art'
 
 export function MethodSection() {
-  const [showBerlinArt, setShowBerlinArt] = useState(false)
-
-  // Handle ESC key to close ASCII art
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setShowBerlinArt(false)
-      }
-    }
-
-    if (showBerlinArt) {
-      document.addEventListener('keydown', handleKeyDown)
-      return () => document.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [showBerlinArt])
   // Linear's exact styles adapted for Estela
   const pageStyles = {
     backgroundColor: 'var(--background)',
@@ -142,61 +125,6 @@ export function MethodSection() {
           </div>
         </section>
 
-        {/* ASCII Art Container */}
-        {showBerlinArt && (
-          <div style={{
-            position: 'fixed',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            zIndex: 1000,
-            width: '80vw',
-            height: '80vh',
-            maxWidth: '800px',
-            maxHeight: '600px',
-            backgroundColor: 'var(--background)',
-            border: '2px solid var(--border)',
-            borderRadius: '12px',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-          }}>
-            <BerlinAsciiArt isVisible={showBerlinArt} />
-            <button
-              onClick={() => setShowBerlinArt(false)}
-              style={{
-                position: 'absolute',
-                top: '16px',
-                right: '16px',
-                background: 'var(--muted)',
-                border: '1px solid var(--border)',
-                borderRadius: '6px',
-                padding: '8px 12px',
-                color: 'var(--foreground)',
-                cursor: 'pointer',
-                fontSize: '12px',
-                fontFamily: 'GT_America_Mono, monospace'
-              }}
-            >
-              ESC
-            </button>
-          </div>
-        )}
-
-        {/* Backdrop */}
-        {showBerlinArt && (
-          <div
-            style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
-              zIndex: 999,
-            }}
-            onClick={() => setShowBerlinArt(false)}
-          />
-        )}
-
         {/* Method Chapters Grid */}
         <div style={{ 
           display: 'grid', 
@@ -226,11 +154,9 @@ export function MethodSection() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.color = 'var(--foreground)'
-                    setShowBerlinArt(true)
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.color = 'var(--content-secondary-p3)'
-                    setShowBerlinArt(false)
                   }}
                 >
                   <span>The Art of Translation</span>
