@@ -12,8 +12,8 @@ export const HeroSection = () => {
       heading2: 'Four strategic partnerships. Nine years of proven excellence. Zero compromises on quality.'
     },
     es: {
-      heading1: 'Alianzas basadas en la confianza, probadas en producción.',
-      heading2: 'Cuatro socios estratégicos. Nueve años de excelencia comprobada. Cero concesiones en calidad.'
+      heading1: 'Alianzas forjadas en la confianza.',
+      heading2: 'Validadas en producción.'
     }
   };
   

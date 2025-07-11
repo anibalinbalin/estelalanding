@@ -95,14 +95,14 @@ export function MethodPhilosophyEs() {
 
         {/* Title */}
         <h1 style={titleStyle}>
-          Nuestra filosofía
+          Nuestra Filosofía
         </h1>
         
         <div style={dividerStyle} />
 
         {/* Chapter Content Lead */}
         <p style={leadStyle}>
-          Nuestros ideales de fondo que da forma a todo lo que construimos.
+          El pensamiento de fondo que da forma a todo lo que construimos.
         </p>
 
         {/* Hexagonal Sliding Bars Animation */}
@@ -139,31 +139,47 @@ export function MethodPhilosophyEs() {
             borderBottom: '1px solid var(--border)',
             paddingBottom: '8px'
           }}>
-            5.1 El Hexágono
+            5.1 El Principio del Hexágono
           </h2>
           
           <p style={paragraphStyle}>
-            Somos 6 integrantes. El hexágono tiene 6 lados. ¿Casualidad? Seguramente. Pero es una metáfora demasiado buena para descartarla.
+            La forma más eficiente de la naturaleza. Máxima resistencia, mínimo material. Así es como construimos nuestros sistemas.
           </p>
           
           <p style={paragraphStyle}>
-            Si lo pensamos, la naturaleza optimiza para la eficiencia, y su forma predilecta para la resistencia y la solidez es el hexágono. Es la estructura que ofrece máxima solidez utilizando la menor cantidad de recursos posible.
+            Observe un panal de abejas. Miles de años de evolución produjeron el hexágono —no el cuadrado, no el círculo, 
+            sino la celda de seis lados que proporciona el máximo almacenamiento con la mínima cantidad de cera. Sin espacio desperdiciado. 
+            Sin exceso de material. Una integridad estructural perfecta.
+          </p>
+          
+          <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
+            <div style={{ marginBottom: '16px' }}>
+              <h3 style={{ ...paragraphStyle, fontWeight: '500', color: 'var(--foreground)', marginBottom: '8px' }}>
+                El Hexágono en la Tecnología:
+              </h3>
+              <ul style={{ ...paragraphStyle, marginLeft: '16px' }}>
+                <li>• Seis servicios centrales, cada uno apoyando a los demás.</li>
+                <li>• Redundancia sin excesos.</li>
+                <li>• Carga distribuida de manera uniforme.</li>
+                <li>• Sin un único punto de fallo.</li>
+                <li>• Escalable en cualquier dirección.</li>
+                <li>• Uso eficiente de los recursos.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <p style={paragraphStyle}>
+            Aplicamos este principio a cada sistema que diseñamos, buscando una resiliencia inherente a través del soporte interconectado, 
+            una distribución de carga eficiente y una escalabilidad sin puntos únicos de fallo, de manera muy similar a como un panal se adapta y perdura.
           </p>
           
           <p style={paragraphStyle}>
-            Nosotros aplicamos esa misma lógica: un equipo compacto y sólido, sin partes de más, donde cada miembro está interconectado y sostiene al resto. Quizás el universo sí sabe lo que hace.
+            El hexágono nos enseña que la fortaleza no proviene de estructuras rígidas, sino de conexiones flexibles. 
+            Cada elemento soporta a sus vecinos. Si se quita uno, los demás lo compensan. Si se añade uno, el conjunto se vuelve más fuerte.
           </p>
           
-          <p style={paragraphStyle}>
-            El hexágono nos enseña una lección importante del diseño: la fortaleza no viene de la rigidez, sino de las conexiones entre sí.
-          </p>
-          
-          <p style={paragraphStyle}>
-            Cada elemento que construimos sostiene a sus vecinos. Si uno se quita, los demás compensan. Si uno se añade, el conjunto se vuelve más sólido.
-          </p>
-          
-          <p style={paragraphStyle}>
-            Porque la buena tecnología, como un buen equipo, se define por la solidez de sus vínculos.
+          <p style={{ ...paragraphStyle, fontStyle: 'italic' }}>
+            Eficiencia a través de la geometría. Confiabilidad a través del diseño.
           </p>
         </section>
 
@@ -180,7 +196,7 @@ export function MethodPhilosophyEs() {
             borderBottom: '1px solid var(--border)',
             paddingBottom: '8px'
           }}>
-            5.2 Aprendiendo de la historia
+            5.2 Aprendiendo de la Historia
           </h2>
           
           <p style={paragraphStyle}>
@@ -189,7 +205,8 @@ export function MethodPhilosophyEs() {
           </p>
           
           <p style={paragraphStyle}>
-            La tecnología cambia pero no así la naturaleza humana. Los desafíos que enfrentamos hoy —complejidad, escala, integración— no son nuevos. Son problemas desde siempre.
+            La tecnología cambia. La naturaleza humana no. Los desafíos que enfrentamos hoy —complejidad, escala, integración— no son nuevos. 
+            Son problemas antiguos con un ropaje moderno.
           </p>
           
           <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
@@ -198,11 +215,11 @@ export function MethodPhilosophyEs() {
                 De Grace Hopper
               </h3>
               <p style={{ ...paragraphStyle, fontStyle: 'italic' }}>
-                &quot;La frase más peligrosa del idioma es &apos;siempre lo hicimos así&apos;.&quot;
+                &quot;La frase más peligrosa del idioma es &apos;siempre lo hemos hecho así&apos;.&quot;
               </p>
               <p style={paragraphStyle}>
                 Ella inventó el compiler porque estaba cansada de escribir el mismo código repetidamente. 
-                Nosotros automatizamos no porque sea una tendencia de AI, sino porque la repetición es una perdida de tiempo y es en definitiva el potencial que se puede aplicar a otro trabajo.
+                Nosotros automatizamos no porque sea una tendencia, sino porque la repetición genera errores y desperdicia el potencial humano.
               </p>
             </div>
 
@@ -223,14 +240,14 @@ export function MethodPhilosophyEs() {
               </h3>
               <p style={paragraphStyle}>
                 Buscaron una unidad radical entre arte, artesanía y tecnología, creyendo que incluso los objetos cotidianos debían ser diseñados 
-                con integridad funcional y claridad visual. Vemos nuestros sistemas a través de un lente similar, donde el diseño elegante 
-                sirve a un propósito práctico, y la función posee su propia belleza inherente.
+                con integridad funcional y claridad estética. Vemos nuestros sistemas a través de un lente similar, donde el diseño elegante 
+                sirve a un propósito práctico, y la función robusta posee su propia belleza inherente.
               </p>
             </div>
           </div>
           
           <p style={paragraphStyle}>
-            Las innovaciones siempre surgieron de la conexión de ideas que parecían no tener relación. Nosotros lo hacemos así.
+            Las mayores innovaciones de la historia surgieron de la conexión de ideas que parecían no tener relación. Nosotros hacemos lo mismo.
           </p>
         </section>
 
@@ -251,11 +268,64 @@ export function MethodPhilosophyEs() {
           </h2>
           
           <p style={paragraphStyle}>
-            ¿Por qué nos gustan las obras clásicas del Renacimiento? Porque el diseño de sistemas es composición. Equilibrio. Es ver el todo mientras se afinan detalles.
+            ¿Por qué nuestro CEO estudia pinturas del Renacimiento? Porque el diseño de sistemas es composición. Equilibrio. 
+            Es ver el todo mientras se perfeccionan los detalles.
           </p>
           
           <p style={paragraphStyle}>
-            La mayoría ve el arte y la tecnología como opuestos. Nosotros los vemos como variaciones de un mismo tema: crear orden, encontrar patrones en la complejidad, comunicar ideas que trascienden.
+            La mayoría ve el arte y la tecnología como opuestos. Nosotros los vemos como variaciones de un mismo tema: crear orden a partir del caos, 
+            encontrar patrones en la complejidad, comunicar ideas que trascienden su medio.
+          </p>
+          
+          <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
+            <div style={{ marginBottom: '16px' }}>
+              <h3 style={{ ...paragraphStyle, fontWeight: '500', color: 'var(--foreground)', marginBottom: '8px' }}>
+                Composición
+              </h3>
+              <p style={paragraphStyle}>
+                Toda pintura tiene un punto focal, elementos de apoyo y espacio negativo. También lo tiene toda red. 
+                Los servidores críticos son el foco. Los sistemas redundantes brindan el apoyo. Una segmentación adecuada crea holgura.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '16px' }}>
+              <h3 style={{ ...paragraphStyle, fontWeight: '500', color: 'var(--foreground)', marginBottom: '8px' }}>
+                Teoría del Color
+              </h3>
+              <p style={paragraphStyle}>
+                Los artistas saben que los colores se afectan mutuamente: el rojo se ve diferente junto al azul que junto al naranja. 
+                Los sistemas tienen la misma interdependencia. Un NVME rápido impacta más que solo el almacenamiento. 
+                Switches de calidad mejoran más que solo la red.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '16px' }}>
+              <h3 style={{ ...paragraphStyle, fontWeight: '500', color: 'var(--foreground)', marginBottom: '8px' }}>
+                Perspectiva
+              </h3>
+              <p style={paragraphStyle}>
+                Los artistas del Renacimiento descubrieron que para mostrar la profundidad era necesario entender el punto de vista. 
+                Aplicamos el mismo principio: su infraestructura se ve diferente desde el escritorio del usuario que desde la sala de servidores. 
+                Ambas perspectivas importan.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '16px' }}>
+              <h3 style={{ ...paragraphStyle, fontWeight: '500', color: 'var(--foreground)', marginBottom: '8px' }}>
+                Restauración
+              </h3>
+              <p style={paragraphStyle}>
+                Nuestro CEO no solo estudia pinturas, las restaura. Toma algo dañado por el tiempo y el abandono, 
+                entiende su intención original y, cuidadosamente, lo devuelve a la vida. Hacemos lo mismo con los sistemas legacy.
+              </p>
+            </div>
+          </div>
+          
+          <p style={paragraphStyle}>
+            El arte no es decoración. Es una forma de ver.
+          </p>
+          <p style={paragraphStyle}>
+            La tecnología no es solo función. Es una forma de pensar.
           </p>
         </section>
 

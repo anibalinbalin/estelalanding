@@ -122,19 +122,19 @@ export function MethodIntroduction() {
         lostArt: {
           title: 'Un Arte Perdido',
           paragraphs: [
-            "En la mitología griega, Hermes sirvió como mensajero entre el monte Olimpo y los mortales. No se limitaba a llevar mensajes; traducía el significado entre espacios que no podían entenderse.",
-            "El panorama tecnológico actual padece la misma división. De un lado: servidores, protocolos, frameworks y un sinfín de acrónimos. Del otro: personas que intentan gestionar sus empresas, atender a sus clientes y marcar una diferencia.",
-            "La mayoría de las empresas de TI se enfocan en hablar el idioma de la tecnología. Ofrecen sistemas técnicamente correctos, pero se concentran en el 'qué' funciona, olvidando el 'cómo' se siente al usarlo.",
+            "En la mitología griega, Hermes sirvió como mensajero entre los reinos divino y mortal. No se limitaba a llevar mensajes; traducía el significado entre mundos que no podían entenderse.",
+            "El panorama tecnológico actual padece la misma división. De un lado: servidores, protocolos, frameworks y un sinfín de acrónimos. Del otro: personas que intentan gestionar sus negocios, atender a sus clientes y marcar una diferencia.",
+            "La mayoría de las empresas de TI solo hablan el idioma de la tecnología. Entregan soluciones que funcionan para las máquinas pero que confunden a las personas. Optimizan para las especificaciones, no para la experiencia.",
             "Nosotros elegimos un camino diferente."
           ]
         },
         translationImperative: {
-          title: 'El imperativo de la traducción',
+          title: 'El Imperativo de la Traducción',
           paragraphs: [
             "Después de 13 años construyendo sistemas, hemos aprendido que la mejor infraestructura es invisible. No se anuncia con complejidad ni exige atención a través de sus fallas. Simplemente funciona.",
-            "Esa invisibilidad no es accidental. Es el resultado de un esfuerzo continuo entre lo que la tecnología puede hacer y lo que las personas realmente necesitan.",
-            "Pensemos en un editor que necesita compartir archivos de Premiere. Esta persona no tiene interés en las configuraciones RAID o qué sucede por detrás. Le importa abrir archivos rápidamente y cumplir con los plazos que tiene.",
-            "O el laboratorio médico que debe mantener un funcionamiento constante. Necesitan sistemas que nunca fallen cuando hay estudios que deben ser entregados.",
+            "Esa invisibilidad no es accidental. Es el resultado de una traducción continua entre lo que la tecnología puede hacer y lo que las personas realmente necesitan.",
+            "Pensemos en la arquitecta que necesita compartir archivos CAD de gran tamaño. A ella no le importan las configuraciones RAID o las métricas de IOPS. Le importa abrir archivos rápidamente y cumplir con los plazos.",
+            "O el laboratorio médico que debe mantener un funcionamiento perfecto. No necesitan lecciones sobre virtualización. Necesitan sistemas que nunca fallen cuando hay vidas que dependen de ellos.",
             "Traducir significa entender ambos lenguajes con fluidez —el de la tecnología y el de la necesidad humana— para luego construir puentes entre ellos."
           ]
         },
@@ -144,42 +144,42 @@ export function MethodIntroduction() {
           items: [
             {
               title: 'De lo técnico a lo práctico',
-              description: 'Transformamos "una red de 10Gb con bonding" en "los archivos abren más rápido".'
+              description: 'Transformamos "una red troncal de fibra de 10Gb con agregación de enlaces" en "sus archivos se abren en segundos, no en minutos".'
             },
             {
               title: 'De lo complejo a lo simple',
-              description: 'Convertimos diagramas de red en beneficios claros: "A partir de hoy pueden trabajar desde sus casas con la misma capa de seguridad que localmente".'
+              description: 'Convertimos intrincados diagramas de red en beneficios claros: "trabaje desde cualquier lugar, de forma segura".'
             },
             {
               title: 'Del problema a la solución',
-              description: 'Traducimos "Una maquina sigue fallando" en "así es como nos aseguramos de que eso no vuelva a suceder".'
+              description: 'Traducimos "nuestro sistema sigue fallando" en "así es como nos aseguramos de que eso no vuelva a suceder".'
             },
             {
               title: 'Del presente al futuro',
-              description: 'Interpretamos las limitaciones actuales como las capacidades del mañana, construyendo sistemas que crecen con la empresa.'
+              description: 'Interpretamos las limitaciones actuales como las capacidades del mañana, construyendo sistemas que crecen con usted.'
             }
           ]
         },
         methodEmerges: {
           title: 'Así Emerge Nuestro Método',
-          intro: "Nuestro método no se trata de seguir tendencias o simplemente implementar las últimas herramientas. Se trata de entender lo que realmente importa: la gente, su trabajo, su crecimiento.",
+          intro: "Nuestro método no se trata de seguir tendencias o implementar las últimas herramientas. Se trata de entender lo que realmente importa: su gente, su trabajo, su crecimiento.",
           listIntro: 'Este método surgió de:',
           items: [
             {
               title: 'Más de 50 implementaciones exitosas',
-              description: 'Cada una nos enseñó algo nuevo.'
+              description: 'Cada una nos enseñó algo nuevo sobre la traducción.'
             },
             {
-              title: 'Escuchar',
+              title: 'Incontables horas de escucha',
               description: 'Antes de hablar de tecnología, pensamos a su lado.'
             },
             {
-              title: 'La convicción de que un equipo selecto y firme construyen mejor',
+              title: 'La convicción de que los equipos pequeños construyen mejor',
               description: 'Menos traductores significan una comunicación más clara.'
             },
             {
               title: 'La intersección del arte y la ingeniería',
-              description: 'Porque los mejores sistemas equilibran prolijidad y funcionalidad.'
+              description: 'Porque los mejores sistemas equilibran la belleza y la función.'
             }
           ]
         },
@@ -193,10 +193,10 @@ export function MethodIntroduction() {
           ]
         },
         journeyAhead: {
-          title: 'El camino por delante',
+          title: 'El Camino por Delante',
           intro: "En los próximos capítulos, exploraremos cómo esta filosofía de traducción da forma a todo lo que hacemos:",
           items: [
-            'Nuestros Principios, que aseguran que nunca perdamos el foco.',
+            'Nuestros Principios, que aseguran que nunca perdamos de vista el elemento humano.',
             'Nuestro Enfoque de Implementación, que construye sin romper lo que ya funciona.',
             'Nuestras Prácticas, que mantienen la excelencia día tras día.',
             'Nuestra Filosofía, que conecta el arte con la infraestructura moderna.'
@@ -463,32 +463,28 @@ export function MethodIntroduction() {
 
         <div style={dividerStyle} />
 
-        {/* What This Means for You Section - English only */}
-        {language === 'en' && (
-          <>
-            <section style={{ marginBottom: '48px' }}>
-              <h2 style={{ 
-                fontSize: '1.5rem', 
-                fontWeight: '400',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'var(--foreground)', 
-                marginBottom: '24px',
-                borderBottom: '1px solid var(--border)',
-                paddingBottom: '8px'
-              }}>
-                {t.sections.whatThisMeans.title}
-              </h2>
+        {/* What This Means for You Section */}
+        <section style={{ marginBottom: '48px' }}>
+          <h2 style={{ 
+            fontSize: '1.5rem', 
+            fontWeight: '400',
+            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+            color: 'var(--foreground)', 
+            marginBottom: '24px',
+            borderBottom: '1px solid var(--border)',
+            paddingBottom: '8px'
+          }}>
+            {t.sections.whatThisMeans.title}
+          </h2>
 
-              {t.sections.whatThisMeans.paragraphs.map((paragraph, index) => (
-                <p key={index} style={paragraphStyle}>
-                  {paragraph}
-                </p>
-              ))}
-            </section>
+          {t.sections.whatThisMeans.paragraphs.map((paragraph, index) => (
+            <p key={index} style={paragraphStyle}>
+              {paragraph}
+            </p>
+          ))}
+        </section>
 
-            <div style={dividerStyle} />
-          </>
-        )}
+        <div style={dividerStyle} />
 
         {/* The Journey Ahead Section */}
         <section style={{ marginBottom: '48px' }}>

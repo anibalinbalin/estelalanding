@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { Footer } from '@/components/footer'
 
 export default function ContactPage() {
@@ -12,15 +12,14 @@ export default function ContactPage() {
             <div>
               <div className="text-4xl min-[1000px]:text-5xl font-normal leading-tight min-[1000px]:leading-[110%] tracking-normal">
                 <div className="text-foreground min-[1100px]:mt-6">Contáctenos</div>
-                <div className="text-muted-foreground">Póngase en contacto</div>
               </div>
               <div className="mx-auto min-[600px]:mx-0 mb-8 mt-4 max-w-96 text-lg leading-relaxed tracking-wide text-muted-foreground">
                 <p className="m-0">
-                  ¿Listo para transformar su infraestructura tecnológica? Comuníquese aquí para obtener más información o visite{' '}
+                  Frente a cualquier consulta de su infraestructura tecnologica o implementación estamos para resolver dudas. Aquí estan{' '}
                   <Link href="/es/company/work" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] hover:text-[#08178c]">
                     nuestros trabajos
                   </Link>{' '}
-                  y casos de estudio.
+                  mas recientes y casos de estudio.
                 </p>
                 <div className="flex flex-col gap-1 pt-3 mt-2 mb-2">
                   <li className="flex items-baseline">
@@ -28,7 +27,7 @@ export default function ContactPage() {
                       <circle cx="6" cy="6" r="2" fill="currentColor" />
                     </svg>
                     <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
-                      Conozca más sobre nuestros servicios
+                      Conocer más sobre nuestros servicios.
                     </div>
                   </li>
                   <li className="flex items-baseline">
@@ -36,7 +35,7 @@ export default function ContactPage() {
                       <circle cx="6" cy="6" r="2" fill="currentColor" />
                     </svg>
                     <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
-                      Obtenga una evaluación tecnológica personalizada
+                      Puede obtener una evaluación tecnológica personalizada.
                     </div>
                   </li>
                   <li className="flex items-baseline">
@@ -44,7 +43,7 @@ export default function ContactPage() {
                       <circle cx="6" cy="6" r="2" fill="currentColor" />
                     </svg>
                     <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
-                      Discuta los requisitos de su proyecto
+                      Ampliar los requisitos de un proyecto.
                     </div>
                   </li>
                 </div>
@@ -72,7 +71,7 @@ export default function ContactPage() {
                         <div className="flex border items-center rounded border-border hover:border-muted-foreground transition-colors">
                           <input
                             name="name"
-                            placeholder="Juan Pérez"
+                            placeholder="Rogelio Roldán"
                             className="px-3 py-3 rounded w-full bg-background text-sm leading-tight tracking-wider text-foreground border-none outline-none focus:ring-0"
                           />
                         </div>
@@ -87,7 +86,7 @@ export default function ContactPage() {
                           <input
                             name="email"
                             type="email"
-                            placeholder="juan@empresa.com"
+                            placeholder="rogelio@rodlan.com"
                             className="px-3 py-3 rounded w-full bg-background text-sm leading-tight tracking-wider text-foreground border-none outline-none focus:ring-0"
                           />
                         </div>

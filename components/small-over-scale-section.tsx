@@ -3,7 +3,7 @@
 import { useLanguage } from "@/components/language-provider";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { MoveRight } from "lucide-react";
 
 export const SmallOverScaleSection = () => {
@@ -27,7 +27,7 @@ export const SmallOverScaleSection = () => {
       contactButton: "Meet Our Team"
     },
     es: {
-      coDesignTitle: "Estudiamos el arte del renacimiento porque el diseño de sistemas requiere visión integral",
+      coDesignTitle: "Estudiamos el arte del Renacimiento porque el diseño de sistemas requiere visión integral",
       coDesignFeatures: [
         "Leemos filosofía porque la tecnología requiere contexto humano.",
         "Porque hemos aprendido: la magia sucede en este tamaño. Tu proyecto no se transfiere.",

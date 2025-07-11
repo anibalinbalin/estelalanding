@@ -14,54 +14,54 @@ const WorkPage = () => {
   // Project data from the original work page
   const projects = [
     {
-      id: 'hospital-network',
-      title: 'Hospital Network Infrastructure',
-      client: 'Regional Hospital System',
+      id: 'teatro-solis',
+      title: 'Theater A/V Control System',
+      client: 'Teatro Solis',
       year: '2023',
       category: 'Infrastructure',
-      duration: '6 months',
-      challenge: 'Complete network overhaul for a 300-bed hospital with zero downtime requirements.',
-      solution: 'Phased deployment of redundant infrastructure with automated failover systems.',
-      technologies: ['Lenovo ThinkSystem', 'UniFi Enterprise', 'Synology NAS', 'Acronis Backup'],
+      duration: '3 months',
+      challenge: 'Legacy control systems couldn\'t handle modern lighting and sound requirements for contemporary productions.',
+      solution: 'Implemented networked lighting controls with touch panel interfaces and remote control capabilities.',
+      technologies: ['Networked Lighting', 'Touch Panels', 'Remote Control Systems', 'A/V Integration'],
       results: [
-        '99.99% uptime achieved',
-        'Zero patient data loss',
-        '40% reduction in IT incidents',
-        'HIPAA compliance certified'
+        '50% faster show setup and changeovers',
+        'Remote control capabilities for flexible operation',
+        'Support for modern lighting/sound effects',
+        'Simplified control reducing technical staff needs'
       ]
     },
     {
-      id: 'manufacturing-iot',
-      title: 'Smart Manufacturing Platform',
-      client: 'Industrial Manufacturing Corp',
-      year: '2023',
-      category: 'Development',
-      duration: '8 months',
-      challenge: 'Legacy manufacturing systems needed real-time monitoring and predictive maintenance.',
-      solution: 'Custom IoT platform with machine learning for predictive analytics.',
-      technologies: ['Edge Computing', 'Time Series DB', 'Machine Learning', 'Real-time Dashboard'],
+      id: 'u-films',
+      title: 'Post-Production Infrastructure Build',
+      client: 'U Films',
+      year: '2023-2024',
+      category: 'Infrastructure',
+      duration: '12 months (ongoing)',
+      challenge: 'Starting from scratch while working within existing building network restrictions and firewall constraints to meet major client security requirements.',
+      solution: 'Implemented VPN solutions and negotiated building access while designing parallel infrastructure for full creative workflow support.',
+      technologies: ['VPN', 'Storage/Backup Systems', 'High-Speed Networking', 'Security Compliance'],
       results: [
-        '30% reduction in downtime',
-        '$2M saved in prevented failures',
-        'Real-time visibility across 50+ machines',
-        'ROI achieved in 6 months'
+        'Enabled work with major clients requiring security certifications',
+        '40% faster editing and rendering workflows',
+        'Secure client data handling and compliance',
+        'Parallel infrastructure in testing phase'
       ]
     },
     {
-      id: 'finance-security',
-      title: 'Financial Services Security',
-      client: 'Regional Credit Union',
-      year: '2022',
-      category: 'Security',
-      duration: '4 months',
-      challenge: 'Cybersecurity overhaul for banking compliance and threat protection.',
-      solution: 'Multi-layered security architecture with 24/7 monitoring and incident response.',
-      technologies: ['Next-Gen Firewall', 'SIEM', 'Endpoint Protection', 'Security Training'],
+      id: 'diagnostico',
+      title: 'Laboratory Data Security & Integration',
+      client: 'Diagnotico',
+      year: '2021-2024',
+      category: 'Infrastructure & Compliance',
+      duration: '3 years (ongoing)',
+      challenge: 'Medical laboratory needed secure patient data handling, system integration, reliable backups, and ISO 9001 compliance.',
+      solution: 'Implemented Synology-based integration policies, automated backup systems, and phased network redundancy design.',
+      technologies: ['Synology NAS', 'ISO 9001 Framework', 'Automated Backup', 'Integration Policies'],
       results: [
-        'Zero security incidents since deployment',
-        'SOC 2 Type II compliance achieved',
-        '100% staff security training completion',
-        'Automated threat detection and response'
+        'ISO 9001 compliance achieved',
+        '80% reduction in system downtime',
+        'Automated lab workflows reducing manual processes',
+        '30% faster result turnaround times'
       ]
     },
     {

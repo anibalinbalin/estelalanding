@@ -34,10 +34,10 @@ export const TestNumbersSection = () => {
       }
     },
     es: {
-      title: "La escala de nuestro método: valor constante, alianzas que evolucionan",
+      title: "La escala de Nuestro Método: Valor Constante, Alianzas que Evolucionan",
       metric1: {
         title: "100% Retención de Clientes",
-        description: "Quien trabaja con nosotros, permanece con nosotros. Esto refleja el valor sostenido y la confianza inquebrantable que construimos juntos. Su estabilidad tecnologica es nuestro compromiso."
+        description: "Quien trabaja con nosotros, permanece con nosotros. Esto refleja el valor sostenido y la confianza inquebrantable que construimos juntos. Su estabilidad tecnológica es nuestro compromiso."
       },
       metric2: {
         title: "7+ Años de Relación Promedio",

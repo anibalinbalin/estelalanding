@@ -1,5 +1,5 @@
 import DevelopmentAsciiArt from '@/components/ui/development-ascii-art';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import { Footer } from '@/components/footer';
 
 export default function DevelopmentPage() {

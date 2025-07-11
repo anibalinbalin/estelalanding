@@ -78,7 +78,7 @@ export const ProjectSection = ({ project }: ProjectSectionProps) => {
             {/* Results */}
             <div className="mb-6">
               <h3 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.25rem] font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-6 tracking-wide mb-3">
-                Resultados Clave
+                Resultados
               </h3>
               <ul className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
                 {project.results.map((result, i) => (

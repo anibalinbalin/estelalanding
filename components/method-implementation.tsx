@@ -19,7 +19,7 @@ export function MethodImplementation() {
         'Identify pain points and possibilities',
         'Document everything'
       ],
-      time: 'Time: 1-2 days'
+      time: 'Time: 1-2 weeks'
     },
     {
       number: '3.2',

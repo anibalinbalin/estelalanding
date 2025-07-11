@@ -13,7 +13,7 @@ export const CTASection = () => {
       button: "Learn About Our Philosophy"
     },
     es: {
-      title: "Tamaño con propósito",
+      title: "Tamaño con Propósito",
       subtitle: "Somos un equipo sólido y compacto por decisión.",
       button: "Nuestra Filosofía"
     }

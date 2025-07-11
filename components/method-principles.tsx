@@ -53,6 +53,17 @@ export function MethodPrinciples() {
           ]
         }
       ],
+      closing: {
+        intro: 'These principles aren\'t abstract concepts.',
+        intro2: 'They\'re the foundation of every decision we make.',
+        description: 'From the size of our team to the choice of technologies. From how we communicate to how we structure our code. These principles guide everything.',
+        lines: [
+          'Principles without practice are just words.',
+          'Practice without principles is just habit.',
+          'Together, they create something more:',
+          'The mark of applied wisdom.'
+        ]
+      },
       navigation: {
         back: '← Back to Introduction',
         next: 'Next: Implementation →'
@@ -64,41 +75,53 @@ export function MethodPrinciples() {
       principles: [
         {
           number: '2.1',
-          title: 'Equipo firme, impacto profundo',
+          title: 'Equipos Pequeños, Impacto Profundo',
           content: [
-            'Estela se sostiene en un equipo de 6 personas. No porque más sería evitar crecer infraestructuralmente, sino porque no debemos. Estudios lo afirman. La experiencia lo confirma.',
-            'Al trabajar con nosotros, se garantiza un conocimiento experto sin intermediarios y una comunicación clara y con propósito.'
+            'Nos mantenemos en 5 personas. No porque no podamos crecer, sino porque no debemos. La investigación lo demuestra. La experiencia lo confirma.',
+            'Usted trabaja directamente con nuestro equipo principal, garantizando un conocimiento experto sin intermediarios y una comunicación clara y con propósito.'
           ]
         },
         {
           number: '2.2',
           title: 'La Tecnología al Servicio de las Personas',
           content: [
-            'No implementamos tecnología por la tecnología en sí misma. Cada cable, cada configuración o línea de código debe tener como fin una función.'
+            'No implementamos tecnología por la tecnología en sí misma. Cada cable, cada configuración y cada línea de código debe tener como fin facilitar el trabajo de una persona.',
+            'Si no simplifica el trabajo, no lo construimos.'
           ]
         },
         {
           number: '2.3',
-          title: 'Construir para durar, diseñado para evolucionar',
+          title: 'Construido para Durar, Diseñado para Evolucionar',
           content: [
-            'Construimos cimientos que pueden crecer con la empresa. No son medidas temporales. No son soluciones rápidas. Son soluciones reales que funcionan hoy y se adaptan para el futuro.'
+            'Construimos cimientos que pueden crecer con usted. No son curitas. No son soluciones rápidas. Son soluciones reales que funcionan hoy y se adaptan al mañana.'
           ]
         },
         {
           number: '2.4',
-          title: 'Transparencia',
+          title: 'Transparencia Radical',
           content: [
-            'Evitamos siempre la dependencia de un proveedor. La tecnología avanza y cada vez más rápido.'
+            'Sin cajas negras. Sin dependencia de un proveedor. Sin misterios. Usted entiende lo que construimos, cómo funciona y cómo mantenerlo.'
           ]
         },
         {
           number: '2.5',
-          title: 'La belleza de lo simple',
+          title: 'La Belleza de la Simplicidad',
           content: [
-            'Al igual que una obra con una composición notable, una buena implementación no tienen nada superfluo. En definitiva, la complejidad termina siendo enemiga de la confiabilidad.'
+            'Al igual que una pintura bien compuesta, los mejores sistemas no tienen nada superfluo. Cada elemento tiene un propósito. La complejidad es enemiga de la confiabilidad.'
           ]
         }
       ],
+      closing: {
+        intro: 'Estos principios no son conceptos abstractos.',
+        intro2: 'Son la base de cada decisión que tomamos.',
+        description: 'Desde el tamaño de nuestro equipo hasta la elección de las tecnologías. Desde cómo nos comunicamos hasta cómo estructuramos nuestro código. Estos principios lo guían todo.',
+        lines: [
+          'Principios sin práctica son solo palabras.',
+          'La práctica sin principios es solo costumbre.',
+          'Juntos, crean algo más:',
+          'El sello de la sabiduría aplicada.'
+        ]
+      },
       navigation: {
         back: '← Volver a la Introducción',
         next: 'Siguiente: Implementación →'
@@ -227,37 +250,19 @@ export function MethodPrinciples() {
             </div>
             
             <div style={{ marginBottom: '24px' }}>
-              {principle.content.map((paragraph, i) => {
-                // Special handling for principle 2.1 with link
-                if (principle.number === '2.1' && i === 0 && language === 'es') {
-                  return (
-                    <p key={`paragraph-${i}`} style={{
-                      fontSize: '17px',
-                      fontWeight: '400',
-                      lineHeight: '27.2px',
-                      letterSpacing: 'normal',
-                      fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                      color: 'var(--content-secondary-p3)',
-                      marginBottom: '24px'
-                    }}>
-                      Estela se sostiene en un equipo de 6 personas. No porque más sería evitar crecer infraestructuralmente, sino porque no debemos. <a href="https://www.researchgate.net/publication/228838549_Empirical_Findings_on_Team_Size_and_Productivity_in_Software_Development" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--link)', textDecoration: 'underline' }}>Estudios lo afirman</a>. La experiencia lo confirma.
-                    </p>
-                  );
-                }
-                return (
-                  <p key={`paragraph-${i}`} style={{
-                    fontSize: '17px',
-                    fontWeight: '400',
-                    lineHeight: '27.2px',
-                    letterSpacing: 'normal',
-                    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                    color: 'var(--content-secondary-p3)',
-                    marginBottom: '24px'
-                  }}>
-                    {paragraph}
-                  </p>
-                );
-              })}
+              {principle.content.map((paragraph, i) => (
+                <p key={`paragraph-${i}`} style={{
+                  fontSize: '17px',
+                  fontWeight: '400',
+                  lineHeight: '27.2px',
+                  letterSpacing: 'normal',
+                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+                  color: 'var(--content-secondary-p3)',
+                  marginBottom: '24px'
+                }}>
+                  {paragraph}
+                </p>
+              ))}
             </div>
             
             {index < t.principles.length - 1 && (
@@ -274,6 +279,78 @@ export function MethodPrinciples() {
             marginBottom: '48px'
         }} />
 
+        <section style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <p style={{ 
+            fontSize: '1.125rem', 
+            fontWeight: '500',
+            color: 'var(--foreground)',
+            marginBottom: '16px'
+          }}>
+            {t.closing.intro}<br />
+            {t.closing.intro2}
+          </p>
+          
+          <p style={{
+            fontSize: '17px',
+            fontWeight: '400',
+            lineHeight: '27.2px',
+            letterSpacing: 'normal',
+            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+            color: 'var(--content-secondary-p3)',
+            marginBottom: '24px'
+          }}>
+            {t.closing.description}
+          </p>
+          
+          <p style={{
+            fontSize: '17px',
+            fontWeight: '400',
+            lineHeight: '27.2px',
+            letterSpacing: 'normal',
+            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+            color: 'var(--content-secondary-p3)',
+            marginBottom: '24px'
+          }}>
+            {t.closing.lines[0]}
+          </p>
+          <p style={{
+            fontSize: '17px',
+            fontWeight: '400',
+            lineHeight: '27.2px',
+            letterSpacing: 'normal',
+            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+            color: 'var(--content-secondary-p3)',
+            marginBottom: '24px'
+          }}>
+            {t.closing.lines[1]}
+          </p>
+          
+          <p style={{
+            fontSize: '17px',
+            fontWeight: '400',
+            lineHeight: '27.2px',
+            letterSpacing: 'normal',
+            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+            color: 'var(--content-secondary-p3)',
+            marginBottom: '24px'
+          }}>
+            {t.closing.lines[2]}
+          </p>
+          
+          <p style={{
+            fontSize: '1.125rem',
+            fontWeight: '500',
+            color: 'var(--foreground)',
+            marginBottom: '16px'
+          }}>
+            {t.closing.lines[3]}
+          </p>
+        </section>
+
+        <div style={{
+          height: '1px',
+            marginBottom: '48px'
+        }} />
 
         <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <Link 

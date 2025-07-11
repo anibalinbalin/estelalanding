@@ -14,71 +14,53 @@ const WorkPage = () => {
   // Project data translated to Spanish
   const projects = [
     {
-      id: 'hospital-network',
-      title: 'Infraestructura de Red Hospitalaria',
-      client: 'Sistema Hospitalario Regional',
+      id: 'teatro-solis',
+      title: 'Sistema de Control A/V del Teatro',
+      client: 'Teatro Solís',
       year: '2023',
       category: 'Infraestructura',
-      duration: '6 meses',
-      challenge: 'Renovación completa de la red para un hospital de 300 camas con requerimientos de cero tiempo de inactividad.',
-      solution: 'Implementación por fases de infraestructura redundante con sistemas de failover automatizados.',
-      technologies: ['Lenovo ThinkSystem', 'UniFi Enterprise', 'Synology NAS', 'Acronis Backup'],
+      duration: '3 meses',
+      challenge: 'Los controles del teatro no podían manejar los sistemas nuevos de iluminacion y sonido.',
+      solution: 'Se implementaron controles de iluminacion por red con un equipo touch y remote control.',
+      technologies: ['Iluminación en Red', 'Touch Screen', 'Sistemas de Control Remoto', 'Integración A/V'],
       results: [
-        '99.99% de uptime logrado',
-        'Cero pérdida de datos de pacientes',
-        'Reducción del 40% en incidentes de TI',
-        'Certificación de cumplimiento HIPAA'
+        'Sistema más rápido en cambios de espectáculos. Permitiendo obras de nivel internacional.',
+        'Capacidades de control remoto.',
+        'Soporte para efectos modernos de iluminación/sonido',
+        'Control simplificado reduciendo necesidades de personal técnico'
       ]
     },
     {
-      id: 'manufacturing-iot',
-      title: 'Plataforma de Manufactura Inteligente',
-      client: 'Empresa de Manufactura Industrial',
-      year: '2023',
-      category: 'Desarrollo',
-      duration: '8 meses',
-      challenge: 'Los sistemas de producción heredados necesitaban monitoreo en tiempo real y mantenimiento predictivo.',
-      solution: 'Plataforma de IoT a medida con machine learning para análisis predictivo.',
-      technologies: ['Edge Computing', 'Time Series DB', 'Machine Learning', 'Dashboard en tiempo real'],
+      id: 'u-films',
+      title: 'Construcción de Infraestructura de Post-Producción',
+      client: 'U Films',
+      year: '2023-2024',
+      category: 'Infraestructura',
+      duration: '12 meses (en curso)',
+      challenge: 'Dejar operativo la productora con las restricciones de red en el edificio existente -limitaciones de firewall para cumplir con los requerimientos de seguridad de clientes externos.',
+      solution: 'Implementamos una solucion VPN precisa y se negociaron accesos particulares paralelos.',
+      technologies: ['VPN', 'Sistemas de Almacenamiento/Respaldo', 'Redes de Alta Velocidad', 'Cumplimiento de Seguridad'],
       results: [
-        'Reducción del 30% en el tiempo de inactividad',
-        '$2M ahorrados en fallas prevenidas',
-        'Visibilidad en tiempo real sobre más de 50 máquinas',
-        'ROI logrado en 6 meses'
+        'Habilitó trabajo con clientes importantes que requieren certificaciones de seguridad.',
+        'Mejoras significativas en los workflows de edición y renders.',
+        'Manejo seguro de datos del cliente.',
+        'Infraestructura paralela en fase de pruebas.'
       ]
     },
     {
-      id: 'finance-security',
-      title: 'Seguridad para Servicios Financieros',
-      client: 'Cooperativa de Crédito Regional',
-      year: '2022',
-      category: 'Seguridad',
-      duration: '4 meses',
-      challenge: 'Renovación de la ciberseguridad para cumplir con normativas bancarias y protección contra amenazas.',
-      solution: 'Arquitectura de seguridad multicapa con monitoreo 24/7 y respuesta a incidentes.',
-      technologies: ['Next-Gen Firewall', 'SIEM', 'Endpoint Protection', 'Capacitación en Seguridad'],
+      id: 'diagnostico',
+      title: 'Seguridad e Integración de Datos de Laboratorio',
+      client: 'Diagnóstico',
+      year: '2021-2024',
+      category: 'Infraestructura y Cumplimiento',
+      duration: '3 años (en curso)',
+      challenge: 'Requerimientos del laboratorio para manejo de datos, integración de sistemas, respaldos y cumplimiento con ISO 9001.',
+      solution: 'Implementamos políticas de integración en el NAS con el AD, sistemas de respaldo automatizados, inmutables, y diseño de redundancia de red por etapas.',
+      technologies: ['Synology NAS', 'Marco ISO 9001', 'Respaldo Automatizado', 'Políticas de Integración'],
       results: [
-        'Cero incidentes de seguridad desde la implementación',
-        'Cumplimiento SOC 2 Tipo II logrado',
-        '100% del personal completó la capacitación en seguridad',
-        'Detección y respuesta automatizada a amenazas'
-      ]
-    },
-    {
-      id: 'logistics-cloud',
-      title: 'Migración y Modernización a la Nube',
-      client: 'Empresa de Logística y Distribución',
-      year: '2022',
-      category: 'Consultoría',
-      duration: '5 meses',
-      challenge: 'Migrar sistemas ERP y de almacén heredados a la nube sin interrupciones en la operativa del negocio.',
-      solution: 'Estrategia de nube híbrida con migración gradual y operación de sistemas en paralelo.',
-      technologies: ['AWS', 'Kubernetes', 'Microservicios', 'API Gateway'],
-      results: [
-        'Reducción del 60% en costos de infraestructura',
-        'Ciclos de implementación 10 veces más rápidos',
-        'Disponibilidad del sistema del 99.9%',
-        'Acceso global para equipos remotos'
+        'Cumplimiento ISO 9001.',
+        'Reducción del tiempo de inactividad del sistema interno a personas externas al laboratorio.',
+        'Mayor agilidad en tiempos de entrega de resultados'
       ]
     }
   ];

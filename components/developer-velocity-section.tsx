@@ -4,7 +4,7 @@ import { useLanguage } from "@/components/language-provider";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { MoveRight } from "lucide-react";
 import { BerlinAsciiArt } from "@/components/ui/berlin-ascii-art";
 import { AsciiWaveAnimation } from "@/components/ui/ascii-wave-animation";

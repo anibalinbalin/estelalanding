@@ -12,35 +12,35 @@ export function MethodImplementationEs() {
     {
       number: '3.1',
       title: 'Comprensión',
-      intro: 'No comenzamos con las soluciones. Empezamos con las preguntas.',
+      intro: 'No empezamos con las soluciones. Empezamos con las preguntas.',
       content: [
         'Acompañamos a su equipo durante una jornada.',
         'Mapeamos sus flujos de trabajo reales (no los ideales).',
         'Identificamos los puntos críticos y las oportunidades.',
         'Documentamos todo el proceso.'
       ],
-      time: 'Duración: 1-2 días'
+      time: 'Duración: 1-2 semanas'
     },
     {
       number: '3.2',
       title: 'Arquitectura',
-      intro: 'Diseñamos el sistema que se ajusta a la realidad.',
+      intro: 'Diseñamos el sistema que se ajusta a su realidad.',
       content: [
         'Creamos planos detallados del sistema.',
         'Planificamos para hoy y para el futuro.',
-        'Elegimos equipos y herramientas que se integran entre sí.',
-        'Diseñamos y migramos en función del nivel de conocimiento de la empresa.'
+        'Elegimos herramientas que se integran entre sí.',
+        'Diseñamos en función del nivel de conocimiento de su equipo.'
       ],
       time: 'Duración: 1-2 semanas'
     },
     {
       number: '3.3',
       title: 'Implementación',
-      intro: 'Avanzamos sin afectar lo que ya funciona.',
+      intro: 'Construimos sin afectar lo que ya funciona.',
       content: [
-        'Implementaciones por etapas.',
-        'Probamos con los usuarios.',
-        'Documentamos a medida que avanzamos.',
+        'Implementaciones por etapas, sin cambios abruptos.',
+        'Probamos con usuarios reales, no con escenarios teóricos.',
+        'Documentamos a medida que construimos.',
         'Capacitamos sobre la marcha.'
       ],
       time: 'Duración: 2-8 semanas (según el alcance del proyecto)'
@@ -108,7 +108,7 @@ export function MethodImplementationEs() {
             margin: 0,
             marginBottom: '24px'
           }}>
-            Cómo trabajamos
+            Cómo Trabajamos
           </h1>
           
           <div style={{
@@ -231,7 +231,73 @@ export function MethodImplementationEs() {
             marginBottom: '48px'
         }} />
 
-        
+        <section style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <p style={{ 
+            fontSize: '1.125rem', 
+            fontWeight: '500',
+            color: 'var(--foreground)',
+            marginBottom: '16px'
+          }}>
+            Esta metodología no es teórica.<br />
+            Ha sido perfeccionada a lo largo de 13 años de proyectos reales.
+          </p>
+          
+          <p style={{
+            fontSize: '17px',
+            fontWeight: '400',
+            lineHeight: '27.2px',
+            letterSpacing: 'normal',
+            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+            color: 'var(--content-secondary-p3)',
+            marginBottom: '24px'
+          }}>
+            Desde empresas de 5 personas hasta organizaciones de 100. Desde simples actualizaciones 
+            de red hasta transformaciones digitales completas. Cada proyecto nos enseña algo nuevo.
+          </p>
+          
+          <p style={{
+            fontSize: '17px',
+            fontWeight: '400',
+            lineHeight: '27.2px',
+            letterSpacing: 'normal',
+            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+            color: 'var(--content-secondary-p3)',
+            marginBottom: '24px'
+          }}>
+            Las fases son flexibles, no rígidas.
+          </p>
+          <p style={{
+            fontSize: '17px',
+            fontWeight: '400',
+            lineHeight: '27.2px',
+            letterSpacing: 'normal',
+            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+            color: 'var(--content-secondary-p3)',
+            marginBottom: '24px'
+          }}>
+            Los plazos se adaptan a su realidad.
+          </p>
+          <p style={{
+            fontSize: '17px',
+            fontWeight: '400',
+            lineHeight: '27.2px',
+            letterSpacing: 'normal',
+            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+            color: 'var(--content-secondary-p3)',
+            marginBottom: '24px'
+          }}>
+            El resultado es siempre el mismo:
+          </p>
+          
+          <p style={{
+            fontSize: '1.5rem',
+            fontWeight: '500',
+            color: 'var(--foreground)',
+            marginBottom: '16px'
+          }}>
+            Tecnología que simplemente funciona.
+          </p>
+        </section>
 
         <div style={{
           height: '1px',

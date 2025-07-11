@@ -15,8 +15,8 @@ export const FinalSection = () => {
     },
     es: {
       ourValues: 'Nuestros Valores',
-      valuesIntro: 'A diferencia de los principios, que son nuestras reglas, los valores son nuestras guías. Son los objetivos que nos inspiran, no las restricciones que nos limitan.',
-      valuesWarning: 'Entendemos que son fuerzas que a veces tiran en direcciones opuestas, y que un valor sin contexto es una receta para fracasar. Por ello, promovemos su aplicación con inteligencia, donde la convicción nunca debe actuar sin el filtro de la sensatez.'
+      valuesIntro: 'A diferencia de los principios, los valores indican una importancia relativa: son objetivos más que restricciones, y pueden entrar en tensión entre sí.',
+      valuesWarning: 'De hecho, muchos de estos valores pueden volverse patológicos si se llevan a un extremo ilógico; la adhesión absoluta a un valor en particular nunca debe sobreponerse a la prudencia.'
     }
   };
   

@@ -313,7 +313,7 @@ export function ContactSection() {
                 <div className="h-[1px] w-[200px] border-b border-[var(--stroke-default-p3)] mb-6"></div>
                 
                 <div className="text-[var(--content-secondary-p3)] space-y-1 mb-6">
-                  <p className="text-[var(--content-raise-p3)] font-medium">Estela Technology Solutions</p>
+                  <p className="text-[var(--content-raise-p3)] font-medium">Estela</p>
                   <p>[Street Address]</p>
                   <p>[Neighborhood]</p>
                   <p>Montevideo, Punta del Este, Uruguay</p>

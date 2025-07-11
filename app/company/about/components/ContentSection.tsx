@@ -14,9 +14,9 @@ export const ContentSection = () => {
       broken: 'Most technology consulting is broken. Overpriced, underdelivered, and overcomplicated. We exist to prove it doesn\'t have to be this way.'
     },
     es: {
-      ourMission: 'Nuestra misión',
-      missionQuote: 'Consultoría tecnológica con propósito. Tecnología que resuelve problemas.',
-      founded: 'Fundada en 2015, hemos dedicado casi una década a demostrar que la consultoría tecnológica no tiene por qué ser complicada, árida.',
+      ourMission: 'Nuestra Misión',
+      missionQuote: '"La tecnología debe ser invisible cuando funciona y evidente cuando no."',
+      founded: 'Fundada en 2015, hemos dedicado casi una década a demostrar que la consultoría tecnológica no tiene por qué ser complicada, costosa o decepcionante.',
       broken: 'La mayoría de la consultoría tecnológica no funciona. Es demasiado cara, no cumple lo que promete y es excesivamente complicada. Existimos para demostrar que no tiene por qué ser así.'
     }
   }

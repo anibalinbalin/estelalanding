@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/components/language-provider";
@@ -24,7 +24,7 @@ export const Footer = () => {
       tagline: "When technology meets wisdom",
       description: "Guiding businesses through technological transformations with the perfect balance of trusted expertise and innovative insight.",
       address: {
-        line1: "Estela Technology Solutions",
+        line1: "Estela",
         line2: "21 de Setiembre, 3015. 802",
         line3: "Montevideo, Punta del Este, Uruguay",
         line4: "South America"
@@ -35,7 +35,7 @@ export const Footer = () => {
       },
       partners: {
         title: "Partners:",
-        companies: ["Lenovo", "UniFi", "Synology", "SentinelOne"]
+        companies: ["Lenovo", "UniFi", "Synology", "SentinelOne", "Wasabi"]
       },
       copyright: `© ${new Date().getFullYear()} Estela. Making technology work for people since 2011.`,
       sections: {
@@ -73,9 +73,9 @@ export const Footer = () => {
     },
     es: {
       tagline: "Cuando la tecnología y el conocimiento convergen",
-      description: "Guiando a las empresas a través de transformaciones tecnológicas con el equilibrio perfecto entre experiencia confiable e innovación.",
+      description: "Guiando a las empresas a través de transformaciones tecnológicas combinando la confianza de lo probado con el potencial de lo nuevo.",
       address: {
-        line1: "Estela Technology Solutions",
+        line1: "Estela",
         line2: "21 de Setiembre, 3015. 802",
         line3: "Montevideo, Punta del Este, Uruguay",
         line4: "Sudamérica"
@@ -86,7 +86,7 @@ export const Footer = () => {
       },
       partners: {
         title: "Socios:",
-        companies: ["Lenovo", "UniFi", "Synology", "SentinelOne"]
+        companies: ["Lenovo", "UniFi", "Synology", "SentinelOne", "Wasabi"]
       },
       copyright: `© ${new Date().getFullYear()} Estela. Haciendo que la tecnología funcione para las personas desde 2011.`,
       sections: {

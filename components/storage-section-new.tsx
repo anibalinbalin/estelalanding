@@ -4,7 +4,7 @@ import { useLanguage } from "@/components/language-provider";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { ArrowRight, Database, Camera, RotateCcw, Key, Shield, Router } from "lucide-react";
 
 export const StorageSectionNew = () => {

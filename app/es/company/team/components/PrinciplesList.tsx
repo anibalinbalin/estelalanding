@@ -9,8 +9,8 @@ const principleItems = [
         <use href="/assets/sprite-Dt029LRi.svg#security-24"></use>
       </svg>
     ),
-    title: "Un nucleo dedicado",
-    description: "Somos intencionalmente un equipo reducido. Esto asegura que cada proyecto se beneficie de la participación directa y el enfoque profundo de nosotros."
+    title: "Un núcleo dedicado",
+    description: "Somos intencionalmente un equipo reducido. Esto asegura que cada proyecto se beneficie de la participación directa y el enfoque profundo de nuestros profesionales más experientes."
   },
   {
     icon: (
@@ -28,7 +28,7 @@ const principleItems = [
       </svg>
     ),
     title: "Responsabilidad directa",
-    description: "Se interactúa directamente con quienes diseñan la solución. Sin intermediarios o traspasos de responsabilidades."
+    description: "Usted interactúa directamente con quienes diseñan su solución. Sin intermediarios ni traspasos de responsabilidades."
   },
   {
     icon: (
@@ -37,7 +37,7 @@ const principleItems = [
       </svg>
     ),
     title: "Conocimiento experto",
-    description: "Cada aspecto de los proyectos es gestionado por profesionales. No delegamos tareas críticas."
+    description: "Cada aspecto de su proyecto es gestionado por profesionales experientes. No delegamos tareas críticas."
   },
   {
     icon: (
@@ -115,7 +115,7 @@ export const PrinciplesList = () => {
               Nuestro enfoque de trabajo en equipo y conocimiento
             </h3>
             <p className="mb-8 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-              Nuestro equipo central —Peter, Alfonso, Nahuel, Aníbal, Pablo y D. Esteban— operan bajo los siguientes principios compartidos:
+              Nuestro equipo central —Peter, Aníbal, Alfonso, Nahuel, Pablo y Diego— opera bajo los siguientes principios compartidos:
             </p>
             {principleItems.map((item, index) => (
               <PrincipleItem

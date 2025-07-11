@@ -227,21 +227,21 @@ export function ServiceSpecificationsSection() {
           specs: {
             title: 'Especificaciones',
             fields: {
-              processor: 'Processor',
-              totalCores: 'Total Cores',
-              memory: 'Memory',
-              storageBays: 'Storage Bays',
-              network: 'Network',
-              powerSupply: 'Power Supply',
-              formFactor: 'Form Factor'
+              processor: 'Procesador',
+              totalCores: 'Total de Núcleos',
+              memory: 'Memoria',
+              storageBays: 'Bahías de Almacenamiento',
+              network: 'Red',
+              powerSupply: 'Fuente de Alimentación',
+              formFactor: 'Factor de Forma'
             },
             values: {
-              processor: '2x AMD EPYC 9354 (32 núcleos cada uno)',
-              totalCores: '64 físicos / 128 hilos',
+              processor: '2x AMD EPYC 9354 (32 cores each)',
+              totalCores: '64 physical / 128 threads',
               memory: '512GB - 2TB DDR5-4800 ECC',
               storageBays: '8x 2.5" NVMe U.2',
               network: '4x 25GbE + 2x 100GbE SFP28',
-              powerSupply: 'Fuentes redundantes de 1100W Platinum',
+              powerSupply: 'Redundant 1100W Platinum PSUs',
               formFactor: '2U Rack Mount'
             }
           },
@@ -985,12 +985,12 @@ export function ServiceSpecificationsSection() {
                     <div className="relative flex items-center justify-between gap-4 border p-4 bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-2)] min-[600px]:px-10 py-6 min-[600px]:py-8 rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-lg)]">
                       <div>
                         <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-lg min-[500px]:text-[1.5625rem] min-[900px]:text-4xl font-normal min-[500px]:font-normal min-[900px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[500px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.625rem] min-[500px]:leading-8 min-[900px]:leading-[2.625rem] tracking-wide min-[500px]:tracking-wide min-[900px]:tracking-normal">
-                          Hardware That Scales With You
+                          {t.cta.title}
                         </h2>
                       </div>
                       <div className="flex flex-col gap-2 text-center">
                         <a href="/contact" className="px-3 items-center text-[var(--content-secondary-p3)] [text-decoration:inherit] inline-flex h-8 justify-center rounded-[var(--border-radius)] align-top font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider uppercase [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] shadow-[var(--elevation-1)] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:rounded-[var(--border-radius)] after:border after:border-current after:opacity-100 after:text-[var(--stroke-secondary-p3)] hover:bg-[var(--surface-hover-p3)]">
-                          CONTACT
+                          {t.cta.button}
                         </a>
                       </div>
                     </div>

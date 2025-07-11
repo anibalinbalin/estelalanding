@@ -34,6 +34,11 @@ const PartnersPage = () => {
       id: 'acronis',
       name: 'Acronis',
       partnership: 'Cloud Partner Since 2017'
+    },
+    {
+      id: 'sentinelone',
+      name: 'SentinelOne',
+      partnership: 'Partner Since 2022'
     }
     ],
     es: [
@@ -56,6 +61,11 @@ const PartnersPage = () => {
         id: 'acronis',
         name: 'Acronis',
         partnership: 'Cloud Partner desde 2017'
+      },
+      {
+        id: 'sentinelone',
+        name: 'SentinelOne',
+        partnership: 'Partner desde 2022'
       }
     ]
   };

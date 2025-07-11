@@ -26,20 +26,20 @@ const getMissionItems = (language: 'en' | 'es') => {
     ],
     es: [
       {
-        title: "Qué hacemos",
+        title: "Qué Hacemos",
         description: "Diseñamos, implementamos y mantenemos soluciones tecnológicas que resuelven problemas empresariales reales. Infraestructura, seguridad, desarrollo a medida y consultoría estratégica."
       },
       {
-        title: "En qué nos diferenciamos",
-        description: "Un solo equipo. Vínculos directos. Sin capas de gestionamiento. La persona que atiende el problema es la misma que lo resuelve."
+        title: "En Qué Nos Diferenciamos",
+        description: "Un equipo pequeño. Relaciones directas. Sin capas de gestión. La persona que entiende su problema es la misma que lo resuelve."
       },
       {
-        title: "Por qué existimos",
-        description: "Porque la consultoría tecnológica es sinónimo de complejidad y costos. Nosotros existimos para restaurar su verdadero significado: resolver problemas de forma simple y eficaz."
+        title: "Por Qué Existimos",
+        description: "La mayoría de la consultoría tecnológica no funciona. Es demasiado cara, no cumple lo que promete y es excesivamente complicada. Existimos para demostrar que no tiene por qué ser así."
       },
       {
-        title: "A quiénes servimos",
-        description: "A empresas que necesitan tecnología de nivel empresarial pero desean la agilidad de una startup."
+        title: "A Quiénes Servimos",
+        description: "A organizaciones que necesitan tecnología de nivel empresarial pero desean la agilidad de una startup. A empresas cansadas de las promesas de los proveedores y de los costos de los consultores."
       }
     ]
   };
@@ -69,19 +69,19 @@ const getPrincipleItems = (language: 'en' | 'es') => {
     ],
     es: [
       {
-        title: "La tecnología al servicio de la empresa",
-        description: "Siempre comenzamos con los objetivos de la empresa y frente a cada decisión técnica debe estar alineada a los objetivos. La forma sigue a la función."
+        title: "La Tecnología al Servicio del Negocio",
+        description: "Empezamos con sus objetivos de negocio, no con nuestras tecnologías favoritas. Cada decisión técnica debe impulsar sus objetivos. La forma sigue a la función. Siempre."
       },
       {
-        title: "Excelencia sobre escala",
-        description: "Elegimos la calidad sobre la cantidad."
+        title: "Excelencia sobre Escala",
+        description: "Elegimos la calidad sobre la cantidad. Equipos pequeños, profundo conocimiento, relaciones directas. Sin burocracia, sin gerentes de cuenta. Hacer menos cosas. Hacerlas mejor."
       },
       {
-        title: "Realidad sobre marketing",
-        description: "Prometemos lo que podemos cumplir. Creemos en ser directos, incluso cuando es difícil. La verdad es nuestra ventaja."
+        title: "Realidad sobre Marketing",
+        description: "Prometemos lo que podemos cumplir. Cumplimos lo que prometemos. Sin promesas exageradas, sin resultados decepcionantes. Creemos en ser directos, incluso cuando es difícil. La verdad es nuestra ventaja competitiva."
       },
       {
-        title: "Largo plazo sobre soluciones temporales",
+        title: "Largo Plazo sobre Victorias Rápidas",
         description: "Construimos soluciones que perduran. Arquitecturas sostenibles, código mantenible, conocimiento transferible. La solución de hoy no debe convertirse en el problema de mañana."
       }
     ]

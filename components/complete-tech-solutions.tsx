@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/components/language-provider";
 import { X, Check, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 

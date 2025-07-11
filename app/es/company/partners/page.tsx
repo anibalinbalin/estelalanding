@@ -4,7 +4,6 @@ import React from 'react';
 import { Footer } from '@/components/footer';
 import { HeroSection } from '@/app/company/partners/components/HeroSection';
 
-import { PartnershipPhilosophySection } from '@/app/company/partners/components/PartnershipPhilosophySection';
 import { useLanguage } from '@/components/language-provider';
 
 // Styles now handled by globals.css with CSS variables
@@ -23,17 +22,22 @@ const PartnersPage = () => {
       {
         id: 'unifi', 
         name: 'UniFi',
-        partnership: 'Enterprise Installer Since 2018'
+        partnership: 'Enterprise Installer Since 2022'
       },
       {
         id: 'synology',
         name: 'Synology', 
-        partnership: 'Gold Partner Since 2016'
+        partnership: 'Partner Since 2023'
       },
       {
-        id: 'acronis',
-        name: 'Acronis',
-        partnership: 'Cloud Partner Since 2017'
+        id: 'wasabi',
+        name: 'Wasabi',
+        partnership: 'Cloud Partner Since 2023'
+      },
+      {
+        id: 'sentinelone',
+        name: 'SentinelOne',
+        partnership: 'Partner Since 2022'
       }
     ],
     es: [
@@ -45,17 +49,22 @@ const PartnersPage = () => {
       {
         id: 'unifi', 
         name: 'UniFi',
-        partnership: 'Enterprise Installer desde 2018'
+        partnership: 'Enterprise Installer desde 2022'
       },
       {
         id: 'synology',
         name: 'Synology', 
-        partnership: 'Gold Partner desde 2016'
+        partnership: 'Partner desde 2023'
       },
       {
-        id: 'acronis',
-        name: 'Acronis',
-        partnership: 'Cloud Partner desde 2017'
+        id: 'wasabi',
+        name: 'Wasabi',
+        partnership: 'Cloud Partner desde 2023'
+      },
+      {
+        id: 'sentinelone',
+        name: 'SentinelOne',
+        partnership: 'Partner desde 2022'
       }
     ]
   };
@@ -100,9 +109,6 @@ const PartnersPage = () => {
             </div>
           </div>
         </div>
-        
-        {/* Partnership Philosophy Section */}
-        <PartnershipPhilosophySection />
         
       </main>
       

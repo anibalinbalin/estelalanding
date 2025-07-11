@@ -5,7 +5,7 @@ import { MoveRight } from "lucide-react";
 import { UnicornBackground } from "@/components/ui/unicorn-background";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/components/language-provider";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import './hero-animations.css';
 
 function Hero() {
