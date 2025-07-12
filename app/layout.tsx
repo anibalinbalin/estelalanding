@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
+import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/components/language-provider";
 import { Navbar } from "@/components/navbar";
@@ -31,6 +32,7 @@ export default function RootLayout({
             <LanguageProvider>
               <Navbar />
               {children}
+              <Analytics />
             </LanguageProvider>
           </ThemeProvider>
         </body>
