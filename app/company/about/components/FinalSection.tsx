@@ -10,8 +10,8 @@ export const FinalSection = () => {
   const content = {
     en: {
       ourValues: 'Our Values',
-      valuesIntro: 'Unlike principles, values indicate relative importance: they are objectives rather than constraints, and can come into tension with one another.',
-      valuesWarning: 'Indeed, many of these values can become pathological when taken to an illogical extreme; absolute adherence to a particular value should never trump prudence.'
+      valuesIntro: 'Principles are constraints. Values are guides. One defines what we don\'t do. The other, where we aim.',
+      valuesWarning: 'Sometimes these values pull in opposite directions. That\'s normal. Prudence decides which weighs more at any given moment.'
     },
     es: {
       ourValues: 'Nuestros Valores',

@@ -9,51 +9,51 @@ const getValuesData = (language: 'en' | 'es') => {
     en: [
       {
         title: "Candor",
-        description: "We believe in being forthright, even when that's difficult. We avoid euphemism or otherwise cloaking our opinions or experience. We respect those who speak candidly, even if we disagree with what they are saying."
+        description: "The truth discomforts. Lies, more so. We prefer the former."
       },
       {
         title: "Courage",
-        description: "We are bold, willing to do things even if they are unconventional, difficult, scary or otherwise unproven. We are not, however, foolhardy: where we are contrarian, it comes not from mere desire to take a less traveled path, but from a deep and well-informed conviction."
+        description: "Contrarian when needed, never for sport."
       },
       {
         title: "Curiosity",
-        description: "We are lifetime learners, unafraid of learning something new – be it an intimidating new technology, a perplexing system behavior or a novel customer use case."
+        description: "We know a lot. Not enough. That gap keeps us awake."
       },
       {
         title: "Diversity",
-        description: "We believe the best results come from combining different perspectives and uniting them with shared values and mission. We believe in and encourage diversity on any axis that remains consistent with our mission, principles and values."
+        description: "The best ideas rarely come from people who think alike."
       },
       {
         title: "Empathy",
-        description: "Engineers serve to deliver utility to others; to do this effectively, we must be able to see the world through the eyes of others. Empathy doesn't merely inform our engineering, it guides our interactions with our colleagues, communities and customers: we treat others as we ourselves would like to be treated."
+        description: "Hard to solve a problem we don't understand. Hard to understand without listening."
       },
       {
         title: "Humor",
-        description: "While we are engaged in serious business, we don't take ourselves too seriously. We enjoy the company of our colleagues, and cannot imagine a day without laughing – even if occasionally with our mouths full."
+        description: "We take the work seriously. Ourselves, less so."
       },
       {
         title: "Optimism",
-        description: "While we are in the business of figuring out why things will fail, we nonetheless retain a deep and fundamental belief that better things are possible."
+        description: "We know everything that can go wrong. Still, we believe it'll go right."
       },
       {
         title: "Resilience",
-        description: "We believe in the words of the late mathematician Piet Hein: \"problems worthy of attack prove their worth by fighting back.\" We persist even when problems are fighting back, pushing through the disappointment and setbacks endemic to our chosen domain."
+        description: "Interesting problems don't give up easily. Neither do we."
       },
       {
         title: "Responsibility",
-        description: "We feel a duty to things larger than ourselves. We don't merely fulfill our obligations, but actively seek ways we can help. We balance our professional responsibilities with our personal and familial ones, and we honor those who do the same."
+        description: "There's life outside the office. We honor it."
       },
       {
         title: "Rigor",
-        description: "Computing systems must be correct above all else, and we must be disciplined and thorough in our approach. We insist on getting at the root of things, and are unsatisfied to merely address their symptoms."
+        description: "We're not satisfied that it works. We want to know why."
       },
       {
         title: "Teamwork",
-        description: "While our work can be individual, our mission is not: we embrace the messy interdependence of people working together in the common endeavor. We actively nurture our teams: offering encouragement when it's needed and hard truths when they're necessary."
+        description: "No one here succeeds alone. No one here fails alone."
       },
       {
         title: "Versatility",
-        description: "While we must naturally specialize, our bold mission also demands that any of us may need to apply ourselves in a new domain – and indeed, that many of us will be doing this much of the time."
+        description: "Specialization is necessary. Adaptation, inevitable."
       }
     ],
     es: [

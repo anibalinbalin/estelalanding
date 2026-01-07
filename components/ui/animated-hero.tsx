@@ -22,9 +22,9 @@ function Hero() {
   
   const content = {
     en: {
-      title: "When technology\nmeets wisdom",
-      subtitle: "Guiding businesses through technological transformations with the perfect balance of trusted expertise and innovative insight.",
-      contact: "Discover Our Approach"
+      title: "The shortest path between\nthe problem and the solution",
+      subtitle: "The Greeks invented logic, geometry, and a god for every need. We apply the first two to build solutions. From the third, we kept only the marble.",
+      contact: "Our Approach"
     },
     es: {
       title: "El camino más corto entre\nel problema y la solución",
@@ -74,8 +74,8 @@ function Hero() {
             
             {/* CTA Button */}
             <div className={`mt-6 min-[700px]:mt-10 ${isAnimated ? 'hero-cta' : 'opacity-0'}`}>
-              <Link 
-                href="/method"
+              <Link
+                href={language === 'es' ? '/es/method' : '/method'}
                 className="estela-nav-button estela-nav-button-primary inline-flex items-center"
               >
                 {t.contact} <MoveRight className="w-4 h-4 ml-2" />

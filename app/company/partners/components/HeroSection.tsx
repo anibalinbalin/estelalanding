@@ -8,8 +8,8 @@ export const HeroSection = () => {
   
   const content = {
     en: {
-      heading1: 'Partnerships built on trust, tested in production.',
-      heading2: 'Four strategic partnerships. Nine years of proven excellence. Zero compromises on quality.'
+      heading1: 'Partnerships forged in trust.',
+      heading2: 'Validated in production.'
     },
     es: {
       heading1: 'Alianzas forjadas en la confianza.',

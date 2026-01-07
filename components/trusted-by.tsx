@@ -15,7 +15,7 @@ export const TrustedBy = () => {
 
   const content = {
     en: {
-      title: "Trusted by market leaders"
+      title: "Companies we've built with"
     },
     es: {
       title: "Trabajamos con los referentes"

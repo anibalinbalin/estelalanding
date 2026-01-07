@@ -33,65 +33,65 @@ const content = {
   en: {
     nav: {
       services: "Services",
-      method: "Method", 
+      method: "Method",
       company: "Company",
       contact: "Contact"
     },
     services: {
       default: {
         title: "Our Services",
-        subtitle: "Technology solutions designed for your business needs."
+        subtitle: "Infrastructure, security, development. What you need, without what you don't."
       },
       infrastructure: {
         title: "Infrastructure",
-        subtitle: "Robust and scalable infrastructure solutions.",
+        subtitle: "The invisible that holds up the visible.",
         description: "The foundation of everything digital. We build networks that never make you think about networks."
       },
       security: {
         title: "Security",
-        subtitle: "Comprehensive security and protection services.",
+        subtitle: "What separates calm from chaos. Literally.",
         description: "Protection isn't paranoia. It's preparation. We secure your data, your premises, and your peace of mind."
       },
       development: {
         title: "Development",
-        subtitle: "Custom software development and solutions.",
+        subtitle: "Code that solves problems, not creates them.",
         description: "Custom solutions for unique challenges. We build the tools your business needs to thrive."
       },
       consulting: {
         title: "Consulting",
-        subtitle: "Expert technology consulting and guidance.",
+        subtitle: "Answers to questions you haven't asked yet.",
         description: "Your technology partner, not just another vendor. From strategic planning to daily support."
       },
       specifications: {
         title: "Specifications",
-        subtitle: "Detailed technical specifications and requirements.",
+        subtitle: "Detailed technical specifications.",
         description: "Detailed technical documentation and requirements analysis for complex implementations."
       }
     },
     method: {
       default: {
         title: "The Estela Method",
-        subtitle: "Our proven approach to technology transformation."
+        subtitle: "Systematic by choice. Insistent by tradition."
       },
       introduction: {
         title: "Introduction",
-        subtitle: "Learn about our methodology and approach."
+        subtitle: "What we do. Why we do it. In that order."
       },
       principles: {
         title: "Principles",
-        subtitle: "The core principles that guide our work."
+        subtitle: "The rules we chose. The exceptions we avoid."
       },
       implementation: {
         title: "Implementation",
-        subtitle: "How we implement solutions for clients."
+        subtitle: "Execute well. Repeat better."
       },
       practices: {
         title: "Practices",
-        subtitle: "Best practices and proven methodologies."
+        subtitle: "Applied theory. Avoided mistakes."
       },
       philosophy: {
         title: "Philosophy",
-        subtitle: "Our philosophy on technology and business."
+        subtitle: "Ideas that guide. Fads we ignore."
       }
     },
     company: {

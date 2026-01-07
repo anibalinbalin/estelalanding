@@ -27,8 +27,8 @@ const principleItems = [
         <use href="/assets/sprite-Dt029LRi.svg#person-24"></use>
       </svg>
     ),
-    title: "Responsabilidad directa",
-    description: "Se interactúa directamente con quienes diseñan la solución. Sin intermediarios o traspasos de responsabilidades."
+    title: "Responsabilidad con remitente",
+    description: "Cada decisión tiene autor. Cada autor, disponibilidad."
   },
   {
     icon: (
@@ -36,8 +36,8 @@ const principleItems = [
         <use href="/assets/sprite-Dt029LRi.svg#servers-24"></use>
       </svg>
     ),
-    title: "Conocimiento",
-    description: "Cada aspecto de los proyectos es gestionado por profesionales. No delegamos tareas críticas."
+    title: "Seniority donde importa",
+    description: "Las decisiones difíciles las toma quien ya las tomó antes."
   },
   {
     icon: (
@@ -45,8 +45,8 @@ const principleItems = [
         <use href="/assets/sprite-Dt029LRi.svg#heart-24"></use>
       </svg>
     ),
-    title: "Principios en la práctica",
-    description: "Nuestro trabajo se guía por convicciones profundas en la transparencia, la excelencia y la tecnología que verdaderamente sirve a las personas.",
+    title: "Principios con consecuencias",
+    description: "Lo que creemos afecta lo que hacemos. Y lo que no hacemos.",
     isLast: true
   }
 ];

@@ -8,9 +8,9 @@ export const CTASection = () => {
 
   const content = {
     en: {
-      title: "Small Over Scale",
-      subtitle: "We are 6 people by choice, not circumstance.",
-      button: "Learn About Our Philosophy"
+      title: "We don't grow—we go deeper",
+      subtitle: "A team that responds, not a structure that delegates.",
+      button: "Our Philosophy"
     },
     es: {
       title: "No crecemos —profundizamos",

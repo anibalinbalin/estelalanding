@@ -43,7 +43,7 @@ export default function ContactPage() {
                       <circle cx="6" cy="6" r="2" fill="currentColor" />
                     </svg>
                     <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
-                      Ampliar los requisitos de un proyecto.
+                      Especificar lo que necesita. Con precisión, no con optimismo.
                     </div>
                   </li>
                 </div>

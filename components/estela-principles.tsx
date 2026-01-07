@@ -28,15 +28,15 @@ export function EstelaPrinciples() {
 
   const content = {
     en: {
-      title: "At Estela, our principles are not corporate decorations",
-      subtitle: "they are the soul of why we've chosen depth over scale, why our clients stay with us, and why we remain personally invested after 13 years.",
+      title: "We have principles—and we apply them",
+      subtitle: "Sounds obvious. But in a world where corporate values get drafted at team retreats and forgotten in the parking lot, keeping your own is almost an act of rebellion. We choose depth. We choose permanence. We choose consistency.",
       principle1: {
-        title: "Truth Over Comfort",
-        description: "We tell clients when they don't need new hardware. We admit when we're not the right fit. We lead with transparency in every conversation. This approach creates relationships built on trust."
+        title: "Outsiders who think like insiders",
+        description: "Sounds like a contradiction. It is. But we prefer productive contradictions to sterile coherences. We design as if it were ours. We care for it as if we lived there. Technological peace of mind isn't sold—it's built."
       },
       principle2: {
-        title: "Clients First, Always",
-        description: "We choose clients who share our values. We respond to emergencies as part of our commitment, not as an opportunity. Because relationships outlast transactions."
+        title: "We don't collect clients",
+        description: "We build alliances. The difference: clients are served; allies are cared for. Emergencies aren't opportunities—they're commitments. And commitments here are kept even when no one is watching."
       }
     },
     es: {

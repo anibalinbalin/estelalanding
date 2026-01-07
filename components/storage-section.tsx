@@ -355,14 +355,14 @@ export const StorageSection = () => {
               </h2>
             </div>
             <div className="flex flex-col gap-2 text-center">
-              <Link 
-                href="/method" 
+              <Link
+                href={language === 'es' ? '/es/method' : '/method'}
                 className="estela-button-primary px-3 items-center inline-flex h-8 justify-center rounded align-top font-normal leading-4 text-[.75rem] tracking-wider uppercase shadow-sm relative no-underline transition-colors"
               >
                 {t.tryButton}
               </Link>
-              <Link 
-                href="/contact" 
+              <Link
+                href={language === 'es' ? '/es/contact' : '/contact'}
                 className="estela-button-secondary px-3 items-center inline-flex h-8 justify-center rounded align-top font-normal leading-4 text-[.75rem] tracking-wider uppercase shadow-sm relative no-underline transition-colors"
               >
                 {t.contactButton}
@@ -403,14 +403,14 @@ export const StorageSection = () => {
               </h2>
             </div>
             <div className="flex flex-col gap-2 text-center">
-              <Link 
-                href="/method" 
+              <Link
+                href={language === 'es' ? '/es/method' : '/method'}
                 className="estela-nav-button estela-nav-button-primary"
               >
                 {t.tryButton}
               </Link>
-              <Link 
-                href="/contact" 
+              <Link
+                href={language === 'es' ? '/es/contact' : '/contact'}
                 className="estela-nav-button estela-nav-button-outline"
               >
                 {t.contactButton}

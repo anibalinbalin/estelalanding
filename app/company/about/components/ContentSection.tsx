@@ -10,8 +10,8 @@ export const ContentSection = () => {
     en: {
       ourMission: 'Our Mission',
       missionQuote: '"Technology should be invisible when it works and obvious when it doesn\'t."',
-      founded: 'Founded in 2015, we\'ve spent nearly a decade proving that technology consulting doesn\'t have to be complicated, expensive, or disappointing.',
-      broken: 'Most technology consulting is broken. Overpriced, underdelivered, and overcomplicated. We exist to prove it doesn\'t have to be this way.'
+      founded: 'Nearly a decade proving something that shouldn\'t need proving: that solving tech problems doesn\'t have to be a problem itself.',
+      broken: ''
     },
     es: {
       ourMission: 'Nuestra misión',

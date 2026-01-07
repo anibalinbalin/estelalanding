@@ -8,8 +8,8 @@ export const HeroSection = () => {
   
   const content = {
     en: {
-      text1: 'Technology Consulting with Purpose and Precision.',
-      text2: 'No buzzwords. No overselling. Just technology that solves real problems.'
+      text1: 'Technology at the service of your business.',
+      text2: 'Not the other way around.'
     },
     es: {
       text1: 'Tecnología al servicio de su empresa.',

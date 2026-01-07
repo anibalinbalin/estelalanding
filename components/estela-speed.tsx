@@ -16,8 +16,8 @@ export function EstelaSpeed() {
 
   const content = {
     en: {
-      title: "Craft Over Speed",
-      description: "We could work faster. We choose to work better. Every cable is labeled. Every setting documented. Every solution built to outlast us.\n\nSome call it obsessive. Our clients call it essential."
+      title: "Depth, not speed",
+      description: "Speed impresses. Depth endures. Every system explains itself. Our work keeps working long after no one remembers who built it."
     },
     es: {
       title: "Profundidad, no velocidad",

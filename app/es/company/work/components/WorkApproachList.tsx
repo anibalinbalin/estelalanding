@@ -10,8 +10,8 @@ const approachItems = [
         <use href="/assets/sprite-Dt029LRi.svg#networking-24"></use>
       </svg>
     ),
-    title: "Primero, el Descubrimiento",
-    description: "No empezamos con soluciones. Empezamos con el entendimiento. Cada proyecto comienza con un descubrimiento profundo para comprender sus desafíos reales, no solo los síntomas."
+    title: "Investigación, no adivinación",
+    description: "Antes de actuar, comprendemos. Lleva más tiempo. Ahorra más."
   },
   {
     icon: (

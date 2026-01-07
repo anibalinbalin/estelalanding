@@ -1,6 +1,52 @@
+"use client";
+
 import { Footer } from '@/components/footer';
+import { useLanguage } from '@/components/language-provider';
+
+const content = {
+  en: {
+    title: "Consulting & Support",
+    subtitle: "From the Latin consultare, 'to deliberate together.' Not from soportare, 'to tolerate the client.'",
+    sectionTitle: "We turn complexity into strategic advantage. Simplicity, we leave simple.",
+    para1: "We don't sell solutions; we cultivate them. We start by understanding the real problem—the one usually hiding behind the apparent problem. Then we apply technical expertise and common sense, in that order. Because technology without purpose is just electricity with pretensions.",
+    para2: "Infrastructure, growth, optimization, audits: we talk about all of that, but mostly we talk with you. Our consulting doesn't produce reports nobody reads. It produces decisions someone makes. And that someone usually sleeps better afterward.",
+    cardTitle: "Let's Talk",
+    cardDesc: "For a direct conversation about your technology challenges:",
+    exploreTitle: "Learn More",
+    methodLink: "Our Method",
+    infraLink: "Infrastructure Services",
+    workLink: "See Our Work",
+    advantageTitle: "The advantage of working with us",
+    adv1: "Ongoing advisory, not one-off.",
+    adv2: "Solutions aligned with your goals.",
+    adv3: "Direct access to the people doing the work.",
+    adv4: "Focus on lasting value."
+  },
+  es: {
+    title: "Consultoría y soporte",
+    subtitle: "Del latín consultare, 'deliberar juntos'. No del latín soportare, 'tolerar al cliente'.",
+    sectionTitle: "Transformamos la complejidad en ventaja estratégica. La simplicidad, en cambio, la dejamos simple.",
+    para1: "No vendemos soluciones; las cultivamos. Empezamos por entender el problema real —ese que suele esconderse detrás del problema aparente—. Luego aplicamos experiencia técnica y sentido común, en ese orden. Porque la tecnología sin propósito es solo electricidad con pretensiones.",
+    para2: "Infraestructura, crecimiento, optimización, auditorías: hablamos de todo eso, pero sobre todo hablamos con usted. Nuestra consultoría no produce informes que nadie lee. Produce decisiones que alguien toma. Y ese alguien suele dormir mejor después.",
+    cardTitle: "Conversemos",
+    cardDesc: "Para una conversación directa sobre sus desafíos tecnológicos:",
+    exploreTitle: "Para saber más",
+    methodLink: "Nuestro Método",
+    infraLink: "Servicios de Infraestructura",
+    workLink: "Vea Nuestros Trabajos",
+    advantageTitle: "La ventaja de trabajar con nosotros",
+    adv1: "Asesoría continua, no puntual.",
+    adv2: "Soluciones alineadas a sus objetivos.",
+    adv3: "Acceso directo a quienes hacen el trabajo.",
+    adv4: "Foco en valor duradero."
+  }
+};
 
 export default function ConsultingPage() {
+  const { language } = useLanguage();
+  const t = content[language];
+  const basePath = language === 'es' ? '/es' : '';
+
   return (
     <>
       <div className="sticky top-0 z-20">
@@ -18,10 +64,10 @@ export default function ConsultingPage() {
             <div className="w-[100%] px-5 min-[600px]:px-10">
               <div className="m-auto max-w-[1200px]">
                 <h1 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[600px]:text-4xl min-[1000px]:text-[3.125rem] font-normal min-[600px]:font-normal min-[1000px]:font-normal mb-12 min-[600px]:mb-10 min-[1000px]:mb-14 text-center min-[600px]:text-left font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[600px]:leading-[2.625rem] min-[1000px]:leading-[110%] tracking-wide min-[600px]:tracking-normal min-[1000px]:tracking-normal min-[800px]:pr-6">
-                  Consulting & Support
+                  {t.title}
                   <br />
-                  <span className="text-[20px] min-[600px]:text-[25px] min-[1000px]:text-[36px] leading-[30px] min-[600px]:leading-[32px] min-[1000px]:leading-[42px] font-normal" style={{color: 'color(display-p3 0.4941 0.5137 0.5216)', fontStyle: 'normal'}}>
-                    Your technology partner, not just another vendor.
+                  <span className="text-[20px] min-[600px]:text-[25px] min-[1000px]:text-[36px] leading-[30px] min-[600px]:leading-[32px] min-[1000px]:leading-[42px] font-normal" style={{color: 'color(display-p3 0.4941 0.5137 0.5216)', fontStyle: 'italic'}}>
+                    {t.subtitle}
                   </span>
                 </h1>
               </div>
@@ -30,16 +76,16 @@ export default function ConsultingPage() {
               <div className="w-[100%] px-5 min-[600px]:px-10">
                 <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] items-center gap-6 min-[600px]:gap-6 min-[1000px]:gap-8 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))]">
                   <div className="col-span-12 min-[700px]:col-span-7 self-center">
-                    <h2 className="col-span-12 text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal mb-6 min-[800px]:mb-6">Translating Complexity into Strategic Advantage</h2>
+                    <h2 className="col-span-12 text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal mb-6 min-[800px]:mb-6">{t.sectionTitle}</h2>
                     <div className="mb-4 min-[700px]:mb-0 pr-6 min-[900px]:pr-0">
-                      <p className="m-0 mt-0 mb-4 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">Beyond providing technical fixes, Estela's consulting practice focuses on becoming your trusted strategic advisor. We delve deep to understand the core business challenges that technology can solve, moving beyond symptoms to address root causes. Our approach combines seasoned technical expertise with a profound understanding of how technology should serve human and business objectives.</p>
-                      <p className="m-0 mt-[calc(1rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(1rem_*_var(--tw-space-y-reverse))] text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">Whether you're navigating complex infrastructure decisions, planning for future growth, seeking to optimize existing systems, or requiring an objective assessment of your technology landscape, we provide clear, actionable insights. We don't just offer recommendations; we partner with you to develop and implement strategies that are robust, sustainable, and precisely aligned with your vision. Our consulting is built on the same principles that guide all our work: transparency, deep expertise, and a commitment to solutions that deliver lasting value.</p>
+                      <p className="m-0 mt-0 mb-4 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">{t.para1}</p>
+                      <p className="m-0 mt-[calc(1rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(1rem_*_var(--tw-space-y-reverse))] text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">{t.para2}</p>
                     </div>
                   </div>
                   <div className="col-span-12 min-[700px]:col-start-[8] min-[900px]:col-start-[9] min-[700px]:col-span-5 min-[900px]:col-span-4 self-center rounded-[var(--border-radius-xl)] border bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-2)]">
                     <div className="border-b p-6 border-b-[var(--stroke-secondary-p3)]">
-                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-medium leading-6 text-base tracking-wide text-[var(--content-raise-p3)]">Consulting Enquiries</div>
-                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] mb-3">For a confidential discussion about your strategic technology needs:</div>
+                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-medium leading-6 text-base tracking-wide text-[var(--content-raise-p3)]">{t.cardTitle}</div>
+                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] mb-3">{t.cardDesc}</div>
                       <a href="mailto:hola@este.la" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c]">
                         hola@este.la
                         <svg width="16" height="16" className="block align-middle text-[#f5b944]">
@@ -48,22 +94,22 @@ export default function ConsultingPage() {
                       </a>
                     </div>
                     <div className="border-b p-6 border-b-[var(--stroke-secondary-p3)]">
-                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-medium leading-6 text-base tracking-wide text-[var(--content-raise-p3)]">Explore Further</div>
+                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-medium leading-6 text-base tracking-wide text-[var(--content-raise-p3)]">{t.exploreTitle}</div>
                       <div className="space-y-2">
-                        <a href="/method" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block">
-                          Our Method
+                        <a href={`${basePath}/method`} className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block">
+                          {t.methodLink}
                           <svg width="12" height="12" className="block align-middle text-[#f5b944]">
                             <use href="/assets/sprite-Dt029LRi.svg#next-arrow-12"></use>
                           </svg>
                         </a>
-                        <a href="/services/infrastructure" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block">
-                          Infrastructure Services
+                        <a href={`${basePath}/services/infrastructure`} className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block">
+                          {t.infraLink}
                           <svg width="12" height="12" className="block align-middle text-[#f5b944]">
                             <use href="/assets/sprite-Dt029LRi.svg#next-arrow-12"></use>
                           </svg>
                         </a>
-                        <a href="/company/work" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block">
-                          View Our Work
+                        <a href={`${basePath}/company/work`} className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block">
+                          {t.workLink}
                           <svg width="12" height="12" className="block align-middle text-[#f5b944]">
                             <use href="/assets/sprite-Dt029LRi.svg#next-arrow-12"></use>
                           </svg>
@@ -71,22 +117,19 @@ export default function ConsultingPage() {
                       </div>
                     </div>
                     <div className="p-6">
-                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-medium leading-6 text-base tracking-wide text-[var(--content-raise-p3)]">The Estela Advantage</div>
+                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-medium leading-6 text-base tracking-wide text-[var(--content-raise-p3)]">{t.advantageTitle}</div>
                       <div className="mt-3 space-y-3">
                         <div className="text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide">
-                          • Objective, Expert Advice
+                          • {t.adv1}
                         </div>
                         <div className="text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide">
-                          • Solutions Aligned with Your Goals
+                          • {t.adv2}
                         </div>
                         <div className="text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide">
-                          • Direct Access to Senior Expertise
+                          • {t.adv3}
                         </div>
                         <div className="text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide">
-                          • Focus on Long-Term Value
-                        </div>
-                        <div className="text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide">
-                          • Principled and Transparent Approach
+                          • {t.adv4}
                         </div>
                       </div>
                     </div>
@@ -97,31 +140,18 @@ export default function ConsultingPage() {
           </section>
         </div>
       </main>
-      
-      {/* Use the project's Footer component instead of inline footer */}
+
       <Footer />
-      
-      {/* Keep the tracking elements exactly as they were */}
+
       <noscript>
-        <img 
-          height="1" 
-          width="1" 
-          style={{display: "none"}} 
-          alt="" 
-          src="https://px.ads.linkedin.com/collect/?pid=6206948&fmt=gif" 
+        <img
+          height="1"
+          width="1"
+          style={{display: "none"}}
+          alt=""
+          src="https://px.ads.linkedin.com/collect/?pid=6206948&fmt=gif"
         />
       </noscript>
-      <div className="top-[336px] left-[979px] h-0 w-0"></div>
-      <div className="top-[336px] left-[1460px] h-0 w-0"></div>
-      <div className="top-[659px] left-[979px] h-0 w-0"></div>
-      <div className="top-[336px] left-[977px] h-0 w-0"></div>
-      <div></div>
-      <div className="top-[-2px] left-0 h-0 w-0"></div>
-      <div className="top-[-4px] left-[-4px] h-0 w-0"></div>
-      <div className="top-[-4px] left-[-4px] h-0 w-0"></div>
-      <div className="top-[-2px] left-[-2px] h-0 w-0"></div>
-      <div className="top-0 left-0 absolute"></div>
-      <canvas width="70" height="70" className="left-[1610px] top-0 block align-middle"></canvas>
     </>
   )
 }

@@ -12,8 +12,8 @@ export const TeamSection = () => {
   const content = {
     en: {
       ourPrinciples: 'Our Principles',
-      principlesIntro: 'Principles are fundamental, universal truths that transcend time, geography, culture and context.',
-      principlesConstraints: 'These principles are not aspirations, they are constraints; we expect them to be the marrow of all Estela employees and adhered to under all conditions.'
+      principlesIntro: 'Many companies have framed values. We have principles we apply.',
+      principlesConstraints: 'They\'re not aspirations. They\'re the standard. The difference between saying and doing.'
     },
     es: {
       ourPrinciples: 'Nuestros principios',

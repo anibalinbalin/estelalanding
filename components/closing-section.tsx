@@ -9,7 +9,7 @@ export const ClosingSection = () => {
   
   const content = {
     en: {
-      text: <>The Cyclops likely had layers of management. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>Odysseus had a tight crew and a clear objective.</span> We believe in the latter. No getting lost in the crowd, no diluted responsibility. When you work with Estela, you get *us* – six minds directly invested in your success. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>It's not about outmuscling the problem; it's about outthinking it,</span> with the focused intensity only a truly cohesive team can provide.</>
+      text: <>Polyphemus had size, strength, and one eye—which turned out to be insufficient. Odysseus had wit, few men, and a plan. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>We chose the second path.</span> No layers to dilute. No departments to delegate. Six people who solve. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>Because the solution was never about being bigger—it was about thinking better.</span></>
     },
     es: {
       text: <>Polifemo tenía tamaño, fuerza y un ojo —que resultó ser insuficiente. Odiseo tenía ingenio, pocos hombres y un plan. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>Elegimos el segundo camino.</span> Sin capas que diluyan. Sin departamentos que deleguen. Seis personas que resuelven. <span style={{ color: 'color(display-p3 0.8431 0.8471 0.851)' }}>Porque la solución nunca estuvo en ser más grandes —estuvo en pensar mejor.</span></>

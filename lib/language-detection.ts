@@ -43,7 +43,7 @@ const languageMap: Record<string, Language> = {
 }
 
 /**
- * Detects the user's preferred language based on browser settings
+ * Detects language from URL path first, then browser settings
  * @returns The detected language or default language
  */
 export function detectBrowserLanguage(defaultLanguage: Language = 'es'): Language {
@@ -52,33 +52,39 @@ export function detectBrowserLanguage(defaultLanguage: Language = 'es'): Languag
     return defaultLanguage
   }
 
-  // First check localStorage for saved preference
+  // First priority: URL path (if /es/ then Spanish, otherwise check other signals)
+  const path = window.location.pathname
+  if (path.startsWith('/es/') || path === '/es') {
+    return 'es'
+  }
+
+  // Second: localStorage for saved preference
   const savedLanguage = localStorage.getItem('language') as Language | null
   if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'es')) {
     return savedLanguage
   }
 
-  // Get browser language preference
+  // Third: browser language preference
   const browserLang = navigator.language || (navigator as any).userLanguage || ''
-  
+
   // Try exact match first
   if (languageMap[browserLang]) {
     return languageMap[browserLang]
   }
-  
+
   // Try matching just the language part (before the hyphen)
   const primaryLang = browserLang.split('-')[0].toLowerCase()
   if (languageMap[primaryLang]) {
     return languageMap[primaryLang]
   }
-  
+
   // Check navigator.languages array for additional preferences
   if (navigator.languages && navigator.languages.length > 0) {
     for (const lang of navigator.languages) {
       if (languageMap[lang]) {
         return languageMap[lang]
       }
-      
+
       // Try primary language part
       const primary = lang.split('-')[0].toLowerCase()
       if (languageMap[primary]) {
@@ -86,7 +92,7 @@ export function detectBrowserLanguage(defaultLanguage: Language = 'es'): Languag
       }
     }
   }
-  
+
   // Default to Spanish if no match found
   return defaultLanguage
 }

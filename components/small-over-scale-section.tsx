@@ -17,13 +17,13 @@ export const SmallOverScaleSection = () => {
 
   const content = {
     en: {
-      coDesignTitle: "We study Renaissance art because system design is composition",
+      coDesignTitle: "We study the Renaissance—and not for the academic credit",
       coDesignFeatures: [
-        "We read philosophy because technology serves humanity.",
-        "Because we've learned: the magic happens at this size. Your project doesn't get handed off.",
+        "We read philosophy because a system without human context is a machine with pretensions.",
+        "Because we've learned: the magic happens at this size. Your project doesn't get transferred.",
         "Your relationship doesn't get 'managed.' You get us. All of us. Always."
       ],
-      tryButton: "Read The Full Estela Method",
+      tryButton: "The Method",
       contactButton: "Meet Our Team"
     },
     es: {
@@ -93,14 +93,14 @@ export const SmallOverScaleSection = () => {
             </h2>
           </div>
           <div className="flex flex-col gap-2 text-center">
-            <Link 
-              href="/method" 
+            <Link
+              href={language === 'es' ? '/es/method' : '/method'}
               className="estela-nav-button estela-nav-button-primary inline-flex items-center"
             >
               {t.tryButton} <MoveRight className="ml-2 h-4 w-4" />
             </Link>
-            <Link 
-              href="/company/team" 
+            <Link
+              href={language === 'es' ? '/es/company/team' : '/company/team'}
               className="estela-nav-button estela-nav-button-outline inline-flex items-center"
             >
               {t.contactButton} <MoveRight className="ml-2 h-4 w-4" />

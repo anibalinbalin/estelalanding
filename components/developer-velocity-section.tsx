@@ -21,12 +21,12 @@ export const DeveloperVelocitySection = () => {
 
   const content = {
     en: {
-      title: "Complete Technology Solutions",
-      subtitle: "We design, implement, and maintain the infrastructure that powers modern organizations. One partner. Total accountability.",
+      title: "Solutions for problems that don't exist yet",
+      subtitle: "We anticipate the unexpected—which, once anticipated, ceases to be so. We design systems that last. We implement changes that transform. We keep calm when the server doesn't.",
       features: [
         {
           title: "Networks & Servers",
-          subtitle: "VMware virtualization, UniFi networking, Synology storage, Structured cabling. From 10Gb backbone to redundant power, we build foundations that don't fail.",
+          subtitle: "VMware and Proxmox virtualization, UniFi networking, Synology storage, 10Gb LANs, redundant power.",
           image1: "/img/ascii-art.svg",
           image2: "/img/ascii-art.svg",
           image1Width: 620,
@@ -39,7 +39,7 @@ export const DeveloperVelocitySection = () => {
         },
         {
           title: "Complete Protection",
-          subtitle: "SentinelOne XDR, UniFi Protect cameras, Backup & recovery, Compliance ready. Multi-layered defense that protects what matters most to your business.",
+          subtitle: "SentinelOne XDR, UniFi Protect cameras, Synology backup infrastructure: redundancy and recovery.",
           image1: "/img/ascii-art_2.svg",
           image2: "/img/ascii-art_2.svg",
           image1Width: 620,
@@ -52,7 +52,7 @@ export const DeveloperVelocitySection = () => {
         },
         {
           title: "Custom Development",
-          subtitle: "Next.js applications, Process automation, AI integration, Digital transformation. Modern solutions that transform how you work, not just digitize old problems.",
+          subtitle: "Next.js apps, process automation, AI integration. Modern solutions that transform how you work.",
           image1: "/img/ascii-art_3.svg",
           image2: "/img/ascii-art_3.svg",
           image1Width: 620,

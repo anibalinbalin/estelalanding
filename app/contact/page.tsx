@@ -16,9 +16,9 @@ export default function ContactPage() {
               </div>
               <div className="mx-auto min-[600px]:mx-0 mb-8 mt-4 max-w-96 text-lg leading-relaxed tracking-wide text-muted-foreground">
                 <p className="m-0">
-                  Ready to transform your technology infrastructure? Reach out here to learn more or skip to{' '}
+                  We solve tech questions. We also confirm suspicions. Rarely both at once. Here are{' '}
                   <Link href="/company/work" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] hover:text-[#08178c]">
-                    exploring our work
+                    our recent projects
                   </Link>{' '}
                   and case studies.
                 </p>
@@ -28,7 +28,7 @@ export default function ContactPage() {
                       <circle cx="6" cy="6" r="2" fill="currentColor" />
                     </svg>
                     <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
-                      Learn more about our services
+                      Learn about our services. Bibliography optional.
                     </div>
                   </li>
                   <li className="flex items-baseline">
@@ -36,7 +36,7 @@ export default function ContactPage() {
                       <circle cx="6" cy="6" r="2" fill="currentColor" />
                     </svg>
                     <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
-                      Get personalized technology assessment
+                      Get a tech assessment. Personalized, not personal.
                     </div>
                   </li>
                   <li className="flex items-baseline">
@@ -44,7 +44,7 @@ export default function ContactPage() {
                       <circle cx="6" cy="6" r="2" fill="currentColor" />
                     </svg>
                     <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
-                      Discuss your project requirements
+                      Specify what you need. With precision, not optimism.
                     </div>
                   </li>
                 </div>

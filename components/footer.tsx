@@ -31,8 +31,8 @@ export const Footer = () => {
 
   const content = {
     en: {
-      tagline: "When technology meets wisdom",
-      description: "Guiding businesses through technological transformations with the perfect balance of trusted expertise and innovative insight.",
+      tagline: "When technology and knowledge converge",
+      description: "Eager for the new. Devoted to what works.",
       address: {
         line1: "Estela",
         line2: "21 de Setiembre, 3015. 802",
@@ -47,7 +47,7 @@ export const Footer = () => {
         title: "Partners:",
         companies: ["Lenovo", "UniFi", "Synology", "SentinelOne", "Wasabi"]
       },
-      copyright: `© ${new Date().getFullYear()} Estela. Making technology work for people since 2011.`,
+      copyright: `© ${new Date().getFullYear()} Estela. Technology that obeys. People who decide.`,
       sections: {
         services: {
           title: "Services",

@@ -15,22 +15,22 @@ export const TestNumbersSection = () => {
 
   const content = {
     en: {
-      title: "The Measure of Our Method: Lasting Success, Enduring Partnerships",
+      title: "Empirical evidence",
       metric1: {
-        title: "100% Client Retention",
-        description: "Every client who partners with us, stays with us. This reflects the lasting value and unwavering trust we build together, making your success our long-term commitment."
+        title: "100%",
+        description: "Complete retention. Either we're good, or we're hard to replace."
       },
       metric2: {
-        title: "7+ Years Average Relationship",
-        description: "We cultivate deep, long-term partnerships, allowing us to intimately understand and evolve with your business needs for over seven years on average."
+        title: "Average relationship",
+        description: "Average relationship: seven years. Standard deviation: irrelevant."
       },
       metric3: {
-        title: "13+ Years Core Team Cohesion",
-        description: "Our founding-led core team brings over a decade of unified vision and consistent senior expertise directly to your projects, ensuring quality and accountability."
+        title: "Founding team",
+        description: "Same team since 2012. Turnover is a concept we know only by hearsay."
       },
       metric4: {
-        title: "Dedicated to Ideal Partnerships",
-        description: "We deliberately focus our deep expertise where we can create maximum impact, ensuring every partnership is set up for profound and transformative success."
+        title: "Criteria",
+        description: "Selective admission. It's not arrogance; it's arithmetic."
       }
     },
     es: {

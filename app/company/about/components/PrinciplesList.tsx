@@ -9,19 +9,19 @@ const getMissionItems = (language: 'en' | 'es') => {
     en: [
       {
         title: "What We Do",
-        description: "We design, implement, and maintain technology solutions that solve real business problems. Infrastructure, security, custom development, and strategic consulting."
+        description: "We design, build, and maintain technology that works. Infrastructure, security, custom development. No unnecessary adjectives."
       },
       {
         title: "How We're Different",
-        description: "Small team. Direct relationships. No layers of management. The person who understands your problem is the same person who solves it."
+        description: "No account executives. No middle managers. Direct relationship between your problem and whoever solves it."
       },
       {
         title: "Why We Exist",
-        description: "Most technology consulting is broken. Overpriced, underdelivered, and overcomplicated. We exist to prove it doesn't have to be this way."
+        description: "The industry turned 'consulting' into a synonym for costs and complications. We prefer the original definition: helping solve problems."
       },
       {
         title: "Who We Serve",
-        description: "Organizations that need enterprise-grade technology but want startup-level agility. Companies tired of vendor promises and consultant overhead."
+        description: "Companies that value results over presentations, and solutions over promises."
       }
     ],
     es: [
@@ -52,19 +52,19 @@ const getPrincipleItems = (language: 'en' | 'es') => {
     en: [
       {
         title: "Technology Serves Business",
-        description: "We start with your business goals, not our favorite technologies. Every technical decision must advance your objectives. Form follows function. Always."
+        description: "We start with your objectives, not our favorite technologies. Every technical decision must be justified in business terms. Form follows function."
       },
       {
         title: "Excellence Over Scale",
-        description: "We choose quality over quantity. Small teams, deep expertise, direct relationships. No bureaucracy, no account managers. Do fewer things. Do them better."
+        description: "Quality over quantity. Depth over breadth. Fewer clients, better service."
       },
       {
         title: "Reality Over Marketing",
-        description: "We promise what we can deliver. We deliver what we promise. No overselling, no underwhelming. We believe in being forthright, even when that's difficult. Truth is our competitive advantage."
+        description: "We promise less than we can deliver. We deliver more than we promise."
       },
       {
         title: "Long-term Over Quick Wins",
-        description: "We build solutions that last. Sustainable architectures, maintainable code, transferable knowledge. Today's solution shouldn't become tomorrow's problem."
+        description: "We build to last. Today's solution shouldn't become tomorrow's problem."
       }
     ],
     es: [
