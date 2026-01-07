@@ -35,7 +35,7 @@ const SecurityPage = () => {
                   Gestión de seguridad y protección de datos
                   <br />
                   <span className="text-[20px] min-[600px]:text-[25px] min-[1000px]:text-[36px] leading-[30px] min-[600px]:leading-[32px] min-[1000px]:leading-[42px] font-normal" style={{color: 'color(display-p3 0.4941 0.5137 0.5216)', fontStyle: 'normal'}}>
-                    Protección de nivel empresarial, sin la complejidad corporativa
+                    Lo complejo, simplificado. Lo crítico, resuelto.
                   </span>
                 </h1>
               </div>
@@ -45,11 +45,11 @@ const SecurityPage = () => {
                 <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] items-center gap-6 min-[600px]:gap-6 min-[1000px]:gap-8 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))]">
                   <div className="col-span-12 min-[600px]:col-span-11 min-[1000px]:col-span-5 pr-0 min-[800px]:pr-10 min-[1000px]:pr-0 mb-4">
                     <h2 className="mb-6 min-[600px]:mb-4 text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
-                      Protección Integral para su Empresa
+                      Protección integral
                     </h2>
                     <div>
                       <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                        Ofrecemos un servicio integral de seguridad y gestión de datos. Integramos las mejores soluciones del mercado —SentinelOne para la protección de endpoints, Wasabi para el respaldo en la nube y Synology para el almacenamiento local— en una única plataforma integrada.
+                        Trabajamos con las mejores soluciones del canal —SentinelOne para endpoints, Wasabi / AWS para backups en la nube, Synology para almacenamiento local.
                       </p>
                     </div>
                     <div className="mt-8 flex">
@@ -101,7 +101,7 @@ const SecurityPage = () => {
                                 <use href="/assets/sprite-Dt029LRi.svg#success-12"></use>
                               </svg>
                               <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-[1.125rem] min-[800px]:leading-6 text-[.875rem] min-[800px]:text-base tracking-wider min-[800px]:tracking-wide text-[var(--content-secondary-p3)]">
-                                Equipo de seguridad dedicado.
+                                Respuestas personalizadas.
                               </div>
                             </li>
                           </ul>
@@ -141,10 +141,10 @@ const SecurityPage = () => {
                       </div>
                       <div>
                         <h3 className="text-balance textWrapStyle-[balance] m-0 mb-1 text-[var(--content-secondary-p3)] text-[.875rem] min-[1000px]:text-base font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.125rem] min-[1000px]:leading-6 tracking-wider min-[1000px]:tracking-wide">
-                          Único Punto de Contacto
+                          Todo en un lugar
                         </h3>
                         <p className="text-[var(--content-secondary-p3)] text-sm mt-2">
-                          Un solo proveedor, una única factura y un solo equipo de soporte para todas las necesidades de seguridad y datos.
+                          Una cuenta, un contacto.
                         </p>
                       </div>
                     </div>
@@ -156,10 +156,10 @@ const SecurityPage = () => {
                       </div>
                       <div>
                         <h3 className="text-balance textWrapStyle-[balance] m-0 mb-1 text-[var(--content-secondary-p3)] text-[.875rem] min-[1000px]:text-base font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.125rem] min-[1000px]:leading-6 tracking-wider min-[1000px]:tracking-wide">
-                          Monitoreo Unificado
+                          Atención constante
                         </h3>
                         <p className="text-[var(--content-secondary-p3)] text-sm mt-2">
-                          Todos los sistemas son monitoreados, con alertas y respuestas proactivas.
+                          Alertas en tiempo real y respuestas antes de que escale.
                         </p>
                       </div>
                     </div>
@@ -171,10 +171,10 @@ const SecurityPage = () => {
                       </div>
                       <div>
                         <h3 className="text-balance textWrapStyle-[balance] m-0 mb-1 text-[var(--content-secondary-p3)] text-[.875rem] min-[1000px]:text-base font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.125rem] min-[1000px]:leading-6 tracking-wider min-[1000px]:tracking-wide">
-                          Integración sin Inconvenientes
+                          Sin fricciones
                         </h3>
                         <p className="text-[var(--content-secondary-p3)] text-sm mt-2">
-                          Las integraciones preconfiguradas entre todas las plataformas eliminan los problemas de compatibilidad.
+                          Integraciones nativas. Todo conectado desde el primer día.
                         </p>
                       </div>
                     </div>
@@ -204,7 +204,7 @@ const SecurityPage = () => {
                     Estrategia de respaldo 3-2-1
                   </h2>
                   <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                    Los datos, protegidos en múltiples capas: un NAS Synology local para una recuperación rápida, almacenamiento en la nube de Wasabi para la recuperación, y verificación automatizada para garantizar la integridad de los datos.
+                    Los datos, protegidos en múltiples capas: un NAS Synology local para una recuperación rápida, almacenamiento en la nube de Wasabi / AWS para una recuperación de largo tiempo atrás, y verificación automatizada fuera de horas de trabajo para garantizar integridad de datos.
                   </p>
                   <h3 className="text-balance textWrapStyle-[balance] m-0 mb-3 text-[var(--content-secondary-p3)] text-base min-[1000px]:text-lg font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-6 min-[1000px]:leading-[1.625rem] tracking-wide min-[1000px]:tracking-wide">
                     Almacenamiento y Recuperación
@@ -257,8 +257,8 @@ const SecurityPage = () => {
             <div className="w-[100%] px-5 min-[600px]:px-10 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(5rem_*_var(--tw-space-y-reverse))] min-[1000px]:mb-[calc(9rem_*_var(--tw-space-y-reverse))]">
               <div className="m-auto max-w-[1200px]">
                 <h2 className="text-balance textWrapStyle-[balance] m-0 text-center text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
-                  Plataforma de seguridad <br className="hidden min-[800px]:block" />
-                  <span className="text-[var(--content-tertiary-p3)]">La mejor protección en todas las plataformas</span>
+                  Stack de seguridad <br className="hidden min-[800px]:block" />
+                  <span className="text-[var(--content-tertiary-p3)]">Cada pieza, la mejor en su categoría.</span>
                 </h2>
               </div>
             </div>
@@ -266,11 +266,11 @@ const SecurityPage = () => {
               <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] items-center gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
                 <div className="col-span-12 min-[600px]:col-span-11 min-[1000px]:col-span-5 pr-0 min-[800px]:pr-10 min-[1000px]:pr-0 mb-4">
                   <h2 className="mb-4 text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
-                    Protección de Endpoints (SentinelOne)
+                    Endpoints: SentinelOne
                   </h2>
                   <div>
                     <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                      Detección y respuesta a amenazas potenciada por IA en todos sus dispositivos. Protección en tiempo real con análisis de comportamiento, remediación automatizada y visibilidad total sobre su estado de seguridad.
+                      EDR con IA. Detecta amenazas, responde automáticamente, y le da visibilidad completa de cada dispositivo.
                     </p>
                   </div>
                 </div>
@@ -301,7 +301,7 @@ const SecurityPage = () => {
                   </h2>
                   <div>
                     <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                      Almacenamiento en la nube (S3) de alto rendimiento con respaldos inmutables. Pay as you go con un almacenamiento constante de todos los datos.
+                      Almacenamiento en la nube (S3) con respaldos inmutables. Pay as you go con un almacenamiento que se actualiza constantemente durante las horas del dia.
                     </p>
                   </div>
                 </div>
@@ -325,7 +325,7 @@ const SecurityPage = () => {
                   </h2>
                   <div>
                     <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                      Soluciones NAS locales que brindan acceso local rápido, capacidades avanzadas para compartir archivos y una integración transparente, como datos ajenos, ya en la nube como Google Workspace.
+                      NAS local que permiten acceso local ágil o remoto. Snapshots, historiales y logs de cambios, backup de Google Workspace.
                     </p>
                   </div>
                 </div>
@@ -390,7 +390,7 @@ const SecurityPage = () => {
                   <div className="relative flex items-center justify-between gap-4 border p-4 bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-2)] min-[600px]:px-10 py-6 min-[600px]:py-8 rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-lg)]">
                     <div>
                       <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-lg min-[500px]:text-[1.5625rem] min-[900px]:text-4xl font-normal min-[500px]:font-normal min-[900px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[500px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.625rem] min-[500px]:leading-8 min-[900px]:leading-[2.625rem] tracking-wide min-[500px]:tracking-wide min-[900px]:tracking-normal">
-                        Una protección que crece con su empresa
+                        Crezca. La seguridad sigue.
                       </h2>
                     </div>
                     <div className="flex flex-col gap-2 text-center">

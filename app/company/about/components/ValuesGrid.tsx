@@ -59,51 +59,51 @@ const getValuesData = (language: 'en' | 'es') => {
     es: [
       {
         title: "Franqueza",
-        description: "Creemos en ser directos, incluso cuando es difícil. Evitamos los eufemismos o el ocultar nuestras opiniones o experiencia. Respetamos a quienes hablan con franqueza, aunque no estemos de acuerdo con lo que dicen."
+        description: "La verdad incomoda. La mentira, más. Preferimos la primera."
       },
       {
         title: "Coraje",
-        description: "Somos audaces, dispuestos a hacer las cosas incluso si son poco convencionales, difíciles, intimidantes o no probadas. Sin embargo, no somos temerarios: cuando somos contrarios, no es por un mero deseo de tomar un camino menos transitado, sino por una convicción profunda y bien informada."
+        description: "Contrarios cuando hace falta, nunca por deporte."
       },
       {
         title: "Curiosidad",
-        description: "Somos aprendices, siempre hay algo nuevo, dia a dia, sin miedo a aprender algo nuevo, ya sea una nueva tecnología intimidante o un problema desconcertante."
+        description: "Sabemos mucho. No lo suficiente. Esa diferencia nos mantiene despiertos."
       },
       {
         title: "Diversidad",
-        description: "Creemos que los mejores resultados provienen de combinar diferentes perspectivas y unirlas con valores y una misión compartidos. Creemos y fomentamos la diversidad en cualquier eje que sea consistente con nuestra misión, principios y valores."
+        description: "Las mejores ideas rara vez vienen de gente que piensa igual."
       },
       {
         title: "Empatía",
-        description: "Servimos para ofrecer utilidad a otros; para hacerlo eficazmente, debemos ser capaces de ver el mundo a través de los ojos de los demás. La empatía no solo informa nuestra ingeniería, sino que guía nuestras interacciones con colegas, comunidades y clientes: tratamos a los demás como nos gustaría que nos trataran a nosotros."
+        description: "Difícil resolver un problema que no entendemos. Difícil entender sin escuchar."
       },
       {
         title: "Humor",
-        description: "Aunque nos dedicamos en un ambiente serio, siempre hay una pizca de humor. Disfrutamos de la compañía de nuestros cliente."
+        description: "Nos tomamos el trabajo en serio. A nosotros mismos, menos."
       },
       {
         title: "Optimismo",
-        description: "Aunque nuestro trabajo consiste en averiguar por qué las cosas van a fallar, mantenemos una creencia profunda y fundamental de que es posible lograr algo mejor."
+        description: "Sabemos todo lo que puede salir mal. Aun así, creemos que saldrá bien."
       },
       {
         title: "Resiliencia",
-        description: "Creemos en las palabras del difunto matemático Piet Hein: \"los problemas dignos de ser atacados demuestran su valía devolviendo el golpe\". Persistimos incluso cuando los problemas se resisten, superando la decepción y los contratiempos endémicos de nuestro campo."
+        description: "Los problemas interesantes no se rinden fácil. Nosotros tampoco."
       },
       {
         title: "Responsabilidad",
-        description: "Sentimos un deber hacia cosas más grandes que nosotros mismos. No nos limitamos a cumplir nuestras obligaciones, sino que buscamos activamente formas de ayudar. Equilibramos nuestras responsabilidades profesionales con las personales y familiares, y honramos a quienes hacen lo mismo."
+        description: "Hay vida fuera de la oficina. La honramos."
       },
       {
         title: "Rigor",
-        description: "Los sistemas informáticos deben ser correctos por encima de todo, y debemos ser disciplinados y minuciosos en nuestro enfoque. Insistimos en llegar a la raíz de las cosas y no nos satisface simplemente abordar sus síntomas."
+        description: "No nos conformamos con que funcione. Queremos saber por qué."
       },
       {
         title: "Trabajo en equipo",
-        description: "Aunque nuestro trabajo puede ser individual, nuestra misión no lo es: abrazamos la desordenada interdependencia de las personas que trabajan juntas en un esfuerzo común. Cuidamos activamente de nosotros mismos: ofreciendo ayuda cuando se necesita y verdades que muchas veces son difíciles."
+        description: "Nadie aquí triunfa solo. Nadie aquí fracasa solo."
       },
       {
         title: "Versatilidad",
-        description: "Aunque naturalmente debemos especializarnos, nuestra audaz misión también exige que cualquiera de nosotros pueda necesitar aplicarse en un nuevo dominio, y de hecho, que muchos de nosotros lo estaremos haciendo gran parte del tiempo."
+        description: "La especialización es necesaria. La adaptación, inevitable."
       }
     ]
   };

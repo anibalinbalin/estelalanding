@@ -84,7 +84,7 @@ export const Footer = () => {
     },
     es: {
       tagline: "Cuando la tecnología y el conocimiento convergen",
-      description: "Guiando a las empresas a través de transformaciones tecnológicas combinando la confianza de lo probado con el potencial de lo nuevo.",
+      description: "Ávidos de lo nuevo. Devotos de lo que funciona.",
       address: {
         line1: "Estela",
         line2: "21 de Setiembre, 3015. 802",
@@ -99,7 +99,7 @@ export const Footer = () => {
         title: "Socios:",
         companies: ["Lenovo", "UniFi", "Synology", "SentinelOne", "Wasabi"]
       },
-      copyright: `© ${new Date().getFullYear()} Estela. Haciendo que la tecnología funcione para las personas desde 2011.`,
+      copyright: `© ${new Date().getFullYear()} Estela. Tecnología que obedece. Personas que deciden.`,
       sections: {
         services: {
           title: "Servicios",

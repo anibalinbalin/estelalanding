@@ -23,7 +23,7 @@ export default function DevelopmentPage() {
                   Desarrollo e Inteligencia Artificial
                   <br />
                   <span className="text-[20px] min-[600px]:text-[25px] min-[1000px]:text-[36px] leading-[30px] min-[600px]:leading-[32px] min-[1000px]:leading-[42px] font-normal" style={{color: 'color(display-p3 0.4941 0.5137 0.5216)', fontStyle: 'normal'}}>
-                    IA y automatización prácticas que impulsan un valor empresarial real.
+                    Soluciones de IA que funcionan fuera del demo.
                   </span>
                 </h1>
               </div>
@@ -39,7 +39,7 @@ export default function DevelopmentPage() {
                       </h2>
                       <div>
                         <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                          Aplicaciones con Next.js, automatización de procesos, integración de IA y transformación digital. Ofrecemos soluciones modernas que transforman su forma de trabajar, no que se limitan a digitalizar problemas ya existentes.
+                          Software que funciona. React, Postgres, Claude. Automatización que ahorra tiempo. IA que aporta.
                         </p>
                       </div>
                     </div>
@@ -96,11 +96,8 @@ export default function DevelopmentPage() {
                       <div className="relative flex items-center justify-between gap-4 border p-4 bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-2)] min-[600px]:px-10 py-6 min-[600px]:py-8 rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-lg)]">
                         <div>
                           <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-lg min-[500px]:text-[1.5625rem] min-[900px]:text-4xl font-normal min-[500px]:font-normal min-[900px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[500px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.625rem] min-[500px]:leading-8 min-[900px]:leading-[2.625rem] tracking-wide min-[500px]:tracking-wide min-[900px]:tracking-normal">
-                            Un Desarrollo que Crece con Usted
+                            Desarrollo con continuidad
                           </h2>
-                          <p className="mt-2 text-sm min-[500px]:text-base min-[900px]:text-lg text-[var(--content-secondary-p3)]">
-                            Un desarrollo que crece con la empresa
-                          </p>
                         </div>
                         <div className="flex flex-col gap-2 text-center">
                           <a href="/es/contact" className="px-3 items-center text-[var(--content-secondary-p3)] [text-decoration:inherit] inline-flex h-8 justify-center rounded-[var(--border-radius)] align-top font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider uppercase [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] shadow-[var(--elevation-1)] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:rounded-[var(--border-radius)] after:border after:border-current after:opacity-100 after:text-[var(--stroke-secondary-p3)] hover:bg-[var(--surface-hover-p3)]">

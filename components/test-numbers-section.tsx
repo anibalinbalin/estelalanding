@@ -34,22 +34,22 @@ export const TestNumbersSection = () => {
       }
     },
     es: {
-      title: "La escala de nuestro método: valor constante, alianzas que evolucionan",
+      title: "Evidencia empírica",
       metric1: {
-        title: "100% Retención de Clientes",
-        description: "Quien trabaja con nosotros, permanece con nosotros. Esto refleja el valor sostenido y la confianza inquebrantable que construimos juntos. Su estabilidad tecnológica es nuestro compromiso."
+        title: "100%",
+        description: "Retención completa. O somos buenos, o somos difíciles de reemplazar."
       },
       metric2: {
-        title: "7+ Años de Relación Promedio",
-        description: "Cultivamos alianzas profundas y duraderas. Esto nos permite entender íntimamente su empresa y evolucionar juntos."
+        title: "Relación media",
+        description: "Promedio de relación: siete años. Desviación estándar: irrelevante."
       },
       metric3: {
-        title: "13+ Años de Cohesión del Equipo",
-        description: "El mismo equipo desde el comienzo. Más de una década trabajando juntos significa que conocemos los métodos de cada uno y los aplicamos sin fricciones en cada proyecto."
+        title: "Equipo fundador",
+        description: "El mismo equipo desde 2012. La rotación es un concepto que conocemos de oídas."
       },
       metric4: {
-        title: "Dedicados a Alianzas Ideales",
-        description: "Enfocamos nuestra experiencia donde tiene sentido. Cada alianza se construye para perdurar y evolucionar."
+        title: "Criterio",
+        description: "Admisión selectiva. No es arrogancia; es aritmética."
       }
     }
   };

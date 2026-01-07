@@ -121,64 +121,64 @@ const content = {
     nav: {
       services: "Servicios",
       method: "Método",
-      company: "Empresa", 
+      company: "Empresa",
       contact: "Contacto"
     },
     services: {
       default: {
         title: "Nuestros Servicios",
-        subtitle: "Soluciones tecnológicas diseñadas para las necesidades de tu negocio."
+        subtitle: "Infraestructura, seguridad, desarrollo. Lo que necesita, sin lo que no."
       },
       infrastructure: {
         title: "Infraestructura",
-        subtitle: "Soluciones de infraestructura robustas y escalables.",
+        subtitle: "Lo invisible que sostiene lo visible.",
         description: "La base de todo lo digital. Construimos redes que nunca te hacen pensar en redes."
       },
       security: {
         title: "Seguridad",
-        subtitle: "Servicios integrales de seguridad y protección.",
+        subtitle: "Lo que separa la calma del caos. Literalmente.",
         description: "La protección no es paranoia. Es preparación. Aseguramos tus datos, tus instalaciones y tu tranquilidad."
       },
       development: {
         title: "Desarrollo",
-        subtitle: "Desarrollo de software personalizado y soluciones.",
+        subtitle: "Código que resuelve problemas, no que los crea.",
         description: "Soluciones personalizadas para desafíos únicos. Construimos las herramientas que tu negocio necesita para prosperar."
       },
       consulting: {
         title: "Consultoría",
-        subtitle: "Consultoría tecnológica experta y orientación.",
+        subtitle: "Respuestas a preguntas que aún no formuló.",
         description: "Tu socio tecnológico, no solo otro proveedor. Desde planificación estratégica hasta soporte diario."
       },
       specifications: {
         title: "Especificaciones",
-        subtitle: "Especificaciones técnicas detalladas y requisitos.",
+        subtitle: "Especificaciones técnicas detalladas.",
         description: "Documentación técnica detallada y análisis de requisitos para implementaciones complejas."
       }
     },
     method: {
       default: {
         title: "El Método Estela",
-        subtitle: "Nuestro enfoque probado para la transformación tecnológica."
+        subtitle: "Sistemáticos por elección. Insistentes por tradición."
       },
       introduction: {
         title: "Introducción",
-        subtitle: "Conoce nuestra metodología y enfoque."
+        subtitle: "Lo que hacemos. Por qué lo hacemos. En ese orden."
       },
       principles: {
         title: "Principios",
-        subtitle: "Los principios fundamentales que guían nuestro trabajo."
+        subtitle: "Las reglas que elegimos. Las excepciones que evitamos."
       },
       implementation: {
         title: "Implementación",
-        subtitle: "Cómo implementamos soluciones para clientes."
+        subtitle: "Ejecutar bien. Repetir mejor."
       },
       practices: {
         title: "Prácticas",
-        subtitle: "Mejores prácticas y metodologías probadas."
+        subtitle: "Teoría aplicada. Errores evitados."
       },
       philosophy: {
         title: "Filosofía",
-        subtitle: "Nuestra filosofía sobre tecnología y negocios."
+        subtitle: "Ideas que guían. Modas que ignoramos."
       }
     },
     company: {

@@ -116,72 +116,32 @@ export function MethodIntroduction() {
       }
     },
     es: {
-      title: 'El Arte de la traducción',
-      lead: 'El arte de la verdadera interpretación radica en volver claro lo complejo. Ese es nuestro quehacer: traducimos el intrincado mundo de la tecnología en soluciones centradas en las personas.',
+      title: 'El Arte de la Traducción',
+      lead: 'Hacer claro lo complejo es un arte. Hacer complejo lo claro, en cambio, cualquiera puede. Nosotros traducimos el intrincado mundo de la tecnología en soluciones que las personas entienden, usan y agradecen.',
       sections: {
         lostArt: {
-          title: 'Un Arte perdido',
+          title: 'Un Arte Perdido',
           paragraphs: [
-            "En la mitología griega, Hermes sirvió como mensajero entre el monte Olimpo y los mortales que vivian debajo. No se limitaba a llevar mensajes; traducía el significado entre espacios que no podían entenderse.",
-            "El panorama tecnológico actual padece la misma división. De un lado: servidores, protocolos, frameworks y un sinfín de acrónimos. Del otro: personas que intentan gestionar sus empresas, atender a sus clientes y marcar una diferencia.",
-            "La mayoría de las empresas de TI se enfocan en hablar el idioma de la tecnología. Ofrecen sistemas técnicamente correctos, pero se concentran en el \"qué\" funciona, olvidando el \"cómo\" se siente al usarlo.",
-            "Nosotros elegimos un camino diferente."
+            "En la mitología griega, Hermes servía como mensajero entre los dioses y los mortales. No solo entregaba mensajes; los traducía. Sin él, Zeus habría seguido gritando en griego antiguo mientras los humanos asentían sin entender nada. Como en una reunión de TI promedio.",
+            "El panorama tecnológico actual padece la misma división. De un lado: servidores, protocolos y siglas. Del otro: personas intentando trabajar.",
+            "La mayoría de las empresas de TI solo hablan el primer idioma.",
+            "Nosotros hablamos ambos."
           ]
         },
         translationImperative: {
-          title: 'El imperativo de la traducción',
-          paragraphs: [
-            "Después de 13 años construyendo sistemas, hemos aprendido que la mejor infraestructura es invisible. No se anuncia con complejidad ni exige atención a través de sus fallas. Simplemente funciona.",
-            "Esa invisibilidad no es accidental. Es el resultado de un esfuerzo continuo entre lo que la tecnología puede hacer y lo que las empresas realmente necesitan.",
-            "Pensemos en un editor que necesita compartir archivos de Premiere. Esta persona no tiene interés en las configuraciones RAID o qué sucede por detrás. Le importa abrir archivos rápidamente y cumplir con los plazos que tiene.",
-            "O el laboratorio médico que debe mantener un funcionamiento constante. Necesita una infraestructura que nunca falle cuando hay estudios que deben ser entregados.",
-            "Traducir significa entender ambos lenguajes con fluidez —el de la tecnología y el de la necesidad— para luego construir puentes entre ellos."
-          ]
+          title: '',
+          paragraphs: []
         },
         philosophy: {
-          title: 'Nuestra filosofía de traducción',
-          intro: 'Practicamos la traducción en todos los niveles:',
-          items: [
-            {
-              title: 'De lo técnico a lo práctico',
-              description: 'Transformamos "una red de 10Gb con bonding" en "los archivos abren más rápido".'
-            },
-            {
-              title: 'De lo complejo a lo simple',
-              description: 'Convertimos diagramas de red en beneficios claros: "A partir de hoy pueden trabajar desde sus casas con la misma capa de seguridad que localmente."'
-            },
-            {
-              title: 'Del problema a la solución',
-              description: 'Traducimos "Una máquina sigue fallando" en "así es como nos aseguramos de que eso no vuelva a pasar".'
-            },
-            {
-              title: 'Del presente al futuro',
-              description: 'Interpretamos las limitaciones actuales como las capacidades del mañana, construyendo sistemas que crecen con la empresa.'
-            }
-          ]
+          title: '',
+          intro: '',
+          items: []
         },
         methodEmerges: {
-          title: 'El genesis de cómo trabajamos',
-          intro: "Nuestro método no se trata de seguir tendencias o simplemente implementar las últimas herramientas. Se trata de entender lo que realmente importa, tal como un slogán politico: la gente, su trabajo, su crecimiento.",
-          listIntro: 'Este método surgió de:',
-          items: [
-            {
-              title: 'Más de 50 implementaciones exitosas',
-              description: 'Cada una nos enseñó algo nuevo.'
-            },
-            {
-              title: 'Escuchar.',
-              description: 'Antes de hablar de tecnología, pensamos a su lado.'
-            },
-            {
-              title: 'La convicción de que un equipo selecto y firme construyen mejor',
-              description: 'Menos traductores significan una comunicación más clara.'
-            },
-            {
-              title: 'La intersección del arte y la ingeniería',
-              description: 'Porque los mejores sistemas equilibran prolijidad y funcionalidad.'
-            }
-          ]
+          title: 'El Génesis del Método',
+          intro: "Nuestro método no sigue tendencias. Las tendencias pasan; los problemas reales permanecen.",
+          listIntro: 'Lo que hacemos surgió de 50 implementaciones, incontables horas de escucha, y una convicción: los equipos pequeños construyen mejor. Menos gente, menos reuniones para coordinar reuniones, mejores resultados.',
+          items: []
         },
         whatThisMeans: {
           title: 'Lo Que Esto Significa para Usted',
@@ -193,15 +153,10 @@ export function MethodIntroduction() {
           ]
         },
         journeyAhead: {
-          title: 'El camino por delante',
-          intro: "En los próximos capítulos, exploraremos cómo esta filosofía de traducción da forma a todo lo que hacemos:",
-          items: [
-            'Nuestros Principios, que aseguran que nunca perdamos el foco.',
-            'Nuestro Enfoque de Implementación, que construye sin romper lo que ya funciona.',
-            'Nuestras Prácticas, que mantienen la excelencia día tras día.',
-            'Nuestra Filosofía, que conecta el arte con la infraestructura moderna.'
-          ],
-          conclusion: 'Cada elemento refleja nuestra convicción central: la tecnología debe adaptarse a las personas, y no al revés.'
+          title: 'Continuar Leyendo',
+          intro: "Lo que sigue son los detalles: principios, implementación, prácticas, filosofía. Si llegó hasta aquí, vale la pena continuar.",
+          items: [],
+          conclusion: ''
         }
       },
       navigation: {
@@ -364,76 +319,81 @@ export function MethodIntroduction() {
           ))}
         </section>
 
-        <div style={dividerStyle} />
+        {/* The Translation Imperative Section - Only show if has content */}
+        {t.sections.translationImperative.title && (
+          <>
+            <div style={dividerStyle} />
+            <section style={{ marginBottom: '48px' }}>
+              <h2 style={{
+                fontSize: '1.5rem',
+                fontWeight: '400',
+                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+                color: 'var(--foreground)',
+                marginBottom: '24px',
+                borderBottom: '1px solid var(--border)',
+                paddingBottom: '8px'
+              }}>
+                {t.sections.translationImperative.title}
+              </h2>
 
-        {/* The Translation Imperative Section */}
-        <section style={{ marginBottom: '48px' }}>
-          <h2 style={{ 
-            fontSize: '1.5rem', 
-            fontWeight: '400',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--foreground)', 
-            marginBottom: '24px',
-            borderBottom: '1px solid var(--border)',
-            paddingBottom: '8px'
-          }}>
-            {t.sections.translationImperative.title}
-          </h2>
-
-          {t.sections.translationImperative.paragraphs.map((paragraph, index) => (
-            <p key={index} style={paragraphStyle}>
-              {index === t.sections.translationImperative.paragraphs.length - 1 ? (
-                <span dangerouslySetInnerHTML={{ __html: paragraph.replace('Translation means understanding both languages fluently', '<strong>Translation means understanding both languages fluently</strong>').replace('Traducir significa entender ambos lenguajes con fluidez', '<strong>Traducir significa entender ambos lenguajes con fluidez</strong>') }} />
-              ) : (
-                paragraph
-              )}
-            </p>
-          ))}
-        </section>
-
-        <div style={dividerStyle} />
-
-        {/* Our Translation Philosophy Section */}
-        <section style={{ marginBottom: '48px' }}>
-          <h2 style={{ 
-            fontSize: '1.5rem', 
-            fontWeight: '400',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--foreground)', 
-            marginBottom: '24px',
-            borderBottom: '1px solid var(--border)',
-            paddingBottom: '8px'
-          }}>
-            {t.sections.philosophy.title}
-          </h2>
-
-          <p style={paragraphStyle}>
-            {t.sections.philosophy.intro}
-          </p>
-
-          <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
-            {t.sections.philosophy.items.map((item, index) => (
-              <div key={index} style={{ marginBottom: '16px' }}>
-                <h3 style={{ ...paragraphStyle, fontWeight: '500', color: 'rgb(215, 216, 217)', marginBottom: '8px' }}>
-                  {item.title}
-                </h3>
-                <p style={paragraphStyle}>
-                  {item.description}
+              {t.sections.translationImperative.paragraphs.map((paragraph, index) => (
+                <p key={index} style={paragraphStyle}>
+                  {index === t.sections.translationImperative.paragraphs.length - 1 ? (
+                    <span dangerouslySetInnerHTML={{ __html: paragraph.replace('Translation means understanding both languages fluently', '<strong>Translation means understanding both languages fluently</strong>').replace('Traducir significa entender ambos lenguajes con fluidez', '<strong>Traducir significa entender ambos lenguajes con fluidez</strong>') }} />
+                  ) : (
+                    paragraph
+                  )}
                 </p>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </section>
+          </>
+        )}
 
-        <div style={dividerStyle} />
+        {/* Our Translation Philosophy Section - Only show if has content */}
+        {t.sections.philosophy.title && (
+          <>
+            <div style={dividerStyle} />
+            <section style={{ marginBottom: '48px' }}>
+              <h2 style={{
+                fontSize: '1.5rem',
+                fontWeight: '400',
+                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+                color: 'var(--foreground)',
+                marginBottom: '24px',
+                borderBottom: '1px solid var(--border)',
+                paddingBottom: '8px'
+              }}>
+                {t.sections.philosophy.title}
+              </h2>
+
+              <p style={paragraphStyle}>
+                {t.sections.philosophy.intro}
+              </p>
+
+              <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
+                {t.sections.philosophy.items.map((item, index) => (
+                  <div key={index} style={{ marginBottom: '16px' }}>
+                    <h3 style={{ ...paragraphStyle, fontWeight: '500', color: 'rgb(215, 216, 217)', marginBottom: '8px' }}>
+                      {item.title}
+                    </h3>
+                    <p style={paragraphStyle}>
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
 
         {/* The Method Emerges Section */}
+        <div style={dividerStyle} />
         <section style={{ marginBottom: '48px' }}>
-          <h2 style={{ 
-            fontSize: '1.5rem', 
+          <h2 style={{
+            fontSize: '1.5rem',
             fontWeight: '400',
             fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--foreground)', 
+            color: 'var(--foreground)',
             marginBottom: '24px',
             borderBottom: '1px solid var(--border)',
             paddingBottom: '8px'
@@ -449,16 +409,18 @@ export function MethodIntroduction() {
             {t.sections.methodEmerges.listIntro}
           </p>
 
-          <ul style={listStyle}>
-            {t.sections.methodEmerges.items.map((item, index) => (
-              <li key={index} style={{ marginBottom: '12px' }}>
-                <strong>{item.title}</strong><br />
-                <span style={{ color: 'var(--content-secondary-p3)', fontSize: '0.9rem' }}>
-                  {item.description}
-                </span>
-              </li>
-            ))}
-          </ul>
+          {t.sections.methodEmerges.items.length > 0 && (
+            <ul style={listStyle}>
+              {t.sections.methodEmerges.items.map((item, index) => (
+                <li key={index} style={{ marginBottom: '12px' }}>
+                  <strong>{item.title}</strong><br />
+                  <span style={{ color: 'var(--content-secondary-p3)', fontSize: '0.9rem' }}>
+                    {item.description}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
 
         <div style={dividerStyle} />
@@ -492,11 +454,11 @@ export function MethodIntroduction() {
 
         {/* The Journey Ahead Section */}
         <section style={{ marginBottom: '48px' }}>
-          <h2 style={{ 
-            fontSize: '1.5rem', 
+          <h2 style={{
+            fontSize: '1.5rem',
             fontWeight: '400',
             fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--foreground)', 
+            color: 'var(--foreground)',
             marginBottom: '24px',
             borderBottom: '1px solid var(--border)',
             paddingBottom: '8px'
@@ -508,8 +470,8 @@ export function MethodIntroduction() {
             {t.sections.journeyAhead.intro}
           </p>
 
-          {t.sections.journeyAhead.items.map((item, index) => (
-            <p key={index} style={paragraphStyle} dangerouslySetInnerHTML={{ 
+          {t.sections.journeyAhead.items.length > 0 && t.sections.journeyAhead.items.map((item, index) => (
+            <p key={index} style={paragraphStyle} dangerouslySetInnerHTML={{
               __html: item.replace(/Principles|Principios/g, '<strong>$&</strong>')
                          .replace(/Implementation|Enfoque de Implementación/g, '<strong>$&</strong>')
                          .replace(/Practices|Prácticas/g, '<strong>$&</strong>')
@@ -517,12 +479,14 @@ export function MethodIntroduction() {
             }} />
           ))}
 
-          <p style={paragraphStyle} dangerouslySetInnerHTML={{ 
-            __html: t.sections.journeyAhead.conclusion.replace(
-              /technology should adapt to people, not the other way around|la tecnología debe adaptarse a las personas, y no al revés/g, 
-              '<strong>$&</strong>'
-            )
-          }} />
+          {t.sections.journeyAhead.conclusion && (
+            <p style={paragraphStyle} dangerouslySetInnerHTML={{
+              __html: t.sections.journeyAhead.conclusion.replace(
+                /technology should adapt to people, not the other way around|la tecnología debe adaptarse a las personas, y no al revés/g,
+                '<strong>$&</strong>'
+              )
+            }} />
+          )}
         </section>
 
         <div style={dividerStyle} />

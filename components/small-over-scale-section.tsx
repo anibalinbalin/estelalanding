@@ -27,13 +27,13 @@ export const SmallOverScaleSection = () => {
       contactButton: "Meet Our Team"
     },
     es: {
-      coDesignTitle: "Estudiamos el arte del renacimiento porque el diseño de sistemas requiere visión integral",
+      coDesignTitle: "Estudiamos el Renacimiento —y no por el crédito académico",
       coDesignFeatures: [
-        "Leemos filosofía porque la tecnología requiere contexto humano.",
+        "Leemos filosofía porque un sistema sin contexto humano es una máquina con pretensiones.",
         "Porque hemos aprendido: la magia sucede en este tamaño. Tu proyecto no se transfiere.",
         "Tu relación no se 'gestiona.' Nos tienes a nosotros. A todos nosotros. Siempre."
       ],
-      tryButton: "Lee el Método Estela completo",
+      tryButton: "El método",
       contactButton: "Conocé a nuestro equipo"
     }
   };

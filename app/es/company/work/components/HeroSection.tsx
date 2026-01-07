@@ -7,7 +7,7 @@ export const HeroSection = () => {
         <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal col-span-12 min-[600px]:col-span-11">
           <span className="text-[var(--content-tertiary-p3)]">
             Nuestro trabajo habla por nosotros.
-          </span> Cada proyecto es una prueba de nuestro método: transformar desafíos complejos en resultados claros.
+          </span> Aunque a veces también hablamos nosotros. Aquí, algunos ejemplos.
         </h2>
       </div>
     </div>

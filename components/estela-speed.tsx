@@ -20,8 +20,8 @@ export function EstelaSpeed() {
       description: "We could work faster. We choose to work better. Every cable is labeled. Every setting documented. Every solution built to outlast us.\n\nSome call it obsessive. Our clients call it essential."
     },
     es: {
-      title: "Profundidad, No Velocidad",
-      description: "La velocidad es fácil. Nosotros preferimos ser efectivos y certeros. Cada instalación cuenta su propia historia. Cada sistema se explica solo. Nuestro trabajo habla por nosotros, incluso en nuestra ausencia."
+      title: "Profundidad, no velocidad",
+      description: "La velocidad impresiona. La profundidad perdura. Cada sistema se explica solo. Nuestro trabajo sigue funcionando cuando ya nadie recuerda quién lo hizo."
     }
   };
 

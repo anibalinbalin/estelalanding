@@ -102,7 +102,7 @@ export function MethodPhilosophyEs() {
 
         {/* Chapter Content Lead */}
         <p style={leadStyle}>
-          Nuestros ideales de fondo que da forma a todo lo que construimos.
+          La idea detrás de todo lo anterior.
         </p>
 
         {/* Hexagonal Sliding Bars Animation */}
@@ -128,137 +128,22 @@ export function MethodPhilosophyEs() {
 
         <div style={dividerStyle} />
 
-        {/* 5.1 El Principio del Hexágono */}
+        {/* 5.1 Arte y tecnología */}
         <section style={{ marginBottom: '48px' }}>
-          <h2 style={{ 
-            fontSize: '1.5rem', 
+          <h2 style={{
+            fontSize: '1.5rem',
             fontWeight: '400',
             fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--foreground)', 
+            color: 'var(--foreground)',
             marginBottom: '24px',
             borderBottom: '1px solid var(--border)',
             paddingBottom: '8px'
           }}>
-            5.1 El Hexágono
+            5.1 Arte y tecnología
           </h2>
-          
-          <p style={paragraphStyle}>
-            Somos 6 integrantes. El hexágono tiene 6 lados. ¿Casualidad? Seguramente. Es una metáfora muy buena como para no destacarla.
-          </p>
-          
-          <p style={paragraphStyle}>
-            Si lo pensamos, la naturaleza optimiza para la eficiencia, y su forma predilecta para la resistencia y la solidez es el hexágono. Algunas veces es el triángulo. Pero aquí es el hexágono. Es la estructura que ofrece máxima solidez utilizando la menor cantidad de recursos posible.
-          </p>
 
           <p style={paragraphStyle}>
-            Nosotros aplicamos esa misma lógica: un equipo sólido, sin partes de más, donde cada miembro está interconectado y sostiene al resto.
-          </p>
-          
-          <p style={paragraphStyle}>
-            El hexágono nos enseña una lección importante del diseño: la fortaleza no viene de la rigidez, sino de las conexiones entre sí.
-          </p>
-
-          <p style={paragraphStyle}>
-            Cada elemento que construimos sostiene a sus vecinos. Si uno no está disponible, los demás compensan. Si uno se agrega, el conjunto recupera su solidez anterior.
-          </p>
-
-          <p style={paragraphStyle}>
-            Porque la buena tecnología, como un buen equipo, se define por la solidez de sus vínculos.
-          </p>
-        </section>
-
-        <div style={dividerStyle} />
-
-        {/* 5.2 Aprendiendo de la Historia */}
-        <section style={{ marginBottom: '48px' }}>
-          <h2 style={{ 
-            fontSize: '1.5rem', 
-            fontWeight: '400',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--foreground)', 
-            marginBottom: '24px',
-            borderBottom: '1px solid var(--border)',
-            paddingBottom: '8px'
-          }}>
-            5.2 Aprendiendo de la historia
-          </h2>
-          
-          <p style={paragraphStyle}>
-            Grace Hopper simplificó la computación para todos. Euclides construyó grandes verdades a partir de axiomas fundamentales. 
-            Nosotros aplicamos principios atemporales a problemas modernos. ¿Estamos en la misma jerarquía que Grace Hopper o Euclides? No. Pero tomamos lo mejor de ambos.
-          </p>
-          
-          <p style={paragraphStyle}>
-            La tecnología cambia y evoluciona dia a dia, pero no así nosotros. Los desafíos que enfrentamos hoy —complejidad, escala, integración— no son nuevos. 
-            Son problemas desde siempre.
-          </p>
-          
-          <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
-            <div style={{ marginBottom: '16px' }}>
-              <h3 style={{ ...paragraphStyle, fontWeight: '500', color: 'var(--foreground)', marginBottom: '8px' }}>
-                De Grace Hopper
-              </h3>
-              <p style={{ ...paragraphStyle, fontStyle: 'italic' }}>
-                &quot;La frase más peligrosa del idioma es &apos;siempre lo hicimos así&apos;.&quot;
-              </p>
-              <p style={paragraphStyle}>
-                Ella inventó el compiler porque estaba cansada de escribir el mismo código todo el tiempo. 
-                Nosotros automatizamos no porque AI esta de moda, sino porque la repetición es una perdida de tiempo y es en definitiva el potencial que se puede aplicar a otro trabajo.
-              </p>
-            </div>
-
-            <div style={{ marginBottom: '16px' }}>
-              <h3 style={{ ...paragraphStyle, fontWeight: '500', color: 'var(--foreground)', marginBottom: '8px' }}>
-                De Euclides
-              </h3>
-              <p style={paragraphStyle}>
-                Él demostró cómo vastas verdades geométricas podían construirse a partir de unos pocos axiomas fundamentales y la deducción lógica. 
-                Creemos que la tecnología duradera se construye de manera similar: sobre principios sólidos y un diseño claro y racional, 
-                creando sistemas que son complejos y a la vez comprensibles.
-              </p>
-            </div>
-
-            <div style={{ marginBottom: '16px' }}>
-              <h3 style={{ ...paragraphStyle, fontWeight: '500', color: 'var(--foreground)', marginBottom: '8px' }}>
-                Del Movimiento Bauhaus
-              </h3>
-              <p style={paragraphStyle}>
-                Buscaron una unidad radical entre arte, artesanía y tecnología, creyendo que incluso los objetos cotidianos debían ser diseñados 
-                con integridad funcional y claridad visual. Vemos nuestros sistemas a través de un lente similar, donde el diseño elegante 
-                sirve a un propósito práctico, y la función posee su propia belleza inherente.
-              </p>
-            </div>
-          </div>
-          
-          <p style={paragraphStyle}>
-            Las innovaciones siempre surgieron de la conexión de ideas que parecían no tener relación.
-          </p>
-        </section>
-
-        <div style={dividerStyle} />
-
-        {/* 5.3 La Conexión con el Arte */}
-        <section style={{ marginBottom: '48px' }}>
-          <h2 style={{ 
-            fontSize: '1.5rem', 
-            fontWeight: '400',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--foreground)', 
-            marginBottom: '24px',
-            borderBottom: '1px solid var(--border)',
-            paddingBottom: '8px'
-          }}>
-            5.3 La conexión con el arte
-          </h2>
-          
-          <p style={paragraphStyle}>
-            ¿Por qué nos gustan las obras clásicas del Renacimiento? Porque el diseño de sistemas es composición. Equilibrio. 
-            Es ver el todo mientras se afinan detalles.
-          </p>
-          
-          <p style={paragraphStyle}>
-            La mayoría ve el arte y la tecnología como opuestos. Nosotros los vemos como variaciones de un mismo tema: crear orden, 
-            encontrar patrones en la complejidad, comunicar ideas que trascienden.
+            La mayoría los ve como opuestos. Nosotros los vemos como variaciones de un mismo tema: crear orden a partir de la complejidad.
           </p>
         </section>
 

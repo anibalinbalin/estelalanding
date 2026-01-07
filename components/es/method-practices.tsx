@@ -11,90 +11,34 @@ export function MethodPractices() {
   const practices = [
     {
       number: '4.1',
-      title: 'La regla de las 24 horas',
-      intro: 'Nuestro compromiso de respuesta rápida',
-      description: [
-        'Esta regla surgió de una observación simple: la mayoría de los problemas de TI se agravan con el tiempo. Un problema que parece a todas luces simple se convierte con el tiempo en problemas mas complejos.'
-      ],
-      subsection: {
-        title: 'Cómo funciona:',
-        items: [
-          'Todos los incidentes se abordan al momento.',
-          'Comunicación durante todo el proceso.',
-          'Revisión posterior al incidente para la prevención.'
-        ]
-      },
-      conclusion: [
-        'Los problemas exigen atención. Nuestro compromiso es una respuesta rápida y personal, generalmente al momento y no en días. El vinculo del cliente es siempre con alguien directo de Estela que conoce además la empresa.'
-      ]
+      title: 'Respuesta directa',
+      intro: 'El mismo equipo que diseñó su infraestructura es el que responde cuando algo falla.',
+      description: [],
+      subsection: null,
+      conclusion: []
     },
     {
       number: '4.2',
-      title: 'Documentación',
-      intro: 'Creemos que la documentación debe informar. La nuestra está diseñada para ser clara y de uso inmediato: es visual, práctica y siempre accesible.',
-      description: [
-        'La documentación tecnica es inexorablemente árida porque está escrita para lectores del mismo sector. Para alguien ajeno a este grupo es una lectura dificil.'
-      ],
-      subsection: {
-        title: 'Nuestra manera:',
-        items: [
-          'Diagramas visuales que muestran, no solo describen.',
-          'Guías de referencia rápida para tareas diarias.',
-          'Actualizaciones periódicas basadas en preguntas reales.'
-        ]
-      },
-      conclusion: [
-        'Cada documento responde a tres preguntas: 1. ¿Qué hace esto? 2. ¿Cómo lo uso? 3. ¿Qué hago si algo no funciona?.',
-        'Hemos aprendido que la mejor documentación no es la más completa, sino la más comprensible. No se trata de cubrir cada caso extremo; se trata de asegurar que la empresa pueda manejar los casos que realmente ocurren.',
-        'La documentación debe empoderar a los usuarios, no abrumar.'
-      ]
+      title: 'Documentación útil',
+      intro: 'Cada documento responde tres preguntas: ¿Qué hace? ¿Cómo lo uso? ¿Qué hago si falla?',
+      description: [],
+      subsection: null,
+      conclusion: []
     },
     {
       number: '4.3',
-      title: 'Revisiones',
-      intro: 'Revisiones cortas y periodicas mantienen la infraestructura en buen estado. Treinta minutos pueden prevenir muchas horas de problemas.',
-      description: [
-        'La mayoría de los eventos de TI dan señales sutiles antes de volverse un problema mas grave.'
-      ],
-      subsection: {
-        title: 'Nuestra rutina semanal:',
-        items: [
-          'Informes automatizados.',
-          'Recomendaciones proactivas de optimización.',
-          'Planificación de capacidad.',
-          'Planes de acción claros con prioridades.'
-        ]
-      },
-      conclusion: [
-        'No se trata de crear reuniones ni de generar informes. Se trata de mantener un ritmo de atención que evita que los problemas se magnifiquen.'
-      ]
+      title: 'Chequeos regulares',
+      intro: 'Revisiones cortas, periódicas.',
+      description: [],
+      subsection: null,
+      conclusion: []
     },
     {
       number: '4.4',
-      title: 'Relaciones con proveedores',
-      intro: 'Mantenemos relaciones directas con Lenovo, UniFi, Synology, SentinelOne, y Wasabi.',
-      description: [
-        'El modelo tradicional de proveedores crea un triángulo de frustración: Cliente -> empresa de TI -> contactan al proveedor -> proveedor indica el problema es el cliente. Este es un proceso de dias o semanas.'
-      ],
-      subsection: {
-        title: 'Cómo resolvemos nosotros:',
-        items: [
-          'Contactos designados en cada empresa.',
-          'Vías de escalamiento directo para problemas.',
-          'Los responsables de las garantias los provee primero Estela.'
-        ]
-      },
-      conclusion: [
-        'Cuando surge un problema específico de un proveedor la primera linea de respuesta es Estela. Nuestro objetivo es siempre protegerlo de la complejidad y agilizar las soluciones.'
-      ]
-    },
-    {
-      number: '4.5',
-      title: 'Transferencia de conocimiento',
-      intro: 'Nuestro objetivo es desarrollar la capacidad de su equipo, no crear dependencia.',
-      description: [
-        'Creemos que las empresas deben entender que hay detrás de su infraestrcutura: cuanto más capaz se vuelve su equipo, más sólida es nuestra alianza.'
-      ],
+      title: 'Proveedores',
+      intro: 'Mantenemos relaciones directas con Lenovo, UniFi, Synology, SentinelOne y Wasabi. Cuando hay un problema, lo resolvemos nosotros primero.',
+      description: [],
+      subsection: null,
       conclusion: []
     }
   ]
@@ -164,7 +108,7 @@ export function MethodPractices() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '48px'
           }}>
-            Nuestros métodos probados y una ejecución consistente.
+            Cómo se ve el trabajo diario.
           </p>
 
           {/* Custom Vertical Bars Noise Effect */}
@@ -219,7 +163,7 @@ export function MethodPractices() {
                 {practice.intro}
               </p>
               
-              {practice.description.map((paragraph, i) => (
+              {practice.description.length > 0 && practice.description.map((paragraph, i) => (
                 <p key={`desc-${i}`} style={{
                   fontSize: '17px',
                   fontWeight: '400',
@@ -234,54 +178,6 @@ export function MethodPractices() {
               ))}
             </div>
             
-            {practice.subsection && (
-              <div style={{ marginBottom: '24px' }}>
-                <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
-                  <div style={{ marginBottom: '16px' }}>
-                    <h3 style={{
-                      fontSize: '17px',
-                      fontWeight: '500',
-                      color: 'var(--foreground)',
-                      marginBottom: '8px',
-                      fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif'
-                    }}>
-                      {practice.subsection.title}
-                    </h3>
-                    <ul style={{
-                      fontSize: '17px',
-                      fontWeight: '400',
-                      lineHeight: '27.2px',
-                      letterSpacing: 'normal',
-                      fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                      color: 'var(--content-secondary-p3)',
-                      marginLeft: '16px',
-                      listStyle: 'none',
-                      padding: '0'
-                    }}>
-                      {practice.subsection.items.map((item, i) => (
-                        <li key={`item-${i}`} style={{ marginBottom: '8px' }}>• {item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            )}
-            
-            <div style={{ marginBottom: '24px' }}>
-              {practice.conclusion.map((paragraph, i) => (
-                <p key={`conclusion-${i}`} style={{
-                  fontSize: '17px',
-                  fontWeight: '400',
-                  lineHeight: '27.2px',
-                  letterSpacing: 'normal',
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  color: 'var(--content-secondary-p3)',
-                  marginBottom: '24px'
-                }}>
-                  {paragraph}
-                </p>
-              ))}
-            </div>
             
             {index < practices.length - 1 && (
               <div style={{

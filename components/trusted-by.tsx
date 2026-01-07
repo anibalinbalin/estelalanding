@@ -18,7 +18,7 @@ export const TrustedBy = () => {
       title: "Trusted by market leaders"
     },
     es: {
-      title: "Guiando a los referentes en su área"
+      title: "Trabajamos con los referentes"
     }
   };
 

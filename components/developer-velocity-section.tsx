@@ -66,12 +66,12 @@ export const DeveloperVelocitySection = () => {
       ]
     },
     es: {
-      title: "Soluciones Tecnológicas Completas",
-      subtitle: "Diseñamos, implementamos y mantenemos la infraestructura que hace avanzar a las empresas más modernas. Un socio estratégico. Compromiso absoluto.",
+      title: "Soluciones para problemas que aún no existen",
+      subtitle: "Anticipamos lo imprevisto —que, una vez previsto, deja de serlo. Diseñamos sistemas que perduran. Implementamos cambios que transforman. Mantenemos la calma cuando el servidor no la mantiene.",
       features: [
         {
           title: "Redes y Servidores",
-          subtitle: "Virtualización VMware, redes UniFi, almacenamiento Synology, cableado estructurado. Desde backbone de 10Gb hasta energía redundante, construimos fundamentos que no fallan.",
+          subtitle: "Virtualización VMware y Proxmox, redes UniFi, almacenamiento Synology, LANs de 10Gb, energía redundante.",
           image1: "/img/ascii-art.svg",
           image2: "/img/ascii-art.svg",
           image1Width: 620,

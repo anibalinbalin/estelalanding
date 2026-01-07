@@ -29,7 +29,7 @@ export function ServiceSpecificationsSection() {
               memory: '512GB - 2TB DDR5-4800 ECC',
               storageBays: '8x 2.5" NVMe U.2',
               network: '4x 25GbE + 2x 100GbE SFP28',
-              powerSupply: 'Redundant 1100W Platinum PSUs',
+              powerSupply: 'Redundant 1100W Platinum Supplies',
               formFactor: '2U Rack Mount'
             }
           },
@@ -225,15 +225,15 @@ export function ServiceSpecificationsSection() {
         compute: {
           title: 'Workstation',
           specs: {
-            title: 'Especificaciones',
+            title: 'Specifications',
             fields: {
-              processor: 'Procesador',
-              totalCores: 'Total de Núcleos',
-              memory: 'Memoria',
-              storageBays: 'Bahías de Almacenamiento',
-              network: 'Red',
-              powerSupply: 'Fuente de Alimentación',
-              formFactor: 'Factor de Forma'
+              processor: 'Processor',
+              totalCores: 'Total Cores',
+              memory: 'Memory',
+              storageBays: 'Storage Bays',
+              network: 'Network',
+              powerSupply: 'Power Supply',
+              formFactor: 'Form Factor'
             },
             values: {
               processor: '2x AMD EPYC 9354 (32 cores each)',
@@ -241,7 +241,7 @@ export function ServiceSpecificationsSection() {
               memory: '512GB - 2TB DDR5-4800 ECC',
               storageBays: '8x 2.5" NVMe U.2',
               network: '4x 25GbE + 2x 100GbE SFP28',
-              powerSupply: 'Redundant 1100W Platinum PSUs',
+              powerSupply: 'Redundant 1100W Platinum Supplies',
               formFactor: '2U Rack Mount'
             }
           },
@@ -989,7 +989,7 @@ export function ServiceSpecificationsSection() {
                         </h2>
                       </div>
                       <div className="flex flex-col gap-2 text-center">
-                        <a href="/contact" className="px-3 items-center text-[var(--content-secondary-p3)] [text-decoration:inherit] inline-flex h-8 justify-center rounded-[var(--border-radius)] align-top font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider uppercase [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] shadow-[var(--elevation-1)] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:rounded-[var(--border-radius)] after:border after:border-current after:opacity-100 after:text-[var(--stroke-secondary-p3)] hover:bg-[var(--surface-hover-p3)]">
+                        <a href={language === 'es' ? "/es/contacto" : "/contact"} className="px-3 items-center text-[var(--content-secondary-p3)] [text-decoration:inherit] inline-flex h-8 justify-center rounded-[var(--border-radius)] align-top font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider uppercase [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] shadow-[var(--elevation-1)] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:rounded-[var(--border-radius)] after:border after:border-current after:opacity-100 after:text-[var(--stroke-secondary-p3)] hover:bg-[var(--surface-hover-p3)]">
                           {t.cta.button}
                         </a>
                       </div>

@@ -27,8 +27,8 @@ function Hero() {
       contact: "Discover Our Approach"
     },
     es: {
-      title: "Cuando la tecnología\ny el conocimiento convergen",
-      subtitle: "Guiamos a las empresas en su evolución tecnológica con soluciones ancladas en la experiencia y orientadas a la innovación.",
+      title: "El camino más corto entre\nel problema y la solución",
+      subtitle: "Los griegos inventaron la lógica, la geometría y un dios para cada necesidad. Nosotros aplicamos las dos primeras para construir soluciones. Del tercero conservamos solo el mármol.",
       contact: "Nuestro Enfoque"
     }
   };

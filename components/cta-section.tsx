@@ -13,8 +13,8 @@ export const CTASection = () => {
       button: "Learn About Our Philosophy"
     },
     es: {
-      title: "Tamaño con propósito",
-      subtitle: "Somos un equipo sólido y compacto por decisión.",
+      title: "No crecemos —profundizamos",
+      subtitle: "Un equipo que responde, no una estructura que delega.",
       button: "Nuestra Filosofía"
     }
   };

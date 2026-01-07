@@ -60,42 +60,41 @@ export function MethodPrinciples() {
     },
     es: {
       title: 'Principios Fundamentales',
-      subtitle: 'Las convicciones fundamentales que guían cada decisión que tomamos.',
+      subtitle: 'Cinco ideas que suenan simples hasta que uno intenta aplicarlas.',
       principles: [
         {
           number: '2.1',
-          title: 'Un equipo constante',
+          title: 'Seis',
           content: [
-            'Estela se sostiene en un equipo de 6 personas. No porque más sería evitar crecer infraestructuralmente, sino porque no debemos. <a href="https://www.researchgate.net/publication/228838549_Empirical_Findings_on_Team_Size_and_Productivity_in_Software_Development" style="color: #ecbb5a">Estudios lo afirman</a>. La experiencia lo confirma.',
-            'Al trabajar con nosotros, se garantiza un conocimiento experto sin intermediarios y una comunicación clara y con propósito.'
+            '<a href="https://www.researchgate.net/publication/228838549_Empirical_Findings_on_Team_Size_and_Productivity_in_Software_Development" style="color: #ecbb5a">Los estudios dicen</a> que los equipos pequeños son más productivos. Nosotros lo confirmamos todos los días. No hay a quién pasarle el problema.'
           ]
         },
         {
           number: '2.2',
-          title: 'La tecnología al servicio de las personas',
+          title: 'Tecnología con propósito',
           content: [
-            'No implementamos tecnología por la tecnología en sí misma. Cada cable, cada configuración o línea de código debe tener como fin una función.'
+            'Cada decisión técnica responde a una pregunta: ¿esto le ahorra tiempo a alguien? Si la respuesta es "depende", también es no.'
           ]
         },
         {
           number: '2.3',
-          title: 'Construir para durar, diseñado para evolucionar',
+          title: 'Sin parches',
           content: [
-            'Construimos cimientos que pueden crecer con la empresa. No son medidas temporales ni son soluciones rápidas sino soluciones probadas que funcionan hoy.'
+            'No hay soluciones temporales que después se vuelven permanentes. Lo que construimos está pensado para durar y para cambiar con usted.'
           ]
         },
         {
           number: '2.4',
-          title: 'Transparencia',
+          title: 'Sin dependencias',
           content: [
-            'Evitamos siempre la dependencia de un proveedor. La tecnologia avanza y cada vez más rápido.'
+            'Evitamos crear dependencias artificiales. Si decide cambiar de proveedor, su infraestructura sigue funcionando.'
           ]
         },
         {
           number: '2.5',
-          title: 'La belleza de lo simple',
+          title: 'Nada que sobre',
           content: [
-            'Al igual que una obra con una composición notable, una buena implementación no tienen nada superfluo. En definitiva, la complejidad termina siendo enemiga de la confiabilidad.'
+            'Como en una buena composición, cada elemento tiene propósito. La complejidad es enemiga de la confiabilidad.'
           ]
         }
       ],

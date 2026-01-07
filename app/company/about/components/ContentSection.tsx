@@ -16,7 +16,7 @@ export const ContentSection = () => {
     es: {
       ourMission: 'Nuestra misión',
       missionQuote: '"La tecnología debe ser invisible cuando funciona y evidente cuando no."',
-      founded: 'Fundada en 2015, hemos dedicado casi una década a demostrar que la consultoría tecnológica no tiene por qué ser complicada, árida.',
+      founded: 'Casi una década probando algo que no debería requerir prueba: que resolver problemas tecnológicos no tiene por qué ser un problema en sí mismo.',
       broken: ''
     }
   }

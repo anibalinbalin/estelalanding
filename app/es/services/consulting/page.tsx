@@ -20,8 +20,8 @@ export default function ConsultingPage() {
                 <h1 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[600px]:text-4xl min-[1000px]:text-[3.125rem] font-normal min-[600px]:font-normal min-[1000px]:font-normal mb-12 min-[600px]:mb-10 min-[1000px]:mb-14 text-center min-[600px]:text-left font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[600px]:leading-[2.625rem] min-[1000px]:leading-[110%] tracking-wide min-[600px]:tracking-normal min-[1000px]:tracking-normal min-[800px]:pr-6">
                   Consultoría y soporte
                   <br />
-                  <span className="text-[20px] min-[600px]:text-[25px] min-[1000px]:text-[36px] leading-[30px] min-[600px]:leading-[32px] min-[1000px]:leading-[42px] font-normal" style={{color: 'color(display-p3 0.4941 0.5137 0.5216)', fontStyle: 'normal'}}>
-                    Su socio tecnológico, no un proveedor más.
+                  <span className="text-[20px] min-[600px]:text-[25px] min-[1000px]:text-[36px] leading-[30px] min-[600px]:leading-[32px] min-[1000px]:leading-[42px] font-normal" style={{color: 'color(display-p3 0.4941 0.5137 0.5216)', fontStyle: 'italic'}}>
+                    Del latín <em>consultare</em>, "deliberar juntos". No del latín <em>soportare</em>, "tolerar al cliente".
                   </span>
                 </h1>
               </div>
@@ -30,16 +30,16 @@ export default function ConsultingPage() {
               <div className="w-[100%] px-5 min-[600px]:px-10">
                 <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] items-center gap-6 min-[600px]:gap-6 min-[1000px]:gap-8 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))]">
                   <div className="col-span-12 min-[700px]:col-span-7 self-center">
-                    <h2 className="col-span-12 text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal mb-6 min-[800px]:mb-6">Transformamos la complejidad en una ventaja estratégica</h2>
+                    <h2 className="col-span-12 text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal mb-6 min-[800px]:mb-6">Transformamos la complejidad en ventaja estratégica. La simplicidad, en cambio, la dejamos simple.</h2>
                     <div className="mb-4 min-[700px]:mb-0 pr-6 min-[900px]:pr-0">
-                      <p className="m-0 mt-0 mb-4 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">Más allá de ofrecer soluciones técnicas, la consultoría de Estela se enfoca en convertirnos en su asesor estratégico de confianza. Profundizamos para entender los desafíos empresariales de fondo que la tecnología puede resolver, superando los síntomas para abordar las causas de raíz. Nuestro enfoque combina una sólida experiencia técnica con un profundo entendimiento de cómo la tecnología debe estar al servicio de los objetivos humanos y empresariales.</p>
-                      <p className="m-0 mt-[calc(1rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(1rem_*_var(--tw-space-y-reverse))] text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">Ya sea que deba tomar decisiones complejas de infraestructura, planificar el crecimiento futuro, buscar optimizar los sistemas existentes o requerir una evaluación objetiva de su panorama tecnológico, brindamos una perspectiva clara y accionable. No nos limitamos a ofrecer recomendaciones; nos asociamos con usted para desarrollar e implementar estrategias que sean robustas, sostenibles y alineadas con precisión a su visión. Nuestra consultoría se basa en los mismos principios que guían todo nuestro trabajo: transparencia, profundo conocimiento y un compromiso con soluciones que entreguen valor duradero.</p>
+                      <p className="m-0 mt-0 mb-4 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">No vendemos soluciones; las cultivamos. Empezamos por entender el problema real —ese que suele esconderse detrás del problema aparente—. Luego aplicamos experiencia técnica y sentido común, en ese orden. Porque la tecnología sin propósito es solo electricidad con pretensiones.</p>
+                      <p className="m-0 mt-[calc(1rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(1rem_*_var(--tw-space-y-reverse))] text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">Infraestructura, crecimiento, optimización, auditorías: hablamos de todo eso, pero sobre todo hablamos con usted. Nuestra consultoría no produce informes que nadie lee. Produce decisiones que alguien toma. Y ese alguien suele dormir mejor después.</p>
                     </div>
                   </div>
                   <div className="col-span-12 min-[700px]:col-start-[8] min-[900px]:col-start-[9] min-[700px]:col-span-5 min-[900px]:col-span-4 self-center rounded-[var(--border-radius-xl)] border bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-2)]">
                     <div className="border-b p-6 border-b-[var(--stroke-secondary-p3)]">
-                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-medium leading-6 text-base tracking-wide text-[var(--content-raise-p3)]">Consultas de Consultoría</div>
-                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] mb-3">Para una conversación confidencial sobre sus necesidades tecnológicas estratégicas:</div>
+                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-medium leading-6 text-base tracking-wide text-[var(--content-raise-p3)]">Conversemos</div>
+                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] mb-3">Para una conversación directa sobre sus desafíos tecnológicos:</div>
                       <a href="mailto:hola@este.la" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c]">
                         hola@este.la
                         <svg width="16" height="16" className="block align-middle text-[#f5b944]">
@@ -71,19 +71,19 @@ export default function ConsultingPage() {
                       </div>
                     </div>
                     <div className="p-6">
-                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-medium leading-6 text-base tracking-wide text-[var(--content-raise-p3)]">La Ventaja de trabajar con nosotros</div>
+                      <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-medium leading-6 text-base tracking-wide text-[var(--content-raise-p3)]">La ventaja de trabajar con nosotros</div>
                       <div className="mt-3 space-y-3">
                         <div className="text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide">
-                          • Asesoramiento constante.
+                          • Asesoría continua, no puntual.
                         </div>
                         <div className="text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide">
-                          • Soluciones alineadas con los objetivos.
+                          • Soluciones alineadas a sus objetivos.
                         </div>
                         <div className="text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide">
-                          • Acceso directo a nuestro equipo.
+                          • Acceso directo a quienes hacen el trabajo.
                         </div>
                         <div className="text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide">
-                          • Enfoque en el valor a largo plazo.
+                          • Foco en valor duradero.
                         </div>
                       </div>
                     </div>

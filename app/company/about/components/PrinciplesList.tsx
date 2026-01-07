@@ -27,19 +27,19 @@ const getMissionItems = (language: 'en' | 'es') => {
     es: [
       {
         title: "Qué hacemos",
-        description: "Diseñamos, implementamos y mantenemos soluciones tecnológicas que resuelven problemas empresariales reales. Infraestructura, seguridad, desarrollo a medida y consultoría estratégica."
+        description: "Diseñamos, construimos y mantenemos tecnología que funciona. Infraestructura, seguridad, desarrollo a medida. Sin adjetivos innecesarios."
       },
       {
         title: "En qué nos diferenciamos",
-        description: "Un solo equipo. Vinculos directos. Sin capas de gestionamiento. La persona que atiende el problema es la misma que lo resuelve."
+        description: "Sin ejecutivos de cuenta. Sin gestores intermedios. Relación directa entre su problema y quien lo resuelve."
       },
       {
         title: "Por qué existimos",
-        description: "Porque la consultoría tecnológica es sinónimo de complejidad y costos. Nosotros existimos para restaurar su verdadero significado: resolver problemas de forma simple y eficaz."
+        description: "La industria convirtió 'consultoría' en sinónimo de costos y complicaciones. Nosotros preferimos la definición original: ayudar a resolver problemas."
       },
       {
         title: "A quiénes servimos",
-        description: "A empresas que necesitan tecnología de nivel empresarial pero desean la agilidad de una startup."
+        description: "Empresas que valoran resultados sobre presentaciones, y soluciones sobre promesas."
       }
     ]
   };
@@ -70,19 +70,19 @@ const getPrincipleItems = (language: 'en' | 'es') => {
     es: [
       {
         title: "La tecnología al servicio de la empresa",
-        description: "Siempre comenzamos con los objetivos de la empresa y frente a cada decisión técnica debe estar alineada a los objetivos. La forma sigue a la función."
+        description: "Empezamos por sus objetivos, no por nuestras tecnologías favoritas. Cada decisión técnica debe justificarse en términos de negocio. La forma sigue a la función."
       },
       {
         title: "Excelencia sobre escala",
-        description: "Elegimos la calidad sobre la cantidad."
+        description: "Calidad sobre cantidad. Profundidad sobre amplitud. Menos clientes, mejor servicio."
       },
       {
         title: "Realidad sobre marketing",
-        description: "Prometemos lo que podemos cumplir. Creemos en ser directos, incluso cuando es difícil. La verdad es nuestra ventaja."
+        description: "Prometemos menos de lo que podemos. Entregamos más de lo que prometemos."
       },
       {
         title: "Largo plazo sobre soluciones temporales",
-        description: "Construimos soluciones que perduran. Arquitecturas sostenibles, código mantenible, conocimiento transferible. La solución de hoy no debe convertirse en el problema de mañana."
+        description: "Construimos para durar. La solución de hoy no debe convertirse en el problema de mañana."
       }
     ]
   };

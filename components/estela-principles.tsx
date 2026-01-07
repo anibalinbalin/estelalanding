@@ -40,15 +40,15 @@ export function EstelaPrinciples() {
       }
     },
     es: {
-      title: "En Estela, nuestros principios son lo que nos definen",
-      subtitle: "Son el eje de por qué hemos elegido la profundidad sobre la escala, por qué nuestros clientes permanecen con nosotros, y por qué seguimos personalmente comprometidos con cada proyecto.",
+      title: "Tenemos principios —y los aplicamos",
+      subtitle: "Suena obvio, pero en un mundo donde los valores corporativos se redactan en asados corporativos y se olvidan en el estacionamiento, mantener los propios es casi un acto de rebeldía. Elegimos profundidad. Elegimos permanencia. Elegimos consistencia.",
       principle1: {
-        title: "Una visión completa",
-        description: "Pensamos como parte de su equipo, no como externos. Diseñamos soluciones precisas, no paquetes predefinidos. La tranquilidad tecnológica es nuestra prioridad. Esta visión transforma cada proyecto."
+        title: "Externos que piensan como internos",
+        description: "Suena a contradicción. Lo es. Pero preferimos las contradicciones productivas a las coherencias estériles. Diseñamos como si fuera nuestro. Cuidamos como si viviéramos ahí. La tranquilidad tecnológica no se vende —se construye."
       },
       principle2: {
-        title: "Socios, No Clientes",
-        description: "Trabajamos con quienes valoran la excelencia tanto como nosotros. Las urgencias las atendemos por compromiso genuino, no por obligación contractual. Construimos alianzas, no carteras de clientes."
+        title: "No coleccionamos clientes",
+        description: "Construimos alianzas. La diferencia: a los clientes se los atiende; a los aliados se los cuida. Las urgencias no son oportunidades —son compromisos. Y los compromisos, aquí, se cumplen incluso cuando nadie está mirando."
       }
     }
   };

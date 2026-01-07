@@ -4,8 +4,6 @@ import React from 'react';
 import { Footer } from '@/components/footer';
 import { HeroSection } from './components/HeroSection';
 import { ContentSection } from './components/ContentSection';
-import { PrinciplesList } from './components/PrinciplesList';
-import { TeamSection } from './components/TeamSection';
 import { FinalSection } from './components/FinalSection';
 
 // Styles now handled by globals.css with CSS variables
@@ -14,19 +12,13 @@ const NewTeamPage = () => {
   return (
     <>
       <main className="mt-10 min-[1100px]:mt-24">
-        {/* Hero Section with main headline */}
+        {/* Hero */}
         <HeroSection />
-        
-        {/* Main Content Sections */}
+
+        {/* One-liner */}
         <ContentSection />
-        
-        {/* Team Section */}
-        <TeamSection />
-        
-        {/* Principles List */}
-        <PrinciplesList />
-        
-        {/* Final Section */}
+
+        {/* Team photos */}
         <FinalSection />
       </main>
       

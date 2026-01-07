@@ -30,7 +30,7 @@ const InfrastructurePage = () => {
         <section className="pt-12 sm:pt-0">
             <div className="w-[100%] px-5 min-[600px]:px-10">
                 <div className="m-auto max-w-[1200px]">
-                    <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[600px]:text-4xl min-[1000px]:text-[3.125rem] font-normal min-[600px]:font-normal min-[1000px]:font-normal mb-12 min-[600px]:mb-10 min-[1000px]:mb-14 text-center min-[600px]:text-left font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[600px]:leading-[2.625rem] min-[1000px]:leading-[110%] tracking-wide min-[600px]:tracking-normal min-[1000px]:tracking-normal min-[800px]:pr-6">Infraestructura y Redes<br /><span className="text-[var(--content-raise-p3)]">La base de todo lo digital.</span><br /><span className="text-[20px] min-[600px]:text-[25px] min-[1000px]:text-[36px] leading-[30px] min-[600px]:leading-[32px] min-[1000px]:leading-[42px] font-normal" style={{color: 'color(display-p3 0.4941 0.5137 0.5216)', fontStyle: 'normal'}}>Soluciones de red integrales con monitoreo proactivo y soporte continuo.</span></h2>
+                    <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[600px]:text-4xl min-[1000px]:text-[3.125rem] font-normal min-[600px]:font-normal min-[1000px]:font-normal mb-12 min-[600px]:mb-10 min-[1000px]:mb-14 text-center min-[600px]:text-left font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[600px]:leading-[2.625rem] min-[1000px]:leading-[110%] tracking-wide min-[600px]:tracking-normal min-[1000px]:tracking-normal min-[800px]:pr-6">Infra<br /><span className="text-[var(--content-raise-p3)]">La base de todo lo digital.</span><br /><span className="text-[20px] min-[600px]:text-[25px] min-[1000px]:text-[36px] leading-[30px] min-[600px]:leading-[32px] min-[1000px]:leading-[42px] font-normal" style={{color: 'color(display-p3 0.4941 0.5137 0.5216)', fontStyle: 'normal'}}>Todo lo que sostiene tu operación digital: redes, servidores, monitoreo activo.</span></h2>
                 </div>
             </div>
             <div className="relative border-t border-[var(--stroke-default-p3)] border-b min-[900px]:border-b-[0px]">
@@ -69,23 +69,23 @@ const InfrastructurePage = () => {
                                                 </svg></h3>
                                         </div>
                                         <div className="mt-3 min-[900px]:ml-[3.75rem]">
-                                            <div className="max-w-[36rem] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[600px]:font-normal leading-6 min-[600px]:leading-[1.625rem] text-base min-[600px]:text-lg tracking-wide min-[600px]:tracking-wide">Trabajamos con vm's que se pueden expandir en función de las necesidades.</div>
+                                            <div className="max-w-[36rem] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[600px]:font-normal leading-6 min-[600px]:leading-[1.625rem] text-base min-[600px]:text-lg tracking-wide min-[600px]:tracking-wide">VMs en VMware o Proxmox. Cloud u on-premise.</div>
                                             <div className="mt-8">
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#router-16"></use>
-                                                    </svg> Entornos VMware vSphere</div>
+                                                    </svg> VMware vSphere - Proxmox</div>
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#networking-16"></use>
-                                                    </svg> Despliegue en servidores bare metal</div>
+                                                    </svg> Servers en baremetal</div>
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#terminal-16"></use>
-                                                    </svg> Setups en cloud y on premise.</div>
+                                                    </svg> Setups en cloud y on premise</div>
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#action-16"></use>
-                                                    </svg> Balanceo de carga y redundancia</div>
+                                                    </svg> Load Balancing</div>
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="24" height="24" className="block align-middle h-4 w-4 text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#progress-24"></use>
-                                                    </svg> Monitoreo de rendimiento</div>
+                                                    </svg> Monitoreo de performance</div>
                                             </div>
                                         </div>
                                     </div>
@@ -130,14 +130,14 @@ const InfrastructurePage = () => {
                                                 </svg></h3>
                                         </div>
                                         <div className="mt-3 min-[900px]:ml-[3.75rem]">
-                                            <div className="max-w-[36rem] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[600px]:font-normal leading-6 min-[600px]:leading-[1.625rem] text-base min-[600px]:text-lg tracking-wide min-[600px]:tracking-wide">Setup y gestión de equipos UniFi, segmentación VLAN y seguridad, guest networks, conexiones VPN multi-site, optimización de ancho de banda.</div>
+                                            <div className="max-w-[36rem] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[600px]:font-normal leading-6 min-[600px]:leading-[1.625rem] text-base min-[600px]:text-lg tracking-wide min-[600px]:tracking-wide">Unifi networks.</div>
                                             <div className="mt-8">
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#resize-16"></use>
                                                     </svg> Escala de infraestructura bajo demanda</div>
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#snapshots-16"></use>
-                                                    </svg> Snapshots instantáneos e inmutables</div>
+                                                    </svg> Performance optimizations</div>
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="24" height="24" className="block align-middle h-4 w-4 text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#progress-24"></use>
                                                     </svg> Escalabilidad tanto por lan como wifi</div>
@@ -171,20 +171,20 @@ const InfrastructurePage = () => {
                                                 </svg></h3>
                                         </div>
                                         <div className="mt-3 min-[900px]:ml-[3.75rem]">
-                                            <div className="max-w-[36rem] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[600px]:font-normal leading-6 min-[600px]:leading-[1.625rem] text-base min-[600px]:text-lg tracking-wide min-[600px]:tracking-wide">Nos especializamos en infraestructura para post producción. Diseñamos workstations para cada función sea edición, renders, edición de audio.</div>
+                                            <div className="max-w-[36rem] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[600px]:font-normal leading-6 min-[600px]:leading-[1.625rem] text-base min-[600px]:text-lg tracking-wide min-[600px]:tracking-wide">Workstations para edición, render y audio. Storage para edición directa al mismo.</div>
                                             <div className="mt-8">
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#router-16"></use>
-                                                    </svg> Estaciones de trabajo de alto rendimiento a medida</div>
+                                                    </svg> High Performance workstations a medida</div>
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#firewall-16"></use>
-                                                    </svg> Soluciones de almacenamiento rápidas y escalables</div>
+                                                    </svg> Storage escalable</div>
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#gateway-16"></use>
-                                                    </svg> Redes optimizadas de alto ancho de banda</div>
+                                                    </svg> High Performance LANS de 10gb</div>
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#security-16"></use>
-                                                    </svg> Integración de flujo de trabajo y soporte de periféricos</div>
+                                                    </svg> Integración de pipelines</div>
                                             </div>
                                         </div>
                                     </div>
@@ -224,7 +224,7 @@ const InfrastructurePage = () => {
                                                 </svg></h3>
                                         </div>
                                         <div className="mt-3 min-[900px]:ml-[3.75rem]">
-                                            <div className="max-w-[36rem] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[600px]:font-normal leading-6 min-[600px]:leading-[1.625rem] text-base min-[600px]:text-lg tracking-wide min-[600px]:tracking-wide">Sistemas de cámaras PTZ de Unifi con analisis por IA. Ofrecen una cobertura de seguridad integral con paneo, tilt y zoom de 360°, resolución 4K Ultra HD y smart detection.</div>
+                                            <div className="max-w-[36rem] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[600px]:font-normal leading-6 min-[600px]:leading-[1.625rem] text-base min-[600px]:text-lg tracking-wide min-[600px]:tracking-wide">Cámaras PTZ UniFi, 4K, detección por IA, visión nocturna. Administrable vía Unifi Protect.</div>
                                             <div className="mt-8">
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#router-16"></use>
@@ -234,7 +234,7 @@ const InfrastructurePage = () => {
                                                     </svg> Resolución de video 4K Ultra HD</div>
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#cpu-16"></use>
-                                                    </svg> Detección de personas y vehículos por IA</div>
+                                                    </svg> Detección de personas y autos por IA</div>
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#firewall-16"></use>
                                                     </svg> Visión nocturna con iluminación IR</div>
@@ -264,7 +264,7 @@ const InfrastructurePage = () => {
                                                     <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>cam-estacionamiento</div>
                                                     <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}><span className="text-[#f5b944]">4K</span> / <span className="text-[#f5b944]">30FPS</span></div>
                                                     <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>G6-PTZ</div>
-                                                    <div className="px-3 py-3 flex flex-col sm:flex-row col-span-3 gap-1 sm:gap-2 text-[#f5b944]"><span className="px-[3px] items-center inline-flex h-4 whitespace-nowrap rounded-[var(--border-radius-sm)] uppercase font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] text-[#f5b943] bg-[#574829]"><span>GRABANDO</span></span> <span>Movimiento</span></div>
+                                                    <div className="px-3 py-3 flex flex-col sm:flex-row col-span-3 gap-1 sm:gap-2 text-[#f5b944]"><span className="px-[3px] items-center inline-flex h-4 whitespace-nowrap rounded-[var(--border-radius-sm)] uppercase font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] text-[#f5b943] bg-[#574829]"><span>GRABANDO</span></span> <span>Mov.</span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -285,7 +285,7 @@ const InfrastructurePage = () => {
                                                 </svg></h3>
                                         </div>
                                         <div className="mt-3 min-[900px]:ml-[3.75rem]">
-                                            <div className="max-w-[36rem] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[600px]:font-normal leading-6 min-[600px]:leading-[1.625rem] text-base min-[600px]:text-lg tracking-wide min-[600px]:tracking-wide">WiFi 7 de última generación que ofrece la mayor velocidad y latencia. Access Points con roaming sin interrupciones entre ellos, seguridad WPA3 y gestión centralizada en la nube.</div>
+                                            <div className="max-w-[36rem] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[600px]:font-normal leading-6 min-[600px]:leading-[1.625rem] text-base min-[600px]:text-lg tracking-wide min-[600px]:tracking-wide">WiFi 7, roaming 802.11r, WPA3 Enterprise, Administrable via UniFi Network.</div>
                                             <div className="mt-8">
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#router-16"></use>
@@ -295,7 +295,7 @@ const InfrastructurePage = () => {
                                                     </svg> Operación tri-banda de hasta 9.3 Gbps</div>
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#gateway-16"></use>
-                                                    </svg> Roaming sin interrupciones entre puntos de acceso</div>
+                                                    </svg> Mesh entre puntos de acceso</div>
                                                 <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
                                                         <use href="/assets/sprite-Dt029LRi.svg#security-16"></use>
                                                     </svg> Autenticación WPA3 Enterprise con RADIUS</div>
@@ -384,7 +384,7 @@ const InfrastructurePage = () => {
             <div className="relative flex items-center justify-between gap-4 border p-4 bg-[var(--surface-raise-p3)] border-[var(--stroke-secondary-p3)] shadow-[var(--elevation-2)] min-[600px]:px-10 py-6 min-[600px]:py-8 rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-lg)]">
               <div>
                 <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-lg min-[500px]:text-[1.5625rem] min-[900px]:text-4xl font-normal min-[500px]:font-normal min-[900px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[500px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.625rem] min-[500px]:leading-8 min-[900px]:leading-[2.625rem] tracking-wide min-[500px]:tracking-wide min-[900px]:tracking-normal">
-                  Infraestructura que crece con su empresa
+                  ¿Hablamos de infraestructura?
                 </h2>
               </div>
               <div className="flex flex-col gap-2 text-center">

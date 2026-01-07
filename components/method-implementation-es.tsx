@@ -12,49 +12,29 @@ export function MethodImplementationEs() {
     {
       number: '3.1',
       title: 'Comprensión',
-      intro: 'No comenzamos con las soluciones. Empezamos con las preguntas.',
-      content: [
-        'Acompañamos a su equipo durante una jornada.',
-        'Mapeamos sus flujos de trabajo reales (no los ideales).',
-        'Identificamos los puntos críticos y las oportunidades.',
-        'Documentamos todo el proceso.'
-      ],
+      intro: 'No empezamos con soluciones. Empezamos mirando cómo trabaja su equipo — el flujo real, no el ideal.',
+      content: [],
       time: 'Duración: 1-2 días'
     },
     {
       number: '3.2',
       title: 'Arquitectura',
-      intro: 'Diseñamos el sistema que se ajusta a la realidad.',
-      content: [
-        'Creamos planos detallados del sistema.',
-        'Planificamos para hoy y para el futuro.',
-        'Elegimos equipos y herramientas que se integran entre sí.',
-        'Diseñamos y migramos en función del nivel de conocimiento de la empresa.'
-      ],
+      intro: 'Diseñamos para que funcione hoy y siga funcionando cuando su empresa cambie. Sin improvisaciones.',
+      content: [],
       time: 'Duración: 1-2 semanas'
     },
     {
       number: '3.3',
-      title: 'Implementación',
-      intro: 'Avanzamos sin afectar lo que ya funciona.',
-      content: [
-        'Implementaciones por etapas.',
-        'Probamos con los usuarios.',
-        'Documentamos a medida que avanzamos.',
-        'Capacitamos sobre la marcha.'
-      ],
-      time: 'Duración: 2-8 semanas (según el alcance del proyecto)'
+      title: 'Ejecución',
+      intro: 'Etapas cortas, pruebas reales, capacitación sobre la marcha.',
+      content: [],
+      time: 'Duración: 2-8 semanas'
     },
     {
       number: '3.4',
-      title: 'Evolución',
-      intro: 'La tecnología nunca está "terminada".',
-      content: [
-        'Realizamos revisiones periódicas del sistema.',
-        'Introducimos mejoras proactivas.',
-        'Ofrecemos formación continua.',
-        'Crecemos junto a sus necesidades.'
-      ],
+      title: 'Mantenimiento',
+      intro: 'Revisiones, mejoras, soporte. Sin fecha de vencimiento.',
+      content: [],
       time: 'Duración: Continua'
     }
   ]
@@ -124,7 +104,7 @@ export function MethodImplementationEs() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '48px'
           }}>
-            Nuestra metodología para convertir problemas complejos en soluciones simples.
+            Cuatro fases. Sin sorpresas.
           </p>
 
           {/* Waves Effect */}
@@ -187,23 +167,25 @@ export function MethodImplementationEs() {
                 {phase.intro}
               </p>
               
-              <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
-                <ul style={{
-                  fontSize: '17px',
-                  fontWeight: '400',
-                  lineHeight: '27.2px',
-                  letterSpacing: 'normal',
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  color: 'var(--content-secondary-p3)',
-                  marginLeft: '16px',
-                  listStyle: 'none',
-                  padding: '0'
-                }}>
-                  {phase.content.map((item, i) => (
-                    <li key={`item-${i}`} style={{ marginBottom: '8px' }}>• {item}</li>
-                  ))}
-                </ul>
-              </div>
+              {phase.content.length > 0 && (
+                <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
+                  <ul style={{
+                    fontSize: '17px',
+                    fontWeight: '400',
+                    lineHeight: '27.2px',
+                    letterSpacing: 'normal',
+                    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+                    color: 'var(--content-secondary-p3)',
+                    marginLeft: '16px',
+                    listStyle: 'none',
+                    padding: '0'
+                  }}>
+                    {phase.content.map((item, i) => (
+                      <li key={`item-${i}`} style={{ marginBottom: '8px' }}>• {item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               
               <p style={{
                 fontSize: '0.875rem',
