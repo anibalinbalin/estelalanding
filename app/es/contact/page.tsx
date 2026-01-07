@@ -15,7 +15,7 @@ export default function ContactPage() {
               </div>
               <div className="mx-auto min-[600px]:mx-0 mb-8 mt-4 max-w-96 text-lg leading-relaxed tracking-wide text-muted-foreground">
                 <p className="m-0">
-                  Estamos para resolver dudas sobre su infraestructura tecnológica. Y para confirmar las certezas que ya tenía. Aquí están{' '}
+                  Resolvemos dudas tecnológicas. También confirmamos sospechas. Rara vez ambas cosas a la vez. Aquí están{' '}
                   <Link href="/es/company/work" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] hover:text-[#08178c]">
                     nuestros trabajos
                   </Link>{' '}
@@ -27,7 +27,7 @@ export default function ContactPage() {
                       <circle cx="6" cy="6" r="2" fill="currentColor" />
                     </svg>
                     <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
-                      Conocer más sobre nuestros servicios.
+                      Informarse sobre nuestros servicios. Bibliografía opcional.
                     </div>
                   </li>
                   <li className="flex items-baseline">
@@ -35,7 +35,7 @@ export default function ContactPage() {
                       <circle cx="6" cy="6" r="2" fill="currentColor" />
                     </svg>
                     <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
-                      Puede obtener una evaluación tecnológica personalizada.
+                      Obtener una evaluación tecnológica. Personalizada, no personal.
                     </div>
                   </li>
                   <li className="flex items-baseline">

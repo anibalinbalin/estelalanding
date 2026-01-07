@@ -9,8 +9,8 @@ const principleItems = [
         <use href="/assets/sprite-Dt029LRi.svg#security-24"></use>
       </svg>
     ),
-    title: "Un equipo dedicado",
-    description: "Somos intencionalmente un equipo de pocos miembros. Esto asegura que cada proyecto se beneficie de la participación directa y el enfoque profundo de nosotros."
+    title: "Boutique, no por pretensión",
+    description: "Somos pocos porque cada proyecto merece atención completa."
   },
   {
     icon: (
@@ -112,7 +112,7 @@ export const PrinciplesList = () => {
         <div className="col-span-12 min-[600px]:col-start-[2] min-[1000px]:col-start-[3] min-[600px]:col-span-10 min-[1000px]:col-span-8">
           <div>
             <h3 className="text-balance textWrapStyle-[balance] m-0 text-[#7d8384] dark:text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal mb-8">
-              Nuestro enfoque de trabajo en equipo y conocimiento
+              Filosofía operativa
             </h3>
             <p className="mb-8 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
               Nuestro equipo central —Peter, Aníbal, Alfonso, Nahuel, Pablo y D. Esteban— opera bajo los siguientes principios compartidos:
