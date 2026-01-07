@@ -51,8 +51,8 @@ importers:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.1.2(react@19.1.2))(react@19.1.2)
       next-view-transitions:
-        specifier: github:shuding/next-view-transitions
-        version: https://codeload.github.com/shuding/next-view-transitions/tar.gz/1d7af59d5fe3f0577bf56b9bc67b2d337f2ad309(next@15.3.6(react-dom@19.1.2(react@19.1.2))(react@19.1.2))(react-dom@19.1.2(react@19.1.2))(react@19.1.2)
+        specifier: ^0.3.5
+        version: 0.3.5(next@15.3.6(react-dom@19.1.2(react@19.1.2))(react@19.1.2))(react-dom@19.1.2(react@19.1.2))(react@19.1.2)
       postprocessing:
         specifier: ^6.37.3
         version: 6.37.3(three@0.177.0)
@@ -1893,9 +1893,8 @@ packages:
       react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
       react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
 
-  next-view-transitions@https://codeload.github.com/shuding/next-view-transitions/tar.gz/1d7af59d5fe3f0577bf56b9bc67b2d337f2ad309:
-    resolution: {tarball: https://codeload.github.com/shuding/next-view-transitions/tar.gz/1d7af59d5fe3f0577bf56b9bc67b2d337f2ad309}
-    version: 0.3.4
+  next-view-transitions@0.3.5:
+    resolution: {integrity: sha512-yP8OPNydLmKpmE94hLurLGEzPsUy1uyl9iSv8oxaC2JwhSXTD86SVwk1NMMQT7Ado4kMENDJ7fNBIXHy3GU/Lg==}
     peerDependencies:
       next: '>=14.0.0'
       react: '>=18.2.0 || ^19.0.0'
@@ -4233,7 +4232,7 @@ snapshots:
       react: 19.1.2
       react-dom: 19.1.2(react@19.1.2)
 
-  next-view-transitions@https://codeload.github.com/shuding/next-view-transitions/tar.gz/1d7af59d5fe3f0577bf56b9bc67b2d337f2ad309(next@15.3.6(react-dom@19.1.2(react@19.1.2))(react@19.1.2))(react-dom@19.1.2(react@19.1.2))(react@19.1.2):
+  next-view-transitions@0.3.5(next@15.3.6(react-dom@19.1.2(react@19.1.2))(react@19.1.2))(react-dom@19.1.2(react@19.1.2))(react@19.1.2):
     dependencies:
       next: 15.3.6(react-dom@19.1.2(react@19.1.2))(react@19.1.2)
       react: 19.1.2
