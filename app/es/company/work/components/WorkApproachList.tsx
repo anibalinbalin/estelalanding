@@ -19,8 +19,8 @@ const approachItems = [
         <use href="/assets/sprite-Dt029LRi.svg#servers-24"></use>
       </svg>
     ),
-    title: "Construimos para el Futuro",
-    description: "Las soluciones rápidas crean problemas mayores. Diseñamos soluciones que escalan con su crecimiento y se adaptan a las necesidades futuras."
+    title: "Deuda técnica cero",
+    description: "No dejamos pendientes para el futuro. Ni para usted ni para nosotros."
   },
   {
     icon: (
@@ -37,8 +37,8 @@ const approachItems = [
         <use href="/assets/sprite-Dt029LRi.svg#metrics-24"></use>
       </svg>
     ),
-    title: "Medimos el Impacto",
-    description: "La tecnología sin un impacto medible en el negocio es simplemente un gasto. Definimos métricas de éxito antes de empezar y las seguimos después de la implementación.",
+    title: "El éxito se declina en cifras",
+    description: "Como decía Pitágoras —o alguien que lo conocía—: lo que no se mide, no se mejora. Lo que no se mejora, se lamenta.",
     isLast: true
   }
 ];

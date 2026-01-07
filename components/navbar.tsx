@@ -162,7 +162,7 @@ const content = {
       },
       introduction: {
         title: "Introducción",
-        subtitle: "Lo que hacemos. Por qué lo hacemos. En ese orden."
+        subtitle: "Lo que hacemos. Por qué lo hacemos. Qué evitamos hacer."
       },
       principles: {
         title: "Principios",
