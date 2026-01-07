@@ -15,11 +15,11 @@ export default function ContactPage() {
               </div>
               <div className="mx-auto min-[600px]:mx-0 mb-8 mt-4 max-w-96 text-lg leading-relaxed tracking-wide text-muted-foreground">
                 <p className="m-0">
-                  Frente a cualquier consulta de su infraestructura tecnologica o implementación estamos para resolver dudas. Aquí estan{' '}
+                  Estamos para resolver dudas sobre su infraestructura tecnológica. Y para confirmar las certezas que ya tenía. Aquí están{' '}
                   <Link href="/es/company/work" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] hover:text-[#08178c]">
                     nuestros trabajos
                   </Link>{' '}
-                  mas recientes y casos de estudio.
+                  más recientes y casos de estudio.
                 </p>
                 <div className="flex flex-col gap-1 pt-3 mt-2 mb-2">
                   <li className="flex items-baseline">
