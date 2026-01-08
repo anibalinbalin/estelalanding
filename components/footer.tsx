@@ -16,12 +16,11 @@ export const Footer = () => {
     setMounted(true);
   }, []);
 
-  // Helper function to get the correct path based on language
+  // Helper function to get the correct path - all pages are now bilingual at root
   const getLocalizedPath = (path: string) => {
-    if (language === 'es' && !path.startsWith('/es')) {
-      return `/es${path}`
-    } else if (language === 'en' && path.startsWith('/es')) {
-      return path.replace('/es', '')
+    // Remove /es prefix if present since all pages are now at root
+    if (path.startsWith('/es')) {
+      return path.replace('/es', '') || '/'
     }
     return path
   }
@@ -104,32 +103,32 @@ export const Footer = () => {
         services: {
           title: "Servicios",
           items: [
-            { title: "Infraestructura", href: "/es/services/infrastructure" },
-            { title: "Seguridad", href: "/es/services/security" },
-            { title: "Desarrollo", href: "/es/services/development" },
-            { title: "Consultoría", href: "/es/services/consulting" },
-            { title: "Especificaciones", href: "/es/services/specifications" }
+            { title: "Infraestructura", href: "/services/infrastructure" },
+            { title: "Seguridad", href: "/services/security" },
+            { title: "Desarrollo", href: "/services/development" },
+            { title: "Consultoría", href: "/services/consulting" },
+            { title: "Especificaciones", href: "/services/specifications" }
           ]
         },
         method: {
           title: "Método",
           items: [
-            { title: "Índice", href: "/es/method" },
-            { title: "Introducción", href: "/es/method/introduction" },
-            { title: "Principios", href: "/es/method/principles" },
-            { title: "Implementación", href: "/es/method/implementation" },
-            { title: "Prácticas", href: "/es/method/practices" },
-            { title: "Filosofía", href: "/es/method/philosophy" }
+            { title: "Índice", href: "/method" },
+            { title: "Introducción", href: "/method/introduction" },
+            { title: "Principios", href: "/method/principles" },
+            { title: "Implementación", href: "/method/implementation" },
+            { title: "Prácticas", href: "/method/practices" },
+            { title: "Filosofía", href: "/method/philosophy" }
           ]
         },
         company: {
           title: "Empresa",
           items: [
-            { title: "Acerca de", href: "/es/company/about" },
-            { title: "Trabajo", href: "/es/company/work" },
-            { title: "Equipo", href: "/es/company/team" },
-            { title: "Socios", href: "/es/company/partners" },
-            { title: "Contacto", href: "/es/contact" }
+            { title: "Acerca de", href: "/company/about" },
+            { title: "Trabajo", href: "/company/work" },
+            { title: "Equipo", href: "/company/team" },
+            { title: "Socios", href: "/company/partners" },
+            { title: "Contacto", href: "/contact" }
           ]
         }
       }

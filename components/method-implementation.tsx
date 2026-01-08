@@ -4,60 +4,143 @@ import { Link } from 'next-view-transitions'
 import Waves from '@/components/ui/waves'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { useTheme } from 'next-themes'
+import { useLanguage } from '@/components/language-provider'
+
+const content = {
+  en: {
+    breadcrumb: { home: 'Estela', method: 'Method', current: 'Implementation' },
+    title: 'How We Work',
+    lead: 'Our proven methodology for turning complex problems into simple solutions.',
+    phases: [
+      {
+        number: '3.1',
+        title: 'Understanding',
+        intro: "We don't start with solutions. We start with questions.",
+        content: [
+          'Shadow your team for a day',
+          'Map your actual workflows (not the ideal ones)',
+          'Identify pain points and possibilities',
+          'Document everything'
+        ],
+        time: 'Time: 1-2 days'
+      },
+      {
+        number: '3.2',
+        title: 'Architecture',
+        intro: 'Design the system that fits your reality.',
+        content: [
+          'Create detailed blueprints',
+          'Plan for today and tomorrow',
+          'Choose tools that talk to each other',
+          "Design for your team's skill level"
+        ],
+        time: 'Time: 1-2 weeks'
+      },
+      {
+        number: '3.3',
+        title: 'Implementation',
+        intro: 'Build without breaking what works.',
+        content: [
+          'Staged rollouts, no big bangs',
+          'Test with real users, not scenarios',
+          'Document as we build',
+          'Train as we go'
+        ],
+        time: 'Time: 2-8 weeks (depending on scope)'
+      },
+      {
+        number: '3.4',
+        title: 'Evolution',
+        intro: 'Technology is never "done."',
+        content: [
+          'Regular health checks',
+          'Proactive improvements',
+          'Continuous education',
+          'Grow with your needs'
+        ],
+        time: 'Time: Ongoing'
+      }
+    ],
+    closingP1: "This methodology isn't theoretical.",
+    closingP2: "It's refined through 13 years of real-world projects.",
+    closingP3: "From 5-person companies to 100-person organizations. From simple network upgrades to complete digital transformations. Every project teaches us something new.",
+    closingP4: 'The phases are flexible, not rigid.',
+    closingP5: 'The timeline adapts to your reality.',
+    closingP6: 'The outcome is always the same:',
+    closingHighlight: 'Technology that just works.',
+    prevLink: '← Previous: Principles',
+    nextLink: 'Next: Practices →'
+  },
+  es: {
+    breadcrumb: { home: 'Estela', method: 'Método', current: 'Implementación' },
+    title: 'Cómo Trabajamos',
+    lead: 'Nuestra metodología probada para convertir problemas complejos en soluciones simples.',
+    phases: [
+      {
+        number: '3.1',
+        title: 'Entendimiento',
+        intro: 'No empezamos con soluciones. Empezamos con preguntas.',
+        content: [
+          'Observar a su equipo por un día',
+          'Mapear sus flujos de trabajo reales (no los ideales)',
+          'Identificar puntos de dolor y posibilidades',
+          'Documentar todo'
+        ],
+        time: 'Tiempo: 1-2 días'
+      },
+      {
+        number: '3.2',
+        title: 'Arquitectura',
+        intro: 'Diseñar el sistema que se ajusta a su realidad.',
+        content: [
+          'Crear planos detallados',
+          'Planificar para hoy y mañana',
+          'Elegir herramientas que se comuniquen entre sí',
+          'Diseñar para el nivel de habilidad de su equipo'
+        ],
+        time: 'Tiempo: 1-2 semanas'
+      },
+      {
+        number: '3.3',
+        title: 'Implementación',
+        intro: 'Construir sin romper lo que funciona.',
+        content: [
+          'Despliegues por etapas, sin big bangs',
+          'Probar con usuarios reales, no escenarios',
+          'Documentar mientras construimos',
+          'Entrenar sobre la marcha'
+        ],
+        time: 'Tiempo: 2-8 semanas (según el alcance)'
+      },
+      {
+        number: '3.4',
+        title: 'Evolución',
+        intro: 'La tecnología nunca está "terminada".',
+        content: [
+          'Chequeos de salud regulares',
+          'Mejoras proactivas',
+          'Educación continua',
+          'Crecer con sus necesidades'
+        ],
+        time: 'Tiempo: Continuo'
+      }
+    ],
+    closingP1: 'Esta metodología no es teórica.',
+    closingP2: 'Está refinada a través de 13 años de proyectos reales.',
+    closingP3: 'Desde empresas de 5 personas hasta organizaciones de 100 personas. Desde actualizaciones de red simples hasta transformaciones digitales completas. Cada proyecto nos enseña algo nuevo.',
+    closingP4: 'Las fases son flexibles, no rígidas.',
+    closingP5: 'El cronograma se adapta a su realidad.',
+    closingP6: 'El resultado es siempre el mismo:',
+    closingHighlight: 'Tecnología que simplemente funciona.',
+    prevLink: '← Anterior: Principios',
+    nextLink: 'Siguiente: Prácticas →'
+  }
+}
 
 export function MethodImplementation() {
   const { resolvedTheme } = useTheme()
-  
-  const phases = [
-    {
-      number: '3.1',
-      title: 'Understanding',
-      intro: 'We don\'t start with solutions. We start with questions.',
-      content: [
-        'Shadow your team for a day',
-        'Map your actual workflows (not the ideal ones)',
-        'Identify pain points and possibilities',
-        'Document everything'
-      ],
-      time: 'Time: 1-2 days'
-    },
-    {
-      number: '3.2',
-      title: 'Architecture',
-      intro: 'Design the system that fits your reality.',
-      content: [
-        'Create detailed blueprints',
-        'Plan for today and tomorrow',
-        'Choose tools that talk to each other',
-        'Design for your team\'s skill level'
-      ],
-      time: 'Time: 1-2 weeks'
-    },
-    {
-      number: '3.3',
-      title: 'Implementation',
-      intro: 'Build without breaking what works.',
-      content: [
-        'Staged rollouts, no big bangs',
-        'Test with real users, not scenarios',
-        'Document as we build',
-        'Train as we go'
-      ],
-      time: 'Time: 2-8 weeks (depending on scope)'
-    },
-    {
-      number: '3.4',
-      title: 'Evolution',
-      intro: 'Technology is never "done."',
-      content: [
-        'Regular health checks',
-        'Proactive improvements',
-        'Continuous education',
-        'Grow with your needs'
-      ],
-      time: 'Time: Ongoing'
-    }
-  ]
+  const { language } = useLanguage()
+  const t = content[language]
 
   return (
     <div style={{
@@ -73,12 +156,12 @@ export function MethodImplementation() {
         padding: '120px 32px'
       }}>
         <div style={{ marginBottom: '32px' }}>
-          <Breadcrumb 
+          <Breadcrumb
             items={[
-              { label: 'Estela', href: '/' },
-              { label: 'Method', href: '/method' },
-              { label: 'Implementation' }
-            ]} 
+              { label: t.breadcrumb.home, href: '/' },
+              { label: t.breadcrumb.method, href: '/method' },
+              { label: t.breadcrumb.current }
+            ]}
           />
           
           <div style={{ textAlign: 'center', marginBottom: '24px' }}>
@@ -108,9 +191,9 @@ export function MethodImplementation() {
             margin: 0,
             marginBottom: '24px'
           }}>
-            How We Work
+            {t.title}
           </h1>
-          
+
           <div style={{
             height: '1px',
             marginBottom: '48px'
@@ -124,7 +207,7 @@ export function MethodImplementation() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '48px'
           }}>
-            Our proven methodology for turning complex problems into simple solutions.
+            {t.lead}
           </p>
 
           {/* Waves Effect */}
@@ -158,7 +241,7 @@ export function MethodImplementation() {
             marginBottom: '48px'
         }} />
 
-        {phases.map((phase, index) => (
+        {t.phases.map((phase, index) => (
           <div key={`phase-${index}`} style={{ marginBottom: '48px' }}>
             <div style={{ marginBottom: '24px' }}>
               <h2 style={{ 
@@ -217,7 +300,7 @@ export function MethodImplementation() {
               </p>
             </div>
             
-            {index < phases.length - 1 && (
+            {index < t.phases.length - 1 && (
               <div style={{
                 height: '1px',
             marginBottom: '48px'
@@ -232,16 +315,16 @@ export function MethodImplementation() {
         }} />
 
         <section style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <p style={{ 
-            fontSize: '1.125rem', 
+          <p style={{
+            fontSize: '1.125rem',
             fontWeight: '500',
             color: 'var(--foreground)',
             marginBottom: '16px'
           }}>
-            This methodology isn't theoretical.<br />
-            It's refined through 13 years of real-world projects.
+            {t.closingP1}<br />
+            {t.closingP2}
           </p>
-          
+
           <p style={{
             fontSize: '17px',
             fontWeight: '400',
@@ -251,10 +334,9 @@ export function MethodImplementation() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '24px'
           }}>
-            From 5-person companies to 100-person organizations. From simple network upgrades 
-            to complete digital transformations. Every project teaches us something new.
+            {t.closingP3}
           </p>
-          
+
           <p style={{
             fontSize: '17px',
             fontWeight: '400',
@@ -264,18 +346,7 @@ export function MethodImplementation() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '24px'
           }}>
-            The phases are flexible, not rigid.
-          </p>
-          <p style={{
-            fontSize: '17px',
-            fontWeight: '400',
-            lineHeight: '27.2px',
-            letterSpacing: 'normal',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '24px'
-          }}>
-            The timeline adapts to your reality.
+            {t.closingP4}
           </p>
           <p style={{
             fontSize: '17px',
@@ -286,16 +357,27 @@ export function MethodImplementation() {
             color: 'var(--content-secondary-p3)',
             marginBottom: '24px'
           }}>
-            The outcome is always the same:
+            {t.closingP5}
           </p>
-          
+          <p style={{
+            fontSize: '17px',
+            fontWeight: '400',
+            lineHeight: '27.2px',
+            letterSpacing: 'normal',
+            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+            color: 'var(--content-secondary-p3)',
+            marginBottom: '24px'
+          }}>
+            {t.closingP6}
+          </p>
+
           <p style={{
             fontSize: '1.5rem',
             fontWeight: '500',
             color: 'var(--foreground)',
             marginBottom: '16px'
           }}>
-            Technology that just works.
+            {t.closingHighlight}
           </p>
         </section>
 
@@ -305,7 +387,7 @@ export function MethodImplementation() {
         }} />
 
         <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-          <Link 
+          <Link
             href="/method/principles"
             style={{
               display: 'inline-flex',
@@ -320,9 +402,9 @@ export function MethodImplementation() {
             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--foreground)'}
             onMouseLeave={(e) => e.currentTarget.style.color = 'var(--content-secondary-p3)'}
           >
-            ← Previous: Principles
+            {t.prevLink}
           </Link>
-          <Link 
+          <Link
             href="/method/practices"
             style={{
               display: 'inline-flex',
@@ -337,7 +419,7 @@ export function MethodImplementation() {
             onMouseEnter={(e) => e.currentTarget.style.color = 'var(--foreground)'}
             onMouseLeave={(e) => e.currentTarget.style.color = 'var(--content-secondary-p3)'}
           >
-            Next: Practices →
+            {t.nextLink}
           </Link>
         </div>
       </div>

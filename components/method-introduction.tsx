@@ -237,8 +237,8 @@ export function MethodIntroduction() {
         {/* Breadcrumb */}
         <Breadcrumb 
           items={[
-            { label: 'Estela', href: language === 'es' ? '/es' : '/' },
-            { label: language === 'es' ? 'Método' : 'Method', href: language === 'es' ? '/es/method' : '/method' },
+            { label: 'Estela', href: '/' },
+            { label: language === 'es' ? 'Método' : 'Method', href: '/method' },
             { label: language === 'es' ? 'Introducción' : 'Introduction' }
           ]} 
         />
@@ -494,7 +494,7 @@ export function MethodIntroduction() {
         {/* Navigation */}
         <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <Link 
-            href={language === 'es' ? '/es/method' : '/method'}
+            href={'/method'}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -511,7 +511,7 @@ export function MethodIntroduction() {
             {t.navigation.back}
           </Link>
           <Link 
-            href={language === 'es' ? '/es/method/principles' : '/method/principles'}
+            href={'/method/principles'}
             style={{
               display: 'inline-flex',
               alignItems: 'center',

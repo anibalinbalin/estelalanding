@@ -2,102 +2,115 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
+import { useLanguage } from '@/components/language-provider';
 
-const approachItems = [
-  {
-    icon: (
-      <svg width="24" height="24" className="h-6 w-6 block align-middle text-[#f5b944]">
-        <use href="/assets/sprite-Dt029LRi.svg#networking-24"></use>
-      </svg>
-    ),
-    title: "Discovery First",
-    description: "We don't start with solutions. We start with understanding. Every project begins with deep discovery to understand your real challenges, not just symptoms."
+const content = {
+  en: {
+    approachTitle: "Our Approach",
+    processTitle: "How We Work",
+    approach: [
+      {
+        title: "Diagnosis before prognosis",
+        description: "Before acting, we understand. Takes longer. Saves more."
+      },
+      {
+        title: "Zero technical debt",
+        description: "We don't leave loose ends for the future. Not for you, not for us."
+      },
+      {
+        title: "We validate everything",
+        description: "Production isn't a testing environment. We validate every component in controlled environments before deployment."
+      },
+      {
+        title: "Success is measured in numbers",
+        description: "As Pythagoras said—or someone who knew him: what you don't measure, you can't improve. What you don't improve, you regret."
+      }
+    ],
+    process: [
+      {
+        title: "Discovery & Analysis",
+        description: "2-3 weeks of deep discovery. We map your current state, understand your goals, and identify the real challenges behind the symptoms."
+      },
+      {
+        title: "Architecture & Planning",
+        description: "Detailed technical specs, phased implementation plan, risk mitigation strategies. No surprises, no scope creep."
+      },
+      {
+        title: "Staged Implementation",
+        description: "Phased rollout with continuous validation. Each phase is tested and validated before moving to the next."
+      },
+      {
+        title: "Validation & Handover",
+        description: "Comprehensive testing, team training, and documentation. We don't leave until you feel confident and capable."
+      }
+    ]
   },
-  {
-    icon: (
-      <svg width="24" height="24" className="h-6 w-6 block align-middle text-[#f5b944]">
-        <use href="/assets/sprite-Dt029LRi.svg#servers-24"></use>
-      </svg>
-    ),
-    title: "Build for Tomorrow",
-    description: "Quick fixes create bigger problems. We architect solutions that scale with your growth and adapt to future needs."
-  },
-  {
-    icon: (
-      <svg width="24" height="24" className="h-6 w-6 block align-middle text-[#f5b944]">
-        <use href="/assets/sprite-Dt029LRi.svg#security-24"></use>
-      </svg>
-    ),
-    title: "Test Everything",
-    description: "Production is not a testing environment. We validate every component in controlled environments before deployment."
-  },
-  {
-    icon: (
-      <svg width="24" height="24" className="h-6 w-6 block align-middle text-[#f5b944]">
-        <use href="/assets/sprite-Dt029LRi.svg#metrics-24"></use>
-      </svg>
-    ),
-    title: "Measure Impact",
-    description: "Technology without measurable business impact is just expensive. We define success metrics before we start and track them after deployment.",
-    isLast: true
+  es: {
+    approachTitle: "Nuestro Enfoque",
+    processTitle: "Cómo Trabajamos",
+    approach: [
+      {
+        title: "Diagnóstico antes que pronóstico",
+        description: "Antes de actuar, comprendemos. Lleva más tiempo. Ahorra más."
+      },
+      {
+        title: "Deuda técnica cero",
+        description: "No dejamos pendientes para el futuro. Ni para usted ni para nosotros."
+      },
+      {
+        title: "Validamos Todo",
+        description: "El entorno de producción no es un entorno de pruebas. Validamos cada componente en entornos controlados antes de la implementación."
+      },
+      {
+        title: "El éxito se declina en cifras",
+        description: "Como decía Pitágoras —o alguien que lo conocía—: lo que no se mide, no se mejora. Lo que no se mejora, se lamenta."
+      }
+    ],
+    process: [
+      {
+        title: "Descubrimiento y Análisis",
+        description: "2-3 semanas de descubrimiento profundo. Mapeamos su estado actual, entendemos sus objetivos e identificamos los desafíos reales detrás de los síntomas."
+      },
+      {
+        title: "Arquitectura y Planificación",
+        description: "Especificaciones técnicas detalladas, plan de implementación por fases y estrategias de mitigación de riesgos. Sin sorpresas, sin desviaciones del alcance."
+      },
+      {
+        title: "Implementación por Etapas",
+        description: "Despliegue por fases con validación continua. Cada fase se prueba y valida antes de pasar a la siguiente."
+      },
+      {
+        title: "Validación y Entrega",
+        description: "Pruebas exhaustivas, capacitación del equipo y documentación. No nos vamos hasta que usted se sienta seguro y capacitado."
+      }
+    ]
   }
+};
+
+const approachIcons = [
+  <svg key="0" width="24" height="24" className="h-6 w-6 block align-middle text-[#f5b944]">
+    <use href="/assets/sprite-Dt029LRi.svg#networking-24"></use>
+  </svg>,
+  <svg key="1" width="24" height="24" className="h-6 w-6 block align-middle text-[#f5b944]">
+    <use href="/assets/sprite-Dt029LRi.svg#servers-24"></use>
+  </svg>,
+  <svg key="2" width="24" height="24" className="h-6 w-6 block align-middle text-[#f5b944]">
+    <use href="/assets/sprite-Dt029LRi.svg#security-24"></use>
+  </svg>,
+  <svg key="3" width="24" height="24" className="h-6 w-6 block align-middle text-[#f5b944]">
+    <use href="/assets/sprite-Dt029LRi.svg#metrics-24"></use>
+  </svg>
 ];
 
-const getProcessItems = (currentTheme: string) => [
-  {
-    icon: (
-      <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-mono ${
-        currentTheme === 'light' 
-          ? 'bg-[#e5e5e5] text-[#ecbb5a]' 
-          : 'bg-[#3d3019] text-[#f5b944]'
-      }`}>
-        1
-      </div>
-    ),
-    title: "Discovery & Analysis",
-    description: "2-3 weeks of deep discovery. We map your current state, understand your goals, and identify the real challenges behind the symptoms."
-  },
-  {
-    icon: (
-      <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-mono ${
-        currentTheme === 'light' 
-          ? 'bg-[#e5e5e5] text-[#ecbb5a]' 
-          : 'bg-[#3d3019] text-[#f5b944]'
-      }`}>
-        2
-      </div>
-    ),
-    title: "Architecture & Planning",
-    description: "Detailed technical specifications, phased implementation plan, and risk mitigation strategies. No surprises, no scope creep."
-  },
-  {
-    icon: (
-      <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-mono ${
-        currentTheme === 'light' 
-          ? 'bg-[#e5e5e5] text-[#ecbb5a]' 
-          : 'bg-[#3d3019] text-[#f5b944]'
-      }`}>
-        3
-      </div>
-    ),
-    title: "Staged Implementation",
-    description: "Phased rollout with continuous validation. Each phase is tested and validated before moving to the next."
-  },
-  {
-    icon: (
-      <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-mono ${
-        currentTheme === 'light' 
-          ? 'bg-[#e5e5e5] text-[#ecbb5a]' 
-          : 'bg-[#3d3019] text-[#f5b944]'
-      }`}>
-        4
-      </div>
-    ),
-    title: "Validation & Handover",
-    description: "Comprehensive testing, team training, and documentation. We don't leave until you're confident and capable.",
-    isLast: true
-  }
-];
+const getProcessIcon = (index: number, currentTheme: string) => (
+  <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-mono ${
+    currentTheme === 'light'
+      ? 'bg-[#e5e5e5] text-[#ecbb5a]'
+      : 'bg-[#3d3019] text-[#f5b944]'
+  }`}>
+    {index + 1}
+  </div>
+);
 
 const ApproachItem = ({ icon, title, description, isLast = false, currentTheme, showSquare = false }: {
   icon: React.ReactNode;
@@ -149,32 +162,33 @@ const ApproachItem = ({ icon, title, description, isLast = false, currentTheme, 
 
 export const WorkApproachList = () => {
   const { theme, resolvedTheme } = useTheme();
+  const { language } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Use resolvedTheme for more reliable theme detection
   const currentTheme = mounted ? (resolvedTheme || theme || 'dark') : 'dark';
+  const t = content[language];
 
   return (
     <div className="w-[100%] px-5 min-[600px]:px-10">
       <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] gap-6 min-[600px]:gap-6 min-[1000px]:gap-8 max-[800px]:mb-8 min-[800px]:mb-16">
         <div className="col-span-12 min-[600px]:col-start-[2] min-[1000px]:col-start-[3] min-[600px]:col-span-10 min-[1000px]:col-span-8">
           <div className="mb-8">
-            <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
-              Our Approach
+            <h2 className="text-balance m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
+              {t.approachTitle}
             </h2>
           </div>
           <div>
-            {approachItems.map((item, index) => (
+            {t.approach.map((item, index) => (
               <ApproachItem
                 key={index}
-                icon={item.icon}
+                icon={approachIcons[index]}
                 title={item.title}
                 description={item.description}
-                isLast={item.isLast}
+                isLast={index === t.approach.length - 1}
                 currentTheme={currentTheme}
                 showSquare={true}
               />
@@ -188,32 +202,33 @@ export const WorkApproachList = () => {
 
 export const WorkProcessList = () => {
   const { theme, resolvedTheme } = useTheme();
+  const { language } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Use resolvedTheme for more reliable theme detection
   const currentTheme = mounted ? (resolvedTheme || theme || 'dark') : 'dark';
+  const t = content[language];
 
   return (
     <div className="w-[100%] px-5 min-[600px]:px-10">
       <div className="m-auto mb-16 grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
         <div className="col-span-12 min-[600px]:col-start-[2] min-[1000px]:col-start-[3] min-[600px]:col-span-10 min-[1000px]:col-span-8">
           <div className="mb-8">
-            <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
-              How We Work
+            <h2 className="text-balance m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
+              {t.processTitle}
             </h2>
           </div>
           <div>
-            {getProcessItems(currentTheme).map((item, index) => (
+            {t.process.map((item, index) => (
               <ApproachItem
                 key={index}
-                icon={item.icon}
+                icon={getProcessIcon(index, currentTheme)}
                 title={item.title}
                 description={item.description}
-                isLast={item.isLast}
+                isLast={index === t.process.length - 1}
                 currentTheme={currentTheme}
                 showSquare={false}
               />

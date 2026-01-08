@@ -8,7 +8,7 @@ export const TeamSection = () => {
         <div className="m-auto max-w-[964px] min-[1000px]:grid">
           <div className="min-[600px]:px-10 py-6 min-[600px]:py-8 gap-4 min-[600px]:gap-6 rounded-[var(--border-radius-lg)] min-[600px]:rounded-[var(--border-radius-xl)] p-4 bg-[var(--surface-tertiary-p3)] min-[800px]:grid min-[800px]:grid-cols-[repeat(12,minmax(0,1fr))] min-[800px]:items-center">
             <div className="mb-4 text-center min-[800px]:text-left min-[800px]:col-span-8">
-              <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-secondary-p3)] text-lg min-[800px]:text-[1.5625rem] font-normal min-[800px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.625rem] min-[800px]:leading-8 tracking-wide min-[800px]:tracking-wide">
+              <h2 className="text-balance m-0 text-[var(--content-secondary-p3)] text-lg min-[800px]:text-[1.5625rem] font-normal min-[800px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.625rem] min-[800px]:leading-8 tracking-wide min-[800px]:tracking-wide">
                 We're hiring<br />
                 <span className="text-[var(--content-tertiary-p3)]">Check out our current openings</span>
               </h2>
@@ -27,7 +27,7 @@ export const TeamSection = () => {
         <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] max-[800px]:mb-2 max-[800px]:mt-8 min-[800px]:my-8 gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
           <div className="grid col-span-12 min-[600px]:col-start-[2] min-[1000px]:col-start-[4] min-[600px]:col-span-10 min-[1000px]:col-span-7">
             <div className="min-[1000px]:col-start-[2] min-[1000px]:col-span-5">
-              <h2 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
+              <h2 className="text-balance m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
                 Our Principles
               </h2>
               <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">

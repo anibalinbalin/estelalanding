@@ -1,38 +1,75 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
+import { useLanguage } from '@/components/language-provider';
 
-const teamMembers = [
-  {
-    name: 'Peter Del Prestito',
-    role: 'Co-founder, Business & IT Operations',
-    image: '/img/fotos/peter.jpg'
-  },
-  {
-    name: 'Pablo Ferreira',
-    role: 'IT Admin',
-    image: '/img/fotos/pablo.jpg'
-  },
-  {
-    name: 'Alfonso LaRosa',
-    role: 'Head of IT', 
-    image: '/img/fotos/alfonso.jpg'
-  },
-  {
-    name: 'Nahuel Gonzalez',
-    role: 'IT & Systems Specialist',
-    image: '/img/fotos/nahuel.jpg'
-  },
-  {
-    name: 'Aníbal Ramos', 
-    role: 'Co-Founder, Head of Technology',
-    image: '/img/fotos/anibal.jpg'
-  },
-  {
-    name: 'D. Esteban Echániz',
-    role: 'Finances',
-    image: '/img/fotos/diego.jpg'
-  }
-];
+const teamMembers = {
+  en: [
+    {
+      name: 'Peter Del Prestito',
+      role: 'Co-founder, Business & IT Operations',
+      image: '/img/fotos/peter.jpg'
+    },
+    {
+      name: 'Pablo Ferreira',
+      role: 'IT Admin',
+      image: '/img/fotos/pablo.jpg'
+    },
+    {
+      name: 'Alfonso LaRosa',
+      role: 'Head of IT',
+      image: '/img/fotos/alfonso.jpg'
+    },
+    {
+      name: 'Nahuel Gonzalez',
+      role: 'IT & Systems Specialist',
+      image: '/img/fotos/nahuel.jpg'
+    },
+    {
+      name: 'Aníbal Ramos',
+      role: 'Co-Founder, Head of Technology',
+      image: '/img/fotos/anibal.jpg'
+    },
+    {
+      name: 'D. Esteban Echániz',
+      role: 'Finances',
+      image: '/img/fotos/diego.jpg'
+    }
+  ],
+  es: [
+    {
+      name: 'Peter Del Prestito',
+      role: 'Co-fundador, Operaciones de Negocios y TI',
+      image: '/img/fotos/peter.jpg'
+    },
+    {
+      name: 'Pablo Ferreira',
+      role: 'Administrador de TI',
+      image: '/img/fotos/pablo.jpg'
+    },
+    {
+      name: 'Alfonso LaRosa',
+      role: 'Jefe de TI',
+      image: '/img/fotos/alfonso.jpg'
+    },
+    {
+      name: 'Nahuel Gonzalez',
+      role: 'Especialista en TI y Sistemas',
+      image: '/img/fotos/nahuel.jpg'
+    },
+    {
+      name: 'Aníbal Ramos',
+      role: 'Co-Fundador, Jefe de Tecnología',
+      image: '/img/fotos/anibal.jpg'
+    },
+    {
+      name: 'D. Esteban Echániz',
+      role: 'Finanzas',
+      image: '/img/fotos/diego.jpg'
+    }
+  ]
+};
 
 const TeamMemberCard = ({ name, role, image, currentTheme }: { 
   name: string; 
@@ -67,6 +104,7 @@ const TeamMemberCard = ({ name, role, image, currentTheme }: {
 
 export const TeamGrid = () => {
   const { theme, resolvedTheme } = useTheme();
+  const { language } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -75,13 +113,14 @@ export const TeamGrid = () => {
 
   // Use resolvedTheme if available, otherwise fall back to theme, then default to 'dark'
   const currentTheme = mounted ? (resolvedTheme || theme || 'dark') : 'dark';
+  const members = teamMembers[language];
 
   return (
     <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] gap-4 min-[1000px]:gap-4 p-5 min-[600px]:p-10">
-      {teamMembers.map((member, index) => (
-        <TeamMemberCard 
-          key={index} 
-          name={member.name} 
+      {members.map((member, index) => (
+        <TeamMemberCard
+          key={index}
+          name={member.name}
           role={member.role}
           image={member.image}
           currentTheme={currentTheme}

@@ -61,7 +61,7 @@ const ValueCard = ({ title, description, currentTheme }: { title: string; descri
         ? 'bg-[#ffffff] border-[#e5e5e5] min-[600px]:border-[#e4e5e4]' 
         : 'bg-[var(--surface-raise-p3)] border-[#1b2123] min-[600px]:border-[var(--border)] shadow-[var(--elevation-1)]'
     }`}>
-      <h3 className="text-balance textWrapStyle-[balance] m-0 text-[inherit] [font-weight:inherit]">
+      <h3 className="text-balance m-0 text-[inherit] [font-weight:inherit]">
         <button 
           type="button" 
           onClick={() => setIsOpen(!isOpen)}
@@ -79,7 +79,7 @@ const ValueCard = ({ title, description, currentTheme }: { title: string; descri
           </svg>
         </button>
       </h3>
-      <h3 className={`text-balance textWrapStyle-[balance] m-0 text-base font-medium mb-1 border-b pb-3 pl-4 pr-5 pt-4 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-6 tracking-wide text-[#f5b944] hidden min-[1000px]:block ${
+      <h3 className={`text-balance m-0 text-base font-medium mb-1 border-b pb-3 pl-4 pr-5 pt-4 font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-6 tracking-wide text-[#f5b944] hidden min-[1000px]:block ${
         currentTheme === 'light' 
           ? 'border-b-[#eaeaea]' 
           : 'border-b-[#1c2225]'

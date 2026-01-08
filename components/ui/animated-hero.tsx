@@ -75,7 +75,7 @@ function Hero() {
             {/* CTA Button */}
             <div className={`mt-6 min-[700px]:mt-10 ${isAnimated ? 'hero-cta' : 'opacity-0'}`}>
               <Link
-                href={language === 'es' ? '/es/method' : '/method'}
+                href="/method"
                 className="estela-nav-button estela-nav-button-primary inline-flex items-center"
               >
                 {t.contact} <MoveRight className="w-4 h-4 ml-2" />

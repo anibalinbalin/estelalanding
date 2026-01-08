@@ -2,8 +2,61 @@
 
 import { Link } from 'next-view-transitions'
 import { Footer } from '@/components/footer'
+import { useLanguage } from '@/components/language-provider'
+
+const content = {
+  en: {
+    title: "Contact us",
+    subtitle: "Get in touch",
+    intro: "We solve tech questions. We also confirm suspicions. Rarely both at once. Here are",
+    projectsLink: "our recent projects",
+    introEnd: "and case studies.",
+    bullet1: "Learn about our services. Bibliography optional.",
+    bullet2: "Get a tech assessment. Personalized, not personal.",
+    bullet3: "Specify what you need. With precision, not optimism.",
+    contactDirect: "Contact us directly at",
+    labelName: "Your name",
+    placeholderName: "Jane Smith",
+    labelEmail: "Your work email",
+    placeholderEmail: "jane@company.com",
+    labelCompany: "Company name",
+    placeholderCompany: "Your Company",
+    labelSource: "How did you hear about us?",
+    placeholderSource: "Google, referral, etc.",
+    labelDetails: "Project details",
+    placeholderDetails: "Tell us about your project, timeline, and any specific requirements...",
+    submit: "SUBMIT",
+    workPath: "/company/work"
+  },
+  es: {
+    title: "Contáctenos",
+    subtitle: "",
+    intro: "Resolvemos dudas tecnológicas. También confirmamos sospechas. Rara vez ambas cosas a la vez. Aquí están",
+    projectsLink: "nuestros trabajos",
+    introEnd: "más recientes y casos de estudio.",
+    bullet1: "Informarse sobre nuestros servicios. Bibliografía opcional.",
+    bullet2: "Obtener una evaluación tecnológica. Personalizada, no personal.",
+    bullet3: "Especificar lo que necesita. Con precisión, no con optimismo.",
+    contactDirect: "Contáctenos directamente en",
+    labelName: "Su nombre",
+    placeholderName: "Rogelio Roldán",
+    labelEmail: "Su correo electrónico de trabajo",
+    placeholderEmail: "rogelio@rodlan.com",
+    labelCompany: "Nombre de la empresa",
+    placeholderCompany: "Su Empresa",
+    labelSource: "¿Cómo se enteró de nosotros?",
+    placeholderSource: "Google, referencia, etc.",
+    labelDetails: "Detalles del proyecto",
+    placeholderDetails: "Cuéntenos sobre su proyecto, cronograma y cualquier requisito específico...",
+    submit: "ENVIAR",
+    workPath: "/company/work"
+  }
+}
 
 export default function ContactPage() {
+  const { language } = useLanguage()
+  const t = content[language]
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="container mx-auto px-6 py-16">
@@ -11,16 +64,16 @@ export default function ContactPage() {
           <div className="col-span-12 min-[800px]:col-span-10 min-[1100px]:col-span-6 flex flex-col justify-between border-b pb-4 text-left border-b-border">
             <div>
               <div className="text-4xl min-[1000px]:text-5xl font-normal leading-tight min-[1000px]:leading-[110%] tracking-normal">
-                <div className="text-foreground min-[1100px]:mt-6">Contact us</div>
-                <div className="text-muted-foreground">Get in touch</div>
+                <div className="text-foreground min-[1100px]:mt-6">{t.title}</div>
+                {t.subtitle && <div className="text-muted-foreground">{t.subtitle}</div>}
               </div>
               <div className="mx-auto min-[600px]:mx-0 mb-8 mt-4 max-w-96 text-lg leading-relaxed tracking-wide text-muted-foreground">
                 <p className="m-0">
-                  We solve tech questions. We also confirm suspicions. Rarely both at once. Here are{' '}
-                  <Link href="/company/work" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] hover:text-[#08178c]">
-                    our recent projects
+                  {t.intro}{' '}
+                  <Link href={t.workPath} className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] hover:text-[#08178c]">
+                    {t.projectsLink}
                   </Link>{' '}
-                  and case studies.
+                  {t.introEnd}
                 </p>
                 <div className="flex flex-col gap-1 pt-3 mt-2 mb-2">
                   <li className="flex items-baseline">
@@ -28,7 +81,7 @@ export default function ContactPage() {
                       <circle cx="6" cy="6" r="2" fill="currentColor" />
                     </svg>
                     <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
-                      Learn about our services. Bibliography optional.
+                      {t.bullet1}
                     </div>
                   </li>
                   <li className="flex items-baseline">
@@ -36,7 +89,7 @@ export default function ContactPage() {
                       <circle cx="6" cy="6" r="2" fill="currentColor" />
                     </svg>
                     <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
-                      Get a tech assessment. Personalized, not personal.
+                      {t.bullet2}
                     </div>
                   </li>
                   <li className="flex items-baseline">
@@ -44,14 +97,14 @@ export default function ContactPage() {
                       <circle cx="6" cy="6" r="2" fill="currentColor" />
                     </svg>
                     <div className="text-muted-foreground text-sm min-[800px]:text-base leading-tight min-[800px]:leading-6 tracking-wider min-[800px]:tracking-wide">
-                      Specify what you need. With precision, not optimism.
+                      {t.bullet3}
                     </div>
                   </li>
                 </div>
               </div>
             </div>
             <div className="hidden min-[1100px]:block text-muted-foreground min-[600px]:text-base min-[600px]:leading-6 min-[600px]:tracking-wide">
-              Contact us directly at{' '}
+              {t.contactDirect}{' '}
               <Link href="mailto:hola@este.la" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] hover:text-[#08178c]">
                 hola@este.la
               </Link>
@@ -66,13 +119,13 @@ export default function ContactPage() {
                       <div className="col-span-12 relative">
                         <div className="mb-2">
                           <label className="flex items-center text-sm leading-tight tracking-wider text-muted-foreground">
-                            Your name
+                            {t.labelName}
                           </label>
                         </div>
                         <div className="flex border items-center rounded border-border hover:border-muted-foreground transition-colors">
                           <input
                             name="name"
-                            placeholder="Jane Smith"
+                            placeholder={t.placeholderName}
                             className="px-3 py-3 rounded w-full bg-background text-sm leading-tight tracking-wider text-foreground border-none outline-none focus:ring-0"
                           />
                         </div>
@@ -80,14 +133,14 @@ export default function ContactPage() {
                       <div className="col-span-12 relative">
                         <div className="mb-2">
                           <label className="flex items-center text-sm leading-tight tracking-wider text-muted-foreground">
-                            Your work email
+                            {t.labelEmail}
                           </label>
                         </div>
                         <div className="flex border items-center rounded border-border hover:border-muted-foreground transition-colors">
                           <input
                             name="email"
                             type="email"
-                            placeholder="jane@company.com"
+                            placeholder={t.placeholderEmail}
                             className="px-3 py-3 rounded w-full bg-background text-sm leading-tight tracking-wider text-foreground border-none outline-none focus:ring-0"
                           />
                         </div>
@@ -95,14 +148,14 @@ export default function ContactPage() {
                       <div className="col-span-12 relative">
                         <div className="mb-2">
                           <label className="flex items-center text-sm leading-tight tracking-wider text-muted-foreground">
-                            Company name
+                            {t.labelCompany}
                           </label>
                         </div>
                         <div className="flex border items-center rounded border-border hover:border-muted-foreground transition-colors">
                           <input
                             name="companyName"
                             type="text"
-                            placeholder="Your Company"
+                            placeholder={t.placeholderCompany}
                             className="px-3 py-3 rounded w-full bg-background text-sm leading-tight tracking-wider text-foreground border-none outline-none focus:ring-0"
                           />
                         </div>
@@ -110,14 +163,14 @@ export default function ContactPage() {
                       <div className="col-span-12 relative">
                         <div className="mb-2">
                           <label className="flex items-center text-sm leading-tight tracking-wider text-muted-foreground">
-                            How did you hear about us?
+                            {t.labelSource}
                           </label>
                         </div>
                         <div className="flex border items-center rounded border-border hover:border-muted-foreground transition-colors">
                           <input
                             name="discoverySource"
                             type="text"
-                            placeholder="Google, referral, etc."
+                            placeholder={t.placeholderSource}
                             className="px-3 py-3 rounded w-full bg-background text-sm leading-tight tracking-wider text-foreground border-none outline-none focus:ring-0"
                           />
                         </div>
@@ -126,13 +179,13 @@ export default function ContactPage() {
                       <div className="col-span-12 relative">
                         <div className="mb-2">
                           <label className="flex items-center text-sm leading-tight tracking-wider text-muted-foreground">
-                            Project details
+                            {t.labelDetails}
                           </label>
                         </div>
                         <div className="flex border items-center rounded border-border hover:border-muted-foreground transition-colors">
                           <textarea
                             name="notes"
-                            placeholder="Tell us about your project, timeline, and any specific requirements..."
+                            placeholder={t.placeholderDetails}
                             rows={4}
                             className="px-3 py-3 rounded w-full bg-background resize-y text-sm leading-tight tracking-wider text-foreground border-none outline-none focus:ring-0"
                           />
@@ -145,7 +198,7 @@ export default function ContactPage() {
                           type="submit"
                           className="px-3 items-center text-[var(--content-secondary-p3)] [text-decoration:inherit] inline-flex h-8 justify-center rounded-[var(--border-radius)] align-top font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider uppercase [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] shadow-[var(--elevation-1)] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:rounded-[var(--border-radius)] after:border after:border-current after:opacity-100 after:text-[var(--stroke-secondary-p3)] hover:bg-[var(--surface-hover-p3)]"
                         >
-                          SUBMIT
+                          {t.submit}
                         </button>
                       </div>
                     </div>
@@ -155,38 +208,15 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="col-span-12 text-muted-foreground text-base leading-6 tracking-wide min-[1100px]:hidden">
-            Contact us directly at{' '}
+            {t.contactDirect}{' '}
             <Link href="mailto:hola@este.la" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] hover:text-[#08178c]">
               hola@este.la
             </Link>
           </div>
         </div>
       </div>
-      
-      {/* Use the project's Footer component instead of inline footer */}
+
       <Footer />
-      
-      {/* Keep the tracking elements exactly as they were */}
-      <noscript>
-        <img 
-          height="1" 
-          width="1" 
-          style={{display: "none"}} 
-          alt="" 
-          src="https://px.ads.linkedin.com/collect/?pid=6206948&fmt=gif" 
-        />
-      </noscript>
-      <div className="top-[336px] left-[979px] h-0 w-0"></div>
-      <div className="top-[336px] left-[1460px] h-0 w-0"></div>
-      <div className="top-[659px] left-[979px] h-0 w-0"></div>
-      <div className="top-[336px] left-[977px] h-0 w-0"></div>
-      <div></div>
-      <div className="top-[-2px] left-0 h-0 w-0"></div>
-      <div className="top-[-4px] left-[-4px] h-0 w-0"></div>
-      <div className="top-[-4px] left-[-4px] h-0 w-0"></div>
-      <div className="top-[-2px] left-[-2px] h-0 w-0"></div>
-      <div className="top-0 left-0 absolute"></div>
-      <canvas width="70" height="70" className="left-[1610px] top-0 block align-middle"></canvas>
     </div>
   )
 }

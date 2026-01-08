@@ -35,7 +35,7 @@ export function ContactSection() {
             </span>
           </div>
           
-          <h1 className="text-balance textWrapStyle-[balance] m-0 text-[var(--content-raise-p3)] text-4xl min-[800px]:text-4xl min-[1000px]:text-[3.25rem] font-normal min-[800px]:font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[2.625rem] min-[800px]:leading-[2.625rem] min-[1000px]:leading-[3.625rem] tracking-normal min-[800px]:tracking-normal min-[1000px]:tracking-normal">
+          <h1 className="text-balance m-0 text-[var(--content-raise-p3)] text-4xl min-[800px]:text-4xl min-[1000px]:text-[3.25rem] font-normal min-[800px]:font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[2.625rem] min-[800px]:leading-[2.625rem] min-[1000px]:leading-[3.625rem] tracking-normal min-[800px]:tracking-normal min-[1000px]:tracking-normal">
             Contact
           </h1>
           <p className="text-center text-[var(--content-secondary-p3)] text-lg mt-4 max-w-2xl">

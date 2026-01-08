@@ -44,7 +44,7 @@ export default function Home() {
         <div className="container mx-auto px-5 sm:px-10">
           <div className="m-auto max-w-[1200px] flex justify-end">
             <a
-              href={language === 'es' ? '/es/contact' : '/contact'}
+              href="/contact"
               className="estela-nav-button estela-nav-button-outline text-lg px-8 py-4"
             >
               {t.contactButton}

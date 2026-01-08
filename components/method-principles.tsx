@@ -123,8 +123,8 @@ export function MethodPrinciples() {
         <div style={{ marginBottom: '32px' }}>
           <Breadcrumb 
             items={[
-              { label: 'Estela', href: language === 'es' ? '/es' : '/' },
-              { label: language === 'es' ? 'Método' : 'Method', href: language === 'es' ? '/es/method' : '/method' },
+              { label: 'Estela', href: '/' },
+              { label: language === 'es' ? 'Método' : 'Method', href: '/method' },
               { label: language === 'es' ? 'Principios' : 'Principles' }
             ]} 
           />
@@ -251,7 +251,7 @@ export function MethodPrinciples() {
 
         <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <Link 
-            href={language === 'es' ? '/es/method/introduction' : '/method/introduction'}
+            href={'/method/introduction'}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -268,7 +268,7 @@ export function MethodPrinciples() {
             {t.navigation.back}
           </Link>
           <Link 
-            href={language === 'es' ? '/es/method/implementation' : '/method/implementation'}
+            href={'/method/implementation'}
             style={{
               display: 'inline-flex',
               alignItems: 'center',

@@ -94,13 +94,13 @@ export const SmallOverScaleSection = () => {
           </div>
           <div className="flex flex-col gap-2 text-center">
             <Link
-              href={language === 'es' ? '/es/method' : '/method'}
+              href="/method"
               className="estela-nav-button estela-nav-button-primary inline-flex items-center"
             >
               {t.tryButton} <MoveRight className="ml-2 h-4 w-4" />
             </Link>
             <Link
-              href={language === 'es' ? '/es/company/team' : '/company/team'}
+              href="/company/team"
               className="estela-nav-button estela-nav-button-outline inline-flex items-center"
             >
               {t.contactButton} <MoveRight className="ml-2 h-4 w-4" />
