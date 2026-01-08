@@ -18,7 +18,7 @@ export const TestNumbersSection = () => {
       title: "Empirical evidence",
       metric1: {
         title: "100%",
-        description: "Complete retention. Either we're good, or we're hard to replace."
+        description: "Complete retention. Small sample, consistent result."
       },
       metric2: {
         title: "Average relationship",
@@ -37,7 +37,7 @@ export const TestNumbersSection = () => {
       title: "Evidencia empírica",
       metric1: {
         title: "100%",
-        description: "Retención completa. O somos buenos, o somos difíciles de reemplazar."
+        description: "Retención completa. La muestra es pequeña, pero el resultado es consistente."
       },
       metric2: {
         title: "Relación media",
