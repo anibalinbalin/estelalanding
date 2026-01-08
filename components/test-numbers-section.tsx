@@ -49,7 +49,7 @@ export const TestNumbersSection = () => {
       },
       metric4: {
         title: "Criterio",
-        description: "Admisión selectiva. No es arrogancia; es aritmética."
+        description: "Admisión selectiva. No es arrogancia; es solamente aritmética."
       }
     }
   };
