@@ -240,11 +240,10 @@ export function Navbar() {
   const t = content[language]
   
   // Helper function to get the correct path based on language
+  // Routes are at root level, no /es prefix - language is client-side only
   const getLocalizedPath = (path: string) => {
-    if (language === 'es' && !path.startsWith('/es')) {
-      return `/es${path}`
-    } else if (language === 'en' && path.startsWith('/es')) {
-      return path.replace('/es', '')
+    if (path.startsWith('/es')) {
+      return path.replace('/es', '') || '/'
     }
     return path
   }
@@ -277,8 +276,8 @@ export function Navbar() {
               </button>
 
               {/* Logo - left aligned */}
-              <Link 
-                href={language === 'es' ? '/es' : '/'} 
+              <Link
+                href="/"
                 className={`flex items-center h-[58px] sm:h-[69px] lg:h-[80px] justify-start ${isAnimated ? 'navbar-logo' : 'opacity-0'}`}
               >
                 <Image
