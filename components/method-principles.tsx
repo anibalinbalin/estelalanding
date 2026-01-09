@@ -66,7 +66,7 @@ export function MethodPrinciples() {
           number: '2.1',
           title: 'Seis',
           content: [
-            '<a href="https://www.researchgate.net/publication/228838549_Empirical_Findings_on_Team_Size_and_Productivity_in_Software_Development" style="color: #ecbb5a">Los estudios dicen</a> que los equipos pequeños son más productivos. Nosotros lo confirmamos todos los días. No hay a quién pasarle el problema.'
+            '<a href="https://www.researchgate.net/publication/228838549_Empirical_Findings_on_Team_Size_and_Productivity_in_Software_Development" style="color: #ecbb5a">Los estudios dicen</a> que los equipos de trabajo chicos son más productivos. Nosotros lo confirmamos todos los días. Cinco era poco. Siete era burocracia. Los estudios coinciden. Nosotros también.'
           ]
         },
         {
