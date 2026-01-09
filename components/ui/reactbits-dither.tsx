@@ -117,7 +117,7 @@ void main() {
     mouseNDC.x *= resolution.x / resolution.y;
     float dist = length(uv - mouseNDC);
     float effect = 1.0 - smoothstep(0.0, mouseRadius, dist);
-    f -= 0.5 * effect;
+    f += 0.5 * effect;
   }
   
   vec3 backgroundColor = vec3(0.239, 0.188, 0.098); // #3d3019 in RGB
