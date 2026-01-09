@@ -17,11 +17,11 @@ export function EstelaSpeed() {
   const content = {
     en: {
       title: "Depth, not speed",
-      description: "Speed impresses. Depth endures. Every system explains itself. Our work keeps working long after no one remembers who built it."
+      description: "Speed impresses. Depth endures. Our work keeps working long after no one remembers who built it."
     },
     es: {
       title: "Profundidad, no velocidad",
-      description: "La velocidad impresiona. La profundidad perdura. Cada sistema se explica solo. Nuestro trabajo sigue funcionando cuando ya nadie recuerda quién lo hizo."
+      description: "La velocidad impresiona. La profundidad perdura. Nuestro trabajo sigue funcionando cuando ya nadie recuerda quién lo hizo."
     }
   };
 
