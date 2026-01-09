@@ -27,7 +27,7 @@ const content = {
     subtitle: "Del latín consultare, 'deliberar juntos'. No del latín soportare, 'tolerar al cliente'.",
     sectionTitle: "Transformamos la complejidad en ventaja estratégica. La simplicidad, en cambio, la dejamos simple.",
     para1: "No vendemos soluciones; las cultivamos. Empezamos por entender el problema real —ese que suele esconderse detrás del problema aparente—. Luego aplicamos experiencia técnica y sentido común, en ese orden. Porque la tecnología sin propósito es solo electricidad con pretensiones.",
-    para2: "Infraestructura, crecimiento, optimización, auditorías: hablamos de todo eso, pero sobre todo hablamos con usted. Nuestra consultoría no produce informes que nadie lee. Produce decisiones que alguien toma. Y ese alguien suele dormir mejor después.",
+    para2: "Infraestructura, crecimiento, optimización, auditorías: hablamos de todo eso, pero sobre todo hablamos con usted. Nuestra consultoría no produce informes que nadie lee. Produce decisiones que alguien toma.",
     cardTitle: "Conversemos",
     cardDesc: "Para una conversación directa sobre sus desafíos tecnológicos:",
     exploreTitle: "Para saber más",
@@ -38,7 +38,7 @@ const content = {
     adv1: "Asesoría continua, no puntual.",
     adv2: "Soluciones alineadas a sus objetivos.",
     adv3: "Acceso directo a quienes hacen el trabajo.",
-    adv4: "Foco en valor duradero."
+    adv4: "Foco en decisiones a largo plazo."
   }
 };
 
