@@ -83,7 +83,7 @@ const content = {
         content: [
           'Observar a su equipo por un día',
           'Mapear sus flujos de trabajo reales (no los ideales)',
-          'Identificar puntos de dolor y posibilidades',
+          'Identificar problemas y posibilidades',
           'Documentar todo'
         ],
         time: 'Tiempo: 1-2 días'
@@ -93,10 +93,10 @@ const content = {
         title: 'Arquitectura',
         intro: 'Diseñar el sistema que se ajusta a su realidad.',
         content: [
-          'Crear planos detallados',
-          'Planificar para hoy y mañana',
+          'Crear lineas de tiempo claras',
+          'Planificar a largo plazo',
           'Elegir herramientas que se comuniquen entre sí',
-          'Diseñar para el nivel de habilidad de su equipo'
+          'Diseñar los cambios de forma progresiva'
         ],
         time: 'Tiempo: 1-2 semanas'
       },
@@ -105,10 +105,10 @@ const content = {
         title: 'Implementación',
         intro: 'Construir sin romper lo que funciona.',
         content: [
-          'Despliegues por etapas, sin big bangs',
-          'Probar con usuarios reales, no escenarios',
-          'Documentar mientras construimos',
-          'Entrenar sobre la marcha'
+          'Desarrollos por etapas',
+          'Probar con usuarios en los test beds',
+          'Ir documentando mientras avanzamos',
+          'Enseñar sobre la marcha'
         ],
         time: 'Tiempo: 2-8 semanas (según el alcance)'
       },
@@ -117,10 +117,10 @@ const content = {
         title: 'Evolución',
         intro: 'La tecnología nunca está "terminada".',
         content: [
-          'Chequeos de salud regulares',
+          'Chequeos regulares',
           'Mejoras proactivas',
-          'Educación continua',
-          'Crecer con sus necesidades'
+          'Transmitir nuevos cambios',
+          'Crecer con las necesidades de la empresa'
         ],
         time: 'Tiempo: Continuo'
       }
