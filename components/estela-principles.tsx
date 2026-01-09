@@ -40,15 +40,15 @@ export function EstelaPrinciples() {
       }
     },
     es: {
-      title: "Tenemos principios —y los aplicamos",
-      subtitle: "Suena obvio, pero en un mundo donde los valores corporativos se redactan en asados corporativos y se olvidan en el estacionamiento, mantener los propios es casi un acto de rebeldía. Elegimos profundidad. Elegimos permanencia. Elegimos consistencia.",
+      title: "Tenemos principios —lo admitimos",
+      subtitle: "Suena evidente, pero en un mundo donde los valores empresariales se redactan en asados corporativos y se olvidan en el estacionamiento, mantener los propios es casi un acto de rebeldía. Elegimos profundidad. Elegimos permanencia. Elegimos consistencia.",
       principle1: {
         title: "Externos que piensan como internos",
         description: "Suena a contradicción. Lo es. Pero preferimos las contradicciones productivas a las coherencias estériles. Diseñamos como si fuera nuestro. Cuidamos como si viviéramos ahí. La tranquilidad tecnológica no se vende —se construye."
       },
       principle2: {
         title: "No coleccionamos clientes",
-        description: "Construimos alianzas. La diferencia: a los clientes se los atiende; a los aliados se los cuida. Las urgencias no son oportunidades —son compromisos. Y los compromisos, aquí, se cumplen incluso cuando nadie está mirando."
+        description: "Construimos alianzas. La diferencia: a los clientes se los atiende; a los aliados se los cultiva. Las urgencias no son oportunidades —son compromisos. Y los compromisos, aquí, se cumplen incluso cuando nadie está mirando."
       }
     }
   };

@@ -14,7 +14,7 @@ export const CTASection = () => {
     },
     es: {
       title: "No crecemos —profundizamos",
-      subtitle: "Un equipo que responde, no una estructura que delega.",
+      subtitle: "Un equipo que resuelve, no una estructura que deriva.",
       button: "Nuestra Filosofía"
     }
   };

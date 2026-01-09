@@ -18,7 +18,7 @@ export const TrustedBy = () => {
       title: "Companies we've built with"
     },
     es: {
-      title: "Trabajamos con los referentes"
+      title: "Nuestras referencias no son solo bibliográficas"
     }
   };
 
