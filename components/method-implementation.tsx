@@ -74,7 +74,7 @@ const content = {
   es: {
     breadcrumb: { home: 'Estela', method: 'Método', current: 'Implementación' },
     title: 'Cómo Trabajamos',
-    lead: 'Nuestra metodología probada para convertir problemas complejos en soluciones simples.',
+    lead: 'Una cuerda bien afinada no hace ruido —hace música. Nuestra metodología para convertir problemas diarios en soluciones escalables.',
     phases: [
       {
         number: '3.1',
