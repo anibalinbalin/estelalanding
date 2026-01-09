@@ -117,7 +117,7 @@ export function MethodIntroduction() {
     },
     es: {
       title: 'El Arte de la Traducción',
-      lead: 'Hacer claro lo complejo es un arte. Hacer complejo lo claro, en cambio, cualquiera puede. Nosotros traducimos el intrincado mundo de la tecnología en soluciones que las personas entienden, usan y agradecen.',
+      lead: 'Hacer claro lo complejo es un arte. Hacer complejo lo claro, en cambio, cualquiera puede. Nosotros elegimos lo primero.',
       sections: {
         lostArt: {
           title: 'Un Arte Perdido',
@@ -139,8 +139,8 @@ export function MethodIntroduction() {
         },
         methodEmerges: {
           title: 'El Génesis del Método',
-          intro: "Nuestro método no sigue tendencias. Las tendencias pasan; los problemas reales permanecen.",
-          listIntro: 'Lo que hacemos surgió de 50 implementaciones, incontables horas de escucha, y una convicción: los equipos pequeños construyen mejor. Menos gente, menos reuniones para coordinar reuniones, mejores resultados.',
+          intro: "Nuestro método no sigue tendencias. Las tendencias pasan; los problemas reales siguen.",
+          listIntro: 'Lo que hacemos surgió de 50 implementaciones, muchas horas de escuchar, y una convicción: los equipos cuanto más chicos tienden a terminar mejor y más rápido. Menos gente, menos reuniones para coordinar reuniones, mejores resultados.',
           items: []
         },
         whatThisMeans: {
@@ -314,7 +314,7 @@ export function MethodIntroduction() {
           
           {t.sections.lostArt.paragraphs.map((paragraph, index) => (
             <p key={index} style={paragraphStyle}>
-              {index === t.sections.lostArt.paragraphs.length - 1 ? <strong>{paragraph}</strong> : paragraph}
+              {paragraph}
             </p>
           ))}
         </section>

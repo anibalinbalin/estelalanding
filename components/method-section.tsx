@@ -51,8 +51,8 @@ const content = {
     badge: "Estela / Método",
     title: "El Método Estela",
     subtitle: "Integración Tecnológica con Alma",
-    intro1: "Existe una cierta distorsión en como frecuentemente se implementa la tecnología en las empresas.",
-    intro2: "Esos capitulos intentan aclarar y renovar conceptos, la forma en la que trabajamos en Estela.",
+    intro1: "En algún momento, la tecnología dejó de servir a las personas para exigir que las personas la sirvieran.",
+    intro2: "Estos capítulos recogen lo que guía nuestro trabajo: la obstinada convicción de que la tecnología debe simplificar la vida, no complicarla.",
     sections: {
       introduction: "Introducción",
       principles: "Principios",
