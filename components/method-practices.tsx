@@ -212,24 +212,19 @@ const content = {
       },
       {
         number: '4.5',
-        title: 'Transferencia de Conocimiento',
-        intro: 'Nuestro objetivo es volvernos prescindibles en lo cotidiano.',
+        title: 'Saber',
+        intro: 'Preferimos clientes que sepan. Nos hacen mejores preguntas.',
         description: [
-          'Muchas empresas de TI lucran con la ignorancia del cliente. Entre menos sabe, más los necesita. Nosotros preferimos lo opuesto.'
+          'La dependencia es cómoda para el proveedor. No para el cliente.'
         ],
         subsection: {
           title: 'Cómo Transferimos:',
           items: [
-            'Entrenamiento práctico durante implementación',
-            'Sesiones periódicas de capacitación',
-            'Materiales de referencia rápida',
-            'Procedimientos de escalamiento definidos',
-            'Evaluaciones anuales de capacidad'
+            'Materiales de referencia',
+            'Evaluaciones anuales'
           ]
         },
-        conclusion: [
-          'Éxito es cuando nos llaman para lo interesante, no para lo obvio.'
-        ]
+        conclusion: []
       }
     ],
     closingP1: 'Estas prácticas no figuran en ningún manual de certificación.',
