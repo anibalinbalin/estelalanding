@@ -227,8 +227,8 @@ const content = {
         conclusion: []
       }
     ],
-    closingP1: 'Estas prácticas no figuran en ningún manual de certificación.',
-    closingP2: 'Son cicatrices convertidas en costumbres. Trece años de servicio, suficientes errores para aprender.',
+    closingP1: '',
+    closingP2: '',
     prevLink: '← Anterior: Implementación',
     nextLink: 'Siguiente: Filosofía →'
   }
