@@ -125,13 +125,13 @@ const content = {
         time: 'Tiempo: Continuo'
       }
     ],
-    closingP1: 'Esta metodología no es teórica.',
-    closingP2: 'Está refinada a través de 13 años de proyectos reales.',
-    closingP3: 'Desde empresas de 5 personas hasta organizaciones de 100 personas. Desde actualizaciones de red simples hasta transformaciones digitales completas. Cada proyecto nos enseña algo nuevo.',
-    closingP4: 'Las fases son flexibles, no rígidas.',
-    closingP5: 'El cronograma se adapta a su realidad.',
-    closingP6: 'El resultado es siempre el mismo:',
-    closingHighlight: 'Tecnología que simplemente funciona.',
+    closingP1: 'No es teórica porque no funciona en teoría.',
+    closingP2: 'Funciona en su empresa.',
+    closingP3: '',
+    closingP4: '',
+    closingP5: '',
+    closingP6: 'El cronograma es suyo.',
+    closingHighlight: 'El resultado es nuestro.',
     prevLink: '← Anterior: Principios',
     nextLink: 'Siguiente: Prácticas →'
   }
