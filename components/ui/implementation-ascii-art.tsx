@@ -15,11 +15,12 @@ interface ImplementationAsciiArtProps {
   className?: string;
 }
 
-export const ImplementationAsciiArt: React.FC<ImplementationAsciiArtProps> = ({ 
+export const ImplementationAsciiArt: React.FC<ImplementationAsciiArtProps> = ({
   isVisible = true,
   className = ''
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const { resolvedTheme } = useTheme()
 
   useEffect(() => {
     if (!isVisible) return;
@@ -128,7 +129,7 @@ export const ImplementationAsciiArt: React.FC<ImplementationAsciiArtProps> = ({
         ctx.clearRect(0, 0, canvas.width, canvas.height)
       }
     }
-  }, [isVisible])
+  }, [isVisible, resolvedTheme])
 
   if (!isVisible) return null;
 
