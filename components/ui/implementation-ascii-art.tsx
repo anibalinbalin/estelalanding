@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react'
+import { useTheme } from 'next-themes'
 
 // themes: creation from unity, harmony of opposites, cyclical emergence, flowering consciousness
 // visualization: ASCII patterns with blooming centers that pulse and expand with life

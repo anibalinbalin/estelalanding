@@ -187,37 +187,28 @@ const content = {
         subsection: {
           title: 'Nuestra Rutina:',
           items: [
-            'Informes automáticos de salud cada mañana',
-            'Llamada de 15 minutos cada miércoles',
             'Recomendaciones proactivas de optimización',
-            'Análisis de tendencias y capacidad',
             'Puntos de acción claros con prioridades'
           ]
         },
-        conclusion: [
-          'Los mejores problemas son los que nunca suceden. Los segundos mejores, los que suceden mientras estamos mirando.'
-        ]
+        conclusion: []
       },
       {
         number: '4.4',
-        title: 'Relaciones con Proveedores',
-        intro: 'Conocemos nombres, no solo números de ticket.',
+        title: 'Relaciones',
+        intro: 'Conocemos nombres.',
         description: [
-          'El modelo tradicional crea un triángulo de frustración: usted llama a su empresa de TI, ellos llaman al proveedor, el proveedor culpa a otro. Pasan horas. Pasan días. Nada se resuelve.'
+          'Socios estratégicos, les dicen. Nosotros les decimos por el nombre.'
         ],
         subsection: {
           title: 'Nuestro Enfoque Directo:',
           items: [
-            'Contactos nombrados en Lenovo, UniFi, Synology, SentinelOne',
-            'Rutas de escalamiento directas para críticos',
+            'Rutas de escalamiento ágiles',
             'Briefings técnicos sobre nuevos productos',
-            'Acceso beta para pruebas',
-            'Tiempos de respuesta garantizados'
+            'Acceso beta para pruebas'
           ]
         },
-        conclusion: [
-          'Estas relaciones tomaron años en construirse. Le ahorran horas cada vez que algo falla.'
-        ]
+        conclusion: []
       },
       {
         number: '4.5',
