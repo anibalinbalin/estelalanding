@@ -127,6 +127,14 @@ interface Config {
   yGap: number;
 }
 
+interface LineInteraction {
+  lineIndex: number;
+  totalLines: number;
+  velocity: number;
+  yPosition: number;
+  height: number;
+}
+
 interface WavesProps {
   lineColor?: string;
   backgroundColor?: string;
@@ -141,6 +149,7 @@ interface WavesProps {
   maxCursorMove?: number;
   style?: CSSProperties;
   className?: string;
+  onLineInteraction?: (interaction: LineInteraction) => void;
 }
 
 const Waves: React.FC<WavesProps> = ({
@@ -157,6 +166,7 @@ const Waves: React.FC<WavesProps> = ({
   maxCursorMove = 100,
   style = {},
   className = "",
+  onLineInteraction,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -186,6 +196,8 @@ const Waves: React.FC<WavesProps> = ({
     a: 0,
     set: false,
   });
+  const lastRowRef = useRef<number>(-1);
+  const onLineInteractionRef = useRef(onLineInteraction);
 
   const configRef = useRef<Config>({
     lineColor,
@@ -227,6 +239,10 @@ const Waves: React.FC<WavesProps> = ({
     xGap,
     yGap,
   ]);
+
+  useEffect(() => {
+    onLineInteractionRef.current = onLineInteraction;
+  }, [onLineInteraction]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -398,6 +414,24 @@ const Waves: React.FC<WavesProps> = ({
         mouse.ly = mouse.y;
         mouse.set = true;
       }
+
+      // Check for row crossing (for audio callback)
+      if (onLineInteractionRef.current && b.height > 0) {
+        const { yGap } = configRef.current;
+        const totalRows = Math.ceil(b.height / yGap);
+        const currentRow = Math.floor(mouse.y / yGap);
+
+        if (currentRow !== lastRowRef.current && currentRow >= 0 && currentRow < totalRows) {
+          onLineInteractionRef.current({
+            lineIndex: currentRow,
+            totalLines: totalRows,
+            velocity: mouse.v,
+            yPosition: mouse.y,
+            height: b.height,
+          });
+          lastRowRef.current = currentRow;
+        }
+      }
     }
 
     setSize();
@@ -440,3 +474,4 @@ const Waves: React.FC<WavesProps> = ({
 };
 
 export default Waves;
+export type { LineInteraction };

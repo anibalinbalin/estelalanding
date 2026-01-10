@@ -1,10 +1,12 @@
 'use client'
 
+import { useState, useCallback } from 'react'
 import { Link } from 'next-view-transitions'
-import Waves from '@/components/ui/waves'
+import Waves, { type LineInteraction } from '@/components/ui/waves'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { useTheme } from 'next-themes'
 import { useLanguage } from '@/components/language-provider'
+import { useWaveAudio } from '@/hooks/use-wave-audio'
 
 const content = {
   en: {
@@ -141,6 +143,36 @@ export function MethodImplementation() {
   const { resolvedTheme } = useTheme()
   const { language } = useLanguage()
   const t = content[language]
+  const [audioEnabled, setAudioEnabled] = useState(false)
+
+  const audio = useWaveAudio({
+    mode: 'pluck',
+    scale: 'guitar',
+    volume: 0.3,
+    oscillatorType: 'triangle',
+  })
+
+  const toggleAudio = useCallback(() => {
+    if (audioEnabled) {
+      audio.disable()
+      setAudioEnabled(false)
+    } else {
+      audio.enable()
+      setAudioEnabled(true)
+    }
+  }, [audio, audioEnabled])
+
+  const handleLineInteraction = useCallback(
+    (interaction: LineInteraction) => {
+      if (!audioEnabled) return
+      audio.triggerNote(
+        interaction.lineIndex,
+        interaction.totalLines,
+        interaction.velocity
+      )
+    },
+    [audio, audioEnabled]
+  )
 
   return (
     <div style={{
@@ -211,7 +243,7 @@ export function MethodImplementation() {
           </p>
 
           {/* Waves Effect */}
-          <div style={{ 
+          <div style={{
             position: 'relative',
             marginBottom: '48px',
             borderRadius: '8px',
@@ -220,6 +252,46 @@ export function MethodImplementation() {
             width: '100%',
             overflow: 'hidden'
           }}>
+            {/* Audio toggle button */}
+            <button
+              onClick={toggleAudio}
+              aria-label={audioEnabled ? 'Disable sound' : 'Enable sound'}
+              style={{
+                position: 'absolute',
+                top: '12px',
+                right: '12px',
+                zIndex: 10,
+                width: '32px',
+                height: '32px',
+                borderRadius: '50%',
+                border: 'none',
+                backgroundColor: audioEnabled
+                  ? (resolvedTheme === 'light' ? '#333' : '#f5b944')
+                  : (resolvedTheme === 'light' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'),
+                color: audioEnabled
+                  ? (resolvedTheme === 'light' ? '#fff' : '#000')
+                  : (resolvedTheme === 'light' ? '#666' : '#888'),
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.2s ease',
+              }}
+            >
+              {audioEnabled ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                </svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                  <line x1="23" y1="9" x2="17" y2="15" />
+                  <line x1="17" y1="9" x2="23" y2="15" />
+                </svg>
+              )}
+            </button>
             <Waves
               lineColor={resolvedTheme === 'light' ? '#666666' : '#f5b944'}
               backgroundColor={resolvedTheme === 'light' ? '#f5f5f5' : '#3d3019'}
@@ -232,6 +304,7 @@ export function MethodImplementation() {
               maxCursorMove={100}
               xGap={14}
               yGap={32}
+              onLineInteraction={handleLineInteraction}
             />
           </div>
         </div>
