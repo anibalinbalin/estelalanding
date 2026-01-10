@@ -133,123 +133,116 @@ const content = {
   es: {
     breadcrumb: { home: 'Estela', method: 'Método', current: 'Prácticas' },
     title: 'Nuestras Prácticas',
-    lead: 'Excelencia operativa diaria a través de métodos probados y ejecución consistente.',
+    lead: 'Lo que repetimos hasta que deja de ser esfuerzo y empieza a ser reflejo.',
     practices: [
       {
         number: '4.1',
-        title: 'La Regla de las 24 Horas',
-        intro: 'Nuestro Compromiso de Respuesta Rápida',
+        title: 'Respuesta Inmediata',
+        intro: 'Porque lo urgente no puede esperar.',
         description: [
-          'Esta regla surgió de una observación simple: la mayoría de los problemas de TI se agravan con el tiempo. Un pequeño contratiempo de red se convierte en una falla en cascada. Un archivo corrupto se convierte en pérdida de datos. Un usuario confundido se convierte en un equipo frustrado.'
+          'Los problemas técnicos no mejoran solos. Empeoran. Nuestra velocidad existe para evitar que eso pase.'
         ],
         subsection: {
           title: 'Cómo Funciona:',
           items: [
-            'Todos los problemas críticos rastreados desde el primer contacto',
-            'Su problema es atendido inmediatamente por uno de nuestros expertos principales',
-            'Diagnóstico inicial y plan de acción dentro de 24 horas',
+            'Problemas críticos rastreados desde el primer contacto',
+            'Atención inmediata por uno de nuestros expertos principales',
+            'Diagnóstico y plan de acción en menos de 24 horas',
             'Comunicación clara durante toda la resolución',
-            'Revisión post-incidente para prevención'
+            'Revisión post-incidente para que no se repita'
           ]
         },
         conclusion: [
-          'Los problemas críticos demandan atención inmediata. Nuestro compromiso es una respuesta rápida y personal—típicamente en minutos u horas, no días. Se conectará directamente con un miembro del equipo principal que entiende su configuración.',
-          '...nunca es solo un ticket en una cola, ni recibe solución genérica cuando los sistemas críticos están caídos.'
+          'La urgencia ajena es urgencia propia.'
         ]
       },
       {
         number: '4.2',
-        title: 'Documentación como Arte',
-        intro: 'Creemos que la documentación debe iluminar, no intimidar. La nuestra está diseñada para claridad y uso inmediato—visual, práctica, y siempre accesible.',
+        title: 'Claridad',
+        intro: 'La buena documentación es la que alguien abre dos veces.',
         description: [
-          'La documentación tradicional de TI falla porque está escrita para auditores, no para usuarios. Prioriza completitud sobre claridad, cumplimiento sobre comprensión.'
+          'El estándar del rubro es documentar para cumplir. Nosotros documentamos para ambos.'
         ],
         subsection: {
           title: 'Nuestro Enfoque:',
           items: [
-            'Diagramas visuales que muestran, no cuentan',
+            'Diagramas que muestran, no describen',
             'Guías de referencia rápida para tareas diarias',
-            'Videos explicativos para procedimientos complejos',
+            'Videos para procedimientos complejos',
             'Base de conocimiento buscable, no carpetas',
-            'Actualizaciones regulares basadas en preguntas reales'
+            'Actualizaciones basadas en preguntas reales'
           ]
         },
         conclusion: [
-          'Cada pieza de documentación responde tres preguntas: 1. ¿Qué hace esto? 2. ¿Cómo lo uso? 3. ¿Qué pasa si algo sale mal?',
-          'Hemos aprendido que la mejor documentación no es exhaustiva—es comprensible. No se trata de cubrir cada caso extremo; se trata de asegurar que su equipo pueda manejar los casos que realmente ocurren.',
-          'La documentación debe empoderar, no abrumar.'
+          'Documentación que resuelve sola.'
         ]
       },
       {
         number: '4.3',
-        title: 'El Pulso Semanal',
-        intro: 'Chequeos breves y regulares mantienen los sistemas saludables. 15 minutos pueden prevenir 15 horas de tiempo de inactividad.',
+        title: 'Atención',
+        intro: 'Mirar seguido para actuar temprano.',
         description: [
-          'La mayoría de los desastres de TI se anuncian con susurros antes de gritar. Un disco al 90% de capacidad. Uso de memoria aumentando gradualmente. Tiempos de respuesta incrementándose poco a poco. El Pulso Semanal captura los susurros.'
+          'Los sistemas dan señales. Nosotros las leemos. Alertas de poca capacidad, incremento de consumo de memoria, I/O exagerado, etc.'
         ],
         subsection: {
-          title: 'Nuestra Rutina Semanal:',
+          title: 'Nuestra Rutina:',
           items: [
-            'Informes automáticos de salud del sistema cada mañana',
-            'Llamada de revisión de 15 minutos cada miércoles',
+            'Informes automáticos de salud cada mañana',
+            'Llamada de 15 minutos cada miércoles',
             'Recomendaciones proactivas de optimización',
-            'Análisis de tendencias y planificación de capacidad',
+            'Análisis de tendencias y capacidad',
             'Puntos de acción claros con prioridades'
           ]
         },
         conclusion: [
-          'Esto no se trata de crear reuniones o generar informes. Se trata de mantener un ritmo de atención que mantiene los problemas pequeños pequeños. Como un médico revisando signos vitales, monitoreamos lo que importa e intervenimos antes de que los síntomas se conviertan en emergencias.',
-          'Los mejores problemas son los que nunca suceden.'
+          'Los mejores problemas son los que nunca suceden. Los segundos mejores, los que suceden mientras estamos mirando.'
         ]
       },
       {
         number: '4.4',
         title: 'Relaciones con Proveedores',
-        intro: 'Mantenemos relaciones directas con Lenovo, UniFi, Synology y SentinelOne. Sus problemas se convierten en nuestros problemas. Sin rodeos.',
+        intro: 'Conocemos nombres, no solo números de ticket.',
         description: [
-          'El modelo tradicional de proveedores crea un triángulo de frustración: usted llama a su empresa de TI, ellos llaman al proveedor, el proveedor culpa a alguien más. Pasan horas. Pasan días. Nada se resuelve.'
+          'El modelo tradicional crea un triángulo de frustración: usted llama a su empresa de TI, ellos llaman al proveedor, el proveedor culpa a otro. Pasan horas. Pasan días. Nada se resuelve.'
         ],
         subsection: {
           title: 'Nuestro Enfoque Directo:',
           items: [
-            'Contactos nombrados en cada empresa asociada',
-            'Rutas de escalamiento directas para problemas críticos',
-            'Briefings técnicos regulares sobre nuevos productos',
-            'Acceso beta para pruebas y validación',
-            'Tiempos de respuesta garantizados en acuerdos con socios'
+            'Contactos nombrados en Lenovo, UniFi, Synology, SentinelOne',
+            'Rutas de escalamiento directas para críticos',
+            'Briefings técnicos sobre nuevos productos',
+            'Acceso beta para pruebas',
+            'Tiempos de respuesta garantizados'
           ]
         },
         conclusion: [
-          'Cuando surge un problema específico del proveedor—sea con Synology, UniFi o SentinelOne—nuestras alianzas establecidas significan que navegamos sus canales de soporte con la eficiencia de un insider. Aprovechamos contactos directos y conocimiento profundo del producto para acelerar la resolución, frecuentemente pre-probando actualizaciones críticas en nuestro entorno para asegurar estabilidad para el suyo. Nuestro objetivo siempre es protegerlo de la complejidad y agilizar soluciones.',
-          'Estas relaciones tomaron años en construirse. Le ahorran horas cada vez que algo sale mal.'
+          'Estas relaciones tomaron años en construirse. Le ahorran horas cada vez que algo falla.'
         ]
       },
       {
         number: '4.5',
         title: 'Transferencia de Conocimiento',
-        intro: 'Nuestro objetivo es construir la capacidad de su equipo, no crear dependencia.',
+        intro: 'Nuestro objetivo es volvernos prescindibles en lo cotidiano.',
         description: [
-          'Muchas empresas de TI lucran con la ignorancia del cliente. Entre menos sabe, más los necesita. Nosotros creemos lo opuesto: entre más capaz se vuelve, más valiosa es nuestra asociación.'
+          'Muchas empresas de TI lucran con la ignorancia del cliente. Entre menos sabe, más los necesita. Nosotros preferimos lo opuesto.'
         ],
         subsection: {
-          title: 'Cómo Transferimos Conocimiento:',
+          title: 'Cómo Transferimos:',
           items: [
-            'Entrenamiento práctico durante la implementación',
-            'Sesiones regulares de lunch-and-learn',
-            'Materiales de referencia rápida para su equipo',
-            'Procedimientos de escalamiento claramente definidos',
+            'Entrenamiento práctico durante implementación',
+            'Sesiones periódicas de capacitación',
+            'Materiales de referencia rápida',
+            'Procedimientos de escalamiento definidos',
             'Evaluaciones anuales de capacidad'
           ]
         },
         conclusion: [
-          'Enseñamos a su equipo a manejar tareas rutinarias con confianza. Cambiar una contraseña de usuario. Agregar una impresora de red. Restaurar un archivo eliminado. Revisar logs de seguridad. Estas no son tareas complejas—solo son desconocidas.',
-          'Nuestra filosofía se basa en el empoderamiento. Creemos que mientras más capaz se vuelve su equipo con las tareas cotidianas, más valiosa y estratégica evoluciona nuestra asociación.',
-          'La verdadera asociación significa crecer juntos.'
+          'Éxito es cuando nos llaman para lo interesante, no para lo obvio.'
         ]
       }
     ],
-    closingP1: 'Estas prácticas no son reglas impuestas desde arriba.',
-    closingP2: 'Son lecciones aprendidas de 13 años de servicio. Cada una existe porque resuelve un problema real. Cada una evoluciona mientras aprendemos mejores formas. Cada una se enfoca en un objetivo simple:',
+    closingP1: 'Estas prácticas no figuran en ningún manual de certificación.',
+    closingP2: 'Son cicatrices convertidas en costumbres. Trece años de servicio, suficientes errores para aprender.',
     prevLink: '← Anterior: Implementación',
     nextLink: 'Siguiente: Filosofía →'
   }
