@@ -44,7 +44,7 @@ export function useWaveAudio(
   const masterGainRef = useRef<GainNode | null>(null);
   const enabledRef = useRef(false);
   const lastTriggeredLineRef = useRef<number>(-1);
-  const activeNotesRef = useRef<Map<number, { osc: OscillatorNode; gain: GainNode }>>(
+  const activeNotesRef = useRef<Map<number, { oscs: OscillatorNode[]; gains: GainNode[] }>>(
     new Map()
   );
 
@@ -93,9 +93,11 @@ export function useWaveAudio(
     enabledRef.current = false;
     configRef.current.enabled = false;
     // Stop any active oscillators
-    activeNotesRef.current.forEach(({ osc, gain }) => {
-      gain.gain.setTargetAtTime(0, audioContextRef.current!.currentTime, 0.1);
-      setTimeout(() => osc.stop(), 200);
+    activeNotesRef.current.forEach(({ oscs, gains }) => {
+      gains.forEach((gain) => {
+        gain.gain.setTargetAtTime(0, audioContextRef.current!.currentTime, 0.1);
+      });
+      setTimeout(() => oscs.forEach((osc) => osc.stop()), 200);
     });
     activeNotesRef.current.clear();
     if (droneOscRef.current) {
@@ -121,48 +123,79 @@ export function useWaveAudio(
 
       const ctx = audioContextRef.current;
       const freq = getFrequencyForLine(lineIndex, totalLines);
+      const now = ctx.currentTime;
 
-      // Create oscillator and gain for this note
-      const osc = ctx.createOscillator();
-      const gainNode = ctx.createGain();
+      // Classical guitar harmonics - nylon strings emphasize fundamental
+      const harmonics = [
+        { ratio: 1, gain: 1.0 },    // fundamental (strongest)
+        { ratio: 2, gain: 0.4 },    // octave
+        { ratio: 3, gain: 0.15 },   // 12th (fifth above octave)
+        { ratio: 4, gain: 0.08 },   // 2nd octave
+      ];
 
-      osc.type = configRef.current.oscillatorType;
-      osc.frequency.value = freq;
+      // Low-pass filter for warmth (nylon string character)
+      const filter = ctx.createBiquadFilter();
+      filter.type = "lowpass";
+      filter.frequency.setValueAtTime(3500, now);
+      filter.frequency.exponentialRampToValueAtTime(1200, now + 0.5);
+      filter.Q.value = 1;
 
       // Velocity affects volume
       const velocityMultiplier = configRef.current.mode === "velocity"
         ? Math.min(1, velocity / 50)
         : 1;
 
-      const attackTime = 0.01;
-      const decayTime = 0.1;
-      const sustainLevel = 0.3 * velocityMultiplier;
-      const releaseTime = 1.5;
+      // Note envelope for classical guitar
+      const noteGain = ctx.createGain();
+      const attackTime = 0.005;
+      const decayTime = 0.3;
+      const sustainLevel = 0.15 * velocityMultiplier;
+      const releaseTime = 2.0;
 
-      const now = ctx.currentTime;
-      gainNode.gain.setValueAtTime(0, now);
-      gainNode.gain.linearRampToValueAtTime(velocityMultiplier, now + attackTime);
-      gainNode.gain.linearRampToValueAtTime(sustainLevel, now + attackTime + decayTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.001, now + releaseTime);
+      noteGain.gain.setValueAtTime(0, now);
+      noteGain.gain.linearRampToValueAtTime(velocityMultiplier, now + attackTime);
+      noteGain.gain.exponentialRampToValueAtTime(sustainLevel, now + attackTime + decayTime);
+      noteGain.gain.exponentialRampToValueAtTime(0.001, now + releaseTime);
 
-      osc.connect(gainNode);
-      gainNode.connect(masterGainRef.current);
+      const oscillators: OscillatorNode[] = [];
+      const gains: GainNode[] = [];
 
-      osc.start(now);
-      osc.stop(now + releaseTime + 0.1);
+      // Create oscillator for each harmonic
+      harmonics.forEach(({ ratio, gain: harmonicGain }) => {
+        const osc = ctx.createOscillator();
+        const oscGain = ctx.createGain();
 
-      // Track active note
+        osc.type = "sine"; // Sine waves for cleaner classical guitar tone
+        osc.frequency.value = freq * ratio;
+        oscGain.gain.value = harmonicGain;
+
+        osc.connect(oscGain);
+        oscGain.connect(filter);
+        oscillators.push(osc);
+        gains.push(oscGain);
+      });
+
+      filter.connect(noteGain);
+      noteGain.connect(masterGainRef.current);
+
+      // Start all oscillators
+      oscillators.forEach((osc) => {
+        osc.start(now);
+        osc.stop(now + releaseTime + 0.1);
+      });
+
+      // Track active note for cleanup
       const noteKey = lineIndex;
       if (activeNotesRef.current.has(noteKey)) {
         const prev = activeNotesRef.current.get(noteKey)!;
-        prev.gain.gain.setTargetAtTime(0, now, 0.05);
-        setTimeout(() => prev.osc.stop(), 100);
+        prev.gains.forEach((g) => g.gain.setTargetAtTime(0, now, 0.05));
+        setTimeout(() => prev.oscs.forEach((o) => o.stop()), 100);
       }
-      activeNotesRef.current.set(noteKey, { osc, gain: gainNode });
+      activeNotesRef.current.set(noteKey, { oscs: oscillators, gains });
 
       // Clean up after note ends
-      osc.onended = () => {
-        if (activeNotesRef.current.get(noteKey)?.osc === osc) {
+      oscillators[0].onended = () => {
+        if (activeNotesRef.current.get(noteKey)?.oscs[0] === oscillators[0]) {
           activeNotesRef.current.delete(noteKey);
         }
       };
