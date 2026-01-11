@@ -80,14 +80,14 @@ export function MethodPrinciples() {
           number: '2.3',
           title: 'Sin parches',
           content: [
-            'No hay soluciones temporales que después se vuelven permanentes. Lo que construimos está pensado para durar y para cambiar con usted.'
+            'No hay soluciones temporales que después se vuelven permanentes.'
           ]
         },
         {
           number: '2.4',
           title: 'Sin dependencias',
           content: [
-            'Evitamos crear dependencias artificiales. Si decide cambiar de proveedor, su infraestructura sigue funcionando.'
+            'Su infraestructura es suya. Con o sin nosotros.'
           ]
         },
         {
