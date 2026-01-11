@@ -138,9 +138,9 @@ export function MethodIntroduction() {
           items: []
         },
         methodEmerges: {
-          title: 'El Génesis del Método',
-          intro: "Nuestro método no sigue tendencias. Las tendencias pasan; los problemas reales siguen.",
-          listIntro: 'Lo que hacemos surgió de 50 implementaciones, muchas horas de escuchar, y una convicción: los equipos cuanto más chicos tienden a terminar mejor y más rápido. Menos gente, menos reuniones para coordinar reuniones, mejores resultados.',
+          title: '',
+          intro: '',
+          listIntro: '',
           items: []
         },
         whatThisMeans: {
@@ -153,8 +153,8 @@ export function MethodIntroduction() {
           ]
         },
         journeyAhead: {
-          title: 'Continuar Leyendo',
-          intro: "Lo que sigue son los detalles: principios, implementación, prácticas, filosofía. Si llegó hasta aquí, vale la pena continuar.",
+          title: '',
+          intro: "Lo que sigue es el cómo. Esto fue el porqué.",
           items: [],
           conclusion: ''
         }
