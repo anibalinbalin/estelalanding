@@ -5,18 +5,18 @@ import { useLanguage } from '@/components/language-provider';
 
 export const HeroSection = () => {
   const { language } = useLanguage();
-  
+
   const content = {
     en: {
-      heading1: 'Partnerships forged in trust.',
-      heading2: 'Validated in production.'
+      heading1: 'Proven in production.',
+      heading2: 'Certified later.'
     },
     es: {
-      heading1: 'Alianzas forjadas en la confianza.',
-      heading2: 'Validadas en producción.'
+      heading1: 'Probados en producción.',
+      heading2: 'Certificados después.'
     }
   };
-  
+
   const t = content[language] || content.en;
   return (
     <div className="w-[100%] px-5 min-[600px]:px-10">

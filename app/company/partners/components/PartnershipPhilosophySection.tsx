@@ -5,62 +5,58 @@ import { useLanguage } from '@/components/language-provider';
 
 export const PartnershipPhilosophySection = () => {
   const { language } = useLanguage();
-  
+
   const content = {
     en: {
-      title: 'Our Partnership Philosophy',
-      yourAdvantage: 'Your Advantage',
+      title: 'How We Choose Partners',
+      yourAdvantage: 'What You Get',
       philosophyItems: [
         {
-          title: "We Don't Chase Certifications",
-          description: "We earn partnerships through real-world excellence. Every partner relationship is tested in production before we formalize it."
+          title: "The Proof Is in Production",
+          description: "Anyone can frame a diploma. Few can keep a system running."
         },
         {
-          title: "Direct Relationships Matter",
-          description: "When you have a problem, we don't open tickets. We call our contacts. Real people who know us and prioritize your needs."
+          title: "We Call. We Don't Ticket.",
+          description: "When there's a problem, we dial a number. We don't fill out a form."
         },
         {
-          title: "Quality Over Quantity", 
-          description: "Four strategic partners. That's it. Each one best-in-class. Each one proven. No compromises."
+          title: "Few. The Best.",
+          description: "Each partner is the best at what they do. No exceptions. No second choices."
         }
       ],
       advantages: [
-        'Enterprise pricing on day one',
-        'Priority support always',
-        'Beta access to innovations',
-        'Direct vendor escalation',
-        'Extended warranties',
-        'Local spare parts'
+        'Enterprise pricing. Day one.',
+        'Support that answers. Always.',
+        'Beta access. Before others.',
+        'We escalate to the manufacturer. Direct.'
       ]
     },
     es: {
-      title: 'Nuestra Filosofía de Alianzas',
-      yourAdvantage: 'Su Ventaja',
+      title: 'Cómo Elegimos Socios',
+      yourAdvantage: 'Lo Que Usted Gana',
       philosophyItems: [
         {
-          title: "No Perseguimos Certificaciones",
-          description: "Ganamos nuestras alianzas a través de la excelencia en el mundo real. Cada relación con un socio es probada en producción antes de que la formalicemos."
+          title: "La Prueba Está en Producción",
+          description: "Cualquiera enmarca un diploma. Pocos sostienen un sistema funcionando."
         },
         {
-          title: "Las Relaciones Directas son Fundamentales",
-          description: "Cuando usted tiene un problema, no abrimos tickets. Llamamos a nuestros contactos. Personas reales que nos conocen y priorizan sus necesidades."
+          title: "Llamamos. No Ticketeamos.",
+          description: "Cuando hay un problema, marcamos un número. No llenamos un formulario."
         },
         {
-          title: "Calidad sobre Cantidad", 
-          description: "Cuatro socios estratégicos. Eso es todo. Cada uno, el mejor en su clase. Cada uno, probado. Sin concesiones."
+          title: "Pocos. Los Mejores.",
+          description: "Cada socio es el mejor en lo suyo. Sin excepciones. Sin segundas opciones."
         }
       ],
       advantages: [
-        'Precios corporativos desde el primer día',
-        'Soporte prioritario, siempre',
-        'Acceso a innovaciones en fase beta',
-        'Escalamiento directo con el proveedor',
-        'Garantías extendidas',
-        'Repuestos locales'
+        'Precios de empresa grande. Desde el día uno.',
+        'Soporte que contesta. Siempre.',
+        'Acceso beta. Antes que otros.',
+        'Escalamos al fabricante. Directo.'
       ]
     }
   };
-  
+
   const t = content[language] || content.en;
 
   return (
@@ -68,7 +64,7 @@ export const PartnershipPhilosophySection = () => {
       <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] max-[800px]:mb-2 max-[800px]:mt-8 min-[800px]:my-8 gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
         <div className="grid col-span-12 min-[600px]:col-start-[2] min-[1000px]:col-start-[4] min-[600px]:col-span-10 min-[1000px]:col-span-7">
           <div className="min-[1000px]:col-start-[2] min-[1000px]:col-span-5">
-            
+
             {/* Section Header */}
             <div className="mb-8">
               <h2 className="text-balance m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal mb-2">
@@ -96,7 +92,7 @@ export const PartnershipPhilosophySection = () => {
               <ul className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
                 {t.advantages.map((advantage, i) => (
                   <li key={i} className="mb-2">
-                    ✓ {advantage}
+                    {advantage}
                   </li>
                 ))}
               </ul>
