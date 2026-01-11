@@ -8,13 +8,13 @@ export const CTASection = () => {
 
   const content = {
     en: {
-      title: "We don't grow—we go deeper",
-      subtitle: "A team that responds, not a structure that delegates.",
+      title: "We have opinions. Also reasons.",
+      subtitle: "The combination, we're told, is uncommon.",
       button: "Our Philosophy"
     },
     es: {
-      title: "No crecemos —profundizamos",
-      subtitle: "Un equipo que resuelve, no una estructura que deriva.",
+      title: "Tenemos opiniones. También razones.",
+      subtitle: "La combinación, nos dicen, es infrecuente.",
       button: "Nuestra Filosofía"
     }
   };
