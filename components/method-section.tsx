@@ -50,9 +50,9 @@ const content = {
   es: {
     badge: "Estela / Método",
     title: "El Método Estela",
-    subtitle: "Integración Tecnológica con Alma",
+    subtitle: "",
     intro1: "En algún momento, la tecnología dejó de servir a las personas para exigir que las personas la sirvieran.",
-    intro2: "Estos capítulos recogen lo que guía nuestro trabajo: la obstinada convicción de que la tecnología debe simplificar la vida, no complicarla.",
+    intro2: "Estos capítulos recogen lo que guía nuestro trabajo.",
     sections: {
       introduction: "Introducción",
       principles: "Principios",
@@ -77,14 +77,14 @@ const content = {
       { title: 'Evolución', href: '/method/implementation#evolution', number: '3.4' }
     ],
     practicesItems: [
-      { title: 'La Regla de las 24 Horas', href: '/method/practices#24hour', number: '4.1' },
-      { title: 'Documentación como Arte', href: '/method/practices#documentation', number: '4.2' },
-      { title: 'El Pulso Semanal', href: '/method/practices#weekly', number: '4.3' },
-      { title: 'Relaciones con Proveedores', href: '/method/practices#vendors', number: '4.4' },
-      { title: 'Transferencia de Conocimiento', href: '/method/practices#knowledge', number: '4.5' }
+      { title: 'Respuesta Inmediata', href: '/method/practices#24hour', number: '4.1' },
+      { title: 'Claridad', href: '/method/practices#documentation', number: '4.2' },
+      { title: 'Atención', href: '/method/practices#weekly', number: '4.3' },
+      { title: 'Relaciones', href: '/method/practices#vendors', number: '4.4' },
+      { title: 'Saber', href: '/method/practices#knowledge', number: '4.5' }
     ],
     philosophyItems: [
-      { title: 'El Principio del Hexágono', href: '/method/philosophy#hexagon', number: '5.1' },
+      { title: 'El Hexágono', href: '/method/philosophy#hexagon', number: '5.1' },
       { title: 'Aprendiendo de la Historia', href: '/method/philosophy#history', number: '5.2' },
       { title: 'La Conexión Artística', href: '/method/philosophy#art', number: '5.3' },
       { title: 'Resultados, No Informes', href: '/method/philosophy#results', number: '5.4' }
