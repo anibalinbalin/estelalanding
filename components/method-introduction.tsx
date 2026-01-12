@@ -37,11 +37,9 @@ export function MethodIntroduction() {
         translationImperative: {
           title: 'The Translation Imperative',
           paragraphs: [
-            "After 13 years of building systems, we've learned that the best infrastructure is invisible. It doesn't announce itself with complexity or demand attention through failure. It just works.",
-            "This invisibility isn't accidental. It's the result of continuous translation between what technology can do and what people actually need.",
-            "Consider the architect who needs to share massive CAD files. She doesn't care about RAID configurations or IOPS metrics. She cares about opening files quickly and meeting deadlines.",
-            "Or the medical laboratory that must maintain perfect uptime. They don't need lectures on virtualization. They need systems that never fail when lives depend on them.",
-            "Translation means understanding both languages fluently—the language of technology and the language of human need—then building bridges between them."
+            "The best infrastructure is like a good translation: the reader forgets they're reading one. If they think about the translator, the translator failed.",
+            "Consider the architect who needs to share 2GB CAD files. She doesn't care about RAID configurations or IOPS metrics. She cares about opening files fast and meeting deadlines. If she has to think about the network, the network failed.",
+            "Translation means building bridges between technology and human need. Bridges no one notices until they try to cross without one."
           ]
         },
         philosophy: {
@@ -127,7 +125,7 @@ export function MethodIntroduction() {
         translationImperative: {
           title: 'El Imperativo de Traducir',
           paragraphs: [
-            "Después de 13 años construyendo sistemas, aprendimos algo: la mejor infraestructura es invisible. Simplemente funciona. Como la gravedad, pero con mejor documentación.",
+            "La mejor infraestructura es como una buena traducción: el lector olvida que está leyendo una. Si piensa en el traductor, el traductor falló.",
             "Considere a la arquitecta que necesita compartir archivos CAD de 2GB. No le interesa la configuración RAID ni las métricas de IOPS. Le interesa abrir archivos rápido y cumplir plazos. Si tiene que pensar en la red, la red falló.",
             "Traducir significa construir puentes entre la tecnología y la necesidad humana. Puentes que nadie nota hasta que intenta cruzar sin uno."
           ]
