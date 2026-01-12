@@ -21,8 +21,8 @@ export const TestNumbersSection = () => {
         description: "Complete retention. Small sample, consistent result."
       },
       metric2: {
-        title: "Average relationship",
-        description: "Average relationship: seven years. Standard deviation: irrelevant."
+        title: "Meetings",
+        description: "Necessary: few. Unnecessary: none. Those that could've been an email: were an email."
       },
       metric3: {
         title: "Founding team",
@@ -40,8 +40,8 @@ export const TestNumbersSection = () => {
         description: "Retención completa. La muestra es pequeña, pero el resultado es consistente."
       },
       metric2: {
-        title: "Relación media",
-        description: "Promedio de relación: siete años. Desviación estándar: irrelevante."
+        title: "Reuniones",
+        description: "Las necesarias: pocas. Las innecesarias: ninguna. Las que podrían haber sido un email: fueron un email."
       },
       metric3: {
         title: "Equipo fundador",
