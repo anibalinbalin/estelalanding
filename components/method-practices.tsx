@@ -200,7 +200,7 @@ const content = {
           'Socios estratégicos, les dicen. Nosotros les decimos por el nombre.'
         ],
         subsection: {
-          title: 'Nuestro Enfoque Directo:',
+          title: 'Nuestra forma:',
           items: [
             'Rutas de escalamiento ágiles',
             'Briefings técnicos sobre nuevos productos',
