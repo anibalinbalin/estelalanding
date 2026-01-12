@@ -23,12 +23,12 @@ function Hero() {
   const content = {
     en: {
       title: "The shortest path between\nthe problem and the solution",
-      subtitle: "The Greeks invented logic, geometry, and a god for every need. We apply the first two to build solutions. From the third, we kept only the marble.",
+      subtitle: "The Greeks invented logic, geometry, and a god for every need. We apply the first two to build solutions. From the third—the gods, not the needs—we kept only the marble, which requires no updates.",
       contact: "Our Approach"
     },
     es: {
       title: "El camino más corto entre\nel problema y la solución",
-      subtitle: "Los griegos inventaron la lógica, la geometría y un dios para cada necesidad. Nosotros aplicamos las dos primeras para construir soluciones. Del tercero conservamos solo el mármol.",
+      subtitle: "Los griegos inventaron la lógica, la geometría y un dios para cada necesidad. Nosotros aplicamos las dos primeras para construir soluciones. De la tercera categoría —los dioses, no las necesidades— conservamos solo el mármol, que no requiere actualizaciones.",
       contact: "Nuestro Enfoque"
     }
   };

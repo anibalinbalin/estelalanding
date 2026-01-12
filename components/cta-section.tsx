@@ -9,12 +9,12 @@ export const CTASection = () => {
   const content = {
     en: {
       title: "We have opinions. Also reasons.",
-      subtitle: "The combination, we're told, is uncommon.",
+      subtitle: "The combination, we're told, is uncommon. That's also an opinion.",
       button: "Our Philosophy"
     },
     es: {
       title: "Tenemos opiniones. También razones.",
-      subtitle: "La combinación, nos dicen, es infrecuente.",
+      subtitle: "La combinación, nos dicen, es infrecuente. Eso también es una opinión.",
       button: "Nuestra Filosofía"
     }
   };

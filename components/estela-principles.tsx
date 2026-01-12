@@ -40,7 +40,7 @@ export function EstelaPrinciples() {
       }
     },
     es: {
-      title: "Tenemos principios —lo admitimos",
+      title: "Tenemos principios —y los aplicamos",
       subtitle: "Suena evidente, pero en un mundo donde los valores empresariales se redactan en asados corporativos y se olvidan en el estacionamiento, mantener los propios es casi un acto de rebeldía. Elegimos profundidad. Elegimos permanencia. Elegimos consistencia.",
       principle1: {
         title: "Externos que piensan como internos",
