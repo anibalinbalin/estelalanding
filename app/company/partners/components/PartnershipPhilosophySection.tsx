@@ -17,7 +17,7 @@ export const PartnershipPhilosophySection = () => {
         },
         {
           title: "Few. The Best.",
-          description: "Each partner is the best at what they do. No exceptions. No second choices."
+          description: "Few partners. The ones we'd choose again."
         }
       ],
       advantages: [
@@ -37,7 +37,7 @@ export const PartnershipPhilosophySection = () => {
         },
         {
           title: "Pocos. Los Mejores.",
-          description: "Cada socio es el mejor en lo suyo. Sin excepciones. Sin segundas opciones."
+          description: "Pocos socios. Los que elegiríamos de nuevo."
         }
       ],
       advantages: [
