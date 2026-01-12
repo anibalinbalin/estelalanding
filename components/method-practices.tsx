@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { Link } from 'next-view-transitions'
 import CustomVerticalBarsNoise from '@/components/ui/custom-vertical-bars-noise'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
@@ -39,7 +40,7 @@ const content = {
         title: 'Documentation as Art',
         intro: 'We believe documentation should illuminate, not intimidate. Ours is designed for clarity and immediate use—visual, practical, and always accessible.',
         description: [
-          "Traditional IT documentation fails because it's written for auditors, not users. It prioritizes completeness over clarity, compliance over comprehension."
+          'Industry standard is to document for compliance. We document so someone actually reads it.'
         ],
         subsection: {
           title: 'Our Approach:',
@@ -62,7 +63,7 @@ const content = {
         title: 'The Weekly Pulse',
         intro: 'Short, regular check-ins keep systems healthy. 15 minutes can prevent 15 hours of downtime.',
         description: [
-          'Most IT disasters announce themselves with whispers before they scream. A disk running at 90% capacity. Memory usage creeping upward. Response times gradually increasing. The Weekly Pulse catches whispers.'
+          'Systems warn before they fail. We listen.'
         ],
         subsection: {
           title: 'Our Weekly Routine:',
@@ -161,7 +162,7 @@ const content = {
         title: 'Claridad',
         intro: 'La buena documentación es la que alguien abre dos veces.',
         description: [
-          'El estándar del rubro es documentar para cumplir. Nosotros documentamos para ambos.'
+          'El estándar del rubro es documentar para cumplir. Nosotros documentamos para que alguien lo lea.'
         ],
         subsection: {
           title: 'Nuestro Enfoque:',
@@ -182,7 +183,7 @@ const content = {
         title: 'Atención',
         intro: 'Mirar seguido para actuar temprano.',
         description: [
-          'Los sistemas dan señales. Nosotros las leemos. Alertas de poca capacidad, incremento de consumo de memoria, I/O exagerado, etc.'
+          'Los sistemas avisan antes de fallar. Nosotros escuchamos.'
         ],
         subsection: {
           title: 'Nuestra Rutina:',
@@ -238,6 +239,11 @@ export function MethodPractices() {
   const { resolvedTheme } = useTheme()
   const { language } = useLanguage()
   const t = content[language]
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <div style={{
@@ -312,15 +318,15 @@ export function MethodPractices() {
             position: 'relative',
             marginBottom: '48px',
             borderRadius: '8px',
-            border: resolvedTheme === 'light' ? '1px solid #d5d5d5' : '1px solid var(--border)',
+            border: mounted && resolvedTheme === 'light' ? '1px solid #d5d5d5' : '1px solid var(--border)',
             height: '300px',
             width: '100%',
             overflow: 'hidden'
           }}>
             <CustomVerticalBarsNoise 
-              backgroundColor={resolvedTheme === 'light' ? '#f5f5f5' : '#3d3019'}
-              pressedBackgroundColor={resolvedTheme === 'light' ? '#e0e0e0' : '#4a3a20'}
-              lineColor={resolvedTheme === 'light' ? { r: 102, g: 102, b: 102 } : { r: 245, g: 185, b: 68 }}
+              backgroundColor={mounted && resolvedTheme === 'light' ? '#f5f5f5' : '#3d3019'}
+              pressedBackgroundColor={mounted && resolvedTheme === 'light' ? '#e0e0e0' : '#4a3a20'}
+              lineColor={mounted && resolvedTheme === 'light' ? { r: 102, g: 102, b: 102 } : { r: 245, g: 185, b: 68 }}
             />
           </div>
         </div>
