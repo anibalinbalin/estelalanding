@@ -127,13 +127,13 @@ const content = {
         time: 'Tiempo: Continuo'
       }
     ],
-    closingP1: 'No es teórica porque no funciona en teoría.',
-    closingP2: 'Funciona en su empresa.',
+    closingP1: '',
+    closingP2: '',
     closingP3: '',
     closingP4: '',
     closingP5: '',
-    closingP6: 'El cronograma es suyo.',
-    closingHighlight: 'El resultado es nuestro.',
+    closingP6: '',
+    closingHighlight: '',
     prevLink: '← Anterior: Principios',
     nextLink: 'Siguiente: Prácticas →'
   }
