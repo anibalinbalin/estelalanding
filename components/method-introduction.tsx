@@ -122,7 +122,7 @@ export function MethodIntroduction() {
         lostArt: {
           title: 'Un Arte Perdido',
           paragraphs: [
-            "En la mitología griega, Hermes servía como mensajero entre los dioses y los mortales. No solo entregaba mensajes; los traducía. Sin él, Zeus habría seguido gritando en griego antiguo mientras los humanos asentían sin entender nada. Como en una reunión de TI promedio.",
+            "En la mitología griega, Hermes servía como mensajero entre los dioses y los mortales. No solo entregaba mensajes; los traducía. Sin él, Zeus habría seguido gritando en griego antiguo. Los humanos habrían asentido igual —uno no contradice al que tiene los rayos.",
             "El panorama tecnológico actual padece la misma división. De un lado: servidores, protocolos y siglas. Del otro: personas intentando trabajar.",
             "La mayoría de las empresas de TI solo hablan el primer idioma.",
             "Nosotros hablamos ambos."
