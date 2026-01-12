@@ -9,7 +9,7 @@ export const PartnershipPhilosophySection = () => {
   const content = {
     en: {
       title: 'How We Choose Partners',
-      yourAdvantage: 'What You Get',
+      yourAdvantage: 'What the Client Gets',
       philosophyItems: [
         {
           title: "We Call. We Don't Ticket.",
@@ -21,7 +21,6 @@ export const PartnershipPhilosophySection = () => {
         }
       ],
       advantages: [
-        'Enterprise pricing. Day one.',
         'Support that answers. Always.',
         'Beta access. Before others.',
         'We escalate to the manufacturer. Direct.'
@@ -29,7 +28,7 @@ export const PartnershipPhilosophySection = () => {
     },
     es: {
       title: 'Cómo Elegimos Socios',
-      yourAdvantage: 'Lo Que Usted Gana',
+      yourAdvantage: 'Lo que el cliente obtiene',
       philosophyItems: [
         {
           title: "Llamamos. No Ticketeamos.",
@@ -41,7 +40,6 @@ export const PartnershipPhilosophySection = () => {
         }
       ],
       advantages: [
-        'Precios de empresa grande. Desde el día uno.',
         'Soporte que contesta. Siempre.',
         'Acceso beta. Antes que otros.',
         'Escalamos al fabricante. Directo.'
