@@ -174,9 +174,7 @@ const content = {
             'Actualizaciones basadas en preguntas reales'
           ]
         },
-        conclusion: [
-          'Documentación que resuelve sola.'
-        ]
+        conclusion: []
       },
       {
         number: '4.3',
