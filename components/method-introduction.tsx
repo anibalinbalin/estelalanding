@@ -90,7 +90,7 @@ export function MethodIntroduction() {
         whatThisMeans: {
           title: 'What this means for the client',
           paragraphs: [
-            "When you work with Estela, you're not getting technology vendors who happen to work with businesses. You're getting translators. The difference: vendors sell what they have; translators get what you need.",
+            "We don't sell technology. Technology is the means, not the product. The product is your problem disappearing.",
             "We don't install servers. We create infrastructure that accelerates your work —and that you can happily ignore because it works."
           ]
         },
@@ -144,7 +144,7 @@ export function MethodIntroduction() {
         whatThisMeans: {
           title: 'Lo que esto significa para el cliente',
           paragraphs: [
-            "Cuando trabaja con Estela, no está contratando proveedores de tecnología que casualmente atienden empresas. Está eligiendo traductores. La diferencia: los proveedores le venden lo que tienen; los traductores le consiguen lo que necesita.",
+            "No vendemos tecnología. La tecnología es el medio, no el producto. El producto es que su problema desaparezca.",
             "No instalamos servidores. Creamos infraestructura que acelera su trabajo —y que usted puede ignorar tranquilamente porque funciona."
           ]
         },
