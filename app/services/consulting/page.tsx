@@ -45,7 +45,6 @@ const content = {
 export default function ConsultingPage() {
   const { language } = useLanguage();
   const t = content[language];
-  const basePath = language === 'es' ? '/es' : '';
 
   return (
     <>
@@ -86,7 +85,7 @@ export default function ConsultingPage() {
                     <div className="border-b p-6 border-b-[var(--stroke-secondary-p3)]">
                       <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-medium leading-6 text-base tracking-wide text-[var(--content-raise-p3)]">{t.cardTitle}</div>
                       <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-6 text-base tracking-wide text-[var(--content-secondary-p3)] mb-3">{t.cardDesc}</div>
-                      <a href="mailto:hola@este.la" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c]">
+                      <a href="mailto:hola@este.la" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] text-base">
                         hola@este.la
                         <svg width="16" height="16" className="block align-middle text-[#f5b944]">
                           <use href="/assets/sprite-Dt029LRi.svg#email-16"></use>
@@ -96,19 +95,19 @@ export default function ConsultingPage() {
                     <div className="border-b p-6 border-b-[var(--stroke-secondary-p3)]">
                       <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-medium leading-6 text-base tracking-wide text-[var(--content-raise-p3)]">{t.exploreTitle}</div>
                       <div className="space-y-2">
-                        <a href={`${basePath}/method`} className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block">
+                        <a href="/method" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block text-base">
                           {t.methodLink}
                           <svg width="12" height="12" className="block align-middle text-[#f5b944]">
                             <use href="/assets/sprite-Dt029LRi.svg#next-arrow-12"></use>
                           </svg>
                         </a>
-                        <a href={`${basePath}/services/infrastructure`} className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block">
+                        <a href="/services/infrastructure" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block text-base">
                           {t.infraLink}
                           <svg width="12" height="12" className="block align-middle text-[#f5b944]">
                             <use href="/assets/sprite-Dt029LRi.svg#next-arrow-12"></use>
                           </svg>
                         </a>
-                        <a href={`${basePath}/company/work`} className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block">
+                        <a href="/company/work" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block text-base">
                           {t.workLink}
                           <svg width="12" height="12" className="block align-middle text-[#f5b944]">
                             <use href="/assets/sprite-Dt029LRi.svg#next-arrow-12"></use>
