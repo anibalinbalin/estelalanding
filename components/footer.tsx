@@ -46,7 +46,7 @@ export const Footer = () => {
         title: "Partners:",
         companies: ["Lenovo", "UniFi", "Synology", "SentinelOne", "Wasabi"]
       },
-      copyright: `© ${new Date().getFullYear()} Estela. Technology that obeys. People who decide.`,
+      copyright: `© ${new Date().getFullYear()} Estela.`,
       sections: {
         services: {
           title: "Services",
@@ -98,7 +98,7 @@ export const Footer = () => {
         title: "Socios:",
         companies: ["Lenovo", "UniFi", "Synology", "SentinelOne", "Wasabi"]
       },
-      copyright: `© ${new Date().getFullYear()} Estela. Tecnología que obedece. Personas que deciden.`,
+      copyright: `© ${new Date().getFullYear()} Estela.`,
       sections: {
         services: {
           title: "Servicios",
