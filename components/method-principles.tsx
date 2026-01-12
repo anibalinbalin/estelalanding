@@ -19,8 +19,7 @@ export function MethodPrinciples() {
           number: '2.1',
           title: 'Small Teams, Deep Impact',
           content: [
-            'We stay at 5 people. Not because we can&apos;t grow, but because we shouldn&apos;t. Research proves it. <a href="https://www.researchgate.net/publication/228838549_Empirical_Findings_on_Team_Size_and_Productivity_in_Software_Development" style="color: #ecbb5a">Experience confirms it</a>.',
-            'You partner directly with our senior team, guaranteeing undiluted expertise and clear, purposeful communication.'
+            'We&apos;re six. Not five—too few. Not seven—that already needs meetings about meetings. <a href="https://www.researchgate.net/publication/228838549_Empirical_Findings_on_Team_Size_and_Productivity_in_Software_Development" style="color: #ecbb5a">Research agrees</a>.'
           ]
         },
         {
@@ -35,7 +34,7 @@ export function MethodPrinciples() {
           number: '2.3',
           title: 'Built to Last, Designed to Evolve',
           content: [
-            'We build foundations that can grow with you. Not Band-Aids. Not quick fixes. Real solutions that work today and adapt tomorrow.'
+            'If it&apos;s temporary, it&apos;s not a solution. It&apos;s debt.'
           ]
         },
         {
@@ -49,7 +48,7 @@ export function MethodPrinciples() {
           number: '2.5',
           title: 'The Beauty of Simplicity',
           content: [
-            'Like a well-composed painting, the best systems have nothing extra. Every element has purpose. Complexity is the enemy of reliability.'
+            'Complexity is easy. Anyone can add. The hard part is knowing what to remove.'
           ]
         }
       ],
@@ -66,7 +65,7 @@ export function MethodPrinciples() {
           number: '2.1',
           title: 'Seis',
           content: [
-            '<a href="https://www.researchgate.net/publication/228838549_Empirical_Findings_on_Team_Size_and_Productivity_in_Software_Development" style="color: #ecbb5a">Los estudios dicen</a> que los equipos de trabajo chicos son más productivos. Nosotros lo confirmamos todos los días. Cinco era poco. Siete era burocracia. Los estudios coinciden. Nosotros también.'
+            'Somos seis. No cinco, que era poco. No siete, que ya requería reuniones sobre reuniones. <a href="https://www.researchgate.net/publication/228838549_Empirical_Findings_on_Team_Size_and_Productivity_in_Software_Development" style="color: #ecbb5a">Los estudios coinciden</a>.'
           ]
         },
         {
@@ -80,7 +79,7 @@ export function MethodPrinciples() {
           number: '2.3',
           title: 'Sin parches',
           content: [
-            'No hay soluciones temporales que después se vuelven permanentes.'
+            'Si es temporal, no es solución. Es deuda.'
           ]
         },
         {
@@ -94,7 +93,7 @@ export function MethodPrinciples() {
           number: '2.5',
           title: 'Nada que sobre',
           content: [
-            'Como en una buena composición, cada elemento tiene propósito. La complejidad es enemiga de la confiabilidad.'
+            'La complejidad es fácil. Cualquiera puede agregar. Lo difícil es saber qué quitar.'
           ]
         }
       ],
