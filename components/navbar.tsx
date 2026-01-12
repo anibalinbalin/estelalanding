@@ -188,7 +188,7 @@ const content = {
       },
       work: {
         title: "Trabajo",
-        subtitle: "Ve nuestro portafolio y casos de estudio."
+        subtitle: "Vea algunos casos de nuestro portafolio."
       },
       team: {
         title: "Equipo",
