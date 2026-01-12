@@ -40,22 +40,22 @@ const teamMembers = {
   es: [
     {
       name: 'Peter Del Prestito',
-      role: 'Co-fundador, Operaciones de Negocios y TI',
+      role: 'Co-fundador, Operaciones de Negocios e IT',
       image: '/img/fotos/peter.jpg'
     },
     {
       name: 'Pablo Ferreira',
-      role: 'Administrador de TI',
+      role: 'Administrador de IT',
       image: '/img/fotos/pablo.jpg'
     },
     {
       name: 'Alfonso LaRosa',
-      role: 'Jefe de TI',
+      role: 'Jefe de IT',
       image: '/img/fotos/alfonso.jpg'
     },
     {
       name: 'Nahuel Gonzalez',
-      role: 'Especialista en TI y Sistemas',
+      role: 'Especialista en IT y Sistemas',
       image: '/img/fotos/nahuel.jpg'
     },
     {

@@ -5,10 +5,10 @@ import { useLanguage } from '@/components/language-provider';
 
 const content = {
   en: {
-    text: "Instead of the usual corporate copy: the people responsible."
+    text: "Those who do. No euphemisms."
   },
   es: {
-    text: "En lugar del texto corporativo de rigor: los responsables."
+    text: "Los que hacen. Sin eufemismos."
   }
 };
 
