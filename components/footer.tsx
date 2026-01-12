@@ -165,12 +165,11 @@ export const Footer = () => {
           <div className="flex flex-col gap-8">
             {/* Description - aligned with nav headers */}
             <p
+              className="uppercase font-normal leading-4 text-[.75rem] tracking-wider"
               style={{
-                color: 'var(--content-secondary-p3)',
                 fontFamily: 'GT_America_Mono, monospace',
                 fontFeatureSettings: '"ss02" on, "ss03" on, "ss09" on, "ss06" on, "ss07" on, "ss08" on, "calt" off',
-                fontSize: '14px',
-                lineHeight: '18px'
+                color: 'var(--content-quaternary-p3)'
               }}
             >
               {t.description}
