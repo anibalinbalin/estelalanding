@@ -64,7 +64,7 @@ const content = {
       },
       specifications: {
         title: "Specifications",
-        subtitle: "Detailed technical specifications.",
+        subtitle: "Where details stop being details.",
         description: "Detailed technical documentation and requirements analysis for complex implementations."
       }
     },
@@ -151,7 +151,7 @@ const content = {
       },
       specifications: {
         title: "Especificaciones",
-        subtitle: "Especificaciones técnicas detalladas.",
+        subtitle: "Donde los detalles dejan de ser detalles.",
         description: "Documentación técnica detallada y análisis de requisitos para implementaciones complejas."
       }
     },
