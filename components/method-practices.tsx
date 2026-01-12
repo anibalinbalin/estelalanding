@@ -23,11 +23,11 @@ const content = {
         subsection: {
           title: 'How It Works:',
           items: [
-            'All critical issues tracked from first contact',
-            'Your issue is immediately addressed by one of our core experts',
-            'Initial diagnosis and action plan within 24 hours',
-            'Clear communication throughout resolution',
-            'Post-incident review for prevention'
+            'Issues tracked from first contact',
+            'Immediate attention',
+            'Diagnosis and action plan',
+            'Clear communication',
+            'Post-incident review'
           ]
         },
         conclusion: [
@@ -146,11 +146,11 @@ const content = {
         subsection: {
           title: 'Cómo Funciona:',
           items: [
-            'Problemas críticos rastreados desde el primer contacto',
-            'Atención inmediata por uno de nuestros expertos principales',
-            'Diagnóstico y plan de acción en menos de 24 horas',
-            'Comunicación clara durante toda la resolución',
-            'Revisión post-incidente para que no se repita'
+            'Problemas rastreados desde el primer contacto',
+            'Atención inmediata',
+            'Diagnóstico y plan de acción',
+            'Comunicación clara',
+            'Revisión post-incidente'
           ]
         },
         conclusion: [
