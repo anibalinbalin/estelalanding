@@ -12,10 +12,6 @@ export const PartnershipPhilosophySection = () => {
       yourAdvantage: 'What You Get',
       philosophyItems: [
         {
-          title: "The Proof Is in Production",
-          description: "Anyone can frame a diploma. Few can keep a system running."
-        },
-        {
           title: "We Call. We Don't Ticket.",
           description: "When there's a problem, we dial a number. We don't fill out a form."
         },
@@ -35,10 +31,6 @@ export const PartnershipPhilosophySection = () => {
       title: 'Cómo Elegimos Socios',
       yourAdvantage: 'Lo Que Usted Gana',
       philosophyItems: [
-        {
-          title: "La Prueba Está en Producción",
-          description: "Cualquiera enmarca un diploma. Pocos sostienen un sistema funcionando."
-        },
         {
           title: "Llamamos. No Ticketeamos.",
           description: "Cuando hay un problema, marcamos un número. No llenamos un formulario."
