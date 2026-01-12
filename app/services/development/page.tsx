@@ -9,7 +9,7 @@ const content = {
     title: "Development & Artificial Intelligence",
     subtitle: "AI solutions that work outside the demo.",
     sectionTitle: "Custom Development",
-    sectionDesc: "Software that works. React, Postgres, Claude. Automation that saves time. AI that delivers.",
+    sectionDesc: "Software that works. React, Postgres, Claude Code. Automation that saves time. AI that delivers.",
     cta: "Development with continuity",
     contact: "CONTACT"
   },
@@ -17,7 +17,7 @@ const content = {
     title: "Desarrollo e Inteligencia Artificial",
     subtitle: "Soluciones de IA que funcionan fuera del demo.",
     sectionTitle: "Desarrollo a Medida",
-    sectionDesc: "Software que funciona. React, Postgres, Claude. Automatización que ahorra tiempo. IA que aporta.",
+    sectionDesc: "Software que funciona. React, Postgres, Claude Code. Automatización que ahorra tiempo. IA que aporta.",
     cta: "Desarrollo con continuidad",
     contact: "CONTACTO"
   }
