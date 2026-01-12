@@ -92,10 +92,8 @@ export function MethodIntroduction() {
         whatThisMeans: {
           title: 'What This Means for You',
           paragraphs: [
-            "When you work with Estela, you're not getting technology vendors who happen to work with businesses. You're getting translators who ensure technology serves your mission.",
-            "We don't just install servers. We create infrastructure that accelerates your work.",
-            "We don't just configure networks. We connect people and possibilities.",
-            "We don't just provide support. We ensure you're never lost in translation."
+            "When you work with Estela, you're not getting technology vendors who happen to work with businesses. You're getting translators. The difference: vendors sell what they have; translators get what you need.",
+            "We don't install servers. We create infrastructure that accelerates your work —and that you can happily ignore because it works."
           ]
         },
         journeyAhead: {
@@ -129,10 +127,9 @@ export function MethodIntroduction() {
         translationImperative: {
           title: 'El Imperativo de Traducir',
           paragraphs: [
-            "Después de 13 años construyendo sistemas, aprendimos algo: la mejor infraestructura es invisible. No se anuncia con complejidad ni reclama atención mediante fallas. Simplemente funciona. Como la gravedad, pero con mejor documentación.",
+            "Después de 13 años construyendo sistemas, aprendimos algo: la mejor infraestructura es invisible. Simplemente funciona. Como la gravedad, pero con mejor documentación.",
             "Considere a la arquitecta que necesita compartir archivos CAD de 2GB. No le interesa la configuración RAID ni las métricas de IOPS. Le interesa abrir archivos rápido y cumplir plazos. Si tiene que pensar en la red, la red falló.",
-            "O el laboratorio médico que requiere disponibilidad perfecta. No necesitan conferencias sobre virtualización. Necesitan sistemas que no fallen cuando hay vidas en juego. La diferencia entre ambas necesidades es técnica. La similitud es humana.",
-            "Traducir significa entender ambos idiomas con fluidez —el de la tecnología y el de la necesidad humana— y construir puentes entre ellos. Puentes que nadie nota hasta que intenta cruzar sin uno."
+            "Traducir significa construir puentes entre la tecnología y la necesidad humana. Puentes que nadie nota hasta que intenta cruzar sin uno."
           ]
         },
         philosophy: {
@@ -141,8 +138,8 @@ export function MethodIntroduction() {
           items: []
         },
         methodEmerges: {
-          title: 'El Método',
-          intro: "Nuestro método no persigue tendencias ni implementa herramientas porque son nuevas. Se enfoca en lo que importa: su gente, su trabajo, su crecimiento. El resto es ruido con buen marketing.",
+          title: '',
+          intro: '',
           listIntro: '',
           items: []
         },
@@ -150,9 +147,7 @@ export function MethodIntroduction() {
           title: 'Lo Que Esto Significa para Usted',
           paragraphs: [
             "Cuando trabaja con Estela, no está contratando proveedores de tecnología que casualmente atienden empresas. Está eligiendo traductores. La diferencia: los proveedores le venden lo que tienen; los traductores le consiguen lo que necesita.",
-            "No instalamos servidores. Creamos infraestructura que acelera su trabajo —y que usted puede ignorar tranquilamente porque funciona.",
-            "No configuramos redes. Conectamos personas con posibilidades. Las redes son el medio; la conexión es el fin.",
-            "No brindamos soporte. Garantizamos que nunca se pierda en la traducción. Y si se pierde, sabemos encontrarlo."
+            "No instalamos servidores. Creamos infraestructura que acelera su trabajo —y que usted puede ignorar tranquilamente porque funciona."
           ]
         },
         journeyAhead: {
@@ -389,44 +384,48 @@ export function MethodIntroduction() {
           </>
         )}
 
-        {/* The Method Emerges Section */}
-        <div style={dividerStyle} />
-        <section style={{ marginBottom: '48px' }}>
-          <h2 style={{
-            fontSize: '1.5rem',
-            fontWeight: '400',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--foreground)',
-            marginBottom: '24px',
-            borderBottom: '1px solid var(--border)',
-            paddingBottom: '8px'
-          }}>
-            {t.sections.methodEmerges.title}
-          </h2>
+        {/* The Method Emerges Section - Only show if has content */}
+        {t.sections.methodEmerges.title && (
+          <>
+            <div style={dividerStyle} />
+            <section style={{ marginBottom: '48px' }}>
+              <h2 style={{
+                fontSize: '1.5rem',
+                fontWeight: '400',
+                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+                color: 'var(--foreground)',
+                marginBottom: '24px',
+                borderBottom: '1px solid var(--border)',
+                paddingBottom: '8px'
+              }}>
+                {t.sections.methodEmerges.title}
+              </h2>
 
-          <p style={paragraphStyle}>
-            {t.sections.methodEmerges.intro}
-          </p>
+              <p style={paragraphStyle}>
+                {t.sections.methodEmerges.intro}
+              </p>
 
-          <p style={paragraphStyle}>
-            {t.sections.methodEmerges.listIntro}
-          </p>
+              <p style={paragraphStyle}>
+                {t.sections.methodEmerges.listIntro}
+              </p>
 
-          {t.sections.methodEmerges.items.length > 0 && (
-            <ul style={listStyle}>
-              {t.sections.methodEmerges.items.map((item, index) => (
-                <li key={index} style={{ marginBottom: '12px' }}>
-                  <strong>{item.title}</strong><br />
-                  <span style={{ color: 'var(--content-secondary-p3)', fontSize: '0.9rem' }}>
-                    {item.description}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
+              {t.sections.methodEmerges.items.length > 0 && (
+                <ul style={listStyle}>
+                  {t.sections.methodEmerges.items.map((item, index) => (
+                    <li key={index} style={{ marginBottom: '12px' }}>
+                      <strong>{item.title}</strong><br />
+                      <span style={{ color: 'var(--content-secondary-p3)', fontSize: '0.9rem' }}>
+                        {item.description}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </section>
 
-        <div style={dividerStyle} />
+            <div style={dividerStyle} />
+          </>
+        )}
 
         {/* What This Means for You Section */}
         {t.sections.whatThisMeans.title && (
