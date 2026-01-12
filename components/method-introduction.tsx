@@ -129,8 +129,13 @@ export function MethodIntroduction() {
           ]
         },
         translationImperative: {
-          title: '',
-          paragraphs: []
+          title: 'El Imperativo de Traducir',
+          paragraphs: [
+            "Después de 13 años construyendo sistemas, aprendimos algo: la mejor infraestructura es invisible. No se anuncia con complejidad ni reclama atención mediante fallas. Simplemente funciona. Como la gravedad, pero con mejor documentación.",
+            "Considere a la arquitecta que necesita compartir archivos CAD de 2GB. No le interesa la configuración RAID ni las métricas de IOPS. Le interesa abrir archivos rápido y cumplir plazos. Si tiene que pensar en la red, la red falló.",
+            "O el laboratorio médico que requiere disponibilidad perfecta. No necesitan conferencias sobre virtualización. Necesitan sistemas que no fallen cuando hay vidas en juego. La diferencia entre ambas necesidades es técnica. La similitud es humana.",
+            "Traducir significa entender ambos idiomas con fluidez —el de la tecnología y el de la necesidad humana— y construir puentes entre ellos. Puentes que nadie nota hasta que intenta cruzar sin uno."
+          ]
         },
         philosophy: {
           title: '',
@@ -138,18 +143,18 @@ export function MethodIntroduction() {
           items: []
         },
         methodEmerges: {
-          title: '',
-          intro: '',
+          title: 'El Método',
+          intro: "Nuestro método no persigue tendencias ni implementa herramientas porque son nuevas. Se enfoca en lo que importa: su gente, su trabajo, su crecimiento. El resto es ruido con buen marketing.",
           listIntro: '',
           items: []
         },
         whatThisMeans: {
           title: 'Lo Que Esto Significa para Usted',
           paragraphs: [
-            "Cuando trabaja con Estela, no está contratando proveedores de tecnología que casualmente trabajan con empresas. Está eligiendo traductores que aseguran que la tecnología sirva a su misión.",
-            "No sólo instalamos servidores. Creamos infraestructura que acelera su trabajo.",
-            "No sólo configuramos redes. Conectamos personas y posibilidades.",
-            "No sólo brindamos soporte. Nos aseguramos de que nunca se pierda en la traducción."
+            "Cuando trabaja con Estela, no está contratando proveedores de tecnología que casualmente atienden empresas. Está eligiendo traductores. La diferencia: los proveedores le venden lo que tienen; los traductores le consiguen lo que necesita.",
+            "No instalamos servidores. Creamos infraestructura que acelera su trabajo —y que usted puede ignorar tranquilamente porque funciona.",
+            "No configuramos redes. Conectamos personas con posibilidades. Las redes son el medio; la conexión es el fin.",
+            "No brindamos soporte. Garantizamos que nunca se pierda en la traducción. Y si se pierde, sabemos encontrarlo."
           ]
         },
         journeyAhead: {
@@ -425,8 +430,8 @@ export function MethodIntroduction() {
 
         <div style={dividerStyle} />
 
-        {/* What This Means for You Section - Only show for English */}
-        {language === 'en' && (
+        {/* What This Means for You Section */}
+        {t.sections.whatThisMeans.title && (
           <>
             <section style={{ marginBottom: '48px' }}>
               <h2 style={{ 
