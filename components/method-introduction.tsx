@@ -38,7 +38,7 @@ export function MethodIntroduction() {
           title: 'The Translation Imperative',
           paragraphs: [
             "The best infrastructure is like a good translation: the reader forgets they're reading one. If they think about the translator, the translator failed.",
-            "Consider the architect who needs to share 2GB CAD files. She doesn't care about RAID configurations or IOPS metrics. She cares about opening files fast and meeting deadlines. If she has to think about the network, the network failed.",
+            "Consider the editor who needs to open massive After Effects files. He doesn't care about the NAS RAID configuration. He just wants to open files fast and meet deadlines.",
             "Translation means building bridges between technology and human need. Bridges no one notices until they try to cross without one."
           ]
         },
@@ -126,7 +126,7 @@ export function MethodIntroduction() {
           title: 'El Imperativo de Traducir',
           paragraphs: [
             "La mejor infraestructura es como una buena traducción: el lector olvida que está leyendo una. Si piensa en el traductor, el traductor falló.",
-            "Considere a la arquitecta que necesita compartir archivos CAD de 2GB. No le interesa la configuración RAID ni las métricas de IOPS. Le interesa abrir archivos rápido y cumplir plazos. Si tiene que pensar en la red, la red falló.",
+            "Considere al editor que necesita abrir archivos de After pesadísimos. No le interesa la configuración RAID del NAS. Solo le interesa abrir los archivos rápido y cumplir plazos.",
             "Traducir significa construir puentes entre la tecnología y la necesidad humana. Puentes que nadie nota hasta que intenta cruzar sin uno."
           ]
         },
