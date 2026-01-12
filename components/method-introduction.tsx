@@ -123,9 +123,7 @@ export function MethodIntroduction() {
           title: 'Un Arte Perdido',
           paragraphs: [
             "En la mitología griega, Hermes servía como mensajero entre los dioses y los mortales. No solo entregaba mensajes; los traducía. Sin él, Zeus habría seguido gritando en griego antiguo. Los humanos habrían asentido igual —uno no contradice al que tiene los rayos.",
-            "El panorama tecnológico actual padece la misma división. De un lado: servidores, protocolos y siglas. Del otro: personas intentando trabajar.",
-            "La mayoría de las empresas de TI solo hablan el primer idioma.",
-            "Nosotros hablamos ambos."
+            "Hoy Olympus fabrica cámaras y el único rayo es el flash, pero la confusión persiste. De un lado: técnicos hablando en acrónimos. Del otro: el resto. La mayoría de las empresas de IT solo hablan técnico. Nosotros también —pero solo cuando es estrictamente necesario."
           ]
         },
         translationImperative: {
