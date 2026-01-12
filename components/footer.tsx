@@ -164,12 +164,13 @@ export const Footer = () => {
           {/* Content aligned with navigation headers */}
           <div className="flex flex-col gap-8">
             {/* Description - aligned with nav headers */}
-            <p 
-              className="text-lg max-w-lg leading-relaxed tracking-tight text-left"
+            <p
               style={{
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
                 color: 'var(--content-secondary-p3)',
-                marginTop: '-0.125rem' // Fine-tune alignment with nav headers
+                fontFamily: 'GT_America_Mono, monospace',
+                fontFeatureSettings: '"ss02" on, "ss03" on, "ss09" on, "ss06" on, "ss07" on, "ss08" on, "calt" off',
+                fontSize: '14px',
+                lineHeight: '18px'
               }}
             >
               {t.description}
