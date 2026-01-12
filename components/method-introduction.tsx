@@ -39,7 +39,7 @@ export function MethodIntroduction() {
           paragraphs: [
             "The best infrastructure is like a good translation: the reader forgets they're reading one. If they think about the translator, the translator failed.",
             "Consider the editor who needs to open massive After Effects files. He doesn't care about the NAS RAID configuration. He just wants to open files fast and meet deadlines.",
-            "Translation means building bridges between technology and human need. Bridges no one notices until they try to cross without one."
+            "Translation is disappearing. If the message arrives clear, no one remembers the messenger."
           ]
         },
         philosophy: {
@@ -127,7 +127,7 @@ export function MethodIntroduction() {
           paragraphs: [
             "La mejor infraestructura es como una buena traducción: el lector olvida que está leyendo una. Si piensa en el traductor, el traductor falló.",
             "Considere al editor que necesita abrir archivos de After pesadísimos. No le interesa la configuración RAID del NAS. Solo le interesa abrir los archivos rápido y cumplir plazos.",
-            "Traducir significa construir puentes entre la tecnología y la necesidad humana. Puentes que nadie nota hasta que intenta cruzar sin uno."
+            "Traducir es desaparecer. Si el mensaje llega claro, nadie recuerda al mensajero."
           ]
         },
         philosophy: {
