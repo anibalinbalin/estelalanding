@@ -107,7 +107,7 @@ const content = {
         title: 'Knowledge Transfer',
         intro: "Our goal is to build your team's capability, not create reliance.",
         description: [
-          'Many IT companies profit from client ignorance. The less you know, the more you need them. We believe the opposite: the more capable you become, the more valuable our partnership.'
+          'Some providers cultivate ignorance. We cultivate independence.'
         ],
         subsection: {
           title: 'How We Transfer Knowledge:',
@@ -214,7 +214,7 @@ const content = {
         title: 'Saber',
         intro: 'Preferimos clientes que sepan. Nos hacen mejores preguntas.',
         description: [
-          'La dependencia es cómoda para el proveedor. No para el cliente.'
+          'Algunos proveedores cultivan ignorancia. Nosotros, independencia.'
         ],
         subsection: {
           title: 'Cómo Transferimos:',
