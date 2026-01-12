@@ -21,7 +21,7 @@ export function EstelaSpeed() {
     },
     es: {
       title: "Profundidad, no velocidad",
-      description: "La velocidad impresiona. La profundidad perdura. Nuestro trabajo sigue funcionando cuando ya nadie recuerda quién lo hizo."
+      description: "La velocidad impresiona. La profundidad perdura. Nuestro trabajo sigue funcionando cuando ya nadie se acuerda quién lo hizo."
     }
   };
 
