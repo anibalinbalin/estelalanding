@@ -13,7 +13,7 @@ export function MethodPrinciples() {
   const content = {
     en: {
       title: 'Core Principles',
-      subtitle: 'The fundamental beliefs that guide every decision we make.',
+      subtitle: 'Five ideas that sound simple until you try to apply them.',
       principles: [
         {
           number: '2.1',
@@ -26,8 +26,7 @@ export function MethodPrinciples() {
           number: '2.2',
           title: 'Technology Serves People',
           content: [
-            'We don&apos;t implement technology for technology&apos;s sake. Every cable, every configuration, every line of code must improve someone&apos;s day.',
-            'If it doesn&apos;t make work easier, we don&apos;t build it.'
+            'Every technical decision answers one question: does this save someone time? If the answer is "it depends," that&apos;s also a no.'
           ]
         },
         {
@@ -41,7 +40,7 @@ export function MethodPrinciples() {
           number: '2.4',
           title: 'Radical Transparency',
           content: [
-            'No black boxes. No vendor lock-in. No mysteries. You understand what we build, how it works, and how to maintain it.'
+            'Your infrastructure is yours. With or without us.'
           ]
         },
         {
