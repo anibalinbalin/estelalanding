@@ -71,7 +71,7 @@ const content = {
     wifiClients: "clients",
 
     // CTA
-    cta: "Infrastructure That Scales With You",
+    cta: "When it works well, nobody asks how.",
     contact: "CONTACT",
 
     // Alt texts
@@ -145,7 +145,7 @@ const content = {
     wifiClients: "clientes",
 
     // CTA
-    cta: "¿Hablamos de infraestructura?",
+    cta: "Cuando funciona bien, nadie pregunta cómo.",
     contact: "CONTACTO",
 
     // Alt texts
