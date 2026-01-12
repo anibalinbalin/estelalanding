@@ -2,10 +2,14 @@
 
 import React from 'react';
 import { Footer } from '@/components/footer';
-import { HeroSection } from './components/HeroSection';
+import { PageHeroSection } from '@/components/page-hero-section';
+
+const heroContent = {
+  en: { highlight: 'Our work speaks for us.', rest: 'Though sometimes we speak too. Here are some examples.' },
+  es: { highlight: 'Nuestro trabajo habla por nosotros.', rest: 'Aunque a veces también hablamos nosotros. Aquí, algunos ejemplos.' }
+};
 import { ProjectSection } from './components/ProjectSection';
 import { ProjectImagesSection } from './components/ProjectImagesSection';
-import { FinalSection } from './components/FinalSection';
 import { useLanguage } from '@/components/language-provider';
 
 // Import the exact CSS from newwork/aboutabout to maintain styling
@@ -148,7 +152,7 @@ const WorkPage = () => {
     <>
       <main className="mt-10 min-[1100px]:mt-24">
         {/* Hero Section with work messaging */}
-        <HeroSection />
+        <PageHeroSection content={heroContent} />
         
         {/* Project Showcase Sections */}
         {/* Show only the first project's images */}
@@ -161,9 +165,6 @@ const WorkPage = () => {
         {projects.map((project, index) => (
           <ProjectSection key={project.id} project={project} />
         ))}
-        
-        {/* Final Section with Values Grid */}
-        <FinalSection />
         
       </main>
       

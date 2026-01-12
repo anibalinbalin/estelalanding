@@ -2,7 +2,12 @@
 
 import React from 'react';
 import { Footer } from '@/components/footer';
-import { HeroSection } from './components/HeroSection';
+import { PageHeroSection } from '@/components/page-hero-section';
+
+const heroContent = {
+  en: { highlight: 'Proven in production.', rest: 'Certified later.' },
+  es: { highlight: 'Probados en producción.', rest: 'Certificados después.' }
+};
 
 import { PartnershipPhilosophySection } from './components/PartnershipPhilosophySection';
 import { useLanguage } from '@/components/language-provider';
@@ -88,7 +93,7 @@ const PartnersPage = () => {
     <>
       <main className="mt-10 min-[1100px]:mt-24">
         {/* Hero Section with partners messaging */}
-        <HeroSection />
+        <PageHeroSection content={heroContent} />
         
         {/* Simplified Partners List */}
         <div className="w-[100%] px-5 min-[600px]:px-10">

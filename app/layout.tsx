@@ -20,6 +20,10 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html suppressHydrationWarning>
+        <head>
+          <link rel="preload" href="/font/SuisseIntl-Regular-WebS.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+          <link rel="preload" href="/font/GT-America-Mono-Regular-OCC.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        </head>
         <body
           className="antialiased bg-background text-foreground"
         >

@@ -1,22 +1,17 @@
 'use client';
 
-import React from 'react';
 import { useLanguage } from '@/components/language-provider';
 
-const content = {
-  en: {
-    highlight: "Who we are.",
-    rest: "The people behind the projects. No stock photos."
-  },
-  es: {
-    highlight: "Quiénes somos.",
-    rest: "Las personas detrás de los proyectos. Sin fotos de stock."
-  }
-};
+interface PageHeroSectionProps {
+  content: {
+    en: { highlight: string; rest: string };
+    es: { highlight: string; rest: string };
+  };
+}
 
-export const HeroSection = () => {
+export const PageHeroSection = ({ content }: PageHeroSectionProps) => {
   const { language } = useLanguage();
-  const t = content[language];
+  const t = content[language] || content.en;
 
   return (
     <div className="w-[100%] px-5 min-[600px]:px-10">

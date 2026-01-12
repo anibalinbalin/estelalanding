@@ -63,13 +63,15 @@ const content = {
         time: 'Time: Ongoing'
       }
     ],
-    closingP1: "This methodology isn't theoretical.",
-    closingP2: "It's refined through 13 years of real-world projects.",
-    closingP3: "From 5-person companies to 100-person organizations. From simple network upgrades to complete digital transformations. Every project teaches us something new.",
-    closingP4: 'The phases are flexible, not rigid.',
-    closingP5: 'The timeline adapts to your reality.',
-    closingP6: 'The outcome is always the same:',
-    closingHighlight: 'Technology that just works.',
+    closing: {
+      line1: "This methodology isn't theoretical.",
+      line2: "It's refined through 13 years of real-world projects.",
+      body: "From 5-person companies to 100-person organizations. From simple network upgrades to complete digital transformations. Every project teaches us something new.",
+      detail1: 'The phases are flexible, not rigid.',
+      detail2: 'The timeline adapts to your reality.',
+      detail3: 'The outcome is always the same:',
+      highlight: 'Technology that just works.'
+    },
     prevLink: '← Previous: Principles',
     nextLink: 'Next: Practices →'
   },
@@ -127,16 +129,74 @@ const content = {
         time: 'Tiempo: Continuo'
       }
     ],
-    closingP1: '',
-    closingP2: '',
-    closingP3: '',
-    closingP4: '',
-    closingP5: '',
-    closingP6: '',
-    closingHighlight: '',
+    closing: null,
     prevLink: '← Anterior: Principios',
     nextLink: 'Siguiente: Prácticas →'
   }
+}
+
+const styles = {
+  bodyText: {
+    fontSize: '17px',
+    fontWeight: '400',
+    lineHeight: '27.2px',
+    letterSpacing: 'normal',
+    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+    color: 'var(--content-secondary-p3)',
+    marginBottom: '24px'
+  },
+  navLink: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    color: 'var(--content-secondary-p3)',
+    textDecoration: 'none',
+    fontSize: '15px',
+    fontWeight: '400',
+    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+    transition: 'color 0.2s'
+  }
+} as const
+
+function SoundOnIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+    </svg>
+  )
+}
+
+function SoundOffIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+      <line x1="23" y1="9" x2="17" y2="15" />
+      <line x1="17" y1="9" x2="23" y2="15" />
+    </svg>
+  )
+}
+
+function Spacer() {
+  return <div style={{ height: '1px', marginBottom: '48px' }} />
+}
+
+interface NavLinkProps {
+  href: string
+  children: React.ReactNode
+}
+
+function NavLink({ href, children }: NavLinkProps) {
+  return (
+    <Link
+      href={href}
+      style={styles.navLink}
+      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--foreground)'}
+      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--content-secondary-p3)'}
+    >
+      {children}
+    </Link>
+  )
 }
 
 export function MethodImplementation() {
@@ -145,6 +205,7 @@ export function MethodImplementation() {
   const t = content[language]
   const [mounted, setMounted] = useState(false)
   const [audioEnabled, setAudioEnabled] = useState(false)
+  const isLight = mounted && resolvedTheme === 'light'
 
   useEffect(() => {
     setMounted(true)
@@ -185,13 +246,9 @@ export function MethodImplementation() {
       color: 'var(--foreground)',
       minHeight: '100vh',
       fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-      overflowX: 'hidden' as const
+      overflowX: 'hidden'
     }}>
-      <div style={{
-        maxWidth: '680px',
-        margin: '0 auto',
-        padding: '120px 32px'
-      }}>
+      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '120px 32px' }}>
         <div style={{ marginBottom: '32px' }}>
           <Breadcrumb
             items={[
@@ -200,7 +257,7 @@ export function MethodImplementation() {
               { label: t.breadcrumb.current }
             ]}
           />
-          
+
           <div style={{ textAlign: 'center', marginBottom: '24px' }}>
             <div style={{
               display: 'inline-flex',
@@ -211,13 +268,13 @@ export function MethodImplementation() {
               borderRadius: '50%',
               backgroundColor: '#1a2224',
               color: '#fff',
-              fontSize: '1.125rem', 
+              fontSize: '1.125rem',
               fontFamily: 'GT_America_Mono, monospace'
             }}>
               3
             </div>
           </div>
-          
+
           <h1 style={{
             fontSize: '2.5rem',
             fontWeight: '400',
@@ -231,10 +288,7 @@ export function MethodImplementation() {
             {t.title}
           </h1>
 
-          <div style={{
-            height: '1px',
-            marginBottom: '48px'
-          }} />
+          <Spacer />
 
           <p style={{
             fontSize: '19px',
@@ -252,12 +306,11 @@ export function MethodImplementation() {
             position: 'relative',
             marginBottom: '48px',
             borderRadius: '8px',
-            border: mounted && resolvedTheme === 'light' ? '1px solid #d5d5d5' : '1px solid var(--border)',
+            border: isLight ? '1px solid #d5d5d5' : '1px solid var(--border)',
             height: '300px',
             width: '100%',
             overflow: 'hidden'
           }}>
-            {/* Audio toggle button */}
             <button
               onClick={toggleAudio}
               aria-label={audioEnabled ? 'Disable sound' : 'Enable sound'}
@@ -271,11 +324,11 @@ export function MethodImplementation() {
                 borderRadius: '50%',
                 border: 'none',
                 backgroundColor: audioEnabled
-                  ? (mounted && resolvedTheme === 'light' ? '#333' : '#f5b944')
-                  : (mounted && resolvedTheme === 'light' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'),
+                  ? (isLight ? '#333' : '#f5b944')
+                  : (isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'),
                 color: audioEnabled
-                  ? (mounted && resolvedTheme === 'light' ? '#fff' : '#000')
-                  : (mounted && resolvedTheme === 'light' ? '#666' : '#888'),
+                  ? (isLight ? '#fff' : '#000')
+                  : (isLight ? '#666' : '#888'),
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
@@ -283,23 +336,11 @@ export function MethodImplementation() {
                 transition: 'all 0.2s ease',
               }}
             >
-              {audioEnabled ? (
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-                </svg>
-              ) : (
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                  <line x1="23" y1="9" x2="17" y2="15" />
-                  <line x1="17" y1="9" x2="23" y2="15" />
-                </svg>
-              )}
+              {audioEnabled ? <SoundOnIcon /> : <SoundOffIcon />}
             </button>
             <Waves
-              lineColor={mounted && resolvedTheme === 'light' ? '#666666' : '#f5b944'}
-              backgroundColor={mounted && resolvedTheme === 'light' ? '#f5f5f5' : '#3d3019'}
+              lineColor={isLight ? '#666666' : '#f5b944'}
+              backgroundColor={isLight ? '#f5f5f5' : '#3d3019'}
               waveSpeedX={0}
               waveSpeedY={0}
               waveAmpX={0}
@@ -314,19 +355,16 @@ export function MethodImplementation() {
           </div>
         </div>
 
-        <div style={{
-          height: '1px',
-            marginBottom: '48px'
-        }} />
+        <Spacer />
 
         {t.phases.map((phase, index) => (
-          <div key={`phase-${index}`} style={{ marginBottom: '48px' }}>
+          <div key={phase.number} style={{ marginBottom: '48px' }}>
             <div style={{ marginBottom: '24px' }}>
-              <h2 style={{ 
-                fontSize: '1.5rem', 
+              <h2 style={{
+                fontSize: '1.5rem',
                 fontWeight: '400',
                 fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'var(--foreground)', 
+                color: 'var(--foreground)',
                 marginBottom: '24px',
                 borderBottom: '1px solid var(--border)',
                 paddingBottom: '8px'
@@ -334,7 +372,7 @@ export function MethodImplementation() {
                 {phase.number} {phase.title}
               </h2>
             </div>
-            
+
             <div style={{ marginBottom: '24px' }}>
               <p style={{
                 fontSize: '17px',
@@ -347,7 +385,7 @@ export function MethodImplementation() {
               }}>
                 {phase.intro}
               </p>
-              
+
               <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
                 <ul style={{
                   fontSize: '17px',
@@ -360,147 +398,74 @@ export function MethodImplementation() {
                   listStyle: 'none',
                   padding: '0'
                 }}>
-                  {phase.content.map((item, i) => (
-                    <li key={`item-${i}`} style={{ marginBottom: '8px' }}>• {item}</li>
+                  {phase.content.map((item) => (
+                    <li key={item} style={{ marginBottom: '8px' }}>• {item}</li>
                   ))}
                 </ul>
               </div>
-              
+
               <p style={{
                 fontSize: '0.875rem',
                 fontFamily: 'GT_America_Mono, monospace',
                 color: 'var(--content-secondary-p3)',
-                textTransform: 'uppercase' as const,
+                textTransform: 'uppercase',
                 letterSpacing: '0.05em',
                 marginBottom: '24px'
               }}>
                 {phase.time}
               </p>
             </div>
-            
-            {index < t.phases.length - 1 && (
-              <div style={{
-                height: '1px',
-            marginBottom: '48px'
-              }} />
-            )}
+
+            {index < t.phases.length - 1 && <Spacer />}
           </div>
         ))}
-        
-        <div style={{
-          height: '1px',
-            marginBottom: '48px'
-        }} />
 
-        <section style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <p style={{
-            fontSize: '1.125rem',
-            fontWeight: '500',
-            color: 'var(--foreground)',
-            marginBottom: '16px'
-          }}>
-            {t.closingP1}<br />
-            {t.closingP2}
-          </p>
+        <Spacer />
 
-          <p style={{
-            fontSize: '17px',
-            fontWeight: '400',
-            lineHeight: '27.2px',
-            letterSpacing: 'normal',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '24px'
-          }}>
-            {t.closingP3}
-          </p>
+        {t.closing && (
+          <section style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <p style={{
+              fontSize: '1.125rem',
+              fontWeight: '500',
+              color: 'var(--foreground)',
+              marginBottom: '16px'
+            }}>
+              {t.closing.line1}<br />
+              {t.closing.line2}
+            </p>
 
-          <p style={{
-            fontSize: '17px',
-            fontWeight: '400',
-            lineHeight: '27.2px',
-            letterSpacing: 'normal',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '24px'
-          }}>
-            {t.closingP4}
-          </p>
-          <p style={{
-            fontSize: '17px',
-            fontWeight: '400',
-            lineHeight: '27.2px',
-            letterSpacing: 'normal',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '24px'
-          }}>
-            {t.closingP5}
-          </p>
-          <p style={{
-            fontSize: '17px',
-            fontWeight: '400',
-            lineHeight: '27.2px',
-            letterSpacing: 'normal',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '24px'
-          }}>
-            {t.closingP6}
-          </p>
+            <p style={styles.bodyText}>{t.closing.body}</p>
+            <p style={styles.bodyText}>{t.closing.detail1}</p>
+            <p style={styles.bodyText}>{t.closing.detail2}</p>
+            <p style={styles.bodyText}>{t.closing.detail3}</p>
 
-          <p style={{
-            fontSize: '1.5rem',
-            fontWeight: '500',
-            color: 'var(--foreground)',
-            marginBottom: '16px'
-          }}>
-            {t.closingHighlight}
-          </p>
-        </section>
+            <p style={{
+              fontSize: '1.5rem',
+              fontWeight: '500',
+              color: 'var(--foreground)',
+              marginBottom: '16px'
+            }}>
+              {t.closing.highlight}
+            </p>
+          </section>
+        )}
+
+        <Spacer />
 
         <div style={{
-          height: '1px',
-            marginBottom: '48px'
-        }} />
-
-        <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-          <Link
-            href="/method/principles"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              color: 'var(--content-secondary-p3)',
-              textDecoration: 'none',
-              fontSize: '15px',
-              fontWeight: '400',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              transition: 'color 0.2s'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--foreground)'}
-            onMouseLeave={(e) => e.currentTarget.style.color = 'var(--content-secondary-p3)'}
-          >
-            {t.prevLink}
-          </Link>
-          <Link
-            href="/method/practices"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              color: 'var(--content-secondary-p3)',
-              textDecoration: 'none',
-              fontSize: '15px',
-              fontWeight: '400',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              transition: 'color 0.2s'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--foreground)'}
-            onMouseLeave={(e) => e.currentTarget.style.color = 'var(--content-secondary-p3)'}
-          >
-            {t.nextLink}
-          </Link>
+          marginTop: '48px',
+          paddingTop: '24px',
+          borderTop: '1px solid var(--border)',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '16px'
+        }}>
+          <NavLink href="/method/principles">{t.prevLink}</NavLink>
+          <NavLink href="/method/practices">{t.nextLink}</NavLink>
         </div>
       </div>
     </div>
-  );
+  )
 }

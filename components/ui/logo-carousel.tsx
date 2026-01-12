@@ -8,6 +8,7 @@ import React, {
 } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { useTheme } from "next-themes"
+import Image from "next/image"
 
 // Define the structure for our logo objects
 interface Logo {
@@ -118,10 +119,12 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
               },
             }}
           >
-            <img 
-              src={currentLogo.img} 
+            <Image
+              src={currentLogo.img}
               alt={currentLogo.name}
-              className="w-24 h-24 md:w-36 md:h-36 max-w-[80%] max-h-[80%] object-contain" 
+              width={144}
+              height={144}
+              className="w-24 h-24 md:w-36 md:h-36 max-w-[80%] max-h-[80%] object-contain"
             />
           </motion.div>
         </AnimatePresence>

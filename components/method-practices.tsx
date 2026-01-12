@@ -7,7 +7,28 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { useTheme } from 'next-themes'
 import { useLanguage } from '@/components/language-provider'
 
-const content = {
+interface Practice {
+  number: string
+  title: string
+  intro: string
+  description: string[]
+  subsection: {
+    title: string
+    items: string[]
+  }
+  conclusion: string[]
+}
+
+interface ContentLanguage {
+  breadcrumb: { home: string; method: string; current: string }
+  title: string
+  lead: string
+  practices: Practice[]
+  prevLink: string
+  nextLink: string
+}
+
+const content: Record<'en' | 'es', ContentLanguage> = {
   en: {
     breadcrumb: { home: 'Estela', method: 'Method', current: 'Practices' },
     title: 'Our Practices',
@@ -126,8 +147,6 @@ const content = {
         ]
       }
     ],
-    closingP1: "These practices aren't rules imposed from above.",
-    closingP2: "They're lessons learned from 13 years of service. Each one exists because it solves a real problem. Each one evolves as we learn better ways. Each one focuses on a simple goal:",
     prevLink: '← Previous: Implementation',
     nextLink: 'Next: Philosophy →'
   },
@@ -226,36 +245,157 @@ const content = {
         conclusion: []
       }
     ],
-    closingP1: '',
-    closingP2: '',
     prevLink: '← Anterior: Implementación',
     nextLink: 'Siguiente: Filosofía →'
   }
 }
 
-export function MethodPractices() {
+const styles = {
+  page: {
+    backgroundColor: 'var(--background)',
+    color: 'var(--foreground)',
+    minHeight: '100vh',
+    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
+    overflowX: 'hidden' as const
+  },
+  container: {
+    maxWidth: '680px',
+    margin: '0 auto',
+    padding: '120px 32px'
+  },
+  divider: {
+    height: '1px',
+    marginBottom: '48px'
+  },
+  title: {
+    fontSize: '2.5rem',
+    fontWeight: '400',
+    lineHeight: '2.75rem',
+    color: 'var(--foreground)',
+    margin: 0,
+    marginBottom: '24px'
+  },
+  lead: {
+    fontSize: '19px',
+    fontWeight: '400',
+    lineHeight: '30.4px',
+    color: 'var(--content-secondary-p3)',
+    marginBottom: '48px'
+  },
+  sectionHeading: {
+    fontSize: '1.5rem',
+    fontWeight: '400',
+    color: 'var(--foreground)',
+    marginBottom: '24px',
+    borderBottom: '1px solid var(--border)',
+    paddingBottom: '8px'
+  },
+  intro: {
+    fontSize: '17px',
+    fontWeight: '500',
+    lineHeight: '27.2px',
+    color: 'var(--foreground)',
+    marginBottom: '24px'
+  },
+  paragraph: {
+    fontSize: '17px',
+    fontWeight: '400',
+    lineHeight: '27.2px',
+    color: 'var(--content-secondary-p3)',
+    marginBottom: '24px'
+  },
+  subsectionTitle: {
+    fontSize: '17px',
+    fontWeight: '500',
+    color: 'var(--foreground)',
+    marginBottom: '8px'
+  },
+  list: {
+    fontSize: '17px',
+    fontWeight: '400',
+    lineHeight: '27.2px',
+    color: 'var(--content-secondary-p3)',
+    marginLeft: '16px',
+    listStyle: 'none' as const,
+    padding: '0'
+  },
+  navLink: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    color: 'var(--content-secondary-p3)',
+    textDecoration: 'none',
+    fontSize: '15px',
+    fontWeight: '400',
+    transition: 'color 0.2s'
+  }
+}
+
+interface NavLinkProps {
+  href: string
+  children: React.ReactNode
+}
+
+function NavLink({ href, children }: NavLinkProps): React.ReactElement {
+  return (
+    <Link
+      href={href}
+      style={styles.navLink}
+      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--foreground)'}
+      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--content-secondary-p3)'}
+    >
+      {children}
+    </Link>
+  )
+}
+
+interface PracticeCardProps {
+  practice: Practice
+}
+
+function PracticeCard({ practice }: PracticeCardProps): React.ReactElement {
+  return (
+    <div style={{ marginBottom: '48px' }}>
+      <h2 style={styles.sectionHeading}>
+        {practice.number} {practice.title}
+      </h2>
+
+      <p style={styles.intro}>{practice.intro}</p>
+
+      {practice.description.map((paragraph, i) => (
+        <p key={i} style={styles.paragraph}>{paragraph}</p>
+      ))}
+
+      <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
+        <h3 style={styles.subsectionTitle}>{practice.subsection.title}</h3>
+        <ul style={styles.list}>
+          {practice.subsection.items.map((item, i) => (
+            <li key={i} style={{ marginBottom: '8px' }}>• {item}</li>
+          ))}
+        </ul>
+      </div>
+
+      {practice.conclusion.length > 0 && practice.conclusion.map((paragraph, i) => (
+        <p key={i} style={styles.paragraph}>{paragraph}</p>
+      ))}
+    </div>
+  )
+}
+
+export function MethodPractices(): React.ReactElement {
   const { resolvedTheme } = useTheme()
   const { language } = useLanguage()
-  const t = content[language]
   const [mounted, setMounted] = useState(false)
+  const t = content[language]
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
+  const isLight = mounted && resolvedTheme === 'light'
+
   return (
-    <div style={{
-      backgroundColor: 'var(--background)',
-      color: 'var(--foreground)',
-      minHeight: '100vh',
-      fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-      overflowX: 'hidden' as const
-    }}>
-      <div style={{
-        maxWidth: '680px',
-        margin: '0 auto',
-        padding: '120px 32px'
-      }}>
+    <div style={styles.page}>
+      <div style={styles.container}>
         <div style={{ marginBottom: '32px' }}>
           <Breadcrumb
             items={[
@@ -264,7 +404,7 @@ export function MethodPractices() {
               { label: t.breadcrumb.current }
             ]}
           />
-          
+
           <div style={{ textAlign: 'center', marginBottom: '24px' }}>
             <div style={{
               display: 'inline-flex',
@@ -275,245 +415,56 @@ export function MethodPractices() {
               borderRadius: '50%',
               backgroundColor: 'var(--step-indicator-p3)',
               color: '#fff',
-              fontSize: '1.125rem', 
+              fontSize: '1.125rem',
               fontFamily: 'GT_America_Mono, monospace'
             }}>
               4
             </div>
           </div>
-          
-          <h1 style={{
-            fontSize: '2.5rem',
-            fontWeight: '400',
-            lineHeight: '2.75rem',
-            letterSpacing: 'normal',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--foreground)',
-            margin: 0,
-            marginBottom: '24px'
-          }}>
-            {t.title}
-          </h1>
+
+          <h1 style={styles.title}>{t.title}</h1>
+
+          <div style={styles.divider} />
+
+          <p style={styles.lead}>{t.lead}</p>
 
           <div style={{
-            height: '1px',
-            marginBottom: '48px'
-          }} />
-
-          <p style={{
-            fontSize: '19px',
-            fontWeight: '400',
-            lineHeight: '30.4px',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '48px'
-          }}>
-            {t.lead}
-          </p>
-
-          {/* Custom Vertical Bars Noise Effect */}
-          <div style={{ 
             position: 'relative',
             marginBottom: '48px',
             borderRadius: '8px',
-            border: mounted && resolvedTheme === 'light' ? '1px solid #d5d5d5' : '1px solid var(--border)',
+            border: isLight ? '1px solid #d5d5d5' : '1px solid var(--border)',
             height: '300px',
             width: '100%',
             overflow: 'hidden'
           }}>
-            <CustomVerticalBarsNoise 
-              backgroundColor={mounted && resolvedTheme === 'light' ? '#f5f5f5' : '#3d3019'}
-              pressedBackgroundColor={mounted && resolvedTheme === 'light' ? '#e0e0e0' : '#4a3a20'}
-              lineColor={mounted && resolvedTheme === 'light' ? { r: 102, g: 102, b: 102 } : { r: 245, g: 185, b: 68 }}
+            <CustomVerticalBarsNoise
+              backgroundColor={isLight ? '#f5f5f5' : '#3d3019'}
+              pressedBackgroundColor={isLight ? '#e0e0e0' : '#4a3a20'}
+              lineColor={isLight ? { r: 102, g: 102, b: 102 } : { r: 245, g: 185, b: 68 }}
             />
           </div>
         </div>
 
-        <div style={{
-          height: '1px',
-            marginBottom: '48px'
-        }} />
+        <div style={styles.divider} />
 
         {t.practices.map((practice, index) => (
-          <div key={`practice-${index}`} style={{ marginBottom: '48px' }}>
-            <div style={{ marginBottom: '24px' }}>
-              <h2 style={{ 
-                fontSize: '1.5rem', 
-                fontWeight: '400',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'var(--foreground)', 
-                marginBottom: '24px',
-                borderBottom: '1px solid var(--border)',
-                paddingBottom: '8px'
-              }}>
-                {practice.number} {practice.title}
-              </h2>
-            </div>
-            
-            <div style={{ marginBottom: '24px' }}>
-              <p style={{
-                fontSize: '17px',
-                fontWeight: '500',
-                lineHeight: '27.2px',
-                letterSpacing: 'normal',
-                fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                color: 'var(--foreground)',
-                marginBottom: '24px'
-              }}>
-                {practice.intro}
-              </p>
-              
-              {practice.description.map((paragraph, i) => (
-                <p key={`desc-${i}`} style={{
-                  fontSize: '17px',
-                  fontWeight: '400',
-                  lineHeight: '27.2px',
-                  letterSpacing: 'normal',
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  color: 'var(--content-secondary-p3)',
-                  marginBottom: '24px'
-                }}>
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-            
-            <div style={{ marginBottom: '24px' }}>
-              <div style={{ marginLeft: '24px', marginBottom: '24px' }}>
-                <div style={{ marginBottom: '16px' }}>
-                  <h3 style={{
-                    fontSize: '17px',
-                    fontWeight: '500',
-                    color: 'var(--foreground)',
-                    marginBottom: '8px',
-                    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif'
-                  }}>
-                    {practice.subsection.title}
-                  </h3>
-                  <ul style={{
-                    fontSize: '17px',
-                    fontWeight: '400',
-                    lineHeight: '27.2px',
-                    letterSpacing: 'normal',
-                    fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                    color: 'var(--content-secondary-p3)',
-                    marginLeft: '16px',
-                    listStyle: 'none',
-                    padding: '0'
-                  }}>
-                    {practice.subsection.items.map((item, i) => (
-                      <li key={`item-${i}`} style={{ marginBottom: '8px' }}>• {item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-            
-            <div style={{ marginBottom: '24px' }}>
-              {practice.conclusion.map((paragraph, i) => (
-                <p key={`conclusion-${i}`} style={{
-                  fontSize: '17px',
-                  fontWeight: '400',
-                  lineHeight: '27.2px',
-                  letterSpacing: 'normal',
-                  fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-                  color: 'var(--content-secondary-p3)',
-                  marginBottom: '24px'
-                }}>
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-            
-            {index < t.practices.length - 1 && (
-              <div style={{
-                height: '1px',
-            marginBottom: '48px'
-              }} />
-            )}
-          </div>
+          <PracticeCard key={index} practice={practice} />
         ))}
-        
-        <div style={{
-          height: '1px',
-            marginBottom: '48px'
-        }} />
-
-        <section style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <p style={{
-            fontSize: '1.125rem',
-            fontWeight: '500',
-            color: 'var(--foreground)',
-            marginBottom: '16px'
-          }}>
-            {t.closingP1}
-          </p>
-
-          <p style={{
-            fontSize: '17px',
-            fontWeight: '400',
-            lineHeight: '27.2px',
-            letterSpacing: 'normal',
-            fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-            color: 'var(--content-secondary-p3)',
-            marginBottom: '24px'
-          }}>
-            {t.closingP2}
-          </p>
-          
-          <p style={{
-            fontSize: '1.5rem',
-            fontWeight: '500',
-            fontStyle: 'italic',
-            color: 'var(--foreground)',
-            marginBottom: '16px'
-          }}>
-
-          </p>
-        </section>
 
         <div style={{
-          height: '1px',
-            marginBottom: '48px'
-        }} />
-
-        <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-          <Link
-            href="/method/implementation"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              color: 'var(--content-secondary-p3)',
-              textDecoration: 'none',
-              fontSize: '15px',
-              fontWeight: '400',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              transition: 'color 0.2s'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--foreground)'}
-            onMouseLeave={(e) => e.currentTarget.style.color = 'var(--content-secondary-p3)'}
-          >
-            {t.prevLink}
-          </Link>
-          <Link
-            href="/method/philosophy"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              color: 'var(--content-secondary-p3)',
-              textDecoration: 'none',
-              fontSize: '15px',
-              fontWeight: '400',
-              fontFamily: 'SuisseIntl, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-              transition: 'color 0.2s'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--foreground)'}
-            onMouseLeave={(e) => e.currentTarget.style.color = 'var(--content-secondary-p3)'}
-          >
-            {t.nextLink}
-          </Link>
+          marginTop: '48px',
+          paddingTop: '24px',
+          borderTop: '1px solid var(--border)',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '16px'
+        }}>
+          <NavLink href="/method/implementation">{t.prevLink}</NavLink>
+          <NavLink href="/method/philosophy">{t.nextLink}</NavLink>
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -2,10 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/components/language-provider";
+import { useTheme } from "next-themes";
 
 export const ClosingSection = () => {
   const { language } = useLanguage();
+  const { resolvedTheme } = useTheme();
   const [windowWidth, setWindowWidth] = useState(0);
+  const [mounted, setMounted] = useState(false);
   
   const content = {
     en: {

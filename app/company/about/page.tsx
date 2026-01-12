@@ -2,7 +2,12 @@
 
 import React from 'react';
 import { Footer } from '@/components/footer';
-import { HeroSection } from './components/HeroSection';
+import { PageHeroSection } from '@/components/page-hero-section';
+
+const heroContent = {
+  en: { highlight: 'Technology at the service of your business.', rest: 'Not the other way around.' },
+  es: { highlight: 'Tecnología al servicio de su empresa.', rest: 'No al revés.' }
+};
 import { ImagesSection } from './components/ImagesSection';
 import { ContentSection } from './components/ContentSection';
 import { MissionList, PrinciplesList } from './components/PrinciplesList';
@@ -16,7 +21,7 @@ const AboutAboutPage = () => {
     <>
       <main className="mt-10 min-[1100px]:mt-24">
         {/* Hero Section with main headline */}
-        <HeroSection />
+        <PageHeroSection content={heroContent} />
         
         {/* Images Section with the office photos */}
         <ImagesSection />
