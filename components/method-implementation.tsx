@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { Link } from 'next-view-transitions'
 import Waves, { type LineInteraction } from '@/components/ui/waves'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
@@ -143,7 +143,12 @@ export function MethodImplementation() {
   const { resolvedTheme } = useTheme()
   const { language } = useLanguage()
   const t = content[language]
+  const [mounted, setMounted] = useState(false)
   const [audioEnabled, setAudioEnabled] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const audio = useWaveAudio({
     mode: 'pluck',
@@ -247,7 +252,7 @@ export function MethodImplementation() {
             position: 'relative',
             marginBottom: '48px',
             borderRadius: '8px',
-            border: resolvedTheme === 'light' ? '1px solid #d5d5d5' : '1px solid var(--border)',
+            border: mounted && resolvedTheme === 'light' ? '1px solid #d5d5d5' : '1px solid var(--border)',
             height: '300px',
             width: '100%',
             overflow: 'hidden'
@@ -266,11 +271,11 @@ export function MethodImplementation() {
                 borderRadius: '50%',
                 border: 'none',
                 backgroundColor: audioEnabled
-                  ? (resolvedTheme === 'light' ? '#333' : '#f5b944')
-                  : (resolvedTheme === 'light' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'),
+                  ? (mounted && resolvedTheme === 'light' ? '#333' : '#f5b944')
+                  : (mounted && resolvedTheme === 'light' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'),
                 color: audioEnabled
-                  ? (resolvedTheme === 'light' ? '#fff' : '#000')
-                  : (resolvedTheme === 'light' ? '#666' : '#888'),
+                  ? (mounted && resolvedTheme === 'light' ? '#fff' : '#000')
+                  : (mounted && resolvedTheme === 'light' ? '#666' : '#888'),
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
@@ -293,8 +298,8 @@ export function MethodImplementation() {
               )}
             </button>
             <Waves
-              lineColor={resolvedTheme === 'light' ? '#666666' : '#f5b944'}
-              backgroundColor={resolvedTheme === 'light' ? '#f5f5f5' : '#3d3019'}
+              lineColor={mounted && resolvedTheme === 'light' ? '#666666' : '#f5b944'}
+              backgroundColor={mounted && resolvedTheme === 'light' ? '#f5f5f5' : '#3d3019'}
               waveSpeedX={0}
               waveSpeedY={0}
               waveAmpX={0}
