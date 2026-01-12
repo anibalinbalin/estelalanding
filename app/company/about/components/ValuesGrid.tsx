@@ -17,7 +17,7 @@ const getValuesData = (language: 'en' | 'es') => {
       },
       {
         title: "Curiosity",
-        description: "We know a lot. Not enough. That gap keeps us awake."
+        description: "We know a lot. Not enough. That gap keeps us up."
       },
       {
         title: "Diversity",
@@ -67,7 +67,7 @@ const getValuesData = (language: 'en' | 'es') => {
       },
       {
         title: "Curiosidad",
-        description: "Sabemos mucho. No lo suficiente. Esa diferencia nos mantiene despiertos."
+        description: "Sabemos mucho. No suficiente. Esa brecha nos desvela."
       },
       {
         title: "Diversidad",

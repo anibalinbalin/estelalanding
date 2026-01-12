@@ -10,13 +10,13 @@ export const ContentSection = () => {
     en: {
       ourMission: 'Our Mission',
       missionQuote: '"Technology should be invisible when it works and obvious when it doesn\'t."',
-      founded: 'Nearly a decade proving something that shouldn\'t need proving: that solving tech problems doesn\'t have to be a problem itself.',
+      founded: 'Nearly a decade proving the obvious: that solving tech problems doesn\'t have to be one more.',
       broken: ''
     },
     es: {
       ourMission: 'Nuestra misión',
       missionQuote: '"La tecnología debe ser invisible cuando funciona y evidente cuando no."',
-      founded: 'Casi una década probando algo que no debería requerir prueba: que resolver problemas tecnológicos no tiene por qué ser un problema en sí mismo.',
+      founded: 'Casi una década demostrando lo obvio: que resolver problemas tecnológicos no tiene por qué ser uno más.',
       broken: ''
     }
   }

@@ -13,7 +13,7 @@ const getMissionItems = (language: 'en' | 'es') => {
       },
       {
         title: "How We're Different",
-        description: "No account executives. No middle managers. Direct relationship between your problem and whoever solves it."
+        description: "No account executives. No middle managers. Direct relationship between the problem and whoever solves it."
       },
       {
         title: "Why We Exist",
@@ -21,7 +21,7 @@ const getMissionItems = (language: 'en' | 'es') => {
       },
       {
         title: "Who We Serve",
-        description: "Companies that value results over presentations, and solutions over promises."
+        description: "Companies that prefer results to presentations. And solutions to promises."
       }
     ],
     es: [
@@ -31,7 +31,7 @@ const getMissionItems = (language: 'en' | 'es') => {
       },
       {
         title: "En qué nos diferenciamos",
-        description: "Sin ejecutivos de cuenta. Sin gestores intermedios. Relación directa entre su problema y quien lo resuelve."
+        description: "Sin ejecutivos de cuenta. Sin gestores intermedios. Relación directa entre el problema y quien lo resuelve."
       },
       {
         title: "Por qué existimos",
@@ -39,7 +39,7 @@ const getMissionItems = (language: 'en' | 'es') => {
       },
       {
         title: "A quiénes servimos",
-        description: "Empresas que valoran resultados sobre presentaciones, y soluciones sobre promesas."
+        description: "Empresas que prefieren resultados a presentaciones. Y soluciones a promesas."
       }
     ]
   };
@@ -52,7 +52,7 @@ const getPrincipleItems = (language: 'en' | 'es') => {
     en: [
       {
         title: "Technology Serves Business",
-        description: "We start with your objectives, not our favorite technologies. Every technical decision must be justified in business terms. Form follows function."
+        description: "We start with your objectives, not our favorite technologies. Form follows function."
       },
       {
         title: "Excellence Over Scale",
@@ -70,7 +70,7 @@ const getPrincipleItems = (language: 'en' | 'es') => {
     es: [
       {
         title: "La tecnología al servicio de la empresa",
-        description: "Empezamos por sus objetivos, no por nuestras tecnologías favoritas. Cada decisión técnica debe justificarse en términos de negocio. La forma sigue a la función."
+        description: "Empezamos por sus objetivos, no por nuestras tecnologías favoritas. La forma sigue a la función."
       },
       {
         title: "Excelencia sobre escala",
