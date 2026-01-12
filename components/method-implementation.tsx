@@ -29,7 +29,7 @@ const content = {
       {
         number: '3.2',
         title: 'Architecture',
-        intro: 'Design the system that fits your reality.',
+        intro: 'Design the system that fits reality.',
         content: [
           'Create detailed blueprints',
           'Plan for today and tomorrow',
@@ -44,7 +44,7 @@ const content = {
         intro: 'Build without breaking what works.',
         content: [
           'Staged rollouts, no big bangs',
-          'Test with real users, not scenarios',
+          'Test with users in test bed',
           'Document as we build',
           'Train as we go'
         ],
@@ -93,7 +93,7 @@ const content = {
       {
         number: '3.2',
         title: 'Arquitectura',
-        intro: 'Diseñar el sistema que se ajusta a su realidad.',
+        intro: 'Diseñar el sistema que se ajusta a la realidad.',
         content: [
           'Crear lineas de tiempo claras',
           'Planificar a largo plazo',
@@ -108,7 +108,7 @@ const content = {
         intro: 'Construir sin romper lo que funciona.',
         content: [
           'Desarrollos por etapas',
-          'Probar con usuarios en los test beds',
+          'Probar con usuarios en test bed',
           'Ir documentando mientras avanzamos',
           'Enseñar sobre la marcha'
         ],
