@@ -91,9 +91,3 @@ export function detectBrowserLanguage(defaultLanguage: Language = 'es'): Languag
   return defaultLanguage
 }
 
-/**
- * Gets the HTML lang attribute value based on the current language
- */
-export function getHtmlLang(language: Language): string {
-  return language === 'es' ? 'es' : 'en'
-}
