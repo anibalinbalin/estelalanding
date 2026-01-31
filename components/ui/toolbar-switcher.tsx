@@ -4,7 +4,7 @@ import { useId, useEffect, useState, useCallback } from "react"
 import { MoonIcon, SunIcon, Languages } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useLanguage } from "@/components/language-provider"
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { useRouter } from "next/navigation"
 
@@ -24,6 +24,7 @@ export function ToolbarSwitcher() {
   const { theme, setTheme } = useTheme()
   const { language, setLanguage } = useLanguage()
   const [mounted, setMounted] = useState(false)
+  const shouldReduceMotion = useReducedMotion()
 
   const isDark = theme === "dark"
 
@@ -90,7 +91,7 @@ export function ToolbarSwitcher() {
           <motion.div
             layoutId="activeLanguage"
             className="absolute inset-0 rounded bg-secondary"
-            transition={{ type: 'spring', duration: 0.5 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { type: 'spring', duration: 0.5 }}
           />
         )}
         <Languages

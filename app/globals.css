@@ -695,3 +695,41 @@ html, body {
   color: var(--content-tertiary-p3) !important;
   font-style: italic;
 }
+
+/* Accessibility: Global reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Touch device hover guards - prevent hover flicker on touch */
+@media (hover: hover) and (pointer: fine) {
+  .estela-nav-trigger:hover,
+  .estela-nav-link:hover,
+  .estela-nav-button-outline:hover,
+  .estela-nav-link-mobile:hover,
+  .estela-button-primary:hover,
+  .estela-button-secondary:hover {
+    /* Existing hover styles apply only for mouse/trackpad users */
+  }
+}
+
+/* Disable hover effects for touch devices */
+@media (hover: none) {
+  .estela-nav-trigger:hover,
+  .estela-nav-link:hover,
+  .estela-nav-button-outline:hover,
+  .estela-nav-link-mobile:hover,
+  .estela-button-primary:hover,
+  .estela-button-secondary:hover {
+    background-color: inherit;
+    color: inherit;
+    border-color: inherit;
+  }
+}

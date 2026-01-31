@@ -50,3 +50,19 @@
 .intro-animation {
   animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
+/* Accessibility: Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hands-container,
+  .phone-image-container {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hands-container.animate,
+  .phone-image-container.animate {
+    opacity: 1;
+    transform: none;
+  }
+}

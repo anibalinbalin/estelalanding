@@ -1,6 +1,6 @@
 'use client';
 import { ReactNode } from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants, useReducedMotion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import React from 'react';
 
@@ -83,7 +83,7 @@ const presetVariants: Record<
   zoom: {
     container: defaultContainerVariants,
     item: {
-      hidden: { opacity: 0, scale: 0.5 },
+      hidden: { opacity: 0, scale: 0.95 },
       visible: {
         opacity: 1,
         scale: 1,
@@ -109,7 +109,7 @@ const presetVariants: Record<
       visible: {
         opacity: 1,
         y: 0,
-        transition: { type: 'spring', stiffness: 400, damping: 10 },
+        transition: { type: 'spring', stiffness: 400, damping: 15 },
       },
     },
   },
@@ -131,7 +131,7 @@ const presetVariants: Record<
       visible: {
         opacity: 1,
         rotate: 0,
-        transition: { type: 'spring', stiffness: 300, damping: 8 },
+        transition: { type: 'spring', stiffness: 300, damping: 12 },
       },
     },
   },
@@ -143,6 +143,7 @@ function AnimatedGroup({
   variants,
   preset,
 }: AnimatedGroupProps) {
+  const shouldReduceMotion = useReducedMotion();
   const selectedVariants = preset
     ? presetVariants[preset]
     : { container: defaultContainerVariants, item: defaultItemVariants };
@@ -151,7 +152,7 @@ function AnimatedGroup({
 
   return (
     <motion.div
-      initial='hidden'
+      initial={shouldReduceMotion ? false : 'hidden'}
       animate='visible'
       variants={containerVariants}
       className={cn(className)}

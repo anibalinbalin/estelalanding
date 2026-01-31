@@ -6,7 +6,7 @@ import React, {
   useMemo,
   useState,
 } from "react"
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
 import { useTheme } from "next-themes"
 import Image from "next/image"
 
@@ -60,6 +60,7 @@ interface LogoColumnProps {
 // LogoColumn component: Displays a single column of animated logos
 const LogoColumn: React.FC<LogoColumnProps> = React.memo(
   ({ logos, index, currentTime }) => {
+    const shouldReduceMotion = useReducedMotion()
     const cycleInterval = 4000 // Time each logo is displayed (in milliseconds)
     const columnDelay = index * 200 // Stagger the start of each column's animation
     // Calculate which logo should be displayed based on the current time
@@ -77,10 +78,10 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
       // Framer Motion component for the column container
       <motion.div
         className="w-28 h-16 md:w-56 md:h-28 overflow-hidden relative"
-        initial={{ opacity: 0, y: 50 }} // Start invisible and below final position
-        animate={{ opacity: 1, y: 0 }} // Animate to full opacity and final position
-        transition={{
-          delay: index * 0.1, // Stagger the animation of each column
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={shouldReduceMotion ? { duration: 0 } : {
+          delay: index * 0.1,
           duration: 0.5,
           ease: "easeOut",
         }}
@@ -91,10 +92,10 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
           <motion.div
             key={`${logos[currentIndex].id}-${currentIndex}`}
             className="absolute inset-0 flex items-center justify-center"
-            // Animation for when the logo enters
-            initial={{ y: "10%", opacity: 0, filter: "blur(8px)" }}
+            // Animation for when the logo enters (blur <=4px for continuous animation per Rule 7)
+            initial={shouldReduceMotion ? { opacity: 0 } : { y: "10%", opacity: 0, filter: "blur(4px)" }}
             // Animation for when the logo is displayed
-            animate={{
+            animate={shouldReduceMotion ? { opacity: 1 } : {
               y: "0%",
               opacity: 1,
               filter: "blur(0px)",
@@ -107,15 +108,15 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
                 duration: 0.5,
               },
             }}
-            // Animation for when the logo exits
-            exit={{
+            // Animation for when the logo exits (blur <=4px for continuous animation per Rule 7)
+            exit={shouldReduceMotion ? { opacity: 0 } : {
               y: "-20%",
               opacity: 0,
-              filter: "blur(6px)",
+              filter: "blur(4px)",
               transition: {
                 type: "tween",
-                ease: "easeIn",
-                duration: 0.3,
+                ease: "easeOut",
+                duration: 0.2,
               },
             }}
           >
@@ -141,10 +142,23 @@ function LogoCarousel({ columnCount = 2 }: { columnCount?: number }) {
   const [currentTime, setCurrentTime] = useState(0)
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const containerRef = React.useRef<HTMLDivElement>(null)
 
   // Only show theme-dependent content after mounting
   useEffect(() => {
     setMounted(true)
+  }, [])
+
+  // Pause animation when off-screen (Rule 4: pause animations when off-screen)
+  useEffect(() => {
+    if (!containerRef.current) return
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    )
+    observer.observe(containerRef.current)
+    return () => observer.disconnect()
   }, [])
 
   // Memoize the array of logos to prevent unnecessary re-renders
@@ -191,18 +205,19 @@ function LogoCarousel({ columnCount = 2 }: { columnCount?: number }) {
     setCurrentTime((prevTime) => prevTime + 100)
   }, [])
 
-  // Set up an interval to update the time every 100ms
+  // Set up an interval to update the time every 100ms (only when visible)
   useEffect(() => {
+    if (!isVisible) return
     const intervalId = setInterval(updateTime, 100)
     return () => clearInterval(intervalId)
-  }, [updateTime])
+  }, [updateTime, isVisible])
 
   // Don't render until mounted to prevent hydration mismatch
   if (!mounted) return null
 
   // Render the logo columns
   return (
-    <div className="flex space-x-4">
+    <div ref={containerRef} className="flex space-x-4">
       {logoSets.map((logos, index) => (
         <LogoColumn
           key={index}
