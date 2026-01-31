@@ -3,7 +3,9 @@ import { ViewTransitions } from "next-view-transitions";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/components/language-provider";
-import { Navbar } from "@/components/navbar";
+import { ModeProvider } from "@/components/mode-provider";
+import { ModeToggle } from "@/components/ui/mode-toggle";
+import { LayoutContent } from "@/components/layout-content";
 import "./globals.css";
 import "./fonts.css";
 
@@ -34,8 +36,12 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <LanguageProvider>
-              <Navbar />
-              {children}
+              <ModeProvider>
+                <LayoutContent>
+                  {children}
+                </LayoutContent>
+                <ModeToggle />
+              </ModeProvider>
               <Analytics />
             </LanguageProvider>
           </ThemeProvider>

@@ -537,8 +537,9 @@ export function Navbar(): React.ReactElement {
                   {/* Contact Link */}
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild>
-                      <Link href="/contact" className="estela-nav-link">
+                      <Link href="/contact" className="estela-nav-link flex-row">
                         {t.nav.contact}
+                        <kbd className="text-xs font-mono bg-secondary/50 px-1 py-0.5 rounded">C</kbd>
                       </Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
@@ -618,10 +619,11 @@ export function Navbar(): React.ReactElement {
             {/* Contact link */}
             <Link
               href="/contact"
-              className="block py-5 px-5 sm:px-10 text-left uppercase font-mono text-xs font-normal leading-4 tracking-wider text-muted-foreground hover:opacity-80 border-b"
+              className="flex items-center justify-between py-5 px-5 sm:px-10 text-left uppercase font-mono text-xs font-normal leading-4 tracking-wider text-muted-foreground hover:opacity-80 border-b"
               onClick={closeMobileMenu}
             >
-              {t.nav.contact}
+              <span>{t.nav.contact}</span>
+              <kbd className="text-xs font-mono bg-secondary/50 px-1 py-0.5 rounded">C</kbd>
             </Link>
           </div>
         </div>

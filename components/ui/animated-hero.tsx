@@ -5,12 +5,14 @@ import { MoveRight } from "lucide-react";
 import { UnicornBackground } from "@/components/ui/unicorn-background";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/components/language-provider";
+import { useMode } from "@/components/mode-provider";
 import { Link } from "next-view-transitions";
 import './hero-animations.css';
 
 function Hero() {
   const { } = useTheme();
   const { language } = useLanguage();
+  const { mode } = useMode();
   const [, setMounted] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
   
@@ -24,12 +26,16 @@ function Hero() {
     en: {
       title: "The shortest path between\nthe problem and the solution",
       subtitle: "The Greeks invented logic, geometry, and a god for every need. We apply the first two to build solutions. From the third—the gods, not the needs—we kept only the marble, which requires no updates.",
-      contact: "Our Approach"
+      subtitleMachine: "Infrastructure automation, security hardening, and development services. REST APIs, CI/CD pipelines, and infrastructure-as-code deployments.",
+      contact: "Our Approach",
+      contactMachine: "API Docs"
     },
     es: {
       title: "El camino más corto entre\nel problema y la solución",
       subtitle: "Los griegos inventaron la lógica, la geometría y un dios para cada necesidad. Nosotros aplicamos las dos primeras para construir soluciones. De la tercera categoría —los dioses, no las necesidades— conservamos solo el mármol, que no requiere actualizaciones.",
-      contact: "Nuestro Enfoque"
+      subtitleMachine: "Automatización de infraestructura, hardening de seguridad, y servicios de desarrollo. APIs REST, pipelines CI/CD, e infraestructura como código.",
+      contact: "Nuestro Enfoque",
+      contactMachine: "API Docs"
     }
   };
   
@@ -62,14 +68,14 @@ function Hero() {
               ))}
             </h1>
 
-            <p 
+            <p
               className={`mt-2 min-[500px]:mt-4 text-[16px] leading-[24px] sm:text-[24px] sm:leading-[34px] tracking-normal w-1/2 sm:w-full max-w-2xl text-foreground sm:text-[#999999] ${isAnimated ? 'hero-subtitle' : 'opacity-0'}`}
-              style={{ 
+              style={{
                 fontFamily: 'SuisseIntl, -apple-system, "system-ui", Helvetica, Arial, sans-serif',
                 fontWeight: 400
               }}
             >
-              {t.subtitle}
+              {mode === 'machine' ? t.subtitleMachine : t.subtitle}
             </p>
             
             {/* CTA Button */}
@@ -78,7 +84,7 @@ function Hero() {
                 href="/method"
                 className="estela-nav-button estela-nav-button-primary inline-flex items-center"
               >
-                {t.contact} <MoveRight className="w-4 h-4 ml-2" />
+                {mode === 'machine' ? t.contactMachine : t.contact} <MoveRight className="w-4 h-4 ml-2" />
               </Link>
             </div>
           </div>
