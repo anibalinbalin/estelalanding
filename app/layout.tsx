@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { Analytics } from "@vercel/analytics/next";
+import { Agentation } from "agentation";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/components/language-provider";
 import { ModeProvider } from "@/components/mode-provider";
-import { ModeToggle } from "@/components/ui/mode-toggle";
 import { LayoutContent } from "@/components/layout-content";
 import "./globals.css";
 import "./fonts.css";
@@ -40,9 +40,9 @@ export default function RootLayout({
                 <LayoutContent>
                   {children}
                 </LayoutContent>
-                <ModeToggle />
               </ModeProvider>
               <Analytics />
+              {process.env.NODE_ENV === "development" && <Agentation />}
             </LanguageProvider>
           </ThemeProvider>
         </body>

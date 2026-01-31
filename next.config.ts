@@ -18,9 +18,7 @@ const nextConfig: NextConfig = {
       // },
     ],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // Note: eslint config removed in Next.js 16 - use ESLint directly
 };
 
 export default nextConfig;
