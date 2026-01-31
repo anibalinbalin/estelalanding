@@ -13,6 +13,7 @@ import { ClosingSection } from "@/components/closing-section";
 import { HandsSection } from "@/components/hands-section";
 import { Footer } from "@/components/footer";
 import { useLanguage } from "@/components/language-provider";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 
 export default function Home() {
   const { language } = useLanguage();
@@ -53,6 +54,7 @@ export default function Home() {
         </div>
       </section>
       <Footer />
+      <ModeToggle />
     </main>
   );
 }
