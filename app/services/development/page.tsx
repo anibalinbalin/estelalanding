@@ -4,7 +4,7 @@ import DevelopmentAsciiArt from '@/components/ui/development-ascii-art';
 import { Footer } from '@/components/footer';
 import { useLanguage } from '@/components/language-provider';
 
-const content = {
+export const developmentContent = {
   en: {
     title: "Development & Artificial Intelligence",
     subtitle: "AI solutions that work outside the demo.",
@@ -25,7 +25,7 @@ const content = {
 
 export default function DevelopmentPage() {
   const { language } = useLanguage();
-  const t = content[language];
+  const t = developmentContent[language];
   const contactPath = '/contact';
 
   return (

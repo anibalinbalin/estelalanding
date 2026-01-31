@@ -1,8 +1,16 @@
 'use client'
 
 import { useLanguage } from '@/components/language-provider'
+import { ModeToggle } from '@/components/ui/mode-toggle'
+import {
+  securityContent,
+  infrastructureContent,
+  developmentContent,
+  consultingContent,
+  contactContent
+} from '@/lib/site-content'
 
-// All content pulled from existing bilingual content objects across the site
+// Build unified content from page exports
 const content = {
   en: {
     // Section Headers
@@ -22,54 +30,58 @@ const content = {
 
     // Hero
     heroTitle: "The shortest path between the problem and the solution",
-    heroSubtitle: "Infrastructure automation, security hardening, and development services. REST APIs, CI/CD pipelines, and infrastructure-as-code deployments.",
+    heroSubtitle: "The Greeks invented logic, geometry, and a god for every need. We apply the first two to build solutions. From the third—the gods, not the needs—we kept only the marble, which requires no updates.",
+    heroSubtitleTech: "Infrastructure automation, security hardening, and development services. REST APIs, CI/CD pipelines, and infrastructure-as-code deployments.",
 
-    // Services
-    infraTitle: "Infrastructure & Networks",
-    infraSubtitle: "The foundation of everything digital. End-to-end network solutions with proactive monitoring and support.",
-    vmTitle: "On-demand virtual machines",
-    vmDesc: "Elastic compute capacity that can be provisioned against a fluid resource pool, with support for the tools developers already use.",
-    vmFeatures: ["VMware vSphere environments", "Bare metal server deployment", "Hybrid cloud architectures", "Load balancing and redundancy", "Performance monitoring"],
-    netTitle: "Enterprise Network Architecture",
-    netDesc: "UniFi deployment and management, VLAN segmentation and security, Guest networks with captive portals, Multi-site VPN connections, Bandwidth optimization",
-    postTitle: "High-Performance Post-Production Systems",
-    postDesc: "Custom workstations and cohesive systems that master high-resolution media, accelerate complex renders, and streamline collaborative workflows.",
-    postFeatures: ["Custom-Built High-Performance Workstations", "Blazing-Fast, Scalable Storage Solutions", "Optimized High-Bandwidth Networking", "Workflow Integration & Peripheral Support"],
-    secCamTitle: "Advanced Security & Surveillance Solutions",
-    secCamDesc: "Enterprise-grade PTZ camera systems with AI-powered analytics. 360 pan/tilt/zoom, 4K Ultra HD, intelligent detection.",
-    wifiTitle: "Enterprise Wireless Networks",
-    wifiDesc: "WiFi 7 (802.11be) with 6GHz support, Tri-band operation up to 9.3 Gbps, Seamless roaming, WPA3 Enterprise with RADIUS.",
+    // Services - Infrastructure (from page)
+    infraTitle: infrastructureContent.en.title,
+    infraSubtitle: `${infrastructureContent.en.subtitle1} ${infrastructureContent.en.subtitle2}`,
+    vmTitle: infrastructureContent.en.vmTitle,
+    vmDesc: infrastructureContent.en.vmDesc,
+    vmFeatures: [infrastructureContent.en.vmFeat1, infrastructureContent.en.vmFeat2, infrastructureContent.en.vmFeat3, infrastructureContent.en.vmFeat4, infrastructureContent.en.vmFeat5],
+    netTitle: infrastructureContent.en.netTitle,
+    netDesc: infrastructureContent.en.netDesc,
+    postTitle: infrastructureContent.en.postTitle,
+    postDesc: infrastructureContent.en.postDesc,
+    postFeatures: [infrastructureContent.en.postFeat1, infrastructureContent.en.postFeat2, infrastructureContent.en.postFeat3, infrastructureContent.en.postFeat4],
+    secCamTitle: infrastructureContent.en.secTitle,
+    secCamDesc: infrastructureContent.en.secDesc,
+    wifiTitle: infrastructureContent.en.wifiTitle,
+    wifiDesc: infrastructureContent.en.wifiDesc,
 
-    // Security
-    securityTitle: "Managed Security & Data Protection",
-    securitySubtitle: "The complex, simplified. The critical, solved.",
-    secOpsTitle: "Unified Security Operations",
-    secOpsFeatures: ["24/7 monitoring", "Automated threat response", "Single management console", "Security reports", "Tailored responses"],
-    pillar1: "Everything in one place - One account, one contact.",
-    pillar2: "Constant attention - Real-time alerts and responses before things escalate.",
-    pillar3: "Zero friction - Native integrations. Everything connected from day one.",
-    backupTitle: "3-2-1 Backup Strategy",
-    backupDesc: "Synology NAS for storage and fast recovery, Wasabi/AWS cloud for older recoveries, automated off-hours verification.",
-    sentinelTitle: "Endpoints: SentinelOne",
-    sentinelDesc: "AI-powered EDR. Detects threats, responds automatically, and gives you complete visibility into every device.",
-    wasabiTitle: "Cloud Backup (Wasabi)",
-    wasabiDesc: "S3-compatible cloud storage with immutable backups. Pay as you go with storage that syncs throughout the day.",
-    synologyTitle: "Network Storage (Synology)",
-    synologyDesc: "Local NAS with fast local or remote access. Snapshots, change logs, Google Workspace backup.",
+    // Security (from page)
+    securityTitle: securityContent.en.title,
+    securitySubtitle: securityContent.en.subtitle,
+    secOpsTitle: securityContent.en.secOpsTitle,
+    secOpsFeatures: [securityContent.en.secOps1, securityContent.en.secOps2, securityContent.en.secOps3, securityContent.en.secOps4, securityContent.en.secOps5],
+    pillar1: `${securityContent.en.pillar1Title} - ${securityContent.en.pillar1Desc}`,
+    pillar2: `${securityContent.en.pillar2Title} - ${securityContent.en.pillar2Desc}`,
+    pillar3: `${securityContent.en.pillar3Title} - ${securityContent.en.pillar3Desc}`,
+    backupTitle: securityContent.en.backupTitle,
+    backupDesc: securityContent.en.backupDesc,
+    // Storage section (was missing from machine-view!)
+    storageTitle: securityContent.en.storageTitle,
+    storageFeatures: [securityContent.en.storage1, securityContent.en.storage2, securityContent.en.storage3, securityContent.en.storage4, securityContent.en.storage5],
+    sentinelTitle: securityContent.en.sentinelTitle,
+    sentinelDesc: securityContent.en.sentinelDesc,
+    wasabiTitle: securityContent.en.wasabiTitle,
+    wasabiDesc: securityContent.en.wasabiDesc,
+    synologyTitle: securityContent.en.synologyTitle,
+    synologyDesc: securityContent.en.synologyDesc,
 
-    // Development
-    devTitle: "Development & Artificial Intelligence",
-    devSubtitle: "AI solutions that work outside the demo.",
-    devSectionTitle: "Custom Development",
-    devSectionDesc: "Software that works. React, Postgres, Claude Code. Automation that saves time. AI that delivers.",
+    // Development (from page)
+    devTitle: developmentContent.en.title,
+    devSubtitle: developmentContent.en.subtitle,
+    devSectionTitle: developmentContent.en.sectionTitle,
+    devSectionDesc: developmentContent.en.sectionDesc,
 
-    // Consulting
-    consultingTitle: "Consulting & Support",
-    consultingSubtitle: "From the Latin consultare, 'to deliberate together.'",
-    consultingSectionTitle: "We turn complexity into strategic advantage. Simplicity, we leave simple.",
-    consultingPara1: "We don't sell solutions; we cultivate them. We start by understanding the real problem—the one usually hiding behind the apparent problem.",
-    consultingPara2: "Infrastructure, growth, optimization, audits: we talk about all of that, but mostly we talk with you. Our consulting doesn't produce reports nobody reads. It produces decisions someone makes.",
-    consultingAdvantages: ["Ongoing advisory, not one-off", "Solutions aligned with your goals", "Direct access to the people doing the work", "Focus on lasting value"],
+    // Consulting (from page)
+    consultingTitle: consultingContent.en.title,
+    consultingSubtitle: consultingContent.en.subtitle,
+    consultingSectionTitle: consultingContent.en.sectionTitle,
+    consultingPara1: consultingContent.en.para1,
+    consultingPara2: consultingContent.en.para2,
+    consultingAdvantages: [consultingContent.en.adv1, consultingContent.en.adv2, consultingContent.en.adv3, consultingContent.en.adv4],
 
     // Specifications
     specsTitle: "Technical Specifications",
@@ -150,6 +162,28 @@ const content = {
         "We don't install servers. We create infrastructure that accelerates your work - and that you can happily ignore because it works."
       ]
     },
+    methodEmerges: {
+      title: "The Method Emerges",
+      intro: "Our method isn't about following trends or implementing the latest tools. It's about understanding what actually matters: your people, your work, your growth.",
+      listIntro: "This method emerged from:",
+      items: [
+        { title: "50+ successful implementations", description: "Each one teaching us something new about translation" },
+        { title: "Countless hours of listening", description: "Before we speak technology, we think alongside you" },
+        { title: "A belief that small teams build better", description: "Fewer translators mean clearer communication" },
+        { title: "The intersection of art and engineering", description: "Because the best systems balance beauty and function" }
+      ]
+    },
+    journeyAhead: {
+      title: "The Journey Ahead",
+      intro: "In the following chapters, we'll explore how this translation philosophy shapes everything we do:",
+      items: [
+        "Our Principles that ensure we never lose sight of the human element.",
+        "Our Implementation approach that builds without breaking what works.",
+        "Our Practices that maintain excellence day after day.",
+        "Our Philosophy that connects art to modern infrastructure."
+      ],
+      conclusion: "Each element reflects our core belief: technology should adapt to people, not the other way around."
+    },
 
     // Method Principles Detail
     methodPrinciplesTitle: "Core Principles",
@@ -229,9 +263,39 @@ const content = {
     // Company - Work
     workHero: "Our work speaks for us. Though sometimes we speak too.",
     projects: [
-      { client: "Teatro Solis", title: "Theater A/V Control System", year: "2023", desc: "Networked lighting controls with touch interfaces and remote capabilities." },
-      { client: "U Films", title: "Post-Production Infrastructure Build", year: "2023-2024", desc: "VPN solution and parallel access paths for production studio with security certifications." },
-      { client: "Diagnostico", title: "Laboratory Data Security & Integration", year: "2021-2024", desc: "NAS-based integration with AD, automated immutable backups, ISO 9001 compliance." }
+      {
+        client: "Teatro Solís",
+        title: "Theater A/V Control System",
+        year: "2023",
+        category: "Infrastructure",
+        duration: "3 months",
+        challenge: "The theater's controls couldn't keep up with modern lighting and sound systems. Think: trying to run a Tesla on a Model T dashboard.",
+        solution: "We built networked lighting controls with touch interfaces and remote capabilities. Now the tech actually works with the art, not against it.",
+        technologies: ["Networked Lighting", "Touch Screen", "Remote Control Systems", "A/V Integration"],
+        results: ["Faster show changeovers—now they can host international productions", "Remote control capabilities for flexible operation", "Support for modern lighting/sound effects", "Simplified controls (fewer buttons, less confusion)"]
+      },
+      {
+        client: "U Films",
+        title: "Post-Production Infrastructure Build",
+        year: "2023-2024",
+        category: "Infrastructure",
+        duration: "12 months (ongoing)",
+        challenge: "Building a production studio from scratch while wrestling with building network restrictions and firewall constraints. Oh, and major clients demanding security certifications.",
+        solution: "We engineered a precise VPN solution and negotiated parallel access paths. Sometimes the hardest problems are half-technical, half-diplomatic.",
+        technologies: ["VPN", "Storage/Backup Systems", "High-Speed Networking", "Security Compliance"],
+        results: ["Now working with clients who actually require security certifications", "Significant improvements in editing and rendering workflows", "Secure client data handling", "Parallel infrastructure in testing phase"]
+      },
+      {
+        client: "Diagnóstico",
+        title: "Laboratory Data Security & Integration",
+        year: "2021-2024",
+        category: "Infrastructure & Compliance",
+        duration: "3 years (ongoing)",
+        challenge: "Medical lab with patient data requirements, system integration needs, backup demands, and ISO 9001 compliance. The fun stuff.",
+        solution: "We implemented NAS-based integration policies with Active Directory, automated immutable backups, and phased network redundancy. Because lab data isn't something you want to \"oops.\"",
+        technologies: ["Synology NAS", "ISO 9001 Framework", "Automated Backup", "Integration Policies"],
+        results: ["ISO 9001 compliance achieved", "Reduced internal system downtime to outsiders", "Faster result turnaround times"]
+      }
     ],
 
     // Company - Partners
@@ -251,16 +315,55 @@ const content = {
     teamHero: "Who we are. The people behind the projects. No stock photos.",
     teamText: "Instead of the usual corporate copy: Those who do. No euphemisms.",
 
-    // Contact
-    contactTitle: "Contact us",
-    contactSubtitle: "Get in touch",
-    contactIntro: "We solve tech questions. We also confirm suspicions. Rarely both at once.",
-    contactBullets: [
-      "Learn about our services. Bibliography optional.",
-      "Get a tech assessment. Personalized, not personal.",
-      "Specify what you need. With precision, not optimism."
+    // Trusted By (after hero)
+    trustedByTitle: "Companies we've built with",
+
+    // Company - Clients
+    sectionClients: "Clients",
+    clientsHero: "Companies we've built with",
+    clients: ["Don Obdulio", "Aparato", "SODRE", "DSR360", "Sidley Jones", "Plataforma", "Producers", "Cimarrón", "U Films", "Diagnóstico", "AECID", "CCE", "Olivera", "Tafirel", "La Mayor", "Oriental", "Mueca", "Verne", "Embajada", "Avisa", "Dominio", "Fullcat", "Orben", "Box"],
+
+    // Contact (from page)
+    contactTitle: contactContent.en.title,
+    contactSubtitle: contactContent.en.subtitle,
+    contactIntro: contactContent.en.intro,
+    contactBullets: [contactContent.en.bullet1, contactContent.en.bullet2, contactContent.en.bullet3],
+    contactEmail: "hola@este.la",
+
+    // Homepage Sections
+    velocityTitle: "Solutions for problems that don't exist yet",
+    velocitySubtitle: "We anticipate the unexpected—which, once anticipated, ceases to be so. We design systems that last. We implement changes that transform. We keep calm when the server doesn't.",
+    velocityFeatures: [
+      { title: "Networks & Servers", description: "VMware and Proxmox virtualization, UniFi networking, Synology storage, 10Gb LANs, redundant power." },
+      { title: "Complete Protection", description: "SentinelOne XDR, UniFi Protect cameras, Synology backup infrastructure: redundancy and recovery." },
+      { title: "Custom Development", description: "Next.js apps, process automation, AI integration. Modern solutions that transform how you work." }
     ],
-    contactEmail: "hola@este.la"
+    principlesHomeTitle: "We have principles—and we apply them",
+    principlesHomeSubtitle: "Sounds obvious. But in a world where corporate values get drafted at team retreats and forgotten in the parking lot, keeping your own is almost an act of rebellion. We choose depth. We choose permanence. We choose consistency.",
+    principleHome1: { title: "Outsiders who think like insiders", description: "Sounds like a contradiction. It is. But we prefer productive contradictions to sterile coherences. We design as if it were ours. We care for it as if we lived there. Technological peace of mind isn't sold—it's built." },
+    principleHome2: { title: "We don't collect clients", description: "We build alliances. The difference: clients are served; allies are cared for. Emergencies aren't opportunities—they're commitments. And commitments here are kept even when no one is watching." },
+    speedTitle: "Depth, not speed",
+    speedDescription: "Speed impresses. Depth endures. Our work keeps working long after no one remembers who built it.",
+    ctaTitle: "We have opinions. Also reasons.",
+    ctaSubtitle: "The combination, we're told, is uncommon. That's also an opinion.",
+    closingQuote: "Polyphemus had size, strength, and one eye—which turned out to be insufficient. Odysseus had wit, few men, and a plan. We chose the second path. No meetings about meetings. No departments to delegate. Six people who solve. Because the solution was never about being bigger—it was about thinking better.",
+    smallScaleTitle: "We study the Renaissance—and not for the academic credit",
+    smallScaleFeatures: [
+      "We read philosophy because a system without human context is a machine with pretensions.",
+      "Because we've learned: the magic happens at this size. Your project doesn't get transferred.",
+      "Your relationship doesn't get 'managed.' You get us. All of us. Always."
+    ],
+    testNumbersTitle: "Empirical evidence",
+    testMetrics: [
+      { title: "100%", description: "Complete retention. Small sample, consistent result." },
+      { title: "Meetings", description: "Necessary: few. Unnecessary: none. Those that could've been an email: were an email." },
+      { title: "Founding team", description: "Same team since 2012. Turnover is a concept we know only by hearsay." },
+      { title: "Criteria", description: "Selective admission. It's not arrogance; it's arithmetic." }
+    ],
+    footerTagline: "When technology and knowledge converge",
+    footerDescription: "Eager for the new. Devoted to what works.",
+    footerAddress: "21 de Setiembre, 3015. 802 | Montevideo, Punta del Este, Uruguay",
+    footerPhone: "+598 27113184"
   },
   es: {
     // Section Headers
@@ -280,54 +383,58 @@ const content = {
 
     // Hero
     heroTitle: "El camino más corto entre el problema y la solución",
-    heroSubtitle: "Automatización de infraestructura, hardening de seguridad, y servicios de desarrollo. APIs REST, pipelines CI/CD, e infraestructura como código.",
+    heroSubtitle: "Los griegos inventaron la lógica, la geometría y un dios para cada necesidad. Nosotros aplicamos las dos primeras para construir soluciones. De la tercera categoría —los dioses, no las necesidades— conservamos solo el mármol, que no requiere actualizaciones.",
+    heroSubtitleTech: "Automatización de infraestructura, hardening de seguridad, y servicios de desarrollo. APIs REST, pipelines CI/CD, e infraestructura como código.",
 
-    // Services
-    infraTitle: "Infra",
-    infraSubtitle: "La base de todo lo digital. Todo lo que sostiene tu operación digital: redes, servidores, monitoreo activo.",
-    vmTitle: "Virtual Machines",
-    vmDesc: "VMs en VMware o Proxmox. Cloud u on-premise.",
-    vmFeatures: ["VMware vSphere - Proxmox", "Servers en baremetal", "Setups en cloud y on premise", "Load Balancing", "Monitoreo de performance"],
-    netTitle: "Arquitectura de red empresarial",
-    netDesc: "Unifi networks.",
-    postTitle: "Sistemas de Post-Produccion",
-    postDesc: "Workstations para edicion, render y audio. Storage para edicion directa al mismo.",
-    postFeatures: ["High Performance workstations a medida", "Storage escalable", "High Performance LANS de 10gb", "Integracion de pipelines"],
-    secCamTitle: "Seguridad y vigilancia",
-    secCamDesc: "Camaras PTZ UniFi, 4K, deteccion por IA, vision nocturna. Administrable via Unifi Protect.",
-    wifiTitle: "Redes wifi empresariales",
-    wifiDesc: "WiFi 7, roaming 802.11r, WPA3 Enterprise, Administrable via UniFi Network.",
+    // Services - Infrastructure (from page)
+    infraTitle: infrastructureContent.es.title,
+    infraSubtitle: `${infrastructureContent.es.subtitle1} ${infrastructureContent.es.subtitle2}`,
+    vmTitle: infrastructureContent.es.vmTitle,
+    vmDesc: infrastructureContent.es.vmDesc,
+    vmFeatures: [infrastructureContent.es.vmFeat1, infrastructureContent.es.vmFeat2, infrastructureContent.es.vmFeat3, infrastructureContent.es.vmFeat4, infrastructureContent.es.vmFeat5],
+    netTitle: infrastructureContent.es.netTitle,
+    netDesc: infrastructureContent.es.netDesc,
+    postTitle: infrastructureContent.es.postTitle,
+    postDesc: infrastructureContent.es.postDesc,
+    postFeatures: [infrastructureContent.es.postFeat1, infrastructureContent.es.postFeat2, infrastructureContent.es.postFeat3, infrastructureContent.es.postFeat4],
+    secCamTitle: infrastructureContent.es.secTitle,
+    secCamDesc: infrastructureContent.es.secDesc,
+    wifiTitle: infrastructureContent.es.wifiTitle,
+    wifiDesc: infrastructureContent.es.wifiDesc,
 
-    // Security
-    securityTitle: "Gestión de seguridad y protección de datos",
-    securitySubtitle: "Lo complejo, simplificado. Lo crítico, resuelto.",
-    secOpsTitle: "Operaciones de Seguridad Unificadas",
-    secOpsFeatures: ["Monitoreo 24/7", "Respuesta automatizada ante amenazas", "Una única consola de gestión", "Informes de seguridad", "Respuestas personalizadas"],
-    pillar1: "Todo en un lugar - Una cuenta, un contacto.",
-    pillar2: "Atención constante - Alertas en tiempo real y respuestas antes de que escale.",
-    pillar3: "Sin fricciones - Integraciones nativas. Todo conectado desde el primer día.",
-    backupTitle: "Estrategia de respaldo 3-2-1",
-    backupDesc: "Synology NAS para storage y recuperación rápida, Wasabi/AWS cloud para recuperaciones antiguas, verificación automatizada.",
-    sentinelTitle: "Endpoints: SentinelOne",
-    sentinelDesc: "EDR con IA. Detecta amenazas, responde automáticamente, y le da visibilidad completa de cada dispositivo.",
-    wasabiTitle: "Respaldo en la Nube (Wasabi)",
-    wasabiDesc: "Almacenamiento en la nube (S3) con respaldos inmutables. Pay as you go con un almacenamiento que se actualiza constantemente.",
-    synologyTitle: "Almacenamiento en Red (Synology)",
-    synologyDesc: "NAS local que permiten acceso local agil o remoto. Snapshots, historiales y logs de cambios, backup de Google Workspace.",
+    // Security (from page)
+    securityTitle: securityContent.es.title,
+    securitySubtitle: securityContent.es.subtitle,
+    secOpsTitle: securityContent.es.secOpsTitle,
+    secOpsFeatures: [securityContent.es.secOps1, securityContent.es.secOps2, securityContent.es.secOps3, securityContent.es.secOps4, securityContent.es.secOps5],
+    pillar1: `${securityContent.es.pillar1Title} - ${securityContent.es.pillar1Desc}`,
+    pillar2: `${securityContent.es.pillar2Title} - ${securityContent.es.pillar2Desc}`,
+    pillar3: `${securityContent.es.pillar3Title} - ${securityContent.es.pillar3Desc}`,
+    backupTitle: securityContent.es.backupTitle,
+    backupDesc: securityContent.es.backupDesc,
+    // Storage section (was missing from machine-view!)
+    storageTitle: securityContent.es.storageTitle,
+    storageFeatures: [securityContent.es.storage1, securityContent.es.storage2, securityContent.es.storage3, securityContent.es.storage4, securityContent.es.storage5],
+    sentinelTitle: securityContent.es.sentinelTitle,
+    sentinelDesc: securityContent.es.sentinelDesc,
+    wasabiTitle: securityContent.es.wasabiTitle,
+    wasabiDesc: securityContent.es.wasabiDesc,
+    synologyTitle: securityContent.es.synologyTitle,
+    synologyDesc: securityContent.es.synologyDesc,
 
-    // Development
-    devTitle: "Desarrollo e Inteligencia Artificial",
-    devSubtitle: "Soluciones de IA que funcionan fuera del demo.",
-    devSectionTitle: "Desarrollo a Medida",
-    devSectionDesc: "Software que funciona. React, Postgres, Claude Code. Automatización que ahorra tiempo. IA que aporta.",
+    // Development (from page)
+    devTitle: developmentContent.es.title,
+    devSubtitle: developmentContent.es.subtitle,
+    devSectionTitle: developmentContent.es.sectionTitle,
+    devSectionDesc: developmentContent.es.sectionDesc,
 
-    // Consulting
-    consultingTitle: "Consultoría y soporte",
-    consultingSubtitle: "Del latín consultare, 'deliberar juntos'.",
-    consultingSectionTitle: "Transformamos la complejidad en ventaja estratégica. La simplicidad, en cambio, la dejamos simple.",
-    consultingPara1: "No vendemos soluciones; las cultivamos. Empezamos por entender el problema real - ese que suele esconderse detrás del problema aparente.",
-    consultingPara2: "Infraestructura, crecimiento, optimización, auditorías: hablamos de todo eso, pero sobre todo hablamos con usted.",
-    consultingAdvantages: ["Asesoría continua, no puntual", "Soluciones alineadas a sus objetivos", "Acceso directo a quienes hacen el trabajo", "Foco en decisiones a largo plazo"],
+    // Consulting (from page)
+    consultingTitle: consultingContent.es.title,
+    consultingSubtitle: consultingContent.es.subtitle,
+    consultingSectionTitle: consultingContent.es.sectionTitle,
+    consultingPara1: consultingContent.es.para1,
+    consultingPara2: consultingContent.es.para2,
+    consultingAdvantages: [consultingContent.es.adv1, consultingContent.es.adv2, consultingContent.es.adv3, consultingContent.es.adv4],
 
     // Specifications
     specsTitle: "Especificaciones Técnicas",
@@ -396,6 +503,13 @@ const content = {
         "No vendemos tecnología. La tecnología es el medio, no el producto. El producto es que su problema desaparezca.",
         "No instalamos servidores. Creamos infraestructura que acelera su trabajo - y que usted puede ignorar tranquilamente porque funciona."
       ]
+    },
+    methodEmerges: null,
+    journeyAhead: {
+      title: null,
+      intro: "Lo que sigue es el cómo. Esto fue el porqué.",
+      items: null,
+      conclusion: null
     },
 
     // Method Principles Detail
@@ -476,9 +590,39 @@ const content = {
     // Company - Work
     workHero: "Nuestro trabajo habla por nosotros. Aunque a veces también hablamos nosotros.",
     projects: [
-      { client: "Teatro Solís", title: "Sistema de Control A/V del Teatro", year: "2023", desc: "Controles de iluminación por red con equipo touch y remote control." },
-      { client: "U Films", title: "Construcción de Infraestructura de Post-Producción", year: "2023-2024", desc: "Solución VPN y accesos particulares paralelos para productora con certificaciones de seguridad." },
-      { client: "Diagnóstico", title: "Seguridad e Integración de Datos de Laboratorio", year: "2021-2024", desc: "Integración NAS con AD, respaldos automatizados inmutables, cumplimiento ISO 9001." }
+      {
+        client: "Teatro Solís",
+        title: "Sistema de Control A/V del Teatro",
+        year: "2023",
+        category: "Infraestructura",
+        duration: "3 meses",
+        challenge: "Los controles del teatro no podían manejar los sistemas nuevos de iluminación y sonido.",
+        solution: "Se implementaron controles de iluminación por red con un equipo touch y remote control.",
+        technologies: ["Iluminación en Red", "Touch Screen", "Sistemas de Control Remoto", "Integración A/V"],
+        results: ["Sistema más rápido en cambios de espectáculos. Permitiendo obras de nivel internacional.", "Capacidades de control remoto.", "Soporte para efectos modernos de iluminación/sonido", "Control simplificado reduciendo necesidades de personal técnico"]
+      },
+      {
+        client: "U Films",
+        title: "Construcción de Infraestructura de Post-Producción",
+        year: "2023-2024",
+        category: "Infraestructura",
+        duration: "12 meses (en curso)",
+        challenge: "Dejar operativo la productora con las restricciones de red en el edificio existente —limitaciones de firewall para cumplir con los requerimientos de seguridad de clientes externos.",
+        solution: "Implementamos una solución VPN precisa y se negociaron accesos particulares paralelos.",
+        technologies: ["VPN", "Sistemas de Almacenamiento/Respaldo", "Redes de Alta Velocidad", "Cumplimiento de Seguridad"],
+        results: ["Habilitó trabajo con clientes importantes que requieren certificaciones de seguridad.", "Mejoras significativas en los workflows de edición y renders.", "Manejo seguro de datos del cliente.", "Infraestructura paralela en fase de pruebas."]
+      },
+      {
+        client: "Diagnóstico",
+        title: "Seguridad e Integración de Datos de Laboratorio",
+        year: "2021-2024",
+        category: "Infraestructura y Cumplimiento",
+        duration: "3 años (en curso)",
+        challenge: "Requerimientos del laboratorio para manejo de datos, integración de sistemas, respaldos y cumplimiento con ISO 9001.",
+        solution: "Implementamos políticas de integración en el NAS con el AD, sistemas de respaldo automatizados, inmutables, y diseño de redundancia de red por etapas.",
+        technologies: ["Synology NAS", "Marco ISO 9001", "Respaldo Automatizado", "Políticas de Integración"],
+        results: ["Cumplimiento ISO 9001.", "Reducción del tiempo de inactividad del sistema interno a personas externas al laboratorio.", "Mayor agilidad en tiempos de entrega de resultados"]
+      }
     ],
 
     // Company - Partners
@@ -498,16 +642,55 @@ const content = {
     teamHero: "Quiénes somos. Las personas detrás de los proyectos. Sin fotos de stock.",
     teamText: "En lugar del texto corporativo de rigor: Los que hacen. Sin eufemismos.",
 
-    // Contact
-    contactTitle: "Contáctenos",
-    contactSubtitle: "",
-    contactIntro: "Resolvemos dudas tecnológicas. También confirmamos sospechas. Rara vez ambas cosas a la vez.",
-    contactBullets: [
-      "Informarse sobre nuestros servicios. Bibliografía opcional.",
-      "Obtener una evaluación tecnológica. Personalizada, no personal.",
-      "Especificar lo que necesita. Con precisión, no con optimismo."
+    // Trusted By (after hero)
+    trustedByTitle: "Nuestras referencias no son solo bibliográficas",
+
+    // Company - Clients
+    sectionClients: "Clientes",
+    clientsHero: "Nuestras referencias no son solo bibliográficas",
+    clients: ["Don Obdulio", "Aparato", "SODRE", "DSR360", "Sidley Jones", "Plataforma", "Producers", "Cimarrón", "U Films", "Diagnóstico", "AECID", "CCE", "Olivera", "Tafirel", "La Mayor", "Oriental", "Mueca", "Verne", "Embajada", "Avisa", "Dominio", "Fullcat", "Orben", "Box"],
+
+    // Contact (from page)
+    contactTitle: contactContent.es.title,
+    contactSubtitle: contactContent.es.subtitle,
+    contactIntro: contactContent.es.intro,
+    contactBullets: [contactContent.es.bullet1, contactContent.es.bullet2, contactContent.es.bullet3],
+    contactEmail: "hola@este.la",
+
+    // Homepage Sections
+    velocityTitle: "Soluciones para problemas que aún no existen",
+    velocitySubtitle: "Anticipamos lo imprevisto —que, una vez previsto, deja de serlo. Diseñamos sistemas que perduran. Implementamos cambios que transforman. Mantenemos la calma cuando el servidor no la mantiene.",
+    velocityFeatures: [
+      { title: "Redes y Servidores", description: "Virtualización VMware y Proxmox, redes UniFi, almacenamiento Synology, LANs de 10Gb, energía redundante." },
+      { title: "Protección Completa", description: "SentinelOne XDR, cámaras UniFi Protect, almacenamiento duplicado en infraestructura Synology: redundancia y recuperación." },
+      { title: "Desarrollo Personalizado", description: "Aplicaciones Next.js, automatización de procesos, integración de IA. Soluciones modernas que transforman la forma de trabajar." }
     ],
-    contactEmail: "hola@este.la"
+    principlesHomeTitle: "Tenemos principios —y los aplicamos",
+    principlesHomeSubtitle: "Suena evidente, pero en un mundo donde los valores empresariales se redactan en asados corporativos y se olvidan en el estacionamiento, mantener los propios es casi un acto de rebeldía. Elegimos profundidad. Elegimos permanencia. Elegimos consistencia.",
+    principleHome1: { title: "Externos que piensan como internos", description: "Suena a contradicción. Lo es. Pero preferimos las contradicciones productivas a las coherencias estériles. Diseñamos como si fuera nuestro. Cuidamos como si viviéramos ahí. La tranquilidad tecnológica no se vende —se construye." },
+    principleHome2: { title: "No coleccionamos clientes", description: "Construimos alianzas. La diferencia: a los clientes se los atiende; a los aliados se los cultiva. Las urgencias no son oportunidades —son compromisos. Y los compromisos, aquí, se cumplen incluso cuando nadie está mirando." },
+    speedTitle: "Profundidad, no velocidad",
+    speedDescription: "La velocidad impresiona. La profundidad perdura. Nuestro trabajo sigue funcionando cuando ya nadie se acuerda quién lo hizo.",
+    ctaTitle: "Tenemos opiniones. También razones.",
+    ctaSubtitle: "La combinación, nos dicen, es infrecuente. Eso también es una opinión.",
+    closingQuote: "Polifemo tenía tamaño, fuerza y un ojo —que resultó ser insuficiente. Odiseo tenía ingenio, pocos hombres y un plan. Elegimos el segundo camino. Sin reuniones sobre reuniones. Sin departamentos que deleguen. Seis personas que resuelven. Porque la solución nunca estuvo en ser más grandes —estuvo en pensar mejor.",
+    smallScaleTitle: "Estudiamos el Renacimiento —y no por el crédito académico",
+    smallScaleFeatures: [
+      "Leemos filosofía porque un sistema sin contexto humano es una máquina con pretensiones.",
+      "Porque hemos aprendido: la magia sucede en este tamaño. Tu proyecto no se transfiere.",
+      "Tu relación no se 'gestiona.' Nos tienes a nosotros. A todos nosotros. Siempre."
+    ],
+    testNumbersTitle: "Evidencia empírica",
+    testMetrics: [
+      { title: "100%", description: "Retención completa. La muestra es pequeña, pero el resultado es consistente." },
+      { title: "Reuniones", description: "Las necesarias: pocas. Las innecesarias: ninguna. Las que podrían haber sido un email: fueron un email." },
+      { title: "Equipo fundador", description: "El mismo equipo desde 2012. La rotación es un concepto que conocemos de oídas." },
+      { title: "Criterio", description: "Admisión selectiva. No es arrogancia; es solamente aritmética." }
+    ],
+    footerTagline: "Cuando la tecnología y el conocimiento convergen",
+    footerDescription: "Ávidos de lo nuevo. Devotos de lo que funciona.",
+    footerAddress: "21 de Setiembre, 3015. 802 | Montevideo, Punta del Este, Uruguay",
+    footerPhone: "+598 27113184"
   }
 }
 
@@ -521,7 +704,50 @@ export function MachineView() {
         {/* Header */}
         <h1># Estela</h1>
         <p>{t.heroTitle}</p>
-        <p className="machine-muted">{t.heroSubtitle}</p>
+        <p>{t.heroSubtitle}</p>
+        <p className="machine-muted">{t.heroSubtitleTech}</p>
+
+        {/* Trusted By */}
+        <h3>### {t.trustedByTitle}</h3>
+        <p>{t.clients.join(", ")}</p>
+
+        {/* Developer Velocity Section */}
+        <h3>### {t.velocityTitle}</h3>
+        <p>{t.velocitySubtitle}</p>
+        {t.velocityFeatures.map((f, i) => (
+          <p key={i}>- <strong>{f.title}:</strong> {f.description}</p>
+        ))}
+
+        {/* Estela Principles */}
+        <h3>### {t.principlesHomeTitle}</h3>
+        <p>{t.principlesHomeSubtitle}</p>
+        <h4>#### {t.principleHome1.title}</h4>
+        <p>{t.principleHome1.description}</p>
+        <h4>#### {t.principleHome2.title}</h4>
+        <p>{t.principleHome2.description}</p>
+
+        {/* Estela Speed */}
+        <h3>### {t.speedTitle}</h3>
+        <p>{t.speedDescription}</p>
+
+        {/* CTA Section */}
+        <h3>### {t.ctaTitle}</h3>
+        <p className="machine-muted">{t.ctaSubtitle}</p>
+
+        {/* Closing Section (Odysseus) */}
+        <h3>### {t.closingQuote}</h3>
+
+        {/* Small Over Scale */}
+        <h3>### {t.smallScaleTitle}</h3>
+        {t.smallScaleFeatures.map((f, i) => (
+          <p key={i}>- {f}</p>
+        ))}
+
+        {/* Test Numbers */}
+        <h3>### {t.testNumbersTitle}</h3>
+        {t.testMetrics.map((m, i) => (
+          <p key={i}>- <strong>{m.title}:</strong> {m.description}</p>
+        ))}
 
         {/* Services */}
         <h2>## {t.sectionServices}</h2>
@@ -566,6 +792,11 @@ export function MachineView() {
 
         <h4>#### {t.backupTitle}</h4>
         <p>{t.backupDesc}</p>
+
+        <h4>#### {t.storageTitle}</h4>
+        <ul>
+          {t.storageFeatures.map((f: string, i: number) => <li key={i}>- {f}</li>)}
+        </ul>
 
         <h4>#### {t.sentinelTitle}</h4>
         <p>{t.sentinelDesc}</p>
@@ -634,6 +865,28 @@ export function MachineView() {
         )}
         <h4>#### {t.methodIntroWhatThisMeans.title}</h4>
         {t.methodIntroWhatThisMeans.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+        {t.methodEmerges && (
+          <>
+            <h4>#### {t.methodEmerges.title}</h4>
+            <p>{t.methodEmerges.intro}</p>
+            <p><strong>{t.methodEmerges.listIntro}</strong></p>
+            {t.methodEmerges.items.map((item, i) => (
+              <p key={i}>- <strong>{item.title}:</strong> {item.description}</p>
+            ))}
+          </>
+        )}
+        {t.journeyAhead && (
+          <>
+            {t.journeyAhead.title && <h4>#### {t.journeyAhead.title}</h4>}
+            <p>{t.journeyAhead.intro}</p>
+            {t.journeyAhead.items && (
+              <ul>
+                {t.journeyAhead.items.map((item, i) => <li key={i}>- {item}</li>)}
+              </ul>
+            )}
+            {t.journeyAhead.conclusion && <p>{t.journeyAhead.conclusion}</p>}
+          </>
+        )}
 
         {/* Method Principles */}
         <h3>### {t.methodPrinciplesTitle}</h3>
@@ -737,7 +990,14 @@ export function MachineView() {
         {t.projects.map((p, i) => (
           <div key={i}>
             <h4>#### {p.client} - {p.title} ({p.year})</h4>
-            <p>{p.desc}</p>
+            <p className="machine-muted">{p.category} · {p.duration}</p>
+            <p><strong>Challenge:</strong> {p.challenge}</p>
+            <p><strong>Solution:</strong> {p.solution}</p>
+            <p><strong>Technologies:</strong> {p.technologies.join(", ")}</p>
+            <p><strong>Results:</strong></p>
+            <ul>
+              {p.results.map((r, j) => <li key={j}>- {r}</li>)}
+            </ul>
           </div>
         ))}
 
@@ -762,6 +1022,10 @@ export function MachineView() {
         <p><strong>{t.teamHero}</strong></p>
         <p>{t.teamText}</p>
 
+        <h3>### {t.sectionClients}</h3>
+        <p><strong>{t.clientsHero}</strong></p>
+        <p>{t.clients.join(", ")}</p>
+
         {/* Contact */}
         <h2>## {t.sectionContact}</h2>
         <p><strong>{t.contactTitle}</strong></p>
@@ -771,7 +1035,15 @@ export function MachineView() {
           {t.contactBullets.map((b, i) => <li key={i}>- {b}</li>)}
         </ul>
         <p>Email: {t.contactEmail}</p>
+
+        {/* Footer */}
+        <hr />
+        <p className="machine-muted">{t.footerTagline}</p>
+        <p>{t.footerDescription}</p>
+        <p>{t.footerAddress}</p>
+        <p>{t.footerPhone}</p>
       </article>
+      <ModeToggle />
     </div>
   )
 }

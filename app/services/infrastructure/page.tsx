@@ -5,7 +5,7 @@ import { useTheme } from 'next-themes';
 import { Footer } from '@/components/footer';
 import { useLanguage } from '@/components/language-provider';
 
-const content = {
+export const infrastructureContent = {
   en: {
     // Hero
     title: "Infrastructure & Networks",
@@ -161,7 +161,7 @@ const InfrastructurePage = () => {
   const { language } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
-  const t = content[language];
+  const t = infrastructureContent[language];
   const contactPath = '/contact';
 
   useEffect(() => {

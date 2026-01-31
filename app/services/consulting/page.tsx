@@ -3,7 +3,7 @@
 import { Footer } from '@/components/footer';
 import { useLanguage } from '@/components/language-provider';
 
-const content = {
+export const consultingContent = {
   en: {
     title: "Consulting & Support",
     subtitle: "From the Latin consultare, 'to deliberate together.' Not from soportare, 'to tolerate the client.'",
@@ -44,7 +44,7 @@ const content = {
 
 export default function ConsultingPage() {
   const { language } = useLanguage();
-  const t = content[language];
+  const t = consultingContent[language];
 
   return (
     <>

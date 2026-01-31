@@ -6,7 +6,7 @@ import { ThemeImage } from '@/components/ui/theme-image';
 import { Footer } from '@/components/footer';
 import { useLanguage } from '@/components/language-provider';
 
-const content = {
+export const securityContent = {
   en: {
     title: "Managed Security & Data Protection",
     subtitle: "The complex, simplified. The critical, solved.",
@@ -93,7 +93,7 @@ const SecurityPage = () => {
   const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const { language } = useLanguage();
-  const t = content[language];
+  const t = securityContent[language];
   const contactPath = '/contact';
 
   useEffect(() => {

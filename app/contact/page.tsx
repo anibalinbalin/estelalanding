@@ -4,7 +4,7 @@ import { Link } from 'next-view-transitions'
 import { Footer } from '@/components/footer'
 import { useLanguage } from '@/components/language-provider'
 
-const content = {
+export const contactContent = {
   en: {
     title: "Contact us",
     subtitle: "Get in touch",
@@ -55,7 +55,7 @@ const content = {
 
 export default function ContactPage() {
   const { language } = useLanguage()
-  const t = content[language]
+  const t = contactContent[language]
 
   return (
     <div className="min-h-screen bg-background text-foreground">
