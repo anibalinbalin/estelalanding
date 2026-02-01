@@ -23,6 +23,7 @@ export function UnicornBackground() {
   const sceneRef = useRef<{ destroy: () => void } | null>(null);
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   // Set mounted state
   useEffect(() => {
@@ -62,6 +63,9 @@ export function UnicornBackground() {
     const initializeScene = async () => {
       if (!containerRef.current || !window.UnicornStudio) return;
 
+      // Reset loaded state before cleanup
+      setLoaded(false);
+
       // Clean up previous scene
       if (sceneRef.current?.destroy) {
         sceneRef.current.destroy();
@@ -92,6 +96,7 @@ export function UnicornBackground() {
 
       if (ourScene) {
         sceneRef.current = ourScene;
+        setLoaded(true);
       }
     };
 
@@ -125,7 +130,7 @@ export function UnicornBackground() {
       data-us-scale="1"
       data-us-dpi="1.5"
       data-us-fps="30"
-      className="absolute inset-0 w-full h-full -z-10"
+      className={`absolute inset-0 w-full h-full -z-10 transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
       style={{ minHeight: "900px" }}
     />
   );
