@@ -57,14 +57,14 @@ export function ModeToggle() {
   }, [lastScrollY, showAnchor, hideAnchor, visible])
 
   return (
-    <div className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-40 transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${visible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0 pointer-events-none'}`}>
+    <div className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-40 transition-[transform,opacity] duration-200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] motion-reduce:transition-none ${visible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0 pointer-events-none'}`}>
       <div className="flex items-center gap-1 rounded-[0.1875rem] bg-transparent p-1 border border-black/10 dark:border-white/10">
         <button
           onClick={() => setMode('human')}
           className={`
             h-8 px-3 rounded-[0.1875rem]
             font-[GT_America_Mono,monospace] text-[0.75rem] uppercase tracking-[0.08em]
-            transition-all duration-150
+            transition-colors duration-150 ease motion-reduce:transition-none
             ${
               mode === 'human'
                 ? 'text-black dark:text-white bg-black/10 dark:bg-white/10'
@@ -79,7 +79,7 @@ export function ModeToggle() {
           className={`
             h-8 px-3 rounded-[0.1875rem]
             font-[GT_America_Mono,monospace] text-[0.75rem] uppercase tracking-[0.08em]
-            transition-all duration-150
+            transition-colors duration-150 ease motion-reduce:transition-none
             ${
               mode === 'machine'
                 ? 'text-black dark:text-white bg-black/10 dark:bg-white/10'
