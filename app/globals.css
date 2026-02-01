@@ -702,6 +702,12 @@ html, body {
   font-style: italic;
 }
 
+.machine-highlight {
+  display: inline-block;
+  border: 1px solid var(--stroke-secondary-p3);
+  padding: 0.25rem 0.5rem;
+}
+
 /* Accessibility: Global reduced motion fallback */
 @media (prefers-reduced-motion: reduce) {
   *,

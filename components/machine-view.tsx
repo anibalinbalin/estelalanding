@@ -1,5 +1,6 @@
 'use client'
 
+import { Link } from 'next-view-transitions'
 import { useLanguage } from '@/components/language-provider'
 import { ModeToggle } from '@/components/ui/mode-toggle'
 import {
@@ -417,7 +418,25 @@ const content = {
     footerTagline: "When technology and knowledge converge",
     footerDescription: "Eager for the new. Devoted to what works.",
     footerAddress: "21 de Setiembre, 3015. 802 | Montevideo, Punta del Este, Uruguay",
-    footerPhone: "+598 27113184"
+    footerPhone: "+598 27113184",
+    navServices: "Services",
+    navInfra: "Infrastructure",
+    navSecurity: "Security",
+    navDev: "Development",
+    navConsulting: "Consulting",
+    navSpecs: "Specifications",
+    navMethod: "Method",
+    navIntro: "Introduction",
+    navPrinciples: "Principles",
+    navImplementation: "Implementation",
+    navPractices: "Practices",
+    navPhilosophy: "Philosophy",
+    navCompany: "Company",
+    navAbout: "About",
+    navWork: "Work",
+    navTeam: "Team",
+    navPartners: "Partners",
+    navContact: "CONTACT"
   },
   es: {
     // Section Headers
@@ -745,7 +764,25 @@ const content = {
     footerTagline: "Cuando la tecnología y el conocimiento convergen",
     footerDescription: "Ávidos de lo nuevo. Devotos de lo que funciona.",
     footerAddress: "21 de Setiembre, 3015. 802 | Montevideo, Punta del Este, Uruguay",
-    footerPhone: "+598 27113184"
+    footerPhone: "+598 27113184",
+    navServices: "Servicios",
+    navInfra: "Infraestructura",
+    navSecurity: "Seguridad",
+    navDev: "Desarrollo",
+    navConsulting: "Consultoría",
+    navSpecs: "Especificaciones",
+    navMethod: "Método",
+    navIntro: "Introducción",
+    navPrinciples: "Principios",
+    navImplementation: "Implementación",
+    navPractices: "Prácticas",
+    navPhilosophy: "Filosofía",
+    navCompany: "Empresa",
+    navAbout: "Nosotros",
+    navWork: "Trabajo",
+    navTeam: "Equipo",
+    navPartners: "Socios",
+    navContact: "CONTACTO"
   }
 }
 
@@ -758,6 +795,32 @@ export function MachineView() {
       <article className="machine-content">
         {/* Header */}
         <h1># Estela</h1>
+
+        {/* Navigation */}
+        <nav className="my-4">
+          <p>{t.navServices}:</p>
+          <p className="ml-2"><Link href="/services/infrastructure">[{t.navInfra}]</Link>(/services/infrastructure)</p>
+          <p className="ml-2"><Link href="/services/security">[{t.navSecurity}]</Link>(/services/security)</p>
+          <p className="ml-2"><Link href="/services/development">[{t.navDev}]</Link>(/services/development)</p>
+          <p className="ml-2"><Link href="/services/consulting">[{t.navConsulting}]</Link>(/services/consulting)</p>
+          <p className="ml-2"><Link href="/services/specifications">[{t.navSpecs}]</Link>(/services/specifications)</p>
+
+          <p className="mt-2">{t.navMethod}:</p>
+          <p className="ml-2"><Link href="/method/introduction">[{t.navIntro}]</Link>(/method/introduction)</p>
+          <p className="ml-2"><Link href="/method/principles">[{t.navPrinciples}]</Link>(/method/principles)</p>
+          <p className="ml-2"><Link href="/method/implementation">[{t.navImplementation}]</Link>(/method/implementation)</p>
+          <p className="ml-2"><Link href="/method/practices">[{t.navPractices}]</Link>(/method/practices)</p>
+          <p className="ml-2"><Link href="/method/philosophy">[{t.navPhilosophy}]</Link>(/method/philosophy)</p>
+
+          <p className="mt-2">{t.navCompany}:</p>
+          <p className="ml-2"><Link href="/company/about">[{t.navAbout}]</Link>(/company/about)</p>
+          <p className="ml-2"><Link href="/company/work">[{t.navWork}]</Link>(/company/work)</p>
+          <p className="ml-2"><Link href="/company/team">[{t.navTeam}]</Link>(/company/team)</p>
+          <p className="ml-2"><Link href="/company/partners">[{t.navPartners}]</Link>(/company/partners)</p>
+
+          <p className="mt-2 machine-highlight"><Link href="/contact">[{t.navContact}]</Link>(/contact)</p>
+        </nav>
+
         <p>{t.heroTitle}</p>
         <p>{t.heroSubtitle}</p>
         <p className="machine-muted">{t.heroSubtitleTech}</p>
