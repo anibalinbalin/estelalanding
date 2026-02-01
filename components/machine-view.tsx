@@ -9,6 +9,59 @@ import {
   consultingContent,
   contactContent
 } from '@/lib/site-content'
+import {
+  AecidAscii,
+  AparatoAscii,
+  AvisaAscii,
+  BoxAscii,
+  CceAscii,
+  CimarronAscii,
+  DiagnosticoAscii,
+  DominioAscii,
+  DonobldulioAscii,
+  Dsr360Ascii,
+  EmbajadaAscii,
+  FullcatAscii,
+  LamayorAscii,
+  MuecaAscii,
+  OliveraAscii,
+  OrbenAscii,
+  OrientalAscii,
+  PlataformaAscii,
+  ProducrersAscii,
+  SidleyjonesAscii,
+  SodreAscii,
+  TafirelAscii,
+  UfilmsAscii,
+  VerneAscii
+} from '@/components/ascii-partners'
+
+const partnerLogos = [
+  { name: 'Don Obdulio', Component: DonobldulioAscii },
+  { name: 'Aparato', Component: AparatoAscii },
+  { name: 'SODRE', Component: SodreAscii },
+  { name: 'DSR360', Component: Dsr360Ascii },
+  { name: 'Sidley Jones', Component: SidleyjonesAscii },
+  { name: 'Plataforma', Component: PlataformaAscii },
+  { name: 'Producers', Component: ProducrersAscii },
+  { name: 'Cimarrón', Component: CimarronAscii },
+  { name: 'U Films', Component: UfilmsAscii },
+  { name: 'Diagnóstico', Component: DiagnosticoAscii },
+  { name: 'AECID', Component: AecidAscii },
+  { name: 'CCE', Component: CceAscii },
+  { name: 'Olivera', Component: OliveraAscii },
+  { name: 'Tafirel', Component: TafirelAscii },
+  { name: 'La Mayor', Component: LamayorAscii },
+  { name: 'Oriental', Component: OrientalAscii },
+  { name: 'Mueca', Component: MuecaAscii },
+  { name: 'Verne', Component: VerneAscii },
+  { name: 'Embajada', Component: EmbajadaAscii },
+  { name: 'Avisa', Component: AvisaAscii },
+  { name: 'Dominio', Component: DominioAscii },
+  { name: 'Fullcat', Component: FullcatAscii },
+  { name: 'Orben', Component: OrbenAscii },
+  { name: 'Box', Component: BoxAscii },
+]
 
 // Build unified content from page exports
 const content = {
@@ -314,6 +367,7 @@ const content = {
     // Company - Team
     teamHero: "Who we are. The people behind the projects. No stock photos.",
     teamText: "Instead of the usual corporate copy: Those who do. No euphemisms.",
+    teamMembers: ["Peter Del Prestito", "Pablo Ferreira", "Alfonso LaRosa", "Nahuel Gonzalez", "Aníbal Ramos", "D. Esteban Echániz"],
 
     // Trusted By (after hero)
     trustedByTitle: "Companies we've built with",
@@ -641,6 +695,7 @@ const content = {
     // Company - Team
     teamHero: "Quiénes somos. Las personas detrás de los proyectos. Sin fotos de stock.",
     teamText: "En lugar del texto corporativo de rigor: Los que hacen. Sin eufemismos.",
+    teamMembers: ["Peter Del Prestito", "Pablo Ferreira", "Alfonso LaRosa", "Nahuel Gonzalez", "Aníbal Ramos", "D. Esteban Echániz"],
 
     // Trusted By (after hero)
     trustedByTitle: "Nuestras referencias no son solo bibliográficas",
@@ -709,7 +764,13 @@ export function MachineView() {
 
         {/* Trusted By */}
         <h3>### {t.trustedByTitle}</h3>
-        <p>{t.clients.join(", ")}</p>
+        <div className="grid grid-cols-3 gap-12 my-8">
+          {partnerLogos.map(({ name, Component }) => (
+            <div key={name} className="flex items-center justify-center">
+              <Component className="text-[5px] leading-[5px] font-mono text-foreground" />
+            </div>
+          ))}
+        </div>
 
         {/* Developer Velocity Section */}
         <h3>### {t.velocityTitle}</h3>
@@ -1021,10 +1082,7 @@ export function MachineView() {
         <h3>### {t.sectionTeam}</h3>
         <p><strong>{t.teamHero}</strong></p>
         <p>{t.teamText}</p>
-
-        <h3>### {t.sectionClients}</h3>
-        <p><strong>{t.clientsHero}</strong></p>
-        <p>{t.clients.join(", ")}</p>
+        <p>{t.teamMembers.join(", ")}</p>
 
         {/* Contact */}
         <h2>## {t.sectionContact}</h2>
