@@ -29,13 +29,6 @@ export function ModeProvider({
   const wrapperRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const stored = localStorage.getItem('mode') as Mode | null
-    if (stored === 'human' || stored === 'machine') {
-      setMode(stored)
-    }
-  }, [])
-
-  useEffect(() => {
     if (wrapperRef.current) {
       wrapperRef.current.setAttribute('data-mode', mode)
     }
@@ -44,7 +37,6 @@ export function ModeProvider({
   const value = {
     mode,
     setMode: (newMode: Mode) => {
-      localStorage.setItem('mode', newMode)
       setMode(newMode)
     },
   }
