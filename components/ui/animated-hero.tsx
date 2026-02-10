@@ -34,7 +34,7 @@ function Hero() {
       title: "El camino más corto entre\nel problema y la solución",
       subtitle: "Los griegos inventaron la lógica, la geometría y un dios para cada necesidad. Nosotros aplicamos las dos primeras para construir soluciones. De la tercera categoría —los dioses, no las necesidades— conservamos solo el mármol, que no requiere actualizaciones.",
       subtitleMachine: "Automatización de infraestructura, hardening de seguridad, y servicios de desarrollo. APIs REST, pipelines CI/CD, e infraestructura como código.",
-      contact: "Nuestro Enfoque",
+      contact: "Cómo Trabajamos",
       contactMachine: "API Docs"
     }
   };
