@@ -20,7 +20,6 @@ import {
   DiagnosticoAscii,
   DominioAscii,
   DonobldulioAscii,
-  Dsr360Ascii,
   EmbajadaAscii,
   FullcatAscii,
   LamayorAscii,
@@ -41,7 +40,6 @@ const partnerLogos = [
   { name: 'Don Obdulio', Component: DonobldulioAscii },
   { name: 'Aparato', Component: AparatoAscii },
   { name: 'SODRE', Component: SodreAscii },
-  { name: 'DSR360', Component: Dsr360Ascii },
   { name: 'Sidley Jones', Component: SidleyjonesAscii },
   { name: 'Plataforma', Component: PlataformaAscii },
   { name: 'Producers', Component: ProducrersAscii },
@@ -376,7 +374,7 @@ const content = {
     // Company - Clients
     sectionClients: "Clients",
     clientsHero: "Companies we've built with",
-    clients: ["Don Obdulio", "Aparato", "SODRE", "DSR360", "Sidley Jones", "Plataforma", "Producers", "Cimarrón", "U Films", "Diagnóstico", "AECID", "CCE", "Olivera", "Tafirel", "La Mayor", "Oriental", "Mueca", "Verne", "Embajada", "Avisa", "Dominio", "Fullcat", "Orben", "Box"],
+    clients: ["Don Obdulio", "Aparato", "SODRE", "Sidley Jones", "Plataforma", "Producers", "Cimarrón", "U Films", "Diagnóstico", "AECID", "CCE", "Olivera", "Tafirel", "La Mayor", "Oriental", "Mueca", "Verne", "Embajada", "Avisa", "Dominio", "Fullcat", "Orben", "Box"],
 
     // Contact (from page)
     contactTitle: contactContent.en.title,
@@ -722,7 +720,7 @@ const content = {
     // Company - Clients
     sectionClients: "Clientes",
     clientsHero: "Nuestras referencias no son solo bibliográficas",
-    clients: ["Don Obdulio", "Aparato", "SODRE", "DSR360", "Sidley Jones", "Plataforma", "Producers", "Cimarrón", "U Films", "Diagnóstico", "AECID", "CCE", "Olivera", "Tafirel", "La Mayor", "Oriental", "Mueca", "Verne", "Embajada", "Avisa", "Dominio", "Fullcat", "Orben", "Box"],
+    clients: ["Don Obdulio", "Aparato", "SODRE", "Sidley Jones", "Plataforma", "Producers", "Cimarrón", "U Films", "Diagnóstico", "AECID", "CCE", "Olivera", "Tafirel", "La Mayor", "Oriental", "Mueca", "Verne", "Embajada", "Avisa", "Dominio", "Fullcat", "Orben", "Box"],
 
     // Contact (from page)
     contactTitle: contactContent.es.title,

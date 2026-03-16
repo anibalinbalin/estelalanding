@@ -174,7 +174,6 @@ function LogoCarousel({ columnCount = 2 }: { columnCount?: number }) {
       { name: "Diagnostico", id: 7, img: `/company_logos/logos/${logoFolder}/diagnostico.png` },
       { name: "Dominio", id: 8, img: `/company_logos/logos/${logoFolder}/dominio.png` },
       { name: "Don Obldulio", id: 9, img: `/company_logos/logos/${logoFolder}/donobldulio.png` },
-      { name: "DSR 360", id: 10, img: `/company_logos/logos/${logoFolder}/dsr360.png` },
       { name: "Embajada", id: 11, img: `/company_logos/logos/${logoFolder}/embajada.png` },
       { name: "Fullcat", id: 12, img: `/company_logos/logos/${logoFolder}/fullcat.png` },
       { name: "La Mayor", id: 13, img: `/company_logos/logos/${logoFolder}/lamayor.png` },

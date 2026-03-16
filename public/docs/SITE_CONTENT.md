@@ -36,7 +36,7 @@
 
 ### Trusted By Section
 - "Trusted by market leaders" / "Confianza de líderes del mercado"
-- **Company logos**: Aparato, Avisa, Box, CCE, Cimarron, Diagnostico, Dominio, Don Obdulio, DSR360, Fullcat, La Mayor, Mueca, Olivera, Orben, Oriental, Plataforma, Producers, Sidley Jones, Sodre, Tafirel, U Films, Verne
+- **Company logos**: Aparato, Avisa, Box, CCE, Cimarron, Diagnostico, Dominio, Don Obdulio, Fullcat, La Mayor, Mueca, Olivera, Orben, Oriental, Plataforma, Producers, Sidley Jones, Sodre, Tafirel, U Films, Verne
 
 ### Complete Technology Solutions Section
 - "Complete Technology Solutions" / "Soluciones Tecnológicas Completas"
