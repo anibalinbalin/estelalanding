@@ -7,18 +7,18 @@ import { useLanguage } from '@/components/language-provider';
 export const developmentContent = {
   en: {
     title: "Development & Artificial Intelligence",
-    subtitle: "AI solutions that work outside the demo.",
-    sectionTitle: "Custom Development",
-    sectionDesc: "Software that works. React, Postgres, Claude Code. Automation that saves time. AI that delivers.",
-    cta: "Development with continuity",
+    subtitle: "AI that works after the demo ends.",
+    sectionTitle: "AI-Assisted Engineering",
+    sectionDesc: "We build AI-powered pipelines that cut processing times, automate repetitive workflows, and integrate intelligence into existing systems. Document processing, automated QA, data routing, content generation\u2009—\u2009we design the pipeline, the AI does the heavy lifting, and a human signs off. Claude Code, React, Postgres. Not vibe coding. Engineering.",
+    cta: "Development with accountability",
     contact: "CONTACT"
   },
   es: {
     title: "Desarrollo e Inteligencia Artificial",
-    subtitle: "Soluciones de IA que funcionan fuera del demo.",
-    sectionTitle: "Desarrollo a Medida",
-    sectionDesc: "Software que funciona. React, Postgres, Claude Code. Automatización que ahorra tiempo. IA que aporta.",
-    cta: "Desarrollo con continuidad",
+    subtitle: "IA que funciona cuando se apaga el proyector.",
+    sectionTitle: "Ingeniería Asistida por IA",
+    sectionDesc: "Construimos pipelines con IA que recortan tiempos de procesamiento, automatizan flujos repetitivos e integran inteligencia en sistemas existentes. Procesamiento de documentos, QA automatizado, enrutamiento de datos, generación de contenido\u2009—\u2009diseñamos el pipeline, la IA hace el trabajo pesado, y un humano firma. Claude Code, React, Postgres. No es vibe coding. Es ingeniería.",
+    cta: "Desarrollo con responsabilidad",
     contact: "CONTACTO"
   }
 };
