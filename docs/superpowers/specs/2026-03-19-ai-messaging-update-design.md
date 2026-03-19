@@ -30,8 +30,8 @@ The `developmentContent` object in `app/services/development/page.tsx` gets new 
 |-------|---------|-----|
 | title | Desarrollo e Inteligencia Artificial | Desarrollo e Inteligencia Artificial |
 | subtitle | Soluciones de IA que funcionan fuera del demo. | IA que funciona cuando se apaga el proyector. |
-| sectionTitle | Desarrollo a Medida | Ingenieria Asistida por IA |
-| sectionDesc | Software que funciona. React, Postgres, Claude Code. Automatizacion que ahorra tiempo. IA que aporta. | Construimos pipelines con IA que recortan tiempos de procesamiento, automatizan flujos repetitivos e integran inteligencia en sistemas existentes. Procesamiento de documentos, QA automatizado, enrutamiento de datos, generacion de contenido — disenamos el pipeline, la IA hace el trabajo pesado, y un humano firma. Claude Code, React, Postgres. No es vibe coding. Es ingenieria. |
+| sectionTitle | Desarrollo a Medida | Ingeniería Asistida por IA |
+| sectionDesc | Software que funciona. React, Postgres, Claude Code. Automatización que ahorra tiempo. IA que aporta. | Construimos pipelines con IA que recortan tiempos de procesamiento, automatizan flujos repetitivos e integran inteligencia en sistemas existentes. Procesamiento de documentos, QA automatizado, enrutamiento de datos, generación de contenido — diseñamos el pipeline, la IA hace el trabajo pesado, y un humano firma. Claude Code, React, Postgres. No es vibe coding. Es ingeniería. |
 | cta | Desarrollo con continuidad | Desarrollo con responsabilidad |
 | contact | CONTACTO | CONTACTO |
 
@@ -61,26 +61,29 @@ A new React component rendered on the homepage between the existing Estela Princ
 - **Section Title:** "AI is a tool. We are the criteria."
 - **Section Subtitle:** "Everyone added AI to their homepage. We added it to our process. The difference: one is a label, the other is a method. Harvard says AI doesn't reduce work — it intensifies it. We agree. That's why it needs someone at the wheel."
 - **Principle 1 title:** "The machine proposes. We decide."
-- **Principle 1 body:** "A 15-person firm with AI can deliver what a 50-person firm delivers without it. But only if someone knows what to accept, what to reject, and why. AI makes speed cheap. Judgment remains expensive. We sell the expensive part."
+- **Principle 1 body:** "A six-person team with AI can deliver what a fifty-person team delivers without it. But only if someone knows what to accept, what to reject, and why. AI makes speed cheap. Judgment remains expensive. We sell the expensive part."
 - **Principle 2 title:** "We don't vibe code."
 - **Principle 2 body:** "There's a name for accepting AI-generated code without understanding it. The industry calls it vibe coding. It ships fast, breaks at three months, and the person who built it can't explain what it does. We read every line. We test every path. We sign what we ship."
 
 **ES:**
 
 - **Section Title:** "La IA es una herramienta. Nosotros somos el criterio."
-- **Section Subtitle:** "Todos agregaron IA a su pagina web. Nosotros la agregamos a nuestro proceso. La diferencia: uno es un rotulo, el otro es un metodo. Harvard dice que la IA no reduce el trabajo — lo intensifica. Estamos de acuerdo. Por eso necesita a alguien al volante."
-- **Principle 1 title:** "La maquina propone. Nosotros decidimos."
-- **Principle 1 body:** "Un estudio de seis personas con IA puede entregar lo que un equipo de cincuenta entrega sin ella. Pero solo si alguien sabe que aceptar, que rechazar, y por que. La IA abarato la velocidad. El criterio sigue siendo caro. Vendemos la parte cara."
+- **Section Subtitle:** "Todos agregaron IA a su página web. Nosotros la agregamos a nuestro proceso. La diferencia: uno es un rótulo, el otro es un método. Harvard dice que la IA no reduce el trabajo — lo intensifica. Estamos de acuerdo. Por eso necesita a alguien al volante."
+- **Principle 1 title:** "La máquina propone. Nosotros decidimos."
+- **Principle 1 body:** "Un equipo de seis personas con IA puede entregar lo que un equipo de cincuenta entrega sin ella. Pero solo si alguien sabe qué aceptar, qué rechazar, y por qué. La IA abarató la velocidad. El criterio sigue siendo caro. Vendemos la parte cara."
 - **Principle 2 title:** "No hacemos vibe coding."
-- **Principle 2 body:** "Hay un nombre para aceptar codigo generado por IA sin entenderlo. La industria lo llama vibe coding. Se entrega rapido, se rompe a los tres meses, y quien lo construyo no puede explicar que hace. Leemos cada linea. Probamos cada camino. Firmamos lo que entregamos."
+- **Principle 2 body:** "Hay un nombre para aceptar código generado por IA sin entenderlo. La industria lo llama vibe coding. Se entrega rápido, se rompe a los tres meses, y quien lo construyó no puede explicar qué hace. Leemos cada línea. Probamos cada camino. Firmamos lo que entregamos."
 
 ### Visual treatment
 
-Follow the same pattern as `estela-principles.tsx`:
+Follow the same pattern as `estela-principles.tsx`, specifically:
 - Large section title + muted subtitle
-- Two principle blocks with bold titles and body text
-- Same spacing, typography, and color tokens
+- Two principle blocks with bold titles and body text — plain text blocks, no decorative `<pre>` bordered boxes (those are specific to the existing principles section's ASCII-style presentation)
+- Same spacing, typography, and color tokens (SuisseIntl font family, `--content-raise-p3`, `--content-secondary-p3`, etc.)
+- Replicate the theme handling pattern: `useTheme()` + `resolvedTheme` checks + `mounted` state guard (to avoid hydration mismatches), same as `estela-principles.tsx` lines 8-14, 64-66
+- Do NOT duplicate the `document.documentElement.style.setProperty` calls — those are global theme overrides that only need to run once
 - No ASCII art or special visual elements needed — the copy carries the section
+- Verify the section looks balanced at all breakpoints after the longer sectionDesc on the development page (4x longer than current text)
 
 ### Homepage placement
 
