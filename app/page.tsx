@@ -7,6 +7,7 @@ import { UnicornOdysseus } from "@/components/unicorn-odysseus-section";
 import { SmallOverScaleSection } from "@/components/small-over-scale-section";
 import { TestNumbersSection } from "@/components/test-numbers-section";
 import { EstelaPrinciples } from "@/components/estela-principles";
+import { AIPrinciplesSection } from "@/components/ai-principles-section";
 import { EstelaSpeed } from "@/components/estela-speed";
 import { CTASection } from "@/components/cta-section";
 import { ClosingSection } from "@/components/closing-section";
@@ -34,6 +35,7 @@ export default function Home() {
       <TrustedBy />
       <DeveloperVelocitySection />
       <EstelaPrinciples />
+      <AIPrinciplesSection />
       <EstelaSpeed />
       <CTASection />
       <UnicornOdysseus />
