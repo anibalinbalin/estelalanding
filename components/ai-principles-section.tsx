@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/components/language-provider";
+import { AsciiKeyboard } from "@/components/ascii-keyboard";
 
 export function AIPrinciplesSection() {
   const { resolvedTheme } = useTheme();
@@ -22,8 +23,8 @@ export function AIPrinciplesSection() {
         description: "A six-person team with AI can deliver what a fifty-person team delivers without it. But only if someone knows what to accept, what to reject, and why. AI makes speed cheap. Judgment remains expensive. We sell the expensive part."
       },
       principle2: {
-        title: "We don\u2019t vibe code.",
-        description: "There\u2019s a name for accepting AI-generated code without understanding it. The industry calls it vibe coding. It ships fast, breaks at three months, and the person who built it can\u2019t explain what it does. We read every line. We test every path. We sign what we ship."
+        title: "We vibe code. So does everyone.",
+        description: "There\u2019s no going back \u2014 AI writes faster than any human. The question isn\u2019t whether you use it, but whether someone checks the output. We check. We test. We sign what we ship."
       }
     },
     es: {
@@ -34,8 +35,8 @@ export function AIPrinciplesSection() {
         description: "Un equipo de seis personas con IA puede entregar lo que un equipo de cincuenta entrega sin ella. Pero solo si alguien sabe qu\u00e9 aceptar, qu\u00e9 rechazar, y por qu\u00e9. La IA abarat\u00f3 la velocidad. El criterio sigue siendo caro. Vendemos la parte cara."
       },
       principle2: {
-        title: "No hacemos vibe coding.",
-        description: "Hay un nombre para aceptar c\u00f3digo generado por IA sin entenderlo. La industria lo llama vibe coding. Se entrega r\u00e1pido, se rompe a los tres meses, y quien lo construy\u00f3 no puede explicar qu\u00e9 hace. Leemos cada l\u00ednea. Probamos cada camino. Firmamos lo que entregamos."
+        title: "Hacemos vibe coding. Como todos.",
+        description: "No hay vuelta atr\u00e1s \u2014 la IA escribe m\u00e1s r\u00e1pido que cualquier humano. La pregunta no es si la us\u00e1s, sino si alguien revisa lo que sale. Nosotros revisamos. Probamos. Firmamos lo que entregamos."
       }
     }
   };
@@ -79,6 +80,41 @@ export function AIPrinciplesSection() {
 
           <div className="gap-6 mb-6 col-span-6 min-[1000px]:col-span-3">
             <div>
+              <div
+                className="w-[100%] mb-4 rounded-[var(--border-radius-lg)] border p-3"
+                style={{
+                  backgroundColor: mounted && resolvedTheme === 'dark' ? 'rgb(59, 48, 28)' : '#f6f6f6'
+                }}
+              >
+                <div className="relative pb-[calc(var(--tw-aspect-h)_/_var(--tw-aspect-w)_*_100%)]">
+                  <div className="absolute h-[100%] w-[100%] top-0 right-0 bottom-0 left-0">
+                    <pre
+                      className="m-0 font-normal absolute top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2"
+                      style={{
+                        fontFamily: 'GT_America_Mono, monospace',
+                        fontFeatureSettings: '"ss06"',
+                        fontSize: 'var(--ascii-xs-font-size)',
+                        fontStretch: 'normal',
+                        lineHeight: 'initial',
+                        letterSpacing: 'initial',
+                        color: 'rgb(245, 185, 68)'
+                      }}
+                    >
+                      <div className="whitespace-pre leading-tight">
+                        {` ┌───┐ ┌───┐ ┌───┐ ┌───┐
+┌┴──┐│┌┴──┐│┌┴──┐│┌┴──┐│
+│`}<span className="animate-pulse">▊▊▊</span>{`│││`}<span className="animate-pulse">▊▊▊</span>{`│││`}<span className="animate-bounce">⎕⎕⎕</span>{`│││`}<span className="animate-bounce">⎕⎕⎕</span>{`││
+│`}<span className="animate-pulse">▊▊▊</span>{`│││`}<span className="animate-pulse">▊▊▊</span>{`│││`}<span className="animate-bounce">⎕⎕⎕</span>{`│││`}<span className="animate-bounce">⎕⎕⎕</span>{`││
+│───│││───│││───│││───││
+│───│││───│││───│││───││
+│`}<span className="animate-pulse">▊▊▊</span>{`│││`}<span className="animate-pulse">▊▊▊</span>{`│││`}<span className="animate-bounce">⎕⎕⎕</span>{`│││`}<span className="animate-bounce">⎕⎕⎕</span>{`││
+│`}<span className="animate-pulse">▊▊▊</span>{`├┘│`}<span className="animate-pulse">▊▊▊</span>{`├┘│`}<span className="animate-bounce">⎕⎕⎕</span>{`├┘│`}<span className="animate-bounce">⎕⎕⎕</span>{`├┘
+└───┘ └───┘ └───┘ └───┘`}
+                      </div>
+                    </pre>
+                  </div>
+                </div>
+              </div>
               <h3
                 className="text-xl font-semibold mb-2"
                 style={{
@@ -102,6 +138,18 @@ export function AIPrinciplesSection() {
 
           <div className="col-span-6 min-[1000px]:col-span-3">
             <div>
+              <div
+                className="w-[100%] mb-4 rounded-[var(--border-radius-lg)] border p-3"
+                style={{
+                  backgroundColor: mounted && resolvedTheme === 'dark' ? 'rgb(59, 48, 28)' : '#f6f6f6'
+                }}
+              >
+                <div className="relative pb-[calc(var(--tw-aspect-h)_/_var(--tw-aspect-w)_*_100%)]">
+                  <div className="absolute h-[100%] w-[100%] top-0 right-0 bottom-0 left-0">
+                    <AsciiKeyboard />
+                  </div>
+                </div>
+              </div>
               <h3
                 className="text-xl font-semibold mb-2"
                 style={{
