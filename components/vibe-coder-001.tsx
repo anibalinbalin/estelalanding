@@ -162,13 +162,18 @@ export function VibeCoder001() {
     status === "retried"  ? { text: "> retrying...", color: orange } :
     { text: "> _", color: amber };
 
-  // Inner screen = 18 chars (between single-line │ borders)
+  // Inner screen = 30 chars (between single-line │ borders)
   const filled = Math.round(progress / 20); // 0-5
   const bar = "=".repeat(filled) + "-".repeat(5 - filled);
   const pct = String(progress).padStart(3);
-  const screenLine = status === "accepted" && progress >= 100
-    ? "SHIPPED!          "
-    : `PROGRESS:${bar}${pct}%`;
+  const screenLine = (status === "accepted" && progress >= 100
+    ? "  SHIPPED!"
+    : `  PROGRESS:${bar}${pct}%`).padEnd(30);
+
+  // LED colors react to status
+  const led1 = status === "accepted" ? green : amber;
+  const led2 = status === "retried" ? orange : amber;
+  const led3 = amber;
 
   const Btn = ({ id, label, color, onClick, ariaLabel }: {
     id: ButtonId; label: string; color?: string; onClick: () => void; ariaLabel: string;
@@ -194,9 +199,9 @@ export function VibeCoder001() {
     );
   };
 
-  // Outer device width: 24 chars
-  // ╔(1) + 22 inner + ╗(1)
-  // Screen: ║(1) sp(1) │(1) + 18 content + │(1) sp(1) ║(1) = 24
+  // Outer device width: 38 chars
+  // ╔(1) + 36 inner + ╗(1)
+  // Screen: ║(1) + 2sp + │(1) + 30 content + │(1) + 2sp + ║(1) = 38
 
   return (
     <div
@@ -232,31 +237,36 @@ export function VibeCoder001() {
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
         <pre className="m-0 font-normal" style={{ lineHeight: "initial", letterSpacing: "initial", whiteSpace: "pre" }}>
           <div className="leading-tight whitespace-pre">
-            {`           ╷\n`}
-            {`         ┌─┴─┐\n`}
-            {`╔════════╧═══╧═════════╗\n`}
-            {`║ ┌──────────────────┐ ║\n`}
-            {`║ │ `}<span className="animate-pulse">ESTELA CODE</span>{`      │ ║\n`}
-            {`║ │──────────────────│ ║\n`}
-            {`║ │`}{pressed === "prompt" ? PROMPT_TEXTS[promptIdx].padEnd(18) : screenLine}{`│ ║\n`}
-            {`║ └──────────────────┘ ║\n`}
-            {`║                      ║\n`}
+            {`                  ╷\n`}
+            {`                ┌─┴─┐\n`}
+            {`╔═══════════════╧═══╧════════════════╗\n`}
+            {`║  (*)      VIBE CODER 001      (*)  ║\n`}
+            {`║                                    ║\n`}
+            {`║  ┌──────────────────────────────┐  ║\n`}
+            {`║  │   `}<span className="animate-pulse">ESTELA CODE</span>{`                │  ║\n`}
+            {`║  │──────────────────────────────│  ║\n`}
+            {`║  │`}{pressed === "prompt" ? ("  " + PROMPT_TEXTS[promptIdx]).padEnd(30) : screenLine}{`│  ║\n`}
+            {`║  └──────────────────────────────┘  ║\n`}
+            {`║                                    ║\n`}
+            {`║  `}<span style={{ color: led1, transition: "color 200ms ease" }}>o</span>{` `}<span style={{ color: led2, transition: "color 200ms ease" }}>o</span>{` `}<span style={{ color: led3 }}>o</span>{`                             ║\n`}
+            {`║                                    ║\n`}
             {`║  `}
             <Btn id="accept" label="[ACCEPT]" color={green} onClick={handleAccept} ariaLabel="Accept code" />
-            {`  `}
+            {`        `}
             <Btn id="retry" label="[RETRY]" color={orange} onClick={handleRetry} ariaLabel="Retry code review" />
-            {`   ║\n`}
-            {`║                 (o)  ║\n`}
-            {`║  `}
+            {`     (o)   ║\n`}
+            {`║                                    ║\n`}
+            {`║   `}
             <Btn id="prev" label="<" onClick={handlePrev} ariaLabel="Previous snippet" />
             {` `}
             <Btn id="next" label=">" onClick={handleNext} ariaLabel="Next snippet" />
-            {`     `}
+            {`            `}
             <Btn id="prompt" label="[PROMPT]" onClick={handlePrompt} ariaLabel="Cycle prompt" />
-            {`    ║\n`}
-            {`║══════════════════════║\n`}
-            {`║ .:VIBE CODER 001:.   ║\n`}
-            {`╚══════════════════════╝`}
+            {`          ║\n`}
+            {`║                                    ║\n`}
+            {`║════════════════════════════════════║\n`}
+            {`║  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ║\n`}
+            {`╚════════════════════════════════════╝`}
           </div>
         </pre>
       </div>
