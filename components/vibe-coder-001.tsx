@@ -2,19 +2,44 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 
-// --- Curated code snippets (5 exactly → 5 × 20% = 100%) ---
-const SNIPPETS = [
-  `fn deploy() {\n  ship(verified);\n}`,
-  `const quality =\n  review(output);\nreturn quality;`,
-  `export async\n  function ship()\n{ return ok; }`,
-  `let ai = generate();\ncheck(ai.output);\nship(verified);`,
-  `await test(code);\nsign(output);\ndeploy(prod);`,
+/* ─────────────────────────────────────────────────────────
+ * ANIMATION STORYBOARD — Vibe Coder 001
+ *
+ * Auto-play loop with user interrupt. Each cycle:
+ *
+ *    0ms   new question types onto device screen
+ *  ~800ms  question fully visible, cursor blinks
+ * 3000ms   if no user input → auto-accept
+ * 3000ms   LED 1 brightens, terminal shows "> merged"
+ * 4000ms   next question begins typing
+ *
+ * User can press [ACCEPT] or [RETRY] during the waiting
+ * window to interrupt the auto-cycle.
+ *
+ * After 5 accepts (100%), screen shows "SHIPPED!" for 2s,
+ * then progress resets and cycle restarts.
+ * ───────────────────────────────────────────────────────── */
+
+// --- Timing constants (ms) ---
+const TIMING = {
+  typewriter:     50,    // ms per character typed
+  questionPause:  2200,  // ms to wait before auto-accept
+  advanceDelay:   1000,  // ms after accept before next question
+  retryDelay:     800,   // ms after retry before next question
+  shippedDisplay: 2000,  // how long SHIPPED! stays visible
+};
+
+// --- Questions paired with code snippets ---
+const QUESTIONS = [
+  { text: "Deploy to prod?",  code: `fn deploy() {\n  ship(verified);\n}` },
+  { text: "Run test suite?",  code: `await test(code);\nsign(output);\ndeploy(prod);` },
+  { text: "Ship this build?", code: `export async\n  function ship()\n{ return ok; }` },
+  { text: "Merge to main?",   code: `const quality =\n  review(output);\nreturn quality;` },
+  { text: "Sign release?",    code: `let ai = generate();\ncheck(ai.output);\nship(verified);` },
 ];
 
-const PROMPT_TEXTS = ["reviewing...", "analyzing...", "checking...", "shipping..."];
-
-type ReviewStatus = "reviewing" | "accepted" | "retried";
-type ButtonId = "accept" | "retry" | "prompt" | "prev" | "next" | null;
+type ReviewStatus = "typing" | "waiting" | "accepted" | "retried" | "shipped";
+type ButtonId = "accept" | "retry" | null;
 
 // --- Click sound (Web Audio noise-burst, inline) ---
 const SOUND_PROFILES = {
@@ -62,16 +87,17 @@ function useClickSound() {
 
 // --- Main component ---
 export function VibeCoder001() {
-  const [snippet, setSnippet] = useState(0);
-  const [status, setStatus] = useState<ReviewStatus>("reviewing");
+  const [questionIdx, setQuestionIdx] = useState(0);
+  const [typedChars, setTypedChars] = useState(0);
+  const [status, setStatus] = useState<ReviewStatus>("typing");
   const [progress, setProgress] = useState(0);
   const [pressed, setPressed] = useState<ButtonId>(null);
-  const [promptIdx, setPromptIdx] = useState(0);
   const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
 
   const pressRef = useRef<ReturnType<typeof setTimeout>>(null);
-  const advanceRef = useRef<ReturnType<typeof setTimeout>>(null);
+  const progressRef = useRef(progress);
+  progressRef.current = progress;
   const playSound = useClickSound();
 
   useEffect(() => {
@@ -82,116 +108,158 @@ export function VibeCoder001() {
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  useEffect(() => {
-    return () => {
-      if (pressRef.current) clearTimeout(pressRef.current);
-      if (advanceRef.current) clearTimeout(advanceRef.current);
-    };
-  }, []);
-
   const flash = useCallback((btn: ButtonId) => {
     if (pressRef.current) clearTimeout(pressRef.current);
     setPressed(btn);
     pressRef.current = setTimeout(() => setPressed(null), 150);
   }, []);
 
-  const nextSnippet = useCallback(() => {
-    setSnippet((s) => (s + 1) % SNIPPETS.length);
-    setStatus("reviewing");
-  }, []);
+  // --- Auto-play loop driven by status ---
+
+  // Phase 1: Typewriter effect
+  useEffect(() => {
+    if (status !== "typing") return;
+    const q = QUESTIONS[questionIdx].text;
+    let i = 0;
+    const interval = setInterval(() => {
+      i++;
+      setTypedChars(i);
+      if (i >= q.length) {
+        clearInterval(interval);
+        setStatus("waiting");
+      }
+    }, TIMING.typewriter);
+    return () => clearInterval(interval);
+  }, [status, questionIdx]);
+
+  // Phase 2: Wait for user or auto-accept
+  useEffect(() => {
+    if (status !== "waiting") return;
+    const timer = setTimeout(() => {
+      setStatus("accepted");
+      setProgress(p => Math.min(p + 20, 100));
+    }, TIMING.questionPause);
+    return () => clearTimeout(timer);
+  }, [status]);
+
+  // Phase 3: After accept → advance or ship
+  useEffect(() => {
+    if (status !== "accepted") return;
+    const timer = setTimeout(() => {
+      if (progressRef.current >= 100) {
+        setStatus("shipped");
+      } else {
+        setQuestionIdx(i => (i + 1) % QUESTIONS.length);
+        setTypedChars(0);
+        setStatus("typing");
+      }
+    }, TIMING.advanceDelay);
+    return () => clearTimeout(timer);
+  }, [status]);
+
+  // Phase 3b: After retry → new question
+  useEffect(() => {
+    if (status !== "retried") return;
+    const timer = setTimeout(() => {
+      setQuestionIdx(prev => {
+        let next: number;
+        do { next = Math.floor(Math.random() * QUESTIONS.length); } while (next === prev && QUESTIONS.length > 1);
+        return next;
+      });
+      setTypedChars(0);
+      setStatus("typing");
+    }, TIMING.retryDelay);
+    return () => clearTimeout(timer);
+  }, [status]);
+
+  // Phase 4: SHIPPED! display then reset
+  useEffect(() => {
+    if (status !== "shipped") return;
+    const timer = setTimeout(() => {
+      setProgress(0);
+      setQuestionIdx(i => (i + 1) % QUESTIONS.length);
+      setTypedChars(0);
+      setStatus("typing");
+    }, TIMING.shippedDisplay);
+    return () => clearTimeout(timer);
+  }, [status]);
+
+  // --- User interaction (only during "waiting") ---
 
   const handleAccept = useCallback(() => {
-    if (isMobile) return;
+    if (isMobile || status !== "waiting") return;
     flash("accept");
     playSound("accept");
     setStatus("accepted");
-    setProgress((p) => {
-      const next = Math.min(p + 20, 100);
-      return next;
-    });
-    if (advanceRef.current) clearTimeout(advanceRef.current);
-    advanceRef.current = setTimeout(() => {
-      setProgress((p) => (p >= 100 ? 0 : p));
-      nextSnippet();
-    }, 1000);
-  }, [isMobile, flash, playSound, nextSnippet]);
+    setProgress(p => Math.min(p + 20, 100));
+  }, [isMobile, status, flash, playSound]);
 
   const handleRetry = useCallback(() => {
-    if (isMobile) return;
+    if (isMobile || status !== "waiting") return;
     flash("retry");
     playSound("retry");
     setStatus("retried");
-    if (advanceRef.current) clearTimeout(advanceRef.current);
-    advanceRef.current = setTimeout(() => {
-      let next: number;
-      do { next = Math.floor(Math.random() * SNIPPETS.length); } while (next === snippet && SNIPPETS.length > 1);
-      setSnippet(next);
-      setStatus("reviewing");
-    }, 800);
-  }, [isMobile, flash, playSound, snippet]);
-
-  const handlePrompt = useCallback(() => {
-    if (isMobile) return;
-    flash("prompt");
-    setPromptIdx((i) => (i + 1) % PROMPT_TEXTS.length);
-  }, [isMobile, flash]);
-
-  const handlePrev = useCallback(() => {
-    if (isMobile) return;
-    flash("prev");
-    setSnippet((s) => (s - 1 + SNIPPETS.length) % SNIPPETS.length);
-    setStatus("reviewing");
-  }, [isMobile, flash]);
-
-  const handleNext = useCallback(() => {
-    if (isMobile) return;
-    flash("next");
-    setSnippet((s) => (s + 1) % SNIPPETS.length);
-    setStatus("reviewing");
-  }, [isMobile, flash]);
+  }, [isMobile, status, flash, playSound]);
 
   if (!mounted) return null;
 
+  // --- Colors (amber palette only) ---
   const amber = "rgb(245, 185, 68)";
   const bright = "rgb(255, 215, 100)";
-  const green = "#4ade80";
-  const orange = "#fb923c";
+  const dim = "rgb(180, 135, 50)";
 
+  // --- Terminal status line ---
   const statusLine =
-    status === "accepted" ? { text: "> merged", color: green } :
-    status === "retried"  ? { text: "> retrying...", color: orange } :
+    status === "accepted" ? { text: "> merged", color: bright } :
+    status === "retried"  ? { text: "> retrying...", color: dim } :
+    status === "shipped"  ? { text: "> SHIPPED!", color: bright } :
     { text: "> _", color: amber };
 
-  // Inner screen = 30 chars (between single-line │ borders)
-  const filled = Math.round(progress / 20); // 0-5
+  // --- Screen content ---
+  const q = QUESTIONS[questionIdx];
+  const typed = q.text.slice(0, typedChars);
+  const showCursor = status === "typing" || status === "waiting";
+  const isShipped = status === "shipped";
+
+  // Question line: "  " + typed text + optional cursor, padded to 30
+  const questionPrefix = "  ";
+  const questionContent = isShipped ? "SHIPPED!" : typed;
+  const cursorChar = showCursor ? 1 : 0;
+  const questionPad = " ".repeat(Math.max(0, 30 - questionPrefix.length - questionContent.length - cursorChar));
+
+  // Progress bar
+  const filled = Math.round(progress / 20);
   const bar = "=".repeat(filled) + "-".repeat(5 - filled);
   const pct = String(progress).padStart(3);
-  const screenLine = (status === "accepted" && progress >= 100
-    ? "  SHIPPED!"
-    : `  PROGRESS:${bar}${pct}%`).padEnd(30);
+  const screenLine = (`  PROGRESS:${bar}${pct}%`).padEnd(30);
 
-  // LED colors react to status
-  const led1 = status === "accepted" ? green : amber;
-  const led2 = status === "retried" ? orange : amber;
+  // LED colors
+  const led1 = status === "accepted" || status === "shipped" ? bright : amber;
+  const led2 = status === "retried" ? dim : amber;
   const led3 = amber;
+
+  // Button active state (only clickable during "waiting")
+  const buttonsActive = status === "waiting" && !isMobile;
 
   const Btn = ({ id, label, color, onClick, ariaLabel }: {
     id: ButtonId; label: string; color?: string; onClick: () => void; ariaLabel: string;
   }) => {
     const isPressed = pressed === id;
     const activeColor = color || amber;
+    const dimmed = !buttonsActive;
     return (
       <span
-        role={isMobile ? undefined : "button"}
-        aria-label={isMobile ? undefined : ariaLabel}
+        role={buttonsActive ? "button" : undefined}
+        aria-label={buttonsActive ? ariaLabel : undefined}
         onClick={onClick}
-        onMouseEnter={!isMobile ? (e) => { (e.target as HTMLElement).style.color = bright; } : undefined}
-        onMouseLeave={!isMobile ? (e) => { (e.target as HTMLElement).style.color = isPressed ? activeColor : amber; } : undefined}
+        onMouseEnter={buttonsActive ? (e) => { (e.target as HTMLElement).style.color = bright; } : undefined}
+        onMouseLeave={buttonsActive ? (e) => { (e.target as HTMLElement).style.color = isPressed ? activeColor : amber; } : undefined}
         style={{
           color: isPressed ? activeColor : amber,
-          cursor: isMobile ? "default" : "pointer",
+          opacity: dimmed ? 0.5 : 1,
+          cursor: buttonsActive ? "pointer" : "default",
           userSelect: "none",
-          transition: "color 100ms ease",
+          transition: "color 100ms ease, opacity 200ms ease",
         }}
       >
         {label}
@@ -224,10 +292,10 @@ export function VibeCoder001() {
           <pre className="m-0 font-normal" style={{ lineHeight: "initial", letterSpacing: "initial", whiteSpace: "pre" }}>
             <div className="leading-tight">
               {`$ estela review\n\n`}
-              {SNIPPETS[snippet]}
+              {q.code}
               {`\n\n`}
               <span aria-live="polite" style={{ color: statusLine.color }}>{statusLine.text}</span>
-              {status === "reviewing" && <span className="animate-pulse">_</span>}
+              {(status === "typing" || status === "waiting") && <span className="animate-pulse">_</span>}
             </div>
           </pre>
         </div>
@@ -243,26 +311,18 @@ export function VibeCoder001() {
             {`║  (*)      VIBE CODER 001      (*)  ║\n`}
             {`║                                    ║\n`}
             {`║  ┌──────────────────────────────┐  ║\n`}
-            {`║  │   `}<span className="animate-pulse">ESTELA CODE</span>{`                │  ║\n`}
+            {`║  │`}{questionPrefix}{questionContent}{showCursor && <span className={status === "waiting" ? "animate-pulse" : ""}>_</span>}{questionPad}{`│  ║\n`}
             {`║  │──────────────────────────────│  ║\n`}
-            {`║  │`}{pressed === "prompt" ? ("  " + PROMPT_TEXTS[promptIdx]).padEnd(30) : screenLine}{`│  ║\n`}
+            {`║  │`}{screenLine}{`│  ║\n`}
             {`║  └──────────────────────────────┘  ║\n`}
             {`║                                    ║\n`}
             {`║  `}<span style={{ color: led1, transition: "color 200ms ease" }}>o</span>{` `}<span style={{ color: led2, transition: "color 200ms ease" }}>o</span>{` `}<span style={{ color: led3 }}>o</span>{`                             ║\n`}
             {`║                                    ║\n`}
             {`║  `}
-            <Btn id="accept" label="[ACCEPT]" color={green} onClick={handleAccept} ariaLabel="Accept code" />
+            <Btn id="accept" label="[ACCEPT]" color={bright} onClick={handleAccept} ariaLabel="Accept code" />
             {`        `}
-            <Btn id="retry" label="[RETRY]" color={orange} onClick={handleRetry} ariaLabel="Retry code review" />
+            <Btn id="retry" label="[RETRY]" color={dim} onClick={handleRetry} ariaLabel="Retry code review" />
             {`     (o)   ║\n`}
-            {`║                                    ║\n`}
-            {`║   `}
-            <Btn id="prev" label="<" onClick={handlePrev} ariaLabel="Previous snippet" />
-            {` `}
-            <Btn id="next" label=">" onClick={handleNext} ariaLabel="Next snippet" />
-            {`            `}
-            <Btn id="prompt" label="[PROMPT]" onClick={handlePrompt} ariaLabel="Cycle prompt" />
-            {`          ║\n`}
             {`║                                    ║\n`}
             {`║════════════════════════════════════║\n`}
             {`║  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ║\n`}
