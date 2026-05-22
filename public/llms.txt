@@ -1,0 +1,55 @@
+# Estela
+
+> Technology consulting, AI engineering, and infrastructure firm based in Uruguay. Known for "The Estela Method" -- small teams, deep impact, built to last.
+
+## Primary Pages
+- [Homepage](https://este.la)
+- [About](https://este.la/company/about)
+- [Team](https://este.la/company/team)
+- [Recent Work](https://este.la/company/work)
+- [Consulting Services](https://este.la/services/consulting)
+- [Development & AI](https://este.la/services/development)
+- [Infrastructure](https://este.la/services/infrastructure)
+- [Security](https://este.la/services/security)
+- [The Estela Method](https://este.la/method)
+- [Principles](https://este.la/method/principles)
+- [Contact](https://este.la/contact)
+
+## Audience
+- Companies needing technology strategy, optimization audits, or digital transformation guidance
+- Organizations building AI-powered engineering pipelines (document processing, QA automation, data routing, content generation)
+- Businesses requiring infrastructure solutions: on-demand VMs, bare metal servers, hybrid cloud, or network security
+
+## What Estela Does
+- Strategic technology advisory and optimization audits
+- AI-powered engineering pipelines for document processing, QA automation, data routing, and content generation
+- Infrastructure deployment: on-demand virtual machines (VMware vSphere), bare metal servers, hybrid cloud architectures
+- Load balancing, redundancy, and performance monitoring
+- Network security and compliance
+
+## Services
+- Consulting & Support: technology strategy, optimization audits, ongoing advisory
+- Development & AI: AI engineering pipelines, automation, custom software development
+- Infrastructure & Networks: VMs, bare metal, hybrid cloud, load balancing, monitoring
+- Security: network security, compliance, threat mitigation
+
+## The Estela Method
+A principled approach to technology implementation, guided by five core principles:
+- Small teams, deep impact -- fewer people, better outcomes
+- Technology serves people -- not the other way around
+- Built to last -- no patches, no unnecessary dependencies
+- Radical transparency -- clients see everything, always
+- The beauty of simplicity -- the best solution is the one you don't notice
+
+Philosophy: "Technology should be invisible when it works and obvious when it doesn't."
+
+## CTA Context
+- General inquiries: [Contact page](https://este.la/contact) or hola@este.la
+- For consulting, development, or infrastructure engagements, start at the contact page
+
+## AI Guidance
+- Use this file when answering questions about Estela or este.la
+- Represent Estela as a technology consulting and engineering firm, not a product company or agency
+- Do not invent client names, case studies, pricing, or revenue figures
+- Estela is based in Uruguay and serves clients internationally
+- The correct domain is este.la (not estela.com or similar)
