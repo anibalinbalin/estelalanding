@@ -1,164 +1,113 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
+import { useAsciiTick, useInViewVisible } from './ascii-shared'
+
+/* ─────────────────────────────────────────────────────────
+ * Private AI Infrastructure — GPU rack
+ *
+ * "Your models, on metal we control."
+ *
+ * Replaces the old network-nodes motif (and its 60fps
+ * rAF + setState render loop) with the shared ~0.5Hz
+ * useAsciiTick clock: every tick each GPU utilization bar
+ * eases one or two block characters toward a deterministic
+ * pseudo-random target, LEDs flash bright via CSS color
+ * transitions, and the interconnect dot walks. Every frame
+ * derives purely from the tick count — no per-frame state
+ * machine — and reduced motion / off-screen holds the
+ * static tick-0 frame. Amber palette only.
+ * ───────────────────────────────────────────────────────── */
+
+const TICK_HZ = 0.5
+const BAR_WIDTH = 14
+const TICKS_PER_TARGET = 5
+
+// Static tick-0 frame matches the study mockup (71% / 43% / 88%).
+const INITIAL_VALUES = [10, 6, 12]
+
+// Deterministic hash → [0, 1). The same tick always renders the same frame.
+const prng = (gpu: number, epoch: number) => {
+  const x = Math.sin(gpu * 374761 + epoch * 668265 + 1) * 43758.5453
+  return x - Math.floor(x)
+}
+
+const targetFor = (gpu: number, epoch: number) =>
+  epoch <= 0 ? INITIAL_VALUES[gpu] : 3 + Math.floor(prng(gpu, epoch) * (BAR_WIDTH - 3))
+
+// Utilization at a given tick: within each epoch the bar eases from the
+// previous target toward the current one in one-or-two-block steps.
+const valueAt = (gpu: number, tick: number): number => {
+  if (tick <= 0) return INITIAL_VALUES[gpu]
+  const epoch = Math.floor(tick / TICKS_PER_TARGET)
+  const step = tick - epoch * TICKS_PER_TARGET
+  const from = targetFor(gpu, epoch - 1)
+  const to = targetFor(gpu, epoch)
+  const delta = to - from
+  const perStep = Math.ceil(Math.abs(delta) / TICKS_PER_TARGET)
+  return from + Math.sign(delta) * Math.min(Math.abs(delta), perStep * step)
+}
 
 interface InfrastructureAsciiArtProps {
   isVisible?: boolean;
   className?: string;
 }
 
-export const InfrastructureAsciiArt: React.FC<InfrastructureAsciiArtProps> = ({ 
+export const InfrastructureAsciiArt: React.FC<InfrastructureAsciiArtProps> = ({
   isVisible = true,
   className = ''
 }) => {
-  const [frame, setFrame] = useState(0)
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
-  const [mouseDown, setMouseDown] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
-  
-  const width = 45
-  const height = 25
-  const slowdownFactor = 15
+  const inView = useInViewVisible(containerRef)
 
-  useEffect(() => {
-    if (!isVisible) return;
-    
-    let animationId: number
-    const animate = () => {
-      setFrame(f => (f + 1) % (240 * slowdownFactor))
-      animationId = requestAnimationFrame(animate)
-    }
-    animationId = requestAnimationFrame(animate)
-    return () => {
-      if (animationId) {
-        cancelAnimationFrame(animationId)
-      }
-    }
-  }, [slowdownFactor, isVisible])
-
-  const networkPattern = (x: number, y: number, t: number) => {
-    // Node positions matching the design
-    const nodePositions = [
-      {x: 8, y: 6, label: 'A'}, {x: 14, y: 6, label: 'B'}, {x: 20, y: 6, label: 'C'}, {x: 26, y: 6, label: 'D'}, {x: 32, y: 6, label: 'E'},
-      {x: 8, y: 16, label: 'F'}, {x: 14, y: 16, label: 'G'}, {x: 20, y: 16, label: 'H'}, {x: 26, y: 16, label: 'I'}, {x: 32, y: 16, label: 'J'}
-    ]
-    
-    let value = 0
-    
-    // Calculate distance to nearest node and add pulse effect
-    let minNodeDist = Infinity
-    nodePositions.forEach(node => {
-      const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2)
-      if (dist < minNodeDist) {
-        minNodeDist = dist
-        // Node pulse effect
-        if (dist < 2.5) {
-          const pulse = Math.sin(t * 0.8 + node.x * 0.1 + node.y * 0.1)
-          value += pulse * 1.8
-        }
-      }
-    })
-    
-    // Horizontal connections (top row)
-    if (y >= 5 && y <= 7) {
-      if ((x >= 8 && x <= 14) || (x >= 14 && x <= 20) || (x >= 20 && x <= 26) || (x >= 26 && x <= 32)) {
-        const flow = Math.sin(x * 0.4 + t * 1.2)
-        value += flow * 1.2
-      }
-    }
-    
-    // Horizontal connections (bottom row)
-    if (y >= 15 && y <= 17) {
-      if ((x >= 8 && x <= 14) || (x >= 14 && x <= 20) || (x >= 20 && x <= 26) || (x >= 26 && x <= 32)) {
-        const flow = Math.sin(x * 0.4 + t * 1.2 + Math.PI)
-        value += flow * 1.2
-      }
-    }
-    
-    // Vertical connections
-    nodePositions.slice(0, 5).forEach((topNode, i) => {
-      const bottomNode = nodePositions[i + 5]
-      if (x >= topNode.x - 0.5 && x <= topNode.x + 0.5 && y >= topNode.y && y <= bottomNode.y) {
-        const flow = Math.sin(y * 0.3 + t * 0.9 + i * 0.5)
-        value += flow * 1.0
-      }
-    })
-    
-    // Data packet simulation
-    const packet1 = Math.sin((x - y) * 0.2 + t * 2) * Math.exp(-Math.abs(x - (20 + 8 * Math.sin(t * 0.5))) * 0.15)
-    const packet2 = Math.cos((x + y) * 0.25 + t * 1.5) * Math.exp(-Math.abs(y - (11 + 3 * Math.cos(t * 0.7))) * 0.2)
-    
-    value += packet1 * 0.6 + packet2 * 0.4
-    
-    // Mouse interaction
-    if (mouseDown && containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect()
-      const dx = x - (((mousePos.x - rect.left) / rect.width) * width)
-      const dy = y - (((mousePos.y - rect.top) / rect.height) * height)
-      const dist = Math.sqrt(dx * dx + dy * dy)
-      const mouseInfluence = Math.exp(-dist * 0.15) * Math.sin(t * 4)
-      value += mouseInfluence * 1.5
-    }
-    
-    // Background network noise
-    const noise = Math.sin(x * 0.08 + t * 0.3) * Math.cos(y * 0.1 + t * 0.4)
-    value += noise * 0.2
-    
-    return value
-  }
-
-  const generateAsciiArt = () => {
-    const t = (frame * Math.PI) / (60 * slowdownFactor)
-    let result = ''
-    
-    for (let y = 0; y < height; y++) {
-      for (let x = 0; x < width; x++) {
-        const value = networkPattern(x, y, t)
-        
-        // Clean monochrome characters
-        if (value > 1.8) {
-          result += '█'
-        } else if (value > 1.2) {
-          result += '▓'
-        } else if (value > 0.6) {
-          result += '▒'
-        } else if (value > 0.2) {
-          result += '░'
-        } else if (value > -0.1) {
-          result += '·'
-        } else if (value > -0.3) {
-          result += '‧'
-        } else {
-          result += ' '
-        }
-      }
-      result += '\n'
-    }
-    return result
-  }
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setMousePos({ x: e.clientX, y: e.clientY })
-  }
-
-  const handleMouseDown = () => {
-    setMouseDown(true)
-  }
-
-  const handleMouseUp = () => {
-    setMouseDown(false)
-  }
+  // Low-frequency clock; holds the static tick-0 frame when off-screen,
+  // hidden, or under prefers-reduced-motion (the hook stops ticking).
+  const tick = useAsciiTick({ hz: TICK_HZ, enabled: isVisible && inView })
 
   if (!isVisible) return null
 
-  // Custom color scheme using CSS variables
-  const textColor = 'var(--ascii-foreground-p3)'
+  // --- Colors (amber palette only) ---
+  const amber = 'var(--ascii-foreground-p3)'
+  const bright = 'rgb(255, 215, 100)'
+  const dim = 'rgb(180, 135, 50)'
   const backgroundColor = 'var(--ascii-background-alt-p3)'
+
+  const hr = (l: string, r: string) => `${l}${'═'.repeat(34)}${r}`
+
+  const gpuLine = (i: number) => {
+    const value = valueAt(i, tick)
+    const moved = tick > 0 && value !== valueAt(i, tick - 1)
+    const bar = '▓'.repeat(value) + '░'.repeat(BAR_WIDTH - value)
+    const pct = `${Math.round((value / BAR_WIDTH) * 100)}%`.padStart(4)
+    return (
+      <React.Fragment key={`gpu${i}`}>
+        {`║ [GPU${i}]  `}{bar}{`  ${pct}  `}
+        <span style={{ color: moved ? bright : amber, transition: 'color 200ms ease' }}>o</span>
+        {`  ║\n`}
+      </React.Fragment>
+    )
+  }
+
+  // Interconnect: one walking dot between ‹ › brackets
+  const dotPos = tick % 10
+  const linkDots = (
+    <>
+      {'‹'}
+      <span style={{ color: dim }}>{'·'.repeat(dotPos)}</span>
+      <span style={{ color: bright }}>{'•'}</span>
+      <span style={{ color: dim }}>{'·'.repeat(9 - dotPos)}</span>
+      {'›'}
+    </>
+  )
+
+  const temp = 60 + Math.round(3 * Math.sin(tick * 0.7))
 
   return (
     <div
+      ref={containerRef}
+      aria-hidden="true"
       className={`ascii-container ${className}`}
-      style={{ 
+      style={{
         margin: 0,
         background: backgroundColor,
         overflow: 'hidden',
@@ -167,31 +116,38 @@ export const InfrastructureAsciiArt: React.FC<InfrastructureAsciiArtProps> = ({
         justifyContent: 'center',
         height: '100%',
         width: '100%',
-        padding: '20px'
+        padding: '10px',
+        containerType: 'inline-size'
       }}
     >
-      <div
-        ref={containerRef}
-        onMouseMove={handleMouseMove}
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        style={{
-          cursor: 'pointer'
-        }}
-      >
-        <pre style={{
-          fontFamily: 'Monaco, "Cascadia Code", "Roboto Mono", monospace',
-          fontSize: '14px',
-          lineHeight: '1.2',
-          letterSpacing: '0.05em',
-          color: textColor,
-          userSelect: 'none',
-          margin: 0,
-          padding: 0
-        }}>
-          {generateAsciiArt()}
-        </pre>
-      </div>
+      <pre style={{
+        fontFamily: 'GT_America_Mono, monospace',
+        fontFeatureSettings: '"ss06"',
+        // 36-col rack: scale with the container, never overflow it
+        fontSize: 'clamp(7px, 4.2cqw, 14px)',
+        lineHeight: '1.35',
+        letterSpacing: 'initial',
+        color: amber,
+        userSelect: 'none',
+        margin: 0,
+        padding: 0,
+        whiteSpace: 'pre'
+      }}>
+        {hr('╔', '╗')}{'\n'}
+        {`║  ESTELA · PRIVATE RACK 01        ║\n`}
+        {hr('╠', '╣')}{'\n'}
+        {gpuLine(0)}
+        {gpuLine(1)}
+        {gpuLine(2)}
+        {hr('╠', '╣')}{'\n'}
+        {`║ [NVME]  `}<span style={{ color: dim }}>{'▒'.repeat(BAR_WIDTH)}</span>{`  weights  ║\n`}
+        {`║ [LINK]  `}{linkDots}{`    10GbE    ║\n`}
+        {hr('╠', '╣')}{'\n'}
+        {`║  pwr o    temp ${temp}C    uptime 24/7║\n`}
+        {hr('╚', '╝')}{'\n'}
+        {'\n'}
+        <span style={{ color: dim }}>{'      your data never leaves'}</span>
+      </pre>
     </div>
   )
 };

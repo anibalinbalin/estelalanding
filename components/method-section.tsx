@@ -21,11 +21,11 @@ const content = {
       { title: 'The Art of Translation', href: '/method/introduction', number: '1.1' }
     ],
     principlesItems: [
-      { title: 'Small Teams, Deep Impact', href: '/method/principles#1', number: '2.1' },
+      { title: 'Six', href: '/method/principles#1', number: '2.1' },
       { title: 'Technology Serves People', href: '/method/principles#2', number: '2.2' },
-      { title: 'Built to Last', href: '/method/principles#3', number: '2.3' },
-      { title: 'Radical Transparency', href: '/method/principles#4', number: '2.4' },
-      { title: 'The Beauty of Simplicity', href: '/method/principles#5', number: '2.5' }
+      { title: 'No Patches', href: '/method/principles#3', number: '2.3' },
+      { title: 'No Lock-in', href: '/method/principles#4', number: '2.4' },
+      { title: 'Nothing Extra', href: '/method/principles#5', number: '2.5' }
     ],
     implementationItems: [
       { title: 'Understanding Phase', href: '/method/implementation#understanding', number: '3.1' },
@@ -37,7 +37,7 @@ const content = {
       { title: 'The 24-Hour Rule', href: '/method/practices#24hour', number: '4.1' },
       { title: 'Documentation as Art', href: '/method/practices#documentation', number: '4.2' },
       { title: 'The Weekly Pulse', href: '/method/practices#weekly', number: '4.3' },
-      { title: 'Vendor Relationships', href: '/method/practices#vendors', number: '4.4' },
+      { title: 'Direct Lines', href: '/method/practices#vendors', number: '4.4' },
       { title: 'Knowledge Transfer', href: '/method/practices#knowledge', number: '4.5' }
     ],
     philosophyItems: [

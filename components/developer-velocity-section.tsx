@@ -25,8 +25,8 @@ export const DeveloperVelocitySection = () => {
       subtitle: "We anticipate the unexpected—which, once anticipated, ceases to be so. We design systems that last. We implement changes that transform. We keep calm when the server doesn't.",
       features: [
         {
-          title: "Networks & Servers",
-          subtitle: "VMware and Proxmox virtualization, UniFi networking, Synology storage, 10Gb LANs, redundant power.",
+          title: "Private AI Infrastructure",
+          subtitle: "NVIDIA GPU compute, self-hosted models, VMware and Proxmox virtualization, hybrid cloud where the math favors it.",
           image1: "/img/ascii-art.svg",
           image2: "/img/ascii-art.svg",
           image1Width: 620,
@@ -38,8 +38,8 @@ export const DeveloperVelocitySection = () => {
           ctaLink: "/services/infrastructure"
         },
         {
-          title: "Complete Protection",
-          subtitle: "SentinelOne XDR, UniFi Protect cameras, Synology backup infrastructure: redundancy and recovery.",
+          title: "Data Protection",
+          subtitle: "Encrypted datasets, immutable backups, access control: data protected for training and inference.",
           image1: "/img/ascii-art_2.svg",
           image2: "/img/ascii-art_2.svg",
           image1Width: 620,
@@ -70,8 +70,8 @@ export const DeveloperVelocitySection = () => {
       subtitle: "Anticipamos lo imprevisto —que, una vez previsto, deja de serlo. Diseñamos sistemas que perduran. Implementamos cambios que transforman. Mantenemos la calma cuando el servidor no la mantiene.",
       features: [
         {
-          title: "Redes y Servidores",
-          subtitle: "Virtualización VMware y Proxmox, redes UniFi, almacenamiento Synology, LANs de 10Gb, energía redundante.",
+          title: "Infraestructura Privada de IA",
+          subtitle: "Cómputo GPU NVIDIA, modelos autoalojados, virtualización VMware y Proxmox, nube híbrida donde los números lo justifican.",
           image1: "/img/ascii-art.svg",
           image2: "/img/ascii-art.svg",
           image1Width: 620,
@@ -83,8 +83,8 @@ export const DeveloperVelocitySection = () => {
           ctaLink: "/services/infrastructure"
         },
         {
-          title: "Protección Completa",
-          subtitle: "SentinelOne XDR, cámaras UniFi Protect, almacenamiento duplicado en infraestructura Synology: redundancia y recuperación.",
+          title: "Protección de Datos",
+          subtitle: "Datos cifrados, respaldos inmutables, control de acceso: datos protegidos para entrenamiento e inferencia.",
           image1: "/img/ascii-art_2.svg",
           image2: "/img/ascii-art_2.svg",
           image1Width: 620,

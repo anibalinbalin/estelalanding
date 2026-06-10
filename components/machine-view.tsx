@@ -4,12 +4,14 @@ import { Link } from 'next-view-transitions'
 import { useLanguage } from '@/components/language-provider'
 import { ModeToggle } from '@/components/ui/mode-toggle'
 import {
+  aiContent,
   securityContent,
   infrastructureContent,
   developmentContent,
   consultingContent,
   contactContent
 } from '@/lib/site-content'
+import { serviceSpecificationsContent } from '@/content/service-specifications'
 import {
   AecidAscii,
   AparatoAscii,
@@ -67,9 +69,10 @@ const content = {
   en: {
     // Section Headers
     sectionServices: "Services",
-    sectionInfra: "Infrastructure & Networks",
-    sectionSecurity: "Managed Security",
-    sectionDev: "Development & AI",
+    sectionAI: "AI Engineering",
+    sectionInfra: "Private AI Infrastructure",
+    sectionSecurity: "Security & Data Protection",
+    sectionDev: "Development",
     sectionConsulting: "Consulting & Support",
     sectionMethod: "Method",
     sectionCompany: "Company",
@@ -83,7 +86,19 @@ const content = {
     // Hero
     heroTitle: "The shortest path between the problem and the solution",
     heroSubtitle: "The Greeks invented logic, geometry, and a god for every need. We apply the first two to build solutions. From the third—the gods, not the needs—we kept only the marble, which requires no updates.",
-    heroSubtitleTech: "Infrastructure automation, security hardening, and development services. REST APIs, CI/CD pipelines, and infrastructure-as-code deployments.",
+    heroSubtitleTech: "AI engineering and development. Pipelines, agents, and the private infrastructure to run them — built by people who answer for the results.",
+
+    // Services - AI Engineering (from page)
+    aiTitle: aiContent.en.title,
+    aiSubtitle: aiContent.en.subtitle,
+    aiPipelinesTitle: aiContent.en.pipelinesTitle,
+    aiPipelinesDesc: aiContent.en.pipelinesDesc,
+    aiAgentsTitle: aiContent.en.agentsTitle,
+    aiAgentsDesc: aiContent.en.agentsDesc,
+    aiAssistedTitle: aiContent.en.assistedTitle,
+    aiAssistedDesc: aiContent.en.assistedDesc,
+    aiModelsTitle: aiContent.en.modelsTitle,
+    aiModelsDesc: aiContent.en.modelsDesc,
 
     // Services - Infrastructure (from page)
     infraTitle: infrastructureContent.en.title,
@@ -96,10 +111,6 @@ const content = {
     postTitle: infrastructureContent.en.postTitle,
     postDesc: infrastructureContent.en.postDesc,
     postFeatures: [infrastructureContent.en.postFeat1, infrastructureContent.en.postFeat2, infrastructureContent.en.postFeat3, infrastructureContent.en.postFeat4],
-    secCamTitle: infrastructureContent.en.secTitle,
-    secCamDesc: infrastructureContent.en.secDesc,
-    wifiTitle: infrastructureContent.en.wifiTitle,
-    wifiDesc: infrastructureContent.en.wifiDesc,
 
     // Security (from page)
     securityTitle: securityContent.en.title,
@@ -126,6 +137,8 @@ const content = {
     devSubtitle: developmentContent.en.subtitle,
     devSectionTitle: developmentContent.en.sectionTitle,
     devSectionDesc: developmentContent.en.sectionDesc,
+    devAiTitle: developmentContent.en.aiTitle,
+    devAiDesc: developmentContent.en.aiDesc,
 
     // Consulting (from page)
     consultingTitle: consultingContent.en.title,
@@ -135,41 +148,16 @@ const content = {
     consultingPara2: consultingContent.en.para2,
     consultingAdvantages: [consultingContent.en.adv1, consultingContent.en.adv2, consultingContent.en.adv3, consultingContent.en.adv4],
 
-    // Specifications
-    specsTitle: "Technical Specifications",
-    specsSubtitle: "Hardware and software specifications for our standard deployments.",
-    specsSections: [
-      {
-        title: "Compute Infrastructure",
-        cards: [
-          { title: "Specifications", specs: ["Processor: 2x AMD EPYC 9354 (32 cores each)", "Total Cores: 64 physical / 128 threads", "Memory: 512GB - 2TB DDR5-4800 ECC", "Storage Bays: 8x 2.5\" NVMe U.2", "Network: 4x 25GbE + 2x 100GbE SFP28", "Power Supply: Redundant 1100W Platinum", "Form Factor: 2U Rack Mount"] },
-          { title: "VMware vSphere 8.0", specs: ["Hypervisor: ESXi 8.0 Update 2", "Management: vCenter Server 8.0", "Features: vMotion, DRS, HA, vSAN", "Max VMs/Host: 1,024", "Max vCPU/VM: 768", "Max RAM/VM: 24TB"] }
-        ]
-      },
-      {
-        title: "Storage Systems",
-        cards: [
-          { title: "Synology FS6400 FlashStation", specs: ["Drive Bays: 24x 2.5\" NVMe SSD", "Max Capacity: 384TB (24x 16TB)", "Memory: 32GB DDR4 ECC (exp. 512GB)", "Cache: Up to 1TB NVMe read/write", "Network: 4x 25GbE + 2x 10GbE", "Protocols: SMB, AFP, NFS, iSCSI, FTP", "RAID Support: SHR, Basic, JBOD, 0, 1, 5, 6, 10", "Performance: 650K+ IOPS / 10GB/s throughput"] },
-          { title: "Synology SA3610 ActiveProtect", specs: ["Drive Bays: 12x 3.5\" SATA/SAS", "Max Capacity: 240TB (12x 20TB)", "Memory: 16GB DDR4 ECC (exp. 64GB)", "Cache Slots: 2x M.2 NVMe (up to 960GB each)", "Network: 4x 10GbE RJ45", "Expansion: Up to 2x RX1217 (36 bays total)", "Performance: 226K IOPS / 5.5GB/s sequential"] },
-          { title: "Synology RS2423+ RackStation", specs: ["Drive Bays: 12x 3.5\"/2.5\" SATA", "Max Capacity: 240TB (12x 20TB)", "Memory: 8GB DDR4 (exp. 32GB)", "Network: 4x 1GbE RJ45", "Features: Active Backup, Snapshots, Cloud Sync, Encryption"] }
-        ]
-      },
-      {
-        title: "Network Infrastructure",
-        cards: [
-          { title: "UniFi Dream Machine Special Edition", specs: ["Throughput: 10 Gbps IDS/IPS", "WAN Ports: 2x 10G SFP+ / 1x 2.5GbE RJ45", "LAN Ports: 8x GbE RJ45 with PoE+", "Storage: 128GB SSD + HDD bay", "Features: Firewall, VPN, VLAN (4096), Traffic Analytics"] },
-          { title: "UniFi Switch Pro 48 PoE", specs: ["Ports: 48x GbE RJ45 PoE+", "SFP+ Ports: 4x 10G SFP+", "PoE Budget: 600W (IEEE 802.3at/af/bt)", "Switching: 176 Gbps non-blocking", "Features: Layer 3 routing, Link aggregation, Port isolation"] },
-          { title: "UniFi U7 Pro WiFi 7", specs: ["Standards: WiFi 7 (802.11be)", "Bands: Tri-band 2.4/5/6 GHz", "Throughput: 11.5 Gbps aggregate", "Clients: 300+ concurrent", "Coverage: 6,000 sq ft", "Features: Band steering, Guest portal, VLAN per SSID, AI optimization"] }
-        ]
-      },
-      {
-        title: "Security & Monitoring",
-        cards: [
-          { title: "SentinelOne Singularity Platform", specs: ["Protection: AI-powered XDR", "Detection: < 1ms threat identification", "Response: Automated remediation", "Coverage: Windows, macOS, Linux, Cloud", "Features: Behavioral AI, EDR + EPP, Storyline, 1-click rollback"] },
-          { title: "UniFi Protect AI Camera Systems", specs: ["AI Cameras: G5 Pro with Smart Detection", "Resolution: 4K (3840 x 2160) @ 30fps", "Detection: Person, Vehicle, License plate, Package", "Storage: Local NVR + cloud backup", "Retention: 30-90 days continuous", "Features: Smart motion zones, Privacy masking, Event notifications"] }
-        ]
-      }
-    ],
+    // Specifications (from content/service-specifications)
+    specsTitle: serviceSpecificationsContent.en.title,
+    specsSubtitle: serviceSpecificationsContent.en.subtitle,
+    specsSections: serviceSpecificationsContent.en.sections.map((section) => ({
+      title: section.title,
+      cards: section.cards.map((card) => ({
+        title: card.title,
+        specs: card.specs.map((spec) => `${spec.label}: ${spec.value}`)
+      }))
+    })),
 
     // Method - Introduction
     methodTitle: "The Estela Method",
@@ -265,7 +253,7 @@ const content = {
       { number: "4.1", title: "The 24-Hour Rule", intro: "Our Rapid Response Pledge", description: "Most IT problems compound with time. A small network hiccup becomes a cascade failure. A confused user becomes a frustrated team.", subsection: { title: "How It Works:", items: ["Issues tracked from first contact", "Immediate attention", "Diagnosis and action plan", "Clear communication", "Post-incident review"] }, conclusion: "Critical issues demand immediate attention. You'll connect directly with a core team member who understands your setup." },
       { number: "4.2", title: "Documentation as Art", intro: "Documentation should illuminate, not intimidate.", description: "Industry standard is to document for compliance. We document so someone actually reads it.", subsection: { title: "Our Approach:", items: ["Visual diagrams that show, not tell", "Quick reference guides for daily tasks", "Video walkthroughs for complex procedures", "Searchable knowledge base, not binders", "Regular updates based on real questions"] }, conclusion: "Documentation should empower, not overwhelm." },
       { number: "4.3", title: "The Weekly Pulse", intro: "Short, regular check-ins keep systems healthy.", description: "Systems warn before they fail. We listen.", subsection: { title: "Our Weekly Routine:", items: ["Automated system health reports every morning", "15-minute review call every Wednesday", "Proactive optimization recommendations", "Trend analysis and capacity planning", "Clear action items with priorities"] }, conclusion: "The best problems are the ones that never happen." },
-      { number: "4.4", title: "Vendor Relationships", intro: "Direct relationships with Lenovo, UniFi, Synology, and SentinelOne.", description: "Your problems become our problems. No runaround.", subsection: { title: "Our Direct Approach:", items: ["Named contacts at every partner company", "Direct escalation paths for critical issues", "Regular technical briefings on new products", "Beta access for testing and validation", "Guaranteed response times in partner agreements"] }, conclusion: "These relationships took years to build. They save you hours every time something goes wrong." },
+      { number: "4.4", title: "Direct Lines", intro: "From hardware manufacturers to model providers: when something breaks, we know who to call. And they answer.", description: "Your problems become our problems. No runaround.", subsection: { title: "Our Direct Approach:", items: ["Named contacts at every partner company", "Direct escalation paths for critical issues", "Regular technical briefings on new products", "Beta access for testing and validation", "Guaranteed response times in partner agreements"] }, conclusion: "These relationships took years to build. They save you hours every time something goes wrong." },
       { number: "4.5", title: "Knowledge Transfer", intro: "Our goal is to build your team's capability, not create reliance.", description: "Some providers cultivate ignorance. We cultivate independence.", subsection: { title: "How We Transfer Knowledge:", items: ["Hands-on training during implementation", "Regular lunch-and-learn sessions", "Quick reference materials for your team", "Escalation procedures clearly defined", "Annual capability assessments"] }, conclusion: "True partnership means growing together." }
     ],
 
@@ -316,10 +304,21 @@ const content = {
     workHero: "Our work speaks for us. Though sometimes we speak too.",
     projects: [
       {
+        client: "Estela (internal)",
+        title: "Private AI Infrastructure & AI-Assisted Engineering",
+        year: "2025-2026",
+        category: "AI Engineering",
+        duration: "Ongoing",
+        challenge: "Recommending private AI infrastructure is easy. Running your own business on it is the actual test. We needed local models for engineering work and a place to prototype client pipelines without sending anyone's data to a third party.",
+        solution: "We built a self-hosted GPU server—NVIDIA hardware, Proxmox virtualization—running local models for AI-assisted engineering and pipeline prototyping. This website was built the same way. We are our own first client.",
+        technologies: ["NVIDIA GPU Server", "Proxmox Virtualization", "Self-Hosted Models", "AI-Assisted Development"],
+        results: ["Client data never leaves hardware we control", "Every pipeline prototyped on our own metal before it touches a client's", "AI-assisted engineering as daily practice, not a slide in a deck", "This site: designed, written, and shipped AI-assisted"]
+      },
+      {
         client: "Teatro Solís",
         title: "Theater A/V Control System",
         year: "2023",
-        category: "Infrastructure",
+        category: "Systems Integration",
         duration: "3 months",
         challenge: "The theater's controls couldn't keep up with modern lighting and sound systems. Think: trying to run a Tesla on a Model T dashboard.",
         solution: "We built networked lighting controls with touch interfaces and remote capabilities. Now the tech actually works with the art, not against it.",
@@ -330,7 +329,7 @@ const content = {
         client: "U Films",
         title: "Post-Production Infrastructure Build",
         year: "2023-2024",
-        category: "Infrastructure",
+        category: "Secure Infrastructure",
         duration: "12 months (ongoing)",
         challenge: "Building a production studio from scratch while wrestling with building network restrictions and firewall constraints. Oh, and major clients demanding security certifications.",
         solution: "We engineered a precise VPN solution and negotiated parallel access paths. Sometimes the hardest problems are half-technical, half-diplomatic.",
@@ -341,9 +340,9 @@ const content = {
         client: "Diagnóstico",
         title: "Laboratory Data Security & Integration",
         year: "2021-2024",
-        category: "Infrastructure & Compliance",
+        category: "Data & Compliance",
         duration: "3 years (ongoing)",
-        challenge: "Medical lab with patient data requirements, system integration needs, backup demands, and ISO 9001 compliance. The fun stuff.",
+        challenge: "A medical lab where patient data has to move between systems, stay backed up, stay immutable, and pass ISO 9001 audits. The fun stuff.",
         solution: "We implemented NAS-based integration policies with Active Directory, automated immutable backups, and phased network redundancy. Because lab data isn't something you want to \"oops.\"",
         technologies: ["Synology NAS", "ISO 9001 Framework", "Automated Backup", "Integration Policies"],
         results: ["ISO 9001 compliance achieved", "Reduced internal system downtime to outsiders", "Faster result turnaround times"]
@@ -352,7 +351,7 @@ const content = {
 
     // Company - Partners
     partnersHero: "Proven in production. Certified later.",
-    partners: ["Lenovo (Business Partner Since 2015)", "UniFi (Enterprise Installer Since 2018)", "Synology (Gold Partner Since 2016)", "Acronis (Cloud Partner Since 2017)", "SentinelOne (Partner Since 2022)"],
+    partners: ["Anthropic (In production, daily)", "OpenAI (In production)", "OpenRouter (Model routing in production)", "NVIDIA (GPU compute, on premises)", "Lenovo (Business Partner Since 2015)", "UniFi (Enterprise Installer Since 2018)", "Synology (Gold Partner Since 2016)", "Acronis (Cloud Partner Since 2017)", "SentinelOne (Partner Since 2022)"],
     partnersPhilosophy: {
       title: "How We Choose Partners",
       items: [
@@ -387,8 +386,8 @@ const content = {
     velocityTitle: "Solutions for problems that don't exist yet",
     velocitySubtitle: "We anticipate the unexpected—which, once anticipated, ceases to be so. We design systems that last. We implement changes that transform. We keep calm when the server doesn't.",
     velocityFeatures: [
-      { title: "Networks & Servers", description: "VMware and Proxmox virtualization, UniFi networking, Synology storage, 10Gb LANs, redundant power." },
-      { title: "Complete Protection", description: "SentinelOne XDR, UniFi Protect cameras, Synology backup infrastructure: redundancy and recovery." },
+      { title: "Private AI Infrastructure", description: "NVIDIA GPU compute, self-hosted models, VMware and Proxmox virtualization, hybrid cloud where the math favors it." },
+      { title: "Data Protection", description: "Encrypted datasets, immutable backups, access control: data protected for training and inference." },
       { title: "Custom Development", description: "Next.js apps, process automation, AI integration. Modern solutions that transform how you work." }
     ],
     principlesHomeTitle: "We have principles—and we apply them",
@@ -418,7 +417,8 @@ const content = {
     footerAddress: "21 de Setiembre, 3015. 802 | Montevideo, Punta del Este, Uruguay",
     footerPhone: "+598 27113184",
     navServices: "Services",
-    navInfra: "Infrastructure",
+    navAI: "AI Engineering",
+    navInfra: "Private AI Infrastructure",
     navSecurity: "Security",
     navDev: "Development",
     navConsulting: "Consulting",
@@ -439,9 +439,10 @@ const content = {
   es: {
     // Section Headers
     sectionServices: "Servicios",
-    sectionInfra: "Infraestructura y Redes",
-    sectionSecurity: "Seguridad Gestionada",
-    sectionDev: "Desarrollo e IA",
+    sectionAI: "Ingeniería de IA",
+    sectionInfra: "Infraestructura Privada de IA",
+    sectionSecurity: "Seguridad y Protección de Datos",
+    sectionDev: "Desarrollo",
     sectionConsulting: "Consultoría y Soporte",
     sectionMethod: "Método",
     sectionCompany: "Empresa",
@@ -455,7 +456,19 @@ const content = {
     // Hero
     heroTitle: "El camino más corto entre el problema y la solución",
     heroSubtitle: "Los griegos inventaron la lógica, la geometría y un dios para cada necesidad. Nosotros aplicamos las dos primeras para construir soluciones. De la tercera categoría —los dioses, no las necesidades— conservamos solo el mármol, que no requiere actualizaciones.",
-    heroSubtitleTech: "Automatización de infraestructura, hardening de seguridad, y servicios de desarrollo. APIs REST, pipelines CI/CD, e infraestructura como código.",
+    heroSubtitleTech: "Ingeniería de IA y desarrollo. Pipelines, agentes y la infraestructura privada para ejecutarlos — construida por gente que responde por los resultados.",
+
+    // Services - AI Engineering (from page)
+    aiTitle: aiContent.es.title,
+    aiSubtitle: aiContent.es.subtitle,
+    aiPipelinesTitle: aiContent.es.pipelinesTitle,
+    aiPipelinesDesc: aiContent.es.pipelinesDesc,
+    aiAgentsTitle: aiContent.es.agentsTitle,
+    aiAgentsDesc: aiContent.es.agentsDesc,
+    aiAssistedTitle: aiContent.es.assistedTitle,
+    aiAssistedDesc: aiContent.es.assistedDesc,
+    aiModelsTitle: aiContent.es.modelsTitle,
+    aiModelsDesc: aiContent.es.modelsDesc,
 
     // Services - Infrastructure (from page)
     infraTitle: infrastructureContent.es.title,
@@ -468,10 +481,6 @@ const content = {
     postTitle: infrastructureContent.es.postTitle,
     postDesc: infrastructureContent.es.postDesc,
     postFeatures: [infrastructureContent.es.postFeat1, infrastructureContent.es.postFeat2, infrastructureContent.es.postFeat3, infrastructureContent.es.postFeat4],
-    secCamTitle: infrastructureContent.es.secTitle,
-    secCamDesc: infrastructureContent.es.secDesc,
-    wifiTitle: infrastructureContent.es.wifiTitle,
-    wifiDesc: infrastructureContent.es.wifiDesc,
 
     // Security (from page)
     securityTitle: securityContent.es.title,
@@ -498,6 +507,8 @@ const content = {
     devSubtitle: developmentContent.es.subtitle,
     devSectionTitle: developmentContent.es.sectionTitle,
     devSectionDesc: developmentContent.es.sectionDesc,
+    devAiTitle: developmentContent.es.aiTitle,
+    devAiDesc: developmentContent.es.aiDesc,
 
     // Consulting (from page)
     consultingTitle: consultingContent.es.title,
@@ -507,41 +518,16 @@ const content = {
     consultingPara2: consultingContent.es.para2,
     consultingAdvantages: [consultingContent.es.adv1, consultingContent.es.adv2, consultingContent.es.adv3, consultingContent.es.adv4],
 
-    // Specifications
-    specsTitle: "Especificaciones Técnicas",
-    specsSubtitle: "Especificaciones de hardware recientes.",
-    specsSections: [
-      {
-        title: "Workstation",
-        cards: [
-          { title: "Specifications", specs: ["Processor: 2x AMD EPYC 9354 (32 cores each)", "Total Cores: 64 physical / 128 threads", "Memory: 512GB - 2TB DDR5-4800 ECC", "Storage Bays: 8x 2.5\" NVMe U.2", "Network: 4x 25GbE + 2x 100GbE SFP28", "Power Supply: Redundant 1100W Platinum", "Form Factor: 2U Rack Mount"] },
-          { title: "VMware vSphere 8.0", specs: ["Hipervisor: ESXi 8.0 Update 2", "Gestión: vCenter Server 8.0", "Características: vMotion, DRS, HA, vSAN", "Max. VMs/Host: 1,024", "Max. vCPU/VM: 768", "Max. RAM/VM: 24TB"] }
-        ]
-      },
-      {
-        title: "Sistemas de Almacenamiento",
-        cards: [
-          { title: "Synology FS6400 FlashStation", specs: ["Bahías de Discos: 24x 2.5\" NVMe SSD", "Capacidad Máxima: 384TB (24x 16TB)", "Memoria: 32GB DDR4 ECC (exp. a 512GB)", "Caché: Hasta 1TB NVMe de lectura/escritura", "Red: 4x 25GbE + 2x 10GbE", "Protocolos: SMB, AFP, NFS, iSCSI, FTP", "Soporte RAID: SHR, Basic, JBOD, 0, 1, 5, 6, 10", "Rendimiento: +650K IOPS / 10GB/s de transferencia"] },
-          { title: "Synology SA3610 ActiveProtect", specs: ["Bahías de Discos: 12x 3.5\" SATA/SAS", "Capacidad Máxima: 240TB (12x 20TB)", "Memoria: 16GB DDR4 ECC (exp. a 64GB)", "Ranuras de Caché: 2x M.2 NVMe (hasta 960GB cada una)", "Red: 4x 10GbE RJ45", "Expansión: Hasta 2x RX1217 (36 bahías en total)", "Rendimiento: 226K IOPS / 5.5GB/s secuencial"] },
-          { title: "Synology RS2423+ RackStation", specs: ["Bahías de Discos: 12x 3.5\"/2.5\" SATA", "Capacidad Máxima: 240TB (12x 20TB)", "Memoria: 8GB DDR4 (exp. a 32GB)", "Red: 4x 1GbE RJ45", "Características: Active Backup, Snapshots, Cloud Sync, Cifrado"] }
-        ]
-      },
-      {
-        title: "Infraestructura de Red",
-        cards: [
-          { title: "UniFi Dream Machine Special Edition", specs: ["Rendimiento: 10 Gbps con IDS/IPS", "Puertos WAN: 2x 10G SFP+ / 1x 2.5GbE RJ45", "Puertos LAN: 8x GbE RJ45 con PoE+", "Almacenamiento: 128GB SSD + bahía para HDD", "Características: Firewall, VPN, VLAN (4096), Análisis de tráfico"] },
-          { title: "UniFi Switch Pro 48 PoE", specs: ["Puertos: 48x GbE RJ45 PoE+", "Puertos SFP+: 4x 10G SFP+", "Presupuesto PoE: 600W (IEEE 802.3at/af/bt)", "Capacidad de Conmutación: 176 Gbps sin bloqueo", "Características: Ruteo Layer 3, Link aggregation, Aislamiento de puertos"] },
-          { title: "UniFi U7 Pro WiFi 7", specs: ["Estándares: WiFi 7 (802.11be)", "Bandas: Tri-banda 2.4/5/6 GHz", "Rendimiento: 11.5 Gbps agregado", "Clientes: +300 concurrentes", "Cobertura: 6,000 sq ft", "Características: Band steering, Portal de invitados, VLAN por SSID, Optimización AI"] }
-        ]
-      },
-      {
-        title: "Seguridad y Monitoreo",
-        cards: [
-          { title: "SentinelOne Singularity Platform", specs: ["Protección: XDR potenciado por IA", "Detección: Identificación de amenazas en < 1ms", "Respuesta: Remediación automatizada", "Cobertura: Windows, macOS, Linux, Cloud", "Características: Behavioral AI, EDR + EPP, Storyline, Rollback con 1-click"] },
-          { title: "Sistemas de Cámaras UniFi Protect AI", specs: ["Cámaras AI: G5 Pro con Detección Inteligente", "Resolución: 4K (3840 x 2160) @ 30fps", "Detección: Personas, Vehículos, Matrículas, Paquetes", "Almacenamiento: NVR local + respaldo en la nube", "Retención: 30-90 días de grabación continua", "Características: Zonas de movimiento inteligentes, Máscaras de privacidad, Notificaciones de eventos"] }
-        ]
-      }
-    ],
+    // Specifications (from content/service-specifications)
+    specsTitle: serviceSpecificationsContent.es.title,
+    specsSubtitle: serviceSpecificationsContent.es.subtitle,
+    specsSections: serviceSpecificationsContent.es.sections.map((section) => ({
+      title: section.title,
+      cards: section.cards.map((card) => ({
+        title: card.title,
+        specs: card.specs.map((spec) => `${spec.label}: ${spec.value}`)
+      }))
+    })),
 
     // Method
     methodTitle: "El Método Estela",
@@ -662,10 +648,21 @@ const content = {
     workHero: "Nuestro trabajo habla por nosotros. Aunque a veces también hablamos nosotros.",
     projects: [
       {
+        client: "Estela (interno)",
+        title: "Infraestructura Privada de IA e Ingeniería Asistida por IA",
+        year: "2025-2026",
+        category: "Ingeniería de IA",
+        duration: "En curso",
+        challenge: "Recomendar infraestructura privada de IA es fácil. Operar el propio negocio sobre ella es la verdadera prueba. Necesitábamos modelos locales para el trabajo de ingeniería y un lugar donde prototipar pipelines de clientes sin enviar los datos de nadie a un tercero.",
+        solution: "Construimos un servidor GPU propio—hardware NVIDIA, virtualización Proxmox—que corre modelos locales para ingeniería asistida por IA y prototipado de pipelines. Este sitio web se construyó de la misma manera. Somos nuestro propio primer cliente.",
+        technologies: ["Servidor GPU NVIDIA", "Virtualización Proxmox", "Modelos Autoalojados", "Desarrollo Asistido por IA"],
+        results: ["Los datos de clientes nunca salen de hardware que controlamos.", "Cada pipeline se prototipa en nuestros propios equipos antes de llegar a los de un cliente.", "Ingeniería asistida por IA como práctica diaria, no como diapositiva.", "Este sitio: diseñado, escrito y publicado con asistencia de IA."]
+      },
+      {
         client: "Teatro Solís",
         title: "Sistema de Control A/V del Teatro",
         year: "2023",
-        category: "Infraestructura",
+        category: "Integración de Sistemas",
         duration: "3 meses",
         challenge: "Los controles del teatro no podían manejar los sistemas nuevos de iluminación y sonido.",
         solution: "Se implementaron controles de iluminación por red con un equipo touch y remote control.",
@@ -676,7 +673,7 @@ const content = {
         client: "U Films",
         title: "Construcción de Infraestructura de Post-Producción",
         year: "2023-2024",
-        category: "Infraestructura",
+        category: "Infraestructura Segura",
         duration: "12 meses (en curso)",
         challenge: "Dejar operativo la productora con las restricciones de red en el edificio existente —limitaciones de firewall para cumplir con los requerimientos de seguridad de clientes externos.",
         solution: "Implementamos una solución VPN precisa y se negociaron accesos particulares paralelos.",
@@ -687,9 +684,9 @@ const content = {
         client: "Diagnóstico",
         title: "Seguridad e Integración de Datos de Laboratorio",
         year: "2021-2024",
-        category: "Infraestructura y Cumplimiento",
+        category: "Datos y Cumplimiento",
         duration: "3 años (en curso)",
-        challenge: "Requerimientos del laboratorio para manejo de datos, integración de sistemas, respaldos y cumplimiento con ISO 9001.",
+        challenge: "Un laboratorio médico donde los datos de pacientes deben moverse entre sistemas, mantenerse respaldados e inmutables, y superar auditorías ISO 9001.",
         solution: "Implementamos políticas de integración en el NAS con el AD, sistemas de respaldo automatizados, inmutables, y diseño de redundancia de red por etapas.",
         technologies: ["Synology NAS", "Marco ISO 9001", "Respaldo Automatizado", "Políticas de Integración"],
         results: ["Cumplimiento ISO 9001.", "Reducción del tiempo de inactividad del sistema interno a personas externas al laboratorio.", "Mayor agilidad en tiempos de entrega de resultados"]
@@ -698,7 +695,7 @@ const content = {
 
     // Company - Partners
     partnersHero: "Probados en producción. Certificados después.",
-    partners: ["Lenovo (Business Partner desde 2015)", "UniFi (Enterprise Installer desde 2018)", "Synology (Gold Partner desde 2016)", "Acronis (Cloud Partner desde 2017)", "SentinelOne (Partner desde 2022)"],
+    partners: ["Anthropic (En producción, a diario)", "OpenAI (En producción)", "OpenRouter (Ruteo de modelos en producción)", "NVIDIA (Cómputo GPU, en sitio)", "Lenovo (Business Partner desde 2015)", "UniFi (Enterprise Installer desde 2018)", "Synology (Gold Partner desde 2016)", "Acronis (Cloud Partner desde 2017)", "SentinelOne (Partner desde 2022)"],
     partnersPhilosophy: {
       title: "Cómo Elegimos Socios",
       items: [
@@ -733,8 +730,8 @@ const content = {
     velocityTitle: "Soluciones para problemas que aún no existen",
     velocitySubtitle: "Anticipamos lo imprevisto —que, una vez previsto, deja de serlo. Diseñamos sistemas que perduran. Implementamos cambios que transforman. Mantenemos la calma cuando el servidor no la mantiene.",
     velocityFeatures: [
-      { title: "Redes y Servidores", description: "Virtualización VMware y Proxmox, redes UniFi, almacenamiento Synology, LANs de 10Gb, energía redundante." },
-      { title: "Protección Completa", description: "SentinelOne XDR, cámaras UniFi Protect, almacenamiento duplicado en infraestructura Synology: redundancia y recuperación." },
+      { title: "Infraestructura Privada de IA", description: "Cómputo GPU NVIDIA, modelos autoalojados, virtualización VMware y Proxmox, nube híbrida donde los números lo justifican." },
+      { title: "Protección de Datos", description: "Datos cifrados, respaldos inmutables, control de acceso: datos protegidos para entrenamiento e inferencia." },
       { title: "Desarrollo Personalizado", description: "Aplicaciones Next.js, automatización de procesos, integración de IA. Soluciones modernas que transforman la forma de trabajar." }
     ],
     principlesHomeTitle: "Tenemos principios —y los aplicamos",
@@ -764,7 +761,8 @@ const content = {
     footerAddress: "21 de Setiembre, 3015. 802 | Montevideo, Punta del Este, Uruguay",
     footerPhone: "+598 27113184",
     navServices: "Servicios",
-    navInfra: "Infraestructura",
+    navAI: "Ingeniería de IA",
+    navInfra: "Infraestructura Privada de IA",
     navSecurity: "Seguridad",
     navDev: "Desarrollo",
     navConsulting: "Consultoría",
@@ -797,10 +795,11 @@ export function MachineView() {
         {/* Navigation */}
         <nav className="my-4">
           <p>{t.navServices}:</p>
-          <p className="ml-2"><Link href="/services/infrastructure">[{t.navInfra}]</Link>(/services/infrastructure)</p>
-          <p className="ml-2"><Link href="/services/security">[{t.navSecurity}]</Link>(/services/security)</p>
+          <p className="ml-2"><Link href="/services/ai">[{t.navAI}]</Link>(/services/ai)</p>
           <p className="ml-2"><Link href="/services/development">[{t.navDev}]</Link>(/services/development)</p>
+          <p className="ml-2"><Link href="/services/infrastructure">[{t.navInfra}]</Link>(/services/infrastructure)</p>
           <p className="ml-2"><Link href="/services/consulting">[{t.navConsulting}]</Link>(/services/consulting)</p>
+          <p className="ml-2"><Link href="/services/security">[{t.navSecurity}]</Link>(/services/security)</p>
           <p className="ml-2"><Link href="/services/specifications">[{t.navSpecs}]</Link>(/services/specifications)</p>
 
           <p className="mt-2">{t.navMethod}:</p>
@@ -874,6 +873,30 @@ export function MachineView() {
         {/* Services */}
         <h2>## {t.sectionServices}</h2>
 
+        <h3>### {t.sectionAI}</h3>
+        <p><strong>{t.aiTitle}</strong></p>
+        <p className="machine-muted">{t.aiSubtitle}</p>
+
+        <h4>#### {t.aiPipelinesTitle}</h4>
+        <p>{t.aiPipelinesDesc}</p>
+
+        <h4>#### {t.aiAgentsTitle}</h4>
+        <p>{t.aiAgentsDesc}</p>
+
+        <h4>#### {t.aiAssistedTitle}</h4>
+        <p>{t.aiAssistedDesc}</p>
+
+        <h4>#### {t.aiModelsTitle}</h4>
+        <p>{t.aiModelsDesc}</p>
+
+        <h3>### {t.sectionDev}</h3>
+        <p><strong>{t.devTitle}</strong></p>
+        <p className="machine-muted">{t.devSubtitle}</p>
+        <h4>#### {t.devSectionTitle}</h4>
+        <p>{t.devSectionDesc}</p>
+        <h4>#### {t.devAiTitle}</h4>
+        <p>{t.devAiDesc}</p>
+
         <h3>### {t.sectionInfra}</h3>
         <p><strong>{t.infraTitle}</strong></p>
         <p>{t.infraSubtitle}</p>
@@ -893,11 +916,15 @@ export function MachineView() {
           {t.postFeatures.map((f, i) => <li key={i}>- {f}</li>)}
         </ul>
 
-        <h4>#### {t.secCamTitle}</h4>
-        <p>{t.secCamDesc}</p>
-
-        <h4>#### {t.wifiTitle}</h4>
-        <p>{t.wifiDesc}</p>
+        <h3>### {t.sectionConsulting}</h3>
+        <p><strong>{t.consultingTitle}</strong></p>
+        <p className="machine-muted">{t.consultingSubtitle}</p>
+        <h4>#### {t.consultingSectionTitle}</h4>
+        <p>{t.consultingPara1}</p>
+        <p>{t.consultingPara2}</p>
+        <ul>
+          {t.consultingAdvantages.map((a, i) => <li key={i}>- {a}</li>)}
+        </ul>
 
         <h3>### {t.sectionSecurity}</h3>
         <p><strong>{t.securityTitle}</strong></p>
@@ -928,22 +955,6 @@ export function MachineView() {
 
         <h4>#### {t.synologyTitle}</h4>
         <p>{t.synologyDesc}</p>
-
-        <h3>### {t.sectionDev}</h3>
-        <p><strong>{t.devTitle}</strong></p>
-        <p className="machine-muted">{t.devSubtitle}</p>
-        <h4>#### {t.devSectionTitle}</h4>
-        <p>{t.devSectionDesc}</p>
-
-        <h3>### {t.sectionConsulting}</h3>
-        <p><strong>{t.consultingTitle}</strong></p>
-        <p className="machine-muted">{t.consultingSubtitle}</p>
-        <h4>#### {t.consultingSectionTitle}</h4>
-        <p>{t.consultingPara1}</p>
-        <p>{t.consultingPara2}</p>
-        <ul>
-          {t.consultingAdvantages.map((a, i) => <li key={i}>- {a}</li>)}
-        </ul>
 
         {/* Technical Specifications */}
         <h3>### {t.specsTitle}</h3>

@@ -6,19 +6,29 @@ import { useLanguage } from '@/components/language-provider';
 
 export const developmentContent = {
   en: {
-    title: "Development & Artificial Intelligence",
-    subtitle: "AI that works after the demo ends.",
-    sectionTitle: "AI-Assisted Engineering",
-    sectionDesc: "We build AI-powered pipelines that cut processing times, automate repetitive workflows, and integrate intelligence into existing systems. Document processing, automated QA, data routing, content generation\u2009—\u2009we design the pipeline, the AI does the heavy lifting, and a human signs off. Claude Code, React, Postgres. Not vibe coding. Engineering.",
-    cta: "Development with accountability",
+    title: "Development",
+    subtitle: "Development with accountability.",
+    sectionTitle: "Custom Software",
+    sectionDesc: "We build the software your business needs and the shelf doesn't carry. Web applications, internal tools, integrations, APIs — scoped, built, and maintained by the same small team. React, Postgres, TypeScript. The people who design it are the people who answer for it.",
+    aiTitle: "Built with AI. Signed by Humans.",
+    aiDesc: "AI assistance is how we build, not what we sell. Claude Code drafts, we review, and a human signs off on every line that ships. Not vibe coding. Engineering.",
+    aiLinkPre: "If what you need is an AI system as the deliverable — pipelines, agents, automation — that's our ",
+    aiLinkText: "AI Engineering",
+    aiLinkPost: " practice.",
+    cta: "Code that solves problems, not creates them.",
     contact: "CONTACT"
   },
   es: {
-    title: "Desarrollo e Inteligencia Artificial",
-    subtitle: "IA que funciona cuando se apaga el proyector.",
-    sectionTitle: "Ingeniería Asistida por IA",
-    sectionDesc: "Construimos pipelines con IA que recortan tiempos de procesamiento, automatizan flujos repetitivos e integran inteligencia en sistemas existentes. Procesamiento de documentos, QA automatizado, enrutamiento de datos, generación de contenido\u2009—\u2009diseñamos el pipeline, la IA hace el trabajo pesado, y un humano firma. Claude Code, React, Postgres. No es vibe coding. Es ingeniería.",
-    cta: "Desarrollo con responsabilidad",
+    title: "Desarrollo",
+    subtitle: "Desarrollo con responsabilidad.",
+    sectionTitle: "Software a Medida",
+    sectionDesc: "Construimos el software que su empresa necesita y que no se consigue en estantería. Aplicaciones web, herramientas internas, integraciones, APIs — relevado, construido y mantenido por el mismo equipo reducido. React, Postgres, TypeScript. Quienes lo diseñan son quienes responden por él.",
+    aiTitle: "Construido con IA. Firmado por Humanos.",
+    aiDesc: "La asistencia de IA es cómo construimos, no lo que vendemos. Claude Code redacta, nosotros revisamos, y un humano firma cada línea que sale a producción. No es vibe coding. Es ingeniería.",
+    aiLinkPre: "Si lo que necesita es un sistema de IA como entregable — pipelines, agentes, automatización — esa es nuestra práctica de ",
+    aiLinkText: "Ingeniería de IA",
+    aiLinkPost: ".",
+    cta: "Código que resuelve problemas, no que los crea.",
     contact: "CONTACTO"
   }
 };
@@ -70,6 +80,29 @@ export default function DevelopmentPage() {
                     <div className="relative overflow-hidden border border-[var(--stroke-secondary-p3)] col-span-12 min-[800px]:col-start-[7] min-[1000px]:col-start-[8] min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg bg-gradient-to-b from-muted/50 to-muted p-3">
                       <div className="w-full h-full flex items-center justify-center">
                         <DevelopmentAsciiArt isVisible={true} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* AI-Assisted Engineering Section */}
+                <div className="w-[100%] px-5 min-[600px]:px-10">
+                  <div className="m-auto max-w-[1200px] mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))]">
+                    <div className="max-w-[640px]">
+                      <h2 className="mb-6 min-[600px]:mb-4 text-balance m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
+                        {t.aiTitle}
+                      </h2>
+                      <div>
+                        <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
+                          {t.aiDesc}
+                        </p>
+                        <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
+                          {t.aiLinkPre}
+                          <a href="/services/ai" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] hover:text-[#08178c]">
+                            {t.aiLinkText}
+                          </a>
+                          {t.aiLinkPost}
+                        </p>
                       </div>
                     </div>
                   </div>

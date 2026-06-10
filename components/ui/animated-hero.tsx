@@ -26,14 +26,14 @@ function Hero() {
     en: {
       title: "The shortest path between\nthe problem and the solution",
       subtitle: "The Greeks invented logic, geometry, and a god for every need. We apply the first two to build solutions. From the third—the gods, not the needs—we kept only the marble, which requires no updates.",
-      subtitleMachine: "Infrastructure automation, security hardening, and development services. REST APIs, CI/CD pipelines, and infrastructure-as-code deployments.",
+      subtitleMachine: "AI engineering and development. Pipelines, agents, and the private infrastructure to run them — built by people who answer for the results.",
       contact: "Our Approach",
       contactMachine: "API Docs"
     },
     es: {
       title: "El camino más corto entre\nel problema y la solución",
       subtitle: "Los griegos inventaron la lógica, la geometría y un dios para cada necesidad. Nosotros aplicamos las dos primeras para construir soluciones. De la tercera categoría —los dioses, no las necesidades— conservamos solo el mármol, que no requiere actualizaciones.",
-      subtitleMachine: "Automatización de infraestructura, hardening de seguridad, y servicios de desarrollo. APIs REST, pipelines CI/CD, e infraestructura como código.",
+      subtitleMachine: "Ingeniería de IA y desarrollo. Pipelines, agentes y la infraestructura privada para ejecutarlos — construida por gente que responde por los resultados.",
       contact: "Cómo Trabajamos",
       contactMachine: "API Docs"
     }

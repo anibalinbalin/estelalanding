@@ -103,8 +103,8 @@ const content: Record<'en' | 'es', ContentLanguage> = {
       },
       {
         number: '4.4',
-        title: 'Vendor Relationships',
-        intro: 'We maintain direct relationships with Lenovo, UniFi, Synology, and SentinelOne. Your problems become our problems. No runaround.',
+        title: 'Direct Lines',
+        intro: 'From hardware manufacturers to model providers — when something breaks, we know who to call, and they answer. Your problems become our problems. No runaround.',
         description: [
           'The traditional vendor model creates a triangle of frustration: you call your IT company, they call the vendor, the vendor blames someone else. Hours pass. Days pass. Nothing gets resolved.'
         ],
@@ -119,7 +119,7 @@ const content: Record<'en' | 'es', ContentLanguage> = {
           ]
         },
         conclusion: [
-          "When a vendor-specific issue arises—be it with Synology, UniFi, or SentinelOne—our established partnerships mean we navigate their support channels with an insider's efficiency. We leverage direct contacts and deep product knowledge to accelerate resolution, often pre-testing critical updates in our environment to ensure stability for yours. Our aim is always to shield you from complexity and expedite solutions.",
+          "When a vendor-specific issue arises, our established relationships mean we navigate their support channels with an insider's efficiency. We leverage direct contacts and deep product knowledge to accelerate resolution, often pre-testing critical updates in our environment to ensure stability for yours. Our aim is always to shield you from complexity and expedite solutions.",
           'These relationships took years to build. They save you hours every time something goes wrong.'
         ]
       },
@@ -141,7 +141,7 @@ const content: Record<'en' | 'es', ContentLanguage> = {
           ]
         },
         conclusion: [
-          "We teach your team to handle routine tasks confidently. Change a user password. Add a network printer. Restore a deleted file. Review security logs. These aren't complex tasks—they're just unfamiliar ones.",
+          "We teach your team to handle routine tasks confidently. Reset access. Review an AI pipeline's output log. Restore a deleted file. Review security logs. These aren't complex tasks—they're just unfamiliar ones.",
           'Our philosophy is built on empowerment. We believe that the more capable your team becomes with everyday tasks, the more valuable and strategic our partnership evolves.',
           'True partnership means growing together.'
         ]

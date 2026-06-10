@@ -10,8 +10,8 @@ import "./globals.css";
 import "./fonts.css";
 
 export const metadata: Metadata = {
-  title: "Estela",
-  description: "Cuando la tecnología y el conocimiento convergen",
+  title: "Estela — AI Engineering",
+  description: "Cuando la inteligencia artificial y el conocimiento convergen. Ingeniería de IA, desarrollo e infraestructura privada.",
 };
 
 export default function RootLayout({

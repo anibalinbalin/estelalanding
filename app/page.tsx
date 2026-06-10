@@ -33,9 +33,9 @@ export default function Home() {
     <main>
       <HeroDemo />
       <TrustedBy />
+      <AIPrinciplesSection />
       <DeveloperVelocitySection />
       <EstelaPrinciples />
-      <AIPrinciplesSection />
       <EstelaSpeed />
       <CTASection />
       <UnicornOdysseus />

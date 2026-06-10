@@ -17,7 +17,7 @@ export function MethodPrinciples() {
       principles: [
         {
           number: '2.1',
-          title: 'Small Teams, Deep Impact',
+          title: 'Six',
           content: [
             'We&apos;re six. Not five—too few. Not seven—that already needs meetings about meetings. <a href="https://www.researchgate.net/publication/228838549_Empirical_Findings_on_Team_Size_and_Productivity_in_Software_Development" style="color: #ecbb5a">Research agrees</a>.'
           ]
@@ -31,21 +31,21 @@ export function MethodPrinciples() {
         },
         {
           number: '2.3',
-          title: 'Built to Last, Designed to Evolve',
+          title: 'No Patches',
           content: [
             'If it&apos;s temporary, it&apos;s not a solution. It&apos;s debt.'
           ]
         },
         {
           number: '2.4',
-          title: 'Radical Transparency',
+          title: 'No Lock-in',
           content: [
-            'Your infrastructure is yours. With or without us.'
+            'Your infrastructure is yours. Your data too. With or without us.'
           ]
         },
         {
           number: '2.5',
-          title: 'The Beauty of Simplicity',
+          title: 'Nothing Extra',
           content: [
             'Complexity is easy. Anyone can add. The hard part is knowing what to remove.'
           ]
@@ -85,7 +85,7 @@ export function MethodPrinciples() {
           number: '2.4',
           title: 'Sin dependencias',
           content: [
-            'Su infraestructura es suya. Con o sin nosotros.'
+            'Su infraestructura es suya. Sus datos también. Con o sin nosotros.'
           ]
         },
         {

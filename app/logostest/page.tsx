@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { notFound } from "next/navigation"
 
 const mainLogos = [
   { name: "Favico", path: "public/logos/favico.png" },
@@ -169,6 +170,10 @@ function LogoTuner({ logo }: { logo: { name: string; path: string } }) {
 }
 
 export default function LogosTestPage() {
+  if (process.env.NODE_ENV === "production") {
+    notFound()
+  }
+
   return (
     <div className="min-h-screen bg-black text-white p-8 font-mono">
       <h1 className="text-2xl mb-2">ASCII Logo Tuner</h1>

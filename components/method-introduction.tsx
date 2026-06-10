@@ -43,7 +43,7 @@ export function MethodIntroduction(): React.ReactElement {
         title: 'Our Translation Philosophy',
         intro: 'We practice translation at every level:',
         items: [
-          { title: 'Technical to Practical', description: 'We transform "10Gb fiber backbone with link aggregation" into "your files open in seconds, not minutes."' },
+          { title: 'Technical to Practical', description: 'We transform "10Gb fiber backbone with link aggregation" into "your files open in seconds, not minutes." We turn "a fine-tuned model behind a private endpoint" into "your contracts review themselves — you sign."' },
           { title: 'Complex to Simple', description: 'We convert intricate network diagrams into clear benefits: "work from anywhere, securely."' },
           { title: 'Problem to Solution', description: 'We translate "our system keeps crashing" into "here\'s how we ensure that never happens again."' },
           { title: 'Present to Future', description: 'We interpret current limitations as tomorrow\'s capabilities, building systems that grow with you.' }
@@ -64,7 +64,7 @@ export function MethodIntroduction(): React.ReactElement {
         title: 'What this means for the client',
         paragraphs: [
           "We don't sell technology. Technology is the means, not the product. The product is your problem disappearing.",
-          "We don't install servers. We create infrastructure that accelerates your work —and that you can happily ignore because it works."
+          "We don't install servers or sell models. We create systems that accelerate your work —and that you can happily ignore because they work."
         ]
       },
       journeyAhead: {
@@ -104,7 +104,7 @@ export function MethodIntroduction(): React.ReactElement {
         title: 'Lo que esto significa para el cliente',
         paragraphs: [
           "No vendemos tecnología. La tecnología es el medio, no el producto. El producto es que su problema desaparezca.",
-          "No instalamos servidores. Creamos infraestructura que acelera su trabajo —y que usted puede ignorar tranquilamente porque funciona."
+          "No instalamos servidores ni vendemos modelos. Creamos sistemas que aceleran su trabajo —y que usted puede ignorar tranquilamente porque funcionan."
         ]
       },
       journeyAhead: {

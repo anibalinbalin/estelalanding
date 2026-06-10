@@ -43,18 +43,19 @@ export const Footer = () => {
         email: "hola@este.la"
       },
       partners: {
-        title: "Partners:",
-        companies: ["Lenovo", "UniFi", "Synology", "SentinelOne", "Wasabi"]
+        title: "We build on:",
+        companies: ["Anthropic", "OpenAI", "OpenRouter", "NVIDIA", "Lenovo", "Synology"]
       },
       copyright: `© ${new Date().getFullYear()} Estela.`,
       sections: {
         services: {
           title: "Services",
           items: [
-            { title: "Infrastructure", href: "/services/infrastructure" },
-            { title: "Security", href: "/services/security" },
+            { title: "AI Engineering", href: "/services/ai" },
             { title: "Development", href: "/services/development" },
+            { title: "Private AI Infrastructure", href: "/services/infrastructure" },
             { title: "Consulting", href: "/services/consulting" },
+            { title: "Security", href: "/services/security" },
             { title: "Specifications", href: "/services/specifications" }
           ]
         },
@@ -95,18 +96,19 @@ export const Footer = () => {
         email: "hola@este.la"
       },
       partners: {
-        title: "Socios:",
-        companies: ["Lenovo", "UniFi", "Synology", "SentinelOne", "Wasabi"]
+        title: "Construimos sobre:",
+        companies: ["Anthropic", "OpenAI", "OpenRouter", "NVIDIA", "Lenovo", "Synology"]
       },
       copyright: `© ${new Date().getFullYear()} Estela.`,
       sections: {
         services: {
           title: "Servicios",
           items: [
-            { title: "Infraestructura", href: "/services/infrastructure" },
-            { title: "Seguridad", href: "/services/security" },
+            { title: "Ingeniería de IA", href: "/services/ai" },
             { title: "Desarrollo", href: "/services/development" },
+            { title: "Infraestructura Privada de IA", href: "/services/infrastructure" },
             { title: "Consultoría", href: "/services/consulting" },
+            { title: "Seguridad", href: "/services/security" },
             { title: "Especificaciones", href: "/services/specifications" }
           ]
         },

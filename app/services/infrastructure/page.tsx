@@ -8,67 +8,42 @@ import { useLanguage } from '@/components/language-provider';
 export const infrastructureContent = {
   en: {
     // Hero
-    title: "Infrastructure & Networks",
-    subtitle1: "The foundation of everything digital.",
-    subtitle2: "End-to-end network solutions with proactive monitoring and support.",
+    title: "Private AI Infrastructure",
+    subtitle1: "AI runs on hardware. Ours.",
+    subtitle2: "Self-hosted models, GPU compute, and hybrid architectures for companies whose data can't leave the building.",
 
-    // Section 1: Virtual Machines
-    vmTitle: "On-demand virtual machines",
-    vmDesc: "Elastic compute capacity that can be provisioned against a fluid resource pool, with support for the tools developers already use.",
-    vmFeat1: "VMware vSphere environments",
-    vmFeat2: "Bare metal server deployment",
-    vmFeat3: "Hybrid cloud architectures",
+    // Section 1: GPU Compute & Model Hosting
+    vmTitle: "GPU compute and private model hosting",
+    vmDesc: "Your models, served from machines with a physical address. VMware vSphere or Proxmox underneath, NVIDIA GPUs doing the thinking, hybrid cloud only where the math favors it.",
+    vmFeat1: "NVIDIA GPU compute for inference and fine-tuning",
+    vmFeat2: "VMware vSphere and Proxmox virtualization",
+    vmFeat3: "Bare metal for latency-critical workloads",
     vmFeat4: "Load balancing and redundancy",
     vmFeat5: "Performance monitoring",
-    vmNas: "nas-primary",
-    vmServer: "server",
+    vmNas: "gpu-node",
+    vmServer: "inference",
     vmOnline: "ONLINE",
 
-    // Section 2: Network Architecture
-    netTitle: "Enterprise Network Architecture",
-    netDesc: "UniFi deployment and management, VLAN segmentation and security, Guest networks with captive portals, Multi-site VPN connections, Bandwidth optimization",
+    // Section 2: Storage for Datasets & Weights
+    netTitle: "Storage for datasets and model weights",
+    netDesc: "Datasets are heavy. Model weights are heavier. Fast storage that scales on demand, snapshots in seconds, and restores that actually restore.",
     netFeat1: "Scale up volume size on demand",
     netFeat2: "Instantaneous snapshots",
-    netFeat3: "Support mixed workloads",
+    netFeat3: "Mixed workloads: datasets, weights, checkpoints",
     netMenu1: "Activate monitoring",
     netMenu2: "Export configuration",
     netMenu3: "Create backup plan",
     netMenu4: "View system health",
 
-    // Section 3: Post-Production
-    postTitle: "High-Performance Post-Production Systems",
-    postDesc: "Estela specializes in high-caliber infrastructure for post-production. We architect custom workstations and cohesive systems that master high-resolution media, accelerate complex renders, and streamline collaborative workflows, ensuring your technology is an accelerator, not an impediment, to your creative output.",
-    postFeat1: "Custom-Built High-Performance Workstations",
-    postFeat2: "Blazing-Fast, Scalable Storage Solutions",
-    postFeat3: "Optimized High-Bandwidth Networking",
-    postFeat4: "Workflow Integration & Peripheral Support",
-    postArray: "STORAGE ARRAY",
-    postHa: "high-availability",
-
-    // Section 4: Security
-    secTitle: "Advanced Security & Surveillance Solutions",
-    secDesc: "Enterprise-grade PTZ camera systems with AI-powered analytics. Comprehensive security coverage with 360° pan/tilt/zoom capabilities, 4K Ultra HD resolution, and intelligent detection for proactive monitoring and incident response.",
-    secFeat1: "360° Pan/Tilt/Zoom with 30x optical zoom",
-    secFeat2: "4K Ultra HD video resolution",
-    secFeat3: "AI-powered person and vehicle detection",
-    secFeat4: "Night vision with advanced IR illumination",
-    secFeat5: "Remote monitoring and control via UniFi Protect",
-    secCam1: "cam-entrance",
-    secCam2: "cam-parking",
-    secRecording: "RECORDING",
-    secMotion: "Motion",
-
-    // Section 5: WiFi
-    wifiTitle: "Enterprise Wireless Networks",
-    wifiDesc: "Next-generation WiFi 7 infrastructure delivering blazing-fast speeds and ultra-low latency. Enterprise-grade access points with seamless roaming, advanced security, and centralized cloud management for complete wireless coverage.",
-    wifiFeat1: "WiFi 7 (802.11be) with 6GHz support",
-    wifiFeat2: "Tri-band operation up to 9.3 Gbps",
-    wifiFeat3: "Seamless roaming between access points",
-    wifiFeat4: "WPA3 Enterprise with RADIUS authentication",
-    wifiFeat5: "Centralized management via UniFi Network",
-    wifiAp1: "ap-floor-2",
-    wifiAp2: "ap-lobby",
-    wifiClients: "clients",
+    // Section 3: Data Sovereignty
+    postTitle: "For data that can't leave the building",
+    postDesc: "Some data has no business on someone else's cloud. We design private and hybrid architectures where your models, your weights, and your data stay under your roof — with the bandwidth to keep them fast.",
+    postFeat1: "High-bandwidth interconnect for AI workloads",
+    postFeat2: "On-premise and hybrid deployments",
+    postFeat3: "Multi-site VPN to your infrastructure",
+    postFeat4: "Redundancy and monitoring, included not optional",
+    postArray: "DATA LOCATION",
+    postHa: "your building",
 
     // CTA
     cta: "When it works well, nobody asks how.",
@@ -76,73 +51,46 @@ export const infrastructureContent = {
 
     // Alt texts
     altServer: "2/3 view of the Estela server sled",
-    altRack: "2/3 view of the Estela network switch",
-    altPtz: "UniFi PTZ camera with 360 degree rotation capabilities",
-    altU7: "UniFi U7 Pro WiFi 7 access point"
+    altRack: "2/3 view of the Estela compute rack"
   },
   es: {
     // Hero
-    title: "Infra",
-    subtitle1: "La base de todo lo digital.",
-    subtitle2: "Todo lo que sostiene tu operación digital: redes, servidores, monitoreo activo.",
+    title: "Infraestructura privada de IA",
+    subtitle1: "La IA corre sobre hardware. El nuestro.",
+    subtitle2: "Modelos autoalojados, cómputo GPU y arquitecturas híbridas para empresas cuyos datos no pueden salir del edificio.",
 
-    // Section 1: Virtual Machines
-    vmTitle: "Virtual Machines",
-    vmDesc: "VMs en VMware o Proxmox. Cloud u on-premise.",
-    vmFeat1: "VMware vSphere - Proxmox",
-    vmFeat2: "Servers en baremetal",
-    vmFeat3: "Setups en cloud y on premise",
-    vmFeat4: "Load Balancing",
+    // Section 1: GPU Compute & Model Hosting
+    vmTitle: "Cómputo GPU y hosting privado de modelos",
+    vmDesc: "Sus modelos, servidos desde máquinas con dirección física. VMware vSphere o Proxmox por debajo, GPUs NVIDIA haciendo el trabajo, nube híbrida solo donde los números lo justifican.",
+    vmFeat1: "Cómputo GPU NVIDIA para inferencia y fine-tuning",
+    vmFeat2: "Virtualización con VMware vSphere y Proxmox",
+    vmFeat3: "Bare metal para cargas sensibles a la latencia",
+    vmFeat4: "Load balancing y redundancia",
     vmFeat5: "Monitoreo de performance",
-    vmNas: "nas-primario",
-    vmServer: "servidor",
+    vmNas: "nodo-gpu",
+    vmServer: "inferencia",
     vmOnline: "EN LÍNEA",
 
-    // Section 2: Network Architecture
-    netTitle: "Arquitectura de red empresarial",
-    netDesc: "Unifi networks.",
-    netFeat1: "Escala de infraestructura bajo demanda",
-    netFeat2: "Performance optimizations",
-    netFeat3: "Escalabilidad tanto por lan como wifi",
+    // Section 2: Storage for Datasets & Weights
+    netTitle: "Storage para datasets y pesos de modelos",
+    netDesc: "Los datasets pesan. Los pesos de los modelos, más. Storage rápido que escala bajo demanda, snapshots en segundos y restauraciones que efectivamente restauran.",
+    netFeat1: "Volúmenes que escalan bajo demanda",
+    netFeat2: "Snapshots instantáneos",
+    netFeat3: "Cargas mixtas: datasets, pesos, checkpoints",
     netMenu1: "Activar monitoreo",
     netMenu2: "Exportar configuración",
     netMenu3: "Crear plan de respaldo",
     netMenu4: "Ver estado del sistema",
 
-    // Section 3: Post-Production
-    postTitle: "Sistemas de Post-Producción",
-    postDesc: "Workstations para edición, render y audio. Storage para edición directa al mismo.",
-    postFeat1: "High Performance workstations a medida",
-    postFeat2: "Storage escalable",
-    postFeat3: "High Performance LANS de 10gb",
-    postFeat4: "Integración de pipelines",
-    postArray: "MATRIZ DE ALMACENAMIENTO",
-    postHa: "alta disponibilidad",
-
-    // Section 4: Security
-    secTitle: "Seguridad y vigilancia",
-    secDesc: "Cámaras PTZ UniFi, 4K, detección por IA, visión nocturna. Administrable vía Unifi Protect.",
-    secFeat1: "PTZ de 360° con zoom óptico de 30x",
-    secFeat2: "Resolución de video 4K Ultra HD",
-    secFeat3: "Detección de personas y autos por IA",
-    secFeat4: "Visión nocturna con iluminación IR",
-    secFeat5: "Monitoreo y control remoto a través de UniFi Protect",
-    secCam1: "cam-entrada",
-    secCam2: "cam-estacionamiento",
-    secRecording: "GRABANDO",
-    secMotion: "Mov.",
-
-    // Section 5: WiFi
-    wifiTitle: "Redes wifi empresariales",
-    wifiDesc: "WiFi 7, roaming 802.11r, WPA3 Enterprise, Administrable via UniFi Network.",
-    wifiFeat1: "WiFi 7 (802.11be) con soporte para 6GHz",
-    wifiFeat2: "Operación tri-banda de hasta 9.3 Gbps",
-    wifiFeat3: "Mesh entre puntos de acceso",
-    wifiFeat4: "Autenticación WPA3 Enterprise con RADIUS",
-    wifiFeat5: "Gestión centralizada a través de UniFi Network",
-    wifiAp1: "ap-piso-2",
-    wifiAp2: "ap-lobby",
-    wifiClients: "clientes",
+    // Section 3: Data Sovereignty
+    postTitle: "Para datos que no pueden salir del edificio",
+    postDesc: "Hay datos que no tienen nada que hacer en la nube de otro. Diseñamos arquitecturas privadas e híbridas donde sus modelos, sus pesos y sus datos quedan bajo su techo — con el ancho de banda para que sigan siendo rápidos.",
+    postFeat1: "Interconexión de alto ancho de banda para cargas de IA",
+    postFeat2: "Despliegues on-premise e híbridos",
+    postFeat3: "VPN multi-sitio hacia su infraestructura",
+    postFeat4: "Redundancia y monitoreo, incluidos, no opcionales",
+    postArray: "UBICACIÓN DE DATOS",
+    postHa: "su edificio",
 
     // CTA
     cta: "Cuando funciona bien, nadie pregunta cómo.",
@@ -150,9 +98,7 @@ export const infrastructureContent = {
 
     // Alt texts
     altServer: "Vista 2/3 del servidor sled de Estela",
-    altRack: "Vista 2/3 del switch de red Estela",
-    altPtz: "Cámara PTZ UniFi con capacidades de rotación de 360 grados",
-    altU7: "Access point UniFi U7 Pro WiFi 7"
+    altRack: "Vista 2/3 del rack de cómputo de Estela"
   }
 };
 
@@ -257,14 +203,14 @@ const InfrastructurePage = () => {
                                             <div className={`col-span-12 z-10 rounded-[var(--border-radius)] border font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider shadow-[var(--elevation-2)] ${currentTheme === 'light' ? 'bg-[#ffffff] border-[#e4e5e4]' : 'bg-[#060f11] border-[#1c2225]'}`}>
                                                 <div className={`grid grid-cols-[repeat(12,minmax(0,1fr))] text-[var(--content-accent-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[900px]:font-normal leading-4 min-[900px]:leading-[1.125rem] text-[.75rem] min-[900px]:text-[.875rem] tracking-wider min-[900px]:tracking-wider ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>
                                                     <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>{t.vmNas}</div>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}><span className="text-[#f5b944]">12TB</span> / <span className="text-[#f5b944]">RAID-6</span></div>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>Synology-RS</div>
+                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}><span className="text-[#f5b944]">48GB</span> / <span className="text-[#f5b944]">VRAM</span></div>
+                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>NVIDIA</div>
                                                     <div className="px-3 py-3 flex flex-col sm:flex-row col-span-3 gap-1 sm:gap-2 text-[#f5b944]"><span className="px-[3px] items-center inline-flex h-4 whitespace-nowrap rounded-[var(--border-radius-sm)] uppercase font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] text-[#f5b943] bg-[#574829]"><span>{t.vmOnline}</span></span> <span>90d 2h</span></div>
                                                 </div>
                                                 <div className={`grid grid-cols-[repeat(12,minmax(0,1fr))] text-[var(--content-accent-p3)] border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[900px]:font-normal leading-4 min-[900px]:leading-[1.125rem] text-[.75rem] min-[900px]:text-[.875rem] tracking-wider min-[900px]:tracking-wider ${currentTheme === 'light' ? 'border-[#e4e5e4] border-t-[#e4e5e4]' : 'border-[#1c2225] border-t-[#1c2225]'}`}>
                                                     <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>{t.vmServer}</div>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}><span className="text-[#f5b944]">24TB</span> / <span className="text-[#f5b944]">RAID-10</span></div>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>COLOSUS</div>
+                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}><span className="text-[#f5b944]">70B</span> / <span className="text-[#f5b944]">Q4</span></div>
+                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>vLLM</div>
                                                     <div className="px-3 py-3 flex flex-col sm:flex-row col-span-3 gap-1 sm:gap-2 text-[#f5b944]"><span className="px-[3px] items-center inline-flex h-4 whitespace-nowrap rounded-[var(--border-radius-sm)] uppercase font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] text-[#f5b943] bg-[#574829]"><span>{t.vmOnline}</span></span> <span>6m 14d</span></div>
                                                 </div>
                                             </div>
@@ -360,128 +306,6 @@ const InfrastructurePage = () => {
                                                 <div className="flex flex-col">
                                                     <div className="font-[GT_America_Mono,monospace] font-normal leading-4 text-[.6875rem] tracking-wider uppercase [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] text-[#f5b944]">{t.postArray}</div>
                                                     <div className="font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[#f5b944]">{t.postHa}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="mb-16 sm:mb-0 min-[900px]:mt-[calc(10rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[900px]:mb-[calc(10rem_*_var(--tw-space-y-reverse))]">
-                                <div className="flex min-[900px]:grid min-[900px]:grid-cols-[repeat(12,minmax(0,1fr))] flex-col items-center">
-                                    <div className="relative z-10 col-span-5 block min-[900px]:ml-[-1.5rem]">
-                                        <div className="flex items-center">
-                                            <div className="bg-[var(--surface-default-p3)] p-3 hidden min-[900px]:block">
-                                                <div className={`rounded-[var(--border-radius)] p-1 text-[var(--content-accent-p3)] ${currentTheme === 'light' ? 'bg-[#e5e5e5] hover:bg-[#d5d5d5]' : 'bg-[var(--surface-accent-secondary-p3)] hover:bg-[var(--surface-accent-secondary-hover-p3)]'}`}><svg width="16" height="16" className="block align-middle text-[#f5b944]">
-                                                        <use href="/assets/sprite-Dt029LRi.svg#security-16"></use>
-                                                    </svg></div>
-                                            </div>
-                                            <h3 className="text-balance m-0 text-[var(--content-raise-p3)] text-lg min-[600px]:text-[1.5625rem] font-normal min-[600px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.625rem] min-[600px]:leading-8 tracking-wide min-[600px]:tracking-wide min-[900px]:ml-3">{t.secTitle}<svg width="12" height="12" className="inline-flex align-middle ml-2 transition-transform ease-[cubic-bezier(.4,0,.2,1)] duration-[.15s] text-[#f5b944]">
-                                                    <use href="/assets/sprite-Dt029LRi.svg#next-arrow-12"></use>
-                                                </svg></h3>
-                                        </div>
-                                        <div className="mt-3 min-[900px]:ml-[3.75rem]">
-                                            <div className="max-w-[36rem] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[600px]:font-normal leading-6 min-[600px]:leading-[1.625rem] text-base min-[600px]:text-lg tracking-wide min-[600px]:tracking-wide">{t.secDesc}</div>
-                                            <div className="mt-8">
-                                                <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
-                                                        <use href="/assets/sprite-Dt029LRi.svg#router-16"></use>
-                                                    </svg> {t.secFeat1}</div>
-                                                <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
-                                                        <use href="/assets/sprite-Dt029LRi.svg#terminal-16"></use>
-                                                    </svg> {t.secFeat2}</div>
-                                                <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
-                                                        <use href="/assets/sprite-Dt029LRi.svg#cpu-16"></use>
-                                                    </svg> {t.secFeat3}</div>
-                                                <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
-                                                        <use href="/assets/sprite-Dt029LRi.svg#firewall-16"></use>
-                                                    </svg> {t.secFeat4}</div>
-                                                <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
-                                                        <use href="/assets/sprite-Dt029LRi.svg#networking-16"></use>
-                                                    </svg> {t.secFeat5}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="mx-auto w-[100%] z-0 pb-8 col-start-[2] min-[900px]:col-start-[7] col-span-10 min-[900px]:col-span-6">
-                                        <div className="grid flex-col relative grid-cols-[repeat(12,minmax(0,1fr))] gap-4">
-                                            <div className="flex z-0 items-center col-span-12 bg-[var(--surface-default-p3)] relative pb-[calc(var(--tw-aspect-h)_/_var(--tw-aspect-w)_*_100%)] justify-center overflow-hidden rounded-[var(--border-radius-lg)] border border-[var(--border)] shadow-[var(--elevation-2)]">
-                                                <div className="flex items-center justify-center absolute h-[100%] w-[100%] top-0 right-0 bottom-0 left-0"><img src="/img/plus-bg.svg" className={`z-0 max-w-[100%] h-auto block align-middle absolute left-2 right-2 w-[calc(100%_-_1rem)] ${currentTheme === 'light' ? 'opacity-10 grayscale brightness-100' : 'opacity-20 brightness-150 contrast-50'}`} alt=""/>
-                                                    <div className="flex items-center justify-center relative w-[100%] h-[100%]"><img src="/img/unifi_ptz.png" width="1600" height="797" className="relative max-w-[100%] h-auto block align-middle w-[64%]" alt={t.altPtz}/><noscript>
-                                                            <div className="absolute inset-0 flex h-full w-full items-center justify-center"><img className="img-elevation-2 relative w-[64%] h-auto" src="/img/unifi_ptz.png" width="1600" height="797" alt={t.altPtz} /></div>
-                                                        </noscript></div>
-                                                </div>
-                                            </div>
-                                            <div className={`col-span-12 z-10 rounded-[var(--border-radius)] border font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider shadow-[var(--elevation-2)] ${currentTheme === 'light' ? 'bg-[#ffffff] border-[#e4e5e4]' : 'bg-[#060f11] border-[#1c2225]'}`}>
-                                                <div className={`grid grid-cols-[repeat(12,minmax(0,1fr))] text-[var(--content-accent-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[900px]:font-normal leading-4 min-[900px]:leading-[1.125rem] text-[.75rem] min-[900px]:text-[.875rem] tracking-wider min-[900px]:tracking-wider ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>{t.secCam1}</div>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}><span className="text-[#f5b944]">4K</span> / <span className="text-[#f5b944]">30FPS</span></div>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>G6-PTZ</div>
-                                                    <div className="px-3 py-3 flex flex-col sm:flex-row col-span-3 gap-1 sm:gap-2 text-[#f5b944]"><span className="px-[3px] items-center inline-flex h-4 whitespace-nowrap rounded-[var(--border-radius-sm)] uppercase font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] text-[#f5b943] bg-[#574829]"><span>{t.secRecording}</span></span> <span>24/7</span></div>
-                                                </div>
-                                                <div className={`grid grid-cols-[repeat(12,minmax(0,1fr))] text-[var(--content-accent-p3)] border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[900px]:font-normal leading-4 min-[900px]:leading-[1.125rem] text-[.75rem] min-[900px]:text-[.875rem] tracking-wider min-[900px]:tracking-wider ${currentTheme === 'light' ? 'border-[#e4e5e4] border-t-[#e4e5e4]' : 'border-[#1c2225] border-t-[#1c2225]'}`}>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>{t.secCam2}</div>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}><span className="text-[#f5b944]">4K</span> / <span className="text-[#f5b944]">30FPS</span></div>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>G6-PTZ</div>
-                                                    <div className="px-3 py-3 flex flex-col sm:flex-row col-span-3 gap-1 sm:gap-2 text-[#f5b944]"><span className="px-[3px] items-center inline-flex h-4 whitespace-nowrap rounded-[var(--border-radius-sm)] uppercase font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] text-[#f5b943] bg-[#574829]"><span>{t.secRecording}</span></span> <span>{t.secMotion}</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="mb-16 sm:mb-0 min-[900px]:mt-[calc(10rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[900px]:mb-[calc(10rem_*_var(--tw-space-y-reverse))]">
-                                <div className="flex min-[900px]:grid min-[900px]:grid-cols-[repeat(12,minmax(0,1fr))] flex-col items-center">
-                                    <div className="relative z-10 col-span-5 block min-[900px]:ml-[-1.5rem]">
-                                        <div className="flex items-center">
-                                            <div className="bg-[var(--surface-default-p3)] p-3 hidden min-[900px]:block">
-                                                <div className={`rounded-[var(--border-radius)] p-1 text-[var(--content-accent-p3)] ${currentTheme === 'light' ? 'bg-[#e5e5e5] hover:bg-[#d5d5d5]' : 'bg-[var(--surface-accent-secondary-p3)] hover:bg-[var(--surface-accent-secondary-hover-p3)]'}`}><svg width="24" height="24" className="block align-middle h-4 w-4 text-[#f5b944]">
-                                                        <use href="/assets/sprite-Dt029LRi.svg#progress-24"></use>
-                                                    </svg></div>
-                                            </div>
-                                            <h3 className="text-balance m-0 text-[var(--content-raise-p3)] text-lg min-[600px]:text-[1.5625rem] font-normal min-[600px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-[1.625rem] min-[600px]:leading-8 tracking-wide min-[600px]:tracking-wide min-[900px]:ml-3">{t.wifiTitle}<svg width="12" height="12" className="inline-flex align-middle ml-2 transition-transform ease-[cubic-bezier(.4,0,.2,1)] duration-[.15s] text-[#f5b944]">
-                                                    <use href="/assets/sprite-Dt029LRi.svg#next-arrow-12"></use>
-                                                </svg></h3>
-                                        </div>
-                                        <div className="mt-3 min-[900px]:ml-[3.75rem]">
-                                            <div className="max-w-[36rem] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[600px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[600px]:font-normal leading-6 min-[600px]:leading-[1.625rem] text-base min-[600px]:text-lg tracking-wide min-[600px]:tracking-wide">{t.wifiDesc}</div>
-                                            <div className="mt-8">
-                                                <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
-                                                        <use href="/assets/sprite-Dt029LRi.svg#router-16"></use>
-                                                    </svg> {t.wifiFeat1}</div>
-                                                <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
-                                                        <use href="/assets/sprite-Dt029LRi.svg#action-16"></use>
-                                                    </svg> {t.wifiFeat2}</div>
-                                                <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
-                                                        <use href="/assets/sprite-Dt029LRi.svg#gateway-16"></use>
-                                                    </svg> {t.wifiFeat3}</div>
-                                                <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
-                                                        <use href="/assets/sprite-Dt029LRi.svg#security-16"></use>
-                                                    </svg> {t.wifiFeat4}</div>
-                                                <div className="px-2.5 py-2 flex items-center gap-2 border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider text-[var(--content-secondary-p3)] border-[var(--border)]"><svg width="16" height="16" className="block align-middle text-[#f5b944]">
-                                                        <use href="/assets/sprite-Dt029LRi.svg#networking-16"></use>
-                                                    </svg> {t.wifiFeat5}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="mx-auto w-[100%] z-0 pb-8 col-start-[2] min-[900px]:col-start-[7] col-span-10 min-[900px]:col-span-6">
-                                        <div className="grid flex-col relative grid-cols-[repeat(12,minmax(0,1fr))] gap-4">
-                                            <div className="flex z-0 items-center col-span-12 bg-[var(--surface-default-p3)] relative pb-[calc(var(--tw-aspect-h)_/_var(--tw-aspect-w)_*_100%)] justify-center overflow-hidden rounded-[var(--border-radius-lg)] border border-[var(--border)] shadow-[var(--elevation-2)]">
-                                                <div className="flex items-center justify-center absolute h-[100%] w-[100%] top-0 right-0 bottom-0 left-0"><img src="/img/plus-bg.svg" className={`z-0 max-w-[100%] h-auto block align-middle absolute left-2 right-2 w-[calc(100%_-_1rem)] ${currentTheme === 'light' ? 'opacity-10 grayscale brightness-100' : 'opacity-20 brightness-150 contrast-50'}`} alt=""/>
-                                                    <div className="flex items-center justify-center relative w-[100%] h-[100%]"><img src="/img/u7pro.png" width="1600" height="797" className="relative max-w-[100%] h-auto block align-middle w-[64%]" alt={t.altU7}/><noscript>
-                                                            <div className="absolute inset-0 flex h-full w-full items-center justify-center"><img className="img-elevation-2 relative w-[64%] h-auto" src="/img/u7pro.png" width="1600" height="797" alt={t.altU7} /></div>
-                                                        </noscript></div>
-                                                </div>
-                                            </div>
-                                            <div className={`col-span-12 z-10 rounded-[var(--border-radius)] border font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal leading-[1.125rem] text-[.875rem] tracking-wider shadow-[var(--elevation-2)] ${currentTheme === 'light' ? 'bg-[#ffffff] border-[#e4e5e4]' : 'bg-[#060f11] border-[#1c2225]'}`}>
-                                                <div className={`grid grid-cols-[repeat(12,minmax(0,1fr))] text-[var(--content-accent-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[900px]:font-normal leading-4 min-[900px]:leading-[1.125rem] text-[.75rem] min-[900px]:text-[.875rem] tracking-wider min-[900px]:tracking-wider ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>{t.wifiAp1}</div>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}><span className="text-[#f5b944]">87</span> {t.wifiClients}</div>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>U7-Pro</div>
-                                                    <div className="px-3 py-3 flex flex-col sm:flex-row col-span-3 gap-1 sm:gap-2 text-[#f5b944]"><span className="px-[3px] items-center inline-flex h-4 whitespace-nowrap rounded-[var(--border-radius-sm)] uppercase font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] text-[#f5b943] bg-[#574829]"><span>{t.vmOnline}</span></span> <span>1.2Gbps</span></div>
-                                                </div>
-                                                <div className={`grid grid-cols-[repeat(12,minmax(0,1fr))] text-[var(--content-accent-p3)] border-t font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[900px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[900px]:font-normal leading-4 min-[900px]:leading-[1.125rem] text-[.75rem] min-[900px]:text-[.875rem] tracking-wider min-[900px]:tracking-wider ${currentTheme === 'light' ? 'border-[#e4e5e4] border-t-[#e4e5e4]' : 'border-[#1c2225] border-t-[#1c2225]'}`}>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>{t.wifiAp2}</div>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}><span className="text-[#f5b944]">134</span> {t.wifiClients}</div>
-                                                    <div className={`px-3 py-3 border-r col-span-3 text-[#f5b944] ${currentTheme === 'light' ? 'border-[#e4e5e4]' : 'border-[#1c2225]'}`}>U7-Pro</div>
-                                                    <div className="px-3 py-3 flex flex-col sm:flex-row col-span-3 gap-1 sm:gap-2 text-[#f5b944]"><span className="px-[3px] items-center inline-flex h-4 whitespace-nowrap rounded-[var(--border-radius-sm)] uppercase font-[GT_America_Mono,monospace] font-normal leading-4 text-[.75rem] tracking-wider [font-feature-settings:'ss02'_on,'ss03'_on,'ss09'_on,'ss06'_on,'ss07'_on,'ss08'_on,'calt'_off] text-[#f5b943] bg-[#574829]"><span>{t.vmOnline}</span></span> <span>2.4Gbps</span></div>
                                                 </div>
                                             </div>
                                         </div>

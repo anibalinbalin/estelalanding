@@ -1,23 +1,15 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef } from 'react'
+import { useAsciiTypewriter, useInViewVisible } from './ascii-shared'
 
 interface DevelopmentAsciiArtProps {
   isVisible?: boolean
   className?: string
 }
 
-const DevelopmentAsciiArt: React.FC<DevelopmentAsciiArtProps> = ({ 
-  isVisible = true,
-  className = ''
-}) => {
-  const canvasRef = useRef<HTMLDivElement>(null)
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isTyping, setIsTyping] = useState(true)
-  const intervalRef = useRef<NodeJS.Timeout | null>(null)
-
-  // Modified ASCII pattern - more tech/development oriented
-  const pattern = `▓▓▓▓▓▓▓▓▓▓▓▓======================================================––––––––––––––
+// Modified ASCII pattern - more tech/development oriented
+const PATTERN = `▓▓▓▓▓▓▓▓▓▓▓▓======================================================––––––––––––––
 ▓▓▓▓▓▓▓▓▓▓▓▓▓=====================================================––––––––––––––
 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓==================================================––––––––––––––––
 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓================================================–––––––––––––––––
@@ -58,69 +50,48 @@ const DevelopmentAsciiArt: React.FC<DevelopmentAsciiArtProps> = ({
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■........................................
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■........................................`
 
-  const speed = 45 // characters per second
+// Shared by the invisible sizer and the reveal layer so they align exactly.
+const textLayerStyle: React.CSSProperties = {
+  whiteSpace: 'pre',
+  letterSpacing: '-0.05em',
+  padding: '8px'
+}
 
-  useEffect(() => {
-    if (!isVisible || !isTyping) return
+const DevelopmentAsciiArt: React.FC<DevelopmentAsciiArtProps> = ({
+  isVisible = true,
+  className = ''
+}) => {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const inView = useInViewVisible(containerRef)
 
-    const typeCharacter = () => {
-      if (currentIndex >= pattern.length) {
-        setIsTyping(false)
-        return
-      }
+  // Latch so the reveal plays once when the art first enters the viewport
+  // and does not restart on every re-entry.
+  const startedRef = useRef(false)
+  if (inView) startedRef.current = true
 
-      setCurrentIndex(prev => prev + 1)
-    }
-
-    const delay = 1000 / speed
-    intervalRef.current = setInterval(typeCharacter, delay)
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current)
-      }
-    }
-  }, [isVisible, isTyping, currentIndex, pattern.length])
-
-  useEffect(() => {
-    if (!canvasRef.current || !isVisible) return
-
-    // Build display text with visible characters up to currentIndex
-    let displayText = ''
-    for (let i = 0; i < pattern.length; i++) {
-      if (i < currentIndex) {
-        displayText += pattern[i]
-      } else {
-        // Replace with space to maintain layout
-        displayText += pattern[i] === '\n' ? '\n' : ' '
-      }
-    }
-
-    // Add blinking cursor if still typing
-    if (isTyping && currentIndex < pattern.length) {
-      displayText = displayText.slice(0, currentIndex) + '█' + displayText.slice(currentIndex + 1)
-    }
-
-    canvasRef.current.textContent = displayText
-  }, [currentIndex, isTyping, pattern, isVisible])
-
-  // Reset animation when component becomes visible
-  useEffect(() => {
-    if (isVisible) {
-      setCurrentIndex(0)
-      setIsTyping(true)
-    }
-  }, [isVisible])
+  // Shared typewriter (study Part 3): single rAF loop writing textContent
+  // through a ref — no per-character React re-renders, no O(n²) string
+  // churn. At 660 cps the reveal batches ~10 chars per frame and the
+  // ~3,300-char pattern completes in ~5s (was ~73s). Reduced motion
+  // renders the final frame immediately (handled inside the hook).
+  const { ref: revealRef } = useAsciiTypewriter<HTMLDivElement>(PATTERN, {
+    cps: 660,
+    cursor: '█',
+    enabled: isVisible && (inView || startedRef.current)
+  })
 
   if (!isVisible) return null
 
   return (
     <div
+      ref={containerRef}
+      aria-hidden="true"
       className={`w-full h-full ${className}`}
       style={{
         backgroundColor: 'transparent',
         color: 'var(--ascii-foreground-p3)',
-        fontFamily: '"Courier New", monospace',
+        fontFamily: 'GT_America_Mono, monospace',
+        fontFeatureSettings: '"ss06"',
         fontSize: '8px',
         lineHeight: '1.1',
         display: 'flex',
@@ -130,20 +101,11 @@ const DevelopmentAsciiArt: React.FC<DevelopmentAsciiArtProps> = ({
         aspectRatio: '620/600'
       }}
     >
-      <div
-        ref={canvasRef}
-        style={{
-          whiteSpace: 'pre',
-          letterSpacing: '-0.05em',
-          padding: '8px',
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          overflow: 'auto'
-        }}
-      />
+      <div style={{ position: 'relative' }}>
+        {/* Invisible full pattern keeps the centered layout fixed while the reveal runs */}
+        <div style={{ ...textLayerStyle, visibility: 'hidden' }}>{PATTERN}</div>
+        <div ref={revealRef} style={{ ...textLayerStyle, position: 'absolute', inset: 0 }} />
+      </div>
     </div>
   )
 }

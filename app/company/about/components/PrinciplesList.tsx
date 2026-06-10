@@ -9,7 +9,7 @@ const getMissionItems = (language: 'en' | 'es') => {
     en: [
       {
         title: "What We Do",
-        description: "We design, build, and maintain technology that works. Infrastructure, security, custom development. No unnecessary adjectives."
+        description: "We design, build, and maintain AI systems that work. Pipelines, agents, custom development — and the private infrastructure to run them. No unnecessary adjectives."
       },
       {
         title: "How We're Different",
@@ -27,7 +27,7 @@ const getMissionItems = (language: 'en' | 'es') => {
     es: [
       {
         title: "Qué hacemos",
-        description: "Diseñamos, construimos y mantenemos tecnología que funciona. Infraestructura, seguridad, desarrollo a medida. Sin adjetivos innecesarios."
+        description: "Diseñamos, construimos y mantenemos sistemas de IA que funcionan. Pipelines, agentes, desarrollo a medida — y la infraestructura privada para ejecutarlos. Sin adjetivos innecesarios."
       },
       {
         title: "En qué nos diferenciamos",

@@ -160,6 +160,13 @@ html, body {
   --ascii-xs-font-size: 7.5px;
   --ascii-aspect-h: 3;
   --ascii-aspect-w: 15;
+
+  /* ASCII amber ink triad — light mode: deep amber ink on light cards
+     (method-page treatment). Flips in .dark below. */
+  --ascii-art-ink: #8a6a22;
+  --ascii-art-ink-strong: #5c4410;
+  --ascii-art-ink-soft: #b08c3a;
+  --ascii-art-panel: transparent;
   
   /* Oxide Computer CSS Variables - Light Mode */
   --base-neutral-900-rgb: 0, 0, 0;
@@ -235,6 +242,13 @@ html, body {
   --ascii-xs-font-size: 7.5px;
   --ascii-aspect-h: 3;
   --ascii-aspect-w: 15;
+
+  /* ASCII amber ink triad — dark mode: Vibe Coder amber on the house
+     dark amber panel. */
+  --ascii-art-ink: #f5b944;
+  --ascii-art-ink-strong: #ffd764;
+  --ascii-art-ink-soft: #b48732;
+  --ascii-art-panel: #3b301c;
   
   /* Oxide Computer CSS Variables - Dark Mode */
   --content-raise-p3: #d7d8d9;

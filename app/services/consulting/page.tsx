@@ -9,11 +9,12 @@ export const consultingContent = {
     subtitle: "From the Latin consultare, 'to deliberate together.' Not from soportare, 'to tolerate the client.'",
     sectionTitle: "We turn complexity into strategic advantage. Simplicity, we leave simple.",
     para1: "We don't sell solutions; we cultivate them. We start by understanding the real problem—the one usually hiding behind the apparent problem. Then we apply technical expertise and common sense, in that order. Because technology without purpose is just electricity with pretensions.",
-    para2: "Infrastructure, growth, optimization, audits: we talk about all of that, but mostly we talk with you. Our consulting doesn't produce reports nobody reads. It produces decisions someone makes. And that someone usually sleeps better afterward.",
+    para2: "AI strategy, infrastructure, growth, optimization and AI-readiness audits: we talk about all of that, but mostly we talk with you. Which model, which vendor, build or buy—the questions are new; the discipline of answering them isn't. Our consulting doesn't produce reports nobody reads. It produces decisions someone makes. And that someone usually sleeps better afterward.",
     cardTitle: "Let's Talk",
     cardDesc: "For a direct conversation about your technology challenges:",
     exploreTitle: "Learn More",
     methodLink: "Our Method",
+    aiLink: "AI Engineering",
     infraLink: "Infrastructure Services",
     workLink: "See Our Work",
     advantageTitle: "The advantage of working with us",
@@ -27,11 +28,12 @@ export const consultingContent = {
     subtitle: "Del latín consultare, 'deliberar juntos'. No del latín soportare, 'tolerar al cliente'.",
     sectionTitle: "Transformamos la complejidad en ventaja estratégica. La simplicidad, en cambio, la dejamos simple.",
     para1: "No vendemos soluciones; las cultivamos. Empezamos por entender el problema real —ese que suele esconderse detrás del problema aparente—. Luego aplicamos experiencia técnica y sentido común, en ese orden. Porque la tecnología sin propósito es solo electricidad con pretensiones.",
-    para2: "Infraestructura, crecimiento, optimización, auditorías: hablamos de todo eso, pero sobre todo hablamos con usted. Nuestra consultoría no produce informes que nadie lee. Produce decisiones que alguien toma.",
+    para2: "Estrategia de IA, infraestructura, crecimiento, auditorías de optimización y de preparación para IA: hablamos de todo eso, pero sobre todo hablamos con usted. Qué modelo, qué proveedor, construir o comprar: las preguntas son nuevas; la disciplina para responderlas, no. Nuestra consultoría no produce informes que nadie lee. Produce decisiones que alguien toma.",
     cardTitle: "Conversemos",
     cardDesc: "Para una conversación directa sobre sus desafíos tecnológicos:",
     exploreTitle: "Para saber más",
     methodLink: "Nuestro Método",
+    aiLink: "Ingeniería de IA",
     infraLink: "Servicios de Infraestructura",
     workLink: "Vea Nuestros Trabajos",
     advantageTitle: "La ventaja de trabajar con nosotros",
@@ -97,6 +99,12 @@ export default function ConsultingPage() {
                       <div className="space-y-2">
                         <a href="/method" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block text-base">
                           {t.methodLink}
+                          <svg width="12" height="12" className="block align-middle text-[#f5b944]">
+                            <use href="/assets/sprite-Dt029LRi.svg#next-arrow-12"></use>
+                          </svg>
+                        </a>
+                        <a href="/services/ai" className="text-[#ecbb5a] dark:text-[#ecbb5a] [text-decoration:inherit] flex items-center gap-1 hover:text-[#08178c] block text-base">
+                          {t.aiLink}
                           <svg width="12" height="12" className="block align-middle text-[#f5b944]">
                             <use href="/assets/sprite-Dt029LRi.svg#next-arrow-12"></use>
                           </svg>

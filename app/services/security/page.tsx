@@ -8,84 +8,78 @@ import { useLanguage } from '@/components/language-provider';
 
 export const securityContent = {
   en: {
-    title: "Managed Security & Data Protection",
+    title: "Security & Data Protection",
     subtitle: "The complex, simplified. The critical, solved.",
-    section1Title: "Complete Business Protection",
-    section1Desc: "We work with the best solutions on the market—SentinelOne for endpoints, Wasabi/AWS for cloud backups, Synology for local storage.",
-    secOpsTitle: "Unified Security Operations",
-    secOps1: "24/7 monitoring.",
-    secOps2: "Automated threat response.",
-    secOps3: "Single management console.",
-    secOps4: "Security reports.",
-    secOps5: "Tailored responses.",
-    pillar1Title: "Everything in one place",
-    pillar1Desc: "One account, one contact.",
-    pillar2Title: "Constant attention",
-    pillar2Desc: "Real-time alerts and responses before things escalate.",
-    pillar3Title: "Zero friction",
-    pillar3Desc: "Native integrations. Everything connected from day one.",
-    backupTitle: "3-2-1 Backup Strategy",
-    backupDesc: "We protect data at multiple levels. We use Synology NAS connected to the LAN for storage and fast data recovery, Wasabi/AWS cloud for older recoveries, and automated off-hours verification to confirm data integrity.",
+    section1Title: "Data is the new attack surface.",
+    section1Desc: "Training sets, inference logs, embeddings—AI multiplies the places your data lives. We reduce them to the ones you can defend: encrypted, segmented, and accounted for.",
+    secOpsTitle: "Security Operations",
+    secOps1: "Access control, least privilege by default.",
+    secOps2: "Encryption in transit and at rest.",
+    secOps3: "24/7 monitoring.",
+    secOps4: "Automated threat response.",
+    secOps5: "Reports without a glossary.",
+    pillar1Title: "Access control",
+    pillar1Desc: "Who sees what, and why. Written down.",
+    pillar2Title: "Compliance",
+    pillar2Desc: "We have taken clients through ISO 9001. Auditors hold few surprises.",
+    pillar3Title: "Incident response",
+    pillar3Desc: "A plan before the incident. Not a meeting after.",
+    backupTitle: "Immutable backups. Datasets included.",
+    backupDesc: "A model can be retrained. Your data cannot be re-collected. We keep versioned, immutable copies—local for fast recovery, off-site for bad days, verified automatically while nobody is watching.",
     storageTitle: "Storage & Recovery",
-    storage1: "Instant file recovery.",
-    storage2: "Ransomware protection.",
+    storage1: "Instant recovery of files and datasets.",
+    storage2: "Ransomware protection. Immutable means immutable.",
     storage3: "Automated backup scheduling.",
-    storage4: "Version control.",
+    storage4: "Versioning for data and model weights.",
     storage5: "Compliance archiving.",
-    stackTitle: "Security stack",
-    stackSubtitle: "Every decision, the most optimal.",
-    sentinelTitle: "Endpoints: SentinelOne",
-    sentinelDesc: "AI-powered EDR. Detects threats, responds automatically, and gives you complete visibility into every device.",
-    wasabiTitle: "Cloud Backup (Wasabi)",
-    wasabiDesc: "S3-compatible cloud storage with immutable backups. Pay as you go with storage that syncs throughout the day.",
-    synologyTitle: "Network Storage (Synology)",
-    synologyDesc: "Local NAS with fast local or remote access. Snapshots, change logs, Google Workspace backup.",
+    stackTitle: "Defense in layers",
+    stackSubtitle: "Endpoint, backup, recovery—the same discipline now covers datasets, model weights and inference logs. The tool matters less than who configures it.",
+    sentinelTitle: "Endpoint protection",
+    sentinelDesc: "Every laptop is a door. EDR watches all of them, responds in seconds, and tells you what happened in plain language.",
+    wasabiTitle: "Off-site immutable storage",
+    wasabiDesc: "Cloud copies that cannot be altered or deleted. Ransomware can encrypt a disk; it cannot rewrite history.",
+    synologyTitle: "Local recovery",
+    synologyDesc: "On-premise storage for the restores that cannot wait. Snapshots, change logs, fast access.",
     cta: "Security goes unnoticed—until it's missing.",
     contact: "CONTACT",
-    altInstance: "Snapshot of the instance create form, with hardware configuration and distro selected",
-    altStorageErrors: "Storage errors visualization",
-    altCloudBackup: "Cloud backup visualization",
-    altCloudStorage: "Cloud computer storage visualization"
+    altInstance: "Snapshot of the instance create form, with hardware configuration and distro selected"
   },
   es: {
-    title: "Gestión de seguridad y protección de datos",
+    title: "Seguridad y protección de datos",
     subtitle: "Lo complejo, simplificado. Lo crítico, resuelto.",
-    section1Title: "Protección integral",
-    section1Desc: "Trabajamos con las mejores soluciones del canal —SentinelOne para endpoints, Wasabi / AWS para backups en la nube, Synology para almacenamiento local.",
-    secOpsTitle: "Operaciones de Seguridad Unificadas",
-    secOps1: "Monitoreo 24/7.",
-    secOps2: "Respuesta automatizada ante amenazas.",
-    secOps3: "Una única consola de gestión.",
-    secOps4: "Informes de seguridad.",
-    secOps5: "Respuestas personalizadas.",
-    pillar1Title: "Todo en un lugar",
-    pillar1Desc: "Una cuenta, un contacto.",
-    pillar2Title: "Atención constante",
-    pillar2Desc: "Alertas en tiempo real y respuestas antes de que escale.",
-    pillar3Title: "Sin fricciones",
-    pillar3Desc: "Integraciones nativas. Todo conectado desde el primer día.",
-    backupTitle: "Estrategia de respaldo 3-2-1",
-    backupDesc: "Protegemos los datos en varios niveles. Utilizamos Synology NAS conectado en la LAN para storage y recuperación rápida de datos, asimismo almacenamos en la nube de Wasabi / AWS para recuperaciones más antiguas y utilizamos verificación automatizada fuera de horas de trabajo para confirmar integridad de datos.",
-    storageTitle: "Almacenamiento y Recuperación",
-    storage1: "Recuperación instantánea de archivos.",
-    storage2: "Protección contra ransomware.",
+    section1Title: "Los datos son la nueva superficie de ataque.",
+    section1Desc: "Datos de entrenamiento, logs de inferencia, embeddings: la IA multiplica los lugares donde viven sus datos. Los reducimos a los que se pueden defender: cifrados, segmentados y auditados.",
+    secOpsTitle: "Operaciones de seguridad",
+    secOps1: "Control de acceso, privilegio mínimo por defecto.",
+    secOps2: "Cifrado en tránsito y en reposo.",
+    secOps3: "Monitoreo 24/7.",
+    secOps4: "Respuesta automatizada ante amenazas.",
+    secOps5: "Informes sin glosario.",
+    pillar1Title: "Control de acceso",
+    pillar1Desc: "Quién ve qué, y por qué. Por escrito.",
+    pillar2Title: "Cumplimiento",
+    pillar2Desc: "Acompañamos clientes hasta la certificación ISO 9001. Los auditores ya no nos sorprenden.",
+    pillar3Title: "Respuesta a incidentes",
+    pillar3Desc: "Un plan antes del incidente. No una reunión después.",
+    backupTitle: "Respaldos inmutables. Datasets incluidos.",
+    backupDesc: "Un modelo se puede reentrenar. Sus datos no se pueden volver a recolectar. Mantenemos copias versionadas e inmutables: locales para recuperación rápida, remotas para los días malos, verificadas automáticamente cuando nadie está mirando.",
+    storageTitle: "Almacenamiento y recuperación",
+    storage1: "Recuperación instantánea de archivos y datasets.",
+    storage2: "Protección contra ransomware. Inmutable significa inmutable.",
     storage3: "Programación automatizada de respaldos.",
-    storage4: "Control de versiones.",
+    storage4: "Versionado de datos y pesos de modelos.",
     storage5: "Archivado para cumplimiento normativo.",
-    stackTitle: "Stack de servicios",
-    stackSubtitle: "Cada decisión, la más óptima.",
-    sentinelTitle: "Endpoints: SentinelOne",
-    sentinelDesc: "EDR con IA. Detecta amenazas, responde automáticamente, y le da visibilidad completa de cada dispositivo.",
-    wasabiTitle: "Respaldo en la Nube (Wasabi)",
-    wasabiDesc: "Almacenamiento en la nube (S3) con respaldos inmutables. Pay as you go con un almacenamiento que se actualiza constantemente durante las horas del dia.",
-    synologyTitle: "Almacenamiento en Red (Synology)",
-    synologyDesc: "NAS local que permiten acceso local ágil o remoto. Snapshots, historiales y logs de cambios, backup de Google Workspace.",
+    stackTitle: "Defensa por capas",
+    stackSubtitle: "Endpoint, respaldo, recuperación: la misma disciplina cubre ahora datasets, pesos de modelos y logs de inferencia. Importa menos la herramienta que quién la configura.",
+    sentinelTitle: "Protección de endpoints",
+    sentinelDesc: "Cada laptop es una puerta. El EDR las vigila todas, responde en segundos y explica lo ocurrido en lenguaje claro.",
+    wasabiTitle: "Almacenamiento inmutable fuera de sitio",
+    wasabiDesc: "Copias en la nube que no se pueden alterar ni borrar. El ransomware puede cifrar un disco; no puede reescribir la historia.",
+    synologyTitle: "Recuperación local",
+    synologyDesc: "Almacenamiento on-premise para las restauraciones que no pueden esperar. Snapshots, historiales de cambios, acceso ágil.",
     cta: "La seguridad no se nota —hasta que falta.",
     contact: "CONTACTO",
-    altInstance: "Snapshot del formulario de creación de instancia, con configuración de hardware y distro seleccionados",
-    altStorageErrors: "Visualización de errores de almacenamiento",
-    altCloudBackup: "Visualización de backup en la nube",
-    altCloudStorage: "Visualización de almacenamiento en computadora en la nube"
+    altInstance: "Snapshot del formulario de creación de instancia, con configuración de hardware y distro seleccionados"
   }
 };
 
@@ -346,92 +340,6 @@ const SecurityPage = () => {
                   {t.stackTitle} <br className="hidden min-[800px]:block" />
                   <span className="text-[var(--content-tertiary-p3)]">{t.stackSubtitle}</span>
                 </h2>
-              </div>
-            </div>
-            <div className="w-[100%] px-5 min-[600px]:px-10 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(5rem_*_var(--tw-space-y-reverse))] min-[1000px]:mb-[calc(9rem_*_var(--tw-space-y-reverse))]">
-              <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] items-center gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
-                <div className="col-span-12 min-[600px]:col-span-11 min-[1000px]:col-span-5 pr-0 min-[800px]:pr-10 min-[1000px]:pr-0 mb-4">
-                  <h2 className="mb-4 text-balance m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
-                    {t.sentinelTitle}
-                  </h2>
-                  <div>
-                    <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                      {t.sentinelDesc}
-                    </p>
-                  </div>
-                </div>
-                <div className="relative overflow-hidden border bg-[var(--surface-tertiary-p3)] border-[var(--stroke-secondary-p3)] col-span-12 min-[800px]:col-start-[7] min-[1000px]:col-start-[8] min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg">
-                  <div className="relative items-center w-[100%] flex h-[100%] justify-center">
-                    <ThemeImage
-                      darkSrc="/img/estela-storage-errors.svg"
-                      lightSrc="/img/estela-storage-errors_light.svg"
-                      width={516}
-                      height={343}
-                      className="w-[100%] max-w-[100%] h-auto block align-middle"
-                      alt={t.altStorageErrors}
-                    />
-                    <noscript>
-                      <div className="absolute inset-0 flex h-full w-full items-center justify-center">
-                        <img className="w-full h-auto" src="/img/estela-storage-errors.svg" width="516" height="343" alt={t.altStorageErrors} />
-                      </div>
-                    </noscript>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="w-[100%] px-5 min-[600px]:px-10 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(5rem_*_var(--tw-space-y-reverse))] min-[1000px]:mb-[calc(9rem_*_var(--tw-space-y-reverse))]">
-              <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] items-center gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
-                <div className="col-span-12 min-[600px]:col-span-11 min-[1000px]:col-start-[8] min-[1000px]:col-span-5 mb-4 pl-0 min-[800px]:order-[1]">
-                  <h2 className="mb-4 text-balance m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
-                    {t.wasabiTitle}
-                  </h2>
-                  <div>
-                    <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                      {t.wasabiDesc}
-                    </p>
-                  </div>
-                </div>
-                <div className="relative col-start-[1] overflow-hidden border bg-[var(--surface-tertiary-p3)] border-[var(--stroke-secondary-p3)] col-span-12 min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg">
-                  <ThemeImage
-                    darkSrc="/img/estela-cloud_backup.png"
-                    lightSrc="/img/estela-cloud_backup_light.png"
-                    width={430}
-                    height={309}
-                    className="w-[100%] max-w-[100%] h-auto block align-middle"
-                    alt={t.altCloudBackup}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="w-[100%] px-5 min-[600px]:px-10 mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(5rem_*_var(--tw-space-y-reverse))] min-[1000px]:mb-[calc(9rem_*_var(--tw-space-y-reverse))]">
-              <div className="m-auto grid max-w-[1200px] grid-cols-[repeat(12,minmax(0,1fr))] items-center gap-6 min-[600px]:gap-6 min-[1000px]:gap-8">
-                <div className="col-span-12 min-[800px]:col-span-5 mb-4">
-                  <h2 className="mb-4 text-balance m-0 text-[var(--content-raise-p3)] text-[1.5625rem] min-[1000px]:text-4xl font-normal min-[1000px]:font-normal font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[1000px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] leading-8 min-[1000px]:leading-[2.625rem] tracking-wide min-[1000px]:tracking-normal">
-                    {t.synologyTitle}
-                  </h2>
-                  <div>
-                    <p className="my-4 m-0 text-[var(--content-secondary-p3)] font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] min-[800px]:font-[SuisseIntl,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif] font-normal min-[800px]:font-normal leading-6 min-[800px]:leading-[1.625rem] text-base min-[800px]:text-lg tracking-wide min-[800px]:tracking-wide">
-                      {t.synologyDesc}
-                    </p>
-                  </div>
-                </div>
-                <div className="relative overflow-hidden border bg-[var(--surface-tertiary-p3)] border-[var(--stroke-secondary-p3)] col-span-12 min-[800px]:col-start-[7] min-[1000px]:col-start-[8] min-[800px]:col-span-6 min-[1000px]:col-span-5 rounded-lg">
-                  <div className="relative items-center w-[100%] flex h-[100%] justify-center">
-                    <ThemeImage
-                      darkSrc="/img/cloud-computer-storage.svg"
-                      lightSrc="/img/cloud-computer-storage_light.svg"
-                      width={247}
-                      height={140}
-                      className="w-[100%] max-w-[100%] h-auto block align-middle"
-                      alt={t.altCloudStorage}
-                    />
-                    <noscript>
-                      <div className="absolute inset-0 flex h-full w-full items-center justify-center">
-                        <img className="w-full h-auto" src="/img/cloud-computer-storage.svg" width="247" height="140" alt={t.altCloudStorage} />
-                      </div>
-                    </noscript>
-                  </div>
-                </div>
               </div>
             </div>
             <div className="mt-[calc(5rem_*_calc(1_-_var(--tw-space-y-reverse)))] min-[1000px]:mt-[calc(9rem_*_calc(1_-_var(--tw-space-y-reverse)))] mb-[calc(5rem_*_var(--tw-space-y-reverse))] min-[1000px]:mb-[calc(9rem_*_var(--tw-space-y-reverse))]">

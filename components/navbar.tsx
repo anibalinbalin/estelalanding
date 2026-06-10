@@ -26,12 +26,13 @@ const PhilosophyAsciiArt = dynamic(() => import("@/components/ui/philosophy-asci
 const InfrastructureAsciiArt = dynamic(() => import("@/components/ui/infrastructure-ascii-art").then(m => m.InfrastructureAsciiArt), { ssr: false })
 const SecurityAsciiArt = dynamic(() => import("@/components/ui/security-ascii-art").then(m => m.SecurityAsciiArt), { ssr: false })
 const DevelopmentAsciiArt = dynamic(() => import("@/components/ui/development-ascii-art").then(m => m.DevelopmentAsciiArt), { ssr: false })
+const AiAsciiArt = dynamic(() => import("@/components/ui/ai-ascii-art").then(m => m.AiAsciiArt), { ssr: false })
 const ConsultingAsciiArt = dynamic(() => import("@/components/ui/consulting-ascii-art").then(m => m.ConsultingAsciiArt), { ssr: false })
 const SpecificationsAsciiArt = dynamic(() => import("@/components/ui/specifications-ascii-art").then(m => m.SpecificationsAsciiArt), { ssr: false })
 import { useLanguage } from "@/components/language-provider"
 import './navbar-animations.css'
 
-type ServiceKey = 'infrastructure' | 'security' | 'development' | 'consulting' | 'specifications'
+type ServiceKey = 'ai' | 'development' | 'infrastructure' | 'consulting' | 'security' | 'specifications'
 type MethodKey = 'introduction' | 'principles' | 'implementation' | 'practices' | 'philosophy'
 
 const content = {
@@ -45,22 +46,27 @@ const content = {
     services: {
       default: {
         title: "Our Services",
-        subtitle: "Infrastructure, security, development. What you need, without what you don't."
+        subtitle: "AI, development, infrastructure. What you need, without what you don't."
       },
-      infrastructure: {
-        title: "Infrastructure",
-        subtitle: "The invisible that holds up the visible.",
-        description: "The foundation of everything digital. We build networks that never make you think about networks."
-      },
-      security: {
-        title: "Security",
-        subtitle: "What separates calm from chaos. Literally.",
-        description: "Protection isn't paranoia. It's preparation. We secure your data, your premises, and your peace of mind."
+      ai: {
+        title: "AI Engineering",
+        subtitle: "The machine proposes. We decide.",
+        description: "Pipelines, agents, and automation. AI that works after the demo ends."
       },
       development: {
         title: "Development",
         subtitle: "Code that solves problems, not creates them.",
         description: "Custom solutions for unique challenges. We build the tools your business needs to thrive."
+      },
+      infrastructure: {
+        title: "Private AI Infrastructure",
+        subtitle: "Your models, on metal we control.",
+        description: "Self-hosted models, GPU compute, and hybrid architectures for data that can't leave the building."
+      },
+      security: {
+        title: "Security",
+        subtitle: "What separates calm from chaos. Literally.",
+        description: "Protection isn't paranoia. It's preparation. We secure your data, your premises, and your peace of mind."
       },
       consulting: {
         title: "Consulting",
@@ -132,22 +138,27 @@ const content = {
     services: {
       default: {
         title: "Nuestros Servicios",
-        subtitle: "Infraestructura, seguridad, desarrollo. Lo que necesita, sin lo que no."
+        subtitle: "IA, desarrollo, infraestructura. Lo que necesita, sin lo que no."
       },
-      infrastructure: {
-        title: "Infraestructura",
-        subtitle: "Lo invisible que sostiene lo visible.",
-        description: "La base de todo lo digital. Construimos redes que nunca te hacen pensar en redes."
-      },
-      security: {
-        title: "Seguridad",
-        subtitle: "Lo que separa la calma del caos. Literalmente.",
-        description: "La protección no es paranoia. Es preparación. Aseguramos tus datos, tus instalaciones y tu tranquilidad."
+      ai: {
+        title: "Ingeniería de IA",
+        subtitle: "La máquina propone. Nosotros decidimos.",
+        description: "Pipelines, agentes y automatización. IA que funciona cuando se apaga el proyector."
       },
       development: {
         title: "Desarrollo",
         subtitle: "Código que resuelve problemas, no que los crea.",
         description: "Soluciones personalizadas para desafíos únicos. Construimos las herramientas que tu negocio necesita para prosperar."
+      },
+      infrastructure: {
+        title: "Infraestructura Privada de IA",
+        subtitle: "Sus modelos, en hardware que controlamos.",
+        description: "Modelos autoalojados, cómputo GPU y arquitecturas híbridas para datos que no pueden salir del edificio."
+      },
+      security: {
+        title: "Seguridad",
+        subtitle: "Lo que separa la calma del caos. Literalmente.",
+        description: "La protección no es paranoia. Es preparación. Aseguramos tus datos, tus instalaciones y tu tranquilidad."
       },
       consulting: {
         title: "Consultoría",
@@ -212,10 +223,11 @@ const content = {
 }
 
 const SERVICE_ITEMS: { key: ServiceKey; path: string }[] = [
-  { key: 'infrastructure', path: '/services/infrastructure' },
-  { key: 'security', path: '/services/security' },
+  { key: 'ai', path: '/services/ai' },
   { key: 'development', path: '/services/development' },
+  { key: 'infrastructure', path: '/services/infrastructure' },
   { key: 'consulting', path: '/services/consulting' },
+  { key: 'security', path: '/services/security' },
   { key: 'specifications', path: '/services/specifications' },
 ]
 
@@ -254,12 +266,14 @@ function renderServiceAsciiArt(activeService: ServiceKey | null): React.ReactNod
   if (!activeService) return null
 
   switch (activeService) {
+    case 'ai':
+      return <AiAsciiArt isVisible />
+    case 'development':
+      return <DevelopmentAsciiArt isVisible />
     case 'infrastructure':
       return <InfrastructureAsciiArt isVisible />
     case 'security':
       return <SecurityAsciiArt isVisible />
-    case 'development':
-      return <DevelopmentAsciiArt isVisible />
     case 'consulting':
       return <ConsultingAsciiArt isVisible />
     case 'specifications':
@@ -434,7 +448,7 @@ export function Navbar(): React.ReactElement {
                     </NavigationMenuTrigger>
                     <NavigationMenuContent onMouseLeave={resetServicesHover}>
                       <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                        <li className="row-span-5">
+                        <li className="row-span-6">
                           <NavigationMenuLink asChild>
                             <a
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted no-underline outline-none focus:shadow-md min-h-[300px] relative overflow-hidden p-3"
