@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
+  images: { unoptimized: true,
     remotePatterns: [
       // Commented out - no longer using oxide domains
       // {
